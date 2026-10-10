@@ -3,8 +3,9 @@
 Der Benutzer bestätigt die neue Spieler-Pixie-Darstellung. Nach `X` erschien
 jedoch ein grauer Bildschirm mit sichtbaren wechselnden Elementen; BASIC nahm
 Eingaben an und `RUN` startete das Programm erneut. Ein Syntaxfehler brachte
-laut Benutzer die normale Anzeige zurück. Die neue Korrektur bleibt bis zum
-erneuten XEMU-Test unbestätigt; kein Stable-Tag für Stage 3b-3.
+laut Benutzer die normale Anzeige zurück. Die korrigierte Fassung wurde am 10.10.2026 vom Benutzer als stabil bestätigt
+(`stage3b3-stable`). Die Abnahme stammt vom Benutzer; ein eigener Emulatorlauf
+wird nicht behauptet.
 
 ## Nachgewiesene Ursache
 

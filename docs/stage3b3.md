@@ -2,8 +2,9 @@
 
 Neue Stage im Branch `stage3b-3`, ausschließlich auf `stage3b2-stable`
 (`811eecb42ee9ca6c980b5cb404ea82976d7de495`) aufgebaut. Stage 3b-2, seine
-Quellen, Builder und Release-Artefakte bleiben unverändert. **XEMU-Abnahme offen;
-kein Stable-Tag für Stage 3b-3.**
+Quellen, Builder und Release-Artefakte bleiben unverändert. **Am 10.10.2026 vom Benutzer als stabil bestätigt: `stage3b3-stable`.**
+Der Tag sichert den bestätigten Programmstand `be747701cbeee5f77af244ad3778f75088fca8a7`
+mit ergänzter Abnahmedokumentation; ASM, PRG und D81 bleiben unverändert.
 
 ## Originaldaten und Darstellung
 
@@ -50,8 +51,8 @@ Row-Buckets, Slotkapazität und Clearing bleiben unverändert.
 
 Diese GOTOX-Auswahl entspricht der implementierten VIC-IV-Logik in XEMU
 (`vic4.c`, GOTOX-Verarbeitung: BOLD+REVERSE und ATTR aus → `altpalette`;
-`vic4.h`: BOLD=`$40`, REVERSE=`$20`). Die tatsächliche Darstellung muss unter
-XEMU bestätigt werden; das Hostmodell prüft die ausgegebenen Tokens und
+`vic4.h`: BOLD=`$40`, REVERSE=`$20`). Die tatsächliche Darstellung wurde vom Benutzer unter
+XEMU bestätigt; das Hostmodell prüft die ausgegebenen Tokens und
 Palette-Zugriffe, nicht die VIC-Pixel.
 
 Zwei alte Animationswege konnten bislang die Joystick-Glyphen überschreiben:
@@ -146,7 +147,7 @@ Zusätzlich bestanden alle bisherigen Stage-3b-1-/Stage-3b-2-Tests: zusammen
 **43 bestandene Tests** mit dem bereitgestellten ROM.
 
 Dies sind CPU-/DMA-/Palette-/Rastermodelle. Sie prüfen keine echten Joystick-
-Geräte oder pixelgenaue VIC-Ausgabe. Die XEMU-Abnahme wird nicht vorweggenommen.
+Geräte oder pixelgenaue VIC-Ausgabe. Die XEMU-Abnahme stammt vom Benutzer; ein eigener Emulatorlauf wird nicht behauptet.
 
 ## XEMU-Abnahme durch den Benutzer
 
@@ -164,7 +165,8 @@ Geräte oder pixelgenaue VIC-Ausgabe. Die XEMU-Abnahme wird nicht vorweggenommen
    Bildschirm, normal blinkender Cursor ohne rote Linie und ohne nötigen Tastendruck.
 7. Wieder `LOAD"STAGE3B3",8` / `RUN`: Grafik, Palette und Steuerung erneut korrekt.
 
-**Erst nach dieser Bestätigung als stabil markieren.**
+**Benutzerbestätigung vom 10.10.2026:** „Stage 3b-3 als stabil bestätigt“.
+Die obige Liste bleibt als Checkliste für spätere Regressionstests erhalten.
 
 ## Korrektur nach erstem XEMU-Test
 
@@ -173,4 +175,4 @@ jedoch einen grauen Bildschirm. Die falsche Wahl von Palette Bank 3 war die
 Ursache: Ihre ersten 16 Farben sind zugleich die C65-ROM-Palette. Nur das
 Auswahlbyte bei `$3704` ist von `$DB` nach `$9A` geändert; Playerdaten, Farben,
 RRB-Auswahl, Bewegung und Exit-Code sind bytegleich zur ersten Stage 3b-3.
-[Diagnose und Artefaktvergleich](stage3b3_exit_palette_fix.md). Neue XEMU-Abnahme offen.
+[Diagnose und Artefaktvergleich](stage3b3_exit_palette_fix.md). Die korrigierte Fassung wurde am 10.10.2026 vom Benutzer als stabil bestätigt.

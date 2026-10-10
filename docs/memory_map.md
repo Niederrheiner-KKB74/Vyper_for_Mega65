@@ -121,4 +121,4 @@ ihre ersten 16 Einträge bilden zugleich die C65/BASIC-ROM-Palette. GOTOX-Color-
 Palette; jedes Gegnerfragment schaltet mit `$00` zurück. Alle Ladeziele, DMA-
 Puffer, Screen-/Colorbereiche, BASIC-Backup, Orbit- und Gegnerglyphen bleiben
 unverändert. Builder und Assembly-Guards prüfen die Grenzen und zulässigen
-Patches. [Details und Abnahme](stage3b3.md). Stage 3b-3 noch nicht stabil bestätigt.
+Patches. [Details und Abnahme](stage3b3.md). Stage 3b-3 am 10.10.2026 vom Benutzer als stabil bestätigt (`stage3b3-stable`).

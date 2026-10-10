@@ -1,4 +1,4 @@
-# Stage 3b-3 – Amiga-Spielerraumschiff, XEMU-Abnahme offen
+# Stage 3b-3 – Amiga-Spielerraumschiff, stabile Referenz
 
 [VYPER_STAGE3B3.d81](VYPER_STAGE3B3.d81) enthält `STAGE3B3` und beide Original-SEQ-
 Dateien. In Laufwerk 8: `LOAD"STAGE3B3",8`, dann `RUN`.
@@ -13,8 +13,9 @@ Stage 3b-2 und `stage3b2-stable` unverändert.
 
 Assembly, acht Stage-3b-3-Hosttests und reproduzierbarer D81-Build bestanden.
 Gesamte Stage-3b-Regression: 43 Tests bestanden mit dem bereitgestellten ROM.
-Bitte Darstellung/Farben, Joystick, Grafikreste, Animation und `X`/Neustart unter
-XEMU prüfen. Kein Stable-Tag vor Benutzerbestätigung.
+Am 10.10.2026 vom Benutzer unter XEMU als stabil bestätigt: `stage3b3-stable`.
+Der bestätigte Programmstand `be74770` bleibt unverändert; die Abnahme stammt
+vom Benutzer.
 
 Exit-Palettenkorrektur: Die alte Bank 3 überschrieb zugleich die BASIC-ROM-
 Palette. Die neue Fassung ändert nur ein PRG-Byte (`$3704`: `$DB` → `$9A`).
