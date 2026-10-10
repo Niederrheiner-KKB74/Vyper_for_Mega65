@@ -170,7 +170,8 @@ def main():
     source = ROOT/'src/engine/stage3b1.asm'
     # Only the SYS target changes in the archived engine source itself.
     archived_source = baseline['vyper_rrb_v014_stage2ja.asm'].decode()
-    if archived_source.replace('.text "8448"', '.text "18432"', 1) not in source.read_text():
+    normalize = lambda text: "\n".join(line.rstrip() for line in text.splitlines())
+    if normalize(archived_source.replace('.text "8448"', '.text "18432"', 1)) not in normalize(source.read_text()):
         raise ValueError('Archived Stage-2ja source modified beyond SYS target')
     assets = []
     for name, length, checksum in [('VYLV.DAT', 81793, 0x5ca2), ('VYGR.DAT', 30888, 0x1fe9)]:
@@ -208,7 +209,7 @@ def main():
         outputs = {
             'STAGE3B1.PRG': prg, 'VYPER_STAGE3B1.d81': disk,
             'stage3b1.asm': source.read_bytes(), 'STAGE3B1.sym': symbols.encode(),
-            'memory-map.txt': result.stdout[result.stdout.index('Memory Map'):].split('Writing Symbol file')[0].encode(),
+            'memory-map.txt': (result.stdout[result.stdout.index('Memory Map'):].split('Writing Symbol file')[0].rstrip()+'\n').encode(),
             'build-report.json': (json.dumps(report, indent=2)+'\n').encode(),
         }
         outputs['SHA256SUMS.txt'] = ''.join(f'{sha(data)}  {name}\n' for name, data in sorted(outputs.items())).encode()

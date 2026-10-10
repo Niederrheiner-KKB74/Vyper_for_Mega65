@@ -20,4 +20,3 @@ Default-segment:
   $c000-$c0bf Unnamed
   $c800-$c8ff Unnamed
   $c900-$c9ff Unnamed
-

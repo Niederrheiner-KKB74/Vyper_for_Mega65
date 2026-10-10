@@ -19,7 +19,7 @@
 // Reference pattern RRB diagnostic V0.3. A row-major; B side-by-side; C swapped nibbles.
 // Vyper Typ 3 (index 2) three-variant RRB reference diagnostic V0.2
 // User-validated: row-major, high nibble left.
-// V0.3a: fixed graphics origin $8000 (V0.3 erroneously used $0800). 
+// V0.3a: fixed graphics origin $8000 (V0.3 erroneously used $0800).
 // V0.3 diagnostic: swap low/high NCM pixel nibbles for original enemy glyphs.
 // Bullet glyph reduced to 2 pixels. Background right-edge still under investigation.
 // RRB STRESS V0.3: 22 enemies in 2 rows of 11 + 8 RRB projectiles.
