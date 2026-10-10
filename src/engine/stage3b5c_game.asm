@@ -13,7 +13,7 @@
 .const c_ENEMIES=23
 .const c_EXP_TICKS=3
 // Source record 7 ($3827A) is the player ship, NOT an explosion.
-// Keep only supplied explosion records 0..6 until the missing original arrives.
+// User confirms exactly seven explosion frames: source records 0..6.
 .const c_EXP_FRAMES=7
 .const c_BLINK_TICKS=150
 .const c_BLINK_PERIOD=25
