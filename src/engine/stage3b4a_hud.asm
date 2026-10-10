@@ -164,6 +164,45 @@ font_dma_start:
     sta $d701
     lda #<font_dma
     sta $d705
+    // Overlay only HUD glyphs in the private charset; BASIC/WOM stays intact.
+    lda #<font_glyphs
+    sta thin_read+1
+    lda #>font_glyphs
+    sta thin_read+2
+    ldx #0
+thin_next:
+    lda font_codes,x
+    asl
+    asl
+    asl
+    sta thin_write+1
+    lda font_codes,x
+    lsr
+    lsr
+    lsr
+    lsr
+    lsr
+    clc
+    adc #$40
+    sta thin_write+2
+    ldy #7
+thin_copy:
+thin_read:
+    lda $ffff,y
+thin_write:
+    sta $ffff,y
+    dey
+    bpl thin_copy
+    clc
+    lda thin_read+1
+    adc #8
+    sta thin_read+1
+    bcc thin_advance
+    inc thin_read+2
+thin_advance:
+    inx
+    cpx #(font_glyphs-font_codes)
+    bne thin_next
     // Ordinary mono frame cells; the right edge has an extra blank margin.
     ldx #7
 font_frame:
@@ -328,9 +367,9 @@ hud_update_points:
     ldy #2
     jsr changed
     beq points_attack
-    lda #23
+    lda #22
     sta draw_row
-    lda #4
+    lda #7
     sta draw_column
     lda #3
     sta digit

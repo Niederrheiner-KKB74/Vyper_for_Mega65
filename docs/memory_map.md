@@ -135,14 +135,15 @@ Nach dem gemeldeten Hintergrund-/Spurfehler: 64 Einträge / 128 Bytes je Zeile.
 | `$1A20–$1A38` | Anzeige-Schattenwerte |
 | `$1A40–$1A66` | HUD-Arbeit, Skalierung, physischer Farbzeiger, BASIC-Startfarbe |
 | `$6B00–$6F7F` | zusätzliche 1152 Color-RAM-Bytes, leerer PRG-Bereich |
-| `$3800–$3D70` | HUD-/Start-/Store-Code und eigene F018A-Listen |
+| `$3800–$3DB1` | HUD-/Start-/Store-Code und eigene F018A-Listen |
 | `$3E80–$3EB6` | HUD-Anfangswerte, Farben, Lebenspositionen |
 | `$3F00–$3FD1` | statische HUD-Attribute, Zeilen 20–24 |
-| `$4000–$47FF` | vollständige Laufzeitkopie des BASIC-Fonts, keine OR-Verengung |
+| `$4000–$47FF` | private BASIC-Fontkopie mit dünnen 5×7-HUD-Glyphen |
 | `$5000–$5C7F` | 25×128 Byte Screen, 3200 Byte |
 | `$5C80–$5C8F` | verlegte Spritepointer, Hardware-Sprites bleiben deaktiviert |
 | `$5C90–$5FD7` | statische HUD-Attribute, Zeilen 0–19 |
 | `$7A00–$7EE1` | HUD-Screen-Prefixvorlage und Zeiger |
+| `$9900–$9A55` | 38 dünne HUD-Glyphen mit Zeichencodes; außerhalb Loader-/Framepuffer |
 | `$9000–$97FF` | bisherige Sicherung der ersten 2048 Color-RAM-Bytes |
 | `$0FF80000–$0FF80C7F` | vollständiger verwendeter Color RAM, 3200 Byte |
 

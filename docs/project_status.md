@@ -105,7 +105,7 @@ Die Abnahme stammt vom Benutzer; ein eigener Emulatorlauf wird nicht behauptet.
 Bestätigter Programmstand: `be747701cbeee5f77af244ad3778f75088fca8a7`.
 ASM, PRG und D81 bleiben bei dieser Dokumentation unverändert. [Diagnose](stage3b3_exit_palette_fix.md).
 
-## Stage 3b-4a – korrigiertes HUD, XEMU-Abnahme offen
+## Stage 3b-4a – funktional bestätigt, HUD-Schrift angepasst
 
 Branch `stage3b-4a`, Basis `stage3b3-stable`; stabile Quellen/Releases unverändert.
 Der Benutzer hat die Amiga-Referenz und die breitere Ausgabe mit Spielfeldgrenze
@@ -128,3 +128,11 @@ auch vorherige Frame-Pixel statt eines
 implizit schwarzen Ausgangsbildes. Release unter `releases/stage_3b4a/` mit PRG/D81,
 Quellen, reproduzierbarem Builder und Vergleich. Kein Stable-Tag vor erneutem XEMU-Test
 und Benutzerbestätigung. [Technik](stage3b4a.md), [Diagnose](stage3b4a_background_font_fix.md).
+
+Der Benutzer bestätigt `9b2e767` als voll funktional. Auf seinen anschließenden Wunsch
+werden die Beschriftungen auf „Hi-Score“, „No P2“, „Form.“ und „Att.“ verkürzt und
+vollständig gerahmt. Eigene dünne 5×7-Zeichen ersetzen nur benötigte Glyphen der
+privaten Fontkopie. Die 38 Glyphen liegen bei `$9900–$9A55`; SEQ-/Framepuffer
+`$6800/$6900` und Levelkopie `$7600–$7950` bleiben frei davon. Kein Original-Amiga-
+Font wird behauptet. Gameplay, Ladefunktionen, Lebenssymbole und Exit bleiben erhalten.
+Die neue Schrift benötigt die Sichtprüfung des Benutzers; kein Stable-Tag gesetzt.

@@ -8,7 +8,7 @@ Default-segment:
   $3200-$35d9 Stage 3b-2 graphics and parser
   $3600-$36af Stage 3b-3 approved player source
   $3700-$375e Stage 3b-3 player integration
-  $3800-$3d70 Stage 3b-4a HUD code
+  $3800-$3db1 Stage 3b-4a HUD code
   $3e80-$3eb6 HUD defaults
   $3f00-$3fd1 HUD attributes rows 20-24
   $4000-$47ff Unnamed
@@ -24,6 +24,7 @@ Default-segment:
   $8800-$883f Unnamed
   $9000-$97ff Unnamed
   $9800-$98ff Stage 3b-2 loaded path-pixie glyphs
+  $9900-$9a55 Thin HUD font
   $a000-$b47f Unnamed
   $b800-$bf06 Unnamed
   $c000-$c0bf Unnamed

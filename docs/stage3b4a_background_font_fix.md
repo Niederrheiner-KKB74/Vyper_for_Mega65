@@ -96,3 +96,12 @@ auf exakt deklarierte Hooks/Zeiger/NOPs und freie neue Bereiche begrenzt. PRG we
 | `VYPER_STAGE3B4A.d81` | `601c66ae99743b35afbab1a08d86fb5e78687db631aa0a0ed5efc336e85d5afc` | `465cd7db4b4e21c6c18ea0ab0b2ddf152d61f89b07b75b04bcccd5fa4c98d0ea` |
 
 [Technik/Build und XEMU-Checkliste](stage3b4a.md).
+
+## Anschließende bestätigte Basis und Schriftanpassung
+
+Der oben verglichene Build `9b2e767` wurde anschließend vom Benutzer als voll funktional
+bestätigt. Der Artefaktvergleich dokumentiert diese Fehlerkorrektur historisch; die
+aktuellen Release-Prüfsummen stehen in `releases/stage_3b4a/SHA256SUMS.txt`.
+Auf Wunsch folgen kürzere gerahmte Texte und eigens erstellte dünne 5×7-Glyphen.
+Details und aktuelle Speichergrenzen: [Stage 3b-4a](stage3b4a.md). Die neue Schrift
+wird ausschließlich in der privaten Fontkopie ersetzt; BASIC/WOM bleiben erhalten.

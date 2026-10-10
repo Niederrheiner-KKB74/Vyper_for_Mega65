@@ -5,7 +5,7 @@
 
 Korrigiert nach erstem XEMU-Test: KERNAL-Clear und schwarzer Ladehintergrund;
 deckende Leer-Glyphen vor jedem Raster beseitigen Bewegungsreste; HUD benutzt
-vollständige achtspaltige BASIC-Schrift. 128-Byte-Zeilen, unverändert acht bewegliche
+dünne 5×7-HUD-Schrift in achtspaltigen Zellen. 128-Byte-Zeilen, unverändert acht bewegliche
 Slots. Alle 3200 verwendeten Color-RAM-Bytes werden beim Exit restauriert.
 
 Drei Original-Lebenssymbole im 4×2-Feld; Player 2 inaktiv, P/S inaktiv, X Exit.
@@ -19,3 +19,8 @@ Stage 3b-3 bleibt unverändert. Noch kein Stable-Tag; neue Benutzer-XEMU-Abnahme
 
 Bitte Hintergrund, alle Pixie-Bewegungsspuren, Schriftlesbarkeit, Joystick/Animation,
 Lebenssymbole und X/BASIC-Cursor/erneutes LOAD/RUN prüfen.
+
+Build `9b2e767` ist vom Benutzer als voll funktional bestätigt. Diese Folgefassung
+ändert die HUD-Texte zu „Hi-Score“, „No P2“, „Form. 100“ und „Att. 115“ und verwendet
+eigens erstellte ein Pixel breite Fontstriche in logischen Koordinaten. Die Original-
+Spielgrafiken bleiben unverändert; bitte die neue Schrift unter XEMU beurteilen.

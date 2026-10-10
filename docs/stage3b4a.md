@@ -1,8 +1,9 @@
-# Stage 3b-4a – HUD mit deckendem Hintergrund und vollständiger Schrift
+# Stage 3b-4a – HUD mit deckendem Hintergrund und dünner HUD-Schrift
 
 Implementiert [Issue #4](https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/issues/4)
 im Branch `stage3b-4a`, Basis `stage3b3-stable` (`bb557e1995b4ec65730360fe28a38b4b3050001c`).
-Alle stabilen Stage-3b-3-Dateien bleiben unverändert. **XEMU-Abnahme offen, kein Stable-Tag.**
+Alle stabilen Stage-3b-3-Dateien bleiben unverändert. Der Benutzer hat Build `9b2e767` als voll funktional bestätigt. Die anschließende
+Schrift-/Textanpassung benötigt eine neue Sichtprüfung; kein Stable-Tag.
 Die Amiga-Referenz stammt aus dem Benutzer-Gespräch; kein entsprechendes Bildasset
 wird im Repository behauptet. Die erste Fassung zeigte laut XEMU-Test BASIC-Hintergrund,
 Bewegungsspuren und unleserliche Schrift. Diese Ursachen sind in der korrigierten
@@ -52,25 +53,29 @@ Orbitanimation, Joystick und Bewegung bleiben erhalten und werden gegen 3b-3 gep
 
 | Zeilen (je 8 bisherige Pixel hoch) | Inhalt |
 | --- | --- |
-| 0–2 | HIGH SCORE, sieben Ziffern, grauer Abschluss |
+| 0–2 | Hi-Score, sieben Ziffern, grauer Abschluss |
 | 3–5 | PLAYER 1 gelb, Score rot, LEVEL blau |
 | 6–12 | graues Lebensfeld, drei Leben beim Start |
 | 14–16 | PLAYER 2 / Score / Level gedimmt, Player 2 inaktiv |
-| 17–21 | P - PAUSE / S - SOUND / X - EXIT; `P/S INACT.` |
-| 22–24 | FORMATION, darunter 100; ATTACK 115 |
+| 17–21 | P - PAUSE / S - SOUND / X - EXIT; `No P2` |
+| 22–24 | Form. 100; Att. 115 (Zeile 23 frei) |
 
-Text verwendet den **vollständigen achtspaltigen BASIC-Zeichensatz**, ohne OR-Verengung
-und ohne Trimmen von Buchstaben oder Zahlen. In H640 mit Skalierung 60 entspricht
-ein Zeichen 16 nativen Pixeln. Innerhalb der zwei vier Pixel breiten Rahmen passen
-neun Zeichen; zehn Zeichen lange Zeilen nutzen die volle HUD-Breite. Daher steht
-FORMATION getrennt über 100. Die Referenzwerte bleiben 100/115. Lange P/S-Erklärung
-ist zur eindeutigen Kennzeichnung `P/S INACT.` verkürzt; X bleibt aktiv.
+Text verwendet eigene **5×7-Zeichen mit ein Pixel breiten Strichen** in achtspaltigen
+Zellen. Damit bleiben Luft zwischen Buchstaben und Details wie der H-Querbalken erhalten.
+Ein Fontpixel entspricht einem logischen Spielpixel; wie bisher wird es in H640
+horizontal auf zwei native Pixel ausgegeben. „Hi-Score“, „No P2“, „Form. 100“ und
+„Att. 115“ passen vollständig zwischen die vier Pixel breiten Seitenrahmen.
+Die Referenzwerte bleiben 100/115. P/S bleiben funktional inaktiv; X bleibt aktiv.
 
-Der tatsächliche vor Spielstart eingestellte BASIC-Font wird per eigener F018A-DMA
-nach `$4000–$47FF` kopiert. VIC-Aliase `$1000/$1800/$9000/$9800` werden auf Character-WOM
-`$0FF7E000/$0FF7E800` aufgelöst; andere gespeicherte Charset-Adressen direkt übernommen.
-Keine ROM-Daten werden ausgeliefert. Lediglich ungenutzte lokale Zeichen 128/129
-werden für den Rahmen ersetzt; nur diese Rahmenzeichen sind teilweise getrimmt.
+Der tatsächlich eingestellte BASIC-Font wird weiterhin per F018A-DMA nach
+`$4000–$47FF` kopiert; anschließend ersetzt die HUD-Routine ausschließlich die
+benötigten Buchstaben, Zahlen und Satzzeichen in dieser privaten Kopie. Die dünnen
+Bitmaps sind ausdrücklich für die gewünschte Schriftanpassung neu erstellt und im
+Builder dokumentiert; sie werden nicht als Original-Amiga-Font ausgegeben. BASIC-
+Charset und Character-WOM werden nicht verändert, keine ROM-Daten ausgeliefert.
+VIC-Aliase `$1000/$1800/$9000/$9800` werden wie bisher auf Character-WOM aufgelöst.
+Rahmenzeichen 128/129 bleiben getrennt. Die 38 Glyphen einschließlich Codes belegen
+`$9900–$9A55`, geprüft leer in der stabilen PRG und außerhalb aller Loader-/Framepuffer.
 
 HUD und Leben verwenden Palette Bank 2, sichtbare Original-Spielerfarben 1–8
 bleiben unverändert. Freie Indizes 10–15 erhalten Weiß/Grau/Gelb/Rot/Blau/dunkles Grau.
@@ -135,7 +140,7 @@ zusätzlicher VYLV-Felder. Die Punkte sind ausdrücklich Referenz-Testwerte.
 ## Speicher, Sicherung und Vergleich
 
 [Speicherkarte](memory_map.md). Screen `$5000–$5C7F`, Spritepointer `$5C80–$5C8F`,
-Attributvorlagen `$5C90–$5FD7` und `$3F00–$3FD1`. Code `$3800–$3D70`, Konstanten
+Attributvorlagen `$5C90–$5FD7` und `$3F00–$3FD1`. Code `$3800–$3DB1`, Konstanten
 `$3E80–$3EB6`, Screen-/Zeigervorlagen `$7A00–$7EE1`. Font `$4000–$47FF` war zuvor leer.
 Die alte Farbvorlage `$6000–$67CF`, Loader-/DMA-/Level-/Grafikbereiche und High-RAM-
 Dateien bleiben unverändert. PRG weiterhin 43.521 Byte, D81 819.200 Byte.
@@ -166,7 +171,7 @@ Python, Java, gepinnter KickAssembler 5.25; Testabhängigkeiten wie bisher aus
 Ausgabe enthält drei vollständige ASM-Dateien, PRG, D81, Symbole, Speicherkarte,
 Build-/Vergleichsbericht und SHA-256-Liste. Beide DAT-Dateien sind SEQ im D81.
 
-**54 Tests bestanden:** Elf HUD-/Exit-Tests prüfen Preload/D81/Patches; vollständige Schrift und Labels;
+**54 Tests bestanden:** Elf HUD-/Exit-Tests prüfen Preload/D81/Patches; dünne Glyphen und gerahmte Labels;
 4×2-Originalpixel/Abstände/Clamping; 32-Bit-Scores und unveränderte Anzeigen ohne
 Schreibzugriffe; 56 Frames mit identischen Bewegungs-/Animationszuständen gegen
 3b-3; permanenten HUD-Prefix und Palette; Font-DMA; Exit/Neustart mit allen 3200
@@ -189,7 +194,7 @@ Vor dem Laden muss der Bildschirm geleert und der Hintergrund schwarz werden.
 Beide Originaldateien müssen geladen/verifiziert werden. Danach schwarzes Spielfeld
 ohne BASIC-Inhalt; alle 24 Pixies ohne Spuren, richtige Originalgrafiken und Animation.
 HUD-Schrift insbesondere H/I/G/Score-Ziffern prüfen. Drei Lebenssymbole, vorbereitetes
-4×2-Feld mit Abständen, Player 2 inaktiv, P/S als inaktiv gekennzeichnet. Joystick,
+4×2-Feld mit Abständen, Player 2 inaktiv, „No P2“, P/S weiterhin ohne Funktion. Joystick,
 SPACE und +/- wie 3b-3. Mehrfach X: normaler BASIC-Bildschirm mit normalem Cursor und
 restaurierter Hintergrundfarbe; anschließend erneut LOAD/RUN. Erst nach ausdrücklicher
 Bestätigung durch den Benutzer als stabil markieren.

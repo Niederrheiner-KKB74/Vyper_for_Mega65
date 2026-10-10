@@ -36,7 +36,7 @@
       "0x26ff",
       "0x2705"
     ],
-    "changed_prg_bytes": 3287,
+    "changed_prg_bytes": 3623,
     "unchanged": "SEQ loader, parser, motion, joystick, active pixie animation and glyph assets; obsolete static-slot writes retired; exit restores D05A and extra Color RAM"
   },
   "files": [
@@ -44,7 +44,7 @@
       "name": "STAGE3B4A",
       "bytes": 43521,
       "blocks": 172,
-      "sha256": "53a42e6994dcb73157ec9be78f33daba0cafad0bb66bcf72874e8bb85634b9e7"
+      "sha256": "29d94d914d87808f2fca6b6fbe18f62846202afa50f4d4a9ad39e474e288629b"
     },
     {
       "name": "VYLV.DAT",
@@ -67,7 +67,7 @@
     "screen_row_stride": 128,
     "screen_entries_per_row": 64,
     "dynamic_row_offset": 84,
-    "font": "unchanged BASIC glyph bitmap, 8 columns",
+    "font": "authored thin 5x7 glyphs, 8-column cells",
     "colour_ram_bytes_saved": 3200,
     "life_columns": 4,
     "life_rows": 2,

@@ -188,18 +188,21 @@ class HUDTests(unittest.TestCase):
 
     def test_initial_values_font_and_palette_isolation(self):
         m=self.start()
-        for row,column,length,expected in [(1,2,7,'0000000'),(4,2,7,'0000000'),(5,7,3,'001'),(23,4,3,'100'),(24,7,3,'115')]:
+        for row,column,length,expected in [(1,2,7,'0000000'),(4,2,7,'0000000'),(5,7,3,'001'),(22,7,3,'100'),(24,7,3,'115')]:
             self.assertEqual(number(m,row,column,length),expected)
-        for row in (0,1,3,4,5,14,15,16,18,19,20,21,22,23,24):
-            column,length=(0,10) if row in (0,21,24) else (1,9)
+        for row in (0,1,3,4,5,14,15,16,18,19,20,21,22,24):
+            column,length=1,9
             text=number(m,row,column,length).strip()
             self.assertEqual(text,BUILD.LABELS[row][0])
+            prefix=0x5000+row*128+44
+            for column in (0,10):
+                self.assertEqual(int.from_bytes(m.memory.data[prefix+column*2:prefix+column*2+2],'little'),0x8080)
         self.assertEqual(m.memory.data[0xd05a],60)
         self.assertTrue(m.memory.data[0xd031]&128)
-        self.assertEqual(m.memory.data[0x4000:0x4400],m.memory.char_wom[:1024])
-        self.assertEqual(m.memory.data[0x4410:0x4800],m.memory.char_wom[1040:2048])
-        # Original H retains its gap; no pairwise OR or four-column trim.
-        self.assertEqual(m.memory.data[0x4040:0x4048],m.memory.char_wom[64:72])
+        for code,bitmap in BUILD.thin_font().items():
+            self.assertEqual(m.memory.data[0x4000+code*8:0x4008+code*8],bitmap)
+        # Thin H has separated one-pixel stems and a single-row crossbar.
+        self.assertEqual(m.memory.data[0x4040:0x4048],bytes([0x44,0x44,0x44,0x7c,0x44,0x44,0x44,0]))
         self.assertEqual(m.memory.primary_palette(),tuple(tuple(m.memory.banks[1][c][i] for c in range(3)) for i in range(256)))
         for c in range(3): self.assertEqual(m.memory.banks[3][c],bytearray([3*41+c]*256))
         palette=[(BUILD.ROOT/'assets/player'/f'player_palette_{c}.bin').read_bytes() for c in 'rgb']
