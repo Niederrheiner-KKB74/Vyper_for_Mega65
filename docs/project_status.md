@@ -76,3 +76,31 @@ Die bestätigten ASM-/PRG-/D81-Dateien bleiben unverändert. Die XEMU-Abnahme
 stammt vom Benutzer; ein eigener Emulatorlauf wird nicht behauptet.
 [Exit-Untersuchung](stage3b2_exit_investigation.md).
 [Build und Abnahme](stage3b2.md).
+
+## Stage 3b-3 – stabile Referenz `stage3b3-stable`
+
+Eigener Branch `stage3b-3`, Basis `stage3b2-stable`. Die vorhandenen Original-
+Spielerdateien aus `main` sind unverändert übernommen und mit deren Assetskript
+generiert. Der Joystick-Spieler nutzt die freigegebene 16×16-NCM-Grafik, linkes
+Pixel im Low-Nibble, sowie Palette Bank 2. Die zwei alten Animationswege
+überschreiben seine Grafik nicht mehr. Orbit, 22 Gegner, Bewegung, Joystick,
+Loader, Levelparser und korrigierter BASIC-Exit bleiben erhalten.
+
+Neue Daten bei `$3600–$36AF`, Integrationscode `$3700–$375E`; bisherige Spieler-
+Glyphen `$C800–$C8FF`. Assembly, D81-Prüfung, bytegenauer Patchvergleich und acht
+Stage-3b-3-Hosttests bestanden; gesamte Regression 43 Tests bestanden, Wiederholungsbuild identisch. Unveränderte Stage-3b-2-
+Artefakte bleiben die stabile Referenz. PRG/D81/ASM unter `releases/stage_3b3/`.
+Am 10.10.2026 vom Benutzer als stabil bestätigt; Referenz `stage3b3-stable`. [Build/Testbericht](stage3b3.md).
+
+### Stage 3b-3: Palettenkorrektur nach XEMU-Test
+
+Der Benutzer bestätigt die Player-Darstellung; der Exit zeigte jedoch einen
+grauen BASIC-Bildschirm. Bank 3 wurde irrtümlich als frei behandelt: Ihre
+ersten 16 Einträge bilden ebenfalls die BASIC-ROM-Palette. Die Auswahl ist
+jetzt von `$DB` auf `$9A` (Bank 2) korrigiert; gegenüber der ersten Stage 3b-3
+ändert sich nur ein PRG-Byte. Ein neuer Test reproduziert die alte Beschädigung
+und prüft den Erhalt der ROM-Palette bei Start/Exit/Neustart. Die korrigierte
+Fassung wurde am 10.10.2026 vom Benutzer unter XEMU als stabil bestätigt.
+Die Abnahme stammt vom Benutzer; ein eigener Emulatorlauf wird nicht behauptet.
+Bestätigter Programmstand: `be747701cbeee5f77af244ad3778f75088fca8a7`.
+ASM, PRG und D81 bleiben bei dieser Dokumentation unverändert. [Diagnose](stage3b3_exit_palette_fix.md).

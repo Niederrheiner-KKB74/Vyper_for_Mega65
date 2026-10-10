@@ -102,3 +102,23 @@ betroffenen Adressoperanden. Alle oben beschriebenen Loader-/Grafikbereiche und
 alle Stage-3b-1-Dateien bleiben unverändert. ROM V920395 und 80×25 sind bestätigt;
 die Bank-4-Reservierung von BASIC 80×50 erklärt diesen Testfehler nicht.
 [Ursache, automatisierte Tests und Artefaktvergleich](stage3b2_exit_investigation.md).
+
+## Stage 3b-3 – Originalgrafik des Joystick-Spielers
+
+Basis `stage3b2-stable` und dessen korrigierter KERNAL-freier Objektbereich bleiben
+erhalten. Neue unveränderliche Quelle und Paletten im zuvor leeren Gap:
+
+| Adresse | Verwendung |
+| --- | --- |
+| `$3600–$367F` | freigegebenes Spieler-NCM, 128 Bytes |
+| `$3680–$36AF` | drei freigegebene 16-Byte-RGB-Tabellen |
+| `$3700–$375E` | Spielerinitialisierung und RRB-Palette-Wrapper |
+| `$C800–$C8FF` | bestehende Spieler-Glyphen und Guards; keine Animation mehr |
+
+Spielerpalette Bank 2 ersetzt die bisherige Palette der deaktivierten
+Hardware-Sprites; Gegnerpalette bleibt Bank 1. Bank 3 bleibt geschützt, denn
+ihre ersten 16 Einträge bilden zugleich die C65/BASIC-ROM-Palette. GOTOX-Color-Byte 1 `$60` wählt nur für `$321/$322/$323` die alternative
+Palette; jedes Gegnerfragment schaltet mit `$00` zurück. Alle Ladeziele, DMA-
+Puffer, Screen-/Colorbereiche, BASIC-Backup, Orbit- und Gegnerglyphen bleiben
+unverändert. Builder und Assembly-Guards prüfen die Grenzen und zulässigen
+Patches. [Details und Abnahme](stage3b3.md). Stage 3b-3 am 10.10.2026 vom Benutzer als stabil bestätigt (`stage3b3-stable`).
