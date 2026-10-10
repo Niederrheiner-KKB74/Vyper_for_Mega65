@@ -13,7 +13,7 @@
     "sha256": "bf2c8d7e22770f23159a3d0711203e206e30e5cce752f9c3b634cf9ee8f63b03",
     "first_16_bytes": "01 00 02 16 10 00 02 00 0b 00 14 00 00 00 9e 00",
     "enemy_type_mapping": null,
-    "reason": "Level-record field schema and VYLV-to-VYGR mapping are not supplied."
+    "reason": "Graphics index mapping is confirmed; level-record field schema is not supplied."
   },
   "vygr": {
     "sha256": "cbad5d717a4890276a9408c6784500f8449d45ae90f0f4d4251d596b8a2563eb",
@@ -241,7 +241,52 @@
       }
     ]
   },
+  "confirmed_graphics_index_mapping": {
+    "source": "User confirmation",
+    "rule": "0 and 1 map to type 12; 2..37 map to types 1..36",
+    "table": [
+      12,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ]
+  },
   "original_package_warning": "Level-Grafiktypindizes 0..37, NCM-Typen 1..36.\nMehrere Level haben mehr als vier unterschiedliche Typindizes.\nDie Zuordnung und Slot-Strategie muessen vor der Spielintegration\nabgeglichen werden.",
-  "integration_status": "BLOCKED_PENDING_CONFIRMED_LEVEL_SCHEMA_AND_TYPE_MAPPING",
+  "original_warning_status": "Index mapping resolved by user; level-record schema still missing",
+  "integration_status": "BLOCKED_PENDING_CONFIRMED_LEVEL_SCHEMA",
   "movement_changes": false
 }

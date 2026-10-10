@@ -10,6 +10,13 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def vygr_type_for_level_index(index):
+    """User-confirmed mapping: 0/1 -> 12, 2..37 -> 1..36."""
+    if type(index) is not int or not 0 <= index <= 37:
+        raise ValueError('VYLV graphics index must be an integer in 0..37')
+    return 12 if index < 2 else index-1
+
+
 def level_records(data):
     if len(data) < 8 or data[:4] != b'VYLV':
         raise ValueError('Invalid VYLV header')
@@ -77,14 +84,20 @@ def analyze(root=ROOT):
                     'bytes': len(record), 'sha256': hashlib.sha256(record).hexdigest(),
                     'first_16_bytes': record[:16].hex(' '),
                     'enemy_type_mapping': None,
-                    'reason': 'Level-record field schema and VYLV-to-VYGR mapping are not supplied.'},
+                    'reason': 'Graphics index mapping is confirmed; level-record field schema is not supplied.'},
         'vygr': {'sha256': hashlib.sha256(graphic).hexdigest(), 'bytes': len(graphic),
                  'version': 1, 'types': len(types),
                  'frames': sum(item['frame_count'] for item in types),
                  'all_frames_match_original_archive': True,
                  'directory': [{k: v for k, v in item.items() if k != 'frames'} for item in types]},
+        'confirmed_graphics_index_mapping': {
+            'source': 'User confirmation',
+            'rule': '0 and 1 map to type 12; 2..37 map to types 1..36',
+            'table': [vygr_type_for_level_index(i) for i in range(38)],
+        },
         'original_package_warning': warning,
-        'integration_status': 'BLOCKED_PENDING_CONFIRMED_LEVEL_SCHEMA_AND_TYPE_MAPPING',
+        'original_warning_status': 'Index mapping resolved by user; level-record schema still missing',
+        'integration_status': 'BLOCKED_PENDING_CONFIRMED_LEVEL_SCHEMA',
         'movement_changes': False,
     }
 
@@ -98,7 +111,7 @@ def main():
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(report)
         print('Validated 100 level records and 239 original frames across 36 VYGR types.')
-        print('Level-1 enemy mapping remains unconfirmed; see', args.output)
+        print('Index mapping confirmed; Level-1 graphics fields remain unidentified; see', args.output)
     else:
         print(report, end='')
 

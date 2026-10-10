@@ -1,4 +1,4 @@
-# Stage 3b-2 – Originaldatenanalyse, Grafikzuordnung noch offen
+# Stage 3b-2 – Indexzuordnung bestätigt, Levelrecord-Format noch offen
 
 ## Ausgangspunkt
 
@@ -43,21 +43,33 @@ Die README im Original-Datenpaket nennt ausdrücklich:
 > Die Zuordnung und Slot-Strategie muessen vor der Spielintegration
 > abgeglichen werden.
 
-Das Repository enthält `build_vygr.py` im Datenarchiv, jedoch keinen VYLV-Erzeuger,
-keine vollständige Levelrecord-Formatspezifikation und keine verbindliche Zuordnung
-der Level-Grafikindizes zu den VYGR-Typen. Auch das Grafikmanifest mit Amiga-
-Descriptoradressen belegt diese Verbindung zu den Levelrecord-Feldern nicht.
-Insbesondere sind direkte Übernahme und pauschales `Index + 1` nicht bestätigt.
+### Bestätigte Indexzuordnung
 
-Damit lassen sich die benötigten **Level-1-Gegnertypen und ihre Zuordnung zu den
-bestehenden Pixies noch nicht verlässlich bestimmen**. Die Bytes `10 00 02 00`
-werden nicht als angebliche Typen 16 und 2 behandelt.
+Der Benutzer hat die Indexzuordnung verbindlich geklärt:
 
-Benötigt werden der originale VYLV-Erzeuger oder eine verbindliche Beschreibung
-von Gruppen-/Gegnereinträgen (Offsets, Längen, Typfeld, Referenzen) **sowie** deren
-Zuordnung zu `type_01..type_36` in VYGR. Daraus muss auch hervorgehen, welche
-bestehenden Test-Pixies welche Grafik erhalten sollen, falls Levelgegner und die
-24 Pixies nicht eins zu eins zusammenpassen. Bewegungen bleiben separat erhalten.
+| VYLV-Grafikindex | VYGR-Typ |
+| --- | --- |
+| 0 und 1 | 12 |
+| 2 bis 37 | Index minus 1 (Typ 1 bis 36) |
+
+Diese Regel ist in `vygr_type_for_level_index` implementiert und für alle 38
+zulässigen Indizes gegen das Originalgrafikverzeichnis geprüft. Werte außerhalb
+0..37 werden abgewiesen. Die historische Indexfrage im Datenpaket ist damit gelöst;
+der Originaltext bleibt als historische Quelle im Analysebericht erhalten.
+
+### Verbleibende Formatfrage
+
+Das Repository enthält `build_vygr.py` im Datenarchiv, jedoch keinen VYLV-Erzeuger
+und keine vollständige Levelrecord-Formatspezifikation. Die bestätigte Zuordnung
+sagt noch nicht, **an welchen Offsets die Grafikindizes in Level 1 stehen** und wie
+Gruppen-/Gegnereinträge durchlaufen werden. Auch das Amiga-Grafikmanifest belegt
+diese Verbindung zu den Levelrecord-Feldern nicht.
+
+Damit lassen sich die tatsächlich benötigten Level-1-Typen noch nicht zuverlässig
+bestimmen. Die Bytes `10 00 02 00` werden nicht als angebliche Typen interpretiert.
+Benötigt wird der originale VYLV-Erzeuger oder die Beschreibung der Einträge mit
+Offsets, Längen und Grafikindexfeld. Erst daraus ergibt sich die Zuordnung zu den
+bestehenden Test-Pixies; Bewegungen bleiben separat erhalten.
 
 ## Integrationsgrenzen aus der Engine
 
@@ -85,12 +97,13 @@ python3 tools/analyze_stage3b2_data.py --output docs/stage3b2-data-analysis.json
 python3 -m unittest discover -s tests -p test_stage3b2_data.py -v
 ```
 
-Sechs Tests bestanden: Originalverzeichnisse und alle Frames, überlappende
+Acht Tests bestanden: bestätigte Zuordnung aller 38 Indizes zu vorhandenen
+Originaltypen, Zurückweisung ungültiger Indizes sowie Originalverzeichnisse und alle Frames, überlappende
 Levelrecords, falsche Levelnummer, ungültiger Grafikoffset, abgeschnittene Grafikdatei
 und ein Frame, der vom Originalarchiv abweicht. Die Prüfer lehnen beschädigte Daten
 ab und halten die nicht belegte Typzuordnung ausdrücklich leer.
 
 Noch **kein Stage-3b-2-ASM/PRG/D81**: ein scheinbar funktionierender Build mit
-erfundener Zuordnung wäre keine gültige Umsetzung. Nach Klärung folgen die
+erfundener Zuordnung wäre keine gültige Umsetzung. Nach Klärung des Levelrecord-Formats folgen die
 DMA-Grafikübertragung, gezielte Frame-/Renderer-Anpassung, Build und D81 sowie
 Regressionstests gegen `stage3b1-stable` und eine neue XEMU-Abnahme.

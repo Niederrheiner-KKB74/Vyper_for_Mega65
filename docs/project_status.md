@@ -51,12 +51,14 @@ Anleitung und Regressionstest-Checkliste: [stage3b1.md](stage3b1.md).
 ## Stage 3b-2 – Datenanalyse, Umsetzung durch Formatfrage blockiert
 
 Branch `stage3b-2` basiert auf `stage3b1-stable`. VYGR-Verzeichnis, sämtliche
-239 Originalframes und alle 100 VYLV-Verzeichnisrecords wurden geprüft; sechs
+239 Originalframes und alle 100 VYLV-Verzeichnisrecords wurden geprüft; acht
 Datentests bestanden. Level 1: Offset `$328`, 849 Byte. Die Bewegungslogik und
 sämtliche bisherigen Release-Artefakte sind unverändert.
 
-Das Original-Datenpaket bezeichnet die Verbindung zwischen Level-Grafikindizes
-0..37 und VYGR-Typen 1..36 ausdrücklich als offen. Ohne VYLV-Recordbeschreibung/
-Erzeuger und verbindliche Typzuordnung werden keine Gegnertypen oder Grafikslots
-erfunden. Deshalb noch kein Stage-3b-2-PRG/D81. Befunde und erforderliche Angaben:
+Die historische Indexfrage ist durch Benutzerbestätigung gelöst: VYLV-Indizes
+0 und 1 → VYGR-Typ 12; Indizes 2..37 → Typen 1..36 (Index minus 1).
+Diese Regel ist implementiert und gegen die Originalgrafiktypen geprüft.
+Noch fehlt die VYLV-Recordbeschreibung/der Erzeuger, insbesondere die Offsets
+und Eintragsstruktur der Grafikindexfelder. Die benötigten Level-1-Typen bleiben
+daher unbestimmt; noch kein Stage-3b-2-PRG/D81. Befunde und erforderliche Angaben:
 [stage3b2.md](stage3b2.md).

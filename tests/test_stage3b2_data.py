@@ -11,6 +11,20 @@ SPEC.loader.exec_module(DATA)
 
 
 class OriginalDataTests(unittest.TestCase):
+    def test_confirmed_mapping_against_original_type_directory(self):
+        types = DATA.graphics_types((ROOT/'assets/VYGR.DAT').read_bytes())
+        expected = [12, 12, *range(1, 37)]
+        actual = [DATA.vygr_type_for_level_index(i) for i in range(38)]
+        self.assertEqual(actual, expected)
+        for typ in actual:
+            self.assertEqual(types[typ-1]['type'], typ)
+            self.assertGreater(len(types[typ-1]['frames']), 0)
+
+    def test_reject_invalid_graphics_indices(self):
+        for index in (-1, 38, 256, None, True, 2.0, '2'):
+            with self.subTest(index=index), self.assertRaises(ValueError):
+                DATA.vygr_type_for_level_index(index)
+
     def test_all_original_records_and_frames(self):
         report = DATA.analyze()
         self.assertEqual(report['vylv']['records'], 100)
