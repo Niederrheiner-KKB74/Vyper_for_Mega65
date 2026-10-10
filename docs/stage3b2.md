@@ -4,9 +4,8 @@ Stage 3b-2 integriert die vom Benutzer bestätigte VYLV-Recordstruktur und verwe
 für die 22 Level-1-Pfad-Pixies Originalgrafiktyp **12** aus geladenem `VYGR.DAT`.
 Basis ist `stage3b1-stable`. Dessen Quellen, Builder und Release-Dateien bleiben
 unverändert. Neue Quelle: `src/engine/stage3b2.asm`; Artefakte: `releases/stage_3b2/`.
-Originaldaten, Grafik und Enginebetrieb sind unter XEMU bestätigt. Die BASIC-Exit-
-Korrektur ist assembliert und automatisch geprüft; ihre XEMU-Abnahme bleibt offen.
-**Kein Stable-Tag.** [Ursache und Vergleich](stage3b2_exit_investigation.md).
+Originaldaten, Grafik, Enginebetrieb und die BASIC-Exit-Korrektur sind vom Benutzer
+am 10.10.2026 unter XEMU bestätigt. **Stabile Referenz: `stage3b2-stable`.** [Ursache und Vergleich](stage3b2_exit_investigation.md).
 
 ## Bestätigtes Recordformat und Indexzuordnung
 
@@ -133,4 +132,5 @@ Die Tests ersetzen keinen XEMU-Test.
    Farben und normal blinkender Cursor ohne rote Linie und ohne nötigen Tastendruck.
    Erneut per LOAD/RUN starten. Keine Ausgabe im aktiven RRB-Modus.
 
-Erst nach diesem Vergleich ist Stage 3b-2 als stabil abgenommen.
+Der Benutzer hat Stage 3b-2 am 10.10.2026 einschließlich fehlerfreiem BASIC-Exit
+als stabil bestätigt. Diese Checkliste bleibt für zukünftige Regressionstests erhalten.

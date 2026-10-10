@@ -3,8 +3,9 @@
 Der Benutzer bestätigt Originaldaten, Grafiken und Enginebetrieb unter XEMU mit
 ROM **V920395**, Bildschirmmodus **80×25**. Beim Exit mit `X` tritt abhängig vom
 Zeitpunkt eine rote Linie oder ein unsichtbarer Cursor auf. Ein Tastendruck macht
-den Cursor sichtbar. Die Korrektur ist gebaut und automatisch geprüft;
-**die erneute XEMU-Abnahme ist offen. Kein Stable-Tag.**
+den Cursor sichtbar. Die Korrektur ist gebaut und automatisch geprüft. Anschließend bestätigt der
+Benutzer am 10.10.2026, dass beim Beenden kein Fehler mehr auftritt und Stage 3b-2
+abgenommen ist. **Stabile Referenz: `stage3b2-stable`.**
 
 ## Ursache vor der Änderung nachgewiesen
 
@@ -34,7 +35,8 @@ zwar die BASIC-Farben, aber ein späterer Cursor-Blinkzyklus schreibt das inzwis
 falsche gesicherte Farbbyte wieder zurück. Dies erklärt die Abhängigkeit vom
 Blinkzeitpunkt und die unerwünschte Farbe nach BASIC-Rückkehr. Die Tests führen
 hierfür die echten ROM-Instruktionen aus; die pixelgenaue Linienform wird durch
-den Hosttest nicht gerendert und bleibt Teil der XEMU-Abnahme.
+den Hosttest nicht gerendert; die fehlerfreie Anzeige wurde anschließend vom
+Benutzer unter XEMU bestätigt.
 
 `$E030` springt in diesem ROM nach `$ED96`: Die ROM-eigene Cursor-Steuerung benutzt
 ebenfalls `$111F–$1123`. Das bestätigt die Bedeutung der Bytes unabhängig von der
@@ -81,7 +83,7 @@ Referenz ist Commit `778b7d41c26086dc143312453ce033ea9e8d8130`:
 | D81 | `17bd9404b4151125bad95bf1e4df28a5f44df0a53207ce117da847e87b9c3bdc` | `426534c38c5dcd474302ad2882e2b942a9c3f33a9c19547b54fc905922cbd1e0` |
 
 Die alte Fassung bleibt über diesen Commit abrufbar. Die neue Fassung liegt weiter
-unter `releases/stage_3b2/` im Branch `stage3b-2`, innerhalb des bestehenden Draft-PR #2.
+unter `releases/stage_3b2/` im Branch `stage3b-2`, innerhalb des bestehenden PR #2.
 Stage 3b-1 und `stage3b1-stable` bleiben unangetastet.
 
 ## Automatisch geprüft und noch unter XEMU zu prüfen
@@ -111,7 +113,8 @@ MEGA65_ROM=/pfad/MEGA65.ROM python3 -m unittest discover -s tests -p 'test_stage
 Unter XEMU bitte Originaldaten/Grafiken, alle 24 Pixies und Joystick erneut prüfen.
 Mehrmals mit `X` nach unterschiedlichen Laufzeiten beenden: BASIC-Cursor muss
 ohne Tastendruck normal blinken, ohne rote Linie. Danach `LOAD"STAGE3B2",8` und
-`RUN` erneut ausführen. Stage 3b-2 erst nach Benutzerbestätigung als stabil markieren.
+`RUN` erneut ausführen. Diese Benutzerbestätigung liegt seit dem 10.10.2026 vor; der geprüfte Stand ist
+mit `stage3b2-stable` gesichert.
 
 Quellen zur RAM-Belegung:
 [offizieller User Guide](https://github.com/MEGA65/mega65-user-guide/blob/cefce48d72e5c98d732c0589461d62b205b5165f/memory.tex).

@@ -80,7 +80,8 @@ Die 22 Pfad-Pixies verwenden `$261/$262/$263`. Joystick-/Orbit-Slots und Bewegun
 tabellen bleiben erhalten. `$6800/$6900` werden nach SEQ-Ende für den Frame-
 Rückvergleich wiederverwendet. Neue Bereiche sind durch Assembly-Guards und
 Engine-Bytevergleich geprüft. Die Grafikintegration wurde unter XEMU bestätigt;
-die BASIC-Exit-Abnahme bleibt offen. Details: [stage3b2.md](stage3b2.md).
+auch die BASIC-Exit-Korrektur wurde am 10.10.2026 vom Benutzer bestätigt
+(`stage3b2-stable`). Details: [stage3b2.md](stage3b2.md).
 
 ### BASIC-Exit-Korrektur in Stage 3b-2
 

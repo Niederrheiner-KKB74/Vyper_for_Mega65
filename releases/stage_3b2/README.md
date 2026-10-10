@@ -1,4 +1,4 @@
-# Stage 3b-2 – BASIC-Exit-Korrektur, XEMU-Abnahme offen
+# Stage 3b-2 – stabil bestätigt (`stage3b2-stable`)
 
 [VYPER_STAGE3B2.d81](VYPER_STAGE3B2.d81) enthält `STAGE3B2` als PRG und beide
 Original-SEQ-Dateien. In Laufwerk 8: `LOAD"STAGE3B2",8`, dann `RUN`.
@@ -14,6 +14,6 @@ Die alte Objektkopie überschrieb Cursordaten des KERNALs. Objekte und Diagnosti
 liegen jetzt bei `$1600/$1900`; nur 53 Adressbytes im PRG ändern sich.
 [Ursache, Vergleich und Tests](../../docs/stage3b2_exit_investigation.md).
 Assembly, D81 und 23 Tests mit dem bereitgestellten ROM V920395 bestanden.
-Die Korrektur bitte unter XEMU testen: mehrmals `X`, normaler Cursor ohne rote
-Linie und ohne nötigen Tastendruck, anschließend erneut LOAD/RUN.
-Kein Stable-Tag vor dieser Bestätigung.
+Der Benutzer bestätigt am 10.10.2026 den fehlerfreien Exit unter XEMU und nimmt
+Stage 3b-2 ab. Stabile Referenz: `stage3b2-stable`. Die bestätigten PRG-/D81-/ASM-
+Artefakte bleiben unverändert.
