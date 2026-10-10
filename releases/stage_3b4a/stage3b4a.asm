@@ -84,7 +84,7 @@
 .const SCREEN_RAM=$5000
 .const COLOR_RAM=$d800
 .const COLOR_TEMPLATE=$6000
-.const SPRPTR_TABLE=$5800
+.const SPRPTR_TABLE=$5c80
 .const NCM_DATA=$8000
 .const NCM_BLANK=NCM_DATA/64
 .const NCM_FRAME0_TOP=NCM_BLANK+1
@@ -109,7 +109,7 @@ BasicUpstart:
     .word BasicEnd
     .word 10
     .byte $9e
-    .text "18432"
+    .text "14336"
     .byte 0
 BasicEnd:
     .word 0
@@ -203,7 +203,7 @@ start:
 
     // CRAM2K makes the complete $D800-$DFFF CPU window point at Color RAM.
     // Save the BASIC/KERNAL 2KB colour/attribute screen BEFORE overwriting it.
-    jsr save_basic_color_ram
+    jsr hud.save_all_colour
 
     // CHR16 (SEAM) + FCLRHI: chars <256 mono, chars >=256 full-colour/NCM.
     lda saved_d054
@@ -315,7 +315,7 @@ v010_not_minus:
     lda #0
     sta anim_tick
     jsr advance_animation
-    jsr v012a_capture_animation
+    .fill 3,$ea // old static-slot capture no longer owns Screen RAM
     jsr s3b2.animate
 v010_skip_anim:
     // Stage 2g: snapshot before motion, after motion and after rendering.
@@ -729,13 +729,13 @@ advance_animation:
 v010_frame_ok_1:
     tax
     lda v010_t1_toplo,x
-    sta SCREEN_RAM+364
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t1_tophi,x
-    sta SCREEN_RAM+365
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t1_botlo,x
-    sta SCREEN_RAM+444
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t1_bothi,x
-    sta SCREEN_RAM+445
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     inc v010_frame_2
     lda v010_frame_2
     cmp #7
@@ -745,13 +745,13 @@ v010_frame_ok_1:
 v010_frame_ok_2:
     tax
     lda v010_t2_toplo,x
-    sta SCREEN_RAM+368
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t2_tophi,x
-    sta SCREEN_RAM+369
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t2_botlo,x
-    sta SCREEN_RAM+448
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t2_bothi,x
-    sta SCREEN_RAM+449
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     inc v010_frame_3
     lda v010_frame_3
     cmp #10
@@ -761,13 +761,13 @@ v010_frame_ok_2:
 v010_frame_ok_3:
     tax
     lda v010_t3_toplo,x
-    sta SCREEN_RAM+372
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t3_tophi,x
-    sta SCREEN_RAM+373
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t3_botlo,x
-    sta SCREEN_RAM+452
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t3_bothi,x
-    sta SCREEN_RAM+453
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     inc v010_frame_4
     lda v010_frame_4
     cmp #6
@@ -777,13 +777,13 @@ v010_frame_ok_3:
 v010_frame_ok_4:
     tax
     lda v010_t4_toplo,x
-    sta SCREEN_RAM+604
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t4_tophi,x
-    sta SCREEN_RAM+605
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t4_botlo,x
-    sta SCREEN_RAM+684
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t4_bothi,x
-    sta SCREEN_RAM+685
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     inc v010_frame_5
     lda v010_frame_5
     cmp #8
@@ -793,13 +793,13 @@ v010_frame_ok_4:
 v010_frame_ok_5:
     tax
     lda v010_t5_toplo,x
-    sta SCREEN_RAM+608
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t5_tophi,x
-    sta SCREEN_RAM+609
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t5_botlo,x
-    sta SCREEN_RAM+688
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t5_bothi,x
-    sta SCREEN_RAM+689
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     inc v010_frame_6
     lda v010_frame_6
     cmp #6
@@ -809,13 +809,13 @@ v010_frame_ok_5:
 v010_frame_ok_6:
     tax
     lda v010_t6_toplo,x
-    sta SCREEN_RAM+612
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t6_tophi,x
-    sta SCREEN_RAM+613
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t6_botlo,x
-    sta SCREEN_RAM+692
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     lda v010_t6_bothi,x
-    sta SCREEN_RAM+693
+    .fill 3,$ea // retire unused fixed-slot writes; frame counters remain
     rts
 
 v010_t1_toplo:
@@ -1914,7 +1914,7 @@ shot_sprite:
 .word $0200,$0140,$0200,$0200,$0200,$0200,$0200,$0200,$0200,$0200
 .word $0200,$0200,$0200,$0200,$0200,$0200,$0200,$0200,$0200,$0200
 
-*=$5800
+*=$5c80
 .fill 16,0
 
 *=$6000
@@ -2349,17 +2349,11 @@ v013_draw_slot:
 
 // X = screen row, pointer = $5000 + row*80 + 42.
 v012a_set_row_pointer:
-    lda v012a_screen_lo,x
-    sta v012a_store+1
-    lda v012a_screen_hi,x
-    sta v012a_store+2
-    rts
+    jmp hud.set_row_pointer
+    .fill 10,$ea
 v012a_set_color_pointer:
-    lda v012a_color_lo,x
-    sta v012a_store+1
-    lda v012a_color_hi,x
-    sta v012a_store+2
-    rts
+    jmp hud.set_colour_pointer
+    .fill 10,$ea
 v012a_write_row:
     jsr v012a_set_row_pointer
     ldy #0
@@ -2377,7 +2371,7 @@ v012a_write_row:
     rts
 
 v012a_store:
-    sta $ffff,y
+    jmp hud.store
     rts
 
 // V0.13e: copy original animated NCM glyphs into a four-glyph
@@ -2453,10 +2447,10 @@ v012a_bot_lo: .byte $81
 v012a_bot_hi: .byte 2
 // Occupied rows: three static RRB pixies at offsets 42..53.
 // Reserve offset 54 for the moving pixie; otherwise use offset 42.
-v012a_screen_lo: .fill 25, <(SCREEN_RAM+i*80+42)
-v012a_screen_hi: .fill 25, >(SCREEN_RAM+i*80+42)
-v012a_color_lo: .fill 25, <(COLOR_RAM+i*80+42)
-v012a_color_hi: .fill 25, >(COLOR_RAM+i*80+42)
+v012a_screen_lo: .fill 25, <(SCREEN_RAM+i*128+84)
+v012a_screen_hi: .fill 25, >(SCREEN_RAM+i*128+84)
+v012a_color_lo: .fill 25, <(i*128+84)
+v012a_color_hi: .fill 25, >(i*128+84)
 
 
 // Stage 3b-2 exit fix: $1000-$15FF belongs to the KERNAL, including
@@ -2815,11 +2809,8 @@ s2ia_clear_screen:
     jsr v012a_set_color_pointer
     ldy #0
 s2ia_clear_color:
-    lda #0
-    jsr v012a_store
-    iny
-    cpy #36
-    bne s2ia_clear_color
+    jsr hud.clear_colour_dma
+    .fill 7,$ea // same addresses; one DMA copy replaces 36 long byte stores
     lda VIC_D030
     and #$fe
     sta VIC_D030

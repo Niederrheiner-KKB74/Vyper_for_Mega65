@@ -13,26 +13,73 @@ NAMES=BUILD.symbols((ARTIFACTS/'STAGE3B4A.sym').read_text())
 class Memory(PREVIOUS.PaletteMemory):
     def __init__(self,base):
         super().__init__(base)
-        # Arbitrary font bytes exercise all pairs; no ROM data is distributed.
         self.char_wom=bytes((i*37+i//8)&255 for i in range(8192))
         self.screen_writes=[]
+        self.colour=bytearray(self.data[0xd800:0xe000])+bytearray([0xa5])*0x7800
+    def __getitem__(self,a):
+        if 0xff80000<=a<0xff88000: return self.colour[a-0xff80000]
+        if 0xd800<=a<0xdc00 or 0xdc00<=a<0xe000 and self.data[0xd030]&1:
+            return self.colour[a-0xd800]
+        return super().__getitem__(a)
     def __setitem__(self,a,v):
-        if 0x5000<=a<0x57d0: self.screen_writes.append(a)
-        if a==0xd705 and self.data[0xd701]*256+v==NAMES['font_dma']:
+        if 0xff80000<=a<0xff88000:
+            self.colour[a-0xff80000]=v
+            return
+        if 0xd800<=a<0xdc00 or 0xdc00<=a<0xe000 and self.data[0xd030]&1:
+            self.colour[a-0xd800]=v
+            return
+        if 0x5000<=a<0x5c80: self.screen_writes.append(a)
+        pointer=self.data[0xd701]*256+v if a==0xd705 else -1
+        if pointer in (NAMES['font_dma'],NAMES['colour_backup_dma'],NAMES['colour_restore_dma'],NAMES['clear_dma']):
             self.data[a]=v
-            p=NAMES['font_dma']; d=self.data[p:p+15]
-            assert d[0]==0x80 and d[2:5]==b'\x0a\x00\x00'
-            assert d[5:7]==b'\x00\x08' and d[10:15]==b'\x00\x40\x00\x00\x00'
-            src=int.from_bytes(d[7:10],'little')+(d[1]<<20)
-            if 0xff7e000<=src<=0xff7f800:
-                payload=self.char_wom[src-0xff7e000:src-0xff7e000+2048]
-            else:
-                assert src+2048<=len(self.data)
-                payload=self.data[src:src+2048]
-            self.data[0x4000:0x4800]=payload
-            self.base.transfers.append((src,0x4000,2048))
+            p=pointer; source_mb=target_mb=0
+            while self.data[p]:
+                opt=self.data[p]; p+=1
+                if opt in (0x80,0x81):
+                    if opt==0x80: source_mb=self.data[p]
+                    else: target_mb=self.data[p]
+                    p+=1
+                else: assert opt==0x0a
+            p+=1; d=self.data[p:p+11]
+            assert d[0]==0 and d[9:11]==b'\x00\x00'
+            count=int.from_bytes(d[1:3],'little')
+            source=int.from_bytes(d[3:6],'little')+(source_mb<<20)
+            target=int.from_bytes(d[6:9],'little')+(target_mb<<20)
+            if 0xff7e000<=source<0xff80000:
+                payload=self.char_wom[source-0xff7e000:source-0xff7e000+count]
+            else: payload=bytes(self[source+i] for i in range(count))
+            for i,value in enumerate(payload): self[target+i]=value
+            self.base.transfers.append((source,target,count))
             return
         super().__setitem__(a,v)
+
+class CPU(PREVIOUS.R.LEGACY.MPU):
+    """Narrow 45GS02 adapter for the real long Color-RAM stores, not pixel output."""
+    def __init__(self,**kw):
+        super().__init__(**kw)
+        self.b=self.z=0; self.eom=False
+    def step(self):
+        opcode=self.memory[self.pc]
+        if opcode in (0x4b,0x5b,0x6b,0x7b):
+            if opcode==0x4b: self.z=self.a
+            elif opcode==0x5b: self.b=self.a
+            elif opcode==0x6b: self.a=self.z
+            elif opcode==0x7b: self.a=self.b
+            # TAB sets B without changing status; other transfers set N/Z.
+            if opcode!=0x5b: self.FlagsNZ(self.a if opcode in (0x6b,0x7b) else self.z)
+            self.pc+=1; self.processorCycles+=2; self.eom=False
+            return self
+        if opcode==0xea and self.memory[(self.pc+1)&65535]==0x92:
+            self.eom=True; self.pc+=1; self.processorCycles+=2; return self
+        if opcode==0x92:
+            assert self.eom
+            assert self.p&self.INTERRUPT, 'IRQ must be masked with temporary base page'
+            pointer=self.b*256+self.memory[self.pc+1]
+            address=sum(self.memory[pointer+i]<<(i*8) for i in range(4))+self.z
+            self.memory[address]=self.a
+            self.eom=False; self.pc+=2; self.processorCycles+=8; return self
+        self.eom=False
+        return super().step()
 
 class Machine(PREVIOUS.Machine):
     def __init__(self):
@@ -40,10 +87,23 @@ class Machine(PREVIOUS.Machine):
         prg=(ARTIFACTS/'STAGE3B4A.PRG').read_bytes()
         self.memory.data[0x2001:0x2001+len(prg)-2]=prg[2:]
         self.memory=Memory(self.memory.base)
-        self.cpu.memory=self.memory
-        for a,v in {0xd068:0,0xd069:0x10,0xd06a:0,0xd05a:120,0xd031:0x20,0xd030:0,0xd070:0}.items():
+        previous=self.cpu
+        self.cpu=CPU(memory=self.memory,pc=NAMES['startup'])
+        self.cpu.p=previous.p; self.cpu.sp=previous.sp
+        for a,v in {0xd068:0,0xd069:0x10,0xd06a:0,0xd05a:120,0xd031:0x80,0xd030:0,0xd070:0,0xd060:0,0xd061:8,0xd062:0,0xd063:0}.items():
             self.memory.data[a]=v
         self.before=bytes(self.memory.data)
+        self.cleared=False
+
+    def trap(self):
+        if self.cpu.pc==0xffd2 and self.cpu.a==0x93:
+            # Clear-screen KERNAL command before loader. It runs with BASIC VIC state.
+            self.assert_basic_video=(self.memory.data[0xd060:0xd063]==b'\x00\x08\x00')
+            self.memory.data[0x800:0xfd0]=b' '*2000
+            assert self.assert_basic_video
+            assert self.memory.data[0xd021]==0
+            self.cleared=True
+        super().trap()
 
 
 def begin(m):
@@ -70,22 +130,23 @@ def call(m,name):
     raise AssertionError('HUD call failed: '+name)
 
 def number(m,row,column,length):
-    at=0x5000+row*80+2+column*2
+    at=0x5000+row*128+42+2+column*2
     return ''.join(chr(c+64 if 1<=c<=26 else c) for c in m.memory.data[at:at+length*2:2])
 
-def hud_pixels(m):
-    """All 40 SEAM entries. Implements XEMU SEAM fetch and transparency.
+def hud_pixels(m,previous=None):
+    """All 64 SEAM entries. Implements XEMU SEAM fetch and transparency.
 
     Returns palette index per native H640 pixel, with the original 2x glyph width.
-    Monochrome UI uses four-column trimming; NCM symbols use all 16 columns.
+    Monochrome text uses all eight columns; only frame cells are trimmed.
+    NCM symbols use all 16 columns.
     """
-    result=[[0]*640 for _ in range(200)]
+    result=[list(row) for row in previous] if previous is not None else [[0]*640 for _ in range(200)]
     for y in range(200):
         row=y//8; sub=y%8; x=0; offset=0; transparent=False
-        for e in range(40):
-            at=row*80+e*2
+        for e in range(64):
+            at=row*128+e*2
             word=int.from_bytes(m.memory.data[0x5000+at:0x5002+at],'little')
-            attrs=int.from_bytes(m.memory.data[0xd800+at:0xd802+at],'big')
+            attrs=int.from_bytes(m.memory.colour[at:at+2],'big')
             if attrs&0x1000:
                 x=word&0x3ff; offset=(word>>13)&7
                 if word&0x1000: offset=-offset
@@ -123,20 +184,22 @@ class HUDTests(unittest.TestCase):
         self.assertEqual(m.memory.data[0x54000:0x5b8a8],(BUILD.ROOT/'assets/VYGR.DAT').read_bytes())
         self.assertEqual(m.memory.data[0xc840:0xc8c0],(BUILD.ROOT/'assets/player/player_ncm.bin').read_bytes())
         self.assertEqual(m.memory.data[NAMES['player2_active']],0)
+        self.assertTrue(m.cleared)
 
     def test_initial_values_font_and_palette_isolation(self):
         m=self.start()
-        for row,column,length,expected in [(1,6,7,'0000000'),(4,6,7,'0000000'),(5,11,3,'001'),(23,13,3,'100'),(24,11,3,'115')]:
+        for row,column,length,expected in [(1,2,7,'0000000'),(4,2,7,'0000000'),(5,7,3,'001'),(23,4,3,'100'),(24,7,3,'115')]:
             self.assertEqual(number(m,row,column,length),expected)
-        for row in (0,1,3,4,5,14,15,16,18,19,20,21,23,24):
-            text=number(m,row,1,17).strip()
+        for row in (0,1,3,4,5,14,15,16,18,19,20,21,22,23,24):
+            column,length=(0,10) if row in (0,21,24) else (1,9)
+            text=number(m,row,column,length).strip()
             self.assertEqual(text,BUILD.LABELS[row][0])
         self.assertEqual(m.memory.data[0xd05a],60)
         self.assertTrue(m.memory.data[0xd031]&128)
-        for i in range(1024):
-            b=m.memory.char_wom[i]
-            expected=(0x80 if b&0xc0 else 0)|(0x40 if b&0x30 else 0)|(0x20 if b&12 else 0)|(0x10 if b&3 else 0)
-            self.assertEqual(m.memory.data[0x4000+i],expected)
+        self.assertEqual(m.memory.data[0x4000:0x4400],m.memory.char_wom[:1024])
+        self.assertEqual(m.memory.data[0x4410:0x4800],m.memory.char_wom[1040:2048])
+        # Original H retains its gap; no pairwise OR or four-column trim.
+        self.assertEqual(m.memory.data[0x4040:0x4048],m.memory.char_wom[64:72])
         self.assertEqual(m.memory.primary_palette(),tuple(tuple(m.memory.banks[1][c][i] for c in range(3)) for i in range(256)))
         for c in range(3): self.assertEqual(m.memory.banks[3][c],bytearray([3*41+c]*256))
         palette=[(BUILD.ROOT/'assets/player'/f'player_palette_{c}.bin').read_bytes() for c in 'rgb']
@@ -166,18 +229,18 @@ class HUDTests(unittest.TestCase):
         for score in (0,1,1234567,10000000,4294967295):
             m.memory.data[NAMES['player1_score']:NAMES['player1_score']+4]=score.to_bytes(4,'little')
             call(m,'hud_update_score')
-            self.assertEqual(number(m,4,6,7),f'{score%10000000:07d}')
+            self.assertEqual(number(m,4,2,7),f'{score%10000000:07d}')
             self.assertEqual(int.from_bytes(m.memory.data[NAMES['player1_score']:NAMES['player1_score']+4],'little'),score)
         m.memory.screen_writes.clear()
         for name in ('hud_update_score','hud_update_level','hud_update_lives','hud_update_points'): call(m,name)
         self.assertEqual(m.memory.screen_writes,[])
         m.memory.data[NAMES['player1_level']:NAMES['player1_level']+2]=(999).to_bytes(2,'little')
-        call(m,'hud_update_level'); self.assertEqual(number(m,5,11,3),'999')
+        call(m,'hud_update_level'); self.assertEqual(number(m,5,7,3),'999')
 
     def test_motion_rendering_prefix_survives_clearing_and_player2_keys_inactive(self):
         old=PREVIOUS.Machine().execute(); PREVIOUS.begin(old)
         new=self.start()
-        prefix=[bytes(new.memory.data[0x5000+r*80:0x5000+r*80+42]) for r in range(25)]
+        prefix=[bytes(new.memory.data[0x5000+r*128:0x5000+r*128+84]) for r in range(25)]
         initial_hud=[row[480:] for row in hud_pixels(new)]
         new_start=new.cpu.processorCycles; old_start=old.cpu.processorCycles
         for i in range(56):
@@ -186,27 +249,34 @@ class HUDTests(unittest.TestCase):
             self.assertEqual(new.memory.data[0x1600:0x1900],old.memory.data[0x1600:0x1900])
             self.assertEqual(new.memory.data[NAMES['s2i_phase']:NAMES['s2i_phase']+22],old.memory.data[PREVIOUS.NAMES['s2i_phase']:PREVIOUS.NAMES['s2i_phase']+22])
             self.assertLessEqual(max(new.memory.data[NAMES['s2i_x']:NAMES['s2i_x']+22])+16,240)
-            for row in range(25): self.assertEqual(bytes(new.memory.data[0x5000+row*80:0x5000+row*80+42]),prefix[row])
+            for row in range(25): self.assertEqual(bytes(new.memory.data[0x5000+row*128:0x5000+row*128+84]),prefix[row])
             for row in range(2,23):
                 count=new.memory.data[NAMES['v014_row_count']+row]
                 for slot in range(count):
-                    at=0x5000+row*80+42+slot*4
-                    self.assertEqual(int.from_bytes(new.memory.data[at:at+2],'little')&1023,old.memory.data[at]*2)
-                    self.assertEqual(new.memory.data[at+2:at+4],old.memory.data[at+2:at+4])
+                    at=0x5000+row*128+84+slot*4
+                    old_at=0x5000+row*80+42+slot*4
+                    self.assertEqual(int.from_bytes(new.memory.data[at:at+2],'little')&1023,old.memory.data[old_at]*2)
+                    self.assertEqual(new.memory.data[at+2:at+4],old.memory.data[old_at+2:old_at+4])
             self.assertEqual(new.memory.data[NAMES['player2_active']],0)
+            for name in ('s2ja_frame','anim_tick','anim_speed','anim_paused',*[f'v010_frame_{n}' for n in range(1,7)]):
+                self.assertEqual(new.memory.data[NAMES[name]],old.memory.data[PREVIOUS.NAMES[name]])
+            for lo,hi in ((0xc840,0xc8c0),(0xc900,0xca00),(0x9800,0x9900)):
+                self.assertEqual(new.memory.data[lo:hi],old.memory.data[lo:hi])
         self.assertEqual([row[480:] for row in hud_pixels(new)],initial_hud)
         # Preserve 50Hz wait logic. Report model cycle overhead, no real-time claim.
         print('Stage3b4a model mean extra CPU cycles/frame:',(new.cpu.processorCycles-new_start-old.cpu.processorCycles+old_start)/56)
 
     def test_exit_registers_color_cursor_rom_palette_and_restart(self):
-        m=Machine().execute()
+        m=Machine()
+        m.memory.colour[0x800:0xc80]=bytes((i*53)&255 for i in range(1152))
+        m.execute()
         addresses=(0xd020,0xd021,0xd030,0xd031,0xd054,0xd05a,0xd05d,0xd058,0xd059,0xd05e,0xd060,0xd061,0xd062,0xd063,0xd064,0xd065,0xd068,0xd069,0xd06a,0xd07b,0xd070)
-        before={a:m.memory.data[a] for a in addresses}; colour=bytes(m.memory.data[0xd800:0xe000]); cursor=bytes(m.memory.data[0x1000:0x1600]); palette=m.memory.primary_palette()
+        before={a:m.memory.data[a] for a in addresses}; before[0xd021]=m.before[0xd021]; colour=bytes(m.memory.colour[:3200]); cursor=bytes(m.memory.data[0x1000:0x1600]); palette=m.memory.primary_palette()
         for _ in range(2):
             begin(m); frame(m,0x58)
             self.assertEqual(m.cpu.pc,0x0200)
             self.assertEqual({a:m.memory.data[a] for a in addresses},before)
-            self.assertEqual(bytes(m.memory.data[0xd800:0xe000]),colour)
+            self.assertEqual(bytes(m.memory.colour[:3200]),colour)
             self.assertEqual(bytes(m.memory.data[0x1000:0x1600]),cursor)
             self.assertEqual(m.memory.primary_palette(),palette)
         rom=os.environ.get('MEGA65_ROM')
@@ -228,6 +298,47 @@ class HUDTests(unittest.TestCase):
         self.assertEqual(m.cpu.pc,0x0200)
         self.assertEqual(m.memory.data[0xd05a],original_scale)
         self.assertEqual(bytes(m.memory.data[0x1000:0x1600]),m.before[0x1000:0x1600])
+
+    def test_persistent_framebuffer_rejects_missing_background_and_erases_tracks(self):
+        m=self.start()
+        self.assertTrue(m.cleared)
+        # XEMU retains pixels skipped by GOTOX or transparent zero nibbles.
+        stale=[[6]*640 for _ in range(200)]
+        raster=hud_pixels(m,stale)
+        self.assertEqual(raster,hud_pixels(m))
+        for i in range(12):
+            frame(m,buttons=(251,247,254,253)[i%4])
+            raster=hud_pixels(m,raster)
+            self.assertEqual(raster,hud_pixels(m),i)
+        # Reproduce the omitted-background defect. Blue history survives.
+        for entry in range(21):
+            at=entry*2
+            m.memory.data[0x5000+at:0x5002+at]=(640).to_bytes(2,'little')
+            m.memory.colour[at:at+2]=b'\x10\x00'
+        broken=hud_pixels(m,stale)
+        self.assertNotEqual(broken,raster)
+        self.assertEqual(broken[0][:480],[6]*480)
+
+    def test_long_store_preserves_base_z_flags_and_zero_page(self):
+        m=self.start()
+        m.memory.data[0x1a60:0x1a64]=(0xff80800).to_bytes(4,'little')
+        m.cpu.a=13; m.cpu.x=17; m.cpu.y=22; m.cpu.b=0x35; m.cpu.z=0x99; m.cpu.p=0x35
+        zero_page=bytes(m.memory.data[:256])
+        call(m,'long_colour_store')
+        self.assertEqual(m.memory[0xff80816],13)
+        self.assertEqual((m.cpu.a,m.cpu.x,m.cpu.y,m.cpu.b,m.cpu.z,m.cpu.p),(13,17,22,0x35,0x99,0x35))
+        self.assertEqual(bytes(m.memory.data[:256]),zero_page)
+
+    def test_startup_load_failure_restores_basic_background(self):
+        m=Machine(); before=m.memory.data[0xd021]
+        m.fault='open'
+        m.execute()
+        self.assertTrue(m.cleared)
+        self.assertNotEqual(m.error,0)
+        self.assertEqual(m.cpu.pc,0x0200)
+        self.assertEqual(m.memory.data[0xd021],before)
+        self.assertEqual(m.memory.data[0xd05a],120)
+        self.assertFalse(m.active)
 
     def test_font_aliases_and_direct_saved_charset(self):
         for high,bank,expected in ((0x10,0,0xff7e000),(0x18,0,0xff7e800),(0x90,0,0xff7e000),(0x98,0,0xff7e800),(0x10,2,0x21000)):

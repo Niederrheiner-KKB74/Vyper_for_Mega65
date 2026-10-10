@@ -105,20 +105,26 @@ Die Abnahme stammt vom Benutzer; ein eigener Emulatorlauf wird nicht behauptet.
 Bestätigter Programmstand: `be747701cbeee5f77af244ad3778f75088fca8a7`.
 ASM, PRG und D81 bleiben bei dieser Dokumentation unverändert. [Diagnose](stage3b3_exit_palette_fix.md).
 
-## Stage 3b-4a – HUD gemäß Issue #4, XEMU-Abnahme offen
+## Stage 3b-4a – korrigiertes HUD, XEMU-Abnahme offen
 
-Eigener Branch `stage3b-4a`, Basis `stage3b3-stable`; stabile Dateien unverändert.
-Der Benutzer hat die Amiga-Referenz bereitgestellt und die angepasste Videoausgabe
-mit Spielfeldgrenze X=240 freigegeben. H640 mit unveränderter sichtbarer Pixie-Breite;
-HUD-Prefix außerhalb des dynamischen Clearings. Drei Originalschiffe in vorbereitetem
-4×2-Raster, 1-Pixel-Abstände, vier Pixel Seitenrahmen. Player 2 bleibt inaktiv;
-P/S explizit nicht aktiv, X weiterhin Exit. Highscore/Score 0000000, Level 001,
-Formation 100 / Attack 115 als Referenz-Testwerte, noch keine Punktevergabe.
+Branch `stage3b-4a`, Basis `stage3b3-stable`; stabile Quellen/Releases unverändert.
+Der Benutzer hat die Amiga-Referenz und die breitere Ausgabe mit Spielfeldgrenze
+X=240 freigegeben. H640 mit unveränderter sichtbarer Pixie-Breite; drei Original-
+Lebenssymbole im 4×2-Raster, ein Pixel Abstand, vier Pixel Seitenrahmen. Player 2
+inaktiv, P/S explizit inaktiv, X bleibt Exit. Scores 0000000, Level 001, Testpunkte 100/115.
 
-Loader, Originaldaten, Bewegungs-/Joystick-/Animationslogik unverändert; neue
-Mono-Schrift aus Laufzeitkopie des BASIC-Charsets. Neue X-Skalierung wird beim Exit
-restauriert, KERNAL-/Cursor-RAM und ROM-Palette bleiben geschützt. Release unter
-`releases/stage_3b4a/` mit PRG/D81, drei ASM-Dateien, reproduzierbarem Builder,
-Speicherkarte, Patchvergleich und Prüfsummen. 51 Hosttests bestanden; abschließende
-HUD-Prüfung erneut bestanden, Wiederholungsbuild byteidentisch. Hostprüfung ersetzt keine XEMU-Abnahme;
-kein Stable-Tag vor Benutzerbestätigung. [Technik und Tests](stage3b4a.md).
+Der erste XEMU-Test meldet sichtbaren BASIC-Hintergrund, Pixie-Spuren und unleserliche
+Schrift. Ursache: entfernte deckende Leer-Glyphen und zu starke OR-Font-Verengung.
+Die Korrektur verwendet 128-Byte-Zeilen mit vollständiger deckender Hintergrundfüllung,
+HUD-Prefix und unveränderten acht dynamischen Slots. Vollständiger BASIC-Font statt
+verengter Schrift; ungenutzte alte feste Animations-Screen-Stores entfernt. BASIC
+wird vor dem Loader per KERNAL geleert, die Ladeanzeige hat schwarzen Hintergrund.
+Alle 3200 berührten Color-RAM-Bytes und die ursprüngliche Hintergrundfarbe werden
+beim Exit restauriert. Kein KERNAL-/Cursor-/Zero-Page-Eingriff; ROM-Palette bleibt erhalten.
+
+Originaldaten/SEQ-Loader, Parser, Bewegung, Joystick und aktive Pixie-Animation
+unverändert. 54 Regressionstests bestanden, einschließlich elf gezielter HUD-Tests. Diese prüfen
+auch vorherige Frame-Pixel statt eines
+implizit schwarzen Ausgangsbildes. Release unter `releases/stage_3b4a/` mit PRG/D81,
+Quellen, reproduzierbarem Builder und Vergleich. Kein Stable-Tag vor erneutem XEMU-Test
+und Benutzerbestätigung. [Technik](stage3b4a.md), [Diagnose](stage3b4a_background_font_fix.md).

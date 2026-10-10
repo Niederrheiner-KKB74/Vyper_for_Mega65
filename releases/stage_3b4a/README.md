@@ -1,18 +1,21 @@
-# Stage 3b-4a – HUD-Testrelease
+# Stage 3b-4a – korrigiertes HUD-Testrelease
 
-[VYPER_STAGE3B4A.d81](VYPER_STAGE3B4A.d81) enthält das PRG `STAGE3B4A` sowie die
-Originaldateien `VYLV.DAT` und `VYGR.DAT` als SEQ.
+[VYPER_STAGE3B4A.d81](VYPER_STAGE3B4A.d81) enthält `STAGE3B4A` sowie Original-
+`VYLV.DAT` / `VYGR.DAT` als SEQ. Laufwerk 8: `LOAD"STAGE3B4A",8`, dann `RUN`.
 
-In XEMU Laufwerk 8: `LOAD"STAGE3B4A",8`, anschließend `RUN`.
+Korrigiert nach erstem XEMU-Test: KERNAL-Clear und schwarzer Ladehintergrund;
+deckende Leer-Glyphen vor jedem Raster beseitigen Bewegungsreste; HUD benutzt
+vollständige achtspaltige BASIC-Schrift. 128-Byte-Zeilen, unverändert acht bewegliche
+Slots. Alle 3200 verwendeten Color-RAM-Bytes werden beim Exit restauriert.
 
-Basis: `stage3b3-stable`, unverändert erhalten. HUD rechts, Highscore/Score 0000000,
-LEVEL 001, drei Original-Lebenssymbole im 4×2-Raster. Player 2 inaktiv; P/S nicht
-aktiv, X beendet. FORMATION 100 / ATTACK 115 sind Referenz-Testwerte.
+Drei Original-Lebenssymbole im 4×2-Feld; Player 2 inaktiv, P/S inaktiv, X Exit.
+Scores 0000000, Level 001; Formation 100 / Attack 115 sind Referenz-Testwerte.
+54 Hosttests bestanden, Wiederholungsbuild byteidentisch.
+Stage 3b-3 bleibt unverändert. Noch kein Stable-Tag; neue Benutzer-XEMU-Abnahme offen.
 
-[Build, Speicherbelegung, Vergleich und XEMU-Checkliste](../../docs/stage3b4a.md).
-[Hauptquelle](stage3b4a.asm), [HUD](stage3b4a_hud.asm),
-[statische Tabellen](stage3b4a_templates.asm), [Buildbericht](build-report.json).
+[Technik/Build/Testcheckliste](../../docs/stage3b4a.md),
+[Diagnose und Vergleich](../../docs/stage3b4a_background_font_fix.md),
+[Quelle](stage3b4a.asm), [HUD](stage3b4a_hud.asm), [Tabellen](stage3b4a_templates.asm).
 
-Assembly/D81-Prüfung und Hosttests bestanden. XEMU-Abnahme durch den Benutzer steht
-noch aus; kein Stable-Tag für diese Stage. Bitte insbesondere Schrift, 4×2-Lebensfeld,
-Pixie-Darstellung, Joystick, HUD-Clearing und BASIC-Exit/Neustart prüfen.
+Bitte Hintergrund, alle Pixie-Bewegungsspuren, Schriftlesbarkeit, Joystick/Animation,
+Lebenssymbole und X/BASIC-Cursor/erneutes LOAD/RUN prüfen.

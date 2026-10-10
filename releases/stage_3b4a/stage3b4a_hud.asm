@@ -1,4 +1,4 @@
-// HUD extension: unchanged 80-byte rows and eight dynamic slots.
+// HUD extension: 128-byte rows, opaque background, full font, eight dynamic slots.
 // Logical playfield [0,240); H640 GOTOX doubles logical X. Glyphs keep 2x width.
 *=$3800 "Stage 3b-4a HUD code"
 .namespace hud {
@@ -28,11 +28,29 @@
 .const life_glyph=state+$4e
 .const life_ybits=state+$4f
 .const life_x=state+$50
+.const colour_pointer=state+$60
+.const store_value=state+$65
+.const startup_bg=state+$66
 .const hud_start=480
 .const max_lives=8
 
+startup:
+    // Clear the actual BASIC screen through KERNAL before the unchanged loader.
+    lda VIC_BG
+    sta startup_bg
+    lda #0
+    sta VIC_BG
+    lda #$93
+    jsr $ffd2
+    jsr s3b.entry
+    lda startup_bg
+    sta VIC_BG
+    rts
+
 hud_init:
     jsr s3b3.player_init
+    lda startup_bg
+    sta saved_bg
     lda $d05a
     sta saved_scale
     lda saved_d031
@@ -46,6 +64,10 @@ hud_init:
     sta VIC_CHARPTR_BK
     lda #$40
     sta VIC_CHARPTR_HI
+    lda #128
+    sta VIC_LINESTEP_LO
+    lda #64
+    sta VIC_CHRCOUNT
     jsr hud_copy_font
     // HUD uses unused indices $0A-$0F in the existing player bank 2.
     lda #$9a
@@ -80,6 +102,7 @@ hud_defaults:
 
 hud_restore_scale:
     sei
+    jsr restore_extended_colour
     lda saved_scale
     sta $d05a
     lda #0
@@ -141,39 +164,13 @@ font_dma_start:
     sta $d701
     lda #<font_dma
     sta $d705
-    // Compress original eight columns to four using pairwise OR.
-    lda #$40
-    sta font_read+2
-    sta font_write+2
-    ldy #8
-font_page:
-    ldx #0
-font_byte:
-font_read:
-    lda $4000,x
-    stx font_index+1
-    tax
-    lda font_pairs,x
-font_index:
-    ldx #0
-font_write:
-    sta $4000,x
-    inx
-    bne font_byte
-    inc font_read+2
-    inc font_write+2
-    dey
-    bne font_page
     // Ordinary mono frame cells; the right edge has an extra blank margin.
     ldx #7
 font_frame:
     lda #$f0
     sta $4400,x
-    sta $4408,x
-    lda #$0f
-    sta $4410,x
     lda #$ff
-    sta $4418,x
+    sta $4408,x
     dex
     bpl font_frame
     rts
@@ -185,6 +182,9 @@ hud_draw_static:
     ldx #0
 hud_static_row:
     stx draw_row
+    jsr set_prefix
+    jsr draw_background
+    ldx draw_row
     jsr set_prefix
     lda template_lo,x
     sta template_read+1
@@ -203,7 +203,7 @@ screen_store:
 attribute_read:
     lda $ffff,y
 colour_store:
-    sta $ffff,y
+    jsr long_colour_store
     iny
     cpy #42
     bne hud_static_byte
@@ -220,7 +220,7 @@ hud_static_suffix:
     lda #0
     jsr life_colour
     iny
-    cpy #80
+    cpy #86
     bne hud_static_suffix
     ldx draw_row
     inx
@@ -241,11 +241,13 @@ set_prefix:
     sta number_store+2
     sta life_store+2
     lda colour_lo,x
-    sta colour_store+1
-    sta life_colour+1
+    sta colour_pointer
     lda colour_hi,x
-    sta colour_store+2
-    sta life_colour+2
+    sta colour_pointer+1
+    lda #$f8
+    sta colour_pointer+2
+    lda #$0f
+    sta colour_pointer+3
     rts
 
 // X=state byte offset, Y=byte length. Z=1 means no change.
@@ -290,7 +292,7 @@ score_p2:
 score_work:
     lda #7
     sta digit
-    lda #6
+    lda #2
     sta draw_column
     txa
     clc
@@ -312,7 +314,7 @@ hud_update_level:
     beq level_done
     lda #5
     sta draw_row
-    lda #11
+    lda #7
     sta draw_column
     lda #3
     sta digit
@@ -328,7 +330,7 @@ hud_update_points:
     beq points_attack
     lda #23
     sta draw_row
-    lda #13
+    lda #4
     sta draw_column
     lda #3
     sta digit
@@ -341,7 +343,7 @@ points_attack:
     beq points_done
     lda #24
     sta draw_row
-    lda #11
+    lda #7
     sta draw_column
     lda #3
     sta digit
@@ -554,8 +556,159 @@ life_store:
     sta $ffff,y
     rts
 life_colour:
+    jmp long_colour_store
+
+// Preserve A/X/Y/flags/B/Z. Temporary base page $1A exposes the long pointer
+// without borrowing any KERNAL zero-page bytes. IRQs stay masked while B differs.
+long_colour_store:
+    php
+    pha
+    sei
+    sta store_value
+    .byte $7b // TBA
+    pha
+    .byte $6b // TZA
+    pha
+    lda #$1a
+    .byte $5b // TAB
+    tya
+    .byte $4b // TAZ
+    lda store_value
+    .byte $ea,$92,$60 // EOM; STA [$60],Z in base page $1A
+    pla
+    .byte $4b // TAZ
+    pla
+    .byte $5b // TAB
+    pla
+    plp
+    rts
+
+set_row_pointer:
+    lda v012a_screen_lo,x
+    sta direct_store+1
+    lda v012a_screen_hi,x
+    sta direct_store+2
+    lda #<direct_store
+    sta v012a_store+1
+    lda #>direct_store
+    sta v012a_store+2
+    rts
+set_colour_pointer:
+    lda v012a_color_lo,x
+    sta colour_pointer
+    lda v012a_color_hi,x
+    sta colour_pointer+1
+    lda #$f8
+    sta colour_pointer+2
+    lda #$0f
+    sta colour_pointer+3
+    lda #<long_colour_store
+    sta v012a_store+1
+    lda #>long_colour_store
+    sta v012a_store+2
+    rts
+store:
+direct_store:
     sta $ffff,y
     rts
+
+draw_background:
+    // Every raster starts with opaque black covering the entire 640-pixel raster.
+    // The prefix pointers are 42 bytes beyond the row origin.
+    sec
+    lda screen_store+1
+    sbc #42
+    sta background_store+1
+    lda screen_store+2
+    sbc #0
+    sta background_store+2
+    sec
+    lda colour_pointer
+    sbc #42
+    sta colour_pointer
+    lda colour_pointer+1
+    sbc #0
+    sta colour_pointer+1
+    ldy #0
+    lda #0
+    jsr background_store
+    lda #$10
+    jsr long_colour_store
+    iny
+    lda #0
+    jsr background_store
+    jsr long_colour_store
+    iny
+background_blank:
+    lda #0
+    jsr background_store
+    lda #8
+    jsr long_colour_store
+    iny
+    lda #2
+    jsr background_store
+    lda #0
+    jsr long_colour_store
+    iny
+    cpy #42
+    bne background_blank
+    rts
+background_store:
+    sta $ffff,y
+    rts
+
+save_all_colour:
+    jsr save_basic_color_ram
+save_extended_colour:
+    lda #>colour_backup_dma
+    ldx #<colour_backup_dma
+    jmp transfer
+restore_extended_colour:
+    lda #>colour_restore_dma
+    ldx #<colour_restore_dma
+transfer:
+    sta $d701
+    lda #0
+    sta $d702
+    sta $d704
+    stx $d705
+    rts
+clear_colour_dma:
+    php
+    pha
+    txa
+    pha
+    lda colour_pointer
+    sta clear_destination
+    lda colour_pointer+1
+    sta clear_destination+1
+    lda #>clear_dma
+    ldx #<clear_dma
+    jsr transfer
+    pla
+    tax
+    pla
+    plp
+    rts
+clear_dma:
+    .byte $80,0,$81,$ff,$0a,0,0
+    .word 36
+    .byte <zero_colours,>zero_colours,0
+clear_destination: .byte 0,0,8
+    .word 0
+zero_colours: .fill 36,0
+colour_backup_dma:
+    .byte $80,$ff,$81,0,$0a,0,0
+    .word $480
+    .byte 0,8,8
+    .byte 0,$6b,0
+    .word 0
+colour_restore_dma:
+    .byte $80,0,$81,$ff,$0a,0,0
+    .word $480
+    .byte 0,$6b,0
+    .byte 0,8,8
+    .word 0
 
 font_dma:
     .byte $80
@@ -566,6 +719,6 @@ font_source: .byte 0,0,0
     .byte 0,$40,0
     .word 0
 code_end:
-.if (code_end > $4000) { .error "HUD code overlaps font buffer" }
+.if (code_end > $3e80) { .error "HUD code overlaps defaults" }
 }
 .import source "stage3b4a_templates.asm"

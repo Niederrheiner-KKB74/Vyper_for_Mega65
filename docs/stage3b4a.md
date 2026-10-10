@@ -1,80 +1,100 @@
-# Stage 3b-4a – HUD rechts neben dem stabilen Spielfeld
+# Stage 3b-4a – HUD mit deckendem Hintergrund und vollständiger Schrift
 
 Implementiert [Issue #4](https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/issues/4)
 im Branch `stage3b-4a`, Basis `stage3b3-stable` (`bb557e1995b4ec65730360fe28a38b4b3050001c`).
-Stage 3b-3 einschließlich Release und Stable-Tag bleibt unverändert. **XEMU-Abnahme offen;
-Stage 3b-4a ist noch nicht stabil.** Die Amiga-HUD-Referenz wurde vom Benutzer im
-Gespräch bereitgestellt; sie ist kein bereits im Repository vorhandenes Bildasset.
+Alle stabilen Stage-3b-3-Dateien bleiben unverändert. **XEMU-Abnahme offen, kein Stable-Tag.**
+Die Amiga-Referenz stammt aus dem Benutzer-Gespräch; kein entsprechendes Bildasset
+wird im Repository behauptet. Die erste Fassung zeigte laut XEMU-Test BASIC-Hintergrund,
+Bewegungsspuren und unleserliche Schrift. Diese Ursachen sind in der korrigierten
+Fassung beseitigt; [Diagnose und Vergleich](stage3b4a_background_font_fix.md).
 
-## Vorprüfung und freigegebene Breite
+## Freigegebener Modus und Spielfeld
 
-Die Baseline verwendet H320, CHR16/SEAM, NCM, 25 Zeilen, 40 Einträge/80 Bytes
-pro Zeile und Rasterzeile 250 als 50-Hz-Synchronisation. Screen `$5000–$57CF`,
-Color-Vorlage `$6000–$67CF`, Color-RAM `$D800–$DFCF`; BASIC-Farbsicherung
-`$9000–$97FF`. Der Renderer löscht nur Bytes 42–77 und setzt seinen Endmarker
-in diesen acht dynamischen Slots. Bytes 0–41 können dauerhaftes HUD tragen.
+Der Benutzer hat eine breitere Videoausgabe mit maximaler Spielfeldgrenze X=240
+freigegeben. H640 mit CHARXSCALE=60 erhält die bisherige sichtbare NCM-Pixie-Breite:
+Originalpixel bleiben horizontal zweifach. Der Writer verdoppelt ausschließlich
+GOTOX-X einschließlich Bit-8-Carry. Objektkoordinaten, Y-Offset und Grafikbytes bleiben
+unverändert. HUD bei H640-X=480–639, entsprechend bisherigen X=240–319. Der Endmarker
+ist X=640. Gegner-/Orbit-Tabelle maximal X=170, plus 16 Pixel Breite =186; der Builder
+prüft alle 256 Werte gegen 240. Spielergrenze weiterhin X=32–224, mit Breite bis 240.
 
-Die ursprünglich freien 64 H320-Pixel reichen nicht für vier 16-Pixel-Schiffe
-plus Abstände und Rahmen. Der Benutzer hat Variante 2 (angepasste Videoausgabe)
-freigegeben und die Spielfeldgrenze X=240 vorgegeben. **H640 mit CHARXSCALE=60**
-erhält die bisherige sichtbare Pixie-Breite: NCM-Pixel bleiben horizontal zweifach.
-Der Writer verdoppelt die logischen GOTOX-X-Werte einschließlich Carry nach Bit 8;
-Y-Offset, Attribute, Glyphen und Objektkoordinaten bleiben erhalten. Das HUD belegt
-H640-X=480–639, entsprechend bisherigen X=240–319. Der Endmarker ist jetzt X=640.
-Die ursprünglichen Gegner-/Orbit-Tabellen reichen nur bis X=170; mit 16 Pixel
-Glyphenbreite bleiben sie innerhalb X=240. Der Builder prüft diese Grenze für
-alle 256 Tabellenwerte. Der Joystick-Spieler bleibt bei X=32–224, rechts ebenfalls
-224+16=240. Keine Pfadänderung, keine Kompression der Bewegungskoordinaten.
+Raster-Wartecode auf Zeile 250 und acht dynamische Slots bleiben erhalten. Die Zeilen
+sind jetzt 64 SEAM-Einträge / 128 Bytes lang. 25 Zeilen ergeben 3200 Byte Screen und
+Color RAM. Das vollständige deckende Schwarz und der HUD-Prefix passen so gemeinsam
+vor die beweglichen Slots; transparente Pixies zeichnen auf einen frisch gefüllten
+Raster und hinterlassen keine alten Pixel.
 
-## Layout, Schrift und Palette
+## Zeilenarchitektur
 
-| Zeilen (je 8 Pixel hoch) | Inhalt |
+| Byteoffset in jeder 128-Byte-Zeile | Verwendung |
 | --- | --- |
-| 0–2 | HIGH SCORE, sieben Ziffern, Rahmen |
+| 0–41 | GOTOX 0, primäre Palette, 20 deckende schwarze NCM-Leer-Glyphen |
+| 42–83 | permanenter HUD-Prefix, 21 SEAM-Einträge |
+| 84–115 | acht bewegliche Slots, je GOTOX + NCM-Glyphe |
+| 116–119 | reservierter Endmarker bei voller Slotbelegung |
+| 120–127 | unsichtbare GOTOX-640-Tokens |
+
+Der dynamische Renderer löscht nur 36 Byte ab Offset 84 und schreibt den Endmarker
+hinter den letzten belegten Slot. Er berührt Hintergrund/HUD nicht. Color-RAM-Clearing
+kopiert dieselben 36 konstanten Nullbytes mit F018A-DMA; keine Änderung der Slotkapazität.
+Normale Screen-Schreibzugriffe bleiben in CPU-Bank 0. Attribute werden mit 45GS02
+`EOM; STA [$60],Z` nach physischem Color RAM geschrieben. Die Routine sichert A/X/Y,
+Flags, B und Z; sie schaltet IRQs aus, verwendet vorübergehend Base Page `$1A` und
+stellt sie vor Freigabe der IRQs wieder her. Keine KERNAL-Zero-Page wird benutzt.
+
+24 alte feste Screen-Schreibzugriffe in `advance_animation` und der anschließende
+alte statische Capture-Aufruf sind gleich lang durch NOP ersetzt. Ihre Adressen
+gehörten zur früheren 80-Byte-Zeile; nach Erweiterung lagen einige im HUD. Diese
+Slots sind seit Stage 2ja ungenutzt. Framezähler, tatsächliche Pixie-Grafik-DMA,
+Orbitanimation, Joystick und Bewegung bleiben erhalten und werden gegen 3b-3 geprüft.
+
+## Layout und lesbare Schrift
+
+| Zeilen (je 8 bisherige Pixel hoch) | Inhalt |
+| --- | --- |
+| 0–2 | HIGH SCORE, sieben Ziffern, grauer Abschluss |
 | 3–5 | PLAYER 1 gelb, Score rot, LEVEL blau |
-| 6–12 | Lebensfeld, drei Leben als Startwert |
-| 14–16 | PLAYER 2, Score/Level ausgeblendet durch Striche, alles gedimmt |
-| 17–22 | Inaktives Player-2-Lebensfeld mit roten P/S/X-Hinweisen und `P/S NOT ACTIVE` |
-| 23–24 | FORMATION 100 / ATTACK 115, statische Referenz-Testwerte |
+| 6–12 | graues Lebensfeld, drei Leben beim Start |
+| 14–16 | PLAYER 2 / Score / Level gedimmt, Player 2 inaktiv |
+| 17–21 | P - PAUSE / S - SOUND / X - EXIT; `P/S INACT.` |
+| 22–24 | FORMATION, darunter 100; ATTACK 115 |
 
-Die acht Plätze sind **4 Spalten × 2 Reihen**. In bisherigen Pixelkoordinaten:
-X=245,262,279,296; Y=58,75. Jeder Platz ist 16×16; zwischen Schiffen liegt genau
-ein Pixel horizontal und vertikal. Der Rahmen links X=240–243 ist vier Pixel breit,
-danach ein Pixel Abstand. Rechts X=316–319 ebenfalls vier Pixel Rahmen; nach dem
-letzten Schiff bleiben vier Pixel Abstand. Das benötigte Minimum beträgt 77 Pixel;
-die verfügbaren 80 lassen drei zusätzliche Pixel am rechten Innenrand zu.
-In H640 sind Schiffe/Abstände/Rahmen horizontal verdoppelt. Vertikal bleibt die
-Engine-Geometrie unverändert. Anzeige von links nach rechts, dann zweite Reihe.
+Text verwendet den **vollständigen achtspaltigen BASIC-Zeichensatz**, ohne OR-Verengung
+und ohne Trimmen von Buchstaben oder Zahlen. In H640 mit Skalierung 60 entspricht
+ein Zeichen 16 nativen Pixeln. Innerhalb der zwei vier Pixel breiten Rahmen passen
+neun Zeichen; zehn Zeichen lange Zeilen nutzen die volle HUD-Breite. Daher steht
+FORMATION getrennt über 100. Die Referenzwerte bleiben 100/115. Lange P/S-Erklärung
+ist zur eindeutigen Kennzeichnung `P/S INACT.` verkürzt; X bleibt aktiv.
 
-Die Lebenssymbole verwenden unmittelbar die unveränderten Spieler-Glyphen
-`$321/$322/$323` und Palette Bank 2. Statische GOTOX-Tokens im HUD-Prefix positionieren
-sie, ohne bewegliche Objektrecords, ohne dynamische Slots und ohne Hardware-Sprites.
-Subzeilenoffsets -2/-3 und transparente GOTOX-Tokens ermöglichen den 1-Pixel-Abstand
-zwischen den Reihen. In der gemeinsamen RRB-Zeile 9 passen maximal acht Fragmente,
-beide Seitenrahmen und Palette-Reset genau in 21 Einträge/42 Bytes. Leere Plätze
-sind unsichtbare GOTOX-640-Tokens. Das HUD-Clearing berührt keine dynamischen Bytes.
+Der tatsächliche vor Spielstart eingestellte BASIC-Font wird per eigener F018A-DMA
+nach `$4000–$47FF` kopiert. VIC-Aliase `$1000/$1800/$9000/$9800` werden auf Character-WOM
+`$0FF7E000/$0FF7E800` aufgelöst; andere gespeicherte Charset-Adressen direkt übernommen.
+Keine ROM-Daten werden ausgeliefert. Lediglich ungenutzte lokale Zeichen 128/129
+werden für den Rahmen ersetzt; nur diese Rahmenzeichen sind teilweise getrimmt.
 
-Text und Rahmen sind gewöhnliche monochrome Bildschirmzeichen. Der tatsächlich
-vor Spielstart eingestellte BASIC-Zeichensatz wird per eigener F018A-DMA nach
-`$4000–$47FF` kopiert; es werden keine ROM-Bytes ausgeliefert. Die VIC-Aliase
-`$1000/$1800/$9000/$9800` werden zum entsprechenden Character-WOM-Bereich
-`$0FF7E000/$0FF7E800` aufgelöst. Andere Quelladressen werden direkt übernommen.
-Für die schmale Schrift werden jeweils zwei Originalspalten per OR zusammengefasst,
-dann auf vier Spalten getrimmt. Eine Zelle belegt damit acht native H640-Pixel.
-Vier einfache Rahmenzeichen ersetzen ungenutzte Zeichen 128–131 in der lokalen Kopie.
+HUD und Leben verwenden Palette Bank 2, sichtbare Original-Spielerfarben 1–8
+bleiben unverändert. Freie Indizes 10–15 erhalten Weiß/Grau/Gelb/Rot/Blau/dunkles Grau.
+Transparenter Index 0 erhält Schwarz für deckende HUD-Zellen. Gegnerpalette Bank 1
+und BASIC-ROM-Palette Bank 3 bleiben unverändert. Ein GOTOX am Prefixende setzt vor
+den beweglichen Slots die primäre Palette zurück.
 
-Nur ungenutzte Bank-2-Indizes 10–15 erhalten Weiß/Grau/Gelb/Rot/Blau/gedimmtes Grau.
-Index 0 wird für den schwarzen Hintergrund auf Schwarz gesetzt; er ist in den
-Spieler- und Lebens-NCM-Glyphen transparent. Sichtbare Originalfarben 1–8 bleiben
-bytegleich. Gegnerpalette Bank 1 und BASIC-ROM-Palette Bank 3 bleiben unverändert.
-Alle HUD-GOTOX-Tokens wählen Bank 2, der letzte Token vor den beweglichen Slots
-setzt die primäre Palette zurück. Auch die nicht vom Renderer besuchten Zeilen
-0/1/23/24 erhalten bei Initialisierung ausschließlich unsichtbare Endmarker im
-Suffix, damit kein altes H320-Blank das HUD nachträglich überzeichnen kann.
+## Lebenssymbole: verbindlich 4×2
 
-## Daten und Schnittstellen
+Acht Plätze, von links nach rechts und danach zweite Reihe. Bisherige Koordinaten:
+X=245,262,279,296; Y=58,75. Je 16×16 Originalpixel, genau ein Pixel zwischen den
+Symbolen und zwischen den Reihen. Vier Pixel Seitenrahmen: links X=240–243,
+rechts X=316–319. Links ein Pixel Abstand nach dem Rahmen; rechts vier Pixel Abstand
+nach dem letzten Schiff. 77 Pixel Mindestbedarf passen in die verfügbaren 80.
+In H640 sind alle horizontalen Maße verdoppelt, vertikal unverändert.
 
-Mutable Daten liegen ausschließlich im bisher unbenutzten reservierten Arbeits-RAM.
+Statische RRB-Tokens verwenden Originalglyphen `$321/$322/$323`, keine Objektrecords,
+keine dynamischen Slots, keine Hardware-Sprites. Subzeilenoffsets -2/-3 und transparente
+Tokens bilden den Abstand zwischen den Reihen. In der gemeinsamen Zeile 9 passen
+acht Fragmente, Rahmen und Palette-Reset genau in den 42-Byte-HUD-Prefix. Der voraus-
+gehende deckende Hintergrund löscht auch weggefallene Lebenssymbole. Leben über acht
+bleiben gespeichert, sichtbar sind höchstens acht. Player 2 bleibt stets inaktiv.
+
+## Zentrale Daten und Schnittstellen
 
 | Adresse | Name / Format |
 | --- | --- |
@@ -85,87 +105,91 @@ Mutable Daten liegen ausschließlich im bisher unbenutzten reservierten Arbeits-
 | `$1A0C` | `hud.player2_score`, unsigned 32 Bit LE |
 | `$1A10` | `hud.player2_level`, unsigned 16 Bit LE |
 | `$1A12` | `hud.player2_lives`, unsigned 16 Bit LE |
-| `$1A14` | `hud.player2_active`, BYTE, in dieser Stage stets 0 |
+| `$1A14` | `hud.player2_active`, BYTE, bleibt 0 |
 | `$1A15` | `hud.formation_points`, unsigned 16 Bit LE |
 | `$1A17` | `hud.attack_points`, unsigned 16 Bit LE |
 | `$1A20–$1A38` | Anzeige-Schattenwerte |
-| `$1A40–$1A50` | Dezimal-/Zeichen-Arbeitspuffer, gesicherte X-Skalierung |
+| `$1A40–$1A66` | Arbeitspuffer, Skalierung, Color-RAM-Langzeiger, Start-Hintergrundfarbe |
 
-`hud.hud_init` ruft die unveränderte Spielerinitialisierung auf, setzt Modus und
-Schrift, zeichnet statische Elemente und initialisiert die Anzeigen. Anfangswerte:
+`hud.startup` leert den BASIC-Bildschirm durch KERNAL-CHROUT `$93` und setzt den
+Hintergrund vor dem unveränderten SEQ-Loader auf Schwarz. Die ursprüngliche BASIC-
+Hintergrundfarbe wird gesichert und auch beim Ladefehler restauriert.
+`hud.hud_init` initialisiert Modus, Font, Palette, statische Elemente und Werte.
 Scores 0, Player-1-Level 1/Leben 3, Player 2 inaktiv mit Werten 0, Punkte 100/115.
-`hud.hud_draw_static` ist nur für Initialisierung vorgesehen; es initialisiert
-auch das RRB-Suffix vor dem ersten Render-Frame.
+`hud.hud_draw_static` zeichnet die statischen Zeilen und initialisiert das Suffix;
+keine laufende Neuzeichnung der statischen Screen-/Color-Daten.
 
 `hud.hud_update_score`, `hud.hud_update_level`, `hud.hud_update_lives` und
-`hud.hud_update_points` vergleichen die jeweiligen P1-/Highscore-/Punktefelder
-mit Schattenwerten und schreiben nur bei Änderungen. Aufrufe zerstören A/X/Y/Flags;
-RAM-Werte vor dem Aufruf vollständig setzen. CRAM2K wird nach Lebensaktualisierung
-wieder ausgeschaltet. `hud.hud_render` ruft zuerst den bestehenden Renderer auf,
-danach die Updates. Player-2-Felder und HUD-Bereiche sind vorbereitet; Aktivierung,
-Player-2-Updates und Lebenrendering erfordern eine spätere Stage. Kein Tastencode
-setzt `player2_active`. P/S ändern nichts, X nutzt den bisherigen Exit.
+`hud.hud_update_points` vergleichen ihre Werte mit Schattenwerten. Sie schreiben
+nur bei Änderungen. A/X/Y/Flags werden von den HUD-Update-Aufrufen zerstört; zentrale
+Werte vor Aufruf vollständig setzen. `hud.hud_render` führt den bestehenden Renderer
+und anschließend die Updates aus. Player-2-Daten und Bereiche sind vorbereitet;
+Aktivierung, Player-2-Updates und dessen Lebenrendering erfordern eine spätere Stage.
+P/S haben keine Funktion; SPACE und +/- behalten ihre bisherige Funktion, X beendet.
 
-Scores bleiben 32 Bit (bis 4.294.967.295). Die Anzeige zeigt die letzten sieben
-Dezimalziffern; sie begrenzt den gespeicherten Wert nicht. Level/Punkte zeigen die
-letzten drei Ziffern. Leben werden intern bis 65.535 gehalten, aber auf maximal
-acht Symbole begrenzt. Keine Punktevergabe, Persistenz oder Interpretation von
-weiteren VYLV-Feldern. Die Punkte bleiben Testwerte, bis jemand die HUD-Daten ändert.
+Scores bleiben bis 4.294.967.295 gespeichert; Anzeige der letzten sieben Dezimalziffern.
+Level/Punkte zeigen die letzten drei Ziffern. Leben bis 65.535 gespeichert, maximal
+acht Symbole. Keine Punktevergabe, Persistenz, Zweispielersteuerung oder Auswertung
+zusätzlicher VYLV-Felder. Die Punkte sind ausdrücklich Referenz-Testwerte.
 
-## Begrenzte Integration und Exit
+## Speicher, Sicherung und Vergleich
 
-Neue Code-/Datenbereiche: `$3800–$3C27`, `$5810–$5C60`, `$7A00–$7FE1`.
-Diese waren in der stabilen PRG-Datei komplett leer. Bestehende Routinen/Labels
-bleiben an denselben Adressen. Der Builder gestattet nur vier Hooks (`$2230`,
-`$22B7`, `$BDDE`, `$2D14`) und zwei Endmarker-Operanden. Insgesamt 3047 geänderte PRG-Bytes. Alle anderen Baseline-Bytes
-außerhalb der neuen Bereiche müssen identisch sein. Loader, SETBNK, Originaldaten,
-Parser, Grafik-DMA, Bewegung, Joystick und Animation bleiben bytegleich.
+[Speicherkarte](memory_map.md). Screen `$5000–$5C7F`, Spritepointer `$5C80–$5C8F`,
+Attributvorlagen `$5C90–$5FD7` und `$3F00–$3FD1`. Code `$3800–$3D70`, Konstanten
+`$3E80–$3EB6`, Screen-/Zeigervorlagen `$7A00–$7EE1`. Font `$4000–$47FF` war zuvor leer.
+Die alte Farbvorlage `$6000–$67CF`, Loader-/DMA-/Level-/Grafikbereiche und High-RAM-
+Dateien bleiben unverändert. PRG weiterhin 43.521 Byte, D81 819.200 Byte.
 
-Der Exit-Hook sperrt IRQs, stellt das zusätzlich geänderte `$D05A` wieder her und
-schaltet Sprites ab; anschließend läuft die bisher bestätigte Restaurierung weiter.
-Sie stellt auch `$D031` (H640), Charset-Pointer, Screen-/Color-Zeiger, Palette,
-HOTREG und den vollständigen 2-KB-BASIC-Color-RAM-Inhalt wieder her. KERNAL-/Cursor-
-RAM `$1000–$15FF` wird nicht verändert. Ein Neustart baut Font/HUD/Palette erneut auf.
-Die unveränderte Ladeerfolgsmeldung heißt weiterhin Stage 3b-2; Disk/PRG heißen 3b-4a.
+Vor jeder Engine-Schreiboperation werden alle verwendeten 3200 Color-RAM-Bytes
+gesichert: ursprüngliche 2048 Byte nach `$9000–$97FF`, zusätzliche 1152 nach
+`$6B00–$6F7F`. Letztere liegen im leeren PRG-Bereich nach dem Grafikverzeichnis und
+werden beim Exit per F018A-DMA zurückgeschrieben. KERNAL-/Cursor-RAM `$1000–$15FF`
+bleibt geschützt. `$D05A`, sämtliche bisherigen VIC-/Charset-/Screen-/Palette-
+Register und HOTREG werden restauriert. Wiederholtes LOAD/RUN initialisiert alles erneut.
 
-## Reproduzierbarer Build und Prüfungen
+Der Builder prüft bytegenau gegen `stage3b3-stable`: nur deklarierte Hooks,
+Zeiger/Endmarker, Spritepointer-Verlegung, alter statischer Capture-Aufruf und
+24 ungenutzte feste Screen-Stores sowie drei neue Datenbereiche dürfen sich ändern.
+Alle Baseline-Labels behalten ihre Adressen. SEQ-Loader einschließlich SETBNK,
+Parser, Originalgrafikdaten, Bewegungs-/Joystickcode und aktive Animationsroutinen
+bleiben bytegleich. Die Loader-Erfolgsmeldung heißt weiterhin Stage 3b-2.
+
+## Reproduzierbarer Build und automatische Prüfung
 
 ```sh
 python3 tools/build_stage3b4a.py --kickass /pfad/KickAss.jar
 MEGA65_ROM=/pfad/MEGA65.ROM python3 -m unittest discover -s tests -p 'test_stage3b*.py' -v
 ```
 
-Python und Java wie zuvor; KickAssembler 5.25 mit gepinnter SHA-256. Für Tests die
-bestehende `tests/requirements-stage3b1.txt` installieren. Der Builder generiert
-`stage3b4a_templates.asm` deterministisch, prüft Originaldaten und erlaubte Patches,
-assembliert und erzeugt D81 mit geprüften Dateiketten/BAM. Ausgabe enthält drei
-vollständige ASM-Dateien, PRG, D81, Symbole, Speicherkarte, Buildbericht und Prüfsummen.
+Python, Java, gepinnter KickAssembler 5.25; Testabhängigkeiten wie bisher aus
+`tests/requirements-stage3b1.txt`. Templates werden deterministisch generiert.
+Ausgabe enthält drei vollständige ASM-Dateien, PRG, D81, Symbole, Speicherkarte,
+Build-/Vergleichsbericht und SHA-256-Liste. Beide DAT-Dateien sind SEQ im D81.
 
-Automatisiert: **51 Tests bestanden**, acht neue HUD-Tests plus 43 bisherige
-Regressionstests. Nach der abschließenden Rahmenanpassung alle acht HUD-Tests
-erneut bestanden; zwei Builds erzeugen byteidentische Ausgabedateien. Geprüft werden
-vollständiger Preload; korrekte Labels/Zahlen; Font-DMA aus VIC-Alias und direkt
-adressiertem Charset; 32-Bit-Scores einschließlich Maximalwert; keine Screen-Schreib-
-zugriffe bei unveränderten Werten; Originalpixel aller acht Lebensplätze einschließlich
-Abstände und gemeinsamen Zeilen; 0/3/4/5/8/9/256/65535 Leben; 56 Frames mit identischen
-Objekt-/Pfad-/Glyphenzuständen gegen 3b-3; verdoppelte GOTOX-Werte; permanenter HUD-Prefix;
-inaktives P/S/Player 2; Exit/Neustart einschließlich Font-X-Skalierung, BASIC-Farben,
-ROM-Palette und unverändertem Cursor-RAM; Grafik-DMA-Fehler nutzt denselben Exit.
-Mit dem bereitgestellten V920395-ROM wird außerdem dessen echte Cursorroutine ausgeführt.
+**54 Tests bestanden:** Elf HUD-/Exit-Tests prüfen Preload/D81/Patches; vollständige Schrift und Labels;
+4×2-Originalpixel/Abstände/Clamping; 32-Bit-Scores und unveränderte Anzeigen ohne
+Schreibzugriffe; 56 Frames mit identischen Bewegungs-/Animationszuständen gegen
+3b-3; permanenten HUD-Prefix und Palette; Font-DMA; Exit/Neustart mit allen 3200
+Color-RAM-Bytes und Cursor-RAM; Grafik-DMA-Fehler; temporäre Base-Page/Z-/Flags-
+Erhaltung ohne Zero-Page-Schreibzugriffe; Ladefehler nach KERNAL-Clear/Schwarz.
+Der neue Rastertest übernimmt ausdrücklich den vorherigen Frame-Inhalt, reproduziert
+die ausgelassene Hintergrundfüllung und prüft spurfreie Neuzeichnung. CIA1 und
+physischer Color RAM sind getrennt modelliert. Die bereitgestellte V920395-Cursorroutine
+wird zusätzlich ausgeführt. Dazu kommen die unveränderten 43 bisherigen Tests.
 
-Im CPU-Modell kostet das unveränderte HUD samt X-Umrechnung im Mittel etwa 2395
-zusätzliche CPU-Zyklen pro Frame; Dezimalberechnung/Lebensaufbau nur bei Änderungen.
-Raster-Wartecode und Slotkapazität bleiben erhalten. Dies ist keine Messung realer
-Bildrate und kein vollständiger Emulatorlauf. Schriftlesbarkeit, reale VIC-Ausgabe,
-Rastertiming und Joystick sind durch den Benutzer unter XEMU abzunehmen.
+Der 6502-/45GS02-Hostadapter ermittelt etwa 15.041 zusätzliche CPU-Zyklen pro Frame;
+DMA-/VIC-Arbitration und tatsächliche 45GS02-Taktzeiten sind keine Messwerte dieses
+Modells. Die 50-Hz-Wartebedingung ist unverändert. Tatsächliche Bildrate und Timing
+bleiben Teil der XEMU-Abnahme. Kein eigener vollständiger Emulatorlauf behauptet.
 
 ## XEMU-Abnahme
 
-Frisch booten mit ROM V920395, D81 in Laufwerk 8, `LOAD"STAGE3B4A",8`, dann `RUN`.
-Laden/Verifizieren beider DAT-Dateien prüfen. Alle 24 Pixies, Farben, Animation,
-Joystick, SPACE und +/- gegen 3b-3 vergleichen. HUD rechts: 0000000 / 0000000 /
-LEVEL 001, drei Originalschiffe; vier Plätze pro Reihe, Rahmen und Abstände prüfen.
-Player 2 gedimmt/inaktiv, P/S als nicht aktiv bezeichnet, X EXIT; unten 100/115.
-Auch nach längerer Bewegung keine HUD-Übermalung oder Farbkonflikte. Mehrfach X:
-normaler BASIC-Bildschirm/Cursor ohne rote Linie; erneutes LOAD/RUN muss funktionieren.
-Erst nach ausdrücklicher Benutzerbestätigung als stabil markieren.
+Frisch booten (ROM V920395), neues D81 in Laufwerk 8: `LOAD"STAGE3B4A",8`, dann `RUN`.
+Vor dem Laden muss der Bildschirm geleert und der Hintergrund schwarz werden.
+Beide Originaldateien müssen geladen/verifiziert werden. Danach schwarzes Spielfeld
+ohne BASIC-Inhalt; alle 24 Pixies ohne Spuren, richtige Originalgrafiken und Animation.
+HUD-Schrift insbesondere H/I/G/Score-Ziffern prüfen. Drei Lebenssymbole, vorbereitetes
+4×2-Feld mit Abständen, Player 2 inaktiv, P/S als inaktiv gekennzeichnet. Joystick,
+SPACE und +/- wie 3b-3. Mehrfach X: normaler BASIC-Bildschirm mit normalem Cursor und
+restaurierter Hintergrundfarbe; anschließend erneut LOAD/RUN. Erst nach ausdrücklicher
+Bestätigung durch den Benutzer als stabil markieren.

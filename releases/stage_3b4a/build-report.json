@@ -4,20 +4,47 @@
   "comparison": {
     "baseline_prg_sha256": "4cdb98d30cda81fc2f812fef28e1b7786387050de6c56899ebd5222508cec81d",
     "hooks": [
+      "0x21d4",
       "0x2230",
       "0x22b7",
       "0xbdde",
       "0x2d14"
     ],
-    "changed_prg_bytes": 3047,
-    "unchanged": "loader, parser, motion, joystick, animation, glyph assets; exit except D05A restoration hook"
+    "retired_static_slot_writes": [
+      "0x262b",
+      "0x2631",
+      "0x2637",
+      "0x263d",
+      "0x2653",
+      "0x2659",
+      "0x265f",
+      "0x2665",
+      "0x267b",
+      "0x2681",
+      "0x2687",
+      "0x268d",
+      "0x26a3",
+      "0x26a9",
+      "0x26af",
+      "0x26b5",
+      "0x26cb",
+      "0x26d1",
+      "0x26d7",
+      "0x26dd",
+      "0x26f3",
+      "0x26f9",
+      "0x26ff",
+      "0x2705"
+    ],
+    "changed_prg_bytes": 3287,
+    "unchanged": "SEQ loader, parser, motion, joystick, active pixie animation and glyph assets; obsolete static-slot writes retired; exit restores D05A and extra Color RAM"
   },
   "files": [
     {
       "name": "STAGE3B4A",
       "bytes": 43521,
       "blocks": 172,
-      "sha256": "eb4eb72afa0819c861c6f07c2ae62aa827e0700e684aeb6e845643c0a4b04929"
+      "sha256": "53a42e6994dcb73157ec9be78f33daba0cafad0bb66bcf72874e8bb85634b9e7"
     },
     {
       "name": "VYLV.DAT",
@@ -37,6 +64,11 @@
     "logical_playfield_right_exclusive": 240,
     "physical_hud_x": 480,
     "physical_hud_width": 160,
+    "screen_row_stride": 128,
+    "screen_entries_per_row": 64,
+    "dynamic_row_offset": 84,
+    "font": "unchanged BASIC glyph bitmap, 8 columns",
+    "colour_ram_bytes_saved": 3200,
     "life_columns": 4,
     "life_rows": 2,
     "life_logical_x": [

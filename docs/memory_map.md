@@ -123,29 +123,41 @@ Puffer, Screen-/Colorbereiche, BASIC-Backup, Orbit- und Gegnerglyphen bleiben
 unverändert. Builder und Assembly-Guards prüfen die Grenzen und zulässigen
 Patches. [Details und Abnahme](stage3b3.md). Stage 3b-3 am 10.10.2026 vom Benutzer als stabil bestätigt (`stage3b3-stable`).
 
-## Stage 3b-4a – HUD, noch nicht unter XEMU abgenommen
+## Stage 3b-4a – korrigiertes HUD, XEMU-Abnahme offen
 
-Basis `stage3b3-stable`; seine Dateien und Belegung bleiben erhalten. H640 mit
-`$D05A=60`, GOTOX-X verdoppelt: bisherige Pixie-Breite erhalten. Aktives Spielfeld
-endet spätestens X=240 (H640 X=480); HUD rechts bis H640 X=639.
+Basis `stage3b3-stable`, unverändert erhalten. H640 mit `$D05A=60`, verdoppeltem
+GOTOX-X und acht dynamischen Slots. Spielfeld bis X=240 / H640-X=480; HUD bis 639.
+Nach dem gemeldeten Hintergrund-/Spurfehler: 64 Einträge / 128 Bytes je Zeile.
 
 | Adresse | Verwendung |
 | --- | --- |
 | `$1A00–$1A18` | zentrale HUD-Werte, Player 2 inaktiv |
 | `$1A20–$1A38` | Anzeige-Schattenwerte |
-| `$1A40–$1A50` | HUD-Arbeitspuffer einschließlich gesichertem `$D05A` |
-| `$3800–$3C27` | HUD-Code und eigene Font-F018A-DMA-Liste |
-| `$4000–$47FF` | zuvor leere Mono-Glyphen: Laufzeitkopie des BASIC-Fonts, verengt |
-| `$5810–$5C60` | statische HUD-Farbattribute, Anfangswerte und Farbtabelle |
-| `$7A00–$7FE1` | HUD-Screen-Prefixvorlage, Font-OR-Lookup und Zeiger |
-| `$5000–$57CF` | weiterhin 25×80 Byte; HUD je Zeile Bytes 0–41, dynamische Slots 42–77 |
-| `$D800–$DFCF` | entsprechende Attribute; CRAM2K nur beim CPU-Zugriff |
+| `$1A40–$1A66` | HUD-Arbeit, Skalierung, physischer Farbzeiger, BASIC-Startfarbe |
+| `$6B00–$6F7F` | zusätzliche 1152 Color-RAM-Bytes, leerer PRG-Bereich |
+| `$3800–$3D70` | HUD-/Start-/Store-Code und eigene F018A-Listen |
+| `$3E80–$3EB6` | HUD-Anfangswerte, Farben, Lebenspositionen |
+| `$3F00–$3FD1` | statische HUD-Attribute, Zeilen 20–24 |
+| `$4000–$47FF` | vollständige Laufzeitkopie des BASIC-Fonts, keine OR-Verengung |
+| `$5000–$5C7F` | 25×128 Byte Screen, 3200 Byte |
+| `$5C80–$5C8F` | verlegte Spritepointer, Hardware-Sprites bleiben deaktiviert |
+| `$5C90–$5FD7` | statische HUD-Attribute, Zeilen 0–19 |
+| `$7A00–$7EE1` | HUD-Screen-Prefixvorlage und Zeiger |
+| `$9000–$97FF` | bisherige Sicherung der ersten 2048 Color-RAM-Bytes |
+| `$0FF80000–$0FF80C7F` | vollständiger verwendeter Color RAM, 3200 Byte |
 
-Kein zusätzlicher Screen oder Color-RAM-Bereich; ursprüngliche BASIC-Sicherung
-und Loader-/Grafik-/Level-/High-RAM-Ziele unverändert. Neues `$D05A` wird vor dem
-bisherigen Exit restauriert. Neue statische Quellbereiche vorher vollständig null,
-Levelkopie endet `$7950`, neue Tabellen beginnen `$7A00`. Spritepointer `$5800–$580F`
-bleiben geschützt. Leben nutzen unverändert `$C840/$C880/$C8C0`, keine neuen Glyphen
-und keine Hardware-Sprites. HUD-Farben verwenden Bank 2, freie Indizes 10–15;
-transparenter Index 0 erhält Schwarz. Bank 1 und BASIC-ROM-Bank 3 bleiben erhalten.
-[Implementierung und Abnahme](stage3b4a.md).
+Je Zeile Bytes 0–41: deckendes Schwarz über die gesamte Breite. 42–83: permanentes
+HUD. 84–119: acht dynamische Slots plus Endmarker, 120–127: unsichtbarer Rest.
+128-Byte-Zeiger ersetzen die bisherigen 80-Byte-Zeiger; Screen und Attribute laufen
+parallel. Außerhalb des 2-KB-CPU-Fensters werden Attribute per 45GS02-Langzeiger
+adressiert, mit gesicherten/restaurierten B/Z/Flags und temporär gesperrten IRQs.
+Kein KERNAL-Zero-Page-Eingriff. Der gesamte berührte Color RAM wird vor den ersten
+Engine-Schreibzugriffen gesichert und beim Exit restauriert. BASIC-/Cursorbereich
+`$1000–$15FF` bleibt geschützt. Charset-/VIC-Zeiger und `$D05A` werden zurückgestellt.
+
+Original-Ladeziele, Loaderlisten, SEQ-/Grafikpuffer, Levelkopie bis `$7950`,
+Gegner-/Orbit-/Spieler-Glyphen bleiben erhalten. Leben verwenden `$C840/$C880/$C8C0`
+und keine Hardware-Sprites. HUD-Farben in Bank 2 (freie Indizes 10–15; transparenter
+Index 0 schwarz); Gegner Bank 1 und BASIC-ROM Bank 3 bleiben erhalten. Keine stabile
+Freigabe ohne erneuten Benutzer-XEMU-Test. [Technik](stage3b4a.md),
+[Fehlerursachen und Artefaktvergleich](stage3b4a_background_font_fix.md).
