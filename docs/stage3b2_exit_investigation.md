@@ -1,81 +1,118 @@
-# Stage 3b-2: BASIC-Exit – Untersuchung vom 10.10.2026
+# Stage 3b-2: BASIC-Exit – Diagnose und Korrektur vom 10.10.2026
 
-Der Benutzer bestätigt Laden und Verifizieren der Originaldaten, richtige
-Gegnergrafiken und den Enginebetrieb unter XEMU. Nach `X` bleibt eine ungefähr
-acht Pixel breite rote horizontale Linie an der Cursorposition. BASIC funktioniert.
-Die Testumgebung verwendet laut Benutzer ROM **V920395** und **80×25**.
-Der Fehler wurde rückblickend auch in Stage 3b-1 beobachtet. Stage 3b-2 ist deshalb
-**nicht freigegeben**; kein Stable-Tag wird gesetzt.
+Der Benutzer bestätigt Originaldaten, Grafiken und Enginebetrieb unter XEMU mit
+ROM **V920395**, Bildschirmmodus **80×25**. Beim Exit mit `X` tritt abhängig vom
+Zeitpunkt eine rote Linie oder ein unsichtbarer Cursor auf. Ein Tastendruck macht
+den Cursor sichtbar. Die Korrektur ist gebaut und automatisch geprüft;
+**die erneute XEMU-Abnahme ist offen. Kein Stable-Tag.**
 
-## Nachgewiesene Befunde
+## Ursache vor der Änderung nachgewiesen
 
-- `exit_to_basic` ist im archivierten Stage-2ja-Quellcode sowie in Stage 3b-1 und
-  Stage 3b-2 identisch. SHA-256 des Quellabschnitts bis `// Runtime state`:
-  `af2b1415961c62b1754696d9d95808f9e06f50aa890380a1d01bfb058d4713cf`.
-- Der Exit deaktiviert Hardware-Sprites, restauriert die gesicherten 2 KB
-  Color-RAM und die erweiterten VIC-Register für Modus, Zeilenbreite, Screen-,
-  Color-, Zeichensatz- und Spritepointer, Palette-Auswahl, Zeilenzahl und HOTREG.
-  HOTREG wird zuletzt restauriert. Border und Hintergrund werden restauriert.
-- Die Legacy-Register `$D011/$D016/$D018/$DD00` werden gesichert, aber bewusst
-  nicht zurückgeschrieben. Das gehört bereits zur ursprünglichen Exit-Strategie;
-  ein Zusammenhang mit dem aktuellen Fehler ist nicht nachgewiesen.
-- Es gibt keine explizite Sicherung des BASIC-Screen-RAM oder der internen
-  KERNAL-Cursorvariablen. Palette-Inhalte werden ebenfalls nicht gesichert;
-  die Engine programmiert Palette 1 und 2.
-- Stage 3b-1 ergänzt vor der unveränderten Engine KERNAL-Datei-I/O, Statusausgaben
-  und eine Wartezeit von 60 Frames. Stage 3b-2 ergänzt Parser und Grafik-DMA.
-  Die neue Grafikkopie schreibt nach `$9840–$98BF`, mit Guards innerhalb
-  `$9800–$98FF`; die DMA-Rücklesepuffer liegen bei `$6800/$6900`.
-- Ein belegungsbezogener Konflikt ist aufgefallen: Die Engine schreibt
-  Objektrecords nach `$1000–$12FF` und Diagnostik nach `$1300–$131F`. Die aktuelle
-  offizielle Speicherübersicht ordnet `$0002–$15FF` den KERNAL-Daten zu und nennt
-  erst `$1600–$1EFF` als freien Bereich. Diese Engine-Adressen sind bereits in
-  Stage 2ja vorhanden. **Dieser Konflikt allein beweist die Ursache der roten
-  Linie nicht.** Die tatsächlich betroffenen Variablen des verwendeten ROMs
-  müssen identifiziert werden.
-- Neuere ROMs können in BASIC-80×50-Modus Bank 4, Region 0 reservieren. Das
-  überschneidet sich mit dem vorgeschriebenen Ladeziel `$40000`. Der bestätigte
-  Modus 80×25 schließt diese 80×50-Reservierung als Erklärung des Tests aus.
+Die bereitgestellte 128-KB-ROM-Datei hat SHA-256
+`0f257ca5013e846604af6637bf44146de7500a49c54242a725aeb52cd86af5c1`.
+Sie bleibt außerhalb des Repositorys. Die Analyse ihrer KERNAL-Routinen bestätigt
+die Überschneidung mit den Engine-Objektrecords `$1000–$12FF`:
 
-## Quellen zur ROM-Abhängigkeit
+| ROM-Arbeitsadresse | Verwendung durch Cursor-Routine `$E513–$E55C` |
+| --- | --- |
+| `$111F` | Cursorflags; Bit 7 zeigt die eingeschaltete Blinkphase |
+| `$1120` | Cursor deaktiviert bei ungleich null, aktiviert bei null |
+| `$1121` | Blink-Countdown; wird dekrementiert, neuer Zyklus bei null |
+| `$1122` | gesichertes Screen-Zeichen unter dem Cursor |
+| `$1123` | gesichertes Color-RAM-Byte unter dem Cursor |
 
-Die zusätzlichen Quellen dienen nur der Diagnose; keine externen Spielassets
-oder ROM-Binärdateien wurden ins Projekt übernommen.
+Die alte Routine `v014_copy_records` kopiert drei volle Seiten von `$7000` nach
+`$1000`. Die betreffenden initialen Objektrecords enthalten Nullen. Damit werden
+**alle fünf Cursorbytes überschrieben**: ein von SYS deaktivierter Cursor wird
+unbeabsichtigt aktiviert, der Countdown und das gespeicherte Zeichen samt Farbe
+werden zerstört. Bei einem Countdown von null ergibt der nächste `DEC` zunächst
+255; die Cursoranzeige bleibt bis zur nächsten Blinkphase unsichtbar.
 
-- [Offizieller User Guide, Speicherübersicht](https://github.com/MEGA65/mega65-user-guide/blob/cefce48d72e5c98d732c0589461d62b205b5165f/memory.tex):
-  KERNAL-Bereich und freier RAM.
-- [ROM-Changelog](https://github.com/MEGA65/mega65-rom-public/blob/83c14797980b895eddde82df71f87084cf036929/CHANGELOG.md):
-  80×50-Speicherreservierung, neue CURSOR-KERNAL-Schnittstelle ab 920415,
-  Änderungen an der Cursor-Darstellung.
-- [ROM-Issue 175](https://github.com/MEGA65/mega65-rom-public/issues/175):
-  dokumentiert Cursorartefakte bei aktivem Cursor und Textausgaben. Es ist kein
-  Nachweis, dass derselbe Fehler hier vorliegt. Laut User Guide ist der Cursor
-  bei normalem `SYS` grundsätzlich deaktiviert.
+Da KERNAL-Interrupts während der Engine weiterlaufen, kann die nun aktivierte
+Cursor-Routine zudem Farbe aus dem RRB-Color-RAM sichern. Der Exit restauriert
+zwar die BASIC-Farben, aber ein späterer Cursor-Blinkzyklus schreibt das inzwischen
+falsche gesicherte Farbbyte wieder zurück. Dies erklärt die Abhängigkeit vom
+Blinkzeitpunkt und die unerwünschte Farbe nach BASIC-Rückkehr. Die Tests führen
+hierfür die echten ROM-Instruktionen aus; die pixelgenaue Linienform wird durch
+den Hosttest nicht gerendert und bleibt Teil der XEMU-Abnahme.
 
-## Noch erforderliche Diagnose
+`$E030` springt in diesem ROM nach `$ED96`: Die ROM-eigene Cursor-Steuerung benutzt
+ebenfalls `$111F–$1123`. Das bestätigt die Bedeutung der Bytes unabhängig von der
+allgemeinen Speicherübersicht. Es wurde kein undokumentierter ROM-Aufruf in das
+Spiel eingefügt und kein Cursorbyte durch einen pauschalen Reset überschrieben.
 
-ROM V920395 und 80×25 sind bestätigt. Noch offen ist, ob die Linie nach dem
-ersten Tastendruck verschwindet. Für einen Nachweis sind Cursorzustand,
-tatsächlich verwendete Screen-/Zeichensatzadressen und
-KERNAL-Arbeitsbereiche vor/nach dem Lauf gezielt zu vergleichen. In dieser
-Cloud-Umgebung fehlen XEMU und das verwendete ROM; die vorhandenen KERNAL-/DMA-
-Testmodelle können die Cursoranzeige nicht reproduzieren. Die öffentlichen
-ROM-Quellen enthalten nur Fehlerberichte und Changelog, keinen ROM-Quellcode.
-Für die konkrete ROM-Analyse wird die im Test verwendete ROM-Datei benötigt.
+## Vergleich mit den bisherigen Stages
 
-Bis zum Nachweis der Ursache bleiben ASM, PRG und D81 unverändert. Ein
-Cursor-Reset, Bildschirm-Clear oder Übermalen würde den gewünschten Nachweis
-nicht liefern. Es wurde deshalb **noch keine Exit-Korrektur** eingebaut.
+`exit_to_basic` ist in Stage 2ja, Stage 3b-1 und der bisherigen Stage 3b-2 identisch.
+SHA-256 des Quellabschnitts bis `// Runtime state`:
+`af2b1415961c62b1754696d9d95808f9e06f50aa890380a1d01bfb058d4713cf`.
+Auch die Objektrecords `$1000–$12FF` sind ein geerbter Fehler. Eine stabile
+Referenz wird deshalb nicht nachträglich verändert.
 
-## Bisherige Verifikation und nächster Releasevergleich
+Der Exit restauriert Color-RAM, erweiterte VIC-Modusregister, Screen-/Color-/
+Zeichensatzpointer, Zeilenbreite/-zahl, Spritepointer, Palette-Auswahl, HOTREG,
+Border und Hintergrund. Diese Routine bleibt bytegleich. Kein Screen-Clear oder
+Übermalen der Linie. Die 80×50-Bank-4-Reservierung ist durch den bestätigten
+80×25-Modus als Erklärung dieses Tests ausgeschlossen. Loaderziele und neue
+Grafikslots sind unverändert; der konkrete Schaden entsteht in der alten
+Objektkopie, nicht durch ein Überlaufen der SEQ- oder DMA-Puffer.
 
-Alle 18 vorhandenen Stage-3b-2-Hosttests bestanden erneut. Sie prüfen Originaldaten,
-variable Recordgrenzen, Zuordnung Index 14 → Typ 12, Grafik-DMA mit Rückvergleich,
-Guards, Fehlerpfade, definierte Engine-Patches und D81-Dateien. Sie prüfen keinen
-echten BASIC-IRQ oder Cursor.
+## Notwendige Korrektur nur in Stage 3b-2
 
-Referenz für den späteren Vergleich ist Commit
-`778b7d41c26086dc143312453ce033ea9e8d8130`. Nach einer belegten Korrektur sind
-Codeänderungen und Artefakt-Hashes dagegen zu dokumentieren, PRG und D81 neu zu
-bauen und der XEMU-Test einschließlich `X`, normalem Cursor und erneutem
-Laden/Starten durchzuführen. Stage 3b-1 und `stage3b1-stable` bleiben unangetastet.
+| Bereich | Bisher | Korrigiert |
+| --- | --- | --- |
+| 32 Objektrecords, 768 Byte | `$1000–$12FF` | `$1600–$18FF` |
+| Diagnostik, 32 Byte | `$1300–$131F` | `$1900–$191F` |
+| reservierter, unbenutzter Pfadarbeitsbereich | `$1400` | `$1A00–$1AFF` |
+| reservierter, unbenutzter RRB-Arbeitsbereich | `$1800` | `$1B00–$1EFF` |
+
+Alle neuen Bereiche liegen innerhalb des dokumentierten freien RAMs
+`$1600–$1EFF`. Assembly-Guards prüfen die Grenzen. Der Builder prüft eine explizite
+Liste der **53 absoluten Adressoperanden**, deren High-Byte um sechs steigt.
+Gegenüber der bisherigen Stage 3b-2 ändern sich im PRG **genau 53 Bytes**. Opcodes,
+Sprünge, Grafikdaten, Tabellen, Loader, Grafikzuordnung und Exit bleiben bytegleich.
+Die Bewegung verwendet dieselben Records und dieselben Algorithmen an neuen Adressen.
+
+Referenz ist Commit `778b7d41c26086dc143312453ce033ea9e8d8130`:
+
+| Artefakt | Vorher SHA-256 | Korrigiert SHA-256 |
+| --- | --- | --- |
+| PRG | `9669f87d80f5fa5d768294fb429a4ca295aca3b3e9627ef8b6064edb2627ea05` | `5f49f2cc05765f894aab6034ff3755a2680d15ea53c3790bb663deb7fcaa1dc8` |
+| D81 | `17bd9404b4151125bad95bf1e4df28a5f44df0a53207ce117da847e87b9c3bdc` | `426534c38c5dcd474302ad2882e2b942a9c3f33a9c19547b54fc905922cbd1e0` |
+
+Die alte Fassung bleibt über diesen Commit abrufbar. Die neue Fassung liegt weiter
+unter `releases/stage_3b2/` im Branch `stage3b-2`, innerhalb des bestehenden Draft-PR #2.
+Stage 3b-1 und `stage3b1-stable` bleiben unangetastet.
+
+## Automatisch geprüft und noch unter XEMU zu prüfen
+
+23 Tests bestehen mit dem bereitgestellten ROM. Die bisherigen 18 prüfen
+Originaldaten, variable Recordgrenzen, Index 14 → Typ 12, Grafik-DMA/Rückvergleich,
+Guards, Fehlerpfade, definierte Engine-Patches und D81-Dateien. Fünf neue Tests prüfen:
+
+- Erhalt des gesamten KERNAL-Bereichs `$1000–$15FF` bei Initialisierung, 24
+  Bewegungs-/Render-/Animationsschritten, Diagnostik und Exit.
+- Vollständigen Preload, Engine-Start, `X` via modelliertem GETIN, Wiederherstellung
+  der gesicherten VIC-Register und 2 KB Color-RAM, sowie erneuten Engine-Start/Exit.
+- Exakt 53 geänderte Operandenbytes gegen die SHA-256 der bisherigen PRG-Datei.
+- Echte ROM-Cursorroutine: Deaktivierung bleibt mit neuer Objektkopie erhalten;
+  alte Objektkopie aktiviert den Cursor und erzeugt den Countdown 255.
+- Echte ROM-Cursorroutine: alter Fehler erlaubt das Sichern und spätere
+  Zurückschreiben einer simulierten roten RRB-Farbe trotz BASIC-Farbrestaurierung.
+
+Die ROM-Tests führen unveränderte Instruktionen mit einer begrenzten 65CE02-
+Erweiterung des Hostmodells aus; KERNAL-IRQ, VIC-Ausgabe und Tastatur sind kein
+vollständiger XEMU-Lauf. Ohne `MEGA65_ROM` werden nur die zwei ROM-Tests übersprungen.
+
+```sh
+MEGA65_ROM=/pfad/MEGA65.ROM python3 -m unittest discover -s tests -p 'test_stage3b2*.py' -v
+```
+
+Unter XEMU bitte Originaldaten/Grafiken, alle 24 Pixies und Joystick erneut prüfen.
+Mehrmals mit `X` nach unterschiedlichen Laufzeiten beenden: BASIC-Cursor muss
+ohne Tastendruck normal blinken, ohne rote Linie. Danach `LOAD"STAGE3B2",8` und
+`RUN` erneut ausführen. Stage 3b-2 erst nach Benutzerbestätigung als stabil markieren.
+
+Quellen zur RAM-Belegung:
+[offizieller User Guide](https://github.com/MEGA65/mega65-user-guide/blob/cefce48d72e5c98d732c0589461d62b205b5165f/memory.tex).
+Die ROM-Diagnose selbst basiert auf der vom Benutzer bereitgestellten Binärdatei.

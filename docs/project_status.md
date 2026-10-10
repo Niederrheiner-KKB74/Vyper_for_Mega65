@@ -20,7 +20,7 @@
 
 - Import abgeschlossen: bereitgestellte Loader-Quellen, Binär-Assets, Build-Skripte und Releases sind in der vorbereiteten Struktur enthalten; Stage 2ja bleibt als unverändertes Archiv erhalten.
 - Build-Skripte verwenden derzeit `/mnt/data`; für die Cloud-Entwicklung ist eine gesonderte Einrichtung erforderlich.
-- Stage 3b-2: Laden, Originalgrafiken und Enginebetrieb vom Benutzer unter XEMU bestätigt. BASIC-Exit zeigt eine rote Linie; Ursachenklärung und Korrektur offen. Kein Stable-Tag.
+- Stage 3b-2: Laden, Originalgrafiken und Enginebetrieb vom Benutzer unter XEMU bestätigt. BASIC-Cursorfehler durch Überschreiben von KERNAL-Daten nachgewiesen und in Stage 3b-2 korrigiert. Erneute XEMU-Abnahme offen; kein Stable-Tag.
 - Spätere Stages: Levelstruktur, Gegnerzuordnung und Grafikframes in die Engine integrieren; Stage 3b-1 verwendet die geladenen Daten noch nicht für Gegnersteuerung.
 - Keine unbestätigten Änderungen an Stage 2ja.
 
@@ -66,6 +66,9 @@ Assembly, Originaldatenprüfung, 18 Host-Tests, Engine-Patchvergleich und D81-Pr
 bestanden. Der Benutzer bestätigt am 10.10.2026 erfolgreiches Laden, richtige
 Grafiken und korrekten Enginebetrieb unter XEMU. Nach `X` erscheint jedoch eine
 rote horizontale Linie an der BASIC-Cursorposition. Die finale Abnahme bleibt
-offen; Stage 3b-2 wird nicht als stabil markiert. Noch keine Codekorrektur, da die
-Ursache nicht nachgewiesen ist. [Exit-Untersuchung](stage3b2_exit_investigation.md).
+offen; Stage 3b-2 wird nicht als stabil markiert. Mit dem bereitgestellten ROM
+V920395 ist die Ursache nachgewiesen: Engine-Objektkopie überschreibt Cursorbytes
+`$111F–$1123`. Objekte und Diagnostik sind nach `$1600/$1900` verlegt; nur 53
+Adressbytes im PRG ändern sich. Neues PRG/D81 gebaut, 23 Tests einschließlich
+echter ROM-Cursorroutine bestanden. [Exit-Untersuchung](stage3b2_exit_investigation.md).
 [Build und Abnahme](stage3b2.md).

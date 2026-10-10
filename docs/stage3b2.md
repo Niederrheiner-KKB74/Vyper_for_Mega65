@@ -4,7 +4,9 @@ Stage 3b-2 integriert die vom Benutzer bestätigte VYLV-Recordstruktur und verwe
 für die 22 Level-1-Pfad-Pixies Originalgrafiktyp **12** aus geladenem `VYGR.DAT`.
 Basis ist `stage3b1-stable`. Dessen Quellen, Builder und Release-Dateien bleiben
 unverändert. Neue Quelle: `src/engine/stage3b2.asm`; Artefakte: `releases/stage_3b2/`.
-Assembly, D81 und 18 Host-Tests bestanden. **Stage 3b-2 ist noch nicht XEMU-bestätigt.**
+Originaldaten, Grafik und Enginebetrieb sind unter XEMU bestätigt. Die BASIC-Exit-
+Korrektur ist assembliert und automatisch geprüft; ihre XEMU-Abnahme bleibt offen.
+**Kein Stable-Tag.** [Ursache und Vergleich](stage3b2_exit_investigation.md).
 
 ## Bestätigtes Recordformat und Indexzuordnung
 
@@ -69,7 +71,9 @@ Positionen, Orbit-/Phasentabellen, Geschwindigkeiten, Rastertakt, Joystick und X
 bleiben erhalten. Es werden keine Formationspositionen, Einflug- oder Angriffskurven
 zur Bewegungssteuerung verwendet. Im Engine-Image ändern sich ausschließlich zwei
 JSR-Zieladressen (Initialisierung/Animationswrapper) und sechs Grafikoperanden der
-22 Pfad-Pixies. Alle übrigen Engine-Bytes werden mit Stage 3b-1 verglichen.
+22 Pfad-Pixies. Die Exit-Korrektur verlegt zusätzlich Objekte nach `$1600–$18FF`
+und Diagnostik nach `$1900–$191F`: genau 53 High-Bytes absoluter Adressoperanden
+ändern sich. Alle übrigen Engine-Bytes werden mit Stage 3b-1 verglichen.
 Neue Bereiche liegen bei `$3200–$35D9`, `$6A00–$6A07` und `$9800–$98FF`;
 der Preloader reicht jetzt bis `$4B49`. Sie überschneiden sich nicht mit der
 stabilen Engine-Belegung. Siehe [memory_map.md](memory_map.md).
@@ -95,7 +99,7 @@ python3 tools/analyze_stage3b2_data.py --output docs/stage3b2-data-analysis.json
 python3 tools/build_stage3b2.py --kickass /pfad/KickAss.jar
 python3 -m venv /tmp/vyper-stage3b2-tests
 /tmp/vyper-stage3b2-tests/bin/pip install -r tests/requirements-stage3b1.txt
-/tmp/vyper-stage3b2-tests/bin/python -m unittest discover -s tests -p 'test_stage3b2*.py' -v
+MEGA65_ROM=/pfad/MEGA65.ROM /tmp/vyper-stage3b2-tests/bin/python -m unittest discover -s tests -p 'test_stage3b2*.py' -v
 ```
 
 Der Builder entpackt ausschließlich vorhandene Baseline-Grafikbinaries temporär,
@@ -105,12 +109,16 @@ D81: `STAGE3B2` als PRG, `VYLV.DAT` und `VYGR.DAT` als SEQ; Dateiketten,
 Nutzdaten, Blockzahlen und BAM werden geprüft. Ein separater Wiederholungsbuild
 liefert byteidentische Artefakte.
 
-18 Tests bestehen: vollständige Originaldatenanalyse, bestätigte Zuordnung,
+23 Tests bestehen mit dem bereitgestellten ROM. Fünf zusätzliche Exit-Tests sind
+im [Diagnosebericht](stage3b2_exit_investigation.md) beschrieben. Die bisherigen
+18 Tests prüfen: vollständige Originaldatenanalyse, bestätigte Zuordnung,
 ungültige Indizes, variable Gegneroffsets, falsche/trunkierte/überlappende Bereiche,
 Originalframe-Vergleich, kompletter Maschinenprogramm-Preload, Assemblerparser
 mit veränderter Kurvenlänge, Runtime-Grenzen, Typ-12-Frame/Guards, Mehrframe-Umlauf,
 DMA-Fehler und BASIC-Rückkehr sowie expliziter Engine-/D81-Vergleich.
-Die 6502-Tests modellieren KERNAL, DMA und Raster. Sie ersetzen keinen XEMU-Test.
+Die Tests modellieren KERNAL, DMA und Raster; zwei führen zusätzlich die echte
+Cursor-Routine des angegebenen ROMs aus. Ohne ROM werden diese zwei übersprungen.
+Die Tests ersetzen keinen XEMU-Test.
 
 ## XEMU-Abnahme
 
@@ -121,7 +129,8 @@ Die 6502-Tests modellieren KERNAL, DMA und Raster. Sie ersetzen keinen XEMU-Test
 3. Gleiche Pfade, Geschwindigkeiten, Joysticksteuerung und Begrenzungen gegen
    `stage3b1-stable` vergleichen. SPACE und +/- prüfen. Typ 12 hat nur einen Frame;
    die zwei bisherigen Typ-2-Pixies animieren weiterhin.
-4. Mit X beenden: BASIC-Videomodus, Farben und Eingabe wie in Stage 3b-1. Erneut
-   per LOAD/RUN starten. Keine Ausgabe im aktiven RRB-Modus.
+4. Mehrmals nach unterschiedlichen Laufzeiten mit X beenden: BASIC-Videomodus,
+   Farben und normal blinkender Cursor ohne rote Linie und ohne nötigen Tastendruck.
+   Erneut per LOAD/RUN starten. Keine Ausgabe im aktiven RRB-Modus.
 
 Erst nach diesem Vergleich ist Stage 3b-2 als stabil abgenommen.

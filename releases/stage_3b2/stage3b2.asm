@@ -1,5 +1,5 @@
 // Stage 3b-2: stable preload and movement, Level-1 graphics from loaded VYGR.
-// Movement/exit bytes are preserved; two graphics wrapper calls and six glyph operands change.
+// Exit/movement algorithms preserved; object/diagnostic operands relocated out of KERNAL RAM.
 // Loader at $4800; Level-1 graphics drive 22 path pixies without changing movement.
 // Stage 2j: 24 moving pixies; 8 dynamic row slots, no static pixies.
 // Stage 2i-a: explicit dynamic RRB slot clearing; original Stage 2i retained.
@@ -2458,19 +2458,20 @@ v012a_color_lo: .fill 25, <(COLOR_RAM+i*80+42)
 v012a_color_hi: .fill 25, >(COLOR_RAM+i*80+42)
 
 
-// Stage 2g: 64KB RAM memory map. $1000-$1FFF is RAM, never ROM.
+// Stage 3b-2 exit fix: $1000-$15FF belongs to the KERNAL, including
+// ROM V920395 cursor state at $111F-$1123. Use documented free $1600-$1EFF.
 // $A000-$BFFF and $C000-$CFFF may be ROM-mapped depending on banking;
 // all MUTABLE objects/diagnostics now live below $2000.
-.const OBJ_BASE=$1000
+.const OBJ_BASE=$1600
 .const OBJ_SIZE=24
 .const OBJ_COUNT=32
 .const OBJ_END=OBJ_BASE+OBJ_SIZE*OBJ_COUNT
 .const PLAYER_OBJ=OBJ_BASE+4*OBJ_SIZE
 .const ORBIT_OBJ=OBJ_BASE+5*OBJ_SIZE
-.const DIAG_BASE=$1300
+.const DIAG_BASE=$1900
 .const DIAG_SIZE=$20
-.const PATH_WORK=$1400
-.const RRB_WORK=$1800
+.const PATH_WORK=$1a00
+.const RRB_WORK=$1b00
 .const V014_OBJ=OBJ_BASE
 .const V014_SIZE=OBJ_SIZE
 .const V014_PLAYER=PLAYER_OBJ
@@ -2478,10 +2479,12 @@ v012a_color_hi: .fill 25, >(COLOR_RAM+i*80+42)
 .const V014_PATH=PATH_WORK
 .const V014_DIAG=DIAG_BASE
 .const V014_DIAG_MAGIC=$5f
-// Assembly-time memory guards. No executable/image data in $1000-$1FFF.
+// Assembly-time memory guards. Workspaces are reserved, currently unused.
+.if (OBJ_BASE < $1600) { .error "Stage3b2: objects overlap KERNAL RAM" }
 .if (OBJ_END > DIAG_BASE) { .error "Stage2g: object RAM overlaps diagnostics" }
 .if (DIAG_BASE+DIAG_SIZE > PATH_WORK) { .error "Stage2g: diagnostics overlap path workspace" }
-.if (RRB_WORK+$400 > $2000) { .error "Stage2g: RRB workspace overlaps PRG start" }
+.if (PATH_WORK+$100 > RRB_WORK) { .error "Stage3b2: path workspace overlaps RRB workspace" }
+.if (RRB_WORK+$400 > $1f00) { .error "Stage3b2: workspace exceeds documented free RAM" }
 // ROM-safe source table in $7000 RAM (not $CA00, which may be ROM-mapped).
 .const OBJ_INITIAL=$7000
 v014_copy_records:
@@ -2562,7 +2565,7 @@ v014_no_down:
     // Stage 2g: no writes to spare object-table records.
     rts
 
-// Stage 2g: memory-monitor snapshots in $1300..$131F.
+// Stage 3b-2: memory-monitor snapshots relocated to $1900..$191F.
 // No changes to the RRB writer or object update logic.
 v014_diag_before:
     lda #V014_DIAG_MAGIC

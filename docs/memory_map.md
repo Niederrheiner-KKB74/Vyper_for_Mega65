@@ -82,14 +82,22 @@ Rückvergleich wiederverwendet. Neue Bereiche sind durch Assembly-Guards und
 Engine-Bytevergleich geprüft. Die Grafikintegration wurde unter XEMU bestätigt;
 die BASIC-Exit-Abnahme bleibt offen. Details: [stage3b2.md](stage3b2.md).
 
-### Offener KERNAL-Konflikt bei der Exit-Untersuchung
+### BASIC-Exit-Korrektur in Stage 3b-2
 
-Die aktuelle offizielle MEGA65-Speicherübersicht reserviert `$0002–$15FF` für
-KERNAL-Daten. Damit überschneiden sich die bisherigen Engine-Objekte
-`$1000–$12FF` und Diagnostik `$1300–$131F` mit diesem Bereich. Die ASM-Aussage
-„RAM, never ROM“ reicht nicht aus, um ihn als freien Arbeitsspeicher zu bewerten.
-Die tatsächliche Cursor-Fehlerursache ist dadurch noch nicht bewiesen; ohne
-ROM-spezifische Diagnose wurden keine Adressen verlegt. Der Benutzer bestätigt
-ROM V920395 und 80×25; die Bank-4-Reservierung von BASIC 80×50 ist damit für
-diesen Test als Erklärung ausgeschlossen.
-Siehe [Untersuchung und Quellen](stage3b2_exit_investigation.md).
+Die alte Objektkopie überschreibt im bereitgestellten ROM V920395 nachweislich
+Cursorzustand, Zähler, Zeichen und Farbe bei `$111F–$1123`. Nur Stage 3b-2 erhält
+eine korrigierte Belegung im dokumentierten freien RAM `$1600–$1EFF`:
+
+| Adresse | Verwendung nach der Korrektur |
+| --- | --- |
+| `$1600–$18FF` | 32 Objektrecords à 24 Byte, ersetzt `$1000–$12FF` |
+| `$1900–$191F` | Diagnostik, ersetzt `$1300–$131F` |
+| `$1A00–$1AFF` | reservierter, unbenutzter Pfadarbeitsbereich |
+| `$1B00–$1EFF` | reservierter, unbenutzter RRB-Arbeitsbereich |
+| `$1000–$15FF` | KERNAL-eigen; keine Engine-Schreibzugriffe mehr |
+
+Assembly-Guards prüfen die Grenzen; der Builder gestattet ausschließlich die 53
+betroffenen Adressoperanden. Alle oben beschriebenen Loader-/Grafikbereiche und
+alle Stage-3b-1-Dateien bleiben unverändert. ROM V920395 und 80×25 sind bestätigt;
+die Bank-4-Reservierung von BASIC 80×50 erklärt diesen Testfehler nicht.
+[Ursache, automatisierte Tests und Artefaktvergleich](stage3b2_exit_investigation.md).
