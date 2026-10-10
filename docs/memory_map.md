@@ -122,3 +122,30 @@ Palette; jedes Gegnerfragment schaltet mit `$00` zurück. Alle Ladeziele, DMA-
 Puffer, Screen-/Colorbereiche, BASIC-Backup, Orbit- und Gegnerglyphen bleiben
 unverändert. Builder und Assembly-Guards prüfen die Grenzen und zulässigen
 Patches. [Details und Abnahme](stage3b3.md). Stage 3b-3 am 10.10.2026 vom Benutzer als stabil bestätigt (`stage3b3-stable`).
+
+## Stage 3b-4a – HUD, noch nicht unter XEMU abgenommen
+
+Basis `stage3b3-stable`; seine Dateien und Belegung bleiben erhalten. H640 mit
+`$D05A=60`, GOTOX-X verdoppelt: bisherige Pixie-Breite erhalten. Aktives Spielfeld
+endet spätestens X=240 (H640 X=480); HUD rechts bis H640 X=639.
+
+| Adresse | Verwendung |
+| --- | --- |
+| `$1A00–$1A18` | zentrale HUD-Werte, Player 2 inaktiv |
+| `$1A20–$1A38` | Anzeige-Schattenwerte |
+| `$1A40–$1A50` | HUD-Arbeitspuffer einschließlich gesichertem `$D05A` |
+| `$3800–$3C27` | HUD-Code und eigene Font-F018A-DMA-Liste |
+| `$4000–$47FF` | zuvor leere Mono-Glyphen: Laufzeitkopie des BASIC-Fonts, verengt |
+| `$5810–$5C60` | statische HUD-Farbattribute, Anfangswerte und Farbtabelle |
+| `$7A00–$7FE1` | HUD-Screen-Prefixvorlage, Font-OR-Lookup und Zeiger |
+| `$5000–$57CF` | weiterhin 25×80 Byte; HUD je Zeile Bytes 0–41, dynamische Slots 42–77 |
+| `$D800–$DFCF` | entsprechende Attribute; CRAM2K nur beim CPU-Zugriff |
+
+Kein zusätzlicher Screen oder Color-RAM-Bereich; ursprüngliche BASIC-Sicherung
+und Loader-/Grafik-/Level-/High-RAM-Ziele unverändert. Neues `$D05A` wird vor dem
+bisherigen Exit restauriert. Neue statische Quellbereiche vorher vollständig null,
+Levelkopie endet `$7950`, neue Tabellen beginnen `$7A00`. Spritepointer `$5800–$580F`
+bleiben geschützt. Leben nutzen unverändert `$C840/$C880/$C8C0`, keine neuen Glyphen
+und keine Hardware-Sprites. HUD-Farben verwenden Bank 2, freie Indizes 10–15;
+transparenter Index 0 erhält Schwarz. Bank 1 und BASIC-ROM-Bank 3 bleiben erhalten.
+[Implementierung und Abnahme](stage3b4a.md).

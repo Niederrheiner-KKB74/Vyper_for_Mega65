@@ -1,0 +1,56 @@
+{
+  "assembler": "KickAssembler 5.25",
+  "baseline": "stage3b3-stable",
+  "comparison": {
+    "baseline_prg_sha256": "4cdb98d30cda81fc2f812fef28e1b7786387050de6c56899ebd5222508cec81d",
+    "hooks": [
+      "0x2230",
+      "0x22b7",
+      "0xbdde",
+      "0x2d14"
+    ],
+    "changed_prg_bytes": 3047,
+    "unchanged": "loader, parser, motion, joystick, animation, glyph assets; exit except D05A restoration hook"
+  },
+  "files": [
+    {
+      "name": "STAGE3B4A",
+      "bytes": 43521,
+      "blocks": 172,
+      "sha256": "eb4eb72afa0819c861c6f07c2ae62aa827e0700e684aeb6e845643c0a4b04929"
+    },
+    {
+      "name": "VYLV.DAT",
+      "bytes": 81793,
+      "blocks": 323,
+      "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
+    },
+    {
+      "name": "VYGR.DAT",
+      "bytes": 30888,
+      "blocks": 122,
+      "sha256": "cbad5d717a4890276a9408c6784500f8449d45ae90f0f4d4251d596b8a2563eb"
+    }
+  ],
+  "hud": {
+    "mode": "H640, CHARXSCALE=60; logical X doubled",
+    "logical_playfield_right_exclusive": 240,
+    "physical_hud_x": 480,
+    "physical_hud_width": 160,
+    "life_columns": 4,
+    "life_rows": 2,
+    "life_logical_x": [
+      245,
+      262,
+      279,
+      296
+    ],
+    "life_y": [
+      58,
+      75
+    ],
+    "initial_lives": 3,
+    "player2_active": false
+  },
+  "runtime_xemu": "NOT RUN; user confirmation required"
+}

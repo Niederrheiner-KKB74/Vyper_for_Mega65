@@ -104,3 +104,21 @@ Fassung wurde am 10.10.2026 vom Benutzer unter XEMU als stabil bestätigt.
 Die Abnahme stammt vom Benutzer; ein eigener Emulatorlauf wird nicht behauptet.
 Bestätigter Programmstand: `be747701cbeee5f77af244ad3778f75088fca8a7`.
 ASM, PRG und D81 bleiben bei dieser Dokumentation unverändert. [Diagnose](stage3b3_exit_palette_fix.md).
+
+## Stage 3b-4a – HUD gemäß Issue #4, XEMU-Abnahme offen
+
+Eigener Branch `stage3b-4a`, Basis `stage3b3-stable`; stabile Dateien unverändert.
+Der Benutzer hat die Amiga-Referenz bereitgestellt und die angepasste Videoausgabe
+mit Spielfeldgrenze X=240 freigegeben. H640 mit unveränderter sichtbarer Pixie-Breite;
+HUD-Prefix außerhalb des dynamischen Clearings. Drei Originalschiffe in vorbereitetem
+4×2-Raster, 1-Pixel-Abstände, vier Pixel Seitenrahmen. Player 2 bleibt inaktiv;
+P/S explizit nicht aktiv, X weiterhin Exit. Highscore/Score 0000000, Level 001,
+Formation 100 / Attack 115 als Referenz-Testwerte, noch keine Punktevergabe.
+
+Loader, Originaldaten, Bewegungs-/Joystick-/Animationslogik unverändert; neue
+Mono-Schrift aus Laufzeitkopie des BASIC-Charsets. Neue X-Skalierung wird beim Exit
+restauriert, KERNAL-/Cursor-RAM und ROM-Palette bleiben geschützt. Release unter
+`releases/stage_3b4a/` mit PRG/D81, drei ASM-Dateien, reproduzierbarem Builder,
+Speicherkarte, Patchvergleich und Prüfsummen. 51 Hosttests bestanden; abschließende
+HUD-Prüfung erneut bestanden, Wiederholungsbuild byteidentisch. Hostprüfung ersetzt keine XEMU-Abnahme;
+kein Stable-Tag vor Benutzerbestätigung. [Technik und Tests](stage3b4a.md).
