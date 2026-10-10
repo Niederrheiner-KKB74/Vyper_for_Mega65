@@ -11,15 +11,15 @@
       "0x22b7",
       "0x38a8"
     ],
-    "changed_bytes": 2233,
-    "extended_bytes": 256
+    "changed_bytes": 2235,
+    "extended_bytes": 0
   },
   "files": [
     {
       "name": "STAGE3B5C",
-      "bytes": 43777,
-      "blocks": 173,
-      "sha256": "17420a23d1f5a0904ef2099aa7e94c908bf9ed8b73d5279462d6c2284fe4c67c"
+      "bytes": 43521,
+      "blocks": 172,
+      "sha256": "2de5edcc91b8d4a24afb7ec427b89ca0b17cbe4841b5cb5d9fe2c0a6f5f62d04"
     },
     {
       "name": "VYLV.DAT",
@@ -329,44 +329,64 @@
       "palette": "existing engine bank 1: visible 3-bit colour + 1",
       "packing": "left pixel low nibble",
       "visual_xemu": "pending",
+      "animation_source_records": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "excluded_source_records": {
+        "7": "Player ship: same transparency mask and 238/256 matching player pixels; user confirms exactly seven explosion frames"
+      },
       "frames": [
         {
           "frame": 0,
+          "used_for_explosion": true,
           "sha256": "28095a0d0317d20004c205caa1f1f6613928363f051dfb67e81da02638d8aa35",
           "bytes": 128
         },
         {
           "frame": 1,
+          "used_for_explosion": true,
           "sha256": "9621c2356ca67369410f1d74b7d3313c9596bccbaa059bd440905d73bfd76131",
           "bytes": 128
         },
         {
           "frame": 2,
+          "used_for_explosion": true,
           "sha256": "71757779f5e8586bd9bbfeb35d14eb6ff01cfbd4bc07191252d0d858d716d277",
           "bytes": 128
         },
         {
           "frame": 3,
+          "used_for_explosion": true,
           "sha256": "380278b6232816e794b8d752e3e60dd0e8e0db92bd1b69b61feb580efc793525",
           "bytes": 128
         },
         {
           "frame": 4,
+          "used_for_explosion": true,
           "sha256": "dcae7d2d9fd7bd8ecb656285f37e26869561ed72a5cfba7622c8dc8e897b1979",
           "bytes": 128
         },
         {
           "frame": 5,
+          "used_for_explosion": true,
           "sha256": "52025e49920320a1d156ca9efaefa1b1ca0ade33f6ed37c796862d4061a5438b",
           "bytes": 128
         },
         {
           "frame": 6,
+          "used_for_explosion": true,
           "sha256": "58122a6c928a04a92cef9fae5786321a55d840a5cb6382ff32aea4df7f249712",
           "bytes": 128
         },
         {
           "frame": 7,
+          "used_for_explosion": false,
           "sha256": "ca7351a9ad6b4a17b640822a85fd733adb033a1a22a6b6f0a6967b78cc07f027",
           "bytes": 128
         }

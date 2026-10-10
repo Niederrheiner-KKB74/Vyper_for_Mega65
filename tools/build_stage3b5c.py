@@ -72,6 +72,8 @@ def main():
     if BASE.sha(jar.read_bytes())!=BASE.KICKASS_SHA256: raise ValueError('Expected official pinned KickAssembler 5.25')
     PLAYER.verify_player_assets()
     EXPLOSIONS.build()
+    if '.const c_EXP_FRAMES='+str(len(EXPLOSIONS.VALID_FRAME_INDICES)) not in (ROOT/'src/engine/stage3b5c_game.asm').read_text():
+        raise ValueError('Explosion animation count does not match validated original records')
     generated=mapping_source()
     (ROOT/'src/engine/stage3b5c_mapping.asm').write_text(generated)
     sources=['stage3b5c.asm','stage3b5c_hud.asm','stage3b5c_templates.asm','stage3b5c_shots.asm','stage3b5c_mapping.asm','stage3b5c_game.asm']

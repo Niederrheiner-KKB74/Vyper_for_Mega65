@@ -12,6 +12,9 @@
 .const c_OVER=4
 .const c_ENEMIES=23
 .const c_EXP_TICKS=3
+// Source record 7 ($3827A) is the player ship, NOT an explosion.
+// Keep only supplied explosion records 0..6 until the missing original arrives.
+.const c_EXP_FRAMES=7
 .const c_BLINK_TICKS=150
 .const c_BLINK_PERIOD=25
 .const c_INSET=2
@@ -99,7 +102,10 @@ c_reset_paths:
     jmp c_formula
 c_move:
     lda c_ps
+    beq c_move_allowed
+    cmp #c_BLINK
     bne c_move_blocked
+c_move_allowed:
     jmp v014_move_record
 c_move_blocked:
     lda VIC_D030
@@ -241,7 +247,7 @@ c_timer_enemy:
     sta c_et,x
     inc c_ef,x
     lda c_ef,x
-    cmp #8
+    cmp #c_EXP_FRAMES
     bcc c_timer_next
     lda #c_DEAD
     sta c_es,x
@@ -260,7 +266,7 @@ c_timer_next:
     sta c_pt
     inc c_pf
     lda c_pf
-    cmp #8
+    cmp #c_EXP_FRAMES
     bcc c_timer_done
     lda hud.player1_lives
     ora hud.player1_lives+1
@@ -932,8 +938,8 @@ c_glyph:
     adc #0
     sta v014_guard_hi
     rts
-c_exp_low: .byte <$305,<$309,<$30d,<$311,<$315,<$319,<$31d,<$329
-c_exp_high: .byte >$305,>$309,>$30d,>$311,>$315,>$319,>$31d,>$329
+c_exp_low: .byte <$305,<$309,<$30d,<$311,<$315,<$319,<$31d
+c_exp_high: .byte >$305,>$309,>$30d,>$311,>$315,>$319,>$31d
 
 c_game_over:
     // Dynamic screen tail only: original opaque prefix and HUD stay intact.
@@ -1063,7 +1069,4 @@ c_render_end:
     .import binary "explosion_assets/explosion_0"+c_f+"_ncm.bin"
     .fill 64,0
 }
-*=$ca00 "Original explosion frame 7, with transparent guards"
-.fill 64,0
-.import binary "explosion_assets/explosion_07_ncm.bin"
-.fill 64,0
+// Rejected source record 7 is deliberately not embedded in the PRG.

@@ -52,13 +52,37 @@ Prüfsummen und Format stehen in `assets/explosions/conversion.json`.
 Die ursprüngliche Index-/RGB-Rekonstruktion der Engine bleibt die bestehende
 Referenz; die sichtbare Explosion mit dieser Palette ist in XEMU noch abzunehmen.
 
-Acht unveränderliche 256-Byte-Glyphsätze enthalten je einen 64-Byte-Blankguard,
+Sieben unveränderliche 256-Byte-Glyphsätze enthalten je einen 64-Byte-Blankguard,
 128 Originalbytes und einen weiteren Blankguard. Jeder explodierende Gegner
 und der Player hat eigene Frame-/Tickzähler und gespeicherte Koordinaten.
 Keine Explosion schreibt einen gemeinsamen beweglichen Grafikpuffer um.
 Frame 0 beginnt am Treffertick; jeder Frame wird drei 50-Hz-Ticks dargestellt,
-insgesamt 24 Ticks. Diese parametrisierbare Geschwindigkeit ist keine Behauptung
+insgesamt 21 Ticks. Diese parametrisierbare Geschwindigkeit ist keine Behauptung
 über die ursprüngliche Amiga-Abspielgeschwindigkeit.
+
+## Korrektur nach dem XEMU-Test
+
+Der bisherige letzte Animationsschritt verwendete den gelieferten Datensatz
+„Frame 7 – descriptor $3827A“. Dieser enthält das Spielerschiff: gleiche
+Transparenzkontur, 238/256 identische Pixel mit `player_ncm.bin`. Bei jeder
+Explosion wurde dadurch kurz ein Schiff an der Gegnerposition angezeigt.
+Dies ist ein falscher Quelldatensatz in der Sequenz, keine Verwechslung der
+RRB-Adressen oder Palette. Der Benutzer bestätigt ausdrücklich: Es gibt nur
+**sieben** Originalexplosionsframes; bei der Extraktion wurde das Spielerschiff
+fälschlich mitgezählt. Die frühere Acht-Frame-Anforderung ist damit korrigiert.
+
+Die Rohdatei bleibt zur Nachvollziehbarkeit unverändert. Der Konverter
+kennzeichnet Datensatz 7 als ausgeschlossen, und der Build verhindert seine
+Verwendung als Explosion. Nur Records 0–6 werden eingebunden und ausgewählt;
+keine Ersatzgrafik oder Wiederholung wird ergänzt. Beide Explosions-Timer
+verwenden die zentrale Framezahl 7. Auch die Playerexplosion und GAME OVER
+enden nach dem vollständigen siebten Frame (3 × 7 = 21 Ticks).
+
+Nach zusätzlicher Benutzeranweisung ist der Player während RESPAWN_BLINK nun
+steuerbar. Der unveränderte Joystick-Mover läuft für ACTIVE **und** BLINK;
+EXPLODING/WAIT_FORMATION/GAME_OVER bleiben gesperrt. Die Todesposition ist nur
+der Wiederbelebungsstart, nicht eine laufende Positionsvorgabe. Feuer bleibt
+wie bisher gesperrt; Treffer- und Lebenslogik ist unverändert unverwundbar.
 
 ## Zustände und Updatefolge
 
@@ -66,7 +90,7 @@ Gegner: DEAD=0, FORMATION=1, ENTRY=2, ATTACK=3, EXPLODING=4.
 Alle 22 Pfadgegner und der zusätzliche Orbitgegner (Index 22) sind enthalten.
 Lebende Gegner behalten ihre bisherigen Pfadschritte; EXPLODING/DEAD werden
 unabhängig von Bewegung, Feuer und weiteren Treffern ausgeschlossen.
-Nach Frame 7 wird der betreffende Gegner endgültig DEAD, bis zum neuen Spiel.
+Nach Frame 6 wird der betreffende Gegner endgültig DEAD, bis zum neuen Spiel.
 
 Player: ACTIVE=0 → EXPLODING=1 → WAIT_FORMATION=2 → RESPAWN_BLINK=3 → ACTIVE.
 Bei letztem Leben endet EXPLODING stattdessen in GAME_OVER=4.
@@ -80,9 +104,10 @@ Bei letztem Leben endet EXPLODING stattdessen in GAME_OVER=4.
   Der bestehende Testangriff kehrt in seiner 32-Tick-Formationsphase zurück;
   T kann ihn gezielt abschalten. Es gibt keinen zusätzlichen Warte-Zeitlimit.
 - RESPAWN_BLINK: an derselben Todesposition, 150 Ticks, Sichtbarkeitswechsel
-  alle 25 Ticks. Vollständig unverwundbar; Bewegung und Feuer gesperrt.
-  Die Aufnahme ins Blinken ist der erste sichtbare Blinktick. Nach den
-  150 Blinkticks wird der Player wieder sichtbar und ACTIVE. Gedrücktes Feuer
+  alle 25 Ticks. Vollständig unverwundbar; Bewegung freigegeben, Feuer weiterhin gesperrt.
+  Die Aufnahme ins Blinken ist der erste sichtbare Blinktick. Während des Blinkens folgt auch die unsichtbare Playergrafik den aktuellen
+  Joystickkoordinaten. Nach den 150 Blinkticks bleibt der Player an seiner
+  aktuellen Position sichtbar und wird ACTIVE. Gedrücktes Feuer
   muss nach der Sperre zunächst losgelassen werden.
 - GAME_OVER: erst nach der vollständigen letzten Explosion. Sämtliche
   Projektilslots werden deaktiviert; Animation, Bewegung, Feuer und Treffer
@@ -170,8 +195,7 @@ Adresse und Codebytes werden durch den Builder verglichen, einschließlich
 Loader, Spritekonfiguration, Grafikmapping, Bewegungstabellen und Exit.
 Nur sechs JSR-Ziele werden ersetzt sowie Attack-Default 115 → 175.
 Neue statische Bereiche müssen im stabilen PRG vollständig null sein;
-zusätzlich wird das PRG hinter $C9FF um den letzten 256-Byte-Grafiksatz
-erweitert. Neuer ausführbarer Code und CPU-gelesene Tabellen liegen vollständig
+das PRG endet wieder bei $C9FF ohne zusätzlichen Datensatz bei $CA00. Neuer ausführbarer Code und CPU-gelesene Tabellen liegen vollständig
 unter $A000, insbesondere der Renderer bei $9D70. Die unveränderte ROMC-
 Bankingoption darf $C000 überlagern; die dortigen Originalexplosionen werden
 wie die bestehenden Player-/Orbit-Glyphen direkt vom VIC aus physischem RAM

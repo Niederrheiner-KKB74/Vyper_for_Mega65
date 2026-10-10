@@ -169,7 +169,7 @@ verändert weder ASM noch PRG, D81, Mapping-Assets oder Prüfsummen.
 
 Issue #8, eigener Branch `stage3b-5c`, Basis `stage3b5b-stable`.
 Der zunächst fehlende Original-Explosionssatz wurde vom Benutzer in
-`assets/explosions/explosion_amiga_planes.txt` ergänzt. Alle acht Frames werden
+`assets/explosions/explosion_amiga_planes.txt` ergänzt. Die sieben tatsächlichen Explosionsframes werden
 verlustfrei mit Maskentransparenz und bestehender Palette in NCM konvertiert.
 Software-AABBs berücksichtigen zwei Spieler- und vier Gegnerschüsse sowie alle
 23 Gegner. Einflug-/Angriffs-Rammkollisionen erzeugen zwei Explosionen ohne
@@ -187,3 +187,11 @@ Kein neuer Stable-Tag; XEMU-Abnahme
 noch offen. Artefakte in `releases/stage_3b5c/`.
 [Technik und Build](stage3b5c.md), [Testprotokoll](stage3b5c_xemu_test.md),
 [historische Vorprüfung](stage3b5c_preflight.md).
+
+
+Korrektur nach XEMU-Rückmeldung: Source-Record 7 ($3827A) ist die fälschlich
+mitextrahierte Playergrafik. Benutzer bestätigt sieben statt acht Explosionen.
+Der Datensatz bleibt dokumentiert, wird aber nicht mehr eingebunden/ausgewählt;
+sieben Frames à drei Ticks gelten für Player/Gegner. Im 150-Tick-Respawn ist
+Joystickbewegung freigegeben, Feuer weiterhin gesperrt, vollständiger Treffer-
+schutz und Blinken erhalten. Finaler Frame setzt die Position nicht zurück.

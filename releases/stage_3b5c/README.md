@@ -16,9 +16,12 @@ python -m unittest discover -s tests -p test_stage3b5c.py -v
 ```
 
 14 neue Hosttests bestanden. Keine behauptete eigene XEMU-Abnahme.
-Originale acht Amiga-Explosionsframes mit Masken/NCM-Konvertierung im Repository;
+Originale sieben Amiga-Explosionsframes mit Masken/NCM-Konvertierung im Repository;
 keine Ersatzgrafiken. Stabile Stage 3b-5b bleibt unverändert.
 
 [Technik und Koordinaten](../../docs/stage3b5c.md),
 [Testprotokoll und Abnahme](../../docs/stage3b5c_xemu_test.md).
 Stage 3b-5c erst nach ausdrücklicher Benutzerbestätigung als Stable markieren.
+
+Korrigierter Build: Kein Player-Datensatz in der Explosion; drei Sekunden
+Unverwundbarkeit mit freier Joystickbewegung. Feuer bleibt währenddessen gesperrt.

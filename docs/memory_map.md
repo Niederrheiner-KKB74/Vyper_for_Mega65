@@ -210,13 +210,12 @@ Nur die neue Stage ergänzt folgende Bereiche (Grenzen inklusiv):
 | `$1C45–$1C5B`, `$1C5C–$1C72` | eingefrorene Explosions-X/Y |
 | `$1C73–$1C7C` | Playerzustand, Explosion, Todesposition, Blink-/Test-/Keyzustände |
 | `$1C7D–$1C9C` | Kollisions-, 32-bit-Punkte-, Level- und UI-Arbeitswerte |
-| `$4C00–$4E24` | Zustände, Keyboard, Neustart und Timer (siehe finale Assemblykarte) |
+| `$4C00–$4E28` | Zustände, Keyboard, Neustart und Timer (siehe finale Assemblykarte) |
 | `$85B0–$865F` | Statusgesteuerte bestehende Bewegung, Framekoordinator |
 | `$8840–$8877` | ursprüngliche Pfadphasen und dünne Zusatzglyphen G/M |
 | `$8B00–$8E13` | Software-AABBs, Treffer, Score/Highscore und Punkteformel |
 | `$C100–$C7FF` | Originalexplosionen 0–6, je Blank + 128 NCM-Bytes + Blank |
-| `$CA00–$CAFF` | Originalexplosion 7 mit eigenen Blankguards |
-| `$9D70–$9F87` | bedingter RRB-Renderer und GAME-OVER-Text |
+| `$9D70–$9F85` | bedingter RRB-Renderer und GAME-OVER-Text |
 
 `$C800–$C9FF` für Player/Orbit bleibt unberührt. Font-Glyphen G/M werden nur
 in der privaten Fontkopie bei `$4038/$4068` ergänzt. Die bestehenden Loader-
@@ -225,3 +224,7 @@ bleiben erhalten. Der Builder prüft sämtliche neuen Bereiche innerhalb des
 alten PRG auf Nullbelegung; nur sechs JSR-Hooks und der HUD-Default 175 werden
 in belegten Baselinebereichen geändert. Keine neuen VIC-/Sprite-Kollisionsbits.
 Kein Stable-Tag vor Benutzerabnahme.
+
+Korrektur: Es existieren sieben Explosionsframes. Der fälschlich zugeordnete
+Player-Datensatz wird nicht mehr bei `$CA00` eingebunden; PRG-Ende `$C9FF`.
+Neue Joystickfreigabe in BLINK benötigt keine zusätzlichen Laufzeitfelder.

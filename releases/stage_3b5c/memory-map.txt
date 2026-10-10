@@ -13,7 +13,7 @@ Default-segment:
   $3f00-$3fd1 HUD attributes rows 20-24
   $4000-$47ff Unnamed
   $4800-$4b49 Stage 3b-2 preload
-  $4c00-$4e24 Stage 3b-5c states and restart
+  $4c00-$4e28 Stage 3b-5c states and restart
   $5000-$57cf Unnamed
   $5c80-$5c8f Unnamed
   $5c90-$5fd7 HUD attributes rows 0-19
@@ -33,11 +33,10 @@ Default-segment:
   $9800-$98ff Stage 3b-2 loaded path-pixie glyphs
   $9900-$9a55 Thin HUD font
   $9b00-$9d6e Stage 3b-5b direction and BASIC sprite restoration
-  $9d70-$9f87 Stage 3b-5c conditional RRB renderer and game-over overlay
+  $9d70-$9f85 Stage 3b-5c conditional RRB renderer and game-over overlay
   $a000-$b47f Unnamed
   $b800-$bf06 Unnamed
   $c000-$c0bf Unnamed
   $c100-$c7ff Original explosion frames 0-6, with transparent guards
   $c800-$c8ff Unnamed
   $c900-$c9ff Unnamed
-  $ca00-$caff Original explosion frame 7, with transparent guards

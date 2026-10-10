@@ -9,7 +9,7 @@ Das Benutzer-ROM wird nicht in den Repository-/Release-Dateien verteilt.
 
 - KickAssembler 5.25: vollständiges neues PRG erfolgreich assembliert.
 - Gegenüber stabilem Stage-3b-5b-PRG: genau sechs JSR-Ziele und Attack-Default
-  115 → 175 geändert; neue Bereiche zuvor null und neue Erweiterung unter $D000.
+  115 → 175 geändert; neue Bereiche zuvor null und keine Erweiterung mehr hinter $C9FF.
   Alle alten Symbole/Adressen unverändert. Bestehende stabile Dateien unverändert.
 - Unabhängiger Rebuild: alle erzeugten Dateien bytegleich. Neuer CPU-Code liegt
   vollständig unter $A000; keine neue Abhängigkeit von ROMC.
@@ -24,14 +24,14 @@ Geprüft wurden:
 
 | Bereich | Ergebnis |
 | --- | --- |
-| Acht Frames, jedes Bitplane-/Maskenpixel, Nibble-Reihenfolge und Blankguards | bestanden |
+| Sieben eingebundene Frames; ausgeschlossene Playerquelle, jedes Bitplane-/Maskenpixel, Nibble-Reihenfolge und Blankguards | bestanden |
 | Vollständiger Loader, Typ 15, sechs Frames, unveränderte Objektbewegung/Playergrafik | bestanden |
 | Formation/ENTRY/ATTACK/Orbit, zwei gleichzeitige Schüsse, keine Doppelwertung | bestanden |
 | Vier Gegnerschüsse: einmaliger Lebensverlust, gefrorene Playerposition | bestanden |
 | Rammkollision: zwei Explosionen, keine Punkte; Formation/Blinken ignoriert | bestanden |
-| Acht Frames je drei Ticks, gleichzeitige/versetzte Explosionen, Renderer ohne Überlauf | bestanden |
+| Sieben Frames je drei Ticks, gleichzeitige/versetzte Explosionen, Renderer ohne Überlauf | bestanden |
 | WAIT auf reale Zustände, DEAD ignoriert, 150-Tick-Blinken/25-Tick-Wechsel | bestanden |
-| Reale Frameupdates: Bewegung/Feuer im Blinken gesperrt, SPACE stoppt Explosion nicht | bestanden |
+| Reale Frameupdates: Joystick im Blinken freigegeben, Feuer gesperrt, SPACE stoppt Explosion nicht | bestanden |
 | Punkte-Levelgrenzen 1/10/11/20/21/100/65535, Carry, Sättigung, Anzeigenmodulo | bestanden |
 | Halb offene Hitboxkanten, linker/oberer und rechter/unterer Spielfeldbereich | bestanden |
 | Vollständige letzte Explosion vor GAME OVER, Textglyphen und Color-RAM-Attribute | bestanden |
@@ -55,19 +55,20 @@ D81 `VYPER_STAGE3B5C.d81` einlegen, `LOAD "STAGE3B5C",8`, `RUN`.
    mit sechs Frames, unveränderte Bewegung, 4×2-Lebensfeld, P2 inaktiv.
 2. Joystick bewegen und Feuer mehrfach drücken/loslassen: höchstens zwei
    unabhängige Spielerschüsse. Testangriff erzeugt höchstens vier Gegnerschüsse.
-3. Formationstreffer: Explosion bleibt an Treffposition, acht Originalframes,
+3. Formationstreffer: Explosion bleibt an Treffposition, sieben Originalframes,
    Gegner verschwindet dauerhaft, +100. T schaltet Testangriff ab/an.
 4. Gegner Nr. 19 im Testangriff treffen: +175. E wechselt ATTACK/ENTRY, beide
    zählen +175. Die Flugbahn bleibt der bestehende Testpfad.
-5. Gegnerschuss: ein Leben weniger, acht Frames an gespeicherter Playerposition;
+5. Gegnerschuss: ein Leben weniger, sieben Frames an gespeicherter Playerposition;
    weitere Treffer während der Explosion ziehen kein weiteres Leben ab.
 6. ENTRY-/ATTACK-Gegner berühren: beide explodieren, ein Leben weniger,
    keine Punkte. Formation und Blinkplayer lösen keine Rammkollision aus.
 7. Nach Explosion mit Restleben auf reale Formation warten. Testangriff
    beobachten bzw. T abschalten; zerstörter Testgegner blockiert nicht.
-8. Respawn exakt an Todesposition. Drei Sekunden lang Sichtbarkeit alle
-   0,5 Sekunden wechseln; keine Bewegung/Feuer, keine Treffer. Danach sichtbar
-   und wieder steuerbar. Grenzbereiche und mehrere gleichzeitige Treffer prüfen.
+8. Respawn startet exakt an Todesposition. Drei Sekunden lang Sichtbarkeit alle
+   0,5 Sekunden wechseln; Bewegung auch während der unsichtbaren Phasen
+   möglich, kein Feuer und keine Treffer. Danach sichtbar an der zuletzt
+   erreichten Position, Feuer wieder möglich. Kein Zurückspringen zum Todesort. Grenzbereiche und mehrere gleichzeitige Treffer prüfen.
 9. Letztes Leben: letzte Explosion vollständig, dann GAME OVER / R - RESTART /
    X - EXIT. Andere Tasten und SPACE/+/-/T/E haben keine Wirkung. Ein schon
    gehaltenes R startet nicht sofort neu; loslassen, dann erneut drücken.

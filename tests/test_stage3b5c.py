@@ -10,6 +10,7 @@ import build_stage3b5c as BUILD
 import build_explosion_assets as EXP
 ROOT=OLD.ROOT
 ART=ROOT/'releases/stage_3b5c'
+EXP_TICKS=3*len(EXP.VALID_FRAME_INDICES)
 N=BUILD.symbols((ART/'STAGE3B5C.sym').read_text())
 class Machine(OLD.Machine):
     def __init__(self):
@@ -70,8 +71,12 @@ class CollisionTests(unittest.TestCase):
                     b=2*y+x//8;mask=128>>(x%8)
                     c=sum(1<<j for j in range(3) if planes[j][b]&mask)+1 if planes[3][b]&mask else 0
                     self.assertEqual((f[y*8+x//2]>>(4*(x%2)))&15,c)
-            a=0xc100+i*256 if i<7 else 0xca00
-            self.assertEqual(p[a-0x2001:a-0x2001+256],bytes(64)+f+bytes(64))
+            if i in EXP.VALID_FRAME_INDICES:
+                a=0xc100+i*256
+                self.assertEqual(p[a-0x2001:a-0x2001+256],bytes(64)+f+bytes(64))
+        with self.assertRaisesRegex(ValueError,"player ship"):
+            EXP.validate_animation(frames,tuple(range(8)))
+        self.assertEqual(len(p),0xca00-0x2001) # rejected frame is not embedded
         with self.assertRaises(ValueError):EXP.convert(source.replace('Frame 7','Frame 8'))
     def test_full_loader_type15_animation_and_old_motion(self):
         m=start();old=OLD.start()
@@ -105,7 +110,7 @@ class CollisionTests(unittest.TestCase):
         self.assertEqual(get(m,'p_active',2),0)
         self.assertEqual([get(m,'p_active',i) for i in (3,4,5)],[1,1,1])
         call(m,'c_collisions');self.assertEqual(word(m,0x1a0a,2),2)
-        for _ in range(24):
+        for _ in range(EXP_TICKS):
             m.memory.data[0xdc00]=0xfb;call(m,'c_move');self.assertEqual(m.memory.data[0x1662],90)
             call(m,'c_timers')
         self.assertEqual(get(m,'c_ps'),2)
@@ -124,7 +129,7 @@ class CollisionTests(unittest.TestCase):
         target(m,0,3);target(m,1,1,x=130);shot(m,0,138,96)
         call(m,'c_collisions') # enemy1 hit then player ram enemy0
         self.assertEqual([get(m,'c_es',i) for i in (0,1)],[4,4])
-        for tick in range(24):
+        for tick in range(EXP_TICKS):
             self.assertEqual(get(m,'c_pf'),tick//3)
             self.assertEqual([get(m,'c_ef',i) for i in (0,1)],[tick//3]*2)
             call(m,'c_render');self.assertEqual(get(m,'v014_overflow_count'),0)
@@ -175,7 +180,7 @@ class CollisionTests(unittest.TestCase):
             m.memory.data[0x1a0a:0x1a0c]=bytes([1,0])
             shot(m,2);frame(m)
             self.assertEqual(get(m,'c_ps'),1)
-            for _ in range(23):frame(m)
+            for _ in range(EXP_TICKS-1):frame(m)
             self.assertEqual(get(m,'c_ps'),1)
             frame(m);self.assertEqual(get(m,'c_ps'),4)
             screen=bytes(m.memory.data[0x5000:0x5c80]);colour=bytes(m.memory.colour[:3200])
@@ -203,21 +208,22 @@ class CollisionTests(unittest.TestCase):
         self.assertEqual(m.memory.data[0xd015],0)
         self.assertEqual(m.memory.data[0x1000:0x1600],m.before[0x1000:0x1600])
         self.assertEqual(m.memory.colour[:3200],m.before[0xd800:0xe000]+bytes([0xa5])*1152)
-    def test_blink_blocks_real_frame_joystick_and_fire_and_pause_does_not_stop_explosion(self):
+    def test_blink_allows_joystick_blocks_fire_and_pause_does_not_stop_explosion(self):
         m=start();enemies(m);player(m,100,120)
         shot(m,2,108,126);frame(m)
         death=(m.memory.data[0x1662],m.memory.data[0x1664])
         frame(m,0x20)
-        for _ in range(23):frame(m)
+        for _ in range(EXP_TICKS-1):frame(m)
         self.assertEqual(get(m,'c_ps'),3)
         setv(m,'c_es',0,18)
         for tick in range(149):
             frame(m,buttons=0xeb) # held LEFT + FIRE
-            self.assertEqual((m.memory.data[0x1662],m.memory.data[0x1664]),death)
+            self.assertEqual(m.memory.data[0x1662],max(32,death[0]-tick-1))
+            self.assertEqual(m.memory.data[0x1664],death[1])
             self.assertEqual([get(m,'p_active',i) for i in (0,1)],[0,0])
         frame(m,buttons=0xeb)
         self.assertEqual(get(m,'c_ps'),0)
-        self.assertEqual((m.memory.data[0x1662],m.memory.data[0x1664]),death)
+        self.assertEqual((m.memory.data[0x1662],m.memory.data[0x1664]),(32,death[1]))
         frame(m,buttons=0xfb);frame(m,buttons=0xef)
         self.assertEqual(get(m,'p_active',0),1)
     def test_gameover_x_and_second_run_restore_original_registers(self):
