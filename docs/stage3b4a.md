@@ -2,8 +2,8 @@
 
 Implementiert [Issue #4](https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/issues/4)
 im Branch `stage3b-4a`, Basis `stage3b3-stable` (`bb557e1995b4ec65730360fe28a38b4b3050001c`).
-Alle stabilen Stage-3b-3-Dateien bleiben unverändert. Der Benutzer hat Build `9b2e767` als voll funktional bestätigt. Die anschließende
-Schrift-/Textanpassung benötigt eine neue Sichtprüfung; kein Stable-Tag.
+Alle stabilen Stage-3b-3-Dateien bleiben unverändert. **Vom Benutzer am 10.10.2026 einschließlich Schrift-/Textanpassung bestätigt.**
+Stabile Referenz: `stage3b4a-stable`; bestätigter Programmstand `2e672c9c4abc15ee9b46a30b906f35650d43323f`.
 Die Amiga-Referenz stammt aus dem Benutzer-Gespräch; kein entsprechendes Bildasset
 wird im Repository behauptet. Die erste Fassung zeigte laut XEMU-Test BASIC-Hintergrund,
 Bewegungsspuren und unleserliche Schrift. Diese Ursachen sind in der korrigierten
@@ -198,3 +198,9 @@ HUD-Schrift insbesondere H/I/G/Score-Ziffern prüfen. Drei Lebenssymbole, vorber
 SPACE und +/- wie 3b-3. Mehrfach X: normaler BASIC-Bildschirm mit normalem Cursor und
 restaurierter Hintergrundfarbe; anschließend erneut LOAD/RUN. Erst nach ausdrücklicher
 Bestätigung durch den Benutzer als stabil markieren.
+
+## Bestätigte Abnahme
+
+Der Benutzer hat die finale Fassung am 10.10.2026 als vollständig passend bestätigt.
+Die obige XEMU-Checkliste dokumentiert den Abnahmeumfang; die Bestätigung stammt
+vom Benutzer. Die Freigabe verändert keine Quellen oder Release-Artefakte.

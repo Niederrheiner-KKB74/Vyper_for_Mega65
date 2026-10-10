@@ -162,3 +162,7 @@ und keine Hardware-Sprites. HUD-Farben in Bank 2 (freie Indizes 10–15; transpa
 Index 0 schwarz); Gegner Bank 1 und BASIC-ROM Bank 3 bleiben erhalten. Keine stabile
 Freigabe ohne erneuten Benutzer-XEMU-Test. [Technik](stage3b4a.md),
 [Fehlerursachen und Artefaktvergleich](stage3b4a_background_font_fix.md).
+
+Stage 3b-4a einschließlich dünner Schrift am 10.10.2026 vom Benutzer bestätigt;
+stabile Referenz `stage3b4a-stable`. Speicherbelegung und Release-Artefakte bleiben
+bei der Abnahmedokumentation unverändert.
