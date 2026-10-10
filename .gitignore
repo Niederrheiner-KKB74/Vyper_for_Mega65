@@ -1,0 +1,14 @@
+# Generated build intermediates
+*.log
+*.tmp
+*.bak
+__pycache__/
+*.pyc
+
+# Local tool binaries (obtain separately)
+KickAss*.jar
+
+# Local emulator state
+*.s00
+*.s01
+*.vsf
