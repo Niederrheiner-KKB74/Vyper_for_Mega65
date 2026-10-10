@@ -1,0 +1,429 @@
+{
+  "assembler": "KickAssembler 5.25",
+  "baseline": "stage3b5c-stable",
+  "comparison": {
+    "baseline_prg_sha256": "2de5edcc91b8d4a24afb7ec427b89ca0b17cbe4841b5cb5d9fe2c0a6f5f62d04",
+    "engine_hooks": [
+      "0x2230",
+      "0x2257",
+      "0x22ab",
+      "0x22b1",
+      "0x22b7",
+      "0x38a8"
+    ],
+    "changed_bytes": 760,
+    "extended_bytes": 256
+  },
+  "files": [
+    {
+      "name": "STAGE4A",
+      "bytes": 43777,
+      "blocks": 173,
+      "sha256": "a96dd1e5347c0058dbb1a8d96caa6fe8864af8ba4900f73b91a1f19b9caccfd8"
+    },
+    {
+      "name": "VYLV.DAT",
+      "bytes": 81793,
+      "blocks": 323,
+      "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
+    },
+    {
+      "name": "VYGR.DAT",
+      "bytes": 30888,
+      "blocks": 122,
+      "sha256": "cbad5d717a4890276a9408c6784500f8449d45ae90f0f4d4251d596b8a2563eb"
+    }
+  ],
+  "hud": {
+    "mode": "H640, CHARXSCALE=60; logical X doubled",
+    "logical_playfield_right_exclusive": 240,
+    "physical_hud_x": 480,
+    "physical_hud_width": 160,
+    "screen_row_stride": 128,
+    "screen_entries_per_row": 64,
+    "dynamic_row_offset": 84,
+    "font": "authored thin 5x7 glyphs, 8-column cells",
+    "colour_ram_bytes_saved": 3200,
+    "life_columns": 4,
+    "life_rows": 2,
+    "life_logical_x": [
+      245,
+      262,
+      279,
+      296
+    ],
+    "life_y": [
+      58,
+      75
+    ],
+    "initial_lives": 3,
+    "player2_active": false
+  },
+  "projectiles": {
+    "player_channels": [
+      0,
+      1
+    ],
+    "enemy_channels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "free_channels": [
+      6,
+      7
+    ],
+    "player_speed": 3,
+    "enemy_vy": 1,
+    "max_abs_vx": 2,
+    "enemy_probability": "1/8 per eligible frame",
+    "enemy_cooldown_frames": 12,
+    "test_enemy_0based": 18,
+    "attack_window_frames": 96,
+    "attack_period_frames": 128,
+    "test_toggle": "T",
+    "coordinates": "logical 240x200; sprite native X/Y from D04C-D04F",
+    "collisions": true
+  },
+  "mapping_status": [
+    {
+      "vylv_index": 0,
+      "vygr_type_1based": 12,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 1,
+      "vygr_type_1based": 12,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 2,
+      "vygr_type_1based": 1,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 3,
+      "vygr_type_1based": 2,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 4,
+      "vygr_type_1based": 3,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 5,
+      "vygr_type_1based": 4,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 6,
+      "vygr_type_1based": 5,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 7,
+      "vygr_type_1based": 6,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 8,
+      "vygr_type_1based": 7,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 9,
+      "vygr_type_1based": 8,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 10,
+      "vygr_type_1based": 9,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 11,
+      "vygr_type_1based": 10,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 12,
+      "vygr_type_1based": 11,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 13,
+      "vygr_type_1based": 12,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 14,
+      "vygr_type_1based": 15,
+      "confirmed": true,
+      "source": "User visual comparison with original Amiga Level 1 (Issue #6)"
+    },
+    {
+      "vylv_index": 15,
+      "vygr_type_1based": 14,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 16,
+      "vygr_type_1based": 15,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 17,
+      "vygr_type_1based": 16,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 18,
+      "vygr_type_1based": 17,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 19,
+      "vygr_type_1based": 18,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 20,
+      "vygr_type_1based": 19,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 21,
+      "vygr_type_1based": 20,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 22,
+      "vygr_type_1based": 21,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 23,
+      "vygr_type_1based": 22,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 24,
+      "vygr_type_1based": 23,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 25,
+      "vygr_type_1based": 24,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 26,
+      "vygr_type_1based": 25,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 27,
+      "vygr_type_1based": 26,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 28,
+      "vygr_type_1based": 27,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 29,
+      "vygr_type_1based": 28,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 30,
+      "vygr_type_1based": 29,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 31,
+      "vygr_type_1based": 30,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 32,
+      "vygr_type_1based": 31,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 33,
+      "vygr_type_1based": 32,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 34,
+      "vygr_type_1based": 33,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 35,
+      "vygr_type_1based": 34,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 36,
+      "vygr_type_1based": 35,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 37,
+      "vygr_type_1based": 36,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    }
+  ],
+  "runtime_xemu": "NOT RUN; user confirmation required",
+  "offscreen": {
+    "controls": {
+      "F": "toggle isolated test",
+      "N": "next direction",
+      "P": "pause movement",
+      "X": "BASIC"
+    },
+    "signed_coordinates": "16-bit",
+    "clip_rect_exclusive": [
+      0,
+      16,
+      240,
+      184
+    ],
+    "cases": [
+      "top",
+      "bottom",
+      "left",
+      "right",
+      "top-left diagonal"
+    ],
+    "crop_buffer": "$CA00-$CAFF",
+    "diagnostics": "$1D00-$1D3F",
+    "stable": false
+  },
+  "stage3b5c_preserved": {
+    "explosions": {
+      "source_sha256": "f70c8f503fa50dfe43642485509d73b186bbbfd8f5dc0a0090ddaf06fad561a3",
+      "geometry": [
+        16,
+        16
+      ],
+      "row_order": "linear, exactly as source specifies",
+      "transparent": "mask bit 0 -> index 0",
+      "palette": "existing engine bank 1: visible 3-bit colour + 1",
+      "packing": "left pixel low nibble",
+      "visual_xemu": "pending",
+      "animation_source_records": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "excluded_source_records": {
+        "7": "Player ship: same transparency mask and 238/256 matching player pixels; user confirms exactly seven explosion frames"
+      },
+      "frames": [
+        {
+          "frame": 0,
+          "used_for_explosion": true,
+          "sha256": "28095a0d0317d20004c205caa1f1f6613928363f051dfb67e81da02638d8aa35",
+          "bytes": 128
+        },
+        {
+          "frame": 1,
+          "used_for_explosion": true,
+          "sha256": "9621c2356ca67369410f1d74b7d3313c9596bccbaa059bd440905d73bfd76131",
+          "bytes": 128
+        },
+        {
+          "frame": 2,
+          "used_for_explosion": true,
+          "sha256": "71757779f5e8586bd9bbfeb35d14eb6ff01cfbd4bc07191252d0d858d716d277",
+          "bytes": 128
+        },
+        {
+          "frame": 3,
+          "used_for_explosion": true,
+          "sha256": "380278b6232816e794b8d752e3e60dd0e8e0db92bd1b69b61feb580efc793525",
+          "bytes": 128
+        },
+        {
+          "frame": 4,
+          "used_for_explosion": true,
+          "sha256": "dcae7d2d9fd7bd8ecb656285f37e26869561ed72a5cfba7622c8dc8e897b1979",
+          "bytes": 128
+        },
+        {
+          "frame": 5,
+          "used_for_explosion": true,
+          "sha256": "52025e49920320a1d156ca9efaefa1b1ca0ade33f6ed37c796862d4061a5438b",
+          "bytes": 128
+        },
+        {
+          "frame": 6,
+          "used_for_explosion": true,
+          "sha256": "58122a6c928a04a92cef9fae5786321a55d840a5cb6382ff32aea4df7f249712",
+          "bytes": 128
+        },
+        {
+          "frame": 7,
+          "used_for_explosion": false,
+          "sha256": "ca7351a9ad6b4a17b640822a85fd733adb033a1a22a6b6f0a6967b78cc07f027",
+          "bytes": 128
+        }
+      ]
+    },
+    "enemies": 23,
+    "explosion_ticks_per_frame": 3,
+    "respawn_ticks": 150,
+    "blink_period_ticks": 25,
+    "score_bits": 32,
+    "score_overflow": "saturate",
+    "display": "low seven decimal digits",
+    "baseline_xemu": "Stage 3b-5c accepted by user; Stage 4a pending"
+  }
+}
