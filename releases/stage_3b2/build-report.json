@@ -1,0 +1,32 @@
+{
+  "assembler": "KickAssembler 5.25",
+  "assembler_sha256": "9592a39336e73a1db8b4a7749256d62d29b113b1c7f0f6c86ea43870ebd9ae1f",
+  "level": 1,
+  "enemy_count": 22,
+  "enemy_offset_computed": 347,
+  "graphic_index": 14,
+  "vygr_type": 12,
+  "mapping_source": "latest user correction",
+  "movement_bytes": "unchanged; only two wrapper calls and six glyph operands patched",
+  "files": [
+    {
+      "name": "STAGE3B2",
+      "bytes": 43521,
+      "blocks": 172,
+      "sha256": "9669f87d80f5fa5d768294fb429a4ca295aca3b3e9627ef8b6064edb2627ea05"
+    },
+    {
+      "name": "VYLV.DAT",
+      "bytes": 81793,
+      "blocks": 323,
+      "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
+    },
+    {
+      "name": "VYGR.DAT",
+      "bytes": 30888,
+      "blocks": 122,
+      "sha256": "cbad5d717a4890276a9408c6784500f8449d45ae90f0f4d4251d596b8a2563eb"
+    }
+  ],
+  "runtime_xemu": "NOT RUN"
+}

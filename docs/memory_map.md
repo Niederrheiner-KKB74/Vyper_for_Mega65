@@ -58,3 +58,25 @@ PRG-Bytevergleich und Loader-Host-Tests bestätigen die statischen Grenzen.
 Stage 3b-1 ist vom Benutzer als stabil bestätigt (2026-10-10, `stage3b1-stable`).
 Für neue Stages sind die Geräte-/XEMU-Regressionstests erneut erforderlich.
 Details: [Stage 3b-1](stage3b1.md).
+
+
+## Stage 3b-2 – zusätzliche Bereiche und Grafikreferenzen
+
+Die Stage-3b-1-Dateien bleiben unverändert. In der neuen Version gelten dieselben
+Engine- und Ladeziele mit folgenden Ergänzungen:
+
+| Adresse | Verwendung |
+| --- | --- |
+| `$3200–$35D9` | begrenzter Levelparser, Grafikinitialisierung und DMA-Animationswrapper |
+| `$4800–$4B49` | Preloader mit Parseraufruf vor RRB-Start |
+| `$6A00–$6A07` | kopierter 8-Byte-VYGR-Verzeichniseintrag des ausgewählten Typs |
+| `$7600–$7950` | Level-1-Record; Gegnerposition durch Gruppenlängen ermittelt |
+| `$9800–$983F` | führender Blank-Guard, Glyph `$260` |
+| `$9840–$987F` | oberer Teil des geladenen Originalframes, Glyph `$261` |
+| `$9880–$98BF` | unterer Teil, Glyph `$262` |
+| `$98C0–$98FF` | abschließender Blank-Guard, Glyph `$263` |
+
+Die 22 Pfad-Pixies verwenden `$261/$262/$263`. Joystick-/Orbit-Slots und Bewegungs-
+tabellen bleiben erhalten. `$6800/$6900` werden nach SEQ-Ende für den Frame-
+Rückvergleich wiederverwendet. Neue Bereiche sind durch Assembly-Guards und
+Engine-Bytevergleich geprüft. XEMU-Abnahme offen. Details: [stage3b2.md](stage3b2.md).

@@ -20,7 +20,7 @@
 
 - Import abgeschlossen: bereitgestellte Loader-Quellen, Binär-Assets, Build-Skripte und Releases sind in der vorbereiteten Struktur enthalten; Stage 2ja bleibt als unverändertes Archiv erhalten.
 - Build-Skripte verwenden derzeit `/mnt/data`; für die Cloud-Entwicklung ist eine gesonderte Einrichtung erforderlich.
-- Stage 3b-2: Level-1-Grafikzuordnung prüfen und Originalgrafiken integrieren; bisherige Bewegungslogik beibehalten.
+- Stage 3b-2: Grafikintegration implementiert; XEMU-Regression gegen `stage3b1-stable` ausstehend.
 - Spätere Stages: Levelstruktur, Gegnerzuordnung und Grafikframes in die Engine integrieren; Stage 3b-1 verwendet die geladenen Daten noch nicht für Gegnersteuerung.
 - Keine unbestätigten Änderungen an Stage 2ja.
 
@@ -48,17 +48,20 @@ durch Codex wird damit nicht behauptet. PRG, D81 und Quellkopie bleiben unverän
 Anleitung und Regressionstest-Checkliste: [stage3b1.md](stage3b1.md).
 
 
-## Stage 3b-2 – Datenanalyse, Umsetzung durch Formatfrage blockiert
+## Stage 3b-2 – Level-1-Originalgrafik integriert, XEMU-Abnahme offen
 
-Branch `stage3b-2` basiert auf `stage3b1-stable`. VYGR-Verzeichnis, sämtliche
-239 Originalframes und alle 100 VYLV-Verzeichnisrecords wurden geprüft; acht
-Datentests bestanden. Level 1: Offset `$328`, 849 Byte. Die Bewegungslogik und
-sämtliche bisherigen Release-Artefakte sind unverändert.
+Neue Quelle `src/engine/stage3b2.asm`, Builder `tools/build_stage3b2.py`, PRG/D81
+unter `releases/stage_3b2/`. Alle Stage-3b-1-Dateien und der stabile Tag bleiben
+unverändert. Das vom Benutzer beschriebene variable Recordformat ist implementiert;
+alle 100 Levels sind vollständig durchlaufen und gegen die Recordlängen geprüft.
 
-Die historische Indexfrage ist durch Benutzerbestätigung gelöst: VYLV-Indizes
-0 und 1 → VYGR-Typ 12; Indizes 2..37 → Typen 1..36 (Index minus 1).
-Diese Regel ist implementiert und gegen die Originalgrafiktypen geprüft.
-Noch fehlt die VYLV-Recordbeschreibung/der Erzeuger, insbesondere die Offsets
-und Eintragsstruktur der Grafikindexfelder. Die benötigten Level-1-Typen bleiben
-daher unbestimmt; noch kein Stage-3b-2-PRG/D81. Befunde und erforderliche Angaben:
-[stage3b2.md](stage3b2.md).
+Level 1 enthält 22 Gegner mit Grafikindex 14. Gemäß ausdrücklicher Korrektur gilt
+Index 14 → Typ 12; die übrige Zuordnung bleibt 0/1 → 12, sonst 2..37 → Index minus 1.
+Die Gegnerliste wird aus den Kurvenlängen ermittelt, nicht bei `$015B` fest verankert.
+
+Die 22 Pfad-Pixies verwenden nun Typ 12 aus geladenem VYGR. Typ 12 hat einen Frame;
+Joystick-/Orbit-Pixie behalten ihre sieben bisherigen Animationsframes. Bewegungs-
+und Steuerlogik unverändert. Zusätzliche Grafikslots `$9800..$98FF` mit DMA-Rückvergleich.
+Assembly, Originaldatenprüfung, 18 Host-Tests, Engine-Patchvergleich und D81-Prüfung
+bestanden. XEMU-Darstellung, Joystick und X-Exit müssen gegen die stabile Referenz
+verglichen werden. [Build und Abnahme](stage3b2.md).

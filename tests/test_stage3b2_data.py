@@ -14,6 +14,7 @@ class OriginalDataTests(unittest.TestCase):
     def test_confirmed_mapping_against_original_type_directory(self):
         types = DATA.graphics_types((ROOT/'assets/VYGR.DAT').read_bytes())
         expected = [12, 12, *range(1, 37)]
+        expected[14] = 12
         actual = [DATA.vygr_type_for_level_index(i) for i in range(38)]
         self.assertEqual(actual, expected)
         for typ in actual:
@@ -33,8 +34,35 @@ class OriginalDataTests(unittest.TestCase):
         self.assertEqual(report['vygr']['types'], 36)
         self.assertEqual(report['vygr']['frames'], 239)
         self.assertTrue(report['vygr']['all_frames_match_original_archive'])
-        self.assertIsNone(report['level_1']['enemy_type_mapping'])
+        self.assertEqual(report['all_levels_parsed'], 100)
+        record = report['level_1']['parsed_record']
+        self.assertEqual(record['enemy_offset'], 0x15b)
+        self.assertEqual(len(record['enemies']), 22)
+        self.assertEqual(record['required_vygr_types'], [12])
+        self.assertEqual({e['graphic_type'] for e in record['enemies']}, {14})
         self.assertFalse(report['movement_changes'])
+
+    def test_variable_enemy_offset(self):
+        record = struct.pack('<HBBHH', 1, 1, 1, 16, 1)
+        record += struct.pack('<HHHH', 1, 11, 20, 3)+b'abc'
+        record += struct.pack('<HHBB', 98, 43, 14, 0)
+        record += struct.pack('<H', 2)+b'de'
+        parsed = DATA.parse_level_record(record)
+        self.assertEqual(parsed['enemy_offset'], 19)
+        self.assertEqual(parsed['enemies'][0]['vygr_type'], 12)
+
+    def test_reject_out_of_bounds_variable_regions(self):
+        record = bytearray(DATA.level_records((ROOT/'assets/VYLV.DAT').read_bytes())[0][1])
+        for offset in (14, 0x1df):
+            damaged = bytearray(record)
+            struct.pack_into('<H', damaged, offset, 65535)
+            with self.subTest(offset=offset), self.assertRaises(ValueError):
+                DATA.parse_level_record(damaged)
+        for cut in (7, 15, 0x15b+5, len(record)-1):
+            with self.subTest(cut=cut), self.assertRaises(ValueError):
+                DATA.parse_level_record(record[:cut])
+        with self.assertRaises(ValueError):
+            DATA.parse_level_record(record+b'x')
 
     def test_reject_overlapping_level_records(self):
         level = bytearray((ROOT/'assets/VYLV.DAT').read_bytes())

@@ -1,109 +1,127 @@
-# Stage 3b-2 – Indexzuordnung bestätigt, Levelrecord-Format noch offen
+# Stage 3b-2 – Level-1-Grafiken aus geladenem VYGR
 
-## Ausgangspunkt
+Stage 3b-2 integriert die vom Benutzer bestätigte VYLV-Recordstruktur und verwendet
+für die 22 Level-1-Pfad-Pixies Originalgrafiktyp **12** aus geladenem `VYGR.DAT`.
+Basis ist `stage3b1-stable`. Dessen Quellen, Builder und Release-Dateien bleiben
+unverändert. Neue Quelle: `src/engine/stage3b2.asm`; Artefakte: `releases/stage_3b2/`.
+Assembly, D81 und 18 Host-Tests bestanden. **Stage 3b-2 ist noch nicht XEMU-bestätigt.**
 
-Basis ist die vom Benutzer bestätigte stabile Referenz `stage3b1-stable`.
-Stage-3b-1-ASM, PRG und D81 bleiben unverändert. Entwicklung auf `stage3b-2`.
-Die Bewegungs-/Joystick-/Exit-Logik wurde nicht verändert.
+## Bestätigtes Recordformat und Indexzuordnung
 
-## Belegte Ergebnisse
+Die Formatbeschreibung stammt vom Benutzer. Die erwähnte Originaldatei
+`vyper_original_100_levels_v1.json` liegt nicht im Repository; die Implementierung
+arbeitet ausschließlich mit den vorhandenen DAT-Dateien und der bestätigten
+Beschreibung. Sie erzeugt keinen Ersatz für diese Originalquelle.
 
-`tools/analyze_stage3b2_data.py` prüft die vorhandenen Originaldateien und schreibt
-[stage3b2-data-analysis.json](stage3b2-data-analysis.json). Das Format von VYGR ist
-im Originalarchiv `assets/STAGE3A_DATA_PREPARATION.zip` beschrieben und wird durch
-dessen `build_vygr.py` belegt:
+Der 8-Byte-Recordkopf enthält Levelnummer WORD LE, Gruppenzahl BYTE, Gegnerzahl
+BYTE, Einflugintervall WORD LE und Anzahl Angriffskurven WORD LE. Darauf folgen
+Einfluggruppen mit Gegneranzahl, Start-X, Start-Y und Kurvenlänge (je WORD LE),
+anschließend genau die angegebene Anzahl Kurvenbytes. Erst danach liegen die
+Gegnereinträge: Formations-X WORD LE, Formations-Y WORD LE, Grafikindex BYTE,
+Angriffsindex BYTE. Zuletzt folgen die Angriffskurven: Länge WORD LE und Kurvenbytes.
 
-- Header `VYGR`, Little-Endian-Version 1, 36 Typen.
-- 36 Verzeichniseinträge zu je 8 Byte: Dateioffset DWORD, Framezahl WORD,
-  reserviertes WORD 0. Typreihenfolge `type_01` bis `type_36`.
-- 239 Frames à 128 Byte, lückenlose Datenbereiche bis Dateiende.
-- Alle 239 Frames sind bytegleich mit den jeweiligen Original-NCM-Dateien aus
-  `vyper_all_enemy_types_exact_ncm.zip`.
-- Laufzeitadresse eines Frames: `$54000 + Typ-Dateioffset + Frameindex * 128`.
-  Adressen und Framezahlen für alle 36 Typen stehen im JSON-Bericht.
-
-Für VYLV sind Header, Version, Verzeichnis und die erste Signatur aus den bisherigen
-Loadern und den Binärdaten belegbar. Alle 100 Verzeichniseinträge sind lückenlos,
-innerhalb der Datei und beginnen mit ihrer jeweiligen Little-Endian-Levelnummer.
-Level 1 liegt bei Dateioffset `$328` / RAM `$40328`, ist 849 Byte lang und beginnt mit:
-
-```
-01 00 02 16 10 00 02 00 0B 00 14 00 00 00 9E 00
-```
-
-Dies ist ein Rohbefund. **Die übrigen Levelrecord-Felder werden ohne Formatbeleg
-nicht als Gegnertypen, Zähler, Positionen oder Animationen interpretiert.**
-
-## Belegter Blocker
-
-Die README im Original-Datenpaket nennt ausdrücklich:
-
-> Offene Datenfrage: Level-Grafiktypindizes 0..37, NCM-Typen 1..36.
-> Mehrere Level haben mehr als vier unterschiedliche Typindizes.
-> Die Zuordnung und Slot-Strategie muessen vor der Spielintegration
-> abgeglichen werden.
-
-### Bestätigte Indexzuordnung
-
-Der Benutzer hat die Indexzuordnung verbindlich geklärt:
+Beide Parser durchlaufen Gruppen und Kurven über ihre Längen. Die Gegnerposition
+ist der daraus resultierende Cursor, **kein fest codierter Gegneroffset**.
+Jeder Lese-/Sprungbereich wird gegen das Recordende geprüft, einschließlich
+arithmetischem Überlauf im Assembler. Gruppen-Gegnersumme und exaktes Recordende
+werden ebenfalls geprüft. Der Python-Parser prüft alle 100 Levels vollständig.
 
 | VYLV-Grafikindex | VYGR-Typ |
 | --- | --- |
-| 0 und 1 | 12 |
-| 2 bis 37 | Index minus 1 (Typ 1 bis 36) |
+| 0, 1 | 12 |
+| **14** | **12 – ausdrücklich bestätigte Korrektur** |
+| sonstige Indizes 2–37 | Index minus 1 |
 
-Diese Regel ist in `vygr_type_for_level_index` implementiert und für alle 38
-zulässigen Indizes gegen das Originalgrafikverzeichnis geprüft. Werte außerhalb
-0..37 werden abgewiesen. Die historische Indexfrage im Datenpaket ist damit gelöst;
-der Originaltext bleibt als historische Quelle im Analysebericht erhalten.
+Ungültige Indizes werden abgewiesen. Die historische offene Zuordnungsfrage im
+Original-Datenpaket ist durch diese Benutzerbestätigung aufgelöst.
 
-### Verbleibende Formatfrage
+Level 1 liegt bei Dateioffset `$0328`, hat 849 Byte und zwei Einfluggruppen.
+Der Parser ermittelt die Gegnerliste bei relativ `$015B`; der erste Eintrag ist
+`62 00 2B 00 0E 00`. Alle 22 Einträge haben Index 14 und werden **Typ 12** zugeordnet.
+Die im Bericht gespeicherte Gegnerposition ist ein ermittelter Befund, kein Parserparameter.
+[Analysebericht](stage3b2-data-analysis.json) enthält die vollständigen Level-1-Felder
+und das geprüfte VYGR-Verzeichnis. Alle 239 Frames in VYGR sind bytegleich mit dem
+vorhandenen Original-NCM-Archiv.
 
-Das Repository enthält `build_vygr.py` im Datenarchiv, jedoch keinen VYLV-Erzeuger
-und keine vollständige Levelrecord-Formatspezifikation. Die bestätigte Zuordnung
-sagt noch nicht, **an welchen Offsets die Grafikindizes in Level 1 stehen** und wie
-Gruppen-/Gegnereinträge durchlaufen werden. Auch das Amiga-Grafikmanifest belegt
-diese Verbindung zu den Levelrecord-Feldern nicht.
+## Grafikübertragung und unveränderte Bewegung
 
-Damit lassen sich die tatsächlich benötigten Level-1-Typen noch nicht zuverlässig
-bestimmen. Die Bytes `10 00 02 00` werden nicht als angebliche Typen interpretiert.
-Benötigt wird der originale VYLV-Erzeuger oder die Beschreibung der Einträge mit
-Offsets, Längen und Grafikindexfeld. Erst daraus ergibt sich die Zuordnung zu den
-bestehenden Test-Pixies; Bewegungen bleiben separat erhalten.
+Der stabile SEQ-/SETBNK-Loader und sein vollständiger DMA-Rückvergleich bleiben
+in Stage 3b-2 erhalten. Nach der Level-1-Kopie nach `$7600` durchläuft der neue
+Assembler-Parser den Record. Der Typ wird aus den tatsächlichen Gegnereinträgen
+bestimmt. Der zugehörige VYGR-Verzeichniseintrag wird aus High RAM nach `$6A00`
+kopiert; Offset, Framezahl, reservierte Felder und vollständiger Framebereich
+werden gegen das geladene VYGR-Ende geprüft.
 
-## Integrationsgrenzen aus der Engine
+Die Pfadgrafik liegt in einem zusätzlichen geschützten 256-Byte-Bereich:
+`$9800–$983F` Guard, `$9840–$987F` oben, `$9880–$98BF` unten,
+`$98C0–$98FF` Guard. Die 22 Pfad-Pixies referenzieren Glyphen `$261/$262/$263`.
+Der Frame wird per bisheriger F018A-DMA-Konfiguration aus High RAM übertragen,
+zurückgelesen und gegen einen separat aus der Quelle kopierten Frame byteweise
+verglichen. Beide bisherigen Lesepuffer werden nach Abschluss des Ladens wiederverwendet.
 
-Die jetzige Engine benutzt zwei gemeinsam animierte, geschützte Glyphpaare:
-Joystick-Pixie `$C840/$C880`, automatische Pixies `$C940/$C980`.
-Die 23 automatischen Pixies referenzieren denselben Grafikslot. Für verschiedene
-Gegnertypen sind daher getrennte Typ-/Frameslots und gezielte Änderungen der
-Grafikreferenzen im Renderer erforderlich; ein globales Überschreiben des bisherigen
-Slots würde allen automatischen Pixies denselben Typ geben.
+Typ 12 besitzt im Original **nur einen Frame**. Deshalb bleibt die Pfadgrafik bei
+Animationswechseln gleich; es werden keine Frames erfunden. Die ursprüngliche
+Animationsuhr samt SPACE und +/- bleibt aktiv. Mehrframe-Auswahl und Umlauf sind
+zusätzlich mit dem vorhandenen Typ 2 im Host-Test geprüft.
 
-Die bestehende Routine `s2ja_animate_pixies` kopiert zudem weiterhin Typ-2-Frames
-aus `$A200..$A57F` in diese Slots. Nur ein einmaliger DMA-Grafiktransfer wäre daher
-keine funktionierende Integration: beim nächsten Animationswechsel würden die
-neuen Grafiken überschrieben. In Stage 3b-2 muss ausschließlich die Grafikquelle/
-Frameauswahl angepasst werden, bei unveränderter Animationsuhr und Bewegungslogik.
-Framezahlen und Bankgrenzen müssen aus dem validierten VYGR-Verzeichnis stammen.
-Die endgültige Slotbelegung wird nach der bestätigten Typzuordnung festgelegt.
+Joystick- und Orbit-Pixie behalten ihre alten Slots und die sieben Typ-2-Frames.
+Positionen, Orbit-/Phasentabellen, Geschwindigkeiten, Rastertakt, Joystick und X-Exit
+bleiben erhalten. Es werden keine Formationspositionen, Einflug- oder Angriffskurven
+zur Bewegungssteuerung verwendet. Im Engine-Image ändern sich ausschließlich zwei
+JSR-Zieladressen (Initialisierung/Animationswrapper) und sechs Grafikoperanden der
+22 Pfad-Pixies. Alle übrigen Engine-Bytes werden mit Stage 3b-1 verglichen.
+Neue Bereiche liegen bei `$3200–$35D9`, `$6A00–$6A07` und `$9800–$98FF`;
+der Preloader reicht jetzt bis `$4B49`. Sie überschneiden sich nicht mit der
+stabilen Engine-Belegung. Siehe [memory_map.md](memory_map.md).
 
-## Reproduzierbare Prüfung
+Diese Stage ist ausdrücklich auf Level 1 mit 22 Pfad-Pixies und einem gemeinsamen
+Grafiktyp begrenzt. Die Python-Analyse versteht alle 100 Records; der Laufzeitparser
+weist eine andere Gegnerzahl oder verschiedene gleichzeitig benötigte Typen mit
+Fehler `$07` zurück. Mehrtyp-Slotverwaltung und weitere Level sind spätere Stages.
 
-Keine zusätzlichen Python-Pakete erforderlich:
+Preload-Fehler `$07` (Record/Index/Scope) bzw. `$08` (Grafikverzeichnis) führen mit
+Fehlermeldung zurück nach BASIC, bevor RRB startet. Ein DMA-Rücklesefehler während
+RRB setzt `$04` und verwendet die ursprüngliche Exit-Routine ohne Textausgabe im
+RRB-Modus. Die DMA-Listenänderungen während der Grafikaktualisierung sind durch
+SEI/PHP/PLP geschützt. Kein neuer Interrupt-Handler, kein anderes ROM-Mapping.
+
+## Reproduzierbarer Build und Tests
+
+Python 3.9+, Java und dieselbe separat bezogene offizielle KickAssembler-5.25-JAR
+wie bei Stage 3b-1. SHA-256-Prüfung der JAR und sämtlicher Originaldaten bleibt aktiv.
 
 ```sh
 python3 tools/analyze_stage3b2_data.py --output docs/stage3b2-data-analysis.json
-python3 -m unittest discover -s tests -p test_stage3b2_data.py -v
+python3 tools/build_stage3b2.py --kickass /pfad/KickAss.jar
+python3 -m venv /tmp/vyper-stage3b2-tests
+/tmp/vyper-stage3b2-tests/bin/pip install -r tests/requirements-stage3b1.txt
+/tmp/vyper-stage3b2-tests/bin/python -m unittest discover -s tests -p 'test_stage3b2*.py' -v
 ```
 
-Acht Tests bestanden: bestätigte Zuordnung aller 38 Indizes zu vorhandenen
-Originaltypen, Zurückweisung ungültiger Indizes sowie Originalverzeichnisse und alle Frames, überlappende
-Levelrecords, falsche Levelnummer, ungültiger Grafikoffset, abgeschnittene Grafikdatei
-und ein Frame, der vom Originalarchiv abweicht. Die Prüfer lehnen beschädigte Daten
-ab und halten die nicht belegte Typzuordnung ausdrücklich leer.
+Der Builder entpackt ausschließlich vorhandene Baseline-Grafikbinaries temporär,
+assembliert die neue Quelle und erzeugt PRG, D81, Quellkopie, Symbole, Speicherkarte,
+Build-Bericht und SHA-256-Liste. Keine Änderungen an Stage 3b-1.
+D81: `STAGE3B2` als PRG, `VYLV.DAT` und `VYGR.DAT` als SEQ; Dateiketten,
+Nutzdaten, Blockzahlen und BAM werden geprüft. Ein separater Wiederholungsbuild
+liefert byteidentische Artefakte.
 
-Noch **kein Stage-3b-2-ASM/PRG/D81**: ein scheinbar funktionierender Build mit
-erfundener Zuordnung wäre keine gültige Umsetzung. Nach Klärung des Levelrecord-Formats folgen die
-DMA-Grafikübertragung, gezielte Frame-/Renderer-Anpassung, Build und D81 sowie
-Regressionstests gegen `stage3b1-stable` und eine neue XEMU-Abnahme.
+18 Tests bestehen: vollständige Originaldatenanalyse, bestätigte Zuordnung,
+ungültige Indizes, variable Gegneroffsets, falsche/trunkierte/überlappende Bereiche,
+Originalframe-Vergleich, kompletter Maschinenprogramm-Preload, Assemblerparser
+mit veränderter Kurvenlänge, Runtime-Grenzen, Typ-12-Frame/Guards, Mehrframe-Umlauf,
+DMA-Fehler und BASIC-Rückkehr sowie expliziter Engine-/D81-Vergleich.
+Die 6502-Tests modellieren KERNAL, DMA und Raster. Sie ersetzen keinen XEMU-Test.
+
+## XEMU-Abnahme
+
+1. Neues D81 in Laufwerk 8 einlegen: `LOAD"STAGE3B2",8`, dann `RUN`.
+2. Erfolgreichen Preload und Start der 24 Pixies prüfen. Die 22 bisherigen
+   Pfad-Pixies müssen die Originalgrafik von Typ 12 zeigen; Joystick-/Orbit-Pixie
+   sollen aussehen wie Stage 3b-1. Keine beschädigten Guards/RRB-Reste.
+3. Gleiche Pfade, Geschwindigkeiten, Joysticksteuerung und Begrenzungen gegen
+   `stage3b1-stable` vergleichen. SPACE und +/- prüfen. Typ 12 hat nur einen Frame;
+   die zwei bisherigen Typ-2-Pixies animieren weiterhin.
+4. Mit X beenden: BASIC-Videomodus, Farben und Eingabe wie in Stage 3b-1. Erneut
+   per LOAD/RUN starten. Keine Ausgabe im aktiven RRB-Modus.
+
+Erst nach diesem Vergleich ist Stage 3b-2 als stabil abgenommen.
