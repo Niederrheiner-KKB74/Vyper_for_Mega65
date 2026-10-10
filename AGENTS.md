@@ -1,6 +1,6 @@
 # Arbeitsregeln für Codex
 
-1. **Stabile Baselines schützen.** Stage 2ja ist die bestätigte Spielengine; Stage 3a-2 ist der bestätigte Loader; Stage 3b-1 ist die vom Benutzer bestätigte stabile Loader-/Engine-Integration (`stage3b1-stable`). Niemals ohne ausdrückliche Freigabe überschreiben. Neue Stages separat entwickeln.
+1. **Stabile Baselines schützen.** Stage 2ja ist die bestätigte Spielengine; Stage 3a-2 ist der bestätigte Loader; Stage 3b-1 ist die vom Benutzer bestätigte stabile Loader-/Engine-Integration (`stage3b1-stable`); Stage 3b-2 ist die bestätigte Originalgrafik-Integration mit korrigiertem BASIC-Exit (`stage3b2-stable`). Niemals ohne ausdrückliche Freigabe überschreiben. Neue Stages separat entwickeln.
 2. **Assembler:** KickAssembler / MEGA65. Bestehende Syntax, Speicherzuordnung und Build-Skripte respektieren.
 3. **Datei-I/O:** Bei MEGA65-KERNAL `SETBNK ($FF6B)` vor `SETNAM` setzen (Dateiname in Bank 0). `OPEN` / `CHKIN` / `CHRIN` / `READST` / `CLRCHN` / `CLOSE` sauber behandeln. Keine Screen-Ausgaben während aktivem Eingabekanal.
 4. **High RAM:** `VYLV.DAT` nach `$40000`, `VYGR.DAT` nach `$54000`. `$20000-$3FFFF` nicht als freien Datenspeicher behandeln (ROM-Bereich). RAM-Layout vor jeder Änderung prüfen.

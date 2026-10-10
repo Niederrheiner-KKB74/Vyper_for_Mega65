@@ -1,0 +1,631 @@
+{
+  "vylv": {
+    "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283",
+    "bytes": 81793,
+    "version": 1,
+    "records": 100,
+    "directory_checked": true
+  },
+  "level_1": {
+    "offset": 808,
+    "ram_address": "$40328",
+    "bytes": 849,
+    "sha256": "bf2c8d7e22770f23159a3d0711203e206e30e5cce752f9c3b634cf9ee8f63b03",
+    "first_16_bytes": "01 00 02 16 10 00 02 00 0b 00 14 00 00 00 9e 00",
+    "enemy_type_mapping": [
+      {
+        "formation_x": 98,
+        "formation_y": 43,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 0
+      },
+      {
+        "formation_x": 80,
+        "formation_y": 28,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 0
+      },
+      {
+        "formation_x": 61,
+        "formation_y": 25,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 0
+      },
+      {
+        "formation_x": 42,
+        "formation_y": 34,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 0
+      },
+      {
+        "formation_x": 30,
+        "formation_y": 53,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 0
+      },
+      {
+        "formation_x": 30,
+        "formation_y": 72,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 0
+      },
+      {
+        "formation_x": 43,
+        "formation_y": 91,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 0
+      },
+      {
+        "formation_x": 62,
+        "formation_y": 99,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 0
+      },
+      {
+        "formation_x": 81,
+        "formation_y": 96,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 0
+      },
+      {
+        "formation_x": 98,
+        "formation_y": 80,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 0
+      },
+      {
+        "formation_x": 103,
+        "formation_y": 62,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 0
+      },
+      {
+        "formation_x": 127,
+        "formation_y": 43,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 1
+      },
+      {
+        "formation_x": 145,
+        "formation_y": 28,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 1
+      },
+      {
+        "formation_x": 164,
+        "formation_y": 25,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 1
+      },
+      {
+        "formation_x": 183,
+        "formation_y": 34,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 1
+      },
+      {
+        "formation_x": 195,
+        "formation_y": 53,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 1
+      },
+      {
+        "formation_x": 195,
+        "formation_y": 72,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 1
+      },
+      {
+        "formation_x": 182,
+        "formation_y": 91,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 1
+      },
+      {
+        "formation_x": 163,
+        "formation_y": 99,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 1
+      },
+      {
+        "formation_x": 144,
+        "formation_y": 96,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 1
+      },
+      {
+        "formation_x": 127,
+        "formation_y": 80,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 1
+      },
+      {
+        "formation_x": 122,
+        "formation_y": 62,
+        "graphic_type": 14,
+        "vygr_type": 12,
+        "attack_index": 1
+      }
+    ],
+    "parsed_record": {
+      "level": 1,
+      "entry_interval": 16,
+      "enemy_offset": 347,
+      "groups": [
+        {
+          "enemy_count": 11,
+          "start_x": 20,
+          "start_y": 0,
+          "curve_length": 158,
+          "curve_hex": "0212020212021202120212021202121202120212121202121212021212121212120212121212121212121222121212121222121212221212221222122212222212222222222222222221222122212121212121202120202020202920292a2a2a1a1a1a0a1a0a0a1a0a0a9a0a0a0a9a0a9a9a9a9a9a9aaa9a9a9a9a9a9a9a9a9a9a9a0a9a9a9a0a9a9a0a9a9a0a9a0a9a0a0a9a0a0a0a0a0a0a0a1a1a2a00"
+        },
+        {
+          "enemy_count": 11,
+          "start_x": 220,
+          "start_y": 0,
+          "curve_length": 165,
+          "curve_hex": "0000000000000002920202920292029202920292029292029202929292029292920292929292929202929292929292929292a29292929292a2929292a29292a292a292a292a2a292a2a2a2a2a2a2a2a2a1a2a1a2a1a1a1a1a1a1a0a1a0a0a0a0a0a9a0a9aaaaaa9a9a9a0a9a0a0a9a0a0a1a0a0a0a1a0a1a1a1a1a1a1a2a1a1a1a1a1a1a1a1a1a1a1a0a1a1a1a0a1a1a0a1a1a0a1a0a1a0a0a1a0a0a0a0a0a0a0a9a9aaaa0"
+        }
+      ],
+      "enemies": [
+        {
+          "formation_x": 98,
+          "formation_y": 43,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 0
+        },
+        {
+          "formation_x": 80,
+          "formation_y": 28,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 0
+        },
+        {
+          "formation_x": 61,
+          "formation_y": 25,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 0
+        },
+        {
+          "formation_x": 42,
+          "formation_y": 34,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 0
+        },
+        {
+          "formation_x": 30,
+          "formation_y": 53,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 0
+        },
+        {
+          "formation_x": 30,
+          "formation_y": 72,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 0
+        },
+        {
+          "formation_x": 43,
+          "formation_y": 91,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 0
+        },
+        {
+          "formation_x": 62,
+          "formation_y": 99,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 0
+        },
+        {
+          "formation_x": 81,
+          "formation_y": 96,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 0
+        },
+        {
+          "formation_x": 98,
+          "formation_y": 80,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 0
+        },
+        {
+          "formation_x": 103,
+          "formation_y": 62,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 0
+        },
+        {
+          "formation_x": 127,
+          "formation_y": 43,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 1
+        },
+        {
+          "formation_x": 145,
+          "formation_y": 28,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 1
+        },
+        {
+          "formation_x": 164,
+          "formation_y": 25,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 1
+        },
+        {
+          "formation_x": 183,
+          "formation_y": 34,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 1
+        },
+        {
+          "formation_x": 195,
+          "formation_y": 53,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 1
+        },
+        {
+          "formation_x": 195,
+          "formation_y": 72,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 1
+        },
+        {
+          "formation_x": 182,
+          "formation_y": 91,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 1
+        },
+        {
+          "formation_x": 163,
+          "formation_y": 99,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 1
+        },
+        {
+          "formation_x": 144,
+          "formation_y": 96,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 1
+        },
+        {
+          "formation_x": 127,
+          "formation_y": 80,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 1
+        },
+        {
+          "formation_x": 122,
+          "formation_y": 62,
+          "graphic_type": 14,
+          "vygr_type": 12,
+          "attack_index": 1
+        }
+      ],
+      "attack_curves_hex": [
+        "929202929202029202029202020202020202020212020212021212121202121222121212221222122222222222222122212121212121202020212020222020202020292029292929292a2a2a1a1a1a1a1a0a1a0a0a0a0a0a9a0a9a9a9a9a9aaaaaaaa9a9a9a9a9a0a9a0a0a0a0a0a1a0a1a1a1a1a1a2a2a2929292929202920202020202120212121202222222222121222220202120212121222222122212121212021202120212020212020202020202020202020202",
+        "1212021212020212020212020202020202020202920202920292929292029292a2929292a292a292a2a2a2a2a2a2a1a2a1a1a1a1a1a1a0a0a0a1a0a0a2a0a0a0a0a0a9a0a9a9a9a9a9aaaaaa9a9a9a9a9a0a9a0a0a0a0a0a1a0a1a1a1a1a1a2a2a2a29292929292029202020202021202121212121222222121212121202120202020202920292929202a2a2a2a2a1a1a2a2a0a0a1a0a1a1a1a2a2a292a292929292029202920292020292020202020202020202020202"
+      ],
+      "required_vygr_types": [
+        12
+      ]
+    }
+  },
+  "vygr": {
+    "sha256": "cbad5d717a4890276a9408c6784500f8449d45ae90f0f4d4251d596b8a2563eb",
+    "bytes": 30888,
+    "version": 1,
+    "types": 36,
+    "frames": 239,
+    "all_frames_match_original_archive": true,
+    "directory": [
+      {
+        "type": 1,
+        "offset": 296,
+        "frame_count": 4,
+        "ram_address": "$54128"
+      },
+      {
+        "type": 2,
+        "offset": 808,
+        "frame_count": 7,
+        "ram_address": "$54328"
+      },
+      {
+        "type": 3,
+        "offset": 1704,
+        "frame_count": 10,
+        "ram_address": "$546A8"
+      },
+      {
+        "type": 4,
+        "offset": 2984,
+        "frame_count": 6,
+        "ram_address": "$54BA8"
+      },
+      {
+        "type": 5,
+        "offset": 3752,
+        "frame_count": 8,
+        "ram_address": "$54EA8"
+      },
+      {
+        "type": 6,
+        "offset": 4776,
+        "frame_count": 6,
+        "ram_address": "$552A8"
+      },
+      {
+        "type": 7,
+        "offset": 5544,
+        "frame_count": 7,
+        "ram_address": "$555A8"
+      },
+      {
+        "type": 8,
+        "offset": 6440,
+        "frame_count": 4,
+        "ram_address": "$55928"
+      },
+      {
+        "type": 9,
+        "offset": 6952,
+        "frame_count": 8,
+        "ram_address": "$55B28"
+      },
+      {
+        "type": 10,
+        "offset": 7976,
+        "frame_count": 4,
+        "ram_address": "$55F28"
+      },
+      {
+        "type": 11,
+        "offset": 8488,
+        "frame_count": 6,
+        "ram_address": "$56128"
+      },
+      {
+        "type": 12,
+        "offset": 9256,
+        "frame_count": 1,
+        "ram_address": "$56428"
+      },
+      {
+        "type": 13,
+        "offset": 9384,
+        "frame_count": 4,
+        "ram_address": "$564A8"
+      },
+      {
+        "type": 14,
+        "offset": 9896,
+        "frame_count": 8,
+        "ram_address": "$566A8"
+      },
+      {
+        "type": 15,
+        "offset": 10920,
+        "frame_count": 6,
+        "ram_address": "$56AA8"
+      },
+      {
+        "type": 16,
+        "offset": 11688,
+        "frame_count": 6,
+        "ram_address": "$56DA8"
+      },
+      {
+        "type": 17,
+        "offset": 12456,
+        "frame_count": 12,
+        "ram_address": "$570A8"
+      },
+      {
+        "type": 18,
+        "offset": 13992,
+        "frame_count": 12,
+        "ram_address": "$576A8"
+      },
+      {
+        "type": 19,
+        "offset": 15528,
+        "frame_count": 4,
+        "ram_address": "$57CA8"
+      },
+      {
+        "type": 20,
+        "offset": 16040,
+        "frame_count": 8,
+        "ram_address": "$57EA8"
+      },
+      {
+        "type": 21,
+        "offset": 17064,
+        "frame_count": 9,
+        "ram_address": "$582A8"
+      },
+      {
+        "type": 22,
+        "offset": 18216,
+        "frame_count": 4,
+        "ram_address": "$58728"
+      },
+      {
+        "type": 23,
+        "offset": 18728,
+        "frame_count": 4,
+        "ram_address": "$58928"
+      },
+      {
+        "type": 24,
+        "offset": 19240,
+        "frame_count": 12,
+        "ram_address": "$58B28"
+      },
+      {
+        "type": 25,
+        "offset": 20776,
+        "frame_count": 6,
+        "ram_address": "$59128"
+      },
+      {
+        "type": 26,
+        "offset": 21544,
+        "frame_count": 8,
+        "ram_address": "$59428"
+      },
+      {
+        "type": 27,
+        "offset": 22568,
+        "frame_count": 4,
+        "ram_address": "$59828"
+      },
+      {
+        "type": 28,
+        "offset": 23080,
+        "frame_count": 8,
+        "ram_address": "$59A28"
+      },
+      {
+        "type": 29,
+        "offset": 24104,
+        "frame_count": 6,
+        "ram_address": "$59E28"
+      },
+      {
+        "type": 30,
+        "offset": 24872,
+        "frame_count": 8,
+        "ram_address": "$5A128"
+      },
+      {
+        "type": 31,
+        "offset": 25896,
+        "frame_count": 8,
+        "ram_address": "$5A528"
+      },
+      {
+        "type": 32,
+        "offset": 26920,
+        "frame_count": 8,
+        "ram_address": "$5A928"
+      },
+      {
+        "type": 33,
+        "offset": 27944,
+        "frame_count": 12,
+        "ram_address": "$5AD28"
+      },
+      {
+        "type": 34,
+        "offset": 29480,
+        "frame_count": 4,
+        "ram_address": "$5B328"
+      },
+      {
+        "type": 35,
+        "offset": 29992,
+        "frame_count": 3,
+        "ram_address": "$5B528"
+      },
+      {
+        "type": 36,
+        "offset": 30376,
+        "frame_count": 4,
+        "ram_address": "$5B6A8"
+      }
+    ]
+  },
+  "confirmed_graphics_index_mapping": {
+    "source": "User confirmation",
+    "rule": "0, 1 and 14 map to type 12; other indices 2..37 map to index-1",
+    "table": [
+      12,
+      12,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      12,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ]
+  },
+  "original_package_warning": "Level-Grafiktypindizes 0..37, NCM-Typen 1..36.\nMehrere Level haben mehr als vier unterschiedliche Typindizes.\nDie Zuordnung und Slot-Strategie muessen vor der Spielintegration\nabgeglichen werden.",
+  "original_warning_status": "Index mapping and level-record schema confirmed by user",
+  "integration_status": "LEVEL_SCHEMA_AND_MAPPING_VALIDATED",
+  "all_levels_parsed": 100,
+  "movement_changes": false
+}

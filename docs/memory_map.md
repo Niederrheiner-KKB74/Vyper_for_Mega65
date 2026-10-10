@@ -58,3 +58,47 @@ PRG-Bytevergleich und Loader-Host-Tests bestätigen die statischen Grenzen.
 Stage 3b-1 ist vom Benutzer als stabil bestätigt (2026-10-10, `stage3b1-stable`).
 Für neue Stages sind die Geräte-/XEMU-Regressionstests erneut erforderlich.
 Details: [Stage 3b-1](stage3b1.md).
+
+
+## Stage 3b-2 – zusätzliche Bereiche und Grafikreferenzen
+
+Die Stage-3b-1-Dateien bleiben unverändert. In der neuen Version gelten dieselben
+Engine- und Ladeziele mit folgenden Ergänzungen:
+
+| Adresse | Verwendung |
+| --- | --- |
+| `$3200–$35D9` | begrenzter Levelparser, Grafikinitialisierung und DMA-Animationswrapper |
+| `$4800–$4B49` | Preloader mit Parseraufruf vor RRB-Start |
+| `$6A00–$6A07` | kopierter 8-Byte-VYGR-Verzeichniseintrag des ausgewählten Typs |
+| `$7600–$7950` | Level-1-Record; Gegnerposition durch Gruppenlängen ermittelt |
+| `$9800–$983F` | führender Blank-Guard, Glyph `$260` |
+| `$9840–$987F` | oberer Teil des geladenen Originalframes, Glyph `$261` |
+| `$9880–$98BF` | unterer Teil, Glyph `$262` |
+| `$98C0–$98FF` | abschließender Blank-Guard, Glyph `$263` |
+
+Die 22 Pfad-Pixies verwenden `$261/$262/$263`. Joystick-/Orbit-Slots und Bewegungs-
+tabellen bleiben erhalten. `$6800/$6900` werden nach SEQ-Ende für den Frame-
+Rückvergleich wiederverwendet. Neue Bereiche sind durch Assembly-Guards und
+Engine-Bytevergleich geprüft. Die Grafikintegration wurde unter XEMU bestätigt;
+auch die BASIC-Exit-Korrektur wurde am 10.10.2026 vom Benutzer bestätigt
+(`stage3b2-stable`). Details: [stage3b2.md](stage3b2.md).
+
+### BASIC-Exit-Korrektur in Stage 3b-2
+
+Die alte Objektkopie überschreibt im bereitgestellten ROM V920395 nachweislich
+Cursorzustand, Zähler, Zeichen und Farbe bei `$111F–$1123`. Nur Stage 3b-2 erhält
+eine korrigierte Belegung im dokumentierten freien RAM `$1600–$1EFF`:
+
+| Adresse | Verwendung nach der Korrektur |
+| --- | --- |
+| `$1600–$18FF` | 32 Objektrecords à 24 Byte, ersetzt `$1000–$12FF` |
+| `$1900–$191F` | Diagnostik, ersetzt `$1300–$131F` |
+| `$1A00–$1AFF` | reservierter, unbenutzter Pfadarbeitsbereich |
+| `$1B00–$1EFF` | reservierter, unbenutzter RRB-Arbeitsbereich |
+| `$1000–$15FF` | KERNAL-eigen; keine Engine-Schreibzugriffe mehr |
+
+Assembly-Guards prüfen die Grenzen; der Builder gestattet ausschließlich die 53
+betroffenen Adressoperanden. Alle oben beschriebenen Loader-/Grafikbereiche und
+alle Stage-3b-1-Dateien bleiben unverändert. ROM V920395 und 80×25 sind bestätigt;
+die Bank-4-Reservierung von BASIC 80×50 erklärt diesen Testfehler nicht.
+[Ursache, automatisierte Tests und Artefaktvergleich](stage3b2_exit_investigation.md).

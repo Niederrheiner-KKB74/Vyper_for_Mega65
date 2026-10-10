@@ -20,7 +20,7 @@
 
 - Import abgeschlossen: bereitgestellte Loader-Quellen, Binär-Assets, Build-Skripte und Releases sind in der vorbereiteten Struktur enthalten; Stage 2ja bleibt als unverändertes Archiv erhalten.
 - Build-Skripte verwenden derzeit `/mnt/data`; für die Cloud-Entwicklung ist eine gesonderte Einrichtung erforderlich.
-- Stage 3b-2: Level-1-Grafikzuordnung prüfen und Originalgrafiken integrieren; bisherige Bewegungslogik beibehalten.
+- Stage 3b-2: Am 10.10.2026 vom Benutzer einschließlich korrigiertem BASIC-Exit unter XEMU bestätigt. Stabile Referenz: `stage3b2-stable`.
 - Spätere Stages: Levelstruktur, Gegnerzuordnung und Grafikframes in die Engine integrieren; Stage 3b-1 verwendet die geladenen Daten noch nicht für Gegnersteuerung.
 - Keine unbestätigten Änderungen an Stage 2ja.
 
@@ -46,3 +46,33 @@ BAM sowie 12 bestandene Host-Tests des assemblierten Loaders mit KERNAL-/DMA-Mod
 Diese Bestätigung dokumentiert die Abnahme des Benutzers; ein eigener Emulatorlauf
 durch Codex wird damit nicht behauptet. PRG, D81 und Quellkopie bleiben unverändert.
 Anleitung und Regressionstest-Checkliste: [stage3b1.md](stage3b1.md).
+
+
+## Stage 3b-2 – stabile Referenz `stage3b2-stable`
+
+Neue Quelle `src/engine/stage3b2.asm`, Builder `tools/build_stage3b2.py`, PRG/D81
+unter `releases/stage_3b2/`. Alle Stage-3b-1-Dateien und der stabile Tag bleiben
+unverändert. Das vom Benutzer beschriebene variable Recordformat ist implementiert;
+alle 100 Levels sind vollständig durchlaufen und gegen die Recordlängen geprüft.
+
+Level 1 enthält 22 Gegner mit Grafikindex 14. Gemäß ausdrücklicher Korrektur gilt
+Index 14 → Typ 12; die übrige Zuordnung bleibt 0/1 → 12, sonst 2..37 → Index minus 1.
+Die Gegnerliste wird aus den Kurvenlängen ermittelt, nicht bei `$015B` fest verankert.
+
+Die 22 Pfad-Pixies verwenden nun Typ 12 aus geladenem VYGR. Typ 12 hat einen Frame;
+Joystick-/Orbit-Pixie behalten ihre sieben bisherigen Animationsframes. Bewegungs-
+und Steuerlogik unverändert. Zusätzliche Grafikslots `$9800..$98FF` mit DMA-Rückvergleich.
+Assembly, Originaldatenprüfung, 18 Host-Tests, Engine-Patchvergleich und D81-Prüfung
+bestanden. Der Benutzer bestätigt am 10.10.2026 erfolgreiches Laden, richtige
+Grafiken und korrekten Enginebetrieb unter XEMU. Der zunächst gemeldete
+BASIC-Cursorfehler wurde korrigiert. Mit dem bereitgestellten ROM
+V920395 ist die Ursache nachgewiesen: Engine-Objektkopie überschreibt Cursorbytes
+`$111F–$1123`. Objekte und Diagnostik sind nach `$1600/$1900` verlegt; nur 53
+Adressbytes im PRG ändern sich. Neues PRG/D81 gebaut, 23 Tests einschließlich
+echter ROM-Cursorroutine bestanden. Anschließend bestätigt der Benutzer:
+„Jetzt tritt kein Fehler beim Beenden mehr auf. Stage3b-2 ist damit bestätigt.“
+Stage 3b-2 ist am 10.10.2026 als stabile Referenz `stage3b2-stable` abgenommen.
+Die bestätigten ASM-/PRG-/D81-Dateien bleiben unverändert. Die XEMU-Abnahme
+stammt vom Benutzer; ein eigener Emulatorlauf wird nicht behauptet.
+[Exit-Untersuchung](stage3b2_exit_investigation.md).
+[Build und Abnahme](stage3b2.md).

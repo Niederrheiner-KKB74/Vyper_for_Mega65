@@ -35,6 +35,12 @@ bestanden; das Release wurde vom Benutzer am 2026-10-10 als stabil bestätigt.
 Referenz: `stage3b1-stable`.
 [Build, Speicherentscheidung und XEMU-Checkliste](docs/stage3b1.md).
 
+## Stage 3b-2
+
+Die 22 Level-1-Pfad-Pixies verwenden jetzt Originaltyp 12 aus geladenem VYGR.
+Variable Recordparser und 18 Host-Tests sind vorhanden; Bewegungslogik und
+stabile Referenz bleiben erhalten. [Build und XEMU-Abnahme](docs/stage3b2.md).
+
 ## Nächster Schritt
 
-Stage 3b-2: Level-1-Datenstrukturen und Grafikzuordnungen auswerten, Originalgrafiken in die RRB-Puffer übertragen und die Bewegungslogik beibehalten. Die stabilen Referenzen nicht überschreiben.
+Stage 3b-2 unter XEMU mit `stage3b1-stable` vergleichen und abnehmen. Die stabilen Referenzen nicht überschreiben.
