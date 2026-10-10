@@ -1,4 +1,4 @@
-# Stage 3b-1 – Entwicklungsstand, XEMU-Test ausstehend
+# Stage 3b-1 – stabile Referenz `stage3b1-stable`
 
 - [VYPER_STAGE3B1.d81](VYPER_STAGE3B1.d81): PRG + beide Original-SEQ-Dateien.
 - [STAGE3B1.PRG](STAGE3B1.PRG): BASIC `RUN` startet den Loader und danach Stage 2ja.
@@ -8,5 +8,7 @@
 - Speicherkarte, Symbole, Build-Bericht und SHA-256-Liste liegen daneben.
 
 Assembly, Engine-Bytevergleich und D81-Prüfung bestanden; 12 Loader-Host-Tests
-bestanden. Darstellung, Animation, Joystick und X-Exit müssen unter XEMU noch
-mit Stage 2ja verglichen werden. Die Baselines bleiben unverändert.
+bestanden. Der Benutzer hat das Release am 2026-10-10 als stabil bestätigt.
+PRG, D81, ASM und ihre Prüfsummen bleiben gegenüber dem getesteten Release unverändert.
+Der Git-Tag `stage3b1-stable` sichert diesen Stand. Die Bestätigung stammt vom
+Benutzer; `NOT RUN` im Build-Bericht bezeichnet weiterhin den automatischen Builder.

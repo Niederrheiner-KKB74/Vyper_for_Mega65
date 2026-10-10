@@ -4,8 +4,11 @@
 
 Stage 3b-1 ist erfolgreich mit dem offiziellen KickAssembler 5.25 assembliert.
 PRG und D81 sind strukturell geprüft; 12 Host-Tests des assemblierten Loaders
-bestehen. **Ein XEMU-/Hardware-Test von Stage 3b-1 steht aus.** Die vom Benutzer
-bestätigten Laufzeittests beziehen sich weiterhin auf Stage 2ja und Stage 3a-2.
+bestehen. **Der Benutzer hat das Release am 2026-10-10 als stabil bestätigt.**
+Die Referenz wird mit `stage3b1-stable` gesichert; PRG, D81 und ASM bleiben unverändert.
+Die Bestätigung stammt vom Benutzer, nicht aus einem eigenen Codex-Emulatorlauf.
+`runtime_xemu: NOT RUN` im unveränderten Build-Bericht bezeichnet den automatischen
+Builder, der keinen Emulator ausführt.
 
 Die Engine wurde aus dem vorhandenen `Stage_2ja_STABLE_ARCHIVE.zip` übernommen.
 Das darin enthaltene Build-ZIP hat SHA-256
@@ -128,7 +131,7 @@ auch SETBNK-Reihenfolge, Kanalbereinigung, ausbleibende Ausgabe bei aktivem Kana
 IRQ-Maskenrestaurierung, 883 korrekte DMA-Transfers und unveränderte Engine-Bereiche.
 **Das prüft keine echten MEGA65-Geräte, Interruptabläufe oder VIC-IV-Ausgabe.**
 
-## Unter XEMU prüfen (Akzeptanz noch offen)
+## XEMU-Regressionstest für spätere Stages
 
 1. D81 in Laufwerk 8 einlegen; im normalen BASIC `LOAD"STAGE3B1",8` und `RUN`.
    Beide Ladezugriffe müssen enden, die Erfolgsmeldung erscheinen und danach die
@@ -145,4 +148,5 @@ IRQ-Maskenrestaurierung, 883 korrekte DMA-Transfers und unveränderte Engine-Ber
 6. Optional im Debugger die High-RAM-Bereiche gegen die Originaldateien und
    `$7600–$7950` gegen Level 1 vergleichen. PAL/NTSC prüfen, falls beides verwendet wird.
 
-Erst nach diesem Vergleich kann das Akzeptanzkriterium als erfüllt gelten.
+Stage 3b-1 ist vom Benutzer als stabil abgenommen; spätere Stages müssen erneut
+gegen diese Referenz verglichen werden.

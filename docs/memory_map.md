@@ -55,5 +55,6 @@ Die neue DMA-Liste liegt in CPU-Bank 0 innerhalb des Loader-Bereichs;
 es werden keine Engine-DMA-Listen überschrieben (die Baseline enthält keine).
 Die Baseline-Banking-/VIC-Einstellungen bleiben erhalten. Assembly-Guards,
 PRG-Bytevergleich und Loader-Host-Tests bestätigen die statischen Grenzen.
-Echte KERNAL-/VIC-/DMA-Zusammenarbeit und XEMU-Verhalten sind noch zu prüfen.
+Stage 3b-1 ist vom Benutzer als stabil bestätigt (2026-10-10, `stage3b1-stable`).
+Für neue Stages sind die Geräte-/XEMU-Regressionstests erneut erforderlich.
 Details: [Stage 3b-1](stage3b1.md).

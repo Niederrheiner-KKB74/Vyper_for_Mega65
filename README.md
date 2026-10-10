@@ -31,9 +31,10 @@ KickAssembler ausführen, PRG und D81 erzeugen, XEMU testen, Testausgabe protoko
 
 Der neue Loader startet vor der unveränderten Stage-2ja-Engine. Vollständige Quelle,
 assembliertes PRG, D81 und reproduzierbarer Build sind verfügbar. 12 Loader-Host-Tests
-bestanden; der XEMU-Verhaltensvergleich steht aus.
+bestanden; das Release wurde vom Benutzer am 2026-10-10 als stabil bestätigt.
+Referenz: `stage3b1-stable`.
 [Build, Speicherentscheidung und XEMU-Checkliste](docs/stage3b1.md).
 
 ## Nächster Schritt
 
-Stage 3b-1 unter XEMU mit Stage 2ja vergleichen und abnehmen. Anschließend Level-1-Datenstrukturen und Grafikzuordnungen in einer separaten Stage auswerten. Stage 2ja nicht überschreiben.
+Stage 3b-2: Level-1-Datenstrukturen und Grafikzuordnungen auswerten, Originalgrafiken in die RRB-Puffer übertragen und die Bewegungslogik beibehalten. Die stabilen Referenzen nicht überschreiben.
