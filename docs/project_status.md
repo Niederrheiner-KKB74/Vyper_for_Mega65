@@ -165,17 +165,25 @@ Artefakte: `releases/stage_3b5b/`. [Technik/Build](stage3b5b.md),
 Bestätigter Programmstand: `6f378c2faa136a6d25b5d8d32f51e3ba79f02518`. Die Abnahmedokumentation
 verändert weder ASM noch PRG, D81, Mapping-Assets oder Prüfsummen.
 
-## Stage 3b-5c – Vorprüfung, Implementierung durch fehlende Assets blockiert
+## Stage 3b-5c – Testrelease, Benutzerabnahme ausstehend
 
-Issue #8 wurde gegen die stabile Referenz `stage3b5b-stable` geprüft.
-Entwicklungsbranch: `stage3b-5c`. Die vorhandenen Archive und `VYGR.DAT`
-enthalten lediglich die 239 Gegnerframes mit globalen Indizes 8–246;
-die acht geforderten Originalexplosionsframes 0–7 fehlen auch im ursprünglichen
-Importpaket. Alte Explosionstabellen enthalten nur Referenzen, keine nutzbaren
-Originalframes. Die benötigten Dateien wurden beim Benutzer angefragt.
+Issue #8, eigener Branch `stage3b-5c`, Basis `stage3b5b-stable`.
+Der zunächst fehlende Original-Explosionssatz wurde vom Benutzer in
+`assets/explosions/explosion_amiga_planes.txt` ergänzt. Alle acht Frames werden
+verlustfrei mit Maskentransparenz und bestehender Palette in NCM konvertiert.
+Software-AABBs berücksichtigen zwei Spieler- und vier Gegnerschüsse sowie alle
+23 Gegner. Einflug-/Angriffs-Rammkollisionen erzeugen zwei Explosionen ohne
+Abschusspunkte. Eigene Zustände verhindern Mehrfachtreffer und Wiedererscheinen
+zerstörter Gegner. Punkte/Highscore sind 32-bit; drei Startleben, WAIT_FORMATION,
+Respawn an Todesposition mit 150 Ticks Unverwundbarkeit und 25-Tick-Blinkwechsel.
+GAME OVER erscheint nach vollständiger letzter Explosion; R setzt Level 1
+zurück und erhält den Highscore, X verwendet die bestehende BASIC-Restauration.
+Mapping 14 → Typ 15 bleibt unverändert. Player 2 bleibt inaktiv.
 
-Rebuild der stabilen Stage 3b-5b: PRG und D81 bytegleich; 9/9 bestehende
-Hosttests bestanden. Keine Änderungen an stabilen Quellen oder Releases.
-Stage 3b-5c ist noch nicht implementiert und nicht Stable; es gibt kein neues
-PRG/D81 und keine behauptete XEMU-Abnahme.
-[Asset-Nachweise, Speicherprüfung und Integrationsbefund](stage3b5c_preflight.md).
+14 neue CPU-/DMA-/Sprite-/RRB-Hosttests bestehen, einschließlich ausgewähltem
+Cursorcode aus dem bereitgestellten ROM V920395. Der unabhängige Rebuild erzeugt
+bytegleiche Artefakte. Stable-Dateien und Tags bleiben unverändert.
+Kein neuer Stable-Tag; XEMU-Abnahme
+noch offen. Artefakte in `releases/stage_3b5c/`.
+[Technik und Build](stage3b5c.md), [Testprotokoll](stage3b5c_xemu_test.md),
+[historische Vorprüfung](stage3b5c_preflight.md).

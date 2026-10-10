@@ -1,12 +1,13 @@
 # Stage 3b-5c – Vorprüfung zu Issue #8
 
-## Status: Original-Explosionsframes fehlen
+## Historischer Befund – inzwischen behoben
 
-Stage 3b-5c ist **noch nicht implementiert, gebaut oder als Stable markiert**.
-Es gibt deshalb noch kein Stage-3b-5c-PRG oder D81. Der Entwicklungsbranch
-`stage3b-5c` beginnt exakt bei `stage3b5b-stable`, Commit
-`e4540557938b342fbf8935cfce787410a3d77512`.
-Alle stabilen Quellen, Tags und Release-Dateien bleiben unverändert.
+Der zunächst festgestellte Asset-Blocker ist behoben. Der Benutzer hat
+`assets/explosions/explosion_amiga_planes.txt` im Branch `stage3b-5b` ergänzt
+und die Verwendung ausdrücklich angeordnet. Die Datei und ihre verlustfreie
+NCM-Konvertierung sind jetzt in `stage3b-5c` enthalten. Die folgende Vorprüfung
+beschreibt den Stand **vor dieser Ergänzung**, nicht den aktuellen Lieferstatus.
+Aktueller Quellcode, Build, Tests und XEMU-Abnahme: [Stage 3b-5c](stage3b5c.md).
 
 Issue #8 verlangt die acht bereits extrahierten Original-Amiga-Explosionsframes.
 Die Vorprüfung vom 10.10.2026 findet diese Dateien weder im GitHub-Branch
@@ -40,7 +41,7 @@ Die alten Tabellen dürfen deshalb nicht als funktionierende Originalanimation
 reaktiviert werden. Ein Gegnertyp mit acht Animationsframes ist ebenfalls kein
 Nachweis für acht Explosionsframes.
 
-Benötigt werden die acht Originalframes in bestätigter Reihenfolge mit
+Vor der Ergänzung benötigt wurden die acht Originalframes in bestätigter Reihenfolge mit
 Format-/Palettebeschreibung, vorzugsweise 16×16-NCM-Dateien à 128 Bytes
 (linkes Pixel im Low-Nibble, Transparenzindex 0). Alternativ ist die vorhandene
 Originalextraktion samt Quellmaterial und Formatbeschreibung geeignet.
@@ -109,7 +110,7 @@ Ergebnis: **9/9 bestehende CPU-/DMA-/Sprite-/RRB-Hosttests bestanden**
 (42,292 Sekunden). Diese Tests sind **keine** neuen Stage-3b-5c-Tests und kein
 vollständiger XEMU-Lauf. Die bisherige Stage-3b-5b-XEMU-Abnahme stammt vom Benutzer.
 
-Die Stage-3b-5c-Abnahmekriterien aus Issue #8 bleiben vollständig offen:
+Zum Zeitpunkt der ursprünglichen Vorprüfung waren folgende Anforderungen offen:
 Kollisionen, unabhängige Originalexplosionen, Score/Highscore, Leben,
 WAIT_FORMATION, 150-Tick-Respawn, GAME OVER, wiederholter Neustart und Exit.
 Eine Stable-Markierung erfolgt erst nach ausdrücklicher Benutzerbestätigung.

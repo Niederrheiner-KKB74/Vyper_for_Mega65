@@ -196,3 +196,32 @@ keine Zero-Page-Adressen und keine zusätzlichen RRB-Objekte verwendet.
 Stage 3b-5b am 10.10.2026 vom Benutzer als vollständig funktional bestätigt; stabile
 Referenz `stage3b5b-stable`. Die Abnahmedokumentation ändert keine Speicherbelegung
 oder Release-Artefakte.
+
+## Stage 3b-5c – Testrelease, neue Kollisionen und unabhängige Explosionen
+
+Die stabile Stage 3b-5b und ihre Speicherkarte bleiben unverändert.
+Nur die neue Stage ergänzt folgende Bereiche (Grenzen inklusiv):
+
+| Adresse | Neue Verwendung |
+| --- | --- |
+| `$1C00–$1CFF` | Laufzeitzustände; bei Spielstart vollständig genullt |
+| `$1C00–$1C16` | Zustände der 23 Gegner (22 Pfade + Orbit) |
+| `$1C17–$1C2D`, `$1C2E–$1C44` | unabhängige Explosionsframes/-ticks |
+| `$1C45–$1C5B`, `$1C5C–$1C72` | eingefrorene Explosions-X/Y |
+| `$1C73–$1C7C` | Playerzustand, Explosion, Todesposition, Blink-/Test-/Keyzustände |
+| `$1C7D–$1C9C` | Kollisions-, 32-bit-Punkte-, Level- und UI-Arbeitswerte |
+| `$4C00–$4E24` | Zustände, Keyboard, Neustart und Timer (siehe finale Assemblykarte) |
+| `$85B0–$865F` | Statusgesteuerte bestehende Bewegung, Framekoordinator |
+| `$8840–$8877` | ursprüngliche Pfadphasen und dünne Zusatzglyphen G/M |
+| `$8B00–$8E13` | Software-AABBs, Treffer, Score/Highscore und Punkteformel |
+| `$C100–$C7FF` | Originalexplosionen 0–6, je Blank + 128 NCM-Bytes + Blank |
+| `$CA00–$CAFF` | Originalexplosion 7 mit eigenen Blankguards |
+| `$9D70–$9F87` | bedingter RRB-Renderer und GAME-OVER-Text |
+
+`$C800–$C9FF` für Player/Orbit bleibt unberührt. Font-Glyphen G/M werden nur
+in der privaten Fontkopie bei `$4038/$4068` ergänzt. Die bestehenden Loader-
+/DMA-Listen, Originaldatenziele, Color-RAM-Sicherungen und ROM-/KERNALbereiche
+bleiben erhalten. Der Builder prüft sämtliche neuen Bereiche innerhalb des
+alten PRG auf Nullbelegung; nur sechs JSR-Hooks und der HUD-Default 175 werden
+in belegten Baselinebereichen geändert. Keine neuen VIC-/Sprite-Kollisionsbits.
+Kein Stable-Tag vor Benutzerabnahme.
