@@ -1,0 +1,12 @@
+# Arbeitsregeln für Codex
+
+1. **Stabile Baselines schützen.** Stage 2ja ist die bestätigte Spielengine; Stage 3a-2 ist der bestätigte Loader. Niemals ohne ausdrückliche Freigabe überschreiben. Neue Stages separat entwickeln.
+2. **Assembler:** KickAssembler / MEGA65. Bestehende Syntax, Speicherzuordnung und Build-Skripte respektieren.
+3. **Datei-I/O:** Bei MEGA65-KERNAL `SETBNK ($FF6B)` vor `SETNAM` setzen (Dateiname in Bank 0). `OPEN` / `CHKIN` / `CHRIN` / `READST` / `CLRCHN` / `CLOSE` sauber behandeln. Keine Screen-Ausgaben während aktivem Eingabekanal.
+4. **High RAM:** `VYLV.DAT` nach `$40000`, `VYGR.DAT` nach `$54000`. `$20000-$3FFFF` nicht als freien Datenspeicher behandeln (ROM-Bereich). RAM-Layout vor jeder Änderung prüfen.
+5. **DMAgic:** F018A-Descriptoren und Register exakt prüfen. Daten nach Möglichkeit durch Rückkopie und Bytevergleich verifizieren.
+6. **Tests:** Assembly-Erfolg, Disketten-Dateiketten, Dateigrößen, Signaturen und Laufzeittests unterscheiden. XEMU-/Hardware-Erfolg nur behaupten, wenn vom Benutzer bestätigt.
+7. **Auslieferung:** Zu jeder Test-Stage PRG, D81, ASM und reproduzierbare Build-Anleitung bereitstellen.
+8. **Originaldaten:** Nur die vom Benutzer bereitgestellten Assets verwenden. Keine Daten oder Animationszuordnungen erfinden.
+9. **Fehlerbehebung:** Fehlerdiagnose vor großflächigen Änderungen; kleine nachvollziehbare Commits bevorzugen.
+10. **Dokumentation:** `docs/project_status.md` und `docs/memory_map.md` nach bestätigten Änderungen aktualisieren.
