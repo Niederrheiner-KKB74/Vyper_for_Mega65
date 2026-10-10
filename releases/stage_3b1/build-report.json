@@ -1,0 +1,27 @@
+{
+  "assembler": "KickAssembler 5.25",
+  "assembler_sha256": "9592a39336e73a1db8b4a7749256d62d29b113b1c7f0f6c86ea43870ebd9ae1f",
+  "engine_bytes": "unchanged at $2100-$C9FF outside preload gap $4800-$4FFF",
+  "loader_end_exclusive": "$4B3F",
+  "files": [
+    {
+      "name": "STAGE3B1",
+      "bytes": 43521,
+      "blocks": 172,
+      "sha256": "08df3c8d4d270e7044dfa5bbbe2d3d97f4fc93b8d7b9c8cda6e89b35c37c7901"
+    },
+    {
+      "name": "VYLV.DAT",
+      "bytes": 81793,
+      "blocks": 323,
+      "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
+    },
+    {
+      "name": "VYGR.DAT",
+      "bytes": 30888,
+      "blocks": 122,
+      "sha256": "cbad5d717a4890276a9408c6784500f8449d45ae90f0f4d4251d596b8a2563eb"
+    }
+  ],
+  "runtime_xemu": "NOT RUN"
+}

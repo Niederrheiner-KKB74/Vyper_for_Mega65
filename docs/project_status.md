@@ -18,5 +18,28 @@
 
 - Import abgeschlossen: bereitgestellte Loader-Quellen, Binär-Assets, Build-Skripte und Releases sind in der vorbereiteten Struktur enthalten; Stage 2ja bleibt als unverändertes Archiv erhalten.
 - Build-Skripte verwenden derzeit `/mnt/data`; für die Cloud-Entwicklung ist eine gesonderte Einrichtung erforderlich.
-- Stage 3b: Levelstruktur, Gegnerzuordnung, Grafikframes und DMA-Integration in die RRB-Engine.
+- Stage 3b-1: Loader-Integration implementiert, assembliert und automatisch geprüft; XEMU-Abnahme offen.
+- Spätere Stages: Levelstruktur, Gegnerzuordnung und Grafikframes in die Engine integrieren; Stage 3b-1 verwendet die geladenen Daten noch nicht für Gegnersteuerung.
 - Keine unbestätigten Änderungen an Stage 2ja.
+
+
+## Stage 3b-1 – Entwicklungsstand (kein bestätigter XEMU-Erfolg)
+
+Neue Quelle `src/engine/stage3b1.asm`, Artefakte `releases/stage_3b1/` und
+reproduzierbarer Builder `tools/build_stage3b1.py`. Die Engine stammt ausschließlich
+aus dem vorhandenen Stage-2ja-Archiv. Ihr Maschinenprogramm, Grafikdaten und
+Tabellen bleiben bytegenau erhalten; nur der BASIC-SYS-Einstieg und ein vorher
+ungenutzter Loader-Bereich unterscheiden sich. Stage 2ja und Stage 3a-2 unverändert.
+
+Vor dem RRB-Start werden beide Originaldateien per SETBNK/SEQ und der bisherigen
+F018A-DMA-Konfiguration geladen. Pufferkonflikte sind durch `$6800/$6900` und
+Level-Kopie `$7600` vermieden. DMA-Rückvergleich, Level-Signatur und die aus den
+Originaldaten abgeleiteten Bytesummen werden geprüft. Erfolgsmeldung vor der
+Engine-Initialisierung; kein Text im RRB-Spielbetrieb. Keine DAT-gesteuerten Gegner.
+
+Bestätigt: Assembly mit KickAssembler 5.25, bytegenaue Reproduktion der Baseline,
+identische Artefakte aus zwei Builds, Originaldaten-SHA-256, D81-Dateiketten und
+BAM sowie 12 bestandene Host-Tests des assemblierten Loaders mit KERNAL-/DMA-Modellen.
+**Nicht bestätigt:** reale Geräteabläufe, RRB-Darstellung, Animation, Joystick und
+X-Exit von Stage 3b-1 unter XEMU. Das Akzeptanzkriterium bleibt bis zum Vergleich
+offen. Anleitung und Checkliste: [stage3b1.md](stage3b1.md).
