@@ -115,8 +115,9 @@ erhalten. Neue unveränderliche Quelle und Paletten im zuvor leeren Gap:
 | `$3700–$375E` | Spielerinitialisierung und RRB-Palette-Wrapper |
 | `$C800–$C8FF` | bestehende Spieler-Glyphen und Guards; keine Animation mehr |
 
-Spielerpalette Bank 3, Gegnerpalette Bank 1, bisherige Hardware-Sprite-Palette
-Bank 2. GOTOX-Color-Byte 1 `$60` wählt nur für `$321/$322/$323` die alternative
+Spielerpalette Bank 2 ersetzt die bisherige Palette der deaktivierten
+Hardware-Sprites; Gegnerpalette bleibt Bank 1. Bank 3 bleibt geschützt, denn
+ihre ersten 16 Einträge bilden zugleich die C65/BASIC-ROM-Palette. GOTOX-Color-Byte 1 `$60` wählt nur für `$321/$322/$323` die alternative
 Palette; jedes Gegnerfragment schaltet mit `$00` zurück. Alle Ladeziele, DMA-
 Puffer, Screen-/Colorbereiche, BASIC-Backup, Orbit- und Gegnerglyphen bleiben
 unverändert. Builder und Assembly-Guards prüfen die Grenzen und zulässigen

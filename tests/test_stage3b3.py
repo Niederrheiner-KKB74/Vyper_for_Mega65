@@ -34,6 +34,17 @@ class PaletteMemory:
             self.banks[self.data[0xd070] >> 6][(address-0xd100)//256][address & 255] = value
         self.base[address] = value
 
+    def primary_palette(self):
+        """XEMU ROMPAL: bank 0 uses bank-3 entries 0..15 when D030 bit 2 is clear.
+
+        Mirror the palette-source selection in check_if_rom_palette() and
+        vic4_write_palette_reg_*(); return raw RGB register values, not SDL pixels.
+        """
+        selected = (self.data[0xd070] >> 4) & 3
+        rom = selected == 0 and not (self.data[0xd030] & 4)
+        return tuple(tuple(self.banks[3 if rom and i < 16 else selected][c][i]
+                           for c in range(3)) for i in range(256))
+
 
 class Machine(R.Machine):
     def __init__(self, record=None):
@@ -72,6 +83,31 @@ def frame(machine, key=0, buttons=255):
 
 
 class PlayerTests(unittest.TestCase):
+    def test_basic_rom_palette_survives_exit_and_old_bank3_choice_fails(self):
+        # Reproduce the actual missing link in the previous palette model.
+        for old_bank3 in (False, True):
+            with self.subTest(old_bank3=old_bank3):
+                machine = Machine().execute()
+                machine.memory.data[0xd030] = 0  # BASIC ROM palette enabled
+                machine.memory.data[0xd070] = 0  # BASIC primary palette bank 0
+                before = machine.memory.primary_palette()
+                bank3 = tuple(bytes(c) for c in machine.memory.banks[3])
+                if old_bank3:
+                    at = NAMES['player_palette_init']+3
+                    self.assertEqual(machine.memory.data[at:at+2], b'\xa9\x9a')
+                    machine.memory.data[at+1] = 0xdb  # exact previous PRG operand
+                for _ in range(2):
+                    begin(machine)
+                    frame(machine)
+                    frame(machine, 0x58)
+                    self.assertEqual(machine.cpu.pc, 0x0200)
+                    if old_bank3:
+                        self.assertNotEqual(machine.memory.primary_palette(), before)
+                        self.assertNotEqual(tuple(bytes(c) for c in machine.memory.banks[3]), bank3)
+                    else:
+                        self.assertEqual(machine.memory.primary_palette(), before)
+                        self.assertEqual(tuple(bytes(c) for c in machine.memory.banks[3]), bank3)
+
     def test_approved_pixels_nibbles_and_palette(self):
         BUILD.verify_player_assets()
         sprite = (PLAYER/'player_sprite.bin').read_bytes()
@@ -96,17 +132,17 @@ class PlayerTests(unittest.TestCase):
         bank0 = [bytes(channel) for channel in machine.memory.banks[0]]
         machine.execute(NAMES['player_palette_init'])
         approved = [(PLAYER/f'player_palette_{c}.bin').read_bytes() for c in 'rgb']
-        self.assertEqual(machine.memory.data[0xd070], 0xdb)
+        self.assertEqual(machine.memory.data[0xd070], 0x9a)
         for c in range(3):
-            self.assertEqual(machine.memory.banks[3][c][:16], approved[c])
+            self.assertEqual(machine.memory.banks[2][c][:16], approved[c])
             self.assertEqual(bytes(machine.memory.banks[0][c]), bank0[c])
         # A future enemy palette update touches its own mapped bank only.
-        machine.memory[0xd070] = 0x5b  # map bank 1, preserve primary/alternate selection
+        machine.memory[0xd070] = 0x5a  # map bank 1, preserve primary/alternate selection
         for c in range(3):
             for i in range(256):
                 machine.memory[0xd100+c*256+i] = i ^ 255
         for c in range(3):
-            self.assertEqual(machine.memory.banks[3][c][:16], approved[c])
+            self.assertEqual(machine.memory.banks[2][c][:16], approved[c])
 
     def test_player_static_orbit_and_enemy_animation_retained(self):
         machine = Machine(R.original_record()).execute(NAMES['prepare'])

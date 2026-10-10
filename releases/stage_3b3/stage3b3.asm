@@ -1,4 +1,4 @@
-// Stage 3b-3: approved original player NCM and independent palette bank 3.
+// Stage 3b-3: approved original player NCM and independent palette bank 2.
 // Based exclusively on stage3b2-stable; loader, movement and exit retained.
 // Exit/movement algorithms preserved; object/diagnostic operands relocated out of KERNAL RAM.
 // Loader at $4800; Level-1 graphics drive 22 path pixies without changing movement.
@@ -3934,9 +3934,10 @@ player_source_end:
 *=$3700 "Stage 3b-3 player integration"
 .namespace s3b3 {
 player_palette_init:
-    jsr init_palette  // unchanged enemy bank 1 and legacy hardware-sprite bank 2
-    // MAPEDPAL=3, BTPALSEL=1, SPRPALSEL=2, ABTPALSEL=3.
-    lda #$db
+    jsr init_palette  // unchanged enemy bank 1; replace unused hardware-sprite bank 2
+    // Bank 3 entries 0..15 also back the C65 ROM palette: never overwrite them.
+    // MAPEDPAL=2, BTPALSEL=1, SPRPALSEL=2, ABTPALSEL=2.
+    lda #$9a
     sta VIC_PALSEL
     ldx #0
 player_palette_loop:

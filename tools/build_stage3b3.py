@@ -121,7 +121,7 @@ def main():
         files = BASE.verify_disk(disk, entries)
         report = {'assembler': 'KickAssembler 5.25', 'baseline': 'stage3b2-stable',
                   'comparison': comparison, 'player': {'format': 'NCM, left pixel low nibble',
-                  'size': '16x16, 128 bytes', 'palette_bank': 3, 'gotox_colour_byte_1': '$60',
+                  'size': '16x16, 128 bytes', 'palette_bank': 2, 'gotox_colour_byte_1': '$60',
                   'generated_assets': {name: BASE.sha((ROOT/'assets/player'/name).read_bytes()) for name in PLAYER_FILES}},
                   'files': files, 'runtime_xemu': 'NOT RUN; user confirmation required'}
         outputs = {'STAGE3B3.PRG': prg, 'VYPER_STAGE3B3.d81': disk,

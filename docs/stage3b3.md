@@ -33,10 +33,12 @@ ist eine visuell freigegebene Zuordnung, keine neu behauptete Original-CLUT.
 ## Unabhängige Spielerpalette und Schutz vor Überschreiben
 
 Die Gegner behalten primäre Textpalette **Bank 1**. Der Spieler erhält
-**Bank 3** als alternative Textpalette. Die alte Hardware-Sprite-Palette Bank 2
-bleibt erhalten. Initialisierung `$D070=$DB`: MAPEDPAL=3, BTPALSEL=1,
-SPRPALSEL=2, ABTPALSEL=3. Die freigegebenen 16 RGB-Einträge werden einmal beim
-Engine-Start nach Bank 3 geschrieben und bleiben während des Spiels unverändert.
+**Bank 2** als alternative Textpalette. Die Hardware-Sprites sind deaktiviert;
+ihre bisherige ungenutzte Palette wird durch die freigegebene Spielerpalette
+ersetzt. Bank 3 bleibt unangetastet, da ihre ersten 16 Einträge auch die BASIC-
+ROM-Palette bilden. Initialisierung `$D070=$9A`: MAPEDPAL=2, BTPALSEL=1,
+SPRPALSEL=2, ABTPALSEL=2. Die freigegebenen 16 RGB-Einträge werden einmal beim
+Engine-Start nach Bank 2 geschrieben und bleiben während des Spiels unverändert.
 
 Vor jedem dynamischen RRB-Fragment wählt ein kleiner Wrapper anhand der
 Glyphennummer die Palette: `$321–$323` erhält GOTOX-Color-Byte 1 **`$60`**
@@ -119,12 +121,12 @@ ASM, PRG, D81, Symbolen, Assembly-Speicherkarte, Build-/Vergleichsbericht und
 SHA-256-Liste. Das D81 enthält `STAGE3B3` als PRG, `VYLV.DAT` und `VYGR.DAT`
 als SEQ. Ein zweiter Build erzeugte byteidentische Artefakte.
 
-**Sieben neue Tests bestanden:**
+**Acht Stage-3b-3-Tests bestanden:**
 
 1. Alle freigegebenen Pixel, beide Nibble-Formate, RGB-Tabellen und eingebettete Daten.
 2. Vollständiger Preload beider Originaldateien, Verifikation, Engine-Patchvergleich
    und D81-Dateien/Dateiketten/BAM.
-3. Eigene Spielerpalette, unveränderte BASIC-Palette Bank 0 und Unabhängigkeit
+3. Eigene Spielerpalette, unveränderte BASIC-Palette und Unabhängigkeit
    von einer simulierten vollständigen Änderung der Gegnerpalette Bank 1.
 4. Statische Spieler-Grafik und Guards über 16 Animationswechsel, weiter animierter
    Orbit und unveränderter Originaltyp 12 der Gegner.
@@ -136,16 +138,20 @@ als SEQ. Ein zweiter Build erzeugte byteidentische Artefakte.
    KERNAL-/Cursorbytes bleiben erhalten. Mit `MEGA65_ROM` wird zusätzlich die
    unveränderte Cursorroutine des bereitgestellten V920395-ROMs ausgeführt.
 7. Grafik-DMA-Fehler nutzt unverändert den bisherigen BASIC-Exit ohne RRB-Textausgabe.
+8. Die reale ROM-Palettenbeziehung Bank 3 → erste 16 BASIC-Farben wird modelliert.
+   Die alte Auswahl `$DB` beschädigt diese Farben reproduzierbar; `$9A` erhält
+   sie einschließlich zweier Start-/Exit-Zyklen vollständig.
 
 Zusätzlich bestanden alle bisherigen Stage-3b-1-/Stage-3b-2-Tests: zusammen
-**42 bestandene Tests** mit dem bereitgestellten ROM.
+**43 bestandene Tests** mit dem bereitgestellten ROM.
 
 Dies sind CPU-/DMA-/Palette-/Rastermodelle. Sie prüfen keine echten Joystick-
 Geräte oder pixelgenaue VIC-Ausgabe. Die XEMU-Abnahme wird nicht vorweggenommen.
 
 ## XEMU-Abnahme durch den Benutzer
 
-1. D81 in Laufwerk 8: `LOAD"STAGE3B3",8`, anschließend `RUN`.
+1. XEMU für diesen Vergleich zunächst frisch booten: Die vorherige Fassung
+   kann die ROM-Palette bereits überschrieben haben. Dann D81 in Laufwerk 8: `LOAD"STAGE3B3",8`, anschließend `RUN`.
 2. Beide DAT-Dateien erfolgreich geladen/verifiziert; 24 Pixies sichtbar:
    22 Typ-12-Gegner, ursprünglicher kreisender Pixie und neues Amiga-Spielerschiff.
 3. Spielerschiff mit der freigegebenen Vorschau vergleichen: Form, Weiß/Rot/Gelb
@@ -159,3 +165,12 @@ Geräte oder pixelgenaue VIC-Ausgabe. Die XEMU-Abnahme wird nicht vorweggenommen
 7. Wieder `LOAD"STAGE3B3",8` / `RUN`: Grafik, Palette und Steuerung erneut korrekt.
 
 **Erst nach dieser Bestätigung als stabil markieren.**
+
+## Korrektur nach erstem XEMU-Test
+
+Die Spielergrafik wurde vom Benutzer bestätigt, die BASIC-Rückkehr zeigte
+jedoch einen grauen Bildschirm. Die falsche Wahl von Palette Bank 3 war die
+Ursache: Ihre ersten 16 Farben sind zugleich die C65-ROM-Palette. Nur das
+Auswahlbyte bei `$3704` ist von `$DB` nach `$9A` geändert; Playerdaten, Farben,
+RRB-Auswahl, Bewegung und Exit-Code sind bytegleich zur ersten Stage 3b-3.
+[Diagnose und Artefaktvergleich](stage3b3_exit_palette_fix.md). Neue XEMU-Abnahme offen.

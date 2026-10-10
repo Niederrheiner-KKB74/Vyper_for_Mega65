@@ -19,7 +19,7 @@
   "player": {
     "format": "NCM, left pixel low nibble",
     "size": "16x16, 128 bytes",
-    "palette_bank": 3,
+    "palette_bank": 2,
     "gotox_colour_byte_1": "$60",
     "generated_assets": {
       "player_ncm.bin": "c48bab16d137a25e90a2ba715e58bb3d93e54fdb8e211bfdd45df8f2b820b2e6",
@@ -33,7 +33,7 @@
       "name": "STAGE3B3",
       "bytes": 43521,
       "blocks": 172,
-      "sha256": "99f0c9c405aa19fcf61df13b5286845d6e6dece4f022e55873af39d76b2c6ca7"
+      "sha256": "4cdb98d30cda81fc2f812fef28e1b7786387050de6c56899ebd5222508cec81d"
     },
     {
       "name": "VYLV.DAT",
