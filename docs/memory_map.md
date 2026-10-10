@@ -166,3 +166,29 @@ Freigabe ohne erneuten Benutzer-XEMU-Test. [Technik](stage3b4a.md),
 Stage 3b-4a einschließlich dünner Schrift am 10.10.2026 vom Benutzer bestätigt;
 stabile Referenz `stage3b4a-stable`. Speicherbelegung und Release-Artefakte bleiben
 bei der Abnahmedokumentation unverändert.
+
+## Stage 3b-5b – neue, isolierte Bereiche
+
+Die stabile Stage 3b-4a bleibt unverändert. Der Builder prüft die neuen Bereiche auf
+leere Baseline-Bytes und erlaubt ausschließlich deklarierte Engine-Hooks und Mapping.
+
+| Bereich | Verwendung |
+| --- | --- |
+| `$1B00–$1B47` | sechs Projektilslots als zwölf Arrays à sechs Byte |
+| `$1B48–$1B5F` | Latch, PRNG, Teststatus, Cooldown, Koordinaten-/Divisionsarbeit |
+| `$1B60–$1B88` | 41 gesicherte Sprite-/VIC-Register, vor dem Loader erfasst |
+| `$8200–$87FF` | reservierter Projektilcode (tatsächliches Ende in Release-Assembly-Map) |
+| `$8900–$890F` | dedizierte 16-Bit-Spritepointertabelle |
+| `$8910–$8935` | zentrale Grafiktypübersetzung, 38 Einträge |
+| `$8936–$895B` | 38 Bestätigungsflags (nur Index 14 bestätigt) |
+| `$8A00–$8A3F` | weiße Player-Schussgrafik, Hardwarepointer `$228` |
+| `$8A40–$8A7F` | rote Enemy-Schussgrafik, Hardwarepointer `$229` |
+| `$9B00–$9FFF` | reservierter Spawn-Divisions-/Register-Restaurierungscode |
+
+`$1B00–$1EFF` war dokumentierter unbenutzter RRB-Arbeitsbereich. Alle aktiven Objekte,
+HUD-Werte bei `$1A00`, Loader-/Framepuffer `$6800/$6900`, Color-Backup `$6B00`, Levelkopie,
+RRB-Glyphen und Font bleiben davon getrennt. Hardware-Sprites 0–5 sind ausschließlich
+Projektile, 6–7 bleiben aus. Screen/Color/CHARXSCALE/HUD unverändert; Sprite-SPR640 und
+V400 mit getrennten MSBs und vollständiger Wiederherstellung beim Exit. Es werden
+keine Zero-Page-Adressen und keine zusätzlichen RRB-Objekte verwendet.
+[Koordinaten, Register und Kollisionsvorbereitung](stage3b5b.md).

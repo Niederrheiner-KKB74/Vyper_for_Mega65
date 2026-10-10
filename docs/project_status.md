@@ -140,3 +140,23 @@ Bestätigter Programmstand: `2e672c9c4abc15ee9b46a30b906f35650d43323f`. Der Tag 
 sichert diesen Stand einschließlich der Abnahmedokumentation. ASM, PRG, D81 und
 Prüfsummen bleiben unverändert. Die XEMU-Abnahme stammt vom Benutzer; kein eigener
 vollständiger Emulatorlauf wird behauptet.
+
+## Stage 3b-5b – Projektil-Teststage, noch nicht stabil
+
+Basis `stage3b4a-stable`, eigener Branch `stage3b-5b`, aktualisiertes Issue #6.
+Hardware-Sprites 0–1: unabhängige vertikale Spielerschüsse mit Feuer-Latch; 2–5:
+maximal vier zufällige Gegnerschüsse mit gespeicherter Zielposition und signed-8.8-
+Geschwindigkeit. Nur bestehender Gegner Nr. 19 erhält den isolierten Testangriffsstatus
+(96/128 Frames, mit T abschaltbar), sein ursprünglicher Pfad bleibt erhalten.
+Noch keine originalen Angriffskurven oder Treffer-/Punkte-/Lebenslogik.
+
+Verbindliche Mapping-Korrektur: VYLV 14 → VYGR-Typ 15, sechs Originalframes.
+Zentrale JSON-/ASM-Tabelle kennzeichnet alle anderen 37 Einträge als unbestätigte
+Fallbacks. Die Quellen und Release-Dateien der stabilen Stage 3b-4a bleiben bytegleich.
+
+KickAssembler, Baseline-Bytevergleich, DAT-Hashes und D81-Dateiketten/BAM werden im
+Builder geprüft. Neun neue CPU-/DMA-/Sprite-/RRB-Hosttests prüfen Slots, Zielvektoren,
+Originalframes, bestehende Bewegung/HUD, BASIC-Exit, Cursor und erneuten Start.
+Ein vollständiger XEMU-Lauf wird nicht behauptet; Benutzerabnahme ist offen.
+Artefakte: `releases/stage_3b5b/`. [Technik/Build](stage3b5b.md),
+[offenes XEMU-Testprotokoll](stage3b5b_xemu_test.md). Kein Stable-Tag vor Freigabe.
