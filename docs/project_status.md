@@ -20,7 +20,7 @@
 
 - Import abgeschlossen: bereitgestellte Loader-Quellen, Binär-Assets, Build-Skripte und Releases sind in der vorbereiteten Struktur enthalten; Stage 2ja bleibt als unverändertes Archiv erhalten.
 - Build-Skripte verwenden derzeit `/mnt/data`; für die Cloud-Entwicklung ist eine gesonderte Einrichtung erforderlich.
-- Stage 3b-2: Grafikintegration implementiert; XEMU-Regression gegen `stage3b1-stable` ausstehend.
+- Stage 3b-2: Laden, Originalgrafiken und Enginebetrieb vom Benutzer unter XEMU bestätigt. BASIC-Exit zeigt eine rote Linie; Ursachenklärung und Korrektur offen. Kein Stable-Tag.
 - Spätere Stages: Levelstruktur, Gegnerzuordnung und Grafikframes in die Engine integrieren; Stage 3b-1 verwendet die geladenen Daten noch nicht für Gegnersteuerung.
 - Keine unbestätigten Änderungen an Stage 2ja.
 
@@ -48,7 +48,7 @@ durch Codex wird damit nicht behauptet. PRG, D81 und Quellkopie bleiben unverän
 Anleitung und Regressionstest-Checkliste: [stage3b1.md](stage3b1.md).
 
 
-## Stage 3b-2 – Level-1-Originalgrafik integriert, XEMU-Abnahme offen
+## Stage 3b-2 – Originalgrafik bestätigt, BASIC-Exit noch fehlerhaft
 
 Neue Quelle `src/engine/stage3b2.asm`, Builder `tools/build_stage3b2.py`, PRG/D81
 unter `releases/stage_3b2/`. Alle Stage-3b-1-Dateien und der stabile Tag bleiben
@@ -63,5 +63,9 @@ Die 22 Pfad-Pixies verwenden nun Typ 12 aus geladenem VYGR. Typ 12 hat einen Fra
 Joystick-/Orbit-Pixie behalten ihre sieben bisherigen Animationsframes. Bewegungs-
 und Steuerlogik unverändert. Zusätzliche Grafikslots `$9800..$98FF` mit DMA-Rückvergleich.
 Assembly, Originaldatenprüfung, 18 Host-Tests, Engine-Patchvergleich und D81-Prüfung
-bestanden. XEMU-Darstellung, Joystick und X-Exit müssen gegen die stabile Referenz
-verglichen werden. [Build und Abnahme](stage3b2.md).
+bestanden. Der Benutzer bestätigt am 10.10.2026 erfolgreiches Laden, richtige
+Grafiken und korrekten Enginebetrieb unter XEMU. Nach `X` erscheint jedoch eine
+rote horizontale Linie an der BASIC-Cursorposition. Die finale Abnahme bleibt
+offen; Stage 3b-2 wird nicht als stabil markiert. Noch keine Codekorrektur, da die
+Ursache nicht nachgewiesen ist. [Exit-Untersuchung](stage3b2_exit_investigation.md).
+[Build und Abnahme](stage3b2.md).

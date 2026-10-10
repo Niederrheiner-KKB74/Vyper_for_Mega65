@@ -79,4 +79,17 @@ Engine- und Ladeziele mit folgenden Ergänzungen:
 Die 22 Pfad-Pixies verwenden `$261/$262/$263`. Joystick-/Orbit-Slots und Bewegungs-
 tabellen bleiben erhalten. `$6800/$6900` werden nach SEQ-Ende für den Frame-
 Rückvergleich wiederverwendet. Neue Bereiche sind durch Assembly-Guards und
-Engine-Bytevergleich geprüft. XEMU-Abnahme offen. Details: [stage3b2.md](stage3b2.md).
+Engine-Bytevergleich geprüft. Die Grafikintegration wurde unter XEMU bestätigt;
+die BASIC-Exit-Abnahme bleibt offen. Details: [stage3b2.md](stage3b2.md).
+
+### Offener KERNAL-Konflikt bei der Exit-Untersuchung
+
+Die aktuelle offizielle MEGA65-Speicherübersicht reserviert `$0002–$15FF` für
+KERNAL-Daten. Damit überschneiden sich die bisherigen Engine-Objekte
+`$1000–$12FF` und Diagnostik `$1300–$131F` mit diesem Bereich. Die ASM-Aussage
+„RAM, never ROM“ reicht nicht aus, um ihn als freien Arbeitsspeicher zu bewerten.
+Die tatsächliche Cursor-Fehlerursache ist dadurch noch nicht bewiesen; ohne
+ROM-spezifische Diagnose wurden keine Adressen verlegt. Der Benutzer bestätigt
+ROM V920395 und 80×25; die Bank-4-Reservierung von BASIC 80×50 ist damit für
+diesen Test als Erklärung ausgeschlossen.
+Siehe [Untersuchung und Quellen](stage3b2_exit_investigation.md).
