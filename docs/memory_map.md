@@ -192,3 +192,7 @@ Projektile, 6–7 bleiben aus. Screen/Color/CHARXSCALE/HUD unverändert; Sprite-
 V400 mit getrennten MSBs und vollständiger Wiederherstellung beim Exit. Es werden
 keine Zero-Page-Adressen und keine zusätzlichen RRB-Objekte verwendet.
 [Koordinaten, Register und Kollisionsvorbereitung](stage3b5b.md).
+
+Stage 3b-5b am 10.10.2026 vom Benutzer als vollständig funktional bestätigt; stabile
+Referenz `stage3b5b-stable`. Die Abnahmedokumentation ändert keine Speicherbelegung
+oder Release-Artefakte.

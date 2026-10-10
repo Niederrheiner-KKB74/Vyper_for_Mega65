@@ -141,7 +141,7 @@ sichert diesen Stand einschließlich der Abnahmedokumentation. ASM, PRG, D81 und
 Prüfsummen bleiben unverändert. Die XEMU-Abnahme stammt vom Benutzer; kein eigener
 vollständiger Emulatorlauf wird behauptet.
 
-## Stage 3b-5b – Projektil-Teststage, noch nicht stabil
+## Stage 3b-5b – stabile Referenz `stage3b5b-stable`
 
 Basis `stage3b4a-stable`, eigener Branch `stage3b-5b`, aktualisiertes Issue #6.
 Hardware-Sprites 0–1: unabhängige vertikale Spielerschüsse mit Feuer-Latch; 2–5:
@@ -157,6 +157,10 @@ Fallbacks. Die Quellen und Release-Dateien der stabilen Stage 3b-4a bleiben byte
 KickAssembler, Baseline-Bytevergleich, DAT-Hashes und D81-Dateiketten/BAM werden im
 Builder geprüft. Neun neue CPU-/DMA-/Sprite-/RRB-Hosttests prüfen Slots, Zielvektoren,
 Originalframes, bestehende Bewegung/HUD, BASIC-Exit, Cursor und erneuten Start.
-Ein vollständiger XEMU-Lauf wird nicht behauptet; Benutzerabnahme ist offen.
+Der Benutzer hat Stage 3b-5b am 10.10.2026 als vollständig funktional bestätigt
+und die Stable-Markierung ausdrücklich freigegeben. Ein eigener vollständiger
+XEMU-Lauf durch Codex wird nicht behauptet.
 Artefakte: `releases/stage_3b5b/`. [Technik/Build](stage3b5b.md),
-[offenes XEMU-Testprotokoll](stage3b5b_xemu_test.md). Kein Stable-Tag vor Freigabe.
+[XEMU-Abnahme](stage3b5b_xemu_test.md). Stabile Referenz: `stage3b5b-stable`.
+Bestätigter Programmstand: `6f378c2faa136a6d25b5d8d32f51e3ba79f02518`. Die Abnahmedokumentation
+verändert weder ASM noch PRG, D81, Mapping-Assets oder Prüfsummen.

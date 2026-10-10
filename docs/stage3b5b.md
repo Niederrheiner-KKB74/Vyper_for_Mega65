@@ -2,7 +2,7 @@
 
 Implementiert das aktualisierte [Issue #6](https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/issues/6).
 Eigener Branch `stage3b-5b`, Basis `stage3b4a-stable` (`cb917b7`). Quellen und sämtliche
-Release-Dateien von Stage 3b-4a bleiben bytegleich. Stage 3b-5b ist noch nicht abgenommen.
+Release-Dateien von Stage 3b-4a bleiben bytegleich. Stage 3b-5b ist am 10.10.2026 vom Benutzer bestätigt; stabile Referenz `stage3b5b-stable`.
 
 ## Vorprüfung und Eingriffspunkte
 
@@ -180,5 +180,7 @@ Neun Tests bestanden. Wiederholungsbuild byteidentisch.
 
 Ein Hostmodell bestätigt keine tatsächlichen Rasterlatenzen oder vollständige XEMU-
 Darstellung. Der bestehende Rasterwait bleibt bytegleich; 50-Hz-Performance und präzise
-sichtbare Kalibrierung sind Teil der [noch offenen XEMU-Abnahme](stage3b5b_xemu_test.md).
-Kein Stable-Tag vor ausdrücklicher Benutzerbestätigung.
+sichtbare Kalibrierung sind Teil der [bestätigten XEMU-Abnahme](stage3b5b_xemu_test.md).
+Die ausdrückliche Benutzerbestätigung liegt vor. Bestätigter Programmstand:
+`6f378c2faa136a6d25b5d8d32f51e3ba79f02518`. Der Tag `stage3b5b-stable` sichert diesen Stand
+einschließlich der Abnahmedokumentation; Release-Artefakte bleiben unverändert.

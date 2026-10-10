@@ -1,4 +1,4 @@
-# Stage 3b-5b – Projektil-Testrelease
+# Stage 3b-5b – stabile Projektil-Referenz
 
 [VYPER_STAGE3B5B.d81](VYPER_STAGE3B5B.d81) enthält `STAGE3B5B`, `VYLV.DAT` und `VYGR.DAT`.
 Laufwerk 8: `LOAD"STAGE3B5B",8`, dann `RUN`.
@@ -11,7 +11,9 @@ Keine Treffer-/Punkte-/Lebenslogik. Level 1 nutzt den bestätigten Typ 15 mit se
 Übrige Mapping-Einträge bleiben unbestätigte Fallbacks. Stabile Stage 3b-4a unverändert.
 
 [Build, Speicher, Routinen und Tests](../../docs/stage3b5b.md) ·
-[Offenes XEMU-Abnahmeprotokoll](../../docs/stage3b5b_xemu_test.md).
+[Bestätigte XEMU-Abnahme](../../docs/stage3b5b_xemu_test.md).
 
 Build: `python3 tools/build_stage3b5b.py --kickass /pfad/zu/KickAss.jar`.
-Noch kein Stable-Tag; tatsächliche Darstellung/Timing und BASIC-Rückkehr unter XEMU prüfen.
+Am 10.10.2026 vom Benutzer als vollständig funktional bestätigt und für Stable freigegeben.
+Stabile Referenz: `stage3b5b-stable`; bestätigter Programmstand `6f378c2faa136a6d25b5d8d32f51e3ba79f02518`.
+Quellen, PRG, D81, Mapping und Prüfsummen bleiben bei der Abnahmedokumentation unverändert.
