@@ -1,0 +1,52 @@
+{
+  "assembler": "KickAssembler 5.25",
+  "baseline": "stage3b2-stable",
+  "comparison": {
+    "calls": [
+      "$2224",
+      "$2230",
+      "$BDC5"
+    ],
+    "removed_player_animation_writes": [
+      "$B8F3",
+      "$BC59",
+      "$BC62"
+    ],
+    "new_region": "$3600-$37FF",
+    "baseline_prg_sha256": "5f49f2cc05765f894aab6034ff3755a2680d15ea53c3790bb663deb7fcaa1dc8",
+    "changed_prg_bytes": 206
+  },
+  "player": {
+    "format": "NCM, left pixel low nibble",
+    "size": "16x16, 128 bytes",
+    "palette_bank": 3,
+    "gotox_colour_byte_1": "$60",
+    "generated_assets": {
+      "player_ncm.bin": "c48bab16d137a25e90a2ba715e58bb3d93e54fdb8e211bfdd45df8f2b820b2e6",
+      "player_palette_r.bin": "aeafc5e3cefeb178e5153604a7b43b90a5ee707badbb44b55fb20a96e3faf935",
+      "player_palette_g.bin": "fefdec5297f47db3cdc16fa583d96e515c37e742ba4b45dac002e7f7f69474e2",
+      "player_palette_b.bin": "99882088a91624b0927cf7f94cad1d79fd1794dfeb4b876f90c084ab8743f579"
+    }
+  },
+  "files": [
+    {
+      "name": "STAGE3B3",
+      "bytes": 43521,
+      "blocks": 172,
+      "sha256": "99f0c9c405aa19fcf61df13b5286845d6e6dece4f022e55873af39d76b2c6ca7"
+    },
+    {
+      "name": "VYLV.DAT",
+      "bytes": 81793,
+      "blocks": 323,
+      "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
+    },
+    {
+      "name": "VYGR.DAT",
+      "bytes": 30888,
+      "blocks": 122,
+      "sha256": "cbad5d717a4890276a9408c6784500f8449d45ae90f0f4d4251d596b8a2563eb"
+    }
+  ],
+  "runtime_xemu": "NOT RUN; user confirmation required"
+}

@@ -1,0 +1,13 @@
+Amiga-Spielerpalette: aus Copper-Daten und Screenshot abgeleitete Zuordnung
+Gesicherte Sprite-Farben: $899, $FFF, $E00, $344. Weitere Schattierungen $566, $ABB im Dump.
+Zuordnung der 3-Bitplane-Indizes zur Sprite-Palette ist eine plausible visuelle Rekonstruktion, keine nachgewiesene Original-CLUT.
+
+Index 0: $000 RGB #000000 (transparent)
+Index 1: $344 RGB #334444
+Index 2: $FFF RGB #FFFFFF
+Index 3: $E00 RGB #EE0000
+Index 4: $FF0 RGB #FFFF00
+Index 5: $899 RGB #889999
+Index 6: $344 RGB #334444
+Index 7: $566 RGB #556666
+Index 8: $ABB RGB #AABBBB

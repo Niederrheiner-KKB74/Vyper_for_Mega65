@@ -76,3 +76,18 @@ Die bestätigten ASM-/PRG-/D81-Dateien bleiben unverändert. Die XEMU-Abnahme
 stammt vom Benutzer; ein eigener Emulatorlauf wird nicht behauptet.
 [Exit-Untersuchung](stage3b2_exit_investigation.md).
 [Build und Abnahme](stage3b2.md).
+
+## Stage 3b-3 – freigegebenes Spielerschiff integriert, XEMU-Abnahme offen
+
+Eigener Branch `stage3b-3`, Basis `stage3b2-stable`. Die vorhandenen Original-
+Spielerdateien aus `main` sind unverändert übernommen und mit deren Assetskript
+generiert. Der Joystick-Spieler nutzt die freigegebene 16×16-NCM-Grafik, linkes
+Pixel im Low-Nibble, sowie Palette Bank 3. Die zwei alten Animationswege
+überschreiben seine Grafik nicht mehr. Orbit, 22 Gegner, Bewegung, Joystick,
+Loader, Levelparser und korrigierter BASIC-Exit bleiben erhalten.
+
+Neue Daten bei `$3600–$36AF`, Integrationscode `$3700–$375E`; bisherige Spieler-
+Glyphen `$C800–$C8FF`. Assembly, D81-Prüfung, bytegenauer Patchvergleich und sieben
+neue Hosttests bestanden; gesamte Regression 42 Tests bestanden, Wiederholungsbuild identisch. Unveränderte Stage-3b-2-
+Artefakte bleiben die stabile Referenz. PRG/D81/ASM unter `releases/stage_3b3/`.
+Kein Stable-Tag vor Benutzerbestätigung unter XEMU. [Build/Testbericht](stage3b3.md).
