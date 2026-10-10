@@ -1,0 +1,247 @@
+{
+  "vylv": {
+    "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283",
+    "bytes": 81793,
+    "version": 1,
+    "records": 100,
+    "directory_checked": true
+  },
+  "level_1": {
+    "offset": 808,
+    "ram_address": "$40328",
+    "bytes": 849,
+    "sha256": "bf2c8d7e22770f23159a3d0711203e206e30e5cce752f9c3b634cf9ee8f63b03",
+    "first_16_bytes": "01 00 02 16 10 00 02 00 0b 00 14 00 00 00 9e 00",
+    "enemy_type_mapping": null,
+    "reason": "Level-record field schema and VYLV-to-VYGR mapping are not supplied."
+  },
+  "vygr": {
+    "sha256": "cbad5d717a4890276a9408c6784500f8449d45ae90f0f4d4251d596b8a2563eb",
+    "bytes": 30888,
+    "version": 1,
+    "types": 36,
+    "frames": 239,
+    "all_frames_match_original_archive": true,
+    "directory": [
+      {
+        "type": 1,
+        "offset": 296,
+        "frame_count": 4,
+        "ram_address": "$54128"
+      },
+      {
+        "type": 2,
+        "offset": 808,
+        "frame_count": 7,
+        "ram_address": "$54328"
+      },
+      {
+        "type": 3,
+        "offset": 1704,
+        "frame_count": 10,
+        "ram_address": "$546A8"
+      },
+      {
+        "type": 4,
+        "offset": 2984,
+        "frame_count": 6,
+        "ram_address": "$54BA8"
+      },
+      {
+        "type": 5,
+        "offset": 3752,
+        "frame_count": 8,
+        "ram_address": "$54EA8"
+      },
+      {
+        "type": 6,
+        "offset": 4776,
+        "frame_count": 6,
+        "ram_address": "$552A8"
+      },
+      {
+        "type": 7,
+        "offset": 5544,
+        "frame_count": 7,
+        "ram_address": "$555A8"
+      },
+      {
+        "type": 8,
+        "offset": 6440,
+        "frame_count": 4,
+        "ram_address": "$55928"
+      },
+      {
+        "type": 9,
+        "offset": 6952,
+        "frame_count": 8,
+        "ram_address": "$55B28"
+      },
+      {
+        "type": 10,
+        "offset": 7976,
+        "frame_count": 4,
+        "ram_address": "$55F28"
+      },
+      {
+        "type": 11,
+        "offset": 8488,
+        "frame_count": 6,
+        "ram_address": "$56128"
+      },
+      {
+        "type": 12,
+        "offset": 9256,
+        "frame_count": 1,
+        "ram_address": "$56428"
+      },
+      {
+        "type": 13,
+        "offset": 9384,
+        "frame_count": 4,
+        "ram_address": "$564A8"
+      },
+      {
+        "type": 14,
+        "offset": 9896,
+        "frame_count": 8,
+        "ram_address": "$566A8"
+      },
+      {
+        "type": 15,
+        "offset": 10920,
+        "frame_count": 6,
+        "ram_address": "$56AA8"
+      },
+      {
+        "type": 16,
+        "offset": 11688,
+        "frame_count": 6,
+        "ram_address": "$56DA8"
+      },
+      {
+        "type": 17,
+        "offset": 12456,
+        "frame_count": 12,
+        "ram_address": "$570A8"
+      },
+      {
+        "type": 18,
+        "offset": 13992,
+        "frame_count": 12,
+        "ram_address": "$576A8"
+      },
+      {
+        "type": 19,
+        "offset": 15528,
+        "frame_count": 4,
+        "ram_address": "$57CA8"
+      },
+      {
+        "type": 20,
+        "offset": 16040,
+        "frame_count": 8,
+        "ram_address": "$57EA8"
+      },
+      {
+        "type": 21,
+        "offset": 17064,
+        "frame_count": 9,
+        "ram_address": "$582A8"
+      },
+      {
+        "type": 22,
+        "offset": 18216,
+        "frame_count": 4,
+        "ram_address": "$58728"
+      },
+      {
+        "type": 23,
+        "offset": 18728,
+        "frame_count": 4,
+        "ram_address": "$58928"
+      },
+      {
+        "type": 24,
+        "offset": 19240,
+        "frame_count": 12,
+        "ram_address": "$58B28"
+      },
+      {
+        "type": 25,
+        "offset": 20776,
+        "frame_count": 6,
+        "ram_address": "$59128"
+      },
+      {
+        "type": 26,
+        "offset": 21544,
+        "frame_count": 8,
+        "ram_address": "$59428"
+      },
+      {
+        "type": 27,
+        "offset": 22568,
+        "frame_count": 4,
+        "ram_address": "$59828"
+      },
+      {
+        "type": 28,
+        "offset": 23080,
+        "frame_count": 8,
+        "ram_address": "$59A28"
+      },
+      {
+        "type": 29,
+        "offset": 24104,
+        "frame_count": 6,
+        "ram_address": "$59E28"
+      },
+      {
+        "type": 30,
+        "offset": 24872,
+        "frame_count": 8,
+        "ram_address": "$5A128"
+      },
+      {
+        "type": 31,
+        "offset": 25896,
+        "frame_count": 8,
+        "ram_address": "$5A528"
+      },
+      {
+        "type": 32,
+        "offset": 26920,
+        "frame_count": 8,
+        "ram_address": "$5A928"
+      },
+      {
+        "type": 33,
+        "offset": 27944,
+        "frame_count": 12,
+        "ram_address": "$5AD28"
+      },
+      {
+        "type": 34,
+        "offset": 29480,
+        "frame_count": 4,
+        "ram_address": "$5B328"
+      },
+      {
+        "type": 35,
+        "offset": 29992,
+        "frame_count": 3,
+        "ram_address": "$5B528"
+      },
+      {
+        "type": 36,
+        "offset": 30376,
+        "frame_count": 4,
+        "ram_address": "$5B6A8"
+      }
+    ]
+  },
+  "original_package_warning": "Level-Grafiktypindizes 0..37, NCM-Typen 1..36.\nMehrere Level haben mehr als vier unterschiedliche Typindizes.\nDie Zuordnung und Slot-Strategie muessen vor der Spielintegration\nabgeglichen werden.",
+  "integration_status": "BLOCKED_PENDING_CONFIRMED_LEVEL_SCHEMA_AND_TYPE_MAPPING",
+  "movement_changes": false
+}

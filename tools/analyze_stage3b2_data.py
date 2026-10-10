@@ -1,0 +1,107 @@
+#!/usr/bin/env python3
+"""Validate original containers; do not infer undocumented VYLV enemy fields."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import struct
+import zipfile
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def level_records(data):
+    if len(data) < 8 or data[:4] != b'VYLV':
+        raise ValueError('Invalid VYLV header')
+    version, count = struct.unpack_from('<HH', data, 4)
+    if version != 1 or count != 100 or len(data) < 8+count*8:
+        raise ValueError('Unexpected VYLV version/count/directory size')
+    cursor = 8+count*8
+    records = []
+    for index in range(count):
+        offset, length = struct.unpack_from('<II', data, 8+index*8)
+        if offset != cursor or length < 2 or offset+length > len(data):
+            raise ValueError('VYLV directory has a gap, overlap or out-of-bounds record')
+        record = data[offset:offset+length]
+        if struct.unpack_from('<H', record)[0] != index+1:
+            raise ValueError('VYLV record number mismatch')
+        records.append((offset, record))
+        cursor += length
+    if cursor != len(data):
+        raise ValueError('Trailing VYLV data')
+    return records
+
+
+def graphics_types(data):
+    if len(data) < 8 or data[:4] != b'VYGR':
+        raise ValueError('Invalid VYGR header')
+    version, count = struct.unpack_from('<HH', data, 4)
+    if version != 1 or count != 36 or len(data) < 8+count*8:
+        raise ValueError('Unexpected VYGR version/count/directory size')
+    cursor = 8+count*8
+    types = []
+    for index in range(count):
+        offset, frames, reserved = struct.unpack_from('<IHH', data, 8+index*8)
+        if reserved or not frames or offset != cursor or offset+frames*128 > len(data):
+            raise ValueError('Invalid VYGR type/frame range')
+        payload = data[offset:offset+frames*128]
+        types.append({'type': index+1, 'offset': offset, 'frame_count': frames,
+                      'ram_address': f'${0x54000+offset:05X}',
+                      'frames': [payload[i:i+128] for i in range(0, len(payload), 128)]})
+        cursor += len(payload)
+    if cursor != len(data):
+        raise ValueError('Trailing VYGR data')
+    return types
+
+
+def analyze(root=ROOT):
+    level = (root/'assets/VYLV.DAT').read_bytes()
+    graphic = (root/'assets/VYGR.DAT').read_bytes()
+    records = level_records(level)
+    types = graphics_types(graphic)
+    with zipfile.ZipFile(root/'assets/vyper_all_enemy_types_exact_ncm.zip') as z:
+        if z.testzip() is not None:
+            raise ValueError('Original graphics archive CRC mismatch')
+        for item in types:
+            for index, frame in enumerate(item['frames']):
+                name = f"type_{item['type']:02d}/anim_{index:02d}_ncm.bin"
+                if frame != z.read(name):
+                    raise ValueError(f'VYGR differs from original frame: {name}')
+    offset, record = records[0]
+    with zipfile.ZipFile(root/'assets/STAGE3A_DATA_PREPARATION.zip') as z:
+        warning = z.read('README_STAGE3A_DATA.txt').decode().split('Offene Datenfrage:', 1)[1].strip()
+    return {
+        'vylv': {'sha256': hashlib.sha256(level).hexdigest(), 'bytes': len(level),
+                 'version': 1, 'records': len(records), 'directory_checked': True},
+        'level_1': {'offset': offset, 'ram_address': f'${0x40000+offset:05X}',
+                    'bytes': len(record), 'sha256': hashlib.sha256(record).hexdigest(),
+                    'first_16_bytes': record[:16].hex(' '),
+                    'enemy_type_mapping': None,
+                    'reason': 'Level-record field schema and VYLV-to-VYGR mapping are not supplied.'},
+        'vygr': {'sha256': hashlib.sha256(graphic).hexdigest(), 'bytes': len(graphic),
+                 'version': 1, 'types': len(types),
+                 'frames': sum(item['frame_count'] for item in types),
+                 'all_frames_match_original_archive': True,
+                 'directory': [{k: v for k, v in item.items() if k != 'frames'} for item in types]},
+        'original_package_warning': warning,
+        'integration_status': 'BLOCKED_PENDING_CONFIRMED_LEVEL_SCHEMA_AND_TYPE_MAPPING',
+        'movement_changes': False,
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', type=Path)
+    args = parser.parse_args()
+    report = json.dumps(analyze(), indent=2, ensure_ascii=False)+'\n'
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(report)
+        print('Validated 100 level records and 239 original frames across 36 VYGR types.')
+        print('Level-1 enemy mapping remains unconfirmed; see', args.output)
+    else:
+        print(report, end='')
+
+
+if __name__ == '__main__':
+    main()
