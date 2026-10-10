@@ -164,3 +164,18 @@ Artefakte: `releases/stage_3b5b/`. [Technik/Build](stage3b5b.md),
 [XEMU-Abnahme](stage3b5b_xemu_test.md). Stabile Referenz: `stage3b5b-stable`.
 Bestätigter Programmstand: `6f378c2faa136a6d25b5d8d32f51e3ba79f02518`. Die Abnahmedokumentation
 verändert weder ASM noch PRG, D81, Mapping-Assets oder Prüfsummen.
+
+## Stage 3b-5c – Vorprüfung, Implementierung durch fehlende Assets blockiert
+
+Issue #8 wurde gegen die stabile Referenz `stage3b5b-stable` geprüft.
+Entwicklungsbranch: `stage3b-5c`. Die vorhandenen Archive und `VYGR.DAT`
+enthalten lediglich die 239 Gegnerframes mit globalen Indizes 8–246;
+die acht geforderten Originalexplosionsframes 0–7 fehlen auch im ursprünglichen
+Importpaket. Alte Explosionstabellen enthalten nur Referenzen, keine nutzbaren
+Originalframes. Die benötigten Dateien wurden beim Benutzer angefragt.
+
+Rebuild der stabilen Stage 3b-5b: PRG und D81 bytegleich; 9/9 bestehende
+Hosttests bestanden. Keine Änderungen an stabilen Quellen oder Releases.
+Stage 3b-5c ist noch nicht implementiert und nicht Stable; es gibt kein neues
+PRG/D81 und keine behauptete XEMU-Abnahme.
+[Asset-Nachweise, Speicherprüfung und Integrationsbefund](stage3b5c_preflight.md).
