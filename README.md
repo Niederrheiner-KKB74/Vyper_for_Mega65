@@ -8,7 +8,7 @@ Portierungsprojekt des Amiga-Spiels **Vyper** auf den MEGA65 (KickAssembler, VIC
 - **Stage 3a-1**: SEQ-Dateizugriff mit MEGA65-KERNAL; vor `SETNAM` muss `SETBNK ($FF6B)` auf Bank 0 gesetzt werden.
 - **Stage 3a-2**: auf XEMU erfolgreich getestet: `VYLV.DAT` (81.793 Byte) nach `$40000`, `VYGR.DAT` (30.888 Byte) nach `$54000`, DMA-Rücklesevergleich und Level-1-Kopie nach `$7000`.
 
-**Wichtig:** Die Original-Binärdateien und Stage-Archive müssen noch in dieses Repository importiert werden. Die Struktur und Dokumentation sind vorbereitet; ein GitHub-Commit dieser Dokumente ist kein Ersatz für einen vollständigen Source-/Asset-Import.
+Die vom Benutzer bereitgestellten Assets, Loader-Quellen, Build-Skripte und Stage-Archive wurden aus `Vyper_for_Mega65_import_package.zip` in die vorbereitete Struktur importiert. Die stabile Stage-2ja-Referenz bleibt als unverändertes ZIP-Archiv erhalten.
 
 ## Verzeichnisstruktur
 

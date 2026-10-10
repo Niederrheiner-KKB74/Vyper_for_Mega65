@@ -16,6 +16,7 @@
 
 ## Noch offen
 
-- Tatsächliche Quelldateien, Binär-Assets und Releases in dieses Repository importieren.
+- Import abgeschlossen: bereitgestellte Loader-Quellen, Binär-Assets, Build-Skripte und Releases sind in der vorbereiteten Struktur enthalten; Stage 2ja bleibt als unverändertes Archiv erhalten.
+- Build-Skripte verwenden derzeit `/mnt/data`; für die Cloud-Entwicklung ist eine gesonderte Einrichtung erforderlich.
 - Stage 3b: Levelstruktur, Gegnerzuordnung, Grafikframes und DMA-Integration in die RRB-Engine.
 - Keine unbestätigten Änderungen an Stage 2ja.
