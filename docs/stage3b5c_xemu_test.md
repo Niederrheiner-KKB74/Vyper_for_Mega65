@@ -1,7 +1,9 @@
 # Stage 3b-5c – Testprotokoll und XEMU-Abnahme
 
-Status: **Testrelease, nicht Stable**. Ein vollständiger eigener XEMU-Lauf
-wurde nicht durchgeführt; Abnahme durch den Benutzer ist ausstehend.
+Status: **Stable, vom Benutzer am 10.10.2026 bestätigt** (`stage3b5c-stable`).
+Die Freigabe gilt für den korrigierten Stand mit sieben Originalexplosionsframes
+und Joystickbewegung während der dreisekündigen Unverwundbarkeit.
+Ein vollständiger eigener XEMU-Lauf durch Codex wurde nicht durchgeführt.
 Referenzumgebung der bisherigen Abnahmen: ROM V920395, PAL/50 Hz, BASIC 80×25.
 Das Benutzer-ROM wird nicht in den Repository-/Release-Dateien verteilt.
 
@@ -77,4 +79,4 @@ D81 `VYPER_STAGE3B5C.d81` einlegen, `LOAD "STAGE3B5C",8`, `RUN`.
 11. X sowohl im Spiel als auch GAME OVER: sauberer BASIC-Screen/Cursor, keine
     Sprite-Reste. Anschließend RUN und auch erneut LOAD/RUN ausführen.
 12. Über mehrere Minuten 50-Hz-Stabilität, Farb-/RRB-/HUD-Artefakte und die
-    Originalexplosionen visuell prüfen. Kein Stable-Tag vor dieser Bestätigung.
+    Originalexplosionen visuell prüfen. Die Benutzerbestätigung und Stable-Freigabe liegen nun vor.

@@ -165,7 +165,7 @@ Artefakte: `releases/stage_3b5b/`. [Technik/Build](stage3b5b.md),
 Bestätigter Programmstand: `6f378c2faa136a6d25b5d8d32f51e3ba79f02518`. Die Abnahmedokumentation
 verändert weder ASM noch PRG, D81, Mapping-Assets oder Prüfsummen.
 
-## Stage 3b-5c – Testrelease, Benutzerabnahme ausstehend
+## Stage 3b-5c – stabile Referenz `stage3b5c-stable`
 
 Issue #8, eigener Branch `stage3b-5c`, Basis `stage3b5b-stable`.
 Der zunächst fehlende Original-Explosionssatz wurde vom Benutzer in
@@ -183,8 +183,9 @@ Mapping 14 → Typ 15 bleibt unverändert. Player 2 bleibt inaktiv.
 14 neue CPU-/DMA-/Sprite-/RRB-Hosttests bestehen, einschließlich ausgewähltem
 Cursorcode aus dem bereitgestellten ROM V920395. Der unabhängige Rebuild erzeugt
 bytegleiche Artefakte. Stable-Dateien und Tags bleiben unverändert.
-Kein neuer Stable-Tag; XEMU-Abnahme
-noch offen. Artefakte in `releases/stage_3b5c/`.
+Der Benutzer bestätigt am 10.10.2026 den korrigierten Stand unter XEMU
+als funktionierend und gibt die Stable-Markierung ausdrücklich frei. Ein eigener
+vollständiger XEMU-Lauf durch Codex wird nicht behauptet. Artefakte in `releases/stage_3b5c/`.
 [Technik und Build](stage3b5c.md), [Testprotokoll](stage3b5c_xemu_test.md),
 [historische Vorprüfung](stage3b5c_preflight.md).
 
@@ -195,3 +196,7 @@ Der Datensatz bleibt dokumentiert, wird aber nicht mehr eingebunden/ausgewählt;
 sieben Frames à drei Ticks gelten für Player/Gegner. Im 150-Tick-Respawn ist
 Joystickbewegung freigegeben, Feuer weiterhin gesperrt, vollständiger Treffer-
 schutz und Blinken erhalten. Finaler Frame setzt die Position nicht zurück.
+
+Bestätigter Programmstand: `7c77591e46a85a786fb41c974e7ce6d1e0b841f9`. Tag `stage3b5c-stable`
+sichert diesen Stand einschließlich der Abnahmedokumentation. ASM, PRG, D81,
+Assets, Builder und Release-Prüfsummen bleiben bei der Markierung unverändert.

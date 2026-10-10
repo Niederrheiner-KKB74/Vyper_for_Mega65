@@ -197,7 +197,7 @@ Stage 3b-5b am 10.10.2026 vom Benutzer als vollständig funktional bestätigt; s
 Referenz `stage3b5b-stable`. Die Abnahmedokumentation ändert keine Speicherbelegung
 oder Release-Artefakte.
 
-## Stage 3b-5c – Testrelease, neue Kollisionen und unabhängige Explosionen
+## Stage 3b-5c – stabile Referenz, Kollisionen und unabhängige Explosionen
 
 Die stabile Stage 3b-5b und ihre Speicherkarte bleiben unverändert.
 Nur die neue Stage ergänzt folgende Bereiche (Grenzen inklusiv):
@@ -223,7 +223,7 @@ in der privaten Fontkopie bei `$4038/$4068` ergänzt. Die bestehenden Loader-
 bleiben erhalten. Der Builder prüft sämtliche neuen Bereiche innerhalb des
 alten PRG auf Nullbelegung; nur sechs JSR-Hooks und der HUD-Default 175 werden
 in belegten Baselinebereichen geändert. Keine neuen VIC-/Sprite-Kollisionsbits.
-Kein Stable-Tag vor Benutzerabnahme.
+Am 10.10.2026 vom Benutzer unter XEMU bestätigt: `stage3b5c-stable`.
 
 Korrektur: Es existieren sieben Explosionsframes. Der fälschlich zugeordnete
 Player-Datensatz wird nicht mehr bei `$CA00` eingebunden; PRG-Ende `$C9FF`.

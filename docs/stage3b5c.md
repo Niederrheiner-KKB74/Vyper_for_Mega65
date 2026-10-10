@@ -1,8 +1,8 @@
 # Stage 3b-5c – Softwarekollisionen und Spielzustände
 
-Testrelease zu Issue #8 auf `stage3b-5c`, Basis `stage3b5b-stable`
-(`e4540557938b342fbf8935cfce787410a3d77512`). Keine Stable-Freigabe ohne
-Benutzerabnahme. Alle bisherigen stabilen Quellen, Release-Dateien und Tags
+Stabile Referenz zu Issue #8 auf `stage3b-5c`, Basis `stage3b5b-stable`
+(`e4540557938b342fbf8935cfce787410a3d77512`). Vom Benutzer am 10.10.2026 unter XEMU bestätigt;
+Tag `stage3b5c-stable`. Alle bisherigen stabilen Quellen, Release-Dateien und Tags
 bleiben unverändert. Draft-PR #9 enthält jetzt die Implementierung.
 
 ## Build und Start
@@ -50,7 +50,7 @@ Linkes Pixel im Low-Nibble, rechtes im High-Nibble: 128 Bytes je 16×16-Frame.
 Die vorhandene Palette bleibt unverändert; keine Ersatzpixel werden erzeugt.
 Prüfsummen und Format stehen in `assets/explosions/conversion.json`.
 Die ursprüngliche Index-/RGB-Rekonstruktion der Engine bleibt die bestehende
-Referenz; die sichtbare Explosion mit dieser Palette ist in XEMU noch abzunehmen.
+Referenz; die sichtbare Explosion mit dieser Palette ist durch die Benutzerabnahme bestätigt.
 
 Sieben unveränderliche 256-Byte-Glyphsätze enthalten je einen 64-Byte-Blankguard,
 128 Originalbytes und einen weiteren Blankguard. Jeder explodierende Gegner
