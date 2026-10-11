@@ -52,3 +52,18 @@ sichtbare ENTRY-/ATTACK-Schüsse mit global vier Projektilen, Formation-Y−25.
 [Build, Speicherprüfung und XEMU-Abnahme](docs/stage4b3_gameplay_adjustments.md).
 PRG/D81 und vollständige Quellen: `releases/stage_4b_3/`.
 Vom Benutzer unter XEMU bestätigt; Referenz `stage4b3-stable`.
+
+## Stage 4c (Stable)
+
+Ausschließlich aus lokaler bestätigter `stage4b3-stable`: Formationsdrift
+1 Pixel/2 Frames, feste gegnerbezogene VYLV-Angriffsindizes und bis zu vier
+begrenzte Deskriptoren. Player weiterhin1 Pixel/Frame, übrige Mechanik erhalten.
+[Build, Datenprüfung und XEMU-Abnahme](docs/stage4c_attack_mapping_and_drift.md).
+Quellen/PRG/D81: `releases/stage_4c/`; vom Benutzer in XEMU bestätigt; Referenz `stage4c-stable`.
+
+## Stage 5a (Teststand)
+
+Zentrale Verwaltung aller100 Originallevel, Level Clear/Joystick-Fortsetzung und
++/− Testnavigation; aus `stage4c-stable`. [D81](releases/stage_5a/VYPER_STAGE5A.d81),
+[Build, freigegebene Sonderlevel-Einschränkungen und Testplan](docs/stage5a_level_management.md).
+Start: `LOAD "STAGE5A",8`, `RUN`. XEMU-Abnahme ausstehend.

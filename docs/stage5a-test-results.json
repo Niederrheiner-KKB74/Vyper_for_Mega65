@@ -1,0 +1,37 @@
+{
+  "stage": "5a",
+  "baseline": "stage4c-stable",
+  "stable": false,
+  "xemu": "NOT_RUN",
+  "passed_distinct_tests": 26,
+  "failures": 0,
+  "runs": [
+    {
+      "tests": 23,
+      "seconds": 149.121,
+      "scope": "full suite before three extra test cases"
+    },
+    {
+      "tests": 3,
+      "seconds": 19.74,
+      "scope": "ENTRY projectiles,402-update stable4c differential, moving return target"
+    }
+  ],
+  "all_level_initializations": 100,
+  "original_frames_verified_against_archive": 239,
+  "pixel_edge_cases": 140,
+  "renderer_cpu_model_worst_cycles": 441719,
+  "reproducible_release_files": 18,
+  "restrictions": {
+    "user_approved_attack_disabled_levels": [
+      25,
+      50,
+      99,
+      100
+    ],
+    "confirmed_graphic_mapping": {
+      "14": 15
+    }
+  },
+  "prg_sha256": "afdb91be6d57298af92fbc8bf8adcfb3d9dfe2c8689a54c37e8d728d11bacf81"
+}

@@ -1,0 +1,18 @@
+{
+  "stage": "4c",
+  "baseline": "stage4b3-stable",
+  "tests": 57,
+  "failures": 0,
+  "errors": 0,
+  "duration_seconds": 577.671,
+  "cpu_model_cycles_per_frame": {
+    "mean": 116370,
+    "peak": 121597
+  },
+  "independent_release_files_identical": 16,
+  "xemu": "USER_CONFIRMED",
+  "stable": true,
+  "stable_reference": "stage4c-stable",
+  "program_commit": "1f4b3b5",
+  "confirmation": "Stage 4c ist stabil"
+}
