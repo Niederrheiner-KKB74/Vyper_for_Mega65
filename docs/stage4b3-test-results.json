@@ -1,0 +1,51 @@
+{
+  "verified_unique_checks": 52,
+  "final_unresolved_failures": 0,
+  "execution": "assembled CPU/DMA/SYS-MAP model, not XEMU",
+  "rom": "V920395",
+  "complete_run": {
+    "executed": 51,
+    "passed": 49,
+    "failed": 2,
+    "seconds": 521.079,
+    "failures": [
+      "legacy RETURN expectation read signed offset -8 as unsigned 248",
+      "legacy peak RRB occupancy >8 expectation; new alignment peak is exactly8"
+    ]
+  },
+  "targeted_after_fixture_updates": [
+    {
+      "test": "test_return_chases_offset_changes_during_flight",
+      "result": "PASS",
+      "seconds": 8.211
+    },
+    {
+      "test": "test_full_two_parallel_groups_exact_steps_targets_and_rrb_capacity",
+      "result": "PASS",
+      "seconds": 13.303
+    },
+    {
+      "test": "test_real_entry_main_loop_fires_before_barrier_from_started_source",
+      "result": "PASS",
+      "seconds": 18.233,
+      "first_projectile_update": 179,
+      "source_slot": 14,
+      "source_state": "ENTRY phase1, visibility latch1",
+      "formation_ready": false
+    }
+  ],
+  "one_complete_run_of_final_52_test_file": false,
+  "model_cycles_per_frame": {
+    "mean": 116340,
+    "peak": 121548
+  },
+  "mainloop_enemy_shots_peak": 3,
+  "global_pool_limit_proven_separately": 4,
+  "reproducible_release_files": 16,
+  "xemu": "User confirmed Stage 4b-3 runs stable and behaves exactly as intended",
+  "stable": true,
+  "stable_tag": "stage4b3-stable",
+  "accepted_program_commit": "a8766f8df9fcea8279181a5d13b772db15ecc954",
+  "individual_xemu_raster_measurements_supplied": false,
+  "independent_hardware_test": false
+}

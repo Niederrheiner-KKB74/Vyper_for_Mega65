@@ -1,7 +1,7 @@
 # Stage 4b-2 – Originalkurven, Angriffe und pendelnde Formation
 
 Issue #16, Testbranch `stage4b-2`, aus `stage4b1-stable`
-(`e124112d517ea85bea2216f34614d11a12be7238`). **Nicht Stable; XEMU-Abnahme offen.**
+(`e124112d517ea85bea2216f34614d11a12be7238`). **Stable: vom Benutzer unter XEMU bestätigt; Referenz `stage4b2-stable`.**
 Stage 4b-1, seine Quellen, Artefakte und Tags bleiben unverändert.
 
 ## Tatsächliche Daten und Rekonstruktionsgrenzen
@@ -273,4 +273,4 @@ Schusszahl `$6FE5`, letzte Start-ID `$6FE6`, Ereignis/ID `$6FEA/$6FEB`
 abgetastet; nach einem Treffer zeigt der direkte `c_es`-Status den aktuellen
 Stand. PRNG `$1B49/$1B4A`, Projektilaktivität sechs Bytes ab `$1B00`.
 
-Die Stabilfreigabe bleibt ausschließlich dem Benutzer nach XEMU-Test vorbehalten.
+Der Benutzer hat den korrigierten Build als Stable bestätigt. Programmcommit: `5b88b9fa4a78d0340676a32bf9a10493fc73f79f`. Quellen und Release-Dateien sind bei der Stable-Sicherung unverändert.

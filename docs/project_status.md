@@ -282,7 +282,7 @@ Bestätigter Programmcommit: `531c745971ae95ad15c723b46c97b1f34ee3cf3c`.
 Die Stable-Markierung ändert ausschließlich Dokumentation; Quellen, PRG, D81
 und Release-Prüfsummen bleiben unverändert.
 
-## Stage 4b-2 – Angriffskurven und pendelnde Formation (Teststand)
+## Stage 4b-2 – Stable, vom Benutzer unter XEMU bestätigt
 
 Branch `stage4b-2` auf `stage4b1-stable`, originale getrennte 183-Byte-Kurven
 für Level 1, maximal drei ATTACK und vier gegnerische Hardware-Sprite-Schüsse.
@@ -291,17 +291,48 @@ RETURN folgt den jeweils aktuellen Slotzielen. Auswahl, Y-Verankerung und
 Auslauf/Reentry sind ausdrücklich dokumentierte MEGA65-Übergangsregeln;
 historische Amiga-Endmarker-/Variantenauswahl nicht unabhängig belegt.
 [Analyse, Parameter und Abnahme](stage4b2_attack_formation.md).
-Release `releases/stage_4b_2/`; XEMU-Abnahme offen, kein Stable-Tag.
+Release `releases/stage_4b_2/`; Referenz `stage4b2-stable`.
 
 Stage-4b-2-Prüfung: 49/49 Tests in 511,317 s mit ROM V920395 bestanden,
 inklusive aktiver Angriff-/Return-/Pendelmechanik und ROM-Overlay-Prüfung.
 Hauptschleifenmodell: Ø112.575 / maximal 117.725 Zyklen pro Frame.
 Alle 16 Release-Dateien byteidentisch reproduziert; PRG unverändert 43.777
-Bytes, D81 819.200 Bytes. Keine XEMU-/Hardware-Abnahme behauptet.
+Bytes, D81 819.200 Bytes. XEMU-Abnahme durch den Benutzer bestätigt; kein unabhängiger Hardwaretest.
 
 XEMU-Rückmeldung zu Stage 4b-2: Explosion und Lebensabzug funktionieren,
 Respawn wurde jedoch von laufend nachgestarteten Angriffen blockiert.
 Korrektur: neue Angriffe während Player-Explosion und WAIT sperren, bestehende
 Angriffe normal abschließen. Formation zentral acht Y-Pixel höher; Pendeltakt
-auf ausdrücklich gewünschte 10 Frames geändert. Neuer Teststand, erneut
-unter XEMU zu bestätigen; keine Stable-Markierung.
+auf ausdrücklich gewünschte 10 Frames geändert. Der Benutzer hat diesen
+korrigierten Build ausdrücklich als stabil bestätigt.
+
+Bestätigter Programmcommit: `5b88b9fa4a78d0340676a32bf9a10493fc73f79f`. Tag `stage4b2-stable`.
+Die Stable-Sicherung verändert ausschließlich Dokumentation; sämtliche
+Quellen, PRG/D81 und Release-Prüfsummen bleiben unverändert.
+
+## Stage 4b-3 – Stable, vom Benutzer unter XEMU bestätigt
+
+Neuer Branch `stage4b-3` aus der bestätigten Referenz `stage4b2-stable`.
+Drift −8..+8 mit 1 Pixel je 5 Frames; zentrale Y-Transformation Original-Y−25.
+Echte sichtbare ENTRY-Gegner schießen zusammen mit ATTACK aus dem globalen
+Vier-Projektil-Pool. WAIT_ENTRY/RETURN/DEAD/EXPLOSION/offscreen ausgeschlossen.
+Originalkurven und Gruppenstart-Timing unverändert; höhere Ziele nach Update336.
+Originaltransparenz ergibt opake Oberkanten Y=0/1/2 je Animationsframe.
+Quellen/PRG/D81 unter `releases/stage_4b_3/`, reproduzierbarer Build.
+[Regeln, geometrische Diagnose und XEMU-Protokoll](stage4b3_gameplay_adjustments.md).
+XEMU-Abnahme durch den Benutzer bestätigt; Referenz `stage4b3-stable`.
+
+Stage-4b-3-Prüfung: 52 unterschiedliche automatische Checks abschließend bestanden
+(Gesamtlauf49/51, zwei veraltete Test-Fixtures gezielt korrigiert und erneut
+bestanden, zusätzlicher ENTRY-Hauptschleifentest bestanden). Erster ENTRY-Schuss
+Update179/Slot14; Formationsbarriere336. CPU-Modell Ø116.340/max.121.548 Zyklen.
+Alle16 Release-Dateien byteidentisch; Stage-4b-2-Quellen/Releases geschützt.
+GitHub-Veröffentlichung der Stable-Sicherung und Stage4b-3 wegen fehlgeschlagener
+automatischer Freigabeprüfung (Nutzungslimit) ausstehend. Lokaler Testbuild fertig.
+
+Der Benutzer bestätigt: Stage 4b-3 läuft stabil und verhält sich genau wie
+vorgesehen. Bestätigter Programmcommit: `a8766f8df9fcea8279181a5d13b772db15ecc954`.
+Die Stable-Sicherung verändert ausschließlich Dokumentation; sämtliche Quellen,
+PRG/D81 und Release-Prüfsummen bleiben unverändert. Kein unabhängiger Hardwaretest.
+Branch/Stable-Tags sind lokal gesichert; GitHub-Veröffentlichung bleibt bis zur
+wieder verfügbaren automatischen Freigabeprüfung ausstehend.
