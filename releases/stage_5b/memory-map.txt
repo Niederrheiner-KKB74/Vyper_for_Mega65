@@ -6,7 +6,7 @@ Default-segment:
   $3000-$30a8 Unnamed
   $30c0-$30ff Unnamed
   $3200-$3339 Stage5a record validation and byte reader
-  $3400-$3472 Stage5a private graphics cache helpers
+  $3400-$3474 Stage5a private graphics cache helpers
   $34a0-$3554 Stage5a byte-pair crop (same pixels, no RRB architecture change)
   $3600-$36af Stage 3b-3 approved player source
   $36b0-$36f2 Stage 5b bottom exit and top reentry
@@ -20,7 +20,7 @@ Default-segment:
   $4c40-$4e04 Stage 3b-5c states and restart
   $4f00-$4fc3 Stage 5b formation and selection
   $5000-$563f Additional BASIC colour backup
-  $5700-$5b5d Stage 4b Level-1 parser and motion
+  $5700-$5b5f Stage 4b Level-1 parser and motion
   $5b80-$5c10 Stage 4b fast valid RRB row retirement
   $5c20-$5c4e Stage 4b-1 entry visibility
   $5c80-$5c8f Unnamed

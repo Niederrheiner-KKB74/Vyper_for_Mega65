@@ -246,9 +246,9 @@ class LevelTests(unittest.TestCase):
                 setv(m,'e_slot',i);setv(m,'c_es',1,i)
                 setv(m,'e_xlo',60,i);setv(m,'e_xhi',0,i);setv(m,'e_ylo',60,i);setv(m,'e_yhi',0,i)
                 m.cpu.x=i;call(m,'e_draw_one')
-                self.assertEqual(m.memory.data[0x10000+i*256+64:0x10000+i*256+192],payload)
-                self.assertEqual(m.memory.data[0x10000+i*256:0x10000+i*256+64],bytes(64))
-                self.assertEqual(m.memory.data[0x10000+i*256+192:0x10100+i*256],bytes(64))
+                self.assertEqual(m.memory.data[0x14000+i*256+64:0x14000+i*256+192],payload)
+                self.assertEqual(m.memory.data[0x14000+i*256:0x14000+i*256+64],bytes(64))
+                self.assertEqual(m.memory.data[0x14000+i*256+192:0x14100+i*256],bytes(64))
     def test_level_clear_requires_all_dead_and_button_release_then_press(self):
         m=self.machine();enemies(m,0);setv(m,'a_enabled',0)
         setv(m,'c_es',5,21);call(m,'tick');self.assertEqual(get(m,'mode'),0)

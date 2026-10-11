@@ -3,13 +3,13 @@
   "issue": 27,
   "baseline": "stage5a-stable",
   "baseline_commit": "9eeb395",
-  "stable": false,
-  "xemu": "NOT_RUN; user acceptance required",
+  "stable": true,
+  "xemu": "USER_CONFIRMED_COMPLETE_BUILD",
   "tests": {
-    "passed": 32,
+    "passed": 34,
     "failures": 0,
-    "seconds": 270.006,
-    "command": "PYTHONPATH=tests:tools MEGA65_ROM=/path/MEGA65.ROM python3 -m unittest test_stage5b test_stage5b_graphics -v",
+    "seconds": 353.719,
+    "command": "PYTHONPATH=tests:tools MEGA65_ROM=/path/MEGA65.ROM python3 -m unittest test_stage5b test_stage5b_graphics test_stage5b_dos -v",
     "model": "assembled CPU/KERNAL/DMA/RRB-pixel oracle; not XEMU"
   },
   "all_level_initializations": 100,
@@ -22,8 +22,8 @@
   "additional_reference_clipping_cases": 140,
   "stable4c_entry_formation_differential_updates": 402,
   "reproducible_release_files": 20,
-  "prg_changed_bytes": 45,
-  "renderer_cpu_model_worst_cycles": 441719,
+  "prg_changed_bytes": 147,
+  "renderer_cpu_model_worst_cycles": 441763,
   "mapping_original_indexing_routine_proven": false,
   "mapping_status": "explicit n->n+1 strongly supported by descriptor/frame/Forme comparisons;14->15 also user visually confirmed",
   "restrictions": {
@@ -37,9 +37,36 @@
     "loader_trailing_bytes": "bounded expected-length contract retained; extra bytes not read"
   },
   "sha256": {
-    "STAGE5B.PRG": "85d20a4d736fedb0764b1d4a5b78d3bb2501f4437f5c1a6836454e814796ca74",
-    "VYPER_STAGE5B.d81": "fa22de505e7c52121a9fc64bf8518eede31019233e92994e4485d21810607d84",
+    "STAGE5B.PRG": "3b1118f70932fa5c5c8a86414fbed04c47f476f85046b0f5f47e1c5bf7be0750",
+    "VYPER_STAGE5B.d81": "1c51de52a96fefce1544e161fceab4a30f898d482dd7186905dd473ef5b1034f",
     "VYGR.DAT": "974e8eff97efd0c0f67db2780cb668311b9d8731395d43641d4602c0a7c96b50",
     "VYLV.DAT": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
-  }
+  },
+  "previous_graphics_build": {
+    "commit": "05a87a7",
+    "passed": 32,
+    "seconds": 270.006,
+    "prg_changed_bytes": 45
+  },
+  "independent_xemu": "NOT_RUN",
+  "prg_changed_bytes_since_initial5b": 102,
+  "dos_protection": {
+    "reserved_ram": "$10000-$11FFF",
+    "old_graphics_pool": "$10000-$115FF",
+    "new_graphics_pool": "$14000-$155FF",
+    "observed_old_changed_bytes_after_exit": 5610,
+    "new_tracked_writes": 0,
+    "new_preserved_bytes": 8192,
+    "tested_level_transitions": 100,
+    "exit_states": [
+      "normal",
+      "LEVEL_CLEAR",
+      "GAME_OVER"
+    ],
+    "repeated_loader_starts": 3,
+    "actual_BASIC_DIRECTORY_test": "USER_CONFIRMED_COMPLETE_BUILD; no independent BASIC DIRECTORY run"
+  },
+  "stable_reference": "stage5b-stable",
+  "program_commit": "52118cee6813b833d0c1d237925ad6ecd75d1d33",
+  "user_confirmation": "Der Build ist jetzt stabil und funktioniert komplett"
 }

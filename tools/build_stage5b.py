@@ -42,18 +42,30 @@ def verify_engine(prg,names):
     for name in ['VYLV.DAT','VYGR.DAT']:
         if BASE.sha((ROOT/'assets'/name).read_bytes())!=BASE.DATA_SHA256[name]:raise ValueError('Stable original data changed')
     if len(old)!=len(prg):raise ValueError('Unexpected engine size change')
-    patches={0x4875:0xb8,0x487a:0x82,0x489c:0x75,0x48a3:0x5b,
-             0x6274:39,0x6301:0x38,0x6352:0x82,0x635e:0xb9}
-    expected=bytearray(old)
-    for addr,value in patches.items():expected[addr-0x2001+2]=value
-    rows=json.loads((ROOT/'assets/stage5b/vylv_vygr_mapping.json').read_text())
-    addr=names['p_mapping']-0x2001+2
-    expected[addr:addr+38]=bytes(r['vygr_type_1based'] for r in rows)
-    if bytes(expected)!=prg:raise ValueError('Change outside graphics bounds/checksum/mapping')
     differences=[{'address':f'${i-2+0x2001:04X}','old':a,'new':b} for i,(a,b) in enumerate(zip(old,prg)) if a!=b]
     return {'baseline':'stage5a-stable','baseline_prg_sha256':BASE.sha(old),
             'changed_bytes':len(differences),'patches':differences,
             'player_speed':'1 pixel/frame','formation_speed':'1 pixel/2 frames', 'stable':False}
+
+def verify_source_derivation():
+    # Every source must be exactly Stable5a plus the explicit graphics/pool changes.
+    components=['','_hud','_templates','_shots','_game','_offscreen','_entry','_attack','_data','_level']
+    for suffix in components:
+        old=subprocess.check_output(['git','show',f'stage5a-stable:src/engine/stage5a{suffix}.asm'],cwd=ROOT).decode()
+        expected=old.replace('stage5a','stage5b').replace('Stage 5a','Stage 5b').replace('STAGE5A','STAGE5B')
+        if suffix=='':
+            expected=expected.replace('lda #$a8\n    sta remain\n    lda #$78\n    sta remain+1','lda #$b8\n    sta remain\n    lda #$82\n    sta remain+1').replace('$54000..$5B8A7','$54000..$5C2B7').replace('cmp #$e9\n    bne graphic_sum_bad','cmp #$75\n    bne graphic_sum_bad').replace('cmp #$1f\n    beq graphic_sum_ok','cmp #$5b\n    beq graphic_sum_ok')
+        if suffix=='_level':
+            expected=expected.replace('cmp #37\n    bcc !guard+','cmp #39\n    bcc !guard+')
+            # Only graphics directory bound, not the VYLV directory bound.
+            before,after=expected.split('graphics_descriptor:',1)
+            after=after.replace('cmp #$28\n    bcs !guard+','cmp #$38\n    bcs !guard+').replace('cmp #$78\n    bcc !ok+','cmp #$82\n    bcc !ok+').replace('cmp #$a9\n    bcc !guard+','cmp #$b9\n    bcc !guard+')
+            expected=before+'graphics_descriptor:'+after
+            expected=expected.replace('    lda #0\n    sta entry.e_dma_dest+1\n!slot:','    lda #$40 // Private pool $14000-$155FF, outside DOS.\n    sta entry.e_dma_dest+1\n!slot:').replace('    cmp #22\n    bne !slot-','    cmp #$56\n    bne !slot-').replace('    lda entry.e_slot\n    sta entry.e_dma_dest+1','    lda entry.e_slot\n    ora #$40 // Bank1 private pool page, preserve slot indexing.\n    sta entry.e_dma_dest+1')
+        if suffix=='_entry':
+            expected=expected.replace('    lda e_slot\n    sta e_dma_dest+1\n    jsr e_copy','    lda e_slot\n    ora #$40 // Bank1 $14000 + slot*256; never DOS $10000-$11FFF.\n    sta e_dma_dest+1\n    jsr e_copy').replace('    ldy #4 // $10000 + slot*256 + $40; independent guarded NCM per slot','    ldy #5 // $14000 + slot*256 + $40; independent guarded NCM per slot')
+        actual=(ROOT/f'src/engine/stage5b{suffix}.asm').read_text()
+        if actual!=expected:raise ValueError('Change outside explicit Stage5b graphics/pool scope: '+suffix)
 
 def main():
     import analyze_stage5b_capacity as CAPACITY
@@ -71,11 +83,7 @@ def main():
     for f in (ROOT/'releases/stage_5a').iterdir():
         original=subprocess.check_output(['git','show','stage5a-stable:releases/stage_5a/'+f.name],cwd=ROOT)
         if f.read_bytes()!=original:raise ValueError('Stable release changed: '+f.name)
-    for component in ['hud','shots','templates']:
-        stable=(ROOT/'src/engine'/f'stage5a_{component}.asm').read_text()
-        new=(ROOT/'src/engine'/f'stage5b_{component}.asm').read_text()
-        if stable.replace('stage5a','stage5b').replace('Stage 5a','Stage 5b')!=new:
-            raise ValueError('Protected component changed: '+component)
+    verify_source_derivation()
     (ROOT/'src/engine/stage5b_mapping.asm').write_text(mapping_source())
     sources=['stage5b.asm']+[f'stage5b_{c}.asm' for c in ['hud','templates','shots','mapping','game','offscreen','entry','attack','data','level']]
     with tempfile.TemporaryDirectory(prefix='vyper-5b-') as directory:
@@ -103,10 +111,10 @@ def main():
                                 'reason':'user-approved pending original one-byte special curve semantics',
                                 'mapping':'explicit n->n+1 descriptor/frame/ADF evidence; original indexing routine not proven;14->15 visually confirmed'},
                 'memory':{'active_record':'$12000-$126FF','header':'$7600-$7607','code':'below$A000; manager$6000 replaces obsolete initial colour template',
-                          'private_pixies':'$10000-$115FF (22x256, existing)','blank_template':'$6700-$67FF',
+                          'private_pixies':'$14000-$155FF (22x256, relocated outside DOS $10000-$11FFF)','blank_template':'$6700-$67FF',
                           'runtime_metadata':'$1D80-$1DB1 and $6A20-$6AD7','groups':4,
                           'entry_cursor_bits':16,'entry_delay_bits':16,'rrb_slots':24,'screen_stride':192},
-                'runtime_xemu':'NOT_RUN; user confirmation required','graphics':{'types':38,'frames':259,'size':extraction['bytes'],'sha256':extraction['sha256'],'sum16':extraction['sum16'],'ram':'$54000-$5C2B7','format_version':1}}
+                'runtime_xemu':'NOT_RUN; user confirmation required','dos_protection':{'reserved':'$10000-$11FFF','private_pool':'$14000-$155FF','method':'avoid DOS entirely; no restore needed'},'graphics':{'types':38,'frames':259,'size':extraction['bytes'],'sha256':extraction['sha256'],'sum16':extraction['sum16'],'ram':'$54000-$5C2B7','format_version':1}}
         outputs={'STAGE5B.PRG':prg,'VYPER_STAGE5B.d81':disk,'STAGE5B.sym':sym.encode(),
                  'build-report.json':(json.dumps(report,indent=2)+'\n').encode(),
                  'memory-map.txt':(result.stdout[result.stdout.index('Memory Map'):].split('Writing Symbol file')[0].rstrip()+'\n').encode(),

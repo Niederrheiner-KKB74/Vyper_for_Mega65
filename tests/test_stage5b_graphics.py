@@ -53,8 +53,8 @@ class OriginalGraphicsTests(unittest.TestCase):
                     for n,v in [('e_xlo',x&255),('e_xhi',(x>>8)&255),('e_ylo',y&255),('e_yhi',(y>>8)&255)]:T.setv(m,n,v)
                     T.call(m,'e_render');self.assertEqual(T.fetched(m),T.oracle(x,y,payload),(t['type'],j,x,y))
                     self.assertEqual(T.get(m,'v014_overflow_count'),0)
-                    self.assertEqual(m.memory.data[0x10000:0x10040],bytes(64))
-                    self.assertEqual(m.memory.data[0x100c0:0x10100],bytes(64))
+                    self.assertEqual(m.memory.data[0x14000:0x14040],bytes(64))
+                    self.assertEqual(m.memory.data[0x140c0:0x14100],bytes(64))
                 # Two fragments at exactly the same origin must still reproduce the original.
                 T.target(m,1,1,60,60)
                 for n,v in [('e_xlo',60),('e_xhi',0),('e_ylo',60),('e_yhi',0)]:T.setv(m,n,v,1)
