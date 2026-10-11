@@ -42,3 +42,21 @@ Frühere WinUAE-Analyse nannte eine im Speicher geladene `Forme`-Struktur um `$0
 Senkrechte transparente Streifen können unabhängig vom Mapping in Bitplane-/Maskendekodierung, Nibble-Reihenfolge oder NCM-Clipping entstehen. Levelabhängige Farbpaletten stammen aus der Amiga-Datei `Color` und sind eine separate Aufgabe. Diese Fehler nicht mit unbelegten Mapping-Änderungen vermischen.
 
 **Keine Änderungen an Stage 5a Stable vorgenommen.**
+
+## Neue binäre Deskriptoranalyse (11.10.2026)
+
+Direkte Untersuchung der erneut hochgeladenen **512-KiB-ChipRAM-Datei** `Vyper_Memory_Dump(1).dat` und der aktuellen `VYGR.DAT`:
+
+- Im ChipRAM liegt ab **`$2DAF2` eine Folge von 38 Einträgen à 18 Bytes** (bis einschließlich `$2DD9D`). Der Eintrag `i` beginnt bei `$2DAF2 + 18*i`.
+- In jedem Eintrag stehen bei **+8..+11** (Big Endian) ein 32-bit-Grafikdeskriptor-Zeiger und bei **+12..+13** (Big Endian) die Anzahl Animationsframes.
+- Die Deskriptoren beginnen für Index 0 bei `$3829A`, Index 14 bei **`$38CFA`**, Index 35 bei `$39FFA`, Index 36 bei `$3A07A`, Index 37 bei `$3A1BA`.
+- Das aktuelle **`VYGR.DAT` hat nur 36 Typen** (1-basiert), deren Frameanzahlen **für alle 36 Positionen exakt mit den 18-Byte-Einträgen 0..35 übereinstimmen**. Der erste NCM-Frame der jeweiligen Typen stimmt beim Vergleich mit den Original-Bitplanes/Masken **nahezu oder vollständig** überein (kleine Pixeldifferenzen sind vorhanden, wahrscheinlich durch Konvertierung/Maskierung; noch zu analysieren). Die VYGR-Reihenfolge ist somit sehr stark als **Original-Deskriptorreihenfolge 0..35** gestützt.
+- **Kontrollfall:** Originaleintrag **Index 14 → Deskriptor `$38CFA`, sechs Frames → VYGR-Typ 15**. Dies passt zur vom Benutzer visuell bestätigten Zuordnung.
+- **Wichtiger neuer Befund:** Die Originaltabelle hat **zwei zusätzliche Grafiktypen 36 und 37** (je 10 Frames), die in der aktuellen `VYGR.DAT` **fehlen**. Beide Indizes kommen in VYLV vor: **36 in Levels 29 und 54 (23 Gegnereinträge), 37 in Level 37 (22 Gegnereinträge)**. Das ist eine konkrete Ursache für fehlende/falsche Grafiken dieser Levels.
+- Die VYLV-Indices 6 und 11 werden in keinem Level verwendet. Die 36 verwendeten VYLV-Indices 0..37 ohne 6/11 sind **nicht identisch** mit den 36 extrahierten VYGR-Typen 0..35: Letztere enthalten 6 und 11, aber nicht 36 und 37.
+
+**Starke Mapping-Hypothese:** `VYLV graphic_type i → Originaldeskriptor i → VYGR-Typ i+1` für `0 ≤ i ≤ 35`. Dies ist durch Deskriptorfolge, Frameanzahlen und den bestätigten Kontrollfall sehr gut gestützt, **aber noch kein unabhängiger Nachweis der Original-Amiga-Indexierungsroutine**. Für 36 und 37 müssen die zwei fehlenden Typen zuerst extrahiert und in VYGR ergänzt werden; bei dann 38 Typen wäre `i+1` die konsistente Typnummer.
+
+**Achtung:** Die historische provisorische Mapping-Tabelle (z. B. 0→12, 1→12, sonst oft `i-1`) ist mit dieser direkten Deskriptorfolge nicht vereinbar und sehr wahrscheinlich falsch. **Stage 5a Stable nicht ändern**, bevor ein separat testbarer Grafik-Asset-/Mapping-Build erstellt ist.
+
+**Noch zu prüfen:** Die letzten beiden Original-Deskriptoren und alle je zehn Frames auf Bitplane-/Maskenadressgültigkeit; der Original-Amiga-Code, der Forme-Index als Index dieser Tabelle benutzt; die kleineren Pixeldifferenzen zwischen VYGR und Original-Bitplanes, die mit den gemeldeten senkrechten transparenten Streifen zusammenhängen könnten. Die hier dokumentierte direkte Bitplane-Prüfung erklärt diese Streifen noch nicht.
