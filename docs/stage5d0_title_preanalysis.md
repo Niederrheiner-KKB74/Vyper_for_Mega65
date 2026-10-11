@@ -2,8 +2,10 @@
 
 Issue #33; separater Branch `stage5d-title-test` aus `stage5c-stable`.
 Stage5c-Quellen, PRG, D81 und Daten unverändert. **Kein fertiger Build**:
-`vyper_palette_candidate_9a50.png` und `vyper_title_palette.txt` fehlen im
-Repository, in den lokalen Anhängen und im geprüften GitHub-main-Baum.
+`vyper_palette_candidate_9a50.png` fehlt weiterhin als auslesbare Datei.
+`vyper_title_palette.txt` wurde inzwischen als Originalanhang übernommen und
+geprüft; siehe Ergänzung unten. Bei der ersten Prüfung fehlten beide Dateien
+im Repository, in den lokalen Anhängen und im geprüften GitHub-main-Baum.
 Die in Issue #33 genannten352×240/31 Farben/33 Paletteneinträge sind bisher
 Auftragsangaben und noch nicht anhand der Dateien geprüft. Keine Ersatzgrafik.
 
@@ -100,3 +102,14 @@ Für spätere Loaderintegration sind KERNAL-IRQ-/Bildschirmzugriffe, Palette,
 Loaderpuffer und High-RAM-Dateiziele gegen einen sichtbaren FCM-Titelscreen zu
 prüfen. Während CHKIN keine Screen-Ausgaben. Erst nach erfolgreichem isolierten
 Test einen separaten Integrationsauftrag umsetzen; Stage5c bleibt unverändert.
+
+## Nachgereichte Originalpalette
+
+`assets/stage5d0/original_sources/vyper_title_palette.txt` ist inzwischen als
+Original-Dateianhang übernommen und geprüft:33 fortlaufende Einträge COLOR00..32,
+alle RGB-Kanäle exakt17×RGB4,31 unterschiedliche RGB-Farben. Schwarz ist dreifach
+an Indices0/6/32 vorhanden. `tools/convert_stage5d0_title.py --check-palette-only`
+reproduziert diese Prüfung. Der Konverter ist vorbereitet, aber der PNG-Pfad fehlt
+weiterhin. Das im Chat sichtbare Bild ist kein binär verfügbarer Dateianhang;
+Bildmaße, PNG-Indices und Pixel-Roundtrip sind deshalb noch nicht geprüft.
+Es gibt weiterhin kein fertiges PRG/D81 und keinen XEMU-Test.
