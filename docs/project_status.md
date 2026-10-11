@@ -264,3 +264,16 @@ DMA-Korrektur: 33/33 Tests bestanden (285,571 s), bereitgestellte ROM-
 Blinkroutine aktiv, 15 Release-Dateien byteidentisch reproduziert.
 CPU-Modell: 22-Gegner-Formation 327.427 → 102.477 Zyklen.
 Aktuelles D81 unter `releases/stage_4b/`; erneute XEMU-Abnahme offen.
+
+## Stage 4b-1 – Sichtbarkeitskorrektur, XEMU-Abnahme offen
+
+Separater Branch `stage4b-1` aus `stage4b-stable`. WAIT war bereits unsichtbar;
+ENTRY zeichnete den Starttick und sieben rechte Null-Deltas sichtbar. Ein
+gemeinsames Flag unterdrückt Darstellung und Kollision bis zur ersten Bewegung,
+ohne Kurven, Koordinaten oder Timing zu ändern. Stage 4b bleibt geschützt.
+PRG/D81/Quellen: `releases/stage_4b_1/`. Kein Stable-Tag.
+[Ursache, Zeitvergleich und Testanleitung](stage4b1_entry_visibility_fix.md).
+
+Stage-4b-1-Prüfung: 36 unterschiedliche automatische Tests erfolgreich (nach
+Korrektur der übernommenen D81-Testreferenz auf STAGE4B1); alle 15
+Release-Dateien im Zweitbuild byteidentisch. XEMU-Abnahme bleibt offen.
