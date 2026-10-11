@@ -1,8 +1,12 @@
 # Stage 4b-1 – Sichtbarkeit beim Einflug (Issue #14)
 
-Testbranch `stage4b-1`, aus `stage4b-stable` (Commit
+Branch `stage4b-1`, aus `stage4b-stable` (Commit
 `f4c6f5e8c875e3ad7dd87fd016b9c65b77db694e`). Stage 4b und seine
-Release-Dateien bleiben unverändert. **Stage 4b-1 ist nicht Stable; XEMU-Abnahme offen.**
+Release-Dateien bleiben unverändert. **Stage 4b-1 ist vom Benutzer unter XEMU als Stable bestätigt.**
+Referenz `stage4b1-stable`; bestätigter Programmcommit `531c745971ae95ad15c723b46c97b1f34ee3cf3c`.
+Die frühere Testanleitung unten bleibt zur Reproduktion erhalten; die
+Benutzerbestätigung ersetzt die offenen Abnahmehinweise. Quellen und
+Release-Dateien werden durch die Stable-Markierung nicht verändert.
 
 ## Nachgewiesene Ursache
 
@@ -114,7 +118,7 @@ Ein unabhängiger Zweitbuild liefert alle 15 Release-Dateien byteidentisch.
 Das D81 enthält `STAGE4B1` als PRG und originale `VYLV.DAT`/`VYGR.DAT` als SEQ;
 Dateiketten und vollständige Inhalte werden durch den Builder geprüft.
 
-## XEMU-Abnahme durch den Benutzer
+## XEMU-Abnahme durch den Benutzer (bestätigt)
 
 D81: `releases/stage_4b_1/VYPER_STAGE4B1.d81`, 819.200 Bytes.
 ROM V920395, BASIC 80×25 wie bei der stabilen Referenz:
@@ -132,5 +136,5 @@ abschießen, Score/Explosionen prüfen; Joystick Port 2, Leben, steuerbaren
 unverwundbaren Respawn, GAME OVER/R, X und erneutes Laden/RUN testen.
 
 Kein XEMU- oder Hardwaretest durch Codex behauptet. Offene Grenzen der ursprünglichen
-Amiga-Zeit-/Debut-Rekonstruktion aus Stage 4b bleiben unverändert. Stable erst
-nach ausdrücklicher Benutzerbestätigung.
+Amiga-Zeit-/Debut-Rekonstruktion aus Stage 4b bleiben unverändert. Die ausdrückliche Benutzerbestätigung
+liegt vor: Der Einflug sieht korrekt aus, Stage 4b-1 darf als Stable markiert werden.

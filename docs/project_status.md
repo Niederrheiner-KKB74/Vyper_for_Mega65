@@ -265,15 +265,19 @@ Blinkroutine aktiv, 15 Release-Dateien byteidentisch reproduziert.
 CPU-Modell: 22-Gegner-Formation 327.427 → 102.477 Zyklen.
 Aktuelles D81 unter `releases/stage_4b/`; erneute XEMU-Abnahme offen.
 
-## Stage 4b-1 – Sichtbarkeitskorrektur, XEMU-Abnahme offen
+## Stage 4b-1 – Stable, vom Benutzer unter XEMU bestätigt
 
 Separater Branch `stage4b-1` aus `stage4b-stable`. WAIT war bereits unsichtbar;
 ENTRY zeichnete den Starttick und sieben rechte Null-Deltas sichtbar. Ein
 gemeinsames Flag unterdrückt Darstellung und Kollision bis zur ersten Bewegung,
 ohne Kurven, Koordinaten oder Timing zu ändern. Stage 4b bleibt geschützt.
-PRG/D81/Quellen: `releases/stage_4b_1/`. Kein Stable-Tag.
+PRG/D81/Quellen: `releases/stage_4b_1/`. Referenz `stage4b1-stable`.
 [Ursache, Zeitvergleich und Testanleitung](stage4b1_entry_visibility_fix.md).
 
 Stage-4b-1-Prüfung: 36 unterschiedliche automatische Tests erfolgreich (nach
 Korrektur der übernommenen D81-Testreferenz auf STAGE4B1); alle 15
-Release-Dateien im Zweitbuild byteidentisch. XEMU-Abnahme bleibt offen.
+Release-Dateien im Zweitbuild byteidentisch. Der Benutzer hat den korrekten
+Einflug unter XEMU bestätigt und Stage 4b-1 ausdrücklich als Stable freigegeben.
+Bestätigter Programmcommit: `531c745971ae95ad15c723b46c97b1f34ee3cf3c`.
+Die Stable-Markierung ändert ausschließlich Dokumentation; Quellen, PRG, D81
+und Release-Prüfsummen bleiben unverändert.
