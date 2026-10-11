@@ -1,0 +1,898 @@
+[
+  {
+    "level": 1,
+    "enemy": 0,
+    "frame": 158,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      120,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 11,
+    "frame": 165,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      118,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 1,
+    "frame": 174,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      120,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 12,
+    "frame": 181,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      118,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 2,
+    "frame": 190,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      120,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 13,
+    "frame": 197,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      118,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 3,
+    "frame": 206,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      120,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 14,
+    "frame": 213,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      118,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 4,
+    "frame": 222,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      120,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 15,
+    "frame": 229,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      118,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 5,
+    "frame": 238,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      120,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 16,
+    "frame": 245,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      118,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 6,
+    "frame": 254,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      120,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 17,
+    "frame": 261,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      118,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 7,
+    "frame": 270,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      120,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 18,
+    "frame": 277,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      118,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 8,
+    "frame": 286,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      120,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 19,
+    "frame": 293,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      118,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 9,
+    "frame": 302,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      120,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 20,
+    "frame": 309,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      118,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 10,
+    "frame": 318,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      120,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 1,
+    "enemy": 21,
+    "frame": 325,
+    "last_visible": [
+      120,
+      13
+    ],
+    "first_return": [
+      118,
+      29
+    ],
+    "y_jump": 16
+  },
+  {
+    "level": 2,
+    "enemy": 0,
+    "frame": 166,
+    "last_visible": [
+      115,
+      54
+    ],
+    "first_return": [
+      118,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 11,
+    "frame": 166,
+    "last_visible": [
+      135,
+      54
+    ],
+    "first_return": [
+      135,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 1,
+    "frame": 174,
+    "last_visible": [
+      115,
+      54
+    ],
+    "first_return": [
+      118,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 12,
+    "frame": 174,
+    "last_visible": [
+      135,
+      54
+    ],
+    "first_return": [
+      135,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 2,
+    "frame": 182,
+    "last_visible": [
+      115,
+      54
+    ],
+    "first_return": [
+      118,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 13,
+    "frame": 182,
+    "last_visible": [
+      135,
+      54
+    ],
+    "first_return": [
+      135,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 3,
+    "frame": 190,
+    "last_visible": [
+      115,
+      54
+    ],
+    "first_return": [
+      118,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 14,
+    "frame": 190,
+    "last_visible": [
+      135,
+      54
+    ],
+    "first_return": [
+      135,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 4,
+    "frame": 198,
+    "last_visible": [
+      115,
+      54
+    ],
+    "first_return": [
+      118,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 15,
+    "frame": 198,
+    "last_visible": [
+      135,
+      54
+    ],
+    "first_return": [
+      135,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 5,
+    "frame": 206,
+    "last_visible": [
+      115,
+      54
+    ],
+    "first_return": [
+      118,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 16,
+    "frame": 206,
+    "last_visible": [
+      135,
+      54
+    ],
+    "first_return": [
+      135,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 6,
+    "frame": 214,
+    "last_visible": [
+      115,
+      54
+    ],
+    "first_return": [
+      118,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 17,
+    "frame": 214,
+    "last_visible": [
+      135,
+      54
+    ],
+    "first_return": [
+      135,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 7,
+    "frame": 222,
+    "last_visible": [
+      115,
+      54
+    ],
+    "first_return": [
+      118,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 18,
+    "frame": 222,
+    "last_visible": [
+      135,
+      54
+    ],
+    "first_return": [
+      135,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 8,
+    "frame": 230,
+    "last_visible": [
+      115,
+      54
+    ],
+    "first_return": [
+      118,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 19,
+    "frame": 230,
+    "last_visible": [
+      135,
+      54
+    ],
+    "first_return": [
+      135,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 9,
+    "frame": 238,
+    "last_visible": [
+      115,
+      54
+    ],
+    "first_return": [
+      118,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 20,
+    "frame": 238,
+    "last_visible": [
+      135,
+      54
+    ],
+    "first_return": [
+      135,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 10,
+    "frame": 246,
+    "last_visible": [
+      115,
+      54
+    ],
+    "first_return": [
+      118,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 2,
+    "enemy": 21,
+    "frame": 246,
+    "last_visible": [
+      135,
+      54
+    ],
+    "first_return": [
+      135,
+      67
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 0,
+    "frame": 232,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 1,
+    "frame": 236,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 2,
+    "frame": 240,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 3,
+    "frame": 244,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 4,
+    "frame": 248,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 5,
+    "frame": 252,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 6,
+    "frame": 256,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 7,
+    "frame": 260,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 8,
+    "frame": 264,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 9,
+    "frame": 268,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 10,
+    "frame": 272,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 11,
+    "frame": 276,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 12,
+    "frame": 280,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 13,
+    "frame": 284,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 14,
+    "frame": 288,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 15,
+    "frame": 292,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 16,
+    "frame": 296,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 17,
+    "frame": 300,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 18,
+    "frame": 304,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  },
+  {
+    "level": 3,
+    "enemy": 19,
+    "frame": 308,
+    "last_visible": [
+      124,
+      49
+    ],
+    "first_return": [
+      123,
+      62
+    ],
+    "y_jump": 13
+  }
+]

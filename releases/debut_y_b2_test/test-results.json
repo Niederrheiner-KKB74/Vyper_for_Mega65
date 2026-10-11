@@ -1,0 +1,9 @@
+{
+  "tests_passed": 10,
+  "seconds": 33.479,
+  "independent_build_identical_files": 23,
+  "baseline_traced_enemies": 64,
+  "b2_entry_return_traced_enemies": 64,
+  "xemu": "NOT_RUN",
+  "stable": false
+}

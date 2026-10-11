@@ -478,3 +478,7 @@ Kollisionen und Schussursprung; Explosionen behalten die sichtbare Trefferpositi
 Diagnose für Level 1–3 und Testanleitung: `docs/debut_y_geometry_comparison.md`.
 Stage 5c/5d-0/5d-1 werden nicht geändert. Keine Variante Stable;
 XEMU-/Amiga-Vergleich durch den Benutzer steht aus.
+
+## Issue #39: B2 transition test
+
+Separate `test-debut-y-b2` branch; B ENTRY completion hands the last projected signed position to RETURN. Test artifacts: `releases/debut_y_b2_test/`. XEMU acceptance pending; not Stable. See `debut_y_b2_transition_test.md`.

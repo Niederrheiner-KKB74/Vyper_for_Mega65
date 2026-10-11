@@ -1,0 +1,2306 @@
+[
+  {
+    "level": 1,
+    "enemy": 0,
+    "frame": 158,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      98,
+      18
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 11,
+    "frame": 165,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      127,
+      18
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 11,
+    "frame": 172,
+    "event": "RETURN_FORMATION",
+    "before": [
+      126,
+      18
+    ],
+    "after": [
+      127,
+      18
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 1,
+    "frame": 174,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      80,
+      3
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 0,
+    "frame": 180,
+    "event": "RETURN_FORMATION",
+    "before": [
+      99,
+      18
+    ],
+    "after": [
+      98,
+      18
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 12,
+    "frame": 181,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      145,
+      3
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 2,
+    "frame": 190,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      61,
+      0
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 13,
+    "frame": 197,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      164,
+      0
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 3,
+    "frame": 206,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      42,
+      9
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 12,
+    "frame": 206,
+    "event": "RETURN_FORMATION",
+    "before": [
+      144,
+      3
+    ],
+    "after": [
+      145,
+      3
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 14,
+    "frame": 213,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      183,
+      9
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 1,
+    "frame": 214,
+    "event": "RETURN_FORMATION",
+    "before": [
+      81,
+      3
+    ],
+    "after": [
+      80,
+      3
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 4,
+    "frame": 222,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      30,
+      28
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 15,
+    "frame": 229,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      195,
+      28
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 5,
+    "frame": 238,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      30,
+      47
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 13,
+    "frame": 241,
+    "event": "RETURN_FORMATION",
+    "before": [
+      163,
+      0
+    ],
+    "after": [
+      164,
+      0
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 16,
+    "frame": 245,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      195,
+      47
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 2,
+    "frame": 249,
+    "event": "RETURN_FORMATION",
+    "before": [
+      62,
+      0
+    ],
+    "after": [
+      61,
+      0
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 6,
+    "frame": 254,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      43,
+      66
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 17,
+    "frame": 261,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      182,
+      66
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 7,
+    "frame": 270,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      62,
+      74
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 14,
+    "frame": 276,
+    "event": "RETURN_FORMATION",
+    "before": [
+      182,
+      9
+    ],
+    "after": [
+      183,
+      9
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 18,
+    "frame": 277,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      163,
+      74
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 3,
+    "frame": 284,
+    "event": "RETURN_FORMATION",
+    "before": [
+      43,
+      9
+    ],
+    "after": [
+      42,
+      9
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 8,
+    "frame": 286,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      81,
+      71
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 19,
+    "frame": 293,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      144,
+      71
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 9,
+    "frame": 302,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      98,
+      55
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 15,
+    "frame": 304,
+    "event": "RETURN_FORMATION",
+    "before": [
+      194,
+      28
+    ],
+    "after": [
+      195,
+      28
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 20,
+    "frame": 309,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      127,
+      55
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 4,
+    "frame": 312,
+    "event": "RETURN_FORMATION",
+    "before": [
+      31,
+      28
+    ],
+    "after": [
+      30,
+      28
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 10,
+    "frame": 318,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      103,
+      37
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 16,
+    "frame": 320,
+    "event": "RETURN_FORMATION",
+    "before": [
+      194,
+      47
+    ],
+    "after": [
+      195,
+      47
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 17,
+    "frame": 323,
+    "event": "RETURN_FORMATION",
+    "before": [
+      181,
+      66
+    ],
+    "after": [
+      182,
+      66
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 21,
+    "frame": 325,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      120,
+      29
+    ],
+    "visible_before": [
+      120,
+      13
+    ],
+    "visible_after": [
+      120,
+      13
+    ],
+    "target": [
+      122,
+      37
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 5,
+    "frame": 328,
+    "event": "RETURN_FORMATION",
+    "before": [
+      31,
+      47
+    ],
+    "after": [
+      30,
+      47
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 6,
+    "frame": 331,
+    "event": "RETURN_FORMATION",
+    "before": [
+      44,
+      66
+    ],
+    "after": [
+      43,
+      66
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 7,
+    "frame": 331,
+    "event": "RETURN_FORMATION",
+    "before": [
+      62,
+      73
+    ],
+    "after": [
+      62,
+      74
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 18,
+    "frame": 338,
+    "event": "RETURN_FORMATION",
+    "before": [
+      163,
+      73
+    ],
+    "after": [
+      163,
+      74
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 10,
+    "frame": 342,
+    "event": "RETURN_FORMATION",
+    "before": [
+      103,
+      36
+    ],
+    "after": [
+      103,
+      37
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 8,
+    "frame": 344,
+    "event": "RETURN_FORMATION",
+    "before": [
+      81,
+      70
+    ],
+    "after": [
+      81,
+      71
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 9,
+    "frame": 344,
+    "event": "RETURN_FORMATION",
+    "before": [
+      98,
+      54
+    ],
+    "after": [
+      98,
+      55
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 21,
+    "frame": 349,
+    "event": "RETURN_FORMATION",
+    "before": [
+      122,
+      36
+    ],
+    "after": [
+      122,
+      37
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 19,
+    "frame": 351,
+    "event": "RETURN_FORMATION",
+    "before": [
+      144,
+      70
+    ],
+    "after": [
+      144,
+      71
+    ]
+  },
+  {
+    "level": 1,
+    "enemy": 20,
+    "frame": 351,
+    "event": "RETURN_FORMATION",
+    "before": [
+      127,
+      54
+    ],
+    "after": [
+      127,
+      55
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 0,
+    "frame": 166,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      115,
+      70
+    ],
+    "visible_before": [
+      115,
+      54
+    ],
+    "visible_after": [
+      115,
+      54
+    ],
+    "target": [
+      53,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 11,
+    "frame": 166,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      135,
+      70
+    ],
+    "visible_before": [
+      135,
+      54
+    ],
+    "visible_after": [
+      135,
+      54
+    ],
+    "target": [
+      113,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 1,
+    "frame": 174,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      115,
+      70
+    ],
+    "visible_before": [
+      115,
+      54
+    ],
+    "visible_after": [
+      115,
+      54
+    ],
+    "target": [
+      73,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 12,
+    "frame": 174,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      135,
+      70
+    ],
+    "visible_before": [
+      135,
+      54
+    ],
+    "visible_after": [
+      135,
+      54
+    ],
+    "target": [
+      93,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 2,
+    "frame": 182,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      115,
+      70
+    ],
+    "visible_before": [
+      115,
+      54
+    ],
+    "visible_after": [
+      115,
+      54
+    ],
+    "target": [
+      93,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 13,
+    "frame": 182,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      135,
+      70
+    ],
+    "visible_before": [
+      135,
+      54
+    ],
+    "visible_after": [
+      135,
+      54
+    ],
+    "target": [
+      73,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 11,
+    "frame": 188,
+    "event": "RETURN_FORMATION",
+    "before": [
+      114,
+      36
+    ],
+    "after": [
+      113,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 3,
+    "frame": 190,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      115,
+      70
+    ],
+    "visible_before": [
+      115,
+      54
+    ],
+    "visible_after": [
+      115,
+      54
+    ],
+    "target": [
+      113,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 14,
+    "frame": 190,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      135,
+      70
+    ],
+    "visible_before": [
+      135,
+      54
+    ],
+    "visible_after": [
+      135,
+      54
+    ],
+    "target": [
+      53,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 4,
+    "frame": 198,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      115,
+      70
+    ],
+    "visible_before": [
+      115,
+      54
+    ],
+    "visible_after": [
+      115,
+      54
+    ],
+    "target": [
+      133,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 15,
+    "frame": 198,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      135,
+      70
+    ],
+    "visible_before": [
+      135,
+      54
+    ],
+    "visible_after": [
+      135,
+      54
+    ],
+    "target": [
+      43,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 5,
+    "frame": 206,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      115,
+      70
+    ],
+    "visible_before": [
+      115,
+      54
+    ],
+    "visible_after": [
+      115,
+      54
+    ],
+    "target": [
+      153,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 16,
+    "frame": 206,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      135,
+      70
+    ],
+    "visible_before": [
+      135,
+      54
+    ],
+    "visible_after": [
+      135,
+      54
+    ],
+    "target": [
+      63,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 6,
+    "frame": 214,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      115,
+      70
+    ],
+    "visible_before": [
+      115,
+      54
+    ],
+    "visible_after": [
+      115,
+      54
+    ],
+    "target": [
+      173,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 17,
+    "frame": 214,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      135,
+      70
+    ],
+    "visible_before": [
+      135,
+      54
+    ],
+    "visible_after": [
+      135,
+      54
+    ],
+    "target": [
+      83,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 12,
+    "frame": 216,
+    "event": "RETURN_FORMATION",
+    "before": [
+      94,
+      36
+    ],
+    "after": [
+      93,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 7,
+    "frame": 222,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      115,
+      70
+    ],
+    "visible_before": [
+      115,
+      54
+    ],
+    "visible_after": [
+      115,
+      54
+    ],
+    "target": [
+      183,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 18,
+    "frame": 222,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      135,
+      70
+    ],
+    "visible_before": [
+      135,
+      54
+    ],
+    "visible_after": [
+      135,
+      54
+    ],
+    "target": [
+      103,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 0,
+    "frame": 228,
+    "event": "RETURN_FORMATION",
+    "before": [
+      54,
+      0
+    ],
+    "after": [
+      53,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 1,
+    "frame": 228,
+    "event": "RETURN_FORMATION",
+    "before": [
+      73,
+      1
+    ],
+    "after": [
+      73,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 8,
+    "frame": 230,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      115,
+      70
+    ],
+    "visible_before": [
+      115,
+      54
+    ],
+    "visible_after": [
+      115,
+      54
+    ],
+    "target": [
+      173,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 19,
+    "frame": 230,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      135,
+      70
+    ],
+    "visible_before": [
+      135,
+      54
+    ],
+    "visible_after": [
+      135,
+      54
+    ],
+    "target": [
+      123,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 2,
+    "frame": 236,
+    "event": "RETURN_FORMATION",
+    "before": [
+      93,
+      1
+    ],
+    "after": [
+      93,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 9,
+    "frame": 238,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      115,
+      70
+    ],
+    "visible_before": [
+      115,
+      54
+    ],
+    "visible_after": [
+      115,
+      54
+    ],
+    "target": [
+      153,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 20,
+    "frame": 238,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      135,
+      70
+    ],
+    "visible_before": [
+      135,
+      54
+    ],
+    "visible_after": [
+      135,
+      54
+    ],
+    "target": [
+      143,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 3,
+    "frame": 244,
+    "event": "RETURN_FORMATION",
+    "before": [
+      113,
+      1
+    ],
+    "after": [
+      113,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 13,
+    "frame": 244,
+    "event": "RETURN_FORMATION",
+    "before": [
+      74,
+      36
+    ],
+    "after": [
+      73,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 10,
+    "frame": 246,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      115,
+      70
+    ],
+    "visible_before": [
+      115,
+      54
+    ],
+    "visible_after": [
+      115,
+      54
+    ],
+    "target": [
+      133,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 21,
+    "frame": 246,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      135,
+      70
+    ],
+    "visible_before": [
+      135,
+      54
+    ],
+    "visible_after": [
+      135,
+      54
+    ],
+    "target": [
+      163,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 4,
+    "frame": 252,
+    "event": "RETURN_FORMATION",
+    "before": [
+      133,
+      1
+    ],
+    "after": [
+      133,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 18,
+    "frame": 258,
+    "event": "RETURN_FORMATION",
+    "before": [
+      103,
+      19
+    ],
+    "after": [
+      103,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 5,
+    "frame": 260,
+    "event": "RETURN_FORMATION",
+    "before": [
+      153,
+      1
+    ],
+    "after": [
+      153,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 10,
+    "frame": 264,
+    "event": "RETURN_FORMATION",
+    "before": [
+      132,
+      37
+    ],
+    "after": [
+      133,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 17,
+    "frame": 266,
+    "event": "RETURN_FORMATION",
+    "before": [
+      84,
+      18
+    ],
+    "after": [
+      83,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 19,
+    "frame": 266,
+    "event": "RETURN_FORMATION",
+    "before": [
+      123,
+      19
+    ],
+    "after": [
+      123,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 6,
+    "frame": 272,
+    "event": "RETURN_FORMATION",
+    "before": [
+      172,
+      0
+    ],
+    "after": [
+      173,
+      0
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 14,
+    "frame": 272,
+    "event": "RETURN_FORMATION",
+    "before": [
+      54,
+      36
+    ],
+    "after": [
+      53,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 20,
+    "frame": 274,
+    "event": "RETURN_FORMATION",
+    "before": [
+      143,
+      19
+    ],
+    "after": [
+      143,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 9,
+    "frame": 276,
+    "event": "RETURN_FORMATION",
+    "before": [
+      152,
+      36
+    ],
+    "after": [
+      153,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 16,
+    "frame": 278,
+    "event": "RETURN_FORMATION",
+    "before": [
+      64,
+      18
+    ],
+    "after": [
+      63,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 21,
+    "frame": 282,
+    "event": "RETURN_FORMATION",
+    "before": [
+      163,
+      19
+    ],
+    "after": [
+      163,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 8,
+    "frame": 288,
+    "event": "RETURN_FORMATION",
+    "before": [
+      172,
+      36
+    ],
+    "after": [
+      173,
+      36
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 7,
+    "frame": 290,
+    "event": "RETURN_FORMATION",
+    "before": [
+      182,
+      18
+    ],
+    "after": [
+      183,
+      18
+    ]
+  },
+  {
+    "level": 2,
+    "enemy": 15,
+    "frame": 290,
+    "event": "RETURN_FORMATION",
+    "before": [
+      44,
+      18
+    ],
+    "after": [
+      43,
+      18
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 0,
+    "frame": 232,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      61,
+      0
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 1,
+    "frame": 236,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      166,
+      0
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 2,
+    "frame": 240,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      31,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 3,
+    "frame": 244,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      136,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 4,
+    "frame": 248,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      51,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 5,
+    "frame": 252,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      156,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 6,
+    "frame": 256,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      71,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 7,
+    "frame": 260,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      176,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 8,
+    "frame": 264,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      91,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 9,
+    "frame": 268,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      196,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 10,
+    "frame": 272,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      22,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 3,
+    "frame": 274,
+    "event": "RETURN_FORMATION",
+    "before": [
+      136,
+      20
+    ],
+    "after": [
+      136,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 11,
+    "frame": 276,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      125,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 12,
+    "frame": 280,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      40,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 5,
+    "frame": 284,
+    "event": "RETURN_FORMATION",
+    "before": [
+      155,
+      19
+    ],
+    "after": [
+      156,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 13,
+    "frame": 284,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      145,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 1,
+    "frame": 285,
+    "event": "RETURN_FORMATION",
+    "before": [
+      166,
+      1
+    ],
+    "after": [
+      166,
+      0
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 11,
+    "frame": 287,
+    "event": "RETURN_FORMATION",
+    "before": [
+      125,
+      39
+    ],
+    "after": [
+      125,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 14,
+    "frame": 288,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      60,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 15,
+    "frame": 292,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      165,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 0,
+    "frame": 295,
+    "event": "RETURN_FORMATION",
+    "before": [
+      62,
+      0
+    ],
+    "after": [
+      61,
+      0
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 16,
+    "frame": 296,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      80,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 8,
+    "frame": 297,
+    "event": "RETURN_FORMATION",
+    "before": [
+      92,
+      19
+    ],
+    "after": [
+      91,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 17,
+    "frame": 300,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      185,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 18,
+    "frame": 304,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      100,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 13,
+    "frame": 305,
+    "event": "RETURN_FORMATION",
+    "before": [
+      144,
+      38
+    ],
+    "after": [
+      145,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 19,
+    "frame": 308,
+    "event": "ENTRY_RETURN",
+    "logical_before": [
+      124,
+      65
+    ],
+    "visible_before": [
+      124,
+      49
+    ],
+    "visible_after": [
+      124,
+      49
+    ],
+    "target": [
+      203,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 6,
+    "frame": 309,
+    "event": "RETURN_FORMATION",
+    "before": [
+      72,
+      19
+    ],
+    "after": [
+      71,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 7,
+    "frame": 312,
+    "event": "RETURN_FORMATION",
+    "before": [
+      175,
+      19
+    ],
+    "after": [
+      176,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 4,
+    "frame": 321,
+    "event": "RETURN_FORMATION",
+    "before": [
+      52,
+      19
+    ],
+    "after": [
+      51,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 18,
+    "frame": 328,
+    "event": "RETURN_FORMATION",
+    "before": [
+      101,
+      38
+    ],
+    "after": [
+      100,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 2,
+    "frame": 333,
+    "event": "RETURN_FORMATION",
+    "before": [
+      32,
+      19
+    ],
+    "after": [
+      31,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 15,
+    "frame": 333,
+    "event": "RETURN_FORMATION",
+    "before": [
+      164,
+      38
+    ],
+    "after": [
+      165,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 9,
+    "frame": 340,
+    "event": "RETURN_FORMATION",
+    "before": [
+      195,
+      19
+    ],
+    "after": [
+      196,
+      19
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 16,
+    "frame": 340,
+    "event": "RETURN_FORMATION",
+    "before": [
+      81,
+      38
+    ],
+    "after": [
+      80,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 14,
+    "frame": 352,
+    "event": "RETURN_FORMATION",
+    "before": [
+      61,
+      38
+    ],
+    "after": [
+      60,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 17,
+    "frame": 361,
+    "event": "RETURN_FORMATION",
+    "before": [
+      184,
+      38
+    ],
+    "after": [
+      185,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 12,
+    "frame": 364,
+    "event": "RETURN_FORMATION",
+    "before": [
+      41,
+      38
+    ],
+    "after": [
+      40,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 10,
+    "frame": 374,
+    "event": "RETURN_FORMATION",
+    "before": [
+      23,
+      38
+    ],
+    "after": [
+      22,
+      38
+    ]
+  },
+  {
+    "level": 3,
+    "enemy": 19,
+    "frame": 387,
+    "event": "RETURN_FORMATION",
+    "before": [
+      202,
+      38
+    ],
+    "after": [
+      203,
+      38
+    ]
+  }
+]

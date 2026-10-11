@@ -392,3 +392,7 @@ Attackparser und vor Schussinitialisierung `$7951`. Sechs Hookbytes im
 ENTRY-Code passen vor `$5B80`. Alle ursprünglichen Daten-/Puffer-/VIC-/DMA-
 Adressen unverändert. Stage 5c und Stage 5d-1 unverändert erhalten.
 [Transformationsstelle und Messwerte](debut_y_geometry_comparison.md).
+
+## B2 isolated test (Issue #39)
+
+ENTRY $5700–$5B68, private projection/handoff state $7700–$7889. Row retirement $5B80 and aimed shots $7951 remain unchanged. Stable Stage 5c and original comparison releases unchanged.
