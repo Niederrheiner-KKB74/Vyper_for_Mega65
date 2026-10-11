@@ -734,13 +734,13 @@ clear_private:
     lda #1
     sta entry.e_dma_dest+2
     sta entry.e_dma_length+1
-    lda #0
+    lda #$40 // Private pool $14000-$155FF, outside DOS.
     sta entry.e_dma_dest+1
 !slot:
     jsr entry.e_copy
     inc entry.e_dma_dest+1
     lda entry.e_dma_dest+1
-    cmp #22
+    cmp #$56
     bne !slot-
     rts
 full_frame:
@@ -766,6 +766,7 @@ full_frame:
     lda #$40
     sta entry.e_dma_dest
     lda entry.e_slot
+    ora #$40 // Bank1 private pool page, preserve slot indexing.
     sta entry.e_dma_dest+1
     lda #1
     sta entry.e_dma_dest+2

@@ -392,7 +392,7 @@ Die historischen Konvertierungsfehler (hohes statt niedriges linkes Nibble,
 Plane-Pointer−6 plus zyklische Zeilenadressierung) sind für alle239 alten Frames
 exakt reproduziert und anhand der Originalpointer korrigiert. Masken bleiben erhalten.
 Neue VYGR33464 Bytes bei `$54000–$5C2B7`; kein Speicherüberschneidungsproblem.
-45 geänderte PRG-Bytes; übrige Spielmechanik und Renderer identisch zu Stage5a.
+Initialer Grafikbuild:45 geänderte PRG-Bytes; anschließend DOS-Exit-Korrektur, siehe unten.
 Ein-Byte-Angriffssperren25/50/99/100 bleiben; Levelpaletten ausdrücklich außerhalb
 Stage5b. [Technischer Prüfbericht und XEMU-Plan](stage5b_graphics_mapping.md),
 [Testprotokoll](stage5b-test-results.json). Release: `releases/stage_5b/`.
@@ -401,3 +401,17 @@ Keine Stable-Markierung vor ausdrücklicher Benutzerbestätigung.
 Stage5b:32/32 automatische Tests bestanden(270.006s), alle100 Level,259 Frames,
 66304 Originalpixel und2072 neue RRB-Clipping-/Überlappungsfälle.20 Release-Dateien
 im unabhängigen Zweitbuild byteidentisch. XEMU-Abnahme durch Benutzer ausstehend.
+
+Stage5b: Benutzer bestätigt korrekte Grafiken in Levels1/29/37/54, meldet jedoch
+nach X→BASIC Laufwerksausfall: DIRECTORY meldet DEVICE NOT PRESENT; RUN scheitert
+an OPEN mit Load Error01. Ursache: geerbter Pixiepool`$10000–$115FF` überschreibt
+reserviertes DOS-RAM`$10000–$11FFF`; CPU-/DMA-Nachweis zeigt5610 veränderte Testbytes
+auch nach Exit. Pool nach `$14000–$155FF` verlegt, ohne DOS-Reset oder Änderung
+an VIC-Exit, Loader, Grafiken oder Mapping. [Diagnose und Test](stage5b_dos_exit_fix.md).
+Grafikabnahme bestätigt, korrigierter Exit/erneuter Diskettenzugriff noch unter
+XEMU abzunehmen; Stage5b weiterhin nicht Stable.
+
+DOS-korrigierter Stage5b-Build:34/34 Tests bestanden(353.719s), vollständige
+8192-Byte-DOS-Erhaltung und null protokollierte Schreibzugriffe über alle100
+Levelwechsel und drei Exit-/Neustartfolgen.20 Release-Dateien byteidentisch
+reproduziert. Reale BASIC-Diskettenzugriffe bleiben Benutzer-XEMU-Abnahme.

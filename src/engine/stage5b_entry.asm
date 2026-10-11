@@ -544,6 +544,7 @@ e_stage_frame:
     sta e_dma_length+1
     sta e_dma_dest+2
     lda e_slot
+    ora #$40 // Bank1 $14000 + slot*256; never DOS $10000-$11FFF.
     sta e_dma_dest+1
     jsr e_copy
 e_private_glyph:
@@ -552,7 +553,7 @@ e_private_glyph:
     asl
     clc
     adc #1
-    ldy #4 // $10000 + slot*256 + $40; independent guarded NCM per slot
+    ldy #5 // $14000 + slot*256 + $40; independent guarded NCM per slot
     jsr game.c_glyph
     jmp v014_submit_pixie
 e_copy:

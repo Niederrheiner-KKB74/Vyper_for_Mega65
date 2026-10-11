@@ -160,15 +160,21 @@ Wie in Stage5a wird die bekannte Dateilänge begrenzt geladen: zu kurze Dateien,
 falsche Summen und DMA-Rückkopiefehler werden abgewiesen. Zusätzliche Bytes hinter
 dem erwarteten Ende werden weiterhin nicht eingelesen; ein gesonderter EOF-Test
 wird nicht hinzugefügt. Der Build/D81-Audit prüft die vollständige exakte Dateigröße.
-Private22×256-Pixiepuffer,24 RRB-Slots und192-Byte-Screenstride bleiben identisch.
+Die22×256-Pixiepuffer sind nach der DOS-Exit-Korrektur nach `$14000–$155FF`
+verlegt;24 RRB-Slots und192-Byte-Screenstride bleiben identisch. Der alte Bereich
+`$10000–$11FFF` ist vollständig für DOS reserviert und wird nicht mehr beschrieben.
 Der volle100-Level-Audit bestätigt weiterhin max22 Gegner,23 inklusive Player
 benötigte RRB-Slots,1706 Recordbytes,469 Einflugbytes und2100 Verzögerungsframes.
 
-Der PRG-Vergleich erlaubt ausschließlich **45 geänderte Bytes**: vier Loader-
-Operanden, vier Grafikgrenzen und37 Mappingwerte. Alle anderen PRG-Bytes bleiben
-identisch zu Stage5a Stable. Player1px/Frame, Drift±8 mit1px/2Frames, Einflug,
-Angriffskurven, Schüsse, Kollisionen, Explosionen, HUD, Level Clear, R/X und
-+/− bleiben dadurch unverändert. Die Angriffssperre in25/50/99/100 bleibt bestehen.
+Der initiale Grafikbuild `05a87a7` änderte45 Bytes gegenüber Stage5a. Die spätere
+DOS-Speicherkorrektur ändert weitere102 PRG-Bytes, einschließlich automatisch
+verschobener DMA-Descriptor-/Helperoperanden; insgesamt147 gegenüber Stage5a.
+Der Builder prüft nun jede komplette Quelle gegen Stage5a Stable plus die explizit
+zugelassenen Grafik-/Pufferadressänderungen. Rendererablauf, Clippingalgorithmus,
+Player1px/Frame, Drift±8 mit1px/2Frames, Einflug, Angriffskurven, Schüsse,
+Kollisionen, Explosionen, HUD, Level Clear, R/X und+/− bleiben erhalten.
+Die Angriffssperre in25/50/99/100 bleibt bestehen.
+[Ursache, Speicherkorrektur und erneute Abnahme](stage5b_dos_exit_fix.md).
 
 Die neue VYGR ist nur mit dem zugehörigen Stage5b-PRG zu verwenden. Alte Loader
 prüfen36 Typen/alte Dateigröße/Summe und akzeptieren diese Datei nicht. Alte
@@ -185,22 +191,21 @@ python3 -m pip install -r tests/requirements-stage5b.txt
 python3 tools/extract_stage5b_graphics.py
 python3 tools/analyze_stage5b_capacity.py
 python3 tools/build_stage5b.py --kickass /pfad/KickAss.jar
-PYTHONPATH=tests:tools MEGA65_ROM=/pfad/MEGA65.ROM python3 -m unittest test_stage5b test_stage5b_graphics -v
+PYTHONPATH=tests:tools MEGA65_ROM=/pfad/MEGA65.ROM python3 -m unittest test_stage5b test_stage5b_graphics test_stage5b_dos -v
 ```
 
 Buildziel `releases/stage_5b/`: vollständige elf ASM-Quellen, PRG/Symbole,
 VYGR/VYLV, D81, Mapping, Speicher- und Buildbericht sowie SHA256SUMS.
 Das D81 enthält `STAGE5B`(PRG), `VYLV.DAT` und neue `VYGR.DAT`(SEQ).
 Dateiketten, Dateigrößen und Payloads werden beim Build geprüft. Der Builder
-extrahiert erneut, schützt die Stable-Releases und prüft den PRG-Diff strikt.
-**32/32 Tests bestanden** (270.006s): alle100 Levelinitialisierungen,2194
+extrahiert erneut, schützt die Stable-Releases und prüft die vollständige Quellableitung und dokumentiert den PRG-Diff.
+Initialer Grafikbuild: **32/32 Tests bestanden** (270.006s): alle100 Levelinitialisierungen,2194
 Forme-Gegnereinträge,66304 Originalpixel,1813 Clippingfälle über alle259 Frames
 plus259 Überlappungsfälle und140 weitere Referenz-Randfälle.402 Einflug-/
 Formationsupdates identisch zur archivierten Stage4c-Referenz; Kampf-/Levelclear-/
 R/X-/Respawn-Regressionsprüfungen bestanden. Ein unabhängiger Zweitbuild liefert
-alle20 Release-Dateien byteidentisch. Der Rendererzyklusvergleich im CPU-Modell
-ist unverändert(441719 im getesteten schlechtesten22-Pixie-Fall), ohne vollständige
-DMA-/IRQ-/Rasterzeitmessung. Kein eigener XEMU- oder Hardwarelauf.
+alle20 Release-Dateien byteidentisch. Die nachfolgende DOS-Korrektur wird separat mit vollständiger Regression geprüft;
+der aktuelle Zykluswert steht im Testbericht, ohne vollständige DMA-/IRQ-/Rasterzeitmessung. Kein eigener XEMU- oder Hardwarelauf.
 
 Ausgeführte Tests und Zweitbuild-Ergebnis sind in
 [`stage5b-test-results.json`](stage5b-test-results.json) dokumentiert.
@@ -220,6 +225,10 @@ D81 einlegen; `LOAD "STAGE5B",8`, `RUN` (ROMV920395, BASIC80×25).
    mehrere überlappende Pixies, keine Wraparound-/Speicherartefakte.
 5. Kampf, Punkte, Leben, Respawn/Unverwundbarkeit, Game Over/R, X→BASIC und erneutes
    RUN; Level Clear/Joystickfortsetzung, regulär100→1 und begrenztes+/− testen.
-6.25/50/99/100 behalten die freigegebene vorläufige Angriffssperre.
+6. Levels25/50/99/100 behalten die freigegebene vorläufige Angriffssperre.
 
 **Stage5b erst nach ausdrücklicher Benutzerbestätigung Stable markieren.**
+
+DOS-korrigierter Build:34/34 Tests bestanden(353.719s), DOS-RAM vollständig erhalten;
+20 Release-Dateien erneut byteidentisch reproduziert. Grafikdaten und Mapping
+gegenüber dem vom Benutzer visuell geprüften Build unverändert.

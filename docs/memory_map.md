@@ -346,8 +346,13 @@ Von `stage5a-stable`, ohne Änderungen an dessen Dateien. Neue VYGR-Datei
 VYLV bleibt81793 Bytes bei `$40000–$53F80`;127 Bytes Abstand vor VYGR bleiben frei.
 Die erweiterten Grafikdaten enden vor `$60000` und überlappen keine Engine-/ROM-
 oder Levelpuffer. Verzeichnisende jetzt Dateioffset`$0138`; Loader-Summe`$5B75`.
-Alle anderen Code-/Puffer-/Slotadressen bleiben unverändert, einschließlich
-Record`$12000–$126FF`,22 private Pixiepuffer,24 RRB-Slots,192-Byte-Screenstride.
-45 PRG-Operand-/Mappingbytes ändern sich; Renderer, Palette und Spielmechanik
-bleiben bytegleich. [Mapping, Originalpointer und Tests](stage5b_graphics_mapping.md).
+DOS-Exit-Korrektur: Die22 privaten Pixiepuffer sind nach `$14000–$155FF` verlegt.
+Der alte Bereich `$10000–$115FF` lag im reservierten DOS-RAM `$10000–$11FFF`
+und darf nicht für Grafikpuffer verwendet werden. Record`$12000–$126FF`,
+24 RRB-Slots und192-Byte-Screenstride bleiben erhalten. Keine Überlappung zwischen
+Record, neuer Pixiepool-Belegung und Color-RAM-Fenster`$1F800–$1FFFF`.
+Die neuen Puffer liegen wie der aktive Record im während RUN genutzten BASIC-
+Array-/Stringbereich; das reine Maschinenspracheprogramm benötigt dort keine
+BASIC-Arrays.147 PRG-Bytes gegenüber Stage5a ändern sich einschließlich
+DMA-Operandrelokationen; Palette und Spielregeln bleiben unverändert. [Mapping, Originalpointer und Tests](stage5b_graphics_mapping.md).
 Stage5b nicht Stable; XEMU-Bestätigung ausstehend.
