@@ -200,3 +200,24 @@ schutz und Blinken erhalten. Finaler Frame setzt die Position nicht zurück.
 Bestätigter Programmstand: `7c77591e46a85a786fb41c974e7ce6d1e0b841f9`. Tag `stage3b5c-stable`
 sichert diesen Stand einschließlich der Abnahmedokumentation. ASM, PRG, D81,
 Assets, Builder und Release-Prüfsummen bleiben bei der Markierung unverändert.
+
+## Stage 4a – stabile Referenz `stage4a-stable`
+
+Branch `stage4a`, Grundlage `stage3b5c-stable` (`1e0d1a7`), gemäß Issue #10.
+Isolierter Offscreen-Test mit einem originalen Typ-15-Gegner und sechs Frames:
+F ein/aus, N nächster Einflug, P Bewegungspause, X BASIC. Vier Kanten plus
+Diagonale, signed 16-Bit-Positionen, privater pixelgenauer Software-Crop;
+normales Gameplay ist außerhalb des Tests unverändert. Keine originalen
+Einflug-/Angriffskurven integriert. Build/PRG/D81 unter `releases/stage_4a/`.
+[Technischer Nachweis und bestätigte XEMU-Abnahme](stage4a_offscreen_clipping.md).
+Stage 4a wurde am 11.10.2026 vom Benutzer unter XEMU als vollständig funktional
+bestätigt und ausdrücklich als Stable freigegeben. Stage 3b-5c bleibt erhalten.
+
+Stage-4a-Erweiterung 11.10.2026: Nach fehlerfreier Benutzerprüfung des bisherigen
+Testmodus sind nun zusätzlich Y=0–15 und Y=184–199 für Pixies freigegeben.
+Rendering/Clipping verwenden alle 25 Zeilen, X<240 und sämtliche übrigen
+Gameplay-/Speicherparameter bleiben unverändert. Aktualisiertes D81 im selben
+Releasepfad; auch die volle Höhe wurde anschließend ausdrücklich bestätigt.
+Bestätigter Programmstand: `7c3a466`; stabile Referenz `stage4a-stable`.
+Die Stable-Markierung ändert ausschließlich Dokumentation, keine Quellen oder
+Release-Artefakte.
