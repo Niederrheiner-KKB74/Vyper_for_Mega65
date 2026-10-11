@@ -1,6 +1,7 @@
 # Stage 4a – Offscreen-Einflug und Clipping
 
-Status: Entwicklungsstand, **nicht Stable**. Grundlage ist der unveränderte,
+Status: **Stable, vom Benutzer am 11.10.2026 unter XEMU bestätigt**
+(`stage4a-stable`), einschließlich voller Bildschirmhöhe Y=0–199. Grundlage ist der unveränderte,
 annotierte Tag `stage3b5c-stable`, Commit
 `1e0d1a7537d9b55d105442d8736d07cf5778272a`. Auftrag: [Issue #10](https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/issues/10).
 Stage 4a enthält keine originalen Einflug-/Angriffskurven und keinen Levelwechsel.
@@ -267,7 +268,7 @@ D81 a608d67994b26100295f38f4ee9821e90ddde6e8763daee35ec293d51954df54
 
 Tests sind CPU-/DMA-/RRB-Fetch-Modelle, **kein XEMU-Lauf**.
 
-## XEMU-Abnahme – noch ausstehend
+## XEMU-Abnahme – vom Benutzer bestätigt
 
 ROM V920395, BASIC 80×25 wie bei Stable. Mindestens zwei komplette Testschleifen:
 
@@ -287,8 +288,9 @@ ROM V920395, BASIC 80×25 wie bei Stable. Mindestens zwei komplette Testschleife
 7. Außerhalb F letztes Leben verlieren: sieben Originalexplosionsframes, GAME
    OVER, andere Tasten ohne Aktion, R Neustart mit erhaltenem Highscore, X Exit.
 
-XEMU-/Hardwareerfolg sowie stabiles 50-Hz-Timing sind **noch nicht bestätigt**.
-Stage 4a erhält keinen Stable-Tag vor ausdrücklicher Benutzerfreigabe.
+Der Benutzer bestätigt die erweiterte Stage 4a als vollständig funktional und
+gibt sie am 11.10.2026 ausdrücklich als Stable frei. Ein eigener vollständiger
+XEMU-Lauf durch Codex und Tests auf realer MEGA65-Hardware wurden nicht durchgeführt.
 
 ## Erweiterung vom 11.10.2026: volle Bildschirmhöhe
 
@@ -305,5 +307,8 @@ Register-/Speicherparameter werden nicht verändert. Insbesondere wächst das
 PRG nicht weiter. Die zusätzliche Zeilenarbeit im Renderer ist in XEMU erneut
 auf Timing und sauberen Exit zu prüfen.
 
-Die vorherige Benutzerabnahme gilt für den älteren eingeschränkten Bereich;
-die **erweiterte** Version benötigt eine neue XEMU-Abnahme und bleibt nicht Stable.
+Die anschließende Benutzerabnahme bestätigt auch diese **erweiterte** Version.
+Bestätigter Programmcommit: `7c3a466`. Tag `stage4a-stable` sichert den Stand
+einschließlich Abnahmedokumentation. PRG, D81, Quellcode, Builder und Release-
+Manifest bleiben unverändert; historische Buildberichte behalten ihren damaligen
+Status „Abnahme ausstehend“.

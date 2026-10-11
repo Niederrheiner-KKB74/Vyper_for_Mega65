@@ -229,7 +229,7 @@ Korrektur: Es existieren sieben Explosionsframes. Der fälschlich zugeordnete
 Player-Datensatz wird nicht mehr bei `$CA00` eingebunden; PRG-Ende `$C9FF`.
 Neue Joystickfreigabe in BLINK benötigt keine zusätzlichen Laufzeitfelder.
 
-## Stage 4a – isolierter Offscreen-/Clipping-Test (nicht Stable)
+## Stage 4a – stabiler Offscreen-/Clipping-Test (`stage4a-stable`)
 
 Neue Stage auf `stage3b5c-stable`, keine Änderungen an der Referenz.
 `$1D00–$1D3F`: signed Testposition, Clipdiagnose und privater Arbeitsbereich.
@@ -241,3 +241,7 @@ alle 25 bereits vorhandenen RRB-Zeilen nutzbar. HUD und Speicherlayout bleiben u
 Zero-Page-Nutzung oder Hardware-Sprite-Kanäle. Alle alten Symboladressen erhalten.
 Exakte finale Codegrenzen: `releases/stage_4a/memory-map.txt`.
 [Analyse, Diagnose und Testanleitung](stage4a_offscreen_clipping.md).
+
+Stage 4a einschließlich Y=0–199 am 11.10.2026 vom Benutzer unter XEMU
+als vollständig funktional bestätigt. Die Stable-Markierung verändert keine
+Speicherbelegung, Programme oder Release-Prüfsummen.
