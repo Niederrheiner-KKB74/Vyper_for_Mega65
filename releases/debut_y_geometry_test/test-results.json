@@ -1,0 +1,126 @@
+{
+  "issue": 37,
+  "stable": false,
+  "branch": "test-debut-y-geometry",
+  "baseline": "stage5c-stable",
+  "baseline_commit": "2997719d704095afc630830435cb2d2f76b7f696",
+  "tests": {
+    "unique_cases": 9,
+    "full_suite": {
+      "run": 9,
+      "passed": 9,
+      "seconds": 140.19
+    },
+    "timing_coverage_recheck": {
+      "run": 1,
+      "passed": 1,
+      "seconds": 104.676,
+      "reason": "Explicit assertion that WAIT/ENTRY/FORMATION/ATTACK/RETURN states were all exercised; also CPU-cost observation"
+    },
+    "model": "Actual assembled PRGs, inherited CPU/KERNAL/DMA/RRB models; not XEMU"
+  },
+  "runtime_comparison": {
+    "cycles": {
+      "A": {
+        "projection_restore_22_entry_cpu_model_cycles": 3083
+      },
+      "B": {
+        "projection_restore_22_entry_cpu_model_cycles": 3655
+      },
+      "C": {
+        "projection_restore_22_entry_cpu_model_cycles": 49327
+      }
+    },
+    "coverage": {
+      "1": {
+        "states": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "phases": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "steps_per_variant": 1200
+      },
+      "2": {
+        "states": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "phases": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "steps_per_variant": 1200
+      },
+      "3": {
+        "states": [
+          0,
+          1,
+          2,
+          3,
+          5
+        ],
+        "phases": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "steps_per_variant": 1200
+      }
+    },
+    "model": "CPU only; excludes DMA bus time, IRQ and raster pipeline"
+  },
+  "independent_rebuild": {
+    "byte_identical_artifacts_per_variant": 23,
+    "total": 69
+  },
+  "DAT_files_match_Stage5c_Stable": true,
+  "original_entry_all100_y_bounds": [
+    0,
+    216
+  ],
+  "xemu": "NOT_RUN; user Amiga comparison pending",
+  "files": {
+    "A/VYPER_Y_A.PRG": {
+      "bytes": 43777,
+      "sha256": "006a004cef9af1a594bd9074eee03a4f2e274d0efe7c5dacc2d1d0a440e1d376"
+    },
+    "A/VYPER_Y_A.D81": {
+      "bytes": 819200,
+      "sha256": "f748d259b7a11264ed901169b94c2b43595a52cc9bea8790e410e01e47ebdb44"
+    },
+    "B/VYPER_Y_B.PRG": {
+      "bytes": 43777,
+      "sha256": "7c6655d698b896bbea07965c2f28e80b1659783693670482890fa15d12255be7"
+    },
+    "B/VYPER_Y_B.D81": {
+      "bytes": 819200,
+      "sha256": "f231e0e08cdef3fb6766e8e9aac00d852d4172c130d23539333f5796a78591a4"
+    },
+    "C/VYPER_Y_C.PRG": {
+      "bytes": 43777,
+      "sha256": "0619f4c5c0f893af1091376bb5344ef03d0d59771dd1a3e73ae246e3e1919317"
+    },
+    "C/VYPER_Y_C.D81": {
+      "bytes": 819200,
+      "sha256": "0c7953481ace7e525eda47f240432598af85aae8cf7554edc19b65afd1d2cb4f"
+    }
+  }
+}

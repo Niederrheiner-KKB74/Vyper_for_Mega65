@@ -467,3 +467,14 @@ und alle DAT-Dateien bleiben byteidentisch. Die XEMU-Abnahme und der visuelle
 Originalfarbvergleich stammen vom Benutzer; ein eigener XEMU-/WinUAE- oder
 Hardwarelauf wird nicht behauptet. Die offenen Amiga-Code-Beweisfragen und
 die freigegebenen Sonderlevel-Angriffssperren bleiben unverändert dokumentiert.
+
+## Separater Debut-Y-Vergleich A/B/C – Issue #37
+
+Branch `test-debut-y-geometry` direkt aus `stage5c-stable`. Unabhängige
+PRG/D81-Dateien für Original-Y, Y−16 und floor(Y×25/29), ausschließlich
+für ENTRY. Originaldecoder, Timing, ATTACK, RETURN, Formation und alle
+Original-DAT-Dateien bleiben unverändert. Projektion koppelt Renderer,
+Kollisionen und Schussursprung; Explosionen behalten die sichtbare Trefferposition.
+Diagnose für Level 1–3 und Testanleitung: `docs/debut_y_geometry_comparison.md`.
+Stage 5c/5d-0/5d-1 werden nicht geändert. Keine Variante Stable;
+XEMU-/Amiga-Vergleich durch den Benutzer steht aus.

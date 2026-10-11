@@ -1,0 +1,609 @@
+{
+  "issue": 37,
+  "player_top_y": 184,
+  "player_start_x": 104,
+  "playfield": [
+    240,
+    200
+  ],
+  "source": "assets/VYLV.DAT",
+  "bbox": "16x16; bottom gap uses exclusive Y+16, visible bbox pixel inclusive Y+15 clipped to 199; opaque metric separately examines original NCM transparency over all possible animation frames; actual frame phase not pinned",
+  "last_point": "Final curve byte becomes RETURN immediately and is untransformed; original start remains invisible until first nonzero delta",
+  "all100_logical_y_bounds": [
+    0,
+    216
+  ],
+  "rows": [
+    {
+      "variant": "A",
+      "level": 1,
+      "group": 1,
+      "enemy_count": 11,
+      "entry_interval": 16,
+      "original_start_y": 0,
+      "curve_bytes": 158,
+      "logical_entry_y_min": 0,
+      "logical_entry_y_max": 159,
+      "transformed_entry_y_min": 0,
+      "transformed_entry_y_max": 159,
+      "rendered_y_min": 2,
+      "rendered_y_max": 159,
+      "x_at_deepest_rendered_y": [
+        120,
+        122,
+        124,
+        126,
+        128,
+        130
+      ],
+      "deepest_visible_bbox_pixel": 174,
+      "deepest_visible_opaque_pixel_any_animation_frame": 173,
+      "x_at_deepest_opaque_pixel": [
+        120,
+        122,
+        124,
+        126,
+        128,
+        130
+      ],
+      "min_vertical_gap_to_player_top": 9,
+      "min_clipped_bbox_gap_to_player_top": 9,
+      "min_gap_when_horizontal_overlap_center_player": 10,
+      "return_start_original_xy": [
+        120,
+        29
+      ],
+      "last_projected_xy": [
+        120,
+        29
+      ],
+      "entry_to_return_y_jump": 0
+    },
+    {
+      "variant": "B",
+      "level": 1,
+      "group": 1,
+      "enemy_count": 11,
+      "entry_interval": 16,
+      "original_start_y": 0,
+      "curve_bytes": 158,
+      "logical_entry_y_min": 0,
+      "logical_entry_y_max": 159,
+      "transformed_entry_y_min": -16,
+      "transformed_entry_y_max": 143,
+      "rendered_y_min": -14,
+      "rendered_y_max": 143,
+      "x_at_deepest_rendered_y": [
+        120,
+        122,
+        124,
+        126,
+        128,
+        130
+      ],
+      "deepest_visible_bbox_pixel": 158,
+      "deepest_visible_opaque_pixel_any_animation_frame": 157,
+      "x_at_deepest_opaque_pixel": [
+        120,
+        122,
+        124,
+        126,
+        128,
+        130
+      ],
+      "min_vertical_gap_to_player_top": 25,
+      "min_clipped_bbox_gap_to_player_top": 25,
+      "min_gap_when_horizontal_overlap_center_player": 26,
+      "return_start_original_xy": [
+        120,
+        29
+      ],
+      "last_projected_xy": [
+        120,
+        13
+      ],
+      "entry_to_return_y_jump": 16
+    },
+    {
+      "variant": "C",
+      "level": 1,
+      "group": 1,
+      "enemy_count": 11,
+      "entry_interval": 16,
+      "original_start_y": 0,
+      "curve_bytes": 158,
+      "logical_entry_y_min": 0,
+      "logical_entry_y_max": 159,
+      "transformed_entry_y_min": 0,
+      "transformed_entry_y_max": 137,
+      "rendered_y_min": 1,
+      "rendered_y_max": 137,
+      "x_at_deepest_rendered_y": [
+        120,
+        122,
+        124,
+        126,
+        128,
+        130
+      ],
+      "deepest_visible_bbox_pixel": 152,
+      "deepest_visible_opaque_pixel_any_animation_frame": 151,
+      "x_at_deepest_opaque_pixel": [
+        120,
+        122,
+        124,
+        126,
+        128,
+        130
+      ],
+      "min_vertical_gap_to_player_top": 31,
+      "min_clipped_bbox_gap_to_player_top": 31,
+      "min_gap_when_horizontal_overlap_center_player": 32,
+      "return_start_original_xy": [
+        120,
+        29
+      ],
+      "last_projected_xy": [
+        120,
+        25
+      ],
+      "entry_to_return_y_jump": 4
+    },
+    {
+      "variant": "A",
+      "level": 1,
+      "group": 2,
+      "enemy_count": 11,
+      "entry_interval": 16,
+      "original_start_y": 0,
+      "curve_bytes": 165,
+      "logical_entry_y_min": 0,
+      "logical_entry_y_max": 159,
+      "transformed_entry_y_min": 0,
+      "transformed_entry_y_max": 159,
+      "rendered_y_min": 2,
+      "rendered_y_max": 159,
+      "x_at_deepest_rendered_y": [
+        120,
+        118,
+        116,
+        114,
+        112,
+        110
+      ],
+      "deepest_visible_bbox_pixel": 174,
+      "deepest_visible_opaque_pixel_any_animation_frame": 173,
+      "x_at_deepest_opaque_pixel": [
+        110,
+        112,
+        114,
+        116,
+        118,
+        120
+      ],
+      "min_vertical_gap_to_player_top": 9,
+      "min_clipped_bbox_gap_to_player_top": 9,
+      "min_gap_when_horizontal_overlap_center_player": 9,
+      "return_start_original_xy": [
+        118,
+        29
+      ],
+      "last_projected_xy": [
+        120,
+        29
+      ],
+      "entry_to_return_y_jump": 0
+    },
+    {
+      "variant": "B",
+      "level": 1,
+      "group": 2,
+      "enemy_count": 11,
+      "entry_interval": 16,
+      "original_start_y": 0,
+      "curve_bytes": 165,
+      "logical_entry_y_min": 0,
+      "logical_entry_y_max": 159,
+      "transformed_entry_y_min": -16,
+      "transformed_entry_y_max": 143,
+      "rendered_y_min": -14,
+      "rendered_y_max": 143,
+      "x_at_deepest_rendered_y": [
+        120,
+        118,
+        116,
+        114,
+        112,
+        110
+      ],
+      "deepest_visible_bbox_pixel": 158,
+      "deepest_visible_opaque_pixel_any_animation_frame": 157,
+      "x_at_deepest_opaque_pixel": [
+        110,
+        112,
+        114,
+        116,
+        118,
+        120
+      ],
+      "min_vertical_gap_to_player_top": 25,
+      "min_clipped_bbox_gap_to_player_top": 25,
+      "min_gap_when_horizontal_overlap_center_player": 25,
+      "return_start_original_xy": [
+        118,
+        29
+      ],
+      "last_projected_xy": [
+        120,
+        13
+      ],
+      "entry_to_return_y_jump": 16
+    },
+    {
+      "variant": "C",
+      "level": 1,
+      "group": 2,
+      "enemy_count": 11,
+      "entry_interval": 16,
+      "original_start_y": 0,
+      "curve_bytes": 165,
+      "logical_entry_y_min": 0,
+      "logical_entry_y_max": 159,
+      "transformed_entry_y_min": 0,
+      "transformed_entry_y_max": 137,
+      "rendered_y_min": 1,
+      "rendered_y_max": 137,
+      "x_at_deepest_rendered_y": [
+        120,
+        118,
+        116,
+        114,
+        112,
+        110
+      ],
+      "deepest_visible_bbox_pixel": 152,
+      "deepest_visible_opaque_pixel_any_animation_frame": 151,
+      "x_at_deepest_opaque_pixel": [
+        110,
+        112,
+        114,
+        116,
+        118,
+        120
+      ],
+      "min_vertical_gap_to_player_top": 31,
+      "min_clipped_bbox_gap_to_player_top": 31,
+      "min_gap_when_horizontal_overlap_center_player": 31,
+      "return_start_original_xy": [
+        118,
+        29
+      ],
+      "last_projected_xy": [
+        120,
+        25
+      ],
+      "entry_to_return_y_jump": 4
+    },
+    {
+      "variant": "A",
+      "level": 2,
+      "group": 1,
+      "enemy_count": 11,
+      "entry_interval": 8,
+      "original_start_y": 216,
+      "curve_bytes": 166,
+      "logical_entry_y_min": 39,
+      "logical_entry_y_max": 216,
+      "transformed_entry_y_min": 39,
+      "transformed_entry_y_max": 216,
+      "rendered_y_min": 39,
+      "rendered_y_max": 198,
+      "x_at_deepest_rendered_y": [
+        9
+      ],
+      "deepest_visible_bbox_pixel": 199,
+      "deepest_visible_opaque_pixel_any_animation_frame": 199,
+      "x_at_deepest_opaque_pixel": [
+        9
+      ],
+      "min_vertical_gap_to_player_top": -30,
+      "min_clipped_bbox_gap_to_player_top": -16,
+      "min_gap_when_horizontal_overlap_center_player": 23,
+      "return_start_original_xy": [
+        118,
+        67
+      ],
+      "last_projected_xy": [
+        115,
+        70
+      ],
+      "entry_to_return_y_jump": -3
+    },
+    {
+      "variant": "B",
+      "level": 2,
+      "group": 1,
+      "enemy_count": 11,
+      "entry_interval": 8,
+      "original_start_y": 216,
+      "curve_bytes": 166,
+      "logical_entry_y_min": 39,
+      "logical_entry_y_max": 216,
+      "transformed_entry_y_min": 23,
+      "transformed_entry_y_max": 200,
+      "rendered_y_min": 23,
+      "rendered_y_max": 197,
+      "x_at_deepest_rendered_y": [
+        10
+      ],
+      "deepest_visible_bbox_pixel": 199,
+      "deepest_visible_opaque_pixel_any_animation_frame": 199,
+      "x_at_deepest_opaque_pixel": [
+        9,
+        10
+      ],
+      "min_vertical_gap_to_player_top": -29,
+      "min_clipped_bbox_gap_to_player_top": -16,
+      "min_gap_when_horizontal_overlap_center_player": 39,
+      "return_start_original_xy": [
+        118,
+        67
+      ],
+      "last_projected_xy": [
+        115,
+        54
+      ],
+      "entry_to_return_y_jump": 13
+    },
+    {
+      "variant": "C",
+      "level": 2,
+      "group": 1,
+      "enemy_count": 11,
+      "entry_interval": 8,
+      "original_start_y": 216,
+      "curve_bytes": 166,
+      "logical_entry_y_min": 39,
+      "logical_entry_y_max": 216,
+      "transformed_entry_y_min": 33,
+      "transformed_entry_y_max": 186,
+      "rendered_y_min": 33,
+      "rendered_y_max": 183,
+      "x_at_deepest_rendered_y": [
+        10
+      ],
+      "deepest_visible_bbox_pixel": 198,
+      "deepest_visible_opaque_pixel_any_animation_frame": 196,
+      "x_at_deepest_opaque_pixel": [
+        10
+      ],
+      "min_vertical_gap_to_player_top": -15,
+      "min_clipped_bbox_gap_to_player_top": -15,
+      "min_gap_when_horizontal_overlap_center_player": 43,
+      "return_start_original_xy": [
+        118,
+        67
+      ],
+      "last_projected_xy": [
+        115,
+        60
+      ],
+      "entry_to_return_y_jump": 7
+    },
+    {
+      "variant": "A",
+      "level": 2,
+      "group": 2,
+      "enemy_count": 11,
+      "entry_interval": 8,
+      "original_start_y": 216,
+      "curve_bytes": 166,
+      "logical_entry_y_min": 49,
+      "logical_entry_y_max": 216,
+      "transformed_entry_y_min": 49,
+      "transformed_entry_y_max": 216,
+      "rendered_y_min": 49,
+      "rendered_y_max": 198,
+      "x_at_deepest_rendered_y": [
+        30
+      ],
+      "deepest_visible_bbox_pixel": 199,
+      "deepest_visible_opaque_pixel_any_animation_frame": 199,
+      "x_at_deepest_opaque_pixel": [
+        30,
+        31
+      ],
+      "min_vertical_gap_to_player_top": -30,
+      "min_clipped_bbox_gap_to_player_top": -16,
+      "min_gap_when_horizontal_overlap_center_player": 96,
+      "return_start_original_xy": [
+        135,
+        67
+      ],
+      "last_projected_xy": [
+        135,
+        70
+      ],
+      "entry_to_return_y_jump": -3
+    },
+    {
+      "variant": "B",
+      "level": 2,
+      "group": 2,
+      "enemy_count": 11,
+      "entry_interval": 8,
+      "original_start_y": 216,
+      "curve_bytes": 166,
+      "logical_entry_y_min": 49,
+      "logical_entry_y_max": 216,
+      "transformed_entry_y_min": 33,
+      "transformed_entry_y_max": 200,
+      "rendered_y_min": 33,
+      "rendered_y_max": 197,
+      "x_at_deepest_rendered_y": [
+        30
+      ],
+      "deepest_visible_bbox_pixel": 199,
+      "deepest_visible_opaque_pixel_any_animation_frame": 199,
+      "x_at_deepest_opaque_pixel": [
+        30
+      ],
+      "min_vertical_gap_to_player_top": -29,
+      "min_clipped_bbox_gap_to_player_top": -16,
+      "min_gap_when_horizontal_overlap_center_player": 112,
+      "return_start_original_xy": [
+        135,
+        67
+      ],
+      "last_projected_xy": [
+        135,
+        54
+      ],
+      "entry_to_return_y_jump": 13
+    },
+    {
+      "variant": "C",
+      "level": 2,
+      "group": 2,
+      "enemy_count": 11,
+      "entry_interval": 8,
+      "original_start_y": 216,
+      "curve_bytes": 166,
+      "logical_entry_y_min": 49,
+      "logical_entry_y_max": 216,
+      "transformed_entry_y_min": 42,
+      "transformed_entry_y_max": 186,
+      "rendered_y_min": 42,
+      "rendered_y_max": 183,
+      "x_at_deepest_rendered_y": [
+        30
+      ],
+      "deepest_visible_bbox_pixel": 198,
+      "deepest_visible_opaque_pixel_any_animation_frame": 196,
+      "x_at_deepest_opaque_pixel": [
+        30
+      ],
+      "min_vertical_gap_to_player_top": -15,
+      "min_clipped_bbox_gap_to_player_top": -15,
+      "min_gap_when_horizontal_overlap_center_player": 106,
+      "return_start_original_xy": [
+        135,
+        67
+      ],
+      "last_projected_xy": [
+        135,
+        60
+      ],
+      "entry_to_return_y_jump": 7
+    },
+    {
+      "variant": "A",
+      "level": 3,
+      "group": 1,
+      "enemy_count": 20,
+      "entry_interval": 4,
+      "original_start_y": 216,
+      "curve_bytes": 232,
+      "logical_entry_y_min": 65,
+      "logical_entry_y_max": 216,
+      "transformed_entry_y_min": 65,
+      "transformed_entry_y_max": 216,
+      "rendered_y_min": 65,
+      "rendered_y_max": 198,
+      "x_at_deepest_rendered_y": [
+        10
+      ],
+      "deepest_visible_bbox_pixel": 199,
+      "deepest_visible_opaque_pixel_any_animation_frame": 199,
+      "x_at_deepest_opaque_pixel": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "min_vertical_gap_to_player_top": -30,
+      "min_clipped_bbox_gap_to_player_top": -16,
+      "min_gap_when_horizontal_overlap_center_player": 6,
+      "return_start_original_xy": [
+        123,
+        62
+      ],
+      "last_projected_xy": [
+        124,
+        65
+      ],
+      "entry_to_return_y_jump": -3
+    },
+    {
+      "variant": "B",
+      "level": 3,
+      "group": 1,
+      "enemy_count": 20,
+      "entry_interval": 4,
+      "original_start_y": 216,
+      "curve_bytes": 232,
+      "logical_entry_y_min": 65,
+      "logical_entry_y_max": 216,
+      "transformed_entry_y_min": 49,
+      "transformed_entry_y_max": 200,
+      "rendered_y_min": 49,
+      "rendered_y_max": 197,
+      "x_at_deepest_rendered_y": [
+        10
+      ],
+      "deepest_visible_bbox_pixel": 199,
+      "deepest_visible_opaque_pixel_any_animation_frame": 199,
+      "x_at_deepest_opaque_pixel": [
+        10
+      ],
+      "min_vertical_gap_to_player_top": -29,
+      "min_clipped_bbox_gap_to_player_top": -16,
+      "min_gap_when_horizontal_overlap_center_player": 22,
+      "return_start_original_xy": [
+        123,
+        62
+      ],
+      "last_projected_xy": [
+        124,
+        49
+      ],
+      "entry_to_return_y_jump": 13
+    },
+    {
+      "variant": "C",
+      "level": 3,
+      "group": 1,
+      "enemy_count": 20,
+      "entry_interval": 4,
+      "original_start_y": 216,
+      "curve_bytes": 232,
+      "logical_entry_y_min": 65,
+      "logical_entry_y_max": 216,
+      "transformed_entry_y_min": 56,
+      "transformed_entry_y_max": 186,
+      "rendered_y_min": 56,
+      "rendered_y_max": 183,
+      "x_at_deepest_rendered_y": [
+        10
+      ],
+      "deepest_visible_bbox_pixel": 198,
+      "deepest_visible_opaque_pixel_any_animation_frame": 198,
+      "x_at_deepest_opaque_pixel": [
+        10
+      ],
+      "min_vertical_gap_to_player_top": -15,
+      "min_clipped_bbox_gap_to_player_top": -15,
+      "min_gap_when_horizontal_overlap_center_player": 29,
+      "return_start_original_xy": [
+        123,
+        62
+      ],
+      "last_projected_xy": [
+        124,
+        56
+      ],
+      "entry_to_return_y_jump": 6
+    }
+  ],
+  "xemu": "NOT_RUN; user comparison pending"
+}

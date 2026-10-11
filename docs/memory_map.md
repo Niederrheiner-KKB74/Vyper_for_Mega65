@@ -382,3 +382,13 @@ wiederhergestellt. Kein zusätzlicher Bankwechsel im 50-Hz-Animationspfad.
 Stage5c vom Benutzer mit originalgetreuen Level-Farben, unveränderten Player-/
 HUD-/Explosionsfarben und funktionierendem BASIC-Exit bestätigt (`stage5c-stable`).
 Die Stable-Sicherung verändert weder Speicherlayout noch Quellcode oder Release-Dateien.
+
+## Isolierter Debut-Y-Vergleich (Issue #37, keine Stable-Stage)
+
+Neue Testquellen ausschließlich unter `src/tests/debut_y_geometry/`,
+Builds unter `releases/debut_y_geometry_test/`. Projektionscode/private
+22-Y-Paare und Flags bei `$7700–$7859` (maximale Variante C), nach dem
+Attackparser und vor Schussinitialisierung `$7951`. Sechs Hookbytes im
+ENTRY-Code passen vor `$5B80`. Alle ursprünglichen Daten-/Puffer-/VIC-/DMA-
+Adressen unverändert. Stage 5c und Stage 5d-1 unverändert erhalten.
+[Transformationsstelle und Messwerte](debut_y_geometry_comparison.md).

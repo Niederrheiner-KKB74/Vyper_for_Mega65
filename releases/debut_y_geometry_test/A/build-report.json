@@ -1,0 +1,35 @@
+{
+  "issue": 37,
+  "variant": "A",
+  "stable": false,
+  "baseline": "stage5c-stable",
+  "baseline_commit": "2997719d704095afc630830435cb2d2f76b7f696",
+  "files": [
+    {
+      "name": "VYPER_Y_A",
+      "bytes": 43777,
+      "blocks": 173,
+      "sha256": "006a004cef9af1a594bd9074eee03a4f2e274d0efe7c5dacc2d1d0a440e1d376"
+    },
+    {
+      "name": "VYLV.DAT",
+      "bytes": 81793,
+      "blocks": 323,
+      "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
+    },
+    {
+      "name": "VYGR.DAT",
+      "bytes": 33464,
+      "blocks": 132,
+      "sha256": "974e8eff97efd0c0f67db2780cb668311b9d8731395d43641d4602c0a7c96b50"
+    },
+    {
+      "name": "VYCL.DAT",
+      "bytes": 476,
+      "blocks": 2,
+      "sha256": "061e0e20aa77195b79ae80daf469387ed61e680f3f3841d8d5ed65ee8eeb491d"
+    }
+  ],
+  "transform": "Y",
+  "xemu": "NOT_RUN; user comparison pending"
+}

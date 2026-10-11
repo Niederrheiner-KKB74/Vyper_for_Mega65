@@ -1,0 +1,68 @@
+{
+  "cycles": {
+    "A": {
+      "projection_restore_22_entry_cpu_model_cycles": 3083
+    },
+    "B": {
+      "projection_restore_22_entry_cpu_model_cycles": 3655
+    },
+    "C": {
+      "projection_restore_22_entry_cpu_model_cycles": 49327
+    }
+  },
+  "coverage": {
+    "1": {
+      "states": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "phases": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "steps_per_variant": 1200
+    },
+    "2": {
+      "states": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "phases": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "steps_per_variant": 1200
+    },
+    "3": {
+      "states": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "phases": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "steps_per_variant": 1200
+    }
+  },
+  "model": "CPU only; excludes DMA bus time, IRQ and raster pipeline"
+}

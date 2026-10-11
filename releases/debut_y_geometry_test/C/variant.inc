@@ -1,0 +1,1 @@
+.const TEST_VARIANT=3
