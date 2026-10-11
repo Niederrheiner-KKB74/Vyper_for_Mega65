@@ -20,12 +20,12 @@ def convert(image_path,palette_path,output):
     for row in rows:lookup.setdefault(row['rgb'],[]).append(row['index'])
     with Image.open(image_path) as im:
         if im.format!='PNG' or im.size!=(352,240):raise ValueError('Original PNG must be352x240')
-        mode=im.mode;rgba=list(im.convert('RGBA').getdata())
+        mode=im.mode;rgba=list(im.convert('RGBA').get_flattened_data())
         if any(a!=255 for r,g,b,a in rgba):raise ValueError('Transparency requires explicit source interpretation; no implicit alpha discard')
         rgb=[p[:3] for p in rgba]
         missing=sorted(set(rgb)-set(lookup))
         if missing:raise ValueError('PNG colours absent from original palette: '+repr(missing))
-        original=list(im.getdata()) if mode=='P' else None
+        original=list(im.get_flattened_data()) if mode=='P' else None
         pixels=[];remapped=0
         for j,c in enumerate(rgb):
             options=lookup[c];idx=original[j] if original is not None else None

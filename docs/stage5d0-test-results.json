@@ -1,0 +1,14 @@
+{
+  "stage": "5d-0",
+  "tests": 9,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": 9,
+  "elapsed_seconds": 10.994,
+  "framework": "py65: actual assembled6502, modeledKERNAL/DMA/palette/FCM",
+  "xemu": "NOT_RUN",
+  "original_pixels_checked": 84480,
+  "title_start_exit_start_exit_cycles": 2,
+  "rebuild": "separate temporary directory; final equality checked separately"
+}

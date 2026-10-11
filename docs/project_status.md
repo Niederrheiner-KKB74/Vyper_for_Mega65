@@ -467,3 +467,14 @@ und alle DAT-Dateien bleiben byteidentisch. Die XEMU-Abnahme und der visuelle
 Originalfarbvergleich stammen vom Benutzer; ein eigener XEMU-/WinUAE- oder
 Hardwarelauf wird nicht behauptet. Die offenen Amiga-Code-Beweisfragen und
 die freigegebenen Sonderlevel-Angriffssperren bleiben unverändert dokumentiert.
+
+## Stage 5d-0 – eigenständiger Originaltitel-Test (Issue #33)
+
+Branch `stage5d-title-test` aus bestätigter `stage5c-stable`; kein Engine-/Loader-
+Umbau. Originales352×240-RGB-PNG plus33 Originalpaletteinträge archiviert,
+verlustfrei als44×30 FCM-Tiles konvertiert. `VYTI.DAT`, PRG, D81 und Rebuild
+vorhanden.9/9 Hosttests,84.480 exakte Pixel, zwei Start-/Exit-Zyklen und Schutz
+von BASIC-/DOS-/ROM-Speicher. Alle13 Buildartefakte unabhängig byteidentisch.
+Stage5c-Quellen/Release byteidentisch. **Noch kein eigener XEMU-Lauf und kein
+Stable-Tag**. Copperbefunde sind statisch; aktive Titel-Overscan-Geometrie offen.
+Details: [Stage5d-0](stage5d0_title_test.md).
