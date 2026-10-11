@@ -339,7 +339,7 @@ Stage 5a ist vom Benutzer mit funktionierenden Levelwechseln bestätigt
 (`stage5a-stable`). Die Stable-Dokumentation verändert keine Speicherbelegung
 oder Programm-/Release-Dateien.
 
-## Stage 5b – 38 Original-Gegnergrafiken (Teststand)
+## Stage 5b – 38 Original-Gegnergrafiken (Stable)
 
 Von `stage5a-stable`, ohne Änderungen an dessen Dateien. Neue VYGR-Datei
 `assets/stage5b/VYGR.DAT`:33464 Bytes, `$54000–$5C2B7`,38 Typen/259 Frames.
@@ -355,4 +355,6 @@ Die neuen Puffer liegen wie der aktive Record im während RUN genutzten BASIC-
 Array-/Stringbereich; das reine Maschinenspracheprogramm benötigt dort keine
 BASIC-Arrays.147 PRG-Bytes gegenüber Stage5a ändern sich einschließlich
 DMA-Operandrelokationen; Palette und Spielregeln bleiben unverändert. [Mapping, Originalpointer und Tests](stage5b_graphics_mapping.md).
-Stage5b nicht Stable; XEMU-Bestätigung ausstehend.
+Stage5b einschließlich DOS-Exit-Korrektur vom Benutzer vollständig bestätigt;
+Referenz `stage5b-stable`. Die Stable-Sicherung verändert weder Speicherlayout
+noch Quellcode oder Release-Dateien.

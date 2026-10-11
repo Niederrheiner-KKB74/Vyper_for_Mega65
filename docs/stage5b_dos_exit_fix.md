@@ -2,7 +2,8 @@
 
 Benutzerabnahme: Originalgrafiken in Levels1/29/37/54 korrekt. Gemeldeter Fehler:
 X zeigt korrekt BASIC, anschließend `RUN`→Load Error$01 und
-`DIRECTORY`→`?DEVICE NOT PRESENT ERROR`. Stage5b bleibt Teststand.
+`DIRECTORY`→`?DEVICE NOT PRESENT ERROR`. Dieser Fehler wurde korrigiert;
+der Benutzer hat den vollständigen korrigierten Build inzwischen als Stable bestätigt.
 
 ## Ursache und Nachweis vor der Änderung
 
@@ -88,4 +89,7 @@ fehlerhaften Build; mit dem korrigierten Build müssen wiederholte RUNs funktion
 5. Exit auch bei LEVEL CLEAR und GAME OVER, dann DIRECTORY/RUN wiederholen.
 
 Der reale Diskettenzugriff in BASIC ist durch das CPU-Modell nicht ersetzt.
-**Keine Stable-Markierung bis zur ausdrücklichen Benutzerbestätigung.**
+**Abschließende Benutzerbestätigung:** „Der Build ist jetzt stabil und funktioniert komplett“.
+Stabile Referenz: `stage5b-stable`, Programmcommit `52118cee6813b833d0c1d237925ad6ecd75d1d33`.
+Die Stable-Sicherung verändert ausschließlich Dokumentation; kein eigener XEMU-
+oder Hardwarelauf wird damit behauptet.

@@ -3,8 +3,8 @@
   "issue": 27,
   "baseline": "stage5a-stable",
   "baseline_commit": "9eeb395",
-  "stable": false,
-  "xemu": "GRAPHICS_USER_CONFIRMED_LEVELS_1_29_37_54; DOS_EXIT_PENDING_USER",
+  "stable": true,
+  "xemu": "USER_CONFIRMED_COMPLETE_BUILD",
   "tests": {
     "passed": 34,
     "failures": 0,
@@ -64,6 +64,9 @@
       "GAME_OVER"
     ],
     "repeated_loader_starts": 3,
-    "actual_BASIC_DIRECTORY_test": "PENDING_USER_XEMU"
-  }
+    "actual_BASIC_DIRECTORY_test": "USER_CONFIRMED_COMPLETE_BUILD; no independent BASIC DIRECTORY run"
+  },
+  "stable_reference": "stage5b-stable",
+  "program_commit": "52118cee6813b833d0c1d237925ad6ecd75d1d33",
+  "user_confirmation": "Der Build ist jetzt stabil und funktioniert komplett"
 }

@@ -1,6 +1,6 @@
 # Stage 5b – Originalgrafiken, Mapping und Transparenz
 
-Issue #27; **Teststand, nicht Stable**. Branch `stage5b` basiert ausschließlich auf
+Issue #27; **Stable, vom Benutzer vollständig bestätigt**. Branch `stage5b` basiert ausschließlich auf
 `stage5a-stable` (Stable-Dokumentationscommit `9eeb395`, Programmstand `e7166a7`).
 Alle Stage-5a-Quellen, Assets, Releases und älteren stabilen Stände bleiben unverändert.
 
@@ -130,9 +130,9 @@ Der Stage5a-Clippingpfad liest niedrige Nibbles zuerst, einschließlich ungerade
 linker/rechter Schnittkanten. Die tatsächlichen assemblierten DMA-/RRB-Routinen
 werden gegen eine unabhängige Original-Pixelmatrix geprüft. Es ist kein Umbau
 an Renderer, Strides, Slots, GOTOX, Palette oder Crop-Routine erforderlich.
-Die Konvertierungsfehler sind behoben; die Wahrnehmung der gemeldeten Streifen
-im echten VIC-IV/XEMU muss im Abnahmelauf mit den korrigierten Daten bestätigt
-werden. Ein automatisches Pixelmodell ersetzt diesen Lauf nicht.
+Die Konvertierungsfehler sind behoben. Der Benutzer bestätigt die korrekten
+Grafiken in Levels1/29/37/54 und anschließend den vollständigen DOS-korrigierten
+Build. Ein eigener XEMU-Lauf wurde nicht durchgeführt.
 
 ## VYGR-Format, Speicher und Kompatibilität
 
@@ -227,8 +227,16 @@ D81 einlegen; `LOAD "STAGE5B",8`, `RUN` (ROMV920395, BASIC80×25).
    RUN; Level Clear/Joystickfortsetzung, regulär100→1 und begrenztes+/− testen.
 6. Levels25/50/99/100 behalten die freigegebene vorläufige Angriffssperre.
 
-**Stage5b erst nach ausdrücklicher Benutzerbestätigung Stable markieren.**
+**Stage5b ist nach ausdrücklicher Benutzerbestätigung als `stage5b-stable` gesichert.**
 
 DOS-korrigierter Build:34/34 Tests bestanden(353.719s), DOS-RAM vollständig erhalten;
 20 Release-Dateien erneut byteidentisch reproduziert. Grafikdaten und Mapping
 gegenüber dem vom Benutzer visuell geprüften Build unverändert.
+
+Abschließende Benutzerbestätigung: „Der Build ist jetzt stabil und funktioniert komplett“.
+Stabile Referenz: `stage5b-stable`; bestätigter Programmcommit
+`52118cee6813b833d0c1d237925ad6ecd75d1d33` einschließlich DOS-Exit-Korrektur.
+Die Stable-Sicherung verändert ausschließlich Dokumentation; Quellen, PRG, D81
+und Originaldaten bleiben bytegleich. Die XEMU-Abnahme stammt vom Benutzer;
+ein eigener XEMU-/Hardwarelauf wurde nicht durchgeführt. Die dokumentierten
+Mapping-Beweisgrenzen und Sonderlevel-Angriffssperren bleiben bestehen.
