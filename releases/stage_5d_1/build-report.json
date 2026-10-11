@@ -1,0 +1,115 @@
+{
+  "stage": "5d-1",
+  "issue": 35,
+  "stable": false,
+  "baseline": "stage5c-stable",
+  "baseline_commit": "2997719d704095afc630830435cb2d2f76b7f696",
+  "renderer": "stage5d0-stable",
+  "renderer_commit": "d6421606109993f481fb3e3e76d9bd70fb12f48a",
+  "protected_files": 61,
+  "assembler": "KickAssembler5.25",
+  "files": [
+    {
+      "name": "STAGE5D1",
+      "bytes": 43777,
+      "blocks": 173,
+      "sha256": "6b96d2958da2a3846bdd4444029e8bcaf93ba5c75e6abc63bad2a6131d5ea84f"
+    },
+    {
+      "name": "VYTI.DAT",
+      "bytes": 60365,
+      "blocks": 238,
+      "sha256": "47d0dc4e250259ee68f6468413e4920fcb9e2fc0d766a981548052fefc7d00fe"
+    },
+    {
+      "name": "VYLV.DAT",
+      "bytes": 81793,
+      "blocks": 323,
+      "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
+    },
+    {
+      "name": "VYGR.DAT",
+      "bytes": 33464,
+      "blocks": 132,
+      "sha256": "974e8eff97efd0c0f67db2780cb668311b9d8731395d43641d4602c0a7c96b50"
+    },
+    {
+      "name": "VYCL.DAT",
+      "bytes": 476,
+      "blocks": 2,
+      "sha256": "061e0e20aa77195b79ae80daf469387ed61e680f3f3841d8d5ed65ee8eeb491d"
+    }
+  ],
+  "title": {
+    "source_png_sha256": "faa19d74583ec1a35f5ed81f1727f026e03a2de1fce9eb86dd73315ded484eea",
+    "source_palette_sha256": "a108f6346556a15d6a6e2cb712fde23995eda05557f5d85c69cea5857c4e492e",
+    "size": [
+      352,
+      240
+    ],
+    "mode": "RGB",
+    "source_unique_RGB_colours": 31,
+    "original_palette_entries": 33,
+    "duplicate_RGB_indices": [
+      [
+        0,
+        6,
+        32
+      ]
+    ],
+    "exact_RGB_roundtrip_pixels": 84480,
+    "PNG_indices_preserved_when_matching_named_original_index": false,
+    "remapped_PNG_indices_pixels": 0,
+    "RGB_input_index_policy": "lowest exactly matching original index; duplicate RGB does not prove original index identity",
+    "tile_grid": [
+      44,
+      30
+    ],
+    "tile_bytes": 57600,
+    "format": "VYTI v2:26-byte header,99 palette bytes,2640 physical FCM map bytes,57600 unique FCM bytes",
+    "VYTI_bytes": 60365,
+    "VYTI_sha256": "47d0dc4e250259ee68f6468413e4920fcb9e2fc0d766a981548052fefc7d00fe",
+    "xemu": "NOT_RUN",
+    "unique_tiles": 900,
+    "cache_ranges": [
+      {
+        "start": "0x12800",
+        "end_inclusive": "0x13fff",
+        "tiles": 96
+      },
+      {
+        "start": "0x15b00",
+        "end_inclusive": "0x1f7ff",
+        "tiles": 628
+      },
+      {
+        "start": "0x5c500",
+        "end_inclusive": "0x5f0ff",
+        "tiles": 176
+      }
+    ],
+    "copies": [
+      {
+        "source": 264909,
+        "target": 75776,
+        "bytes": 6144
+      },
+      {
+        "source": 271053,
+        "target": 88832,
+        "bytes": 40192
+      },
+      {
+        "source": 311245,
+        "target": 378112,
+        "bytes": 11264
+      }
+    ],
+    "FCM_byte_roundtrip": 84480,
+    "screen": "$F300-$FD4F (physical RAM, not CPU ROM)",
+    "original_Stage5d0_format_preserved_in_original_assets": true
+  },
+  "gameplay": "Normalized Stage5c sources retained; only loader/title-exit hook/filename termination changed",
+  "xemu": "NOT_RUN; user acceptance required",
+  "handoff": "s3b.loading_complete -> restore video/palette/cursor -> save phase-shared bootstrap -> s3b.menu_or_game_start -> Level1"
+}

@@ -382,3 +382,16 @@ wiederhergestellt. Kein zusätzlicher Bankwechsel im 50-Hz-Animationspfad.
 Stage5c vom Benutzer mit originalgetreuen Level-Farben, unveränderten Player-/
 HUD-/Explosionsfarben und funktionierendem BASIC-Exit bestätigt (`stage5c-stable`).
 Die Stable-Sicherung verändert weder Speicherlayout noch Quellcode oder Release-Dateien.
+
+## Stage 5d-1 – Titel-/Loader-Integration (Teststand)
+
+Neue Quellen und Release separat; Stage 5c und Stage 5d-0 unverändert.
+900 verlustfrei deduplizierte FCM-Kacheln liegen während des DAT-Ladens bei
+`$12800–$13FFF`, `$15B00–$1F7FF`, `$5C500–$5F0FF`; eigener physischer Screen
+`$F300–$FD4F`, Color-RAM `$FF82000–$FF82A4F`, Sicherung `$5F100–$5FB4F`.
+VYTI-Staging `$40000–$4EBCC` wird vor VYLV vollständig in die Caches kopiert.
+Alle drei Spieldatenziele und aktiven Record-/Pixiepuffer bleiben unverändert.
+Titelbootstrap `$4000–$47FF` wird vor HUD-Fontinitialisierung nach
+`$15B00–$162FF` gesichert (Titel bereits abgeschaltet); Helfer `$3340–$33AA`
+restauriert ihn beim Exit für erneutes RUN. Keine DOS-/ROM-Überschreibung.
+[Speicherkarte, Lebensdauern und IRQ-/Palette-Restaurierung](stage5d1_title_loader_integration.md).

@@ -467,3 +467,26 @@ und alle DAT-Dateien bleiben byteidentisch. Die XEMU-Abnahme und der visuelle
 Originalfarbvergleich stammen vom Benutzer; ein eigener XEMU-/WinUAE- oder
 Hardwarelauf wird nicht behauptet. Die offenen Amiga-Code-Beweisfragen und
 die freigegebenen Sonderlevel-Angriffssperren bleiben unverändert dokumentiert.
+
+## Übernommene Stage-5d-0-Stable-Referenz
+
+Der Benutzer bestätigt: „Stage 5d0 funktioniert und ist stable“.
+Isolierter Titeltest: Tag `stage5d0-stable`, Branch `stage5d-title-test`,
+bestätigter Programmcommit `671054337daa76dc2019660b111505d00a818cd6`.
+Die hier übernommenen Quellen, Originalassets und Release-Dateien sind gegenüber
+dieser Referenz unverändert. Die Stage-5c-Basis bleibt ebenfalls erhalten.
+
+## Stage 5d-1 – Titel während des Ladens (noch nicht Stable)
+
+Issue #35, Branch `stage5d-1` aus unverändertem `stage5c-stable`.
+Der vom Benutzer bestätigte FCM-Titelrenderer aus `stage5d0-stable` wird gezielt
+übernommen. VYTI wird zuerst geladen, vollständig geprüft und sichtbar gemacht;
+danach bleiben alle Titelpixel während VYLV/VYGR/VYCL und Levelvorbereitung
+unverändert. Nach erfolgreicher Validierung wird direkt Level 1 gestartet.
+Kein Menü. Titel-Cache und aktive Enginepuffer sind getrennt; der phasenweise
+mit dem HUD-Font geteilte Bootstrap wird für erneutes RUN wiederhergestellt.
+Original-Spielmechanik und alle 100 Level bleiben die Stage-5c-Implementierung.
+Quellen, PRG, vollständiges D81 und vier DAT-Dateien: `releases/stage_5d_1/`.
+[Build, Speicherprüfung, Fehler und XEMU-Abnahme](stage5d1_title_loader_integration.md).
+Automatische Tests sind Hostmodelle; die neue XEMU-Abnahme steht aus.
+Stage 5d-1 wird erst nach ausdrücklicher Benutzerbestätigung Stable.

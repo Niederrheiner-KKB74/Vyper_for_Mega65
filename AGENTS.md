@@ -10,3 +10,8 @@
 8. **Originaldaten:** Nur die vom Benutzer bereitgestellten Assets verwenden. Keine Daten oder Animationszuordnungen erfinden.
 9. **Fehlerbehebung:** Fehlerdiagnose vor großflächigen Änderungen; kleine nachvollziehbare Commits bevorzugen.
 10. **Dokumentation:** `docs/project_status.md` und `docs/memory_map.md` nach bestätigten Änderungen aktualisieren.
+
+11. **Titelbaseline:** Stage 5d-0 wurde vom Benutzer in XEMU bestätigt und als
+    `stage5d0-stable` gesichert (Branch `stage5d-title-test`). Quellen, Assets und
+    Release dieser Referenz ebenfalls unverändert erhalten. Stage 5d-1 ist ein
+    separater Teststand aus `stage5c-stable`, noch nicht Stable.
