@@ -1,0 +1,586 @@
+{
+  "assembler": "KickAssembler 5.25",
+  "baseline": "stage4b1-stable",
+  "comparison": {
+    "baseline": "stage4b1-stable",
+    "baseline_prg_sha256": "729b68d6d2ff221811c1bda74ea4cf18371c8edbaa68282d0239743227487ea6",
+    "changed_bytes": 2243,
+    "extended_bytes": 0,
+    "relocations": [
+      "e_save_colour",
+      "e_restore_colour",
+      "e_key_dispatch",
+      "e_error_check",
+      "e_attack_test",
+      "e_mirror",
+      "e_render"
+    ],
+    "movement_timing": "entry unchanged; original attacks and explicit MEGA65 scheduling",
+    "stable": false
+  },
+  "files": [
+    {
+      "name": "STAGE4B2",
+      "bytes": 43777,
+      "blocks": 173,
+      "sha256": "e151539f9054702f321ee182c79eea8aa000a04ab9d580786f942aba4a767ab2"
+    },
+    {
+      "name": "VYLV.DAT",
+      "bytes": 81793,
+      "blocks": 323,
+      "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
+    },
+    {
+      "name": "VYGR.DAT",
+      "bytes": 30888,
+      "blocks": 122,
+      "sha256": "cbad5d717a4890276a9408c6784500f8449d45ae90f0f4d4251d596b8a2563eb"
+    }
+  ],
+  "hud": {
+    "mode": "H640, CHARXSCALE=60; logical X doubled",
+    "logical_playfield_right_exclusive": 240,
+    "physical_hud_x": 480,
+    "physical_hud_width": 160,
+    "screen_write_addressing": "45GS02 32-bit indirect, bypasses SYS MAPH bank-3 KERNAL",
+    "dynamic_clear": "25 physical DMA copies of 100 bytes; valid GOTOX640/NCM200 empty records",
+    "screen_row_stride": 192,
+    "screen_entries_per_row": 96,
+    "dynamic_row_offset": 84,
+    "font": "authored thin 5x7 glyphs, 8-column cells",
+    "colour_ram_bytes_saved": 4800,
+    "life_columns": 4,
+    "life_rows": 2,
+    "life_logical_x": [
+      245,
+      262,
+      279,
+      296
+    ],
+    "life_y": [
+      58,
+      75
+    ],
+    "initial_lives": 3,
+    "player2_active": false
+  },
+  "projectiles": {
+    "player_channels": [
+      0,
+      1
+    ],
+    "enemy_channels": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "free_channels": [
+      6,
+      7
+    ],
+    "player_speed": 3,
+    "enemy_vy": 1,
+    "max_abs_vx": 2,
+    "enemy_probability": "1/8 roll, then uniform candidate 0..31 rejection outside 22/eligible attackers",
+    "enemy_cooldown_frames": 12,
+    "test_enemy_0based": 18,
+    "attack_window_frames": 96,
+    "attack_period_frames": 128,
+    "test_toggle": "T",
+    "coordinates": "logical 240x200; sprite native X/Y from D04C-D04F",
+    "collisions": true,
+    "enemy_channels_global_limit": 4,
+    "source": "random visible living ATTACK slot, frozen player target",
+    "legacy_test_parameters": "test_enemy/window/period above apply only to explicit T demo"
+  },
+  "mapping_status": [
+    {
+      "vylv_index": 0,
+      "vygr_type_1based": 12,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 1,
+      "vygr_type_1based": 12,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 2,
+      "vygr_type_1based": 1,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 3,
+      "vygr_type_1based": 2,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 4,
+      "vygr_type_1based": 3,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 5,
+      "vygr_type_1based": 4,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 6,
+      "vygr_type_1based": 5,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 7,
+      "vygr_type_1based": 6,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 8,
+      "vygr_type_1based": 7,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 9,
+      "vygr_type_1based": 8,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 10,
+      "vygr_type_1based": 9,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 11,
+      "vygr_type_1based": 10,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 12,
+      "vygr_type_1based": 11,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 13,
+      "vygr_type_1based": 12,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 14,
+      "vygr_type_1based": 15,
+      "confirmed": true,
+      "source": "User visual comparison with original Amiga Level 1 (Issue #6)"
+    },
+    {
+      "vylv_index": 15,
+      "vygr_type_1based": 14,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 16,
+      "vygr_type_1based": 15,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 17,
+      "vygr_type_1based": 16,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 18,
+      "vygr_type_1based": 17,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 19,
+      "vygr_type_1based": 18,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 20,
+      "vygr_type_1based": 19,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 21,
+      "vygr_type_1based": 20,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 22,
+      "vygr_type_1based": 21,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 23,
+      "vygr_type_1based": 22,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 24,
+      "vygr_type_1based": 23,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 25,
+      "vygr_type_1based": 24,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 26,
+      "vygr_type_1based": 25,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 27,
+      "vygr_type_1based": 26,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 28,
+      "vygr_type_1based": 27,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 29,
+      "vygr_type_1based": 28,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 30,
+      "vygr_type_1based": 29,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 31,
+      "vygr_type_1based": 30,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 32,
+      "vygr_type_1based": 31,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 33,
+      "vygr_type_1based": 32,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 34,
+      "vygr_type_1based": 33,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 35,
+      "vygr_type_1based": 34,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 36,
+      "vygr_type_1based": 35,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    },
+    {
+      "vylv_index": 37,
+      "vygr_type_1based": 36,
+      "confirmed": false,
+      "source": "Unconfirmed historical fallback; not original-format evidence"
+    }
+  ],
+  "runtime_xemu": "NOT RUN; Stage 4b-2 user confirmation required",
+  "stage4b2": {
+    "scope": "Issue 16: original Level-1 attacks, up to three attackers, moving formation",
+    "player_start": [
+      112,
+      184
+    ],
+    "entry_parameters": {
+      "point_ticks": 1,
+      "start_point_tick": 1,
+      "group_delay": 0,
+      "return_step": 1
+    },
+    "entry_crop_pool": "$10000-$115FF",
+    "entry_diagnostics": "$1D40-$1D60 and $1E00-$1EFF",
+    "entry_visibility": "$1D64-$1D7A",
+    "default_test_attack": false,
+    "player_y_fixed": 184,
+    "player_x_inclusive": [
+      0,
+      224
+    ],
+    "original_entry_curves": "sign magnitude nibble decoder; two parallel groups, 16-frame spacing; one point/frame, separate spawn point; +/-1 both axes State 2; Debut timing/anchor pending original-binary verification",
+    "stable": false
+  },
+  "attack": {
+    "level": 1,
+    "record_file_offset": 808,
+    "record_length": 849,
+    "curves": [
+      {
+        "curve": 0,
+        "length_word_file_offset": 1287,
+        "payload_file_offset": 1289,
+        "runtime_pointer": 30689,
+        "length": 183,
+        "sha256": "024a4d9764ecd1aba58e65494e663e64b98f611612b91110ea1d893c3cc8a5b5",
+        "first_bytes": "929202929202029202029202",
+        "last_bytes": "020202020202020202020202",
+        "delta_first": [
+          -1,
+          2
+        ],
+        "point_58": [
+          49,
+          102
+        ],
+        "last_point": [
+          80,
+          168
+        ],
+        "integrated_y_bounds": [
+          2,
+          168
+        ],
+        "negative_integrated_y_marker_present": false,
+        "curve_hex": "929202929202029202029202020202020202020212020212021212121202121222121212221222122222222222222122212121212121202020212020222020202020292029292929292a2a2a1a1a1a1a1a0a1a0a0a0a0a0a9a0a9a9a9a9a9aaaaaaaa9a9a9a9a9a0a9a0a0a0a0a0a1a0a1a1a1a1a1a2a2a2929292929202920202020202120212121202222222222121222220202120212121222222122212121212021202120212020212020202020202020202020202"
+      },
+      {
+        "curve": 1,
+        "length_word_file_offset": 1472,
+        "payload_file_offset": 1474,
+        "runtime_pointer": 30874,
+        "length": 183,
+        "sha256": "99e8802cba8cb914d7be2bc9b0b205241ccd50519267ab1ae0c78353029b07f6",
+        "first_bytes": "121202121202021202021202",
+        "last_bytes": "020202020202020202020202",
+        "delta_first": [
+          1,
+          2
+        ],
+        "point_58": [
+          -49,
+          102
+        ],
+        "last_point": [
+          -80,
+          168
+        ],
+        "integrated_y_bounds": [
+          2,
+          168
+        ],
+        "negative_integrated_y_marker_present": false,
+        "curve_hex": "1212021212020212020212020202020202020202920202920292929292029292a2929292a292a292a2a2a2a2a2a2a1a2a1a1a1a1a1a1a0a0a0a1a0a0a2a0a0a0a0a0a9a0a9a9a9a9a9aaaaaa9a9a9a9a9a0a9a0a0a0a0a0a1a0a1a1a1a1a1a2a2a2a29292929292029202020202021202121212121222222121212121202120202020202920292929202a2a2a2a2a1a1a2a2a0a0a1a0a1a1a1a2a2a292a292929292029202920292020292020202020202020202020202"
+      }
+    ],
+    "exact_horizontal_mirror": true,
+    "raw_enemy_indices": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "data_verified": [
+      "two separate bounded 183-byte records",
+      "sign magnitude deltas mirror in X; identical Y",
+      "indices 0 for slots 0-10; 1 for slots 11-21"
+    ],
+    "historical_user_analysis": [
+      "50 Hz ATTACK: X relative to saved start",
+      "negative expanded Y sentinel transitions to State 2; return +/-1"
+    ],
+    "not_independently_verified": [
+      "original interpreter/dumps not present",
+      "original variant selection and $88 branch",
+      "original attack cadence/probability",
+      "absolute versus relative attack Y origin",
+      "expanded sentinel lost/not represented in finite VYLV records"
+    ],
+    "mega65_rules": [
+      "direct raw index chooses curve, provisional not proven original semantics",
+      "integrate X/Y relative to attack start to avoid visible start teleport",
+      "consume all 183 bytes; latch invisibility after first bottom crossing",
+      "if finite end is above bottom, continue X=constant, Y+=2 until Y>=200",
+      "after an invisible update reenter at Y=-16; return +/-1 toward current slot",
+      "offset -8..8, 1 pixel/50 updates; after full entry barrier",
+      "fixed seed 0xc3a5, initial 100 updates then 60-update attempts, max 3 ATTACK"
+    ],
+    "parameters": {
+      "a_FORM_STEP_TICKS": 50,
+      "a_FORM_MIN": -8,
+      "a_FORM_MAX": 8,
+      "a_START_INTERVAL": 60,
+      "a_INITIAL_INTERVAL": 100,
+      "a_SEED": 50085,
+      "a_EXIT_DY": 2
+    },
+    "runtime_state": "$6F80-$6FFF; original entry state/positions retained",
+    "stable": false
+  },
+  "offscreen": {
+    "controls": {
+      "F": "toggle isolated test",
+      "N": "next direction",
+      "P": "pause movement",
+      "X": "BASIC"
+    },
+    "signed_coordinates": "16-bit",
+    "clip_rect_exclusive": [
+      0,
+      0,
+      240,
+      200
+    ],
+    "cases": [
+      "top",
+      "bottom",
+      "left",
+      "right",
+      "top-left diagonal"
+    ],
+    "crop_buffer": "$CA00-$CAFF",
+    "diagnostics": "$1D00-$1D3F",
+    "stable": false
+  },
+  "stage3b5c_preserved": {
+    "explosions": {
+      "source_sha256": "f70c8f503fa50dfe43642485509d73b186bbbfd8f5dc0a0090ddaf06fad561a3",
+      "geometry": [
+        16,
+        16
+      ],
+      "row_order": "linear, exactly as source specifies",
+      "transparent": "mask bit 0 -> index 0",
+      "palette": "existing engine bank 1: visible 3-bit colour + 1",
+      "packing": "left pixel low nibble",
+      "visual_xemu": "pending",
+      "animation_source_records": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "excluded_source_records": {
+        "7": "Player ship: same transparency mask and 238/256 matching player pixels; user confirms exactly seven explosion frames"
+      },
+      "frames": [
+        {
+          "frame": 0,
+          "used_for_explosion": true,
+          "sha256": "28095a0d0317d20004c205caa1f1f6613928363f051dfb67e81da02638d8aa35",
+          "bytes": 128
+        },
+        {
+          "frame": 1,
+          "used_for_explosion": true,
+          "sha256": "9621c2356ca67369410f1d74b7d3313c9596bccbaa059bd440905d73bfd76131",
+          "bytes": 128
+        },
+        {
+          "frame": 2,
+          "used_for_explosion": true,
+          "sha256": "71757779f5e8586bd9bbfeb35d14eb6ff01cfbd4bc07191252d0d858d716d277",
+          "bytes": 128
+        },
+        {
+          "frame": 3,
+          "used_for_explosion": true,
+          "sha256": "380278b6232816e794b8d752e3e60dd0e8e0db92bd1b69b61feb580efc793525",
+          "bytes": 128
+        },
+        {
+          "frame": 4,
+          "used_for_explosion": true,
+          "sha256": "dcae7d2d9fd7bd8ecb656285f37e26869561ed72a5cfba7622c8dc8e897b1979",
+          "bytes": 128
+        },
+        {
+          "frame": 5,
+          "used_for_explosion": true,
+          "sha256": "52025e49920320a1d156ca9efaefa1b1ca0ade33f6ed37c796862d4061a5438b",
+          "bytes": 128
+        },
+        {
+          "frame": 6,
+          "used_for_explosion": true,
+          "sha256": "58122a6c928a04a92cef9fae5786321a55d840a5cb6382ff32aea4df7f249712",
+          "bytes": 128
+        },
+        {
+          "frame": 7,
+          "used_for_explosion": false,
+          "sha256": "ca7351a9ad6b4a17b640822a85fd733adb033a1a22a6b6f0a6967b78cc07f027",
+          "bytes": 128
+        }
+      ]
+    },
+    "enemies": 22,
+    "explosion_ticks_per_frame": 3,
+    "respawn_ticks": 150,
+    "blink_period_ticks": 25,
+    "score_bits": 32,
+    "score_overflow": "saturate",
+    "display": "low seven decimal digits",
+    "baseline_xemu": "Stage 4b-1 Stable accepted by user; Stage 4b-2 pending"
+  }
+}

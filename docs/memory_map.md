@@ -279,3 +279,16 @@ Y=0–199, 24 RRB-Slots und Originaldaten. Keine Änderung der stabilen Releasef
 
 Stage 4b-1 ist vom Benutzer unter XEMU bestätigt (`stage4b1-stable`).
 Die Stable-Markierung verändert weder Speicherlayout noch Programm-/Release-Dateien.
+
+## Stage 4b-2 – Angriff/Formation (Teststand)
+
+Neue Laufzeitdaten `$6F80–$6FFF`: 22 Varianten/Startanker/Bottom-Latches,
+Kurvenpointer, Formationsoffset und Diagnose. Neue Code-Lücken ausschließlich
+unter `$A000`: `$36B0–$36F2`, `$4B4A–$4BEB`, `$4F00–$4FB1`,
+`$7951–$79F1`, `$895C–$89D3`, `$9A56–$9ACD`, `$9F10–$9FE2`.
+Damit kein Code in ROMA/ROMC-Overlays; PRG-Größe unverändert.
+Variabel geparste Originalkurven liegen in vorhandener Levelkopie
+`$77E1–$7897` / `$789A–$7950`. Kleine Controller-/Return-/Sichtbarkeits-
+und Kampfdispatch-Hooks, sonst unverändertes Stage-4b-1-Layout.
+Y=0–199, 24 Slots, ROM und Stable-Artefakte bleiben erhalten.
+[Details](stage4b2_attack_formation.md).

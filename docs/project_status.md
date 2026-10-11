@@ -281,3 +281,20 @@ Einflug unter XEMU bestätigt und Stage 4b-1 ausdrücklich als Stable freigegebe
 Bestätigter Programmcommit: `531c745971ae95ad15c723b46c97b1f34ee3cf3c`.
 Die Stable-Markierung ändert ausschließlich Dokumentation; Quellen, PRG, D81
 und Release-Prüfsummen bleiben unverändert.
+
+## Stage 4b-2 – Angriffskurven und pendelnde Formation (Teststand)
+
+Branch `stage4b-2` auf `stage4b1-stable`, originale getrennte 183-Byte-Kurven
+für Level 1, maximal drei ATTACK und vier gegnerische Hardware-Sprite-Schüsse.
+Formation pendelt -8..+8 mit 1 Pixel je 50 Frames nach vollständigem Einflug.
+RETURN folgt den jeweils aktuellen Slotzielen. Auswahl, Y-Verankerung und
+Auslauf/Reentry sind ausdrücklich dokumentierte MEGA65-Übergangsregeln;
+historische Amiga-Endmarker-/Variantenauswahl nicht unabhängig belegt.
+[Analyse, Parameter und Abnahme](stage4b2_attack_formation.md).
+Release `releases/stage_4b_2/`; XEMU-Abnahme offen, kein Stable-Tag.
+
+Stage-4b-2-Prüfung: 48/48 Tests in 506,244 s mit ROM V920395 bestanden,
+inklusive aktiver Angriff-/Return-/Pendelmechanik und ROM-Overlay-Prüfung.
+Hauptschleifenmodell: Ø112.506 / maximal 117.705 Zyklen pro Frame.
+Alle 16 Release-Dateien byteidentisch reproduziert; PRG unverändert 43.777
+Bytes, D81 819.200 Bytes. Keine XEMU-/Hardware-Abnahme behauptet.
