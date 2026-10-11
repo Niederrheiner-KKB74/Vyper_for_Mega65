@@ -324,7 +324,7 @@ Player/ENTRY-Schüsse/Renderer/Backupbereiche und gesamte übrige Speicherkarte
 wie Stage4b-3. Quellen/Releases der Stable-Basis unverändert.
 [Details](stage4c_attack_mapping_and_drift.md).
 
-## Stage 5a – zentrale Levelverwaltung (Teststand)
+## Stage 5a – zentrale Levelverwaltung (Stable)
 
 Aktiver Record neu in physischer Bank1 `$12000–$126FF`, bounded1792 Bytes.
 Kopfkopie nur `$7600–$7607`; Kurvenparser nach `$7608–$76B1` verlegt.
@@ -334,3 +334,7 @@ Cachehelper `$3400–$3472`, optimierter Crop `$34A0–$3554`.
 Vorhandene22 Pixiepuffer `$10000–$115FF`,24 RRB-Slots, Screen/Color-/BASIC-Backups,
 Originaldaten und alle alten Stable-Releases unverändert. Kein neuer Code im ROM-Overlay.
 [Gesamtkarte und genaue Änderungen](stage5a_level_management.md).
+
+Stage 5a ist vom Benutzer mit funktionierenden Levelwechseln bestätigt
+(`stage5a-stable`). Die Stable-Dokumentation verändert keine Speicherbelegung
+oder Programm-/Release-Dateien.

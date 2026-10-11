@@ -356,7 +356,7 @@ Stable-Sicherung ausschließlich Dokumentation, Quellen und Release-Dateien unve
 Stage 4b-3 und `stage4b3-stable` sind inzwischen auf GitHub archiviert;
 Stage 4c mit vollständigem D81 veröffentlicht (Pull Request #21).
 
-## Stage 5a – zentrale100-Level-Verwaltung (Teststand)
+## Stage 5a – zentrale100-Level-Verwaltung (Stable)
 
 Branch `stage5a` aus `stage4c-stable`, Stable-Basis unverändert archiviert.
 Dynamische Originalrecords, vier Gruppen, WORD-Einflugcursor/-verzögerungen,
@@ -365,8 +365,15 @@ regulär100→1; +/− Testnavigation begrenzt1..100. Score/Highscore/Leben erha
 Benutzerfreigabe für gezielte Kapazitätserweiterungen und vorläufige Angriffssperre
 in25/50/99/100. Übriges Grafikmapping ausdrücklich unbestätigt.
 [Speicher, Implementierung, Tests und XEMU-Plan](stage5a_level_management.md).
-Quellen/PRG/D81 unter `releases/stage_5a/`; keine Stable-Markierung ohne Bestätigung.
+Quellen/PRG/D81 unter `releases/stage_5a/`; stabile Referenz `stage5a-stable`.
 
 Stage5a:26 unterschiedliche automatische Tests bestanden, alle100 Initialisierungen;
 402 Updates identisch zur Stage4c-Referenz. Alle18 Release-Dateien byteidentisch
-im unabhängigen Zweitbuild. Benutzer-XEMU-Abnahme ausstehend.
+im unabhängigen Zweitbuild. Benutzer-XEMU-Abnahme bestätigt.
+
+Der Benutzer bestätigt: „Stage 5a ist bestätigt, Level-Wechsel funktionieren“.
+Bestätigter Programmstand: `e7166a72fbe9b00bb1d75881837a74e339225351`.
+Die Stable-Markierung verändert ausschließlich Dokumentation; Quellen, PRG, D81
+und Originaldaten bleiben unverändert. Kein eigener XEMU-/Hardwaretest wird behauptet.
+Die freigegebenen Sonderlevel-Einschränkungen und unbestätigten Grafikzuordnungen
+bleiben bestehen.
