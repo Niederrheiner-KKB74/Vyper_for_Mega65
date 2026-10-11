@@ -1,0 +1,31 @@
+{
+  "source_png_sha256": "faa19d74583ec1a35f5ed81f1727f026e03a2de1fce9eb86dd73315ded484eea",
+  "source_palette_sha256": "a108f6346556a15d6a6e2cb712fde23995eda05557f5d85c69cea5857c4e492e",
+  "size": [
+    352,
+    240
+  ],
+  "mode": "RGB",
+  "source_unique_RGB_colours": 31,
+  "original_palette_entries": 33,
+  "duplicate_RGB_indices": [
+    [
+      0,
+      6,
+      32
+    ]
+  ],
+  "exact_RGB_roundtrip_pixels": 84480,
+  "PNG_indices_preserved_when_matching_named_original_index": false,
+  "remapped_PNG_indices_pixels": 0,
+  "RGB_input_index_policy": "lowest exactly matching original index; duplicate RGB does not prove original index identity",
+  "tile_grid": [
+    44,
+    30
+  ],
+  "tile_bytes": 84480,
+  "format": "VYTI v1;18-byte little-endian header,99 RGB bytes,84480 tile bytes",
+  "VYTI_bytes": 84597,
+  "VYTI_sha256": "5748d68e9210ffaa96db69d521050add6a43b6468426e429f3106ac05529c432",
+  "xemu": "NOT_RUN"
+}
