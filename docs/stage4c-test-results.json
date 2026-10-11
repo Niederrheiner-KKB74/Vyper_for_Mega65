@@ -1,0 +1,15 @@
+{
+  "stage": "4c",
+  "baseline": "stage4b3-stable",
+  "tests": 57,
+  "failures": 0,
+  "errors": 0,
+  "duration_seconds": 577.671,
+  "cpu_model_cycles_per_frame": {
+    "mean": 116370,
+    "peak": 121597
+  },
+  "independent_release_files_identical": 16,
+  "xemu": "NOT_RUN",
+  "stable": false
+}

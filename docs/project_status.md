@@ -336,3 +336,17 @@ Die Stable-Sicherung verändert ausschließlich Dokumentation; sämtliche Quelle
 PRG/D81 und Release-Prüfsummen bleiben unverändert. Kein unabhängiger Hardwaretest.
 Branch/Stable-Tags sind lokal gesichert; GitHub-Veröffentlichung bleibt bis zur
 wieder verfügbaren automatischen Freigabeprüfung ausstehend.
+
+## Stage 4c – feste Kurvenzuordnung/Zwei-Frame-Drift (Teststand)
+
+Branch `stage4c` ausschließlich aus lokaler bestätigter `stage4b3-stable`.
+Basisquellen und alle16 Release-Dateien vor Umsetzung verifiziert/geschützt.
+Drift−8..+8 ein Pixel alle2 Frames; Player unverändert1 Pixel/Frame.
+Fester VYLV-Gegnerindex+5, vier zentrale begrenzte Deskriptoren und zusätzliche
+Indexprüfung bei Initialisierung, Angriffstart und Kurvenzugriff. Zufall wählt
+nur den FORMATION-Gegner. Alle100 Levels/2194 Indizes gegen Original-VYLV geprüft.
+Level1-Produktion bleibt unverändert zwei Kurven; keine neue Levelwechsel-Engine.
+Quellen/PRG/D81: `releases/stage_4c/`. XEMU-Abnahme offen, kein Stable-Tag.
+[Format, Basisschutz, Testbericht und Abnahme](stage4c_attack_mapping_and_drift.md).
+
+Stage4c: 57/57 automatische Tests bestanden; Zweitbuild mit allen16 Release-Dateien byteidentisch. XEMU-Abnahme und Stable-Freigabe stehen aus.
