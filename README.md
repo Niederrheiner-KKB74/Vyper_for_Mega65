@@ -67,3 +67,11 @@ Zentrale Verwaltung aller100 Originallevel, Level Clear/Joystick-Fortsetzung und
 +/− Testnavigation; aus `stage4c-stable`. [D81](releases/stage_5a/VYPER_STAGE5A.d81),
 [Build, freigegebene Sonderlevel-Einschränkungen und Testplan](docs/stage5a_level_management.md).
 Start: `LOAD "STAGE5A",8`, `RUN`. Vom Benutzer bestätigt: Levelwechsel funktionieren. Stabile Referenz: `stage5a-stable`.
+
+## Stage 5b (Teststand)
+
+38 Original-Gegnertypen/259 Frames, rekonstruierte Mapping-Tabelle und korrigierte
+NCM-Konvertierung aus den originalen Amiga-Deskriptoren. Stage5a Stable unverändert.
+[D81](releases/stage_5b/VYPER_STAGE5B.d81),
+[Extraktion, Mapping-Beleglage, Build und XEMU-Testplan](docs/stage5b_graphics_mapping.md).
+Start: `LOAD "STAGE5B",8`, `RUN`. Noch nicht Stable; Original-Levelpaletten folgen separat.

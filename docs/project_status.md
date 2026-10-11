@@ -377,3 +377,27 @@ Die Stable-Markierung verändert ausschließlich Dokumentation; Quellen, PRG, D8
 und Originaldaten bleiben unverändert. Kein eigener XEMU-/Hardwaretest wird behauptet.
 Die freigegebenen Sonderlevel-Einschränkungen und unbestätigten Grafikzuordnungen
 bleiben bestehen.
+
+## Stage 5b – 38 Originalgrafiken und Transparenz (Teststand)
+
+Issue #27, Branch `stage5b` ausschließlich aus `stage5a-stable`. Die Stable-Basis
+und Originalassets bleiben unverändert.20 fehlende Originalframes der Indizes36/37
+(Typen37/38) sind anhand aller eigenen Frame-/Maskenpointer extrahiert. Insgesamt
+259 Frames; sämtliche Plane-/Maskenbytes durch den zweiten Original-USS bestätigt.
+ADF-Forme stimmt mit allen2194 Gegnern der100 VYLV-Level überein. Zentrales explizites
+38-Einträge-Mapping`n→n+1`, stark durch Deskriptor/Frame/Forme belegt; ursprüngliche
+Amiga-Auswahlroutine weiterhin nicht unabhängig bewiesen.14→15 zusätzlich visuell bestätigt.
+
+Die historischen Konvertierungsfehler (hohes statt niedriges linkes Nibble,
+Plane-Pointer−6 plus zyklische Zeilenadressierung) sind für alle239 alten Frames
+exakt reproduziert und anhand der Originalpointer korrigiert. Masken bleiben erhalten.
+Neue VYGR33464 Bytes bei `$54000–$5C2B7`; kein Speicherüberschneidungsproblem.
+45 geänderte PRG-Bytes; übrige Spielmechanik und Renderer identisch zu Stage5a.
+Ein-Byte-Angriffssperren25/50/99/100 bleiben; Levelpaletten ausdrücklich außerhalb
+Stage5b. [Technischer Prüfbericht und XEMU-Plan](stage5b_graphics_mapping.md),
+[Testprotokoll](stage5b-test-results.json). Release: `releases/stage_5b/`.
+Keine Stable-Markierung vor ausdrücklicher Benutzerbestätigung.
+
+Stage5b:32/32 automatische Tests bestanden(270.006s), alle100 Level,259 Frames,
+66304 Originalpixel und2072 neue RRB-Clipping-/Überlappungsfälle.20 Release-Dateien
+im unabhängigen Zweitbuild byteidentisch. XEMU-Abnahme durch Benutzer ausstehend.

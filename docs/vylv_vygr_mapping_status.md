@@ -62,3 +62,15 @@ unverändert; die alten 14→12/31-Aussagen dürfen für neue Stages nicht verwe
 Die oben separat beschriebenen echten Punktewerte sind weiterhin eine Beobachtung für
 eine spätere Gameplay-Stage. Stage 3b-5b implementiert ausdrücklich noch keine Treffer-
 oder Scorelogik und verändert die bisherigen HUD-Mockupwerte nicht.
+
+## Stage 5b – neue Deskriptor-/Frame-/Forme-Evidenz
+
+Für Stage5b ersetzt die neue Tabelle
+[`assets/stage5b/vylv_vygr_mapping.json`](../assets/stage5b/vylv_vygr_mapping.json)
+den bisherigen historischen Fallback. Sie enthält38 explizite Einträge`n→n+1`,
+gestützt durch vollständigen Vergleich mit der38×18-Byte-Amiga-Tabelle,
+allen259 Originalframes, dem zweiten USS-Abbild und allen100 Forme-/VYLV-Records.
+**Die originale Auswahlroutine ist nicht unabhängig nachgewiesen**; nur14→15
+besitzt zusätzlich die individuelle visuelle Benutzerbestätigung.
+[Belegniveau, vollständige Tabelle und Originalpointer](stage5b_graphics_mapping.md).
+Die alte JSON-Tabelle bleibt unverändert für stabile Vorgängerstages erhalten.
