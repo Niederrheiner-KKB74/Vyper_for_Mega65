@@ -424,3 +424,46 @@ Die Stable-Sicherung verändert ausschließlich Dokumentation; Quellen, PRG, D81
 und Originaldaten bleiben bytegleich. Die XEMU-Abnahme stammt vom Benutzer;
 ein eigener XEMU-/Hardwarelauf wurde nicht durchgeführt. Die dokumentierten
 Mapping-Beweisgrenzen und Sonderlevel-Angriffssperren bleiben bestehen.
+
+## Stage 5c – originale100-Level-Paletten (Stable)
+
+Issue #31, neuer Branch `stage5c` aus `stage5b-stable` (`88e19bb`).
+Analyse/CSVs aus `analysis-color-palettes` übernommen und gegen archivierte
+Original-ADF geprüft:362 Color-Bytes sowie alle100 Levelrecord-Felder`+$4C`
+identisch. Die ursprüngliche Amiga-Code-Nutzung ist weiterhin nicht unabhängig
+bewiesen; kein eigener WinUAE-Farbvergleich behauptet.
+
+VYCL v1:476 Bytes,20×9 verlustfreie RGB4-Wörter,100 Levelindices, Header und
+Payloadsumme. SEQ-Loader mit SETBNK, Rücklese-DMA und Format-/Summenprüfung
+um dritte Datei erweitert. Ladegerät aus KERNAL`$BA` für alle Dateien bewahrt.
+VYLV/VYGR bleiben unverändert. Gegnerpalette bei jedem Levelstart vor Darstellung
+aktiviert; drei Bitplanes nutzen Originalwörter0..7, Wort8 bleibt mitgeführt.
+
+Gegner liegen in eigener16-Farben-NCM-Gruppe17..24 der Bank1. Explosionen behalten
+Bank1-Farben0..15, Player/HUD/Projektile Bank2, BASIC-ROM Bank3. Bestehende
+Color-RAM-Sicherung von`$6B00–$6F7F` durch zwei DMA-Adressänderungen nach
+`$15600–$15A7F` verlegt, um Palettencode und Spiegel konfliktfrei aufzunehmen.
+Angriffsmetadaten`$6F80–$6FFF` unverändert erhalten. Vollständige Speicherkarte
+und Prüfbericht: [Stage5c](stage5c_original_palettes.md).
+
+Quellen/PRG/D81 und alle drei DAT-Dateien: `releases/stage_5c/`.
+Automatische Testergebnisse: `docs/stage5c-test-results.json`.
+Stage5c ist nach ausdrücklicher Benutzerabnahme Stable; Referenz `stage5c-stable`.
+
+Finaler Stage5c-Build: **43/43 Tests bestanden (515.180s)**; alle100 Level-
+initialisierungen und Paletten,259 Originalframes,1813 Clipping- und259
+Überlappungsfälle. DOS8192 Bytes, Color-RAM4800 Bytes und Cursorzustand erhalten;
+Player/HUD/Explosionen isoliert. Alle23 Release-Dateien im unabhängigen Zweitbuild
+byteidentisch. Benutzer-XEMU-Abnahme und originalgetreue Level-Farben bestätigt;
+kein eigener XEMU-/WinUAE-Farbvergleich durchgeführt.
+
+## Bestätigte Stable-Referenz
+
+Der Benutzer bestätigt: „Level-Farben entsprechen exakt dem Original, Player, HUD und Explosionen sind unverändert korrekt. Basic-Exit funktioniert ebenfalls. Stage 5c ist stable.“
+Stabile Referenz: `stage5c-stable`; bestätigter Programmcommit
+`2fb8308b886980f3d0e89a1ae19faf3937c6903f`.
+Die Stable-Sicherung verändert ausschließlich Dokumentation. Quellen, PRG, D81
+und alle DAT-Dateien bleiben byteidentisch. Die XEMU-Abnahme und der visuelle
+Originalfarbvergleich stammen vom Benutzer; ein eigener XEMU-/WinUAE- oder
+Hardwarelauf wird nicht behauptet. Die offenen Amiga-Code-Beweisfragen und
+die freigegebenen Sonderlevel-Angriffssperren bleiben unverändert dokumentiert.
