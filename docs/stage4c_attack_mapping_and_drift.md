@@ -1,6 +1,6 @@
 # Stage 4c – feste Angriffskurven und Zwei-Frame-Drift
 
-Issue #19, Branch `stage4c`. **Nicht Stable; XEMU-Abnahme offen.**
+Issue #19, Branch `stage4c`. **Stable: vom Benutzer in XEMU bestätigt; Referenz `stage4c-stable`.**
 Basis ausschließlich die lokal bestätigte **Stage 4b-3**:
 `stage4b3-stable` → `007798914c4e3189ee98921a9b9c661ecdbbbbd6`,
 getesteter Programmcommit `a8766f8df9fcea8279181a5d13b772db15ecc954`.
@@ -139,9 +139,9 @@ Deskriptoren aller100 Levels, Parser/Bounds/Fehlerpfade, feste Kurven pro Gegner
 Drift-Takt, Player-Bewegung, Einflug/Schüsse/Rückkehr, Kollisionen, Explosionen,
 Respawn/Game Over sowie ROM-Mapping, BASIC-Exit und erneuter Start im CPU-/DMA-Modell.
 160-Frame-Lauf: durchschnittlich116370, maximal121597 Modellzyklen/Frame.
-Dies ist keine Messung unter XEMU; die folgende Benutzerabnahme bleibt offen.
+Dies ist keine Messung unter XEMU; die folgende Benutzerabnahme wurde inzwischen bestätigt.
 
-## XEMU-Abnahme (offen)
+## XEMU-Abnahme (vom Benutzer bestätigt)
 
 ROM V920395/BASIC80×25, D81 einlegen:
 
@@ -165,4 +165,5 @@ RUN
 Diagnosen: signed Offset `$6FE0`, Drift-Timer `$6FE2`, Gegnerindex `$6F80+slot`,
 Count `$6FF8`, Pointer/Lengths wie Tabelle; Status `$1C00`, Phase `$1EC6`,
 Cursor `$1E9A`, Kurvenanker `$6F96/$6FAC`, vier Gegnerslots ab `$1B02`.
-Keine XEMU-/Hardware-Abnahme und kein Stable-Tag für Stage4c ohne Benutzerfreigabe.
+Benutzerfreigabe: „Stage 4c ist stabil“. Kein unabhängiger Hardwaretest.
+Die Stable-Sicherung ändert nur Dokumentation; Quellen, PRG und D81 bleiben unverändert.

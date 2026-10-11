@@ -337,7 +337,7 @@ PRG/D81 und Release-Prüfsummen bleiben unverändert. Kein unabhängiger Hardwar
 Branch/Stable-Tags sind lokal gesichert; GitHub-Veröffentlichung bleibt bis zur
 wieder verfügbaren automatischen Freigabeprüfung ausstehend.
 
-## Stage 4c – feste Kurvenzuordnung/Zwei-Frame-Drift (Teststand)
+## Stage 4c – feste Kurvenzuordnung/Zwei-Frame-Drift (Stable)
 
 Branch `stage4c` ausschließlich aus lokaler bestätigter `stage4b3-stable`.
 Basisquellen und alle16 Release-Dateien vor Umsetzung verifiziert/geschützt.
@@ -346,7 +346,12 @@ Fester VYLV-Gegnerindex+5, vier zentrale begrenzte Deskriptoren und zusätzliche
 Indexprüfung bei Initialisierung, Angriffstart und Kurvenzugriff. Zufall wählt
 nur den FORMATION-Gegner. Alle100 Levels/2194 Indizes gegen Original-VYLV geprüft.
 Level1-Produktion bleibt unverändert zwei Kurven; keine neue Levelwechsel-Engine.
-Quellen/PRG/D81: `releases/stage_4c/`. XEMU-Abnahme offen, kein Stable-Tag.
+Quellen/PRG/D81: `releases/stage_4c/`. XEMU-Abnahme vom Benutzer bestätigt; Referenz `stage4c-stable`.
 [Format, Basisschutz, Testbericht und Abnahme](stage4c_attack_mapping_and_drift.md).
 
-Stage4c: 57/57 automatische Tests bestanden; Zweitbuild mit allen16 Release-Dateien byteidentisch. XEMU-Abnahme und Stable-Freigabe stehen aus.
+Stage4c: 57/57 automatische Tests bestanden; Zweitbuild mit allen16 Release-Dateien byteidentisch. XEMU-Abnahme und Stable-Freigabe vom Benutzer bestätigt.
+
+Stage 4c wurde vom Benutzer als stabil bestätigt. Programmcommit `1f4b3b5`;
+Stable-Sicherung ausschließlich Dokumentation, Quellen und Release-Dateien unverändert.
+Stage 4b-3 und `stage4b3-stable` sind inzwischen auf GitHub archiviert;
+Stage 4c mit vollständigem D81 veröffentlicht (Pull Request #21).

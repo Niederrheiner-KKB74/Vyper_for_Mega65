@@ -10,6 +10,9 @@
     "peak": 121597
   },
   "independent_release_files_identical": 16,
-  "xemu": "NOT_RUN",
-  "stable": false
+  "xemu": "USER_CONFIRMED",
+  "stable": true,
+  "stable_reference": "stage4c-stable",
+  "program_commit": "1f4b3b5",
+  "confirmation": "Stage 4c ist stabil"
 }

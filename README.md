@@ -53,10 +53,10 @@ sichtbare ENTRY-/ATTACK-Schüsse mit global vier Projektilen, Formation-Y−25.
 PRG/D81 und vollständige Quellen: `releases/stage_4b_3/`.
 Vom Benutzer unter XEMU bestätigt; Referenz `stage4b3-stable`.
 
-## Stage 4c (Teststand)
+## Stage 4c (Stable)
 
 Ausschließlich aus lokaler bestätigter `stage4b3-stable`: Formationsdrift
 1 Pixel/2 Frames, feste gegnerbezogene VYLV-Angriffsindizes und bis zu vier
 begrenzte Deskriptoren. Player weiterhin1 Pixel/Frame, übrige Mechanik erhalten.
 [Build, Datenprüfung und XEMU-Abnahme](docs/stage4c_attack_mapping_and_drift.md).
-Quellen/PRG/D81: `releases/stage_4c/`; kein Stable-Tag vor Benutzerbestätigung.
+Quellen/PRG/D81: `releases/stage_4c/`; vom Benutzer in XEMU bestätigt; Referenz `stage4c-stable`.
