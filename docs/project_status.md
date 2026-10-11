@@ -355,3 +355,18 @@ Stage 4c wurde vom Benutzer als stabil bestätigt. Programmcommit `1f4b3b5`;
 Stable-Sicherung ausschließlich Dokumentation, Quellen und Release-Dateien unverändert.
 Stage 4b-3 und `stage4b3-stable` sind inzwischen auf GitHub archiviert;
 Stage 4c mit vollständigem D81 veröffentlicht (Pull Request #21).
+
+## Stage 5a – zentrale100-Level-Verwaltung (Teststand)
+
+Branch `stage5a` aus `stage4c-stable`, Stable-Basis unverändert archiviert.
+Dynamische Originalrecords, vier Gruppen, WORD-Einflugcursor/-verzögerungen,
+individuelle Grafikquellen/Animation, Level Clear mit neuer Joystick-Buttonflanke,
+regulär100→1; +/− Testnavigation begrenzt1..100. Score/Highscore/Leben erhalten.
+Benutzerfreigabe für gezielte Kapazitätserweiterungen und vorläufige Angriffssperre
+in25/50/99/100. Übriges Grafikmapping ausdrücklich unbestätigt.
+[Speicher, Implementierung, Tests und XEMU-Plan](stage5a_level_management.md).
+Quellen/PRG/D81 unter `releases/stage_5a/`; keine Stable-Markierung ohne Bestätigung.
+
+Stage5a:26 unterschiedliche automatische Tests bestanden, alle100 Initialisierungen;
+402 Updates identisch zur Stage4c-Referenz. Alle18 Release-Dateien byteidentisch
+im unabhängigen Zweitbuild. Benutzer-XEMU-Abnahme ausstehend.

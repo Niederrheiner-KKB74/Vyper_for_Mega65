@@ -1,0 +1,83 @@
+{
+  "stage": "5a",
+  "issue": 23,
+  "stable": false,
+  "baseline": "stage4c-stable",
+  "assembler": "KickAssembler5.25",
+  "comparison": {
+    "baseline": "stage4c-stable",
+    "baseline_prg_sha256": "bbb1b838f25fa3e6d23a62b7314e64499af1b01a63a7e3d85f64627a257d2460",
+    "changed_bytes": 6795,
+    "player_speed": "1 pixel/frame",
+    "formation_speed": "1 pixel/2 frames",
+    "stable": false
+  },
+  "files": [
+    {
+      "name": "STAGE5A",
+      "bytes": 43777,
+      "blocks": 173,
+      "sha256": "afdb91be6d57298af92fbc8bf8adcfb3d9dfe2c8689a54c37e8d728d11bacf81"
+    },
+    {
+      "name": "VYLV.DAT",
+      "bytes": 81793,
+      "blocks": 323,
+      "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
+    },
+    {
+      "name": "VYGR.DAT",
+      "bytes": 30888,
+      "blocks": 122,
+      "sha256": "cbad5d717a4890276a9408c6784500f8449d45ae90f0f4d4251d596b8a2563eb"
+    }
+  ],
+  "capacity": {
+    "levels": 100,
+    "enemies": 2194,
+    "max_record_bytes": 1706,
+    "max_entry_curve_bytes": 469,
+    "max_spawn_delay": 2100,
+    "max_graphic_indices": 22,
+    "max_all_frames_bytes": 17408,
+    "max_rrb_slots": 23,
+    "short_attack_levels": [
+      25,
+      50,
+      99,
+      100
+    ],
+    "all_formations_and_drift_fit": true
+  },
+  "controls": {
+    "+": "next level, clamp100, physical release debounce",
+    "-": "previous level, clamp1",
+    "button": "new Port2 press in LEVEL_CLEAR,100->1",
+    "R": "GAME_OVER restart Level1, score0, lives3, retain highscore",
+    "X": "clean BASIC exit"
+  },
+  "restrictions": {
+    "attack_disabled_levels": [
+      25,
+      50,
+      99,
+      100
+    ],
+    "reason": "user-approved pending original one-byte special curve semantics",
+    "mapping": "only14->15 confirmed; all other historical table entries provisional"
+  },
+  "memory": {
+    "active_record": "$12000-$126FF",
+    "header": "$7600-$7607",
+    "code": "below$A000; manager$6000 replaces obsolete initial colour template",
+    "private_pixies": "$10000-$115FF (22x256, existing)",
+    "blank_template": "$6700-$67FF",
+    "runtime_metadata": "$1D80-$1DB1 and $6A20-$6AD7",
+    "groups": 4,
+    "entry_cursor_bits": 16,
+    "entry_delay_bits": 16,
+    "rrb_slots": 24,
+    "screen_stride": 192
+  },
+  "runtime_xemu": "NOT_RUN; user confirmation required"
+}
