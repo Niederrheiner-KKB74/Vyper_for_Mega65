@@ -1,0 +1,50 @@
+{
+  "stage": "5d-1",
+  "issue": 35,
+  "branch": "stage5d-1",
+  "stable": false,
+  "baseline": "stage5c-stable",
+  "renderer": "stage5d0-stable",
+  "tests": {
+    "run": 49,
+    "passed": 49,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 919.433,
+    "command": "PYTHONPATH=tests:tools python -m unittest test_stage5d1 -v",
+    "model": "Actual assembled PRG; narrow CPU/KERNAL/DMA/VIC/palette models, original ROM cursor instructions; not XEMU",
+    "execution": "Full regression plus successful targeted recheck after updating the test-only file-count expectation; current suite has 49 unique cases"
+  },
+  "failures": [],
+  "reproducible_build": {
+    "byte_identical_artifacts": 27,
+    "independent_output": "/tmp/stage5d1-rebuild"
+  },
+  "D81_sha256": "ab694cbe2ec44c9e8d8c5f3532a65dc52c2c9dedf62e84c965e6dfb07acb27cb",
+  "title_original_pixel_count": 84480,
+  "game_levels": 100,
+  "original_enemy_frames": 259,
+  "clipping_cases": 1813,
+  "overlap_cases": 259,
+  "xemu": "NOT_RUN; awaiting user acceptance",
+  "verification": {
+    "full_run": {
+      "run": 50,
+      "passed": 49,
+      "failures": 1,
+      "seconds": 893.194
+    },
+    "test_fixture_correction": "An inherited expectation still counted three disk files. Updated to four including VYTI; removed duplicate test alias. No PRG change.",
+    "targeted_recheck": {
+      "test": "test_stage5d1.PaletteRegression.test_program_load_device_retained_for_all_SEQs",
+      "passed": 1,
+      "failures": 0,
+      "seconds": 26.239
+    },
+    "final_unique_cases": 49
+  },
+  "protected_baseline_files": 61,
+  "program_commit": "4d8bded",
+  "DAT_files_match_Stage5c_Stable": true
+}

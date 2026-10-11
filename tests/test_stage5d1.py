@@ -114,7 +114,7 @@ class PaletteRegression(OLD.PaletteTests):
         BUILD.BASE.verify_disk((ART/'VYPER_STAGE5D1.d81').read_bytes(),entries)
         with tempfile.TemporaryDirectory() as d:
             data,_=CONVERT.build(Path(d));self.assertEqual(data,(ART/'VYTI.DAT').read_bytes())
-    def test_uses_program_drive_instead_of_hardcoded_8(self):
+    def test_program_load_device_retained_for_all_SEQs(self):
         m=Machine();m.memory.data[0xba]=9;m.execute()
         self.assertEqual(m.error,0);self.assertEqual(m.devices,[9,9,9,9])
     def test_actual_loader_three_SEQs_and_dma_bounds(self):

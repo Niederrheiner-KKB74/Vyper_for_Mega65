@@ -50,6 +50,7 @@ Alle Endadressen sind einschließlich. Die vollständige Assemblermap liegt im R
 | `$4800–$4B48` | Gemeinsamer SEQ-Loader und Übergabesteuerung |
 | `$6800–$68FF`, `$6900–$69FF` | SEQ-Eingabepuffer / DMA-Rücklesepuffer |
 | `$6B00–$6CF6`, `$6D00–$6EDB` | VYCL-Code / validierter Palettenspiegel |
+| `$7600–$7607` | Nur Level-1-Signaturprefix; Angriffscode beginnt bei `$7608` |
 | `$E000–$F2BF` | Bisheriger RRB-Screen, unverändert |
 | `$F300–$FD4F` | Physischer Titel-Screen; nur VIC-IV/DMA greifen darauf zu |
 | `$10000–$11FFF` | DOS-RAM: nicht für Titel oder Engine verwendet |
@@ -160,7 +161,13 @@ enthält `STAGE5D1` (PRG) und vier SEQ-Dateien: VYTI, VYLV, VYGR, VYCL.
 Dateiketten und Inhalte werden vollständig zurückgelesen. `SHA256SUMS.txt`
 dokumentiert alle Build-Artefakte; das ZIP enthält Quellen, Assets und Tools.
 
-Automatische Ergebnisse: `docs/stage5d1-test-results.json`. Tests führen die
+Automatische Ergebnisse: `docs/stage5d1-test-results.json`.
+**49 eindeutige Prüfungen erfolgreich**, 919,433 Sekunden einschließlich gezielter
+Wiederholung. Im vollständigen Lauf zählte eine übernommene Testvorgabe noch drei
+SEQ-Dateien; nach Anpassung auf vier einschließlich VYTI bestand der betroffene
+Test erneut. Ein doppelter Testalias wurde entfernt. Das PRG änderte sich dadurch
+nicht. Alle übrigen Prüfungen des vollständigen Laufs bestanden. Kein XEMU-Lauf.
+ Tests führen die
 assemblierten Instruktionen aus, mit begrenzten KERNAL-/DMA-/VIC-Modellen:
 Titelpixel und Registergeometrie, unveränderte Caches über alle drei SEQ-Läufe,
 IRQ-/Cursorzustand, Ladefehler, DOS-/ROM-/Color-RAM-Schutz, alle 100 Level,

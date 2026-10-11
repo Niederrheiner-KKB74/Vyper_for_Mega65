@@ -2914,7 +2914,8 @@ graphic_sum_ok:
     lda #>level_name
     sta name_ptr+1
     // Level 1 directory entry: offset $00000328, length $0351 (849 bytes).
-    // Copy the complete Level 1 record into low RAM $7600.
+    // Copy only its eight-byte signature prefix to $7600-$7607.
+    // s3b2.prepare loads/validates the complete record at $12000.
     lda #$28
     sta dma_src_lo
     lda #$03
@@ -2928,7 +2929,7 @@ graphic_sum_ok:
     lda #0
     sta dma_dst_bank
     lda #8
-    sta dma_len_lo  // $0351 = 849 bytes
+    sta dma_len_lo  // eight-byte prefix; do not overwrite attack code at $7608
     lda #0
     sta dma_len_hi
     jsr dma_copy

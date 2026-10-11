@@ -490,3 +490,10 @@ Quellen, PRG, vollständiges D81 und vier DAT-Dateien: `releases/stage_5d_1/`.
 [Build, Speicherprüfung, Fehler und XEMU-Abnahme](stage5d1_title_loader_integration.md).
 Automatische Tests sind Hostmodelle; die neue XEMU-Abnahme steht aus.
 Stage 5d-1 wird erst nach ausdrücklicher Benutzerbestätigung Stable.
+
+Finale automatische Prüfung: 49 eindeutige Tests erfolgreich (vollständiger Lauf
+plus gezielte Wiederholung nach Anpassung einer übernommenen Geräte-/Dateianzahl-
+Testvorgabe auf vier SEQ-Dateien). Alle100 Level,259 Originalframes,1813 Clipping-
+und259 Überlappungsfälle, Ladefehler und wiederholtes RUN geprüft. 27 Artefakte
+im unabhängigen Zweitbuild byteidentisch; 61 Stable-Dateien geschützt.
+Kein eigener XEMU-/Hardwarelauf; Stage 5d-1 weiterhin nicht Stable.
