@@ -78,3 +78,9 @@ Die Levels **25 und 50** enthalten je zwei Angriffskurven von jeweils nur einem 
 ## Reproduzierbarkeit
 
 Die Struktur lässt sich mit `tools/analyze_attack_descriptors.py` im Branch `analysis-attack-descriptors` prüfen. Das Skript benötigt nur `assets/VYLV.DAT` oder einen explizit übergebenen Dateipfad und die Python-Standardbibliothek.
+
+## Zusätzliche Bestätigung durch Originalspiel-Beobachtung (11.10.2026)
+
+Der Benutzer hat die Dateninterpretation mit dem laufenden Amiga-Original verglichen und ausdrücklich bestätigt: In Level 1 verwenden Gegner auf der rechten Seite gegenüber denen auf der linken Seite horizontal gespiegelte Kurven; auch bei den anderen von ihm untersuchten Levels entspricht die beobachtete Kurvenzuordnung exakt der Analyse. Damit ist die Semantik **zufällige Auswahl des angreifenden Gegners, feste Angriffskurve anhand seines `attack_index`** für die Portierung durch Datenstruktur **und** Spielbeobachtung gestützt. Ein vollständiger unabhängiger Nachweis der Original-Amiga-Interpreterroutine liegt weiterhin nicht vor.
+
+**Implementierungsempfehlung:** Nach Abschluss von Stage 4b-3 in einer folgenden Stage die bisherige Kurvenwahl durch den pro Gegner gespeicherten `attack_index` ersetzen; den stabilen Stage-4b-2-Stand und den laufenden Stage-4b-3-Build nicht nachträglich verändern.
