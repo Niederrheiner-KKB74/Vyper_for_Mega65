@@ -245,3 +245,13 @@ Exakte finale Codegrenzen: `releases/stage_4a/memory-map.txt`.
 Stage 4a einschließlich Y=0–199 am 11.10.2026 vom Benutzer unter XEMU
 als vollständig funktional bestätigt. Die Stable-Markierung verändert keine
 Speicherbelegung, Programme oder Release-Prüfsummen.
+
+## Stage 4b – Player-Vorbereitung
+
+Alle Speicheradressen und PRG-Grenzen der stabilen Stage 4a bleiben erhalten.
+Player-Live-Record `$1662/$1664`: Start X=112/Y=184; nur X durch Joystick verändert,
+X=0–224. Initialisierung bei `v014_init_objects`, 36 vertikale Codebytes als NOPs,
+keine Symbolverschiebung. Keine zusätzlichen Framepuffer/DMA-Listen/Arbeitsfelder.
+Schüsse/Hitbox/Explosion/Respawn nutzen weiterhin die bestehenden Live-/Todeswerte.
+Originaleinflug-Arbeitsfelder sind noch nicht implementiert: erst verifiziertes
+Kurvenformat klären. [Stage-4b-Befund](stage4b_level1_entry.md).

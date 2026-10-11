@@ -221,3 +221,15 @@ Releasepfad; auch die volle Höhe wurde anschließend ausdrücklich bestätigt.
 Bestätigter Programmstand: `7c3a466`; stabile Referenz `stage4a-stable`.
 Die Stable-Markierung ändert ausschließlich Dokumentation, keine Quellen oder
 Release-Artefakte.
+
+## Stage 4b – Player-Vorbereitung, originaler Einflug noch blockiert
+
+Neuer Branch `stage4b` auf `stage4a-stable`. Player-Levelstart/R jetzt X=112,
+Y=184, Joystick Port 2 ausschließlich X=0–224. Live-Schussursprung und Hitboxen,
+Todesposition/Respawn passen ohne Änderungen am Kampfcode. Alle übrigen
+Stage-4a-Funktionen bleiben erhalten. Quellen/Build/PRG/D81 in separaten Pfaden.
+Originale Level-1-Recordstruktur und 22 Formationsplätze reproduzierbar geprüft;
+Kurvendekodierung, Zeitbasis/Scheduling und Formationstransition ohne vorhandenen
+Originalinterpreter nicht verbindlich. Rückfrage gestellt, kein erfundener
+Originaleinflug implementiert. **Vorbereitung, nicht vollständige Issue-12-Lösung,
+nicht Stable.** [Befund und Testanleitung](stage4b_level1_entry.md).
