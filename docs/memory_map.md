@@ -359,7 +359,7 @@ Stage5b einschließlich DOS-Exit-Korrektur vom Benutzer vollständig bestätigt;
 Referenz `stage5b-stable`. Die Stable-Sicherung verändert weder Speicherlayout
 noch Quellcode oder Release-Dateien.
 
-## Stage 5c – originale Levelpaletten (Teststand)
+## Stage 5c – originale Levelpaletten (Stable)
 
 Unveränderte Stable-Basis `stage5b-stable`. Neue VYCL:476 Bytes bei
 `$5C300–$5C4DB`,72 Bytes Abstand hinter unveränderter VYGR. VYLV/VYGR,
@@ -379,4 +379,6 @@ Player/HUD/Projektile: Bank2 unverändert; BASIC-ROM-Palette: Bank3 unangetastet
 D070 CPU-Bank wird beim Levelwechsel kurzzeitig umgeschaltet und vollständig
 wiederhergestellt. Kein zusätzlicher Bankwechsel im 50-Hz-Animationspfad.
 [Format, Speicherprüfung und Originalbeleglage](stage5c_original_palettes.md).
-Stage5c nicht Stable; XEMU-Abnahme durch den Benutzer ausstehend.
+Stage5c vom Benutzer mit originalgetreuen Level-Farben, unveränderten Player-/
+HUD-/Explosionsfarben und funktionierendem BASIC-Exit bestätigt (`stage5c-stable`).
+Die Stable-Sicherung verändert weder Speicherlayout noch Quellcode oder Release-Dateien.

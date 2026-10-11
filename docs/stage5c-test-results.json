@@ -2,7 +2,7 @@
   "stage": "5c",
   "issue": 31,
   "branch": "stage5c",
-  "stable": false,
+  "stable": true,
   "baseline": "stage5b-stable",
   "baseline_commit": "88e19bbd3b785631a55678d1df8ef2c4abca56f7",
   "analysis_branch": "analysis-color-palettes",
@@ -61,7 +61,7 @@
   "original_Amiga_COLOR_register_mapping_proven": false,
   "independent_xemu": "NOT_RUN",
   "WinUAE_colour_comparison": "NOT_RUN",
-  "user_acceptance": "PENDING",
+  "user_acceptance": "USER_CONFIRMED_STABLE",
   "restrictions": {
     "attack_disabled_levels": [
       25,
@@ -76,5 +76,13 @@
     "VYLV.DAT": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283",
     "VYGR.DAT": "974e8eff97efd0c0f67db2780cb668311b9d8731395d43641d4602c0a7c96b50",
     "VYCL.DAT": "061e0e20aa77195b79ae80daf469387ed61e680f3f3841d8d5ed65ee8eeb491d"
+  },
+  "user_confirmation": "Level-Farben entsprechen exakt dem Original, Player, HUD und Explosionen sind unverändert korrekt. Basic-Exit funktioniert ebenfalls. Stage 5c ist stable.",
+  "stable_reference": "stage5c-stable",
+  "program_commit": "2fb8308b886980f3d0e89a1ae19faf3937c6903f",
+  "user_xemu": {
+    "level_colours": "confirmed exactly matching original",
+    "player_HUD_explosions": "confirmed unchanged and correct",
+    "BASIC_exit": "confirmed working"
   }
 }

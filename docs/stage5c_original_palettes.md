@@ -1,6 +1,6 @@
 # Stage 5c – originale Levelpaletten
 
-Issue #31, Branch `stage5c`, **Teststand, nicht Stable**. Unveränderte Basis:
+Issue #31, Branch `stage5c`, **Stable, vom Benutzer unter XEMU bestätigt**. Unveränderte Basis:
 `stage5b-stable` (`88e19bbd3b785631a55678d1df8ef2c4abca56f7`), einschließlich
 DOS-Exit-Korrektur. Alle Stage5b-Quellen, Assets und Releases werden vom Builder
 gegen den Stable-Tag geprüft. Die neuen Dateien liegen unter `releases/stage_5c/`.
@@ -170,10 +170,22 @@ Die freigegebenen Sonderlevel-Angriffssperren
 7. Wenn möglich dieselben Originallevels in WinUAE vergleichen; diese visuelle
    Prüfung ist noch nicht durchgeführt und nicht durch die CSV-Verifikation ersetzt.
 
-**Stage5c bleibt bis zur ausdrücklichen Benutzerbestätigung Teststand.**
+**Stage5c ist nach ausdrücklicher Benutzerbestätigung als `stage5c-stable` gesichert.**
 
 Finaler Stage5c-Build: **43/43 Tests bestanden (515.180s)**; alle100 Level-
 initialisierungen und Paletten,259 Originalframes,1813 Clipping- und259
 Überlappungsfälle. DOS8192 Bytes, Color-RAM4800 Bytes und Cursorzustand erhalten;
 Player/HUD/Explosionen isoliert. Alle23 Release-Dateien im unabhängigen Zweitbuild
-byteidentisch. XEMU-/WinUAE-Farbvergleich und Benutzerabnahme weiterhin offen.
+byteidentisch. Benutzer-XEMU-Abnahme und originalgetreue Level-Farben bestätigt;
+kein eigener XEMU-/WinUAE-Farbvergleich durchgeführt.
+
+## Bestätigte Stable-Referenz
+
+Der Benutzer bestätigt: „Level-Farben entsprechen exakt dem Original, Player, HUD und Explosionen sind unverändert korrekt. Basic-Exit funktioniert ebenfalls. Stage 5c ist stable.“
+Stabile Referenz: `stage5c-stable`; bestätigter Programmcommit
+`2fb8308b886980f3d0e89a1ae19faf3937c6903f`.
+Die Stable-Sicherung verändert ausschließlich Dokumentation. Quellen, PRG, D81
+und alle DAT-Dateien bleiben byteidentisch. Die XEMU-Abnahme und der visuelle
+Originalfarbvergleich stammen vom Benutzer; ein eigener XEMU-/WinUAE- oder
+Hardwarelauf wird nicht behauptet. Die offenen Amiga-Code-Beweisfragen und
+die freigegebenen Sonderlevel-Angriffssperren bleiben unverändert dokumentiert.

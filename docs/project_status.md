@@ -425,7 +425,7 @@ und Originaldaten bleiben bytegleich. Die XEMU-Abnahme stammt vom Benutzer;
 ein eigener XEMU-/Hardwarelauf wurde nicht durchgeführt. Die dokumentierten
 Mapping-Beweisgrenzen und Sonderlevel-Angriffssperren bleiben bestehen.
 
-## Stage 5c – originale100-Level-Paletten (Teststand)
+## Stage 5c – originale100-Level-Paletten (Stable)
 
 Issue #31, neuer Branch `stage5c` aus `stage5b-stable` (`88e19bb`).
 Analyse/CSVs aus `analysis-color-palettes` übernommen und gegen archivierte
@@ -448,10 +448,22 @@ und Prüfbericht: [Stage5c](stage5c_original_palettes.md).
 
 Quellen/PRG/D81 und alle drei DAT-Dateien: `releases/stage_5c/`.
 Automatische Testergebnisse: `docs/stage5c-test-results.json`.
-Stage5c bleibt Teststand; XEMU-/WinUAE-Abnahme ausstehend. Keine Stable-Markierung.
+Stage5c ist nach ausdrücklicher Benutzerabnahme Stable; Referenz `stage5c-stable`.
 
 Finaler Stage5c-Build: **43/43 Tests bestanden (515.180s)**; alle100 Level-
 initialisierungen und Paletten,259 Originalframes,1813 Clipping- und259
 Überlappungsfälle. DOS8192 Bytes, Color-RAM4800 Bytes und Cursorzustand erhalten;
 Player/HUD/Explosionen isoliert. Alle23 Release-Dateien im unabhängigen Zweitbuild
-byteidentisch. XEMU-/WinUAE-Farbvergleich und Benutzerabnahme weiterhin offen.
+byteidentisch. Benutzer-XEMU-Abnahme und originalgetreue Level-Farben bestätigt;
+kein eigener XEMU-/WinUAE-Farbvergleich durchgeführt.
+
+## Bestätigte Stable-Referenz
+
+Der Benutzer bestätigt: „Level-Farben entsprechen exakt dem Original, Player, HUD und Explosionen sind unverändert korrekt. Basic-Exit funktioniert ebenfalls. Stage 5c ist stable.“
+Stabile Referenz: `stage5c-stable`; bestätigter Programmcommit
+`2fb8308b886980f3d0e89a1ae19faf3937c6903f`.
+Die Stable-Sicherung verändert ausschließlich Dokumentation. Quellen, PRG, D81
+und alle DAT-Dateien bleiben byteidentisch. Die XEMU-Abnahme und der visuelle
+Originalfarbvergleich stammen vom Benutzer; ein eigener XEMU-/WinUAE- oder
+Hardwarelauf wird nicht behauptet. Die offenen Amiga-Code-Beweisfragen und
+die freigegebenen Sonderlevel-Angriffssperren bleiben unverändert dokumentiert.
