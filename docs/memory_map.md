@@ -246,12 +246,11 @@ Stage 4a einschließlich Y=0–199 am 11.10.2026 vom Benutzer unter XEMU
 als vollständig funktional bestätigt. Die Stable-Markierung verändert keine
 Speicherbelegung, Programme oder Release-Prüfsummen.
 
-## Stage 4b – Player-Vorbereitung
+## Stage 4b – Einflugcontroller und erweiterte RRB-Listen
 
-Alle Speicheradressen und PRG-Grenzen der stabilen Stage 4a bleiben erhalten.
-Player-Live-Record `$1662/$1664`: Start X=112/Y=184; nur X durch Joystick verändert,
-X=0–224. Initialisierung bei `v014_init_objects`, 36 vertikale Codebytes als NOPs,
-keine Symbolverschiebung. Keine zusätzlichen Framepuffer/DMA-Listen/Arbeitsfelder.
-Schüsse/Hitbox/Explosion/Respawn nutzen weiterhin die bestehenden Live-/Todeswerte.
-Originaleinflug-Arbeitsfelder sind noch nicht implementiert: erst verifiziertes
-Kurvenformat klären. [Stage-4b-Befund](stage4b_level1_entry.md).
+Screen `$E000–$F2BF`, 192 Bytes/Zeile, 24 Pixies/Zeile; Color-RAM 4800 Bytes.
+Zusatzbackup `$5000–$563F`, Rückkopie `$5640–$56BF`, Controller `$5700–$5C7F`,
+DMA `$7500–$75A6`, signed Kollisionshelper `$7EE2–$7F70`, Testhelper
+`$874B–$87FF`; 22 private Clippingpuffer `$10000–$115FF`.
+Zustände/Positionen `$1D40–$1D60` / `$1E00–$1EFF`.
+Kein Zugriff auf ROM als freien Speicher. [Vollständiger Vergleich](stage4b_level1_entry.md).

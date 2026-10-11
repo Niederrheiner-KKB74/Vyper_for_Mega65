@@ -1,5 +1,5 @@
 {
-  "status": "format structure verified; entry semantics BLOCKED",
+  "status": "VYLV structure verified; historical interpreter implemented; exact original timing remains open",
   "source": "assets/VYLV.DAT",
   "level": 1,
   "record_offset": 808,
@@ -7,14 +7,14 @@
   "enemy_relative_offset": 347,
   "entry_interval_raw": 16,
   "attack_curve_count": 2,
-  "interval_units": "unknown; not assumed to be 50Hz ticks",
+  "interval_units": "historical 50 Hz reference; 16 ticks per enemy; exact original scheduling remains open",
   "groups": [
     {
       "group": 0,
       "enemy_count": 11,
       "first_enemy": 0,
       "last_enemy": 10,
-      "slot_assignment_status": "contiguous order hypothesis, not interpreter-confirmed",
+      "slot_assignment_status": "contiguous order from historical interpreter analysis",
       "group_record_relative": 8,
       "curve_relative": 16,
       "curve_file_offset": 824,
@@ -38,75 +38,105 @@
         "9a": 29,
         "aa": 1
       },
-      "hypotheses": {
+      "reference_model": {
         "sign_magnitude": {
-          "unconfirmed": true,
-          "assumed_axis_order": "high nibble X, low nibble Y",
-          "assumed_scale": 1,
-          "assumed_ticks_per_byte": 1,
+          "first_10_points": [
+            [
+              20,
+              2
+            ],
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              6
+            ],
+            [
+              21,
+              8
+            ],
+            [
+              22,
+              10
+            ],
+            [
+              22,
+              12
+            ],
+            [
+              23,
+              14
+            ],
+            [
+              23,
+              16
+            ],
+            [
+              24,
+              18
+            ],
+            [
+              24,
+              20
+            ]
+          ],
+          "last_10_points": [
+            [
+              116,
+              45
+            ],
+            [
+              116,
+              43
+            ],
+            [
+              116,
+              41
+            ],
+            [
+              116,
+              39
+            ],
+            [
+              116,
+              37
+            ],
+            [
+              116,
+              35
+            ],
+            [
+              117,
+              33
+            ],
+            [
+              118,
+              31
+            ],
+            [
+              120,
+              29
+            ],
+            [
+              120,
+              29
+            ]
+          ],
+          "bounds": [
+            20,
+            147,
+            0,
+            159
+          ],
+          "historical_reference": "docs/amiga_debut_curve_interpreter.md",
+          "axis_order": "high nibble X, low nibble Y",
+          "scale": 1,
+          "parameter_ticks_per_byte": 1,
           "integrated_end": [
             120,
             29
-          ],
-          "first_12_deltas": [
-            [
-              0,
-              2
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              0,
-              2
-            ],
-            [
-              0,
-              2
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              0,
-              2
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              0,
-              2
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              0,
-              2
-            ],
-            [
-              1,
-              2
-            ],
-            [
-              0,
-              2
-            ]
-          ]
-        },
-        "signed_4bit": {
-          "unconfirmed": true,
-          "assumed_axis_order": "high nibble X, low nibble Y",
-          "assumed_scale": 1,
-          "assumed_ticks_per_byte": 1,
-          "integrated_end": [
-            -58,
-            -239
           ],
           "first_12_deltas": [
             [
@@ -166,7 +196,7 @@
       "enemy_count": 11,
       "first_enemy": 11,
       "last_enemy": 21,
-      "slot_assignment_status": "contiguous order hypothesis, not interpreter-confirmed",
+      "slot_assignment_status": "contiguous order from historical interpreter analysis",
       "group_record_relative": 174,
       "curve_relative": 182,
       "curve_file_offset": 990,
@@ -190,12 +220,102 @@
         "a9": 2,
         "aa": 4
       },
-      "hypotheses": {
+      "reference_model": {
         "sign_magnitude": {
-          "unconfirmed": true,
-          "assumed_axis_order": "high nibble X, low nibble Y",
-          "assumed_scale": 1,
-          "assumed_ticks_per_byte": 1,
+          "first_10_points": [
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              2
+            ],
+            [
+              219,
+              4
+            ],
+            [
+              219,
+              6
+            ]
+          ],
+          "last_10_points": [
+            [
+              124,
+              45
+            ],
+            [
+              124,
+              43
+            ],
+            [
+              124,
+              41
+            ],
+            [
+              124,
+              39
+            ],
+            [
+              124,
+              37
+            ],
+            [
+              124,
+              35
+            ],
+            [
+              123,
+              33
+            ],
+            [
+              122,
+              31
+            ],
+            [
+              120,
+              29
+            ],
+            [
+              118,
+              29
+            ]
+          ],
+          "bounds": [
+            93,
+            220,
+            0,
+            159
+          ],
+          "historical_reference": "docs/amiga_debut_curve_interpreter.md",
+          "axis_order": "high nibble X, low nibble Y",
+          "scale": 1,
+          "parameter_ticks_per_byte": 1,
           "integrated_end": [
             118,
             29
@@ -250,66 +370,6 @@
               2
             ]
           ]
-        },
-        "signed_4bit": {
-          "unconfirmed": true,
-          "assumed_axis_order": "high nibble X, low nibble Y",
-          "assumed_scale": 1,
-          "assumed_ticks_per_byte": 1,
-          "integrated_end": [
-            -352,
-            -239
-          ],
-          "first_12_deltas": [
-            [
-              0,
-              0
-            ],
-            [
-              0,
-              0
-            ],
-            [
-              0,
-              0
-            ],
-            [
-              0,
-              0
-            ],
-            [
-              0,
-              0
-            ],
-            [
-              0,
-              0
-            ],
-            [
-              0,
-              0
-            ],
-            [
-              0,
-              2
-            ],
-            [
-              -7,
-              2
-            ],
-            [
-              0,
-              2
-            ],
-            [
-              0,
-              2
-            ],
-            [
-              -7,
-              2
-            ]
-          ]
         }
       }
     }
@@ -318,7 +378,7 @@
     {
       "enemy": 0,
       "entry_file_offset": 1155,
-      "group_contiguous_hypothesis": 0,
+      "group": 0,
       "formation": [
         98,
         43
@@ -331,7 +391,7 @@
     {
       "enemy": 1,
       "entry_file_offset": 1161,
-      "group_contiguous_hypothesis": 0,
+      "group": 0,
       "formation": [
         80,
         28
@@ -344,7 +404,7 @@
     {
       "enemy": 2,
       "entry_file_offset": 1167,
-      "group_contiguous_hypothesis": 0,
+      "group": 0,
       "formation": [
         61,
         25
@@ -357,7 +417,7 @@
     {
       "enemy": 3,
       "entry_file_offset": 1173,
-      "group_contiguous_hypothesis": 0,
+      "group": 0,
       "formation": [
         42,
         34
@@ -370,7 +430,7 @@
     {
       "enemy": 4,
       "entry_file_offset": 1179,
-      "group_contiguous_hypothesis": 0,
+      "group": 0,
       "formation": [
         30,
         53
@@ -383,7 +443,7 @@
     {
       "enemy": 5,
       "entry_file_offset": 1185,
-      "group_contiguous_hypothesis": 0,
+      "group": 0,
       "formation": [
         30,
         72
@@ -396,7 +456,7 @@
     {
       "enemy": 6,
       "entry_file_offset": 1191,
-      "group_contiguous_hypothesis": 0,
+      "group": 0,
       "formation": [
         43,
         91
@@ -409,7 +469,7 @@
     {
       "enemy": 7,
       "entry_file_offset": 1197,
-      "group_contiguous_hypothesis": 0,
+      "group": 0,
       "formation": [
         62,
         99
@@ -422,7 +482,7 @@
     {
       "enemy": 8,
       "entry_file_offset": 1203,
-      "group_contiguous_hypothesis": 0,
+      "group": 0,
       "formation": [
         81,
         96
@@ -435,7 +495,7 @@
     {
       "enemy": 9,
       "entry_file_offset": 1209,
-      "group_contiguous_hypothesis": 0,
+      "group": 0,
       "formation": [
         98,
         80
@@ -448,7 +508,7 @@
     {
       "enemy": 10,
       "entry_file_offset": 1215,
-      "group_contiguous_hypothesis": 0,
+      "group": 0,
       "formation": [
         103,
         62
@@ -461,7 +521,7 @@
     {
       "enemy": 11,
       "entry_file_offset": 1221,
-      "group_contiguous_hypothesis": 1,
+      "group": 1,
       "formation": [
         127,
         43
@@ -474,7 +534,7 @@
     {
       "enemy": 12,
       "entry_file_offset": 1227,
-      "group_contiguous_hypothesis": 1,
+      "group": 1,
       "formation": [
         145,
         28
@@ -487,7 +547,7 @@
     {
       "enemy": 13,
       "entry_file_offset": 1233,
-      "group_contiguous_hypothesis": 1,
+      "group": 1,
       "formation": [
         164,
         25
@@ -500,7 +560,7 @@
     {
       "enemy": 14,
       "entry_file_offset": 1239,
-      "group_contiguous_hypothesis": 1,
+      "group": 1,
       "formation": [
         183,
         34
@@ -513,7 +573,7 @@
     {
       "enemy": 15,
       "entry_file_offset": 1245,
-      "group_contiguous_hypothesis": 1,
+      "group": 1,
       "formation": [
         195,
         53
@@ -526,7 +586,7 @@
     {
       "enemy": 16,
       "entry_file_offset": 1251,
-      "group_contiguous_hypothesis": 1,
+      "group": 1,
       "formation": [
         195,
         72
@@ -539,7 +599,7 @@
     {
       "enemy": 17,
       "entry_file_offset": 1257,
-      "group_contiguous_hypothesis": 1,
+      "group": 1,
       "formation": [
         182,
         91
@@ -552,7 +612,7 @@
     {
       "enemy": 18,
       "entry_file_offset": 1263,
-      "group_contiguous_hypothesis": 1,
+      "group": 1,
       "formation": [
         163,
         99
@@ -565,7 +625,7 @@
     {
       "enemy": 19,
       "entry_file_offset": 1269,
-      "group_contiguous_hypothesis": 1,
+      "group": 1,
       "formation": [
         144,
         96
@@ -578,7 +638,7 @@
     {
       "enemy": 20,
       "entry_file_offset": 1275,
-      "group_contiguous_hypothesis": 1,
+      "group": 1,
       "formation": [
         127,
         80
@@ -591,7 +651,7 @@
     {
       "enemy": 21,
       "entry_file_offset": 1281,
-      "group_contiguous_hypothesis": 1,
+      "group": 1,
       "formation": [
         122,
         62
@@ -602,15 +662,23 @@
       "attack_index": 1
     }
   ],
-  "missing": [
-    "original nibble interpreter and axis/scaling",
-    "time base and group/inter-enemy launch scheduling",
-    "curve-end transition to per-enemy formation targets",
-    "original coordinate anchor"
+  "parameters": {
+    "point_ticks": 1,
+    "start_point_tick": 1,
+    "group_delay": 0,
+    "return_step": 1
+  },
+  "open_details": [
+    "original coordinate anchor",
+    "exact original point/tick and start-point accounting",
+    "relative group timing",
+    "Debut-specific State-2 transition verification",
+    "end-marker interpretation versus record-length termination"
   ],
   "notes": [
-    "Zero bytes occur inside curves: cannot invent 00 terminator.",
-    "Hypothesis sums do not establish original movement or target transition.",
-    "No ADF/dump/original JSON/interpreter present in stable branch archives or current main tree."
+    "All curve bytes including 00 are consumed, bounded by record length.",
+    "Original Amiga Debut offsets 0/158 are not VYLV offsets.",
+    "No independent original binary verification: reconstruction supplied by user from stage4b-entry-analysis.",
+    "Return uses historical State-2 axis stepping; no teleport or substitute curve."
   ]
 }

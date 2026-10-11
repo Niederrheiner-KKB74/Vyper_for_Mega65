@@ -64,9 +64,9 @@ hud_init:
     sta VIC_CHARPTR_BK
     lda #$40
     sta VIC_CHARPTR_HI
-    lda #128
+    lda #RRB_STRIDE
     sta VIC_LINESTEP_LO
-    lda #64
+    lda #(RRB_STRIDE/2)
     sta VIC_CHRCOUNT
     jsr hud_copy_font
     // HUD uses unused indices $0A-$0F in the existing player bank 2.
@@ -259,7 +259,7 @@ hud_static_suffix:
     lda #0
     jsr life_colour
     iny
-    cpy #86
+    cpy #150
     bne hud_static_suffix
     ldx draw_row
     inx
@@ -698,11 +698,13 @@ background_store:
 
 save_all_colour:
     jsr save_basic_color_ram
+    jsr entry.e_save_colour
 save_extended_colour:
     lda #>colour_backup_dma
     ldx #<colour_backup_dma
     jmp transfer
 restore_extended_colour:
+    jsr entry.e_restore_colour
     lda #>colour_restore_dma
     ldx #<colour_restore_dma
 transfer:
@@ -731,11 +733,11 @@ clear_colour_dma:
     rts
 clear_dma:
     .byte $80,0,$81,$ff,$0a,0,0
-    .word 36
+    .word RRB_BYTES
     .byte <zero_colours,>zero_colours,0
 clear_destination: .byte 0,0,8
     .word 0
-zero_colours: .fill 36,0
+zero_colours: .fill RRB_BYTES,0
 colour_backup_dma:
     .byte $80,$ff,$81,0,$0a,0,0
     .word $480

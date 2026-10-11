@@ -99,6 +99,7 @@ c_reset_paths:
     lda #6
     sta anim_speed
     jsr c_font
+    jsr entry.e_init
     jmp c_formula
 c_move:
     lda c_ps
@@ -428,8 +429,7 @@ c_coll_enemy_scan:
     beq c_coll_next_enemy
     cmp #c_EXP
     beq c_coll_next_enemy
-    jsr c_enemy_xy
-    jsr c_ship_box
+    jsr entry.e_collision_box
     jsr c_overlap
     bcc c_coll_next_enemy
     ldx c_slot
@@ -491,8 +491,7 @@ c_coll_ram:
     cmp #c_ATTACK
     bne c_coll_ram_next
 c_coll_ram_check:
-    jsr c_enemy_xy
-    jsr c_ship_box
+    jsr entry.e_collision_box
     jsr c_overlap
     bcc c_coll_ram_next
     ldx c_index
@@ -722,42 +721,9 @@ c_collisions_end:
 
 *=$85b0 "Stage 3b-5c motion and frame coordinator"
 c_objects:
-    lda c_ps
-    cmp #c_OVER
-    beq c_objects_done
-    lda c_es+22
-    beq c_paths
-    cmp #c_EXP
-    beq c_paths
-    inc V014_ORBIT+12
-    ldx V014_ORBIT+12
-    lda v014_orbit_x,x
-    sta V014_ORBIT+2
-    lda v014_orbit_y,x
-    sta V014_ORBIT+4
-c_paths:
-    ldx #0
-c_path_loop:
-    lda c_es,x
-    beq c_path_next
-    cmp #c_EXP
-    beq c_path_next
-    lda s2i_phase,x
-    clc
-    adc s2i_speed,x
-    sta s2i_phase,x
-    tay
-    lda v014_orbit_x,y
-    sta s2i_x,x
-    lda v014_orbit_y,y
-    sta s2i_y,x
-c_path_next:
-    inx
-    cpx #22
-    bne c_path_loop
-c_objects_done:
-    rts
+    jmp entry.e_objects
 c_tick:
+    jsr entry.e_error_check
     lda c_ps
     cmp #c_OVER
     beq c_tick_done
@@ -766,22 +732,7 @@ c_tick:
     cmp #c_OVER
     beq c_tick_over
     jsr c_formula
-    jsr shots.p_test_attack
-    ldx #18
-    lda c_es,x
-    beq c_test_dead
-    cmp #c_EXP
-    beq c_test_dead
-    lda #c_FORMATION
-    ldy shots.p_attacking
-    beq c_test_state
-    lda c_mode
-c_test_state:
-    sta c_es,x
-    jmp c_tick_update
-c_test_dead:
-    lda #0
-    sta shots.p_attacking
+    jsr entry.e_attack_test
 c_tick_update:
     jsr c_wait
     jsr shots.p_update
@@ -827,67 +778,7 @@ c_tables_end:
 
 *=$9d70 "Stage 3b-5c conditional RRB renderer and game-over overlay"
 c_render:
-    lda #0
-    sta v014_overflow_count
-    ldx #0
-c_render_clear:
-    lda #0
-    sta v014_row_count,x
-    jsr s2ia_clear_row
-    inx
-    cpx #25
-    bne c_render_clear
-    lda c_ps
-    cmp #c_WAIT
-    beq c_render_orbit
-    cmp #c_OVER
-    beq c_render_orbit
-    cmp #c_BLINK
-    bne c_render_player
-    lda c_visible
-    beq c_render_orbit
-c_render_player:
-    lda V014_PLAYER+2
-    sta v014_x
-    lda V014_PLAYER+4
-    sta v014_y
-    lda c_ps
-    cmp #c_PLAYER_EXP
-    bne c_render_ship
-    lda c_px
-    sta v014_x
-    lda c_py
-    sta v014_y
-    ldx c_pf
-    jsr c_explosion_glyph
-    jmp c_render_player_submit
-c_render_ship:
-    lda #<$321
-    ldy #>$321
-    jsr c_glyph
-c_render_player_submit:
-    jsr v014_submit_pixie
-c_render_orbit:
-    ldx #22
-    jsr c_render_enemy
-    lda #0
-    sta c_index
-c_render_paths:
-    ldx c_index
-    jsr c_render_enemy
-    inc c_index
-    lda c_index
-    cmp #22
-    bne c_render_paths
-    ldx #0
-c_render_finish:
-    stx v014_row
-    jsr v014_write_terminator
-    ldx v014_row
-    inx
-    cpx #25
-    bne c_render_finish
-    rts
+    jmp entry.e_render
 c_render_enemy:
     lda c_es,x
     beq c_render_enemy_done
@@ -1010,18 +901,22 @@ c_message_screen:
     sta $1a60+3
     lda #$f8
     sta $1a60+2
-    // Compute physical colour address $FF80000 + 128*row + 84.
-    lda c_ui_row
-    and #1
-    lsr
+    // Physical colour address $FF80000 + RRB_STRIDE*row + 84.
     lda #84
-    bcc c_message_colour_low
-    ora #$80
-c_message_colour_low:
     sta $1a60
-    lda c_ui_row
-    lsr
+    lda #0
     sta $1a60+1
+    ldx c_ui_row
+c_message_colour_row:
+    clc
+    lda $1a60
+    adc #RRB_STRIDE
+    sta $1a60
+    bcc !next+
+    inc $1a60+1
+!next:
+    dex
+    bne c_message_colour_row
     lda #$10
     sta $1a65
     jsr hud.long_colour_store

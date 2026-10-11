@@ -1,16 +1,41 @@
-"""Actual assembled Stage 4b preparation instructions and fetched RRB pixels; not XEMU."""
+"""Actual assembled Stage 4b entry instructions and fetched RRB pixels; not XEMU."""
 import unittest
+from pathlib import Path
 import test_stage3b5c as PREV
 import build_stage4b as BUILD
 ROOT=PREV.ROOT
 ART=ROOT/'releases/stage_4b'
 N=BUILD.symbols((ART/'STAGE4B.sym').read_text())
+class EntryMemory(PREV.OLD.HUD.Memory):
+    def __setitem__(self,a,v):
+        pointer=self.data[0xd701]*256+v if a==0xd705 else -1
+        names=['font_dma','colour_backup_dma','colour_restore_dma','clear_dma','e_save_dma','e_restore_dma','e_copy_dma']
+        if pointer in [N[k] for k in names]:
+            self.data[a]=v
+            p=pointer;src_mb=dst_mb=0
+            while self.data[p]:
+                opt=self.data[p];p+=1
+                if opt in (0x80,0x81):
+                    if opt==0x80:src_mb=self.data[p]
+                    else:dst_mb=self.data[p]
+                    p+=1
+                else:assert opt==0x0a
+            p+=1;d=self.data[p:p+11]
+            assert d[0]==0 and d[9:11]==bytes(2)
+            n=int.from_bytes(d[1:3],'little')
+            src=int.from_bytes(d[3:6],'little')+(src_mb<<20)
+            dst=int.from_bytes(d[6:9],'little')+(dst_mb<<20)
+            payload=self.char_wom[src-0xff7e000:src-0xff7e000+n] if 0xff7e000<=src<0xff80000 else bytes(self[src+i] for i in range(n))
+            for i,b in enumerate(payload):self[dst+i]=b
+            self.base.transfers.append((src,dst,n));return
+        super().__setitem__(a,v)
 BaseMachine=PREV.Machine
 class Machine(BaseMachine):
     def __init__(self):
         super().__init__()
         p=(ART/'STAGE4B.PRG').read_bytes()
         self.memory.data[0x2001:0x2001+len(p)-2]=p[2:]
+        self.memory.__class__=EntryMemory
         self.cpu.pc=N['p_startup']
         self.before=bytes(self.memory.data)
 PREV.Machine=Machine
@@ -19,6 +44,17 @@ PREV.N=N
 start,call,frame,setv,get=PREV.start,PREV.call,PREV.frame,PREV.setv,PREV.get
 enemies,player,shot=PREV.enemies,PREV.player,PREV.shot
 EXP_TICKS=PREV.EXP_TICKS
+word=PREV.word
+OLD=PREV.OLD
+os=PREV.os
+_original_target=PREV.target
+def target(m,i=0,state=1,x=90,y=90):
+    _original_target(m,i,state,x,y)
+    if i<22:
+        for name,value in [('e_xlo',x),('e_xhi',0),('e_ylo',y),('e_yhi',0),('e_phase',3)]:setv(m,name,value,i)
+PREV.target=target
+
+target=PREV.target
 
 def position(m,x,y):
     for name,value in [('r_x',x),('r_y',y)]:
@@ -35,23 +71,18 @@ def oracle(x,y,source):
 def fetched(m):
     pixels={}
     for row in range(25):
-        count=get(m,'v014_row_count',row)
-        assert count<=1,('capacity',row,count)
-        if not count:continue
-        a=0x5000+row*128+84
-        gotox=PREV.word(m,a,2)
-        glyph=PREV.word(m,a+2,2)&0x1fff
-        native_x=gotox&1023
-        assert native_x%2==0
-        x=native_x//2
-        shift=-((gotox>>13)&7) if gotox&0x1000 else 0
-        for ry in range(8):
-            for sx in range(16):
-                addr=glyph*64+(ry+shift)*8+sx//2
-                value=(m.memory.data[addr]>>(4*(sx%2)))&15
-                if value:
-                    assert 0<=x+sx<240 and 0<=row*8+ry<200,('escaped',x+sx,row*8+ry)
-                    pixels[x+sx,row*8+ry]=value
+        count=get(m,'v014_row_count',row);assert count<=24
+        for slot in range(count):
+            a=0xe000+row*192+84+slot*4
+            gotox=PREV.word(m,a,2);glyph=PREV.word(m,a+2,2)&8191
+            x=(gotox&1023)//2;shift=-((gotox>>13)&7) if gotox&0x1000 else 0
+            for ry in range(8):
+                for sx in range(16):
+                    addr=glyph*64+(ry+shift)*8+sx//2
+                    v=(m.memory.data[addr]>>(4*(sx%2)))&15
+                    if v:
+                        assert 0<=x+sx<240 and 0<=row*8+ry<200
+                        pixels[x+sx,row*8+ry]=v
     return pixels
 
 class Regression(PREV.CollisionTests):
@@ -85,16 +116,73 @@ class Regression(PREV.CollisionTests):
         self.assertEqual(get(m,'p_active',0),1)
 
     def test_full_loader_type15_animation_and_old_motion(self):
-        m=start();old=PREV.OLD.start()
+        m=start()
         self.assertEqual(get(m,'selected_type'),15);self.assertEqual(get(m,'frame_count'),6)
         for name,base in [('VYLV.DAT',0x40000),('VYGR.DAT',0x54000)]:
             p=(ROOT/'assets'/name).read_bytes();self.assertEqual(m.memory.data[base:base+len(p)],p)
+        self.assertEqual(m.memory.data[N['c_es']:N['c_es']+22],bytes([5])*22)
+        self.assertEqual(get(m,'c_es',22),0)
+        self.assertEqual(get(m,'p_test_enabled'),0)
         for tick in range(30):
-            buttons=(0xfb,0xf7,0xfe,0xfd,0xff)[tick%5]
-            frame(m,buttons=buttons);PREV.OLD.frame(old,buttons=buttons)
-            for a,b in ((0x1600,0x1660),(0x1678,0x1900),(0x9840,0x98c0),(0xc800,0xca00)):
-                self.assertEqual(m.memory.data[a:b],old.memory.data[a:b])
+            frame(m,buttons=(0xfb,0xf7,0xfe,0xfd,0xff)[tick%5])
             self.assertEqual(m.memory.data[0x1664],184)
+            self.assertEqual(get(m,'v014_overflow_count'),0)
+
+    def test_gameover_wait_restart_highscore_exit_repeated(self):
+        m=start();enemies(m);player(m)
+        m.memory.data[0x1a00:0x1a04]=(12345678).to_bytes(4,'little')
+        for repeat in range(3):
+            enemies(m);player(m)
+            m.memory.data[0x1a0a:0x1a0c]=bytes([1,0])
+            shot(m,2);frame(m)
+            self.assertEqual(get(m,'c_ps'),1)
+            for _ in range(EXP_TICKS-1):frame(m)
+            self.assertEqual(get(m,'c_ps'),1)
+            frame(m);self.assertEqual(get(m,'c_ps'),4)
+            screen=bytes(m.memory.data[0xe000:0xf2c0]);colour=bytes(m.memory.colour[:4800])
+            for row,text in [(9,[7,1,13,5,32,15,22,5,18]),(11,[18,32,45,32,18,5,19,20,1,18,20]),(13,[24,32,45,32,5,24,9,20])]:
+                off=row*192+84
+                self.assertEqual(list(screen[off+2:off+2+2*len(text):2]),text)
+                self.assertEqual(colour[off:off+2],bytes([0x10,0]))
+                self.assertEqual(colour[off+2:off+2+2*len(text)],bytes([0,2])*len(text))
+                self.assertEqual(screen[off+2+2*len(text):off+6+2*len(text)],bytes([0x80,2,0,2]))
+                self.assertEqual(colour[off+2+2*len(text):off+6+2*len(text)],bytes([0x10,0,8,0]))
+            self.assertEqual(m.memory.data[0xd015],0)
+            for key in [0x52,0x20,0x2b,0x54,0x45]:frame(m,key)
+            self.assertEqual(get(m,'c_ps'),4);self.assertEqual(bytes(m.memory.data[0xe000:0xf2c0]),screen)
+            self.assertEqual(bytes(m.memory.colour[:4800]),colour)
+            m.memory.data[0xd613]=0xfd;frame(m);frame(m,0x52)
+            self.assertEqual(get(m,'c_ps'),4)
+            m.memory.data[0xd613]=255;frame(m)
+            frame(m,0x72)
+            self.assertEqual(get(m,'c_ps'),0);self.assertEqual(word(m,0x1a00),12345678)
+            self.assertEqual(word(m,0x1a04),0);self.assertEqual(word(m,0x1a08,2),1)
+            self.assertEqual(word(m,0x1a0a,2),3)
+            self.assertEqual(get(m,'selected_type'),15);self.assertEqual(get(m,'frame_count'),6)
+        frame(m,0x78);self.assertEqual(m.cpu.pc,0x200)
+        self.assertEqual(m.memory.data[0xd05a],m.before[0xd05a])
+        self.assertEqual(m.memory.data[0xd015],0)
+        self.assertEqual(m.memory.data[0x1000:0x1600],m.before[0x1000:0x1600])
+        self.assertEqual(m.memory.colour[:4800],m.before[0xd800:0xe000]+bytes([0xa5])*2752)
+
+    def test_gameover_x_and_second_run_restore_original_registers(self):
+        m=start();setv(m,'c_ps',4);setv(m,'anim_paused',1)
+        frame(m,0xd8);self.assertEqual(m.cpu.pc,0x200)
+        for a in list(range(0xd000,0xd011))+list(range(0xd027,0xd02d))+[0xd04d,0xd04f,0xd054,0xd05a,0xd06c,0xd06d,0xd06e,0xd076,0xd077,0xd078]:
+            self.assertEqual(m.memory.data[a],m.before[a],hex(a))
+        rom=os.environ.get('MEGA65_ROM')
+        if rom:
+            data=Path(rom).read_bytes()
+            self.assertEqual(OLD.HUD.EXIT.hashlib.sha256(data).hexdigest(),OLD.HUD.EXIT.ROM_SHA)
+            for a,v in {0x111f:0,0x1120:0,0x1121:0x20,0x1122:1,0x1123:0}.items():m.memory.data[a]=v
+            OLD.HUD.EXIT.blink(m,data)
+        m.cpu.pc=N['p_startup'];m.cpu.sp=0xfd;m.cpu.stPushWord(0x1ff);m.execute()
+        for _ in range(300000):
+            if m.cpu.pc==N['main_loop']:break
+            m.cpu.step()
+        else:self.fail('second RUN')
+        self.assertEqual(get(m,'c_ps'),0);self.assertEqual(word(m,0x1a0a,2),3)
+        frame(m,0x58);self.assertEqual(m.cpu.pc,0x200)
 
 class OffscreenTests(unittest.TestCase):
     def test_signed_rectangle_all_edges_and_extremes(self):
@@ -120,8 +208,8 @@ class OffscreenTests(unittest.TestCase):
         for n in range(1,16):
             locations += [(-n,92),(240-n,92),(112,0-n),(112,200-n),(-n,0-n),(240-n,200-n),(-n,200-n),(240-n,0-n)]
         protected=[(0x1000,0x1600),(0x9000,0x9840),(0x98c0,0xb800),(0xbf07,0xca40),(0xcac0,0xcb00)]
-        screen_before=bytes(m.memory.data[0x5000:0x5c80])
-        colour_before=bytes(m.memory.colour[:3200])
+        screen_before=bytes(m.memory.data[0xe000:0xf2c0])
+        colour_before=bytes(m.memory.colour[:4800])
         sentinel={a:bytes(m.memory.data[a:b]) for a,b in protected}
         for index,source in enumerate(types[14]['frames']):
             m.memory.data[0x9840:0x98c0]=source
@@ -132,13 +220,13 @@ class OffscreenTests(unittest.TestCase):
                 self.assertEqual(m.memory.data[0x9840:0x98c0],source)
                 for a,b in protected:self.assertEqual(bytes(m.memory.data[a:b]),sentinel[a],hex(a))
                 for row in range(25):
-                    off=row*128
+                    off=row*192
                     end=84
-                    self.assertEqual(m.memory.data[0x5000+off:0x5000+off+end],screen_before[off:off+end])
+                    self.assertEqual(m.memory.data[0xe000+off:0xe000+off+end],screen_before[off:off+end])
                     self.assertEqual(m.memory.colour[off:off+end],colour_before[off:off+end])
                 if get(m,'r_decision')==1:
                     rows=[r for r in range(25) if get(m,'v014_row_count',r)]
-                    self.assertEqual(PREV.word(m,0x5000+rows[0]*128+86,2)&8191,0x261)
+                    self.assertEqual(PREV.word(m,0xe000+rows[0]*192+86,2)&8191,0x261)
     def test_normal_renderer_uses_new_top_and_bottom_rows(self):
         m=start();PREV.enemies(m);setv(m,'c_ps',2)
         source=bytes(m.memory.data[0x9840:0x98c0])
@@ -197,13 +285,14 @@ class OffscreenTests(unittest.TestCase):
         self.assertEqual((signed(m,'r_x'),signed(m,'r_y')),xy)
         frame(m,0x4e);self.assertEqual(get(m,'r_case'),1)
         frame(m,0x70);self.assertEqual(get(m,'r_paused'),0)
+        before_tick=get(m,'e_ticklo')
         frame(m,0x66);self.assertEqual(get(m,'r_enabled'),0)
-        self.assertNotEqual(m.memory.data[0x1600:0x1900],objects)
+        self.assertNotEqual(get(m,'e_ticklo'),before_tick)
         frame(m,0xc6);self.assertEqual(get(m,'r_enabled'),1)
         frame(m,0xd8);self.assertEqual(m.cpu.pc,0x200)
         for a in [0xd054,0xd05a,0xd06c,0xd06d,0xd06e,0xd076,0xd077,0xd078]:self.assertEqual(m.memory.data[a],m.before[a],hex(a))
         self.assertEqual(m.memory.data[0x1000:0x1600],m.before[0x1000:0x1600])
-        self.assertEqual(m.memory.colour[:3200],m.before[0xd800:0xe000]+bytes([0xa5])*1152)
+        self.assertEqual(m.memory.colour[:4800],m.before[0xd800:0xe000]+bytes([0xa5])*2752)
         m.cpu.pc=N['p_startup'];m.cpu.sp=0xfd;m.cpu.stPushWord(0x1ff);m.execute()
         for _ in range(300000):
             if m.cpu.pc==N['main_loop']:break
@@ -265,4 +354,142 @@ class PlayerTests(unittest.TestCase):
         frame(m,0x52)
         self.assertEqual((m.memory.data[0x1662],m.memory.data[0x1664]),(112,184))
         self.assertEqual(get(m,'c_ps'),0)
+class EntryTests(unittest.TestCase):
+    def test_decoder_all_bytes_and_byte_exact_curves(self):
+        import analyze_stage3b2_data as data
+        parsed=data.parse_level_record(data.level_records((ROOT/'assets/VYLV.DAT').read_bytes())[0][1])
+        m=start()
+        for b in range(16):
+            m.cpu.a=b;call(m,'e_decode')
+            self.assertEqual(m.cpu.a,((- (b&7) if b&8 else b)&255))
+        for group,g in enumerate(parsed['groups']):
+            ptr=get(m,'e_gptrlo',group)+256*get(m,'e_gptrhi',group)
+            self.assertEqual(m.memory.data[ptr:ptr+get(m,'e_glen',group)],bytes.fromhex(g['curve_hex']))
+            self.assertEqual((get(m,'e_gxlo',group),get(m,'e_gylo',group)),(g['start_x'],g['start_y']))
+    def test_full_two_parallel_groups_exact_steps_targets_and_rrb_capacity(self):
+        import analyze_stage3b2_data as data
+        p=data.parse_level_record(data.level_records((ROOT/'assets/VYLV.DAT').read_bytes())[0][1])
+        m=start();model=[{'state':5,'x':0,'y':0,'cursor':0,'phase':0,'delay':16*(i%11)} for i in range(22)]
+        prefix=[bytes(m.memory.data[0xe000+r*192:0xe000+r*192+84]) for r in range(25)]
+        maxrows=0
+        for tick in range(500):
+            call(m,'e_objects')
+            for i,a in enumerate(model):
+                g=p['groups'][i//11];curve=bytes.fromhex(g['curve_hex']);target=p['enemies'][i]
+                if a['state']==5:
+                    if a['delay']:a['delay']-=1
+                    else:a.update(state=2,x=g['start_x'],y=g['start_y'],phase=1)
+                elif a['phase']==1:
+                    b=curve[a['cursor']];a['x']+=-((b>>4)&7) if b&128 else (b>>4)&7;a['y']+=-(b&7) if b&8 else b&7
+                    a['cursor']+=1
+                    if a['cursor']==len(curve):a['phase']=2
+                elif a['phase']==2:
+                    tx,ty=target['formation_x'],target['formation_y']
+                    a['x']+=(tx>a['x'])-(tx<a['x']);a['y']+=(ty>a['y'])-(ty<a['y'])
+                    if (a['x'],a['y'])==(tx,ty):a.update(state=1,phase=3)
+                self.assertEqual((get(m,'c_es',i),get(m,'e_phase',i),get(m,'e_cursor',i)),(a['state'],a['phase'],a['cursor']),(tick,i))
+                x=get(m,'e_xlo',i)+256*get(m,'e_xhi',i);y=get(m,'e_ylo',i)+256*get(m,'e_yhi',i)
+                x=x-65536 if x>=32768 else x;y=y-65536 if y>=32768 else y
+                self.assertEqual((x,y),(a['x'],a['y']),(tick,i))
+            if tick%8==0 or tick in (235,236,237):
+                call(m,'e_render')
+                self.assertEqual(get(m,'v014_overflow_count'),0)
+                rows=list(m.memory.data[N['v014_row_count']:N['v014_row_count']+25]);maxrows=max(maxrows,max(rows))
+                for r in range(25):
+                    self.assertEqual(m.memory.data[0xe000+r*192:0xe000+r*192+84],prefix[r])
+                    at=0xe000+r*192+84+4*rows[r]
+                    self.assertEqual(m.memory.data[at:at+4],bytes([0x80,2,0,2]))
+                    self.assertEqual(m.memory.data[0xe000+r*192+184:0xe000+(r+1)*192],bytes([0x80,2])*4)
+        self.assertGreater(maxrows,8);self.assertLessEqual(maxrows,24)
+        self.assertEqual([a['state'] for a in model],[1]*22)
+        self.assertEqual(get(m,'c_es',22),0)
+    def test_entry_hit_dead_gap_wait_and_restart_no_recreation(self):
+        m=start();call(m,'e_objects')
+        x,y=get(m,'e_xlo'),get(m,'e_ylo')
+        PREV.shot(m,0,x+8,y+4);call(m,'c_collisions')
+        self.assertEqual(get(m,'c_es'),4);self.assertEqual(word(m,0x1a04),175)
+        for _ in range(EXP_TICKS):call(m,'c_timers');call(m,'e_objects')
+        self.assertEqual(get(m,'c_es'),0)
+        for _ in range(450):call(m,'e_objects')
+        self.assertEqual(get(m,'c_es'),0)
+        self.assertEqual([get(m,'c_es',i) for i in range(1,22)],[1]*21)
+        setv(m,'c_ps',2);call(m,'c_wait');self.assertEqual(get(m,'c_ps'),3)
+        setv(m,'c_ps',4);setv(m,'c_armed',1);m.cpu.pc=N['main_loop'];frame(m,0x52)
+        self.assertEqual(get(m,'c_es'),2);self.assertEqual(get(m,'c_es',1),5)
+        self.assertEqual(word(m,0x1a04),0)
+        self.assertEqual((m.memory.data[0x1662],m.memory.data[0x1664]),(112,184))
+    def test_independent_crops_explosions_negative_boxes_and_system_memory(self):
+        m=start();PREV.enemies(m);setv(m,'c_ps',2)
+        source=bytes(m.memory.data[0x9840:0x98c0]);expected={}
+        locations=[(-9,-3),(232,195),(40,190)]
+        for i,(x,y) in enumerate(locations):
+            PREV.target(m,i,2,x=x&255,y=y&255)
+            setv(m,'e_xhi',255 if x<0 else 0,i);setv(m,'e_yhi',255 if y<0 else 0,i)
+            expected.update(oracle(x,y,source))
+        kernel=bytes(m.memory.data[0x1000:0x1600]);backup=bytes(m.memory.data[0x5000:0x5640])
+        call(m,'e_render');self.assertEqual(fetched(m),expected)
+        for i in range(3):
+            self.assertEqual(m.memory.data[0x10000+i*256:0x10040+i*256],bytes(64))
+            self.assertEqual(m.memory.data[0x100c0+i*256:0x10100+i*256],bytes(64))
+        self.assertNotEqual(m.memory.data[0x10040:0x100c0],m.memory.data[0x10140:0x101c0])
+        self.assertEqual(m.memory.data[0x9840:0x98c0],source)
+        self.assertEqual(m.memory.data[0x5000:0x5640],backup);self.assertEqual(m.memory.data[0x1000:0x1600],kernel)
+        m.cpu.x=0;call(m,'e_collision_box')
+        self.assertEqual((get(m,'c_bx'),get(m,'c_by'),get(m,'c_br'),get(m,'c_bb')),(0,0,5,11))
+        setv(m,'c_es',4);setv(m,'c_ef',0);call(m,'e_render')
+        exp=(ROOT/'assets/explosions/explosion_00_ncm.bin').read_bytes()
+        expected=oracle(-9,-3,exp)
+        for x,y in locations[1:]:expected.update(oracle(x,y,source))
+        self.assertEqual(fetched(m),expected)
+        self.assertEqual(m.memory.data[0x9840:0x98c0],source)
+    def test_colour_all_4800_bytes_exit_and_second_run(self):
+        m=Machine();original=bytes((i*53+19)&255 for i in range(4800));m.memory.colour[:4800]=original
+        m.execute()
+        for _ in range(300000):
+            if m.cpu.pc==N['main_loop']:break
+            m.cpu.step()
+        frame(m,0x58);self.assertEqual(m.cpu.pc,0x200)
+        self.assertEqual(m.memory.colour[:4800],original)
+        m.cpu.pc=N['p_startup'];m.cpu.sp=0xfd;m.cpu.stPushWord(0x1ff);m.execute()
+        for _ in range(300000):
+            if m.cpu.pc==N['main_loop']:break
+            m.cpu.step()
+        else:self.fail('second RUN')
+        self.assertEqual(get(m,'c_es'),5)
+        self.assertEqual((m.memory.data[0x1662],m.memory.data[0x1664]),(112,184))
+    def test_default_no_test_enemy_fire_and_diagnostic_toggle(self):
+        m=start()
+        for _ in range(20):frame(m)
+        self.assertEqual(get(m,'p_test_enabled'),0)
+        self.assertEqual([get(m,'p_active',i) for i in range(2,6)],[0]*4)
+        frame(m,0x44);self.assertEqual(get(m,'e_diag'),1)
+        frame(m,0x44);self.assertEqual(get(m,'e_diag'),0)
+    def test_isolated_legacy_demo_and_continuous_return(self):
+        m=start()
+        for _ in range(500):call(m,'e_objects')
+        self.assertEqual(get(m,'e_phase',18),3)
+        m.cpu.pc=N['main_loop']
+        frame(m,0x54);frame(m)
+        self.assertEqual(get(m,'p_test_enabled'),1)
+        self.assertEqual(get(m,'e_demo'),1)
+        self.assertEqual(get(m,'e_phase',18),3)
+        frame(m,0x45)
+        self.assertIn(get(m,'c_es',18),(2,3))
+        frame(m,0x54);frame(m)
+        self.assertEqual(get(m,'p_test_enabled'),0)
+        self.assertEqual(get(m,'e_phase',18),2)
+        for _ in range(500):call(m,'e_objects')
+        self.assertEqual(get(m,'c_es',18),1)
+        self.assertEqual((get(m,'e_xlo',18),get(m,'e_ylo',18)),(get(m,'e_tx',18),get(m,'e_ty',18)))
+        setv(m,'c_es',0,18)
+        m.cpu.pc=N['main_loop']
+        frame(m,0x54);frame(m,0x45)
+        self.assertEqual(get(m,'c_es',18),0)
+
+    def test_invalid_group_count_safe_exit(self):
+        m=start();m.memory.data[0x7608]=23
+        call(m,'e_init');self.assertEqual(m.memory.data[N['error']],7)
+        m.cpu.pc=N['main_loop'];frame(m)
+        self.assertEqual(m.cpu.pc,0x200)
+
 if __name__=='__main__':unittest.main()

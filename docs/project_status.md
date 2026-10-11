@@ -222,14 +222,11 @@ Bestätigter Programmstand: `7c3a466`; stabile Referenz `stage4a-stable`.
 Die Stable-Markierung ändert ausschließlich Dokumentation, keine Quellen oder
 Release-Artefakte.
 
-## Stage 4b – Player-Vorbereitung, originaler Einflug noch blockiert
+## Stage 4b – Originaler Level-1-Einflug, Teststand
 
-Neuer Branch `stage4b` auf `stage4a-stable`. Player-Levelstart/R jetzt X=112,
-Y=184, Joystick Port 2 ausschließlich X=0–224. Live-Schussursprung und Hitboxen,
-Todesposition/Respawn passen ohne Änderungen am Kampfcode. Alle übrigen
-Stage-4a-Funktionen bleiben erhalten. Quellen/Build/PRG/D81 in separaten Pfaden.
-Originale Level-1-Recordstruktur und 22 Formationsplätze reproduzierbar geprüft;
-Kurvendekodierung, Zeitbasis/Scheduling und Formationstransition ohne vorhandenen
-Originalinterpreter nicht verbindlich. Rückfrage gestellt, kein erfundener
-Originaleinflug implementiert. **Vorbereitung, nicht vollständige Issue-12-Lösung,
-nicht Stable.** [Befund und Testanleitung](stage4b_level1_entry.md).
+Auf `stage4a-stable`: 22 Gegner in zwei Originalgruppen, signed Kurvencontroller,
+kontinuierlicher Formationsübergang, Player (112,184) mit X-only-Steuerung.
+Historische Interpreteranalyse übernommen und mit VYLV abgeglichen; genaue
+Original-Zeit-/Debut-Übergangslogik bleibt ausdrücklich unbestätigt. RRB-Kapazität
+auf 24 pro Zeile erweitert, Geometrie/HUD unverändert.
+Nicht Stable, XEMU-Abnahme offen. [Details](stage4b_level1_entry.md).

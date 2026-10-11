@@ -131,10 +131,10 @@ template:
     .byte $00,$80,$80,$80,$02,$80,$02,$80,$02,$80,$02,$80,$02,$80,$02,$80,$02,$80,$02,$00,$00
     .byte $e0,$01,$80,$80,$20,$00,$01,$00,$74,$00,$74,$00,$2e,$00,$20,$00,$31,$00,$31,$00,$35
     .byte $00,$80,$80,$80,$02,$80,$02,$80,$02,$80,$02,$80,$02,$80,$02,$80,$02,$80,$02,$00,$00
-prefix_lo: .fill 25, <(SCREEN_RAM+i*128+42)
-prefix_hi: .fill 25, >(SCREEN_RAM+i*128+42)
-colour_lo: .fill 25, <(i*128+42)
-colour_hi: .fill 25, >(i*128+42)
+prefix_lo: .fill 25, <(SCREEN_RAM+i*RRB_STRIDE+42)
+prefix_hi: .fill 25, >(SCREEN_RAM+i*RRB_STRIDE+42)
+colour_lo: .fill 25, <(i*RRB_STRIDE+42)
+colour_hi: .fill 25, >(i*RRB_STRIDE+42)
 template_lo: .fill 25, <(template+i*42)
 template_hi: .fill 25, >(template+i*42)
 attributes_lo: .fill 25, <((i<20) ? attributes+i*42 : attributes_last+(i-20)*42)

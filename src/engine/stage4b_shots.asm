@@ -85,7 +85,7 @@ p_init_state:
     sta p_state,x
     dex
     bpl p_init_state
-    lda #1
+    lda #0 // Explicit T test only; never claim random generator as original entry.
     sta p_test_enabled
     lda #p_initial_cooldown
     sta p_cooldown

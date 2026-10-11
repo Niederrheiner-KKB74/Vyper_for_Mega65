@@ -1,100 +1,45 @@
-# Stage 4b – Player-Anpassung und Level-1-Dekodierbefund
+# Stage 4b – Originaler Level-1-Einflug und Player-Position
 
-**Vorbereitung, nicht Stable und noch keine vollständige Implementierung von
-Issue #12.** Grundlage: `stage4a-stable` (`095b83e`), bestätigtes Programm `7c3a466`.
-Branch `stage4b`; Stable-Quellen, Releases und Tags unverändert.
+Teststand auf `stage4a-stable` (`095b83e`), Branch `stage4b`, PR #13.
+Keine Änderung an stabilen Quellen, Releases oder Tags. Keine Stable-Freigabe.
 
-Die ergänzte Player-Anforderung wird vollständig umgesetzt. Der ebenfalls im
-Issue verlangte Originaleinflug ist mangels verifiziertem Interpreter/Zeitbasis
-noch blockiert. Der Testbuild behält daher den bisherigen Stage-4a-Gegneraufbau
-und ausdrücklich als Test gekennzeichnete T/E-Angriffsmechanik. Diese Bewegungen
-werden nicht als originale Level-1-Einflüge ausgegeben. F/N/P bleiben der
-isolierte Stage-4a-Clippingtest. Keine erfundenen Kurven oder Formationssprünge.
+## Daten und historische Rekonstruktion
 
-## Endgültige Player-Geometrie
+Die vom Benutzer ergänzte [Amiga-Analyse](amiga_debut_curve_interpreter.md)
+wurde byteidentisch aus `stage4b-entry-analysis` übernommen. Sie beschreibt
+historische Interpreterbefunde; ein Amiga-Binary/ADF für eine unabhängige
+Nachprüfung liegt hier nicht vor. Verbindliches Grafikmapping: VYLV 14 →
+VYGR 15, sechs Originalframes. Sieben Originalexplosionsframes bleiben erhalten.
 
-Logischer Bereich: `[0,240) × [0,200)`. Objektkoordinaten sind die linke obere Ecke,
-Player-Grafik 16×16. Daraus folgen:
+Der Parser liest Gruppen und Gegner anhand ihrer Längen und prüft jeden Zugriff
+gegen die Recordgrenze. Es gibt keine fest codierte Gegnerlistenadresse.
+Level 1: Dateioffset `$0328`, 849 Bytes, zwei Gruppen mit je elf Gegnern,
+Intervall 16, zwei Angriffskurven. Gruppenheader liegen bei `$0330`/`$03D6`,
+Kurven bei `$0338` (158 Bytes)/`$03DE` (165 Bytes), Gegner bei `$0483`.
+Die originalen Amiga-Debut-Offsets 0/158 sind **keine VYLV-Dateioffsets**.
+`python3 tools/analyze_stage4b_entry.py` erzeugt den reproduzierbaren
+[Bytebefund mit allen Formationstargets und ersten/letzten Punkten](stage4b-entry-analysis.json).
 
-- Level-1-Start / R-Neustart: **X=(240−16)/2=112, Y=200−16=184**.
-  Mittelpunkt X=120, Unterkante exklusiv Y=200.
-- Joystick Port 2: ausschließlich X, weiterhin ein Pixel pro Bewegungstick;
-  **0≤X≤224**. Up/Down ignoriert, diagonale Links-/Rechtsanteile wirken horizontal.
-- Y bleibt 184 während Spiel und dreisekündiger Unverwundbarkeit. Der Player
-  bleibt vollständig sichtbar und ragt nicht in das HUD ab X=240 hinein.
-- Keine ungesicherte Aussage über eine exakte Amiga-Y-Koordinate: dies ist die
-  verbindliche geometrische Position im bestehenden MEGA65-Playfield.
+High-Nibble: X, Low-Nibble: Y; Vorzeichenbit jeweils Bit 3,
+Magnitude 0–7. `$92` bedeutet (−1,+2), `$0A` (0,−2), keine
+Zweierkomplement-Dekodierung. Alle Bytes inklusive `$00` werden verarbeitet.
+Starts aus VYLV: (20,0)/(220,0), Endpunkte: (120,29)/(118,29).
+Die Daten ergeben X=20–147 beziehungsweise 93–220 und Y=0–159.
+Es werden keine künstlichen Offscreen-Offsets ergänzt: diese Originalkurven
+beginnen bereits innerhalb der sichtbaren Fläche. Die ursprüngliche
+Amiga-Koordinatenverankerung bleibt unbestätigt.
 
-`v014_init_objects` setzt die neue Position sowohl beim Programmstart als auch
-beim vorhandenen R-Neustart. `v014_move_record` behält das einmalige CIA-Sampling,
-CRAM2K-Freischalten, horizontale Reihenfolge/Geschwindigkeit und Feuerbit bei.
-Nur die linke Grenze 32→0 und die vertikalen Updateblöcke ändern sich; die
-36 vertikalen Codebytes werden NOPs, alle folgenden Symbole bleiben identisch.
+### Dekodierte Referenzpunkte
 
-Schussursprung bleibt die bereits korrekte Live-Position: **X+8, Y=184**, also
-Mitte/Oberkante. Bestehende native Sprite-Ursprungs-/Skalierungsberechnung,
-zwei unabhängige Kanäle und Geschwindigkeit bleiben erhalten.
-Die bestehende Player-Hitbox ist `[X+2,X+14) × [186,198)`; sie liest ebenfalls
-Live-Positionen. Keine separaten alten Y-Konstanten werden verwendet.
-Playerexplosion und Respawn speichern/restaurieren die Todesposition `(X,184)`.
-Blinkzustand, 150-Tick-Unverwundbarkeit, Steuerbarkeit und Feuersperre bleiben.
+Startpunkt separat, folgende Punkte entstehen nach dem jeweiligen Delta.
 
-Der Builder vergleicht das PRG mit Stage-4a-SHA256
-`3da4cf49117ad07ac630dfad10ec30407ff62bc6e5051eac3c974bd8c5d002e2` und erlaubt nur
-die zwei initialen Koordinaten, linke X-Grenze und vertikalen NOPs. **Keine**
-Änderung an Schuss-, Kollisions-, Respawn-, Gegner-, HUD- oder Exit-Code nötig.
-PRG-Größe, sämtliche alten Symboladressen und Speicherbereiche unverändert.
+Gruppe 0: erste zehn [[20, 2], [21, 4], [21, 6], [21, 8], [22, 10], [22, 12], [23, 14], [23, 16], [24, 18], [24, 20]]; letzte zehn [[116, 45], [116, 43], [116, 41], [116, 39], [116, 37], [116, 35], [117, 33], [118, 31], [120, 29], [120, 29]].
 
-## Verifizierte Level-1-Struktur
-
-Reproduzierbar: `python3 tools/analyze_stage4b_entry.py`;
-maschinenlesbarer Befund: `docs/stage4b-entry-analysis.json`.
-Die vorhandene bounds-geprüfte Recordstruktur wird direkt an `assets/VYLV.DAT`
-geprüft, keine feste Gegnerlistenadresse im Parser. Mapping stammt ausschließlich
-aus `assets/vylv_vygr_mapping.json`, Index 14 → Typ 15 bestätigt, sechs Frames.
-Die historische Analyse mit Typ 12 wird nicht übernommen.
-
-| Feld | Verifizierter Wert |
-| --- | --- |
-| Record-Dateioffset / Länge | `$0328` / 849 Bytes (`$0351`) |
-| Header | Level 1, 2 Gruppen, 22 Gegner, Intervall-Rohwert 16, 2 Angriffskurven |
-| Gruppe 0: Header / Kurvenbytes | relativ `$0008` / `$0010`, Datei `$0330` / `$0338` |
-| Gruppe 0 | 11 Gegner, Start-Wörter `(20,0)`, 158 Kurvenbytes |
-| Gruppe 1: Header / Kurvenbytes | relativ `$00AE` / `$00B6`, Datei `$03D6` / `$03DE` |
-| Gruppe 1 | 11 Gegner, Start-Wörter `(220,0)`, 165 Kurvenbytes |
-| Gegnerliste | relativ `$015B`, Datei `$0483`, 22 × 6 Bytes |
-
-Start-Wörter werden als Original-Rohwerte dokumentiert. Der Datenbestand belegt
-noch nicht, ob dies Pixie-Oberkante, Mittelpunkt oder eine andere Original-
-Koordinatenkonvention ist. Ein ungeprüfter Offscreen-Offset wird nicht ergänzt.
-
-### Dekodierhypothesen, ausdrücklich unbestätigt
-
-Beispiel Gruppe 0: `02 12 02 02 12 02 12 02 ...`; Gruppe 1 startet mit
-mehreren `00` innerhalb der Kurve. `00` ist somit kein nachgewiesener universeller
-Endmarker. Beide plausible Nibblemodelle mit oberem Nibble X/unterem Nibble Y,
-Skalierung 1 und einem Byte pro Tick liefern unterschiedliche Endpositionen:
-
-| Hypothese | Byte `$92` | Byte `$0A` | Ende Gruppe 0 / Gruppe 1 |
-| --- | --- | --- | --- |
-| Sign-Magnitude (Bit 3 Vorzeichen) | ΔX=−1, ΔY=+2 | ΔX=0, ΔY=−2 | (120,29) / (118,29) |
-| signed 4-Bit-Zweierkomplement | ΔX=−7, ΔY=+2 | ΔX=0, ΔY=−6 | (−58,−239) / (−352,−239) |
-
-Die erste Hypothese erscheint geometrisch plausibler, **ist aber nicht bewiesen**.
-Ihre Enden sind außerdem nicht die individuellen Formationsplätze. Achstausch,
-Skalierung, Wiederholung und Tickzuordnung sind ohne Interpreter nicht verbindlich.
-Ebenso unbekannt: Startabstand pro Gegner/Gruppe, Bedeutung der Rohzahl 16,
-Kurvenende und nachgewiesener Mechanismus zur individuellen Formation.
-Die Zuordnung aufeinanderfolgender Slots 0–10 / 11–21 zu Gruppen ist eine klar
-markierte Reihenfolgehypothese, keine nachgewiesene Original-Schedulingregel.
+Gruppe 1: erste zehn [[220, 0], [220, 0], [220, 0], [220, 0], [220, 0], [220, 0], [220, 0], [220, 2], [219, 4], [219, 6]]; letzte zehn [[124, 45], [124, 43], [124, 41], [124, 39], [124, 37], [124, 35], [123, 33], [122, 31], [120, 29], [118, 29]].
 
 ### Originale Formationstabelle
 
-Alle Werte aus den sechs Byte langen Originalrecords, Gegner-ID nullbasiert.
-Grafikindex überall 14, bestätigter VYGR-Typ überall 15. „Gruppe?“ markiert die
-noch nicht interpreterbestätigte zusammenhängende Slotzuordnung.
-
-| Gegner | Gruppe? | Formation X | Formation Y | Angriffindex |
+| ID | Gruppe | X | Y | Angriffindex |
 | ---: | ---: | ---: | ---: | ---: |
 | 0 | 0 | 98 | 43 | 0 |
 | 1 | 0 | 80 | 28 | 0 |
@@ -119,66 +64,134 @@ noch nicht interpreterbestätigte zusammenhängende Slotzuordnung.
 | 20 | 1 | 127 | 80 | 1 |
 | 21 | 1 | 122 | 62 | 1 |
 
-## Offene Voraussetzung für die Einflug-Engine
+## Zustände und Zeitsteuerung
 
-Im stabilen Repository, vorhandenen ZIP-Archiven, ursprünglichen Importpaketen
-und aktuellen GitHub-main-Baum liegen kein Amiga-ADF/Dump, kein Original-
-Kurveninterpreter und kein VYLV-Erzeuger/Original-Level-JSON vor. Die vorhandenen
-Parser überspringen Kurven nur bounds-geprüft anhand ihrer Länge.
-Benötigt wird der tatsächlich belegte Interpreter beziehungsweise eine
-verbindliche Beschreibung für Nibbles/Koordinaten, Zeitbasis/Scheduling und
-Formationstransition. Diese Rückfrage ist gestellt; der Player-Teil wartet darauf
-nicht. Bis zur Klärung werden keine ENTRY-Cursor, Gruppen-Timer oder originalen
-Formationszustände behauptet. Die komplette Issue-12-Abnahme ist noch offen.
+22 unabhängige signed 16-Bit-Positionen, Cursor, Wartezeiten und Zielpositionen.
+WAIT → ENTRY/Kurve → ENTRY/Rückführung → FORMATION; EXPLOSION/DEAD unterbrechen
+Bewegung endgültig, keine Wiederbelebung durch den Einflugcontroller.
+Gruppe 0 verwendet Slots 0–10, Gruppe 1 Slots 11–21. Beide beginnen parallel;
+Gegner einer Gruppe starten alle 16 Updates. Keine zusätzlichen Testgegner.
+Normalbetrieb verwendet keine Testangriffe oder originalen Angriffskurven.
 
-## Build und Testen des Player-Vorbereitungsstands
+Zentrale Parameter in `stage4b_entry.asm`: `e_POINT_TICKS=1`,
+`e_START_POINT_TICK=1`, `e_GROUP_DELAY=0`, `e_RETURN_STEP=1`.
+Ein Update pro bisherigem Rastertick (historische 50-Hz-Referenz);
+der Startpunkt erhält einen eigenen Tick. Nach Kurvenende bewegen sich beide
+Achsen kontinuierlich um maximal ein Pixel zum individuellen Originaltarget.
+Keine Teleportation oder Ersatzkurve.
+
+**Weiter offen:** exakte ursprüngliche Punkt-/Tick-Zuordnung, Startpunkt versus
+erstes Delta, relatives Gruppentiming, spezielle Debut-State-2-Rückkehrlogik
+und mögliche Endmarker. Der ±1-Schritt ist für den historischen Attack-State 2
+beschrieben; seine identische Anwendung auf Debut ist noch nicht binär belegt.
+Die Implementierung macht diese Entscheidungen ausdrücklich parametrierbar,
+behauptet jedoch keinen neu verifizierten, zeitidentischen Amiga-Ablauf.
+
+## Player und Kampf
+
+Start/Neustart: (112,184), vollständig im Playfield `[0,240)×[0,200)`.
+Port 2 verändert ausschließlich X mit Grenzen 0/224; Y bleibt konstant,
+auch während der steuerbaren 150-Tick-Unverwundbarkeit. Schüsse starten
+bei X+8/Y=184; Player-Hitbox `[X+2,X+14)×[186,198)`.
+Respawn erhält die Todesposition; R zentriert neu und erhält den Highscore.
+ENTRY/Rückführung verwenden weiterhin den ENTRY-Punktwert und die bestehende
+Rammtrefferlogik; FORMATION verwendet den Formationspunktwert.
+Außerhalb liegende Hitboxteile werden signed geclippt; WAIT und unsichtbare
+Gegner sind keine Kollisionsziele. Teilweise sichtbare Explosionen verwenden
+Originaldaten und Transparenz, niemals gewrappte Bytekoordinaten.
+
+T aktiviert den bisherigen isolierten Schuss-/Angriffstest erst für den
+formierten Testgegner. E wechselt dessen Testzustand. T aus führt kontinuierlich
+zum Originaltarget zurück. Dieser Test ist kein originaler Angriff; echte
+Einflugzustände werden nicht überschrieben. F/N/P behalten den isolierten
+Stage-4a-Clippingtest; während F ruht der normale Einflug. D schaltet eine
+RAM-Diagnose ein (letzter bearbeiteter Slot), ohne Bildschirmausgaben.
+GAME OVER verarbeitet weiterhin nur R/X.
+
+Diagnose ohne laufende Ausgabe: pro Slot i=0..21 stehen X-low/high bei
+`$1E00+i`/`$1E16+i`, Y bei `$1E2C+i`/`$1E42+i`, Targets bei `$1E58+i`/
+`$1E6E+i`, Wartezeit `$1E84+i`, Cursor `$1E9A+i`, Gruppe `$1EB0+i`,
+Phase `$1EC6+i`, Timer `$1EDC+i`. Der Kampfzustand liegt bei `c_es+i`
+(Adresse in `STAGE4B.sym`). Gruppen-Kurvenpointer: `$1D48+g`/`$1D4A+g`,
+Länge `$1D4C+g`; Diagnoseflag `$1D5E`, letzter Slot `$1D5F`.
+Tickzähler `$1D51/$1D52`. Die Daten stehen für Stage 4c zentral bereit.
+
+## RRB-Kapazität und Speicher
+
+Das Referenzmodell erreicht zwölf Gegner in derselben RRB-Zeile. Die bisherigen
+acht Slots reichen daher nicht. GOTOX/NCM/Guard-Architektur bleibt erhalten;
+Zeilenstride 192, 96 Einträge, maximal 24 Pixies pro Zeile. Geometrie,
+X-Skalierung, HUD-Position und 4×2-Lebensfeld bleiben unverändert.
+Alle statischen Restslots erhalten unsichtbare GOTOX-Tokens, keine RAM-Reste.
+
+| Bereich | Nutzung |
+| --- | --- |
+| `$1D40–$1D60` | Gruppenparameter, Tick, Diagnose, Testflag |
+| `$1E00–$1EFF` | Signed Positionen, Targets, Cursor, Phasen, Timer |
+| `$5000–$563F` | Zusätzliche 1600-Byte-Color-RAM-Sicherung |
+| `$5640–$56BF` | DMA-Rückkopie eines Originalframes |
+| `$5700–$5C7F` | Einflugparser und Controller, mit Assembly-Grenzprüfung |
+| `$7500–$75A6` | DMA-Descriptoren |
+| `$7EE2–$7F70` | Signed Kollisionshelper |
+| `$874B–$87FF` | Isolierter Legacy-Testbewegungshelper |
+| `$E000–$F2BF` | Screen-RAM, 25×192 Bytes |
+| `$10000–$115FF` | 22 getrennte 256-Byte-Clippingpuffer mit Guards |
+| `$FF80000–$FF812BF` | 4800 Bytes Color-RAM |
+
+Vorhandene Sicherungen `$9000–$97FF` und `$6B00–$6F7F` bleiben erhalten.
+`$CA00–$CAFF` ist nur die bisherige Clipping-Zwischenstufe; Originalfonts,
+Gegner-/Explosionsframes und `$20000–$3FFFF` bleiben geschützt.
+Writes auf `$E000` gehen ins physische RAM unter dem ROM; aktive Screenpfade
+lesen dieses RAM nicht über CPU-ROM-Mapping. Xemu-Referenz:
+`targets/mega65/memory_mapper.c`, `BANK_POLICY_ROM`, getrennte Read-/Write-Adressen.
+Exit restauriert alle 4800 Color-Bytes, alte VIC-Register/Screenpointer,
+BASIC-Font/Palette/Cursor. PRG bleibt 43.777 Bytes; keine PRG-Ladesegmente im I/O.
+
+## Build und Abnahme
 
 ```sh
 python3 tools/build_stage4b.py --kickass /pfad/zu/KickAss.jar
-PYTHONPATH=tests python3 -m unittest test_stage4b -v
 python3 tools/analyze_stage4b_entry.py
+PYTHONPATH=tests python3 -m unittest test_stage4b -v
 ```
 
-Wie bisher: Java, Python und offizieller gepinnter KickAssembler 5.25;
-CPU-Tests zusätzlich py65 1.2.0. Optional `MEGA65_ROM=/pfad/zu/MEGA65.ROM` für
-die tatsächliche bereitgestellte ROM-Blinkroutine. ROM nicht im Release.
-PRG/D81/ASM/Hashes/Buildreport: `releases/stage_4b/`.
+Java, Python, gepinnter KickAssembler 5.25; Tests zusätzlich py65 1.2.0.
+Optional `MEGA65_ROM=/pfad/zu/MEGA65.ROM` für die bereitgestellte ROM-Blinkroutine.
+ROM wird nicht ausgeliefert. Artefakte und SHA256: `releases/stage_4b/`.
 D81 einlegen, `LOAD "STAGE4B",8`, `RUN`.
 
-Unter XEMU prüfen:
+XEMU-Abnahme ausstehend: beide Originalgruppen/22 Gegner, Staffelung und
+kontinuierlicher Formationsübergang; sechs Animationen, keine RRB-Überläufe,
+Spuren, HUD-/Randartefakte. Player unten mittig, X-Steuerung/Grenzen/Schüsse;
+ENTRY-Treffer/Punkte, sieben Explosionsframes, Respawn/Leben/Highscore,
+GAME OVER mit R/X. T/E und F/N/P separat prüfen. X muss BASIC vollständig
+restaurieren, erneutes LOAD/RUN funktionieren. Historische offene Details
+mit Originalreferenz vergleichen; keine Stable-Markierung vor Benutzerfreigabe.
 
-1. Player unten mittig X=112/Y=184; Up/Down ohne vertikale Bewegung.
-2. Diagonal nach links/rechts wirkt nur horizontal; beide Grenzen 0/224 halten,
-   volle Grafik sichtbar, kein HUD-Überzeichnen.
-3. Feuer bei X=0/112/224 startet in Player-Mitte/Oberkante; zwei Schüsse wie zuvor.
-4. Gegnerschuss/Rammtreffer: Explosion unten an Todesposition, Lebensverlust;
-   Respawn am gleichen X/Y, drei Sekunden steuerbar blinkend, kein Feuer/Treffer.
-5. Letztes Leben, GAME OVER, R: unten mittig neu starten, Highscore erhalten.
-6. F/N/P-Clippingtest unverändert; X sauber nach BASIC, zweiter RUN/LOAD möglich.
+## Tatsächlich ausgeführte automatische Prüfungen
 
-XEMU-Abnahme des Player-Vorbereitungsstands ausstehend. Die bisherige stabile
-Stage 4a bleibt unverändert; Stage 4b wird erst auf ausdrückliche Freigabe Stable.
+30/30 Tests im Gesamtlauf bestanden (184,732 s), zusätzlich 1/1 neuer
+T/E-Isolationstest (6,196 s): insgesamt 31 erfolgreiche Tests.
+CPU-/DMA-/RRB-Fetch-Modelle mit py65 1.2.0; ROM V920395 für die echte
+BASIC-Blinkroutine eingebunden, kein XEMU-Lauf. Kein Original-Amiga-Binary
+erneut geprüft. Die importierte Analyse stimmt byteidentisch mit dem
+GitHub-Dokument überein (Git-Blob `222e9894f3d6b29853c15899b83da591abdcf93f`).
 
-## Tatsächlich ausgeführte automatische Prüfung
+Geprüft: 500 Einflugupdates für jeden der 22 Slots gegen unabhängiges
+Referenzmodell, beide byteidentischen Kurven und Formationsziele; Staffelung,
+DEAD-Lücken, ENTRY-Punkte und Neustart; mehr als acht gleichzeitige RRB-Pixies
+pro Zeile ohne Überlauf, unabhängige negative Ecken/Transparenz/Explosionen,
+32 Joystickkombinationen über Grenzen/ACTIVE/BLINK, Schussursprung/Hitboxen,
+Score/Leben/GAME OVER, volle 4800-Byte-Color-Restaurierung und zweiter RUN.
 
-- KickAssembler 5.25 erfolgreich; 43.777-Byte-PRG und vollständiges 819.200-Byte-D81.
-- **23/23 Tests bestanden**, 112,484 Sekunden, tatsächliche bereitgestellte
-  ROM-V920395-Blinkprüfung eingeschaltet. CPU-/DMA-/RRB-Fetch-Modelle, kein XEMU-Lauf.
-- 32 Joystickkombinationen × fünf X-Positionen × ACTIVE/BLINK;
-  vertikale Sperre, diagonale X-Anteile, beide Grenzen, unverändertes Feuerbit.
-- Schussursprung und Hitbox bei X=0/112/224, Treffer unten bei Y=184,
-  Todesposition/Explosion/Respawn, steuerbare Unverwundbarkeit und R-Mitte.
-- Geerbte Clipping-, Animations-, Kampf-, Score-/Lebens-, GAME-OVER- und Exit-Tests;
-  Gegnerbewegung/Grafiken unverändert. Absichtlich geänderte Playerposition und
-  linke Grenze werden gegen die neuen Anforderungen geprüft.
-- Nur **39 PRG-Bytes** gegenüber `stage4a-stable` geändert, keine zusätzlichen
-  Bytes/Adressen; sämtliche alten Symbole unverändert. Stable-Dateien unverändert.
-- Alle 14 erzeugten Release-Dateien beim unabhängigen Zweitbuild byteidentisch;
-  Original-DAT-Hashes, Disk-Dateitypen/BAM/Dateiketten geprüft.
+KickAssembler erfolgreich: 43.777-Byte-PRG, 819.200-Byte-D81. Alle 15
+Release-Dateien in einem unabhängigen Zweitbuild byteidentisch. Original-DAT-
+Hashes, SEQ-Dateitypen, Dateiketten/BAM und geschützte Baselinebytes geprüft.
+Stage-4a-Dateien und Original-DATs gegen Stable unverändert.
 
-SHA256 des Vorbereitungsstands:
+SHA256:
 
 ```
-PRG b6757975262dff3a55ae9cb0b0b9df317bbae2be7732d808a857425fc6eec436
-D81 f91587999d5108dfeb6cbd88601a620fc9eaed111742177edf64727054bbb36e
+84e598a59779d4582879ed7f3b02e81e30edec307783c0aa024a0baa1c0bb4f2  STAGE4B.PRG
+40103cfd40965ffe3f644d92f957ca5667c0f45e2c2253e79febd3645064a0af  VYPER_STAGE4B.d81
 ```

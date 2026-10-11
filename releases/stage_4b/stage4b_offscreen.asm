@@ -26,6 +26,8 @@
 .label r_dest=$1d1c
 .label r_source=$1d1d
 .label r_keybyte=$1d1e
+.label r_size=$1d1f
+.label r_threshold=$1d20
 *=$4e30 "Stage 4a mode and RRB hook"
 r_init:
     lda #0
@@ -85,9 +87,8 @@ r_consumed:
     lda #0
     rts
 r_passthrough:
-    lda r_keybyte
-    // Tail jump after GETIN retains the exact original restart-error stack depth.
-    jmp game.c_key+3
+    jmp entry.e_key_dispatch
+    .fill 3,$ea // Tail dispatch retains restart-error stack depth.
 r_render:
     lda r_enabled
     bne r_test_render
@@ -234,8 +235,10 @@ r_dx: .byte 0,0,1,$ff,1
 r_dy: .byte 1,$ff,0,0,1
 .if (* > $8800) { .error "Stage 4a motion overlaps existing glyph" }
 
-*=$8e20 "Stage 4a signed clip and NCM crop"
+*=$8e40 "Stage 4a signed clip and NCM crop"
 r_clip:
+    lda #16
+    sta r_size
     lda #0
     sta r_decision
     lda r_x
@@ -299,8 +302,12 @@ r_clip_axis:
     bpl r_positive
     cmp #$ff
     bne r_axis_done
+    lda #1
+    sec
+    sbc r_size
+    sta r_threshold
     lda r_delta
-    cmp #$f1 // -15..-1; <=-16 fully outside
+    cmp r_threshold // -15..-1; <=-16 fully outside
     bcc r_axis_done
     eor #$ff
     clc
@@ -308,7 +315,7 @@ r_clip_axis:
     sta r_src
     lda r_min
     sta r_draw
-    lda #16
+    lda r_size
     sec
     sbc r_src
     sta r_length
@@ -323,9 +330,9 @@ r_positive:
     lda r_max
     sec
     sbc r_axis
-    cmp #16
+    cmp r_size
     bcc r_axis_length
-    lda #16
+    lda r_size
 r_axis_length:
     sta r_length
 r_axis_done:
@@ -361,6 +368,7 @@ r_crop_pixel:
     pla
     and #1
     beq r_low_source
+r_high_source:
     lda $9840,y
     lsr
     lsr

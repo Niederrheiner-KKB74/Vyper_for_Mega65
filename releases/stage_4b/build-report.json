@@ -4,24 +4,20 @@
   "comparison": {
     "baseline": "stage4a-stable",
     "baseline_prg_sha256": "3da4cf49117ad07ac630dfad10ec30407ff62bc6e5051eac3c974bd8c5d002e2",
-    "changed_bytes": 39,
+    "changed_bytes": 4877,
     "extended_bytes": 0,
+    "screen": "$E000-$F2BF,192-byte stride,24 slots",
     "player_start": [
       112,
       184
-    ],
-    "player_x_range": [
-      0,
-      224
-    ],
-    "original_entry_curves": "BLOCKED: verified interpreter/timebase missing"
+    ]
   },
   "files": [
     {
       "name": "STAGE4B",
       "bytes": 43777,
       "blocks": 173,
-      "sha256": "b6757975262dff3a55ae9cb0b0b9df317bbae2be7732d808a857425fc6eec436"
+      "sha256": "84e598a59779d4582879ed7f3b02e81e30edec307783c0aa024a0baa1c0bb4f2"
     },
     {
       "name": "VYLV.DAT",
@@ -41,11 +37,11 @@
     "logical_playfield_right_exclusive": 240,
     "physical_hud_x": 480,
     "physical_hud_width": 160,
-    "screen_row_stride": 128,
-    "screen_entries_per_row": 64,
+    "screen_row_stride": 192,
+    "screen_entries_per_row": 96,
     "dynamic_row_offset": 84,
     "font": "authored thin 5x7 glyphs, 8-column cells",
-    "colour_ram_bytes_saved": 3200,
+    "colour_ram_bytes_saved": 4800,
     "life_columns": 4,
     "life_rows": 2,
     "life_logical_x": [
@@ -320,17 +316,26 @@
   ],
   "runtime_xemu": "NOT RUN; user confirmation required",
   "stage4b": {
-    "scope": "Player-position preparation; NOT full Issue 12 entry engine",
+    "scope": "Level-1 original packed entry data with historically reconstructed timing/state-2 defaults",
     "player_start": [
       112,
       184
     ],
+    "entry_parameters": {
+      "point_ticks": 1,
+      "start_point_tick": 1,
+      "group_delay": 0,
+      "return_step": 1
+    },
+    "entry_crop_pool": "$10000-$115FF",
+    "entry_diagnostics": "$1D40-$1D60 and $1E00-$1EFF",
+    "default_test_attack": false,
     "player_y_fixed": 184,
     "player_x_inclusive": [
       0,
       224
     ],
-    "original_entry_curves": "not implemented; awaiting verified decoding",
+    "original_entry_curves": "sign magnitude nibble decoder; two parallel groups, 16-frame spacing; one point/frame, separate spawn point; +/-1 both axes State 2; Debut timing/anchor pending original-binary verification",
     "stable": false
   },
   "offscreen": {
@@ -433,7 +438,7 @@
         }
       ]
     },
-    "enemies": 23,
+    "enemies": 22,
     "explosion_ticks_per_frame": 3,
     "respawn_ticks": 150,
     "blink_period_ticks": 25,
