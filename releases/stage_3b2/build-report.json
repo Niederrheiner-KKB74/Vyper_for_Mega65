@@ -1,0 +1,39 @@
+{
+  "assembler": "KickAssembler 5.25",
+  "assembler_sha256": "9592a39336e73a1db8b4a7749256d62d29b113b1c7f0f6c86ea43870ebd9ae1f",
+  "level": 1,
+  "enemy_count": 22,
+  "enemy_offset_computed": 347,
+  "graphic_index": 14,
+  "vygr_type": 12,
+  "mapping_source": "latest user correction",
+  "movement_bytes": "same algorithms; two graphics calls, six glyph operands, 53 RAM operand high bytes",
+  "exit_fix": {
+    "objects": "$1600-$18FF",
+    "diagnostics": "$1900-$191F",
+    "reason": "ROM V920395 cursor state $111F-$1123 was overwritten by old object copy",
+    "changed_prg_bytes_vs_previous_stage3b2": 53,
+    "rom_sha256": "0f257ca5013e846604af6637bf44146de7500a49c54242a725aeb52cd86af5c1"
+  },
+  "files": [
+    {
+      "name": "STAGE3B2",
+      "bytes": 43521,
+      "blocks": 172,
+      "sha256": "5f49f2cc05765f894aab6034ff3755a2680d15ea53c3790bb663deb7fcaa1dc8"
+    },
+    {
+      "name": "VYLV.DAT",
+      "bytes": 81793,
+      "blocks": 323,
+      "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
+    },
+    {
+      "name": "VYGR.DAT",
+      "bytes": 30888,
+      "blocks": 122,
+      "sha256": "cbad5d717a4890276a9408c6784500f8449d45ae90f0f4d4251d596b8a2563eb"
+    }
+  ],
+  "runtime_xemu": "NOT RUN"
+}

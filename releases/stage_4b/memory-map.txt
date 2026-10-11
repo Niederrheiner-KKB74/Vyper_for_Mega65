@@ -1,0 +1,51 @@
+Memory Map
+----------
+Default-segment:
+  $2001-$200d Unnamed
+  $2100-$2f67 Unnamed
+  $3000-$30a8 Unnamed
+  $30c0-$30ff Unnamed
+  $3200-$35d9 Stage 3b-2 graphics and parser
+  $3600-$36af Stage 3b-3 approved player source
+  $3700-$375e Stage 3b-3 player integration
+  $3800-$3e59 Stage 3b-4a HUD code
+  $3e80-$3eb6 HUD defaults
+  $3f00-$3fd1 HUD attributes rows 20-24
+  $4000-$47ff Unnamed
+  $4800-$4b49 Stage 3b-2 preload
+  $4c00-$4e2b Stage 3b-5c states and restart
+  $4e30-$4efe Stage 4a mode and RRB hook
+  $5000-$563f Additional BASIC colour backup
+  $5700-$5b77 Stage 4b Level-1 parser and motion
+  $5b80-$5c10 Stage 4b fast valid RRB row retirement
+  $5c80-$5c8f Unnamed
+  $5c90-$5fd7 HUD attributes rows 0-19
+  $6000-$67cf Unnamed
+  $7000-$74ff Unnamed
+  $7500-$75a6 Stage 4b formation return and colour backup extension
+  $7a00-$7ee1 HUD static screen and row lookup
+  $7ee2-$7f70 Stage 4b signed collision boxes
+  $8000-$80bf Unnamed
+  $8100-$817f Unnamed
+  $8200-$85a9 Stage 3b-5b projectile core
+  $85b0-$85fb Stage 3b-5c motion and frame coordinator
+  $8660-$874a Stage 4a isolated movement
+  $874b-$8796 Stage 4b optional legacy attack demo
+  $8800-$883f Unnamed
+  $8840-$8877 Stage 3b-5c initial path phases and extra thin letters
+  $8900-$895b Projectile pointers and mapping
+  $8a00-$8a7f Monochrome projectile graphics
+  $8b00-$8e0d Stage 3b-5c software collisions
+  $8e40-$8faf Stage 4a signed clip and NCM crop
+  $9000-$97ff Unnamed
+  $9800-$98ff Stage 3b-2 loaded path-pixie glyphs
+  $9900-$9a55 Thin HUD font
+  $9b00-$9d6e Stage 3b-5b direction and BASIC sprite restoration
+  $9d70-$9f0b Stage 3b-5c conditional RRB renderer and game-over overlay
+  $a000-$b47f Unnamed
+  $b800-$bf06 Unnamed
+  $c000-$c0bf Unnamed
+  $c100-$c7ff Original explosion frames 0-6, with transparent guards
+  $c800-$c8ff Unnamed
+  $c900-$c9ff Unnamed
+  $ca00-$caff Stage 4a private guarded NCM crop

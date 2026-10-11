@@ -1,0 +1,684 @@
+{
+  "status": "VYLV structure verified; historical interpreter implemented; exact original timing remains open",
+  "source": "assets/VYLV.DAT",
+  "level": 1,
+  "record_offset": 808,
+  "record_length": 849,
+  "enemy_relative_offset": 347,
+  "entry_interval_raw": 16,
+  "attack_curve_count": 2,
+  "interval_units": "historical 50 Hz reference; 16 ticks per enemy; exact original scheduling remains open",
+  "groups": [
+    {
+      "group": 0,
+      "enemy_count": 11,
+      "first_enemy": 0,
+      "last_enemy": 10,
+      "slot_assignment_status": "contiguous order from historical interpreter analysis",
+      "group_record_relative": 8,
+      "curve_relative": 16,
+      "curve_file_offset": 824,
+      "start_raw": [
+        20,
+        0
+      ],
+      "curve_length": 158,
+      "curve_hex": "0212020212021202120212021202121202120212121202121212021212121212120212121212121212121222121212121222121212221212221222122212222212222222222222222221222122212121212121202120202020202920292a2a2a1a1a1a0a1a0a0a1a0a0a9a0a0a0a9a0a9a9a9a9a9a9aaa9a9a9a9a9a9a9a9a9a9a9a0a9a9a9a0a9a9a0a9a9a0a9a0a9a0a0a9a0a0a0a0a0a0a0a1a1a2a00",
+      "byte_histogram": {
+        "00": 1,
+        "02": 13,
+        "0a": 23,
+        "12": 44,
+        "1a": 7,
+        "20": 7,
+        "21": 9,
+        "22": 18,
+        "29": 2,
+        "2a": 4,
+        "9a": 29,
+        "aa": 1
+      },
+      "reference_model": {
+        "sign_magnitude": {
+          "first_10_points": [
+            [
+              20,
+              2
+            ],
+            [
+              21,
+              4
+            ],
+            [
+              21,
+              6
+            ],
+            [
+              21,
+              8
+            ],
+            [
+              22,
+              10
+            ],
+            [
+              22,
+              12
+            ],
+            [
+              23,
+              14
+            ],
+            [
+              23,
+              16
+            ],
+            [
+              24,
+              18
+            ],
+            [
+              24,
+              20
+            ]
+          ],
+          "last_10_points": [
+            [
+              116,
+              45
+            ],
+            [
+              116,
+              43
+            ],
+            [
+              116,
+              41
+            ],
+            [
+              116,
+              39
+            ],
+            [
+              116,
+              37
+            ],
+            [
+              116,
+              35
+            ],
+            [
+              117,
+              33
+            ],
+            [
+              118,
+              31
+            ],
+            [
+              120,
+              29
+            ],
+            [
+              120,
+              29
+            ]
+          ],
+          "bounds": [
+            20,
+            147,
+            0,
+            159
+          ],
+          "historical_reference": "docs/amiga_debut_curve_interpreter.md",
+          "axis_order": "high nibble X, low nibble Y",
+          "scale": 1,
+          "parameter_ticks_per_byte": 1,
+          "integrated_end": [
+            120,
+            29
+          ],
+          "first_12_deltas": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "group": 1,
+      "enemy_count": 11,
+      "first_enemy": 11,
+      "last_enemy": 21,
+      "slot_assignment_status": "contiguous order from historical interpreter analysis",
+      "group_record_relative": 174,
+      "curve_relative": 182,
+      "curve_file_offset": 990,
+      "start_raw": [
+        220,
+        0
+      ],
+      "curve_length": 165,
+      "curve_hex": "0000000000000002920202920292029202920292029292029202929292029292920292929292929202929292929292929292a29292929292a2929292a29292a292a292a292a2a292a2a2a2a2a2a2a2a2a1a2a1a2a1a1a1a1a1a1a0a1a0a0a0a0a0a9a0a9aaaaaa9a9a9a0a9a0a0a9a0a0a1a0a0a0a1a0a1a1a1a1a1a1a2a1a1a1a1a1a1a1a1a1a1a1a0a1a1a1a0a1a1a0a1a1a0a1a0a1a0a0a1a0a0a0a0a0a0a0a9a9aaaa0",
+      "byte_histogram": {
+        "00": 7,
+        "02": 13,
+        "0a": 23,
+        "1a": 29,
+        "2a": 1,
+        "92": 44,
+        "9a": 7,
+        "a0": 8,
+        "a1": 9,
+        "a2": 18,
+        "a9": 2,
+        "aa": 4
+      },
+      "reference_model": {
+        "sign_magnitude": {
+          "first_10_points": [
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              2
+            ],
+            [
+              219,
+              4
+            ],
+            [
+              219,
+              6
+            ]
+          ],
+          "last_10_points": [
+            [
+              124,
+              45
+            ],
+            [
+              124,
+              43
+            ],
+            [
+              124,
+              41
+            ],
+            [
+              124,
+              39
+            ],
+            [
+              124,
+              37
+            ],
+            [
+              124,
+              35
+            ],
+            [
+              123,
+              33
+            ],
+            [
+              122,
+              31
+            ],
+            [
+              120,
+              29
+            ],
+            [
+              118,
+              29
+            ]
+          ],
+          "bounds": [
+            93,
+            220,
+            0,
+            159
+          ],
+          "historical_reference": "docs/amiga_debut_curve_interpreter.md",
+          "axis_order": "high nibble X, low nibble Y",
+          "scale": 1,
+          "parameter_ticks_per_byte": 1,
+          "integrated_end": [
+            118,
+            29
+          ],
+          "first_12_deltas": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              -1,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              -1,
+              2
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "enemies": [
+    {
+      "enemy": 0,
+      "entry_file_offset": 1155,
+      "group": 0,
+      "formation": [
+        98,
+        43
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 0
+    },
+    {
+      "enemy": 1,
+      "entry_file_offset": 1161,
+      "group": 0,
+      "formation": [
+        80,
+        28
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 0
+    },
+    {
+      "enemy": 2,
+      "entry_file_offset": 1167,
+      "group": 0,
+      "formation": [
+        61,
+        25
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 0
+    },
+    {
+      "enemy": 3,
+      "entry_file_offset": 1173,
+      "group": 0,
+      "formation": [
+        42,
+        34
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 0
+    },
+    {
+      "enemy": 4,
+      "entry_file_offset": 1179,
+      "group": 0,
+      "formation": [
+        30,
+        53
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 0
+    },
+    {
+      "enemy": 5,
+      "entry_file_offset": 1185,
+      "group": 0,
+      "formation": [
+        30,
+        72
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 0
+    },
+    {
+      "enemy": 6,
+      "entry_file_offset": 1191,
+      "group": 0,
+      "formation": [
+        43,
+        91
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 0
+    },
+    {
+      "enemy": 7,
+      "entry_file_offset": 1197,
+      "group": 0,
+      "formation": [
+        62,
+        99
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 0
+    },
+    {
+      "enemy": 8,
+      "entry_file_offset": 1203,
+      "group": 0,
+      "formation": [
+        81,
+        96
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 0
+    },
+    {
+      "enemy": 9,
+      "entry_file_offset": 1209,
+      "group": 0,
+      "formation": [
+        98,
+        80
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 0
+    },
+    {
+      "enemy": 10,
+      "entry_file_offset": 1215,
+      "group": 0,
+      "formation": [
+        103,
+        62
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 0
+    },
+    {
+      "enemy": 11,
+      "entry_file_offset": 1221,
+      "group": 1,
+      "formation": [
+        127,
+        43
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 1
+    },
+    {
+      "enemy": 12,
+      "entry_file_offset": 1227,
+      "group": 1,
+      "formation": [
+        145,
+        28
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 1
+    },
+    {
+      "enemy": 13,
+      "entry_file_offset": 1233,
+      "group": 1,
+      "formation": [
+        164,
+        25
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 1
+    },
+    {
+      "enemy": 14,
+      "entry_file_offset": 1239,
+      "group": 1,
+      "formation": [
+        183,
+        34
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 1
+    },
+    {
+      "enemy": 15,
+      "entry_file_offset": 1245,
+      "group": 1,
+      "formation": [
+        195,
+        53
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 1
+    },
+    {
+      "enemy": 16,
+      "entry_file_offset": 1251,
+      "group": 1,
+      "formation": [
+        195,
+        72
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 1
+    },
+    {
+      "enemy": 17,
+      "entry_file_offset": 1257,
+      "group": 1,
+      "formation": [
+        182,
+        91
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 1
+    },
+    {
+      "enemy": 18,
+      "entry_file_offset": 1263,
+      "group": 1,
+      "formation": [
+        163,
+        99
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 1
+    },
+    {
+      "enemy": 19,
+      "entry_file_offset": 1269,
+      "group": 1,
+      "formation": [
+        144,
+        96
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 1
+    },
+    {
+      "enemy": 20,
+      "entry_file_offset": 1275,
+      "group": 1,
+      "formation": [
+        127,
+        80
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 1
+    },
+    {
+      "enemy": 21,
+      "entry_file_offset": 1281,
+      "group": 1,
+      "formation": [
+        122,
+        62
+      ],
+      "graphic_index": 14,
+      "vygr_type": 15,
+      "mapping_confirmed": true,
+      "attack_index": 1
+    }
+  ],
+  "parameters": {
+    "point_ticks": 1,
+    "start_point_tick": 1,
+    "group_delay": 0,
+    "return_step": 1
+  },
+  "open_details": [
+    "original coordinate anchor",
+    "exact original point/tick and start-point accounting",
+    "relative group timing",
+    "Debut-specific State-2 transition verification",
+    "end-marker interpretation versus record-length termination"
+  ],
+  "notes": [
+    "All curve bytes including 00 are consumed, bounded by record length.",
+    "Original Amiga Debut offsets 0/158 are not VYLV offsets.",
+    "No independent original binary verification: reconstruction supplied by user from stage4b-entry-analysis.",
+    "Return uses historical State-2 axis stepping; no teleport or substitute curve."
+  ]
+}

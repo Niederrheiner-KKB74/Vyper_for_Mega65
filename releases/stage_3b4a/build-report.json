@@ -1,0 +1,88 @@
+{
+  "assembler": "KickAssembler 5.25",
+  "baseline": "stage3b3-stable",
+  "comparison": {
+    "baseline_prg_sha256": "4cdb98d30cda81fc2f812fef28e1b7786387050de6c56899ebd5222508cec81d",
+    "hooks": [
+      "0x21d4",
+      "0x2230",
+      "0x22b7",
+      "0xbdde",
+      "0x2d14"
+    ],
+    "retired_static_slot_writes": [
+      "0x262b",
+      "0x2631",
+      "0x2637",
+      "0x263d",
+      "0x2653",
+      "0x2659",
+      "0x265f",
+      "0x2665",
+      "0x267b",
+      "0x2681",
+      "0x2687",
+      "0x268d",
+      "0x26a3",
+      "0x26a9",
+      "0x26af",
+      "0x26b5",
+      "0x26cb",
+      "0x26d1",
+      "0x26d7",
+      "0x26dd",
+      "0x26f3",
+      "0x26f9",
+      "0x26ff",
+      "0x2705"
+    ],
+    "changed_prg_bytes": 3623,
+    "unchanged": "SEQ loader, parser, motion, joystick, active pixie animation and glyph assets; obsolete static-slot writes retired; exit restores D05A and extra Color RAM"
+  },
+  "files": [
+    {
+      "name": "STAGE3B4A",
+      "bytes": 43521,
+      "blocks": 172,
+      "sha256": "29d94d914d87808f2fca6b6fbe18f62846202afa50f4d4a9ad39e474e288629b"
+    },
+    {
+      "name": "VYLV.DAT",
+      "bytes": 81793,
+      "blocks": 323,
+      "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
+    },
+    {
+      "name": "VYGR.DAT",
+      "bytes": 30888,
+      "blocks": 122,
+      "sha256": "cbad5d717a4890276a9408c6784500f8449d45ae90f0f4d4251d596b8a2563eb"
+    }
+  ],
+  "hud": {
+    "mode": "H640, CHARXSCALE=60; logical X doubled",
+    "logical_playfield_right_exclusive": 240,
+    "physical_hud_x": 480,
+    "physical_hud_width": 160,
+    "screen_row_stride": 128,
+    "screen_entries_per_row": 64,
+    "dynamic_row_offset": 84,
+    "font": "authored thin 5x7 glyphs, 8-column cells",
+    "colour_ram_bytes_saved": 3200,
+    "life_columns": 4,
+    "life_rows": 2,
+    "life_logical_x": [
+      245,
+      262,
+      279,
+      296
+    ],
+    "life_y": [
+      58,
+      75
+    ],
+    "initial_lives": 3,
+    "player2_active": false
+  },
+  "runtime_xemu": "NOT RUN; user confirmation required"
+}

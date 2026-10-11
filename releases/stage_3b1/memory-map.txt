@@ -1,0 +1,22 @@
+Memory Map
+----------
+Default-segment:
+  $2001-$200d Unnamed
+  $2100-$2f67 Unnamed
+  $3000-$30a8 Unnamed
+  $30c0-$30ff Unnamed
+  $4000-$47ff Unnamed
+  $4800-$4b3e Stage 3b-1 preload
+  $5000-$57cf Unnamed
+  $5800-$580f Unnamed
+  $6000-$67cf Unnamed
+  $7000-$74ff Unnamed
+  $8000-$80bf Unnamed
+  $8100-$817f Unnamed
+  $8800-$883f Unnamed
+  $9000-$97ff Unnamed
+  $a000-$b47f Unnamed
+  $b800-$bf06 Unnamed
+  $c000-$c0bf Unnamed
+  $c800-$c8ff Unnamed
+  $c900-$c9ff Unnamed

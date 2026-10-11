@@ -27,6 +27,20 @@ Die vom Benutzer bereitgestellten Assets, Loader-Quellen, Build-Skripte und Stag
 
 KickAssembler ausführen, PRG und D81 erzeugen, XEMU testen, Testausgabe protokollieren. Ein erfolgreicher Build beweist **nicht** das korrekte Verhalten der VIC-IV-/DMA-Hardware.
 
+## Stage 3b-1
+
+Der neue Loader startet vor der unveränderten Stage-2ja-Engine. Vollständige Quelle,
+assembliertes PRG, D81 und reproduzierbarer Build sind verfügbar. 12 Loader-Host-Tests
+bestanden; das Release wurde vom Benutzer am 2026-10-10 als stabil bestätigt.
+Referenz: `stage3b1-stable`.
+[Build, Speicherentscheidung und XEMU-Checkliste](docs/stage3b1.md).
+
+## Stage 3b-2
+
+Die 22 Level-1-Pfad-Pixies verwenden jetzt Originaltyp 12 aus geladenem VYGR.
+Variable Recordparser und 18 Host-Tests sind vorhanden; Bewegungslogik und
+stabile Referenz bleiben erhalten. [Build und XEMU-Abnahme](docs/stage3b2.md).
+
 ## Nächster Schritt
 
-Stage 3b: Level-1-Datenstrukturen und Grafikzuordnungen auswerten; benötigte RRB-Grafiken per DMA in die Engine-Puffer übertragen. Stage 2ja nicht überschreiben.
+Stage 3b-2 unter XEMU mit `stage3b1-stable` vergleichen und abnehmen. Die stabilen Referenzen nicht überschreiben.
