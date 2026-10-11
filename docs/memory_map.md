@@ -338,3 +338,16 @@ Originaldaten und alle alten Stable-Releases unverändert. Kein neuer Code im RO
 Stage 5a ist vom Benutzer mit funktionierenden Levelwechseln bestätigt
 (`stage5a-stable`). Die Stable-Dokumentation verändert keine Speicherbelegung
 oder Programm-/Release-Dateien.
+
+## Stage 5b – 38 Original-Gegnergrafiken (Teststand)
+
+Von `stage5a-stable`, ohne Änderungen an dessen Dateien. Neue VYGR-Datei
+`assets/stage5b/VYGR.DAT`:33464 Bytes, `$54000–$5C2B7`,38 Typen/259 Frames.
+VYLV bleibt81793 Bytes bei `$40000–$53F80`;127 Bytes Abstand vor VYGR bleiben frei.
+Die erweiterten Grafikdaten enden vor `$60000` und überlappen keine Engine-/ROM-
+oder Levelpuffer. Verzeichnisende jetzt Dateioffset`$0138`; Loader-Summe`$5B75`.
+Alle anderen Code-/Puffer-/Slotadressen bleiben unverändert, einschließlich
+Record`$12000–$126FF`,22 private Pixiepuffer,24 RRB-Slots,192-Byte-Screenstride.
+45 PRG-Operand-/Mappingbytes ändern sich; Renderer, Palette und Spielmechanik
+bleiben bytegleich. [Mapping, Originalpointer und Tests](stage5b_graphics_mapping.md).
+Stage5b nicht Stable; XEMU-Bestätigung ausstehend.

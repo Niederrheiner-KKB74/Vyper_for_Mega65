@@ -1,0 +1,382 @@
+[
+  {
+    "vylv_index": 0,
+    "vygr_type_1based": 1,
+    "original_descriptor_address": "$3829A",
+    "frame_count": 4,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 1,
+    "vygr_type_1based": 2,
+    "original_descriptor_address": "$3831A",
+    "frame_count": 7,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 2,
+    "vygr_type_1based": 3,
+    "original_descriptor_address": "$383FA",
+    "frame_count": 10,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 3,
+    "vygr_type_1based": 4,
+    "original_descriptor_address": "$3853A",
+    "frame_count": 6,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 4,
+    "vygr_type_1based": 5,
+    "original_descriptor_address": "$385FA",
+    "frame_count": 8,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 5,
+    "vygr_type_1based": 6,
+    "original_descriptor_address": "$386FA",
+    "frame_count": 6,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 6,
+    "vygr_type_1based": 7,
+    "original_descriptor_address": "$387BA",
+    "frame_count": 7,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 7,
+    "vygr_type_1based": 8,
+    "original_descriptor_address": "$3889A",
+    "frame_count": 4,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 8,
+    "vygr_type_1based": 9,
+    "original_descriptor_address": "$3891A",
+    "frame_count": 8,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 9,
+    "vygr_type_1based": 10,
+    "original_descriptor_address": "$38A1A",
+    "frame_count": 4,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 10,
+    "vygr_type_1based": 11,
+    "original_descriptor_address": "$38A9A",
+    "frame_count": 6,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 11,
+    "vygr_type_1based": 12,
+    "original_descriptor_address": "$38B5A",
+    "frame_count": 1,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 12,
+    "vygr_type_1based": 13,
+    "original_descriptor_address": "$38B7A",
+    "frame_count": 4,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 13,
+    "vygr_type_1based": 14,
+    "original_descriptor_address": "$38BFA",
+    "frame_count": 8,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 14,
+    "vygr_type_1based": 15,
+    "original_descriptor_address": "$38CFA",
+    "frame_count": 6,
+    "confirmed": true,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported;user_visually_confirmed",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 15,
+    "vygr_type_1based": 16,
+    "original_descriptor_address": "$38DBA",
+    "frame_count": 6,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 16,
+    "vygr_type_1based": 17,
+    "original_descriptor_address": "$38E7A",
+    "frame_count": 12,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 17,
+    "vygr_type_1based": 18,
+    "original_descriptor_address": "$38FFA",
+    "frame_count": 12,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 18,
+    "vygr_type_1based": 19,
+    "original_descriptor_address": "$3917A",
+    "frame_count": 4,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 19,
+    "vygr_type_1based": 20,
+    "original_descriptor_address": "$391FA",
+    "frame_count": 8,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 20,
+    "vygr_type_1based": 21,
+    "original_descriptor_address": "$392FA",
+    "frame_count": 9,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 21,
+    "vygr_type_1based": 22,
+    "original_descriptor_address": "$3941A",
+    "frame_count": 4,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 22,
+    "vygr_type_1based": 23,
+    "original_descriptor_address": "$3949A",
+    "frame_count": 4,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 23,
+    "vygr_type_1based": 24,
+    "original_descriptor_address": "$3951A",
+    "frame_count": 12,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 24,
+    "vygr_type_1based": 25,
+    "original_descriptor_address": "$3969A",
+    "frame_count": 6,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 25,
+    "vygr_type_1based": 26,
+    "original_descriptor_address": "$3975A",
+    "frame_count": 8,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 26,
+    "vygr_type_1based": 27,
+    "original_descriptor_address": "$3985A",
+    "frame_count": 4,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 27,
+    "vygr_type_1based": 28,
+    "original_descriptor_address": "$398DA",
+    "frame_count": 8,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 28,
+    "vygr_type_1based": 29,
+    "original_descriptor_address": "$399DA",
+    "frame_count": 6,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 29,
+    "vygr_type_1based": 30,
+    "original_descriptor_address": "$39A9A",
+    "frame_count": 8,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 30,
+    "vygr_type_1based": 31,
+    "original_descriptor_address": "$39B9A",
+    "frame_count": 8,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 31,
+    "vygr_type_1based": 32,
+    "original_descriptor_address": "$39C9A",
+    "frame_count": 8,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 32,
+    "vygr_type_1based": 33,
+    "original_descriptor_address": "$39D9A",
+    "frame_count": 12,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 33,
+    "vygr_type_1based": 34,
+    "original_descriptor_address": "$39F1A",
+    "frame_count": 4,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 34,
+    "vygr_type_1based": 35,
+    "original_descriptor_address": "$39F9A",
+    "frame_count": 3,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 35,
+    "vygr_type_1based": 36,
+    "original_descriptor_address": "$39FFA",
+    "frame_count": 4,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 36,
+    "vygr_type_1based": 37,
+    "original_descriptor_address": "$3A07A",
+    "frame_count": 10,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  },
+  {
+    "vylv_index": 37,
+    "vygr_type_1based": 38,
+    "original_descriptor_address": "$3A1BA",
+    "frame_count": 10,
+    "confirmed": false,
+    "evidence": "descriptor_and_frame_comparison_strongly_supported",
+    "original_indexing_routine_proven": false,
+    "source": "ChipRAM $2DAF2+18*i; ADF Forme unchanged type bytes"
+  }
+]

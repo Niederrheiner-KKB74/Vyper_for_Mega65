@@ -1,0 +1,45 @@
+{
+  "stage": "5b",
+  "issue": 27,
+  "baseline": "stage5a-stable",
+  "baseline_commit": "9eeb395",
+  "stable": false,
+  "xemu": "NOT_RUN; user acceptance required",
+  "tests": {
+    "passed": 32,
+    "failures": 0,
+    "seconds": 270.006,
+    "command": "PYTHONPATH=tests:tools MEGA65_ROM=/path/MEGA65.ROM python3 -m unittest test_stage5b test_stage5b_graphics -v",
+    "model": "assembled CPU/KERNAL/DMA/RRB-pixel oracle; not XEMU"
+  },
+  "all_level_initializations": 100,
+  "original_Forme_enemy_records": 2194,
+  "original_frames": 259,
+  "original_pixel_comparisons": 66304,
+  "independent_USS_plane_mask_matches": 259,
+  "all_frame_clipping_cases": 1813,
+  "all_frame_overlap_cases": 259,
+  "additional_reference_clipping_cases": 140,
+  "stable4c_entry_formation_differential_updates": 402,
+  "reproducible_release_files": 20,
+  "prg_changed_bytes": 45,
+  "renderer_cpu_model_worst_cycles": 441719,
+  "mapping_original_indexing_routine_proven": false,
+  "mapping_status": "explicit n->n+1 strongly supported by descriptor/frame/Forme comparisons;14->15 also user visually confirmed",
+  "restrictions": {
+    "attack_disabled_levels": [
+      25,
+      50,
+      99,
+      100
+    ],
+    "level_palettes": "not integrated; separate Stage5c",
+    "loader_trailing_bytes": "bounded expected-length contract retained; extra bytes not read"
+  },
+  "sha256": {
+    "STAGE5B.PRG": "85d20a4d736fedb0764b1d4a5b78d3bb2501f4437f5c1a6836454e814796ca74",
+    "VYPER_STAGE5B.d81": "fa22de505e7c52121a9fc64bf8518eede31019233e92994e4485d21810607d84",
+    "VYGR.DAT": "974e8eff97efd0c0f67db2780cb668311b9d8731395d43641d4602c0a7c96b50",
+    "VYLV.DAT": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
+  }
+}

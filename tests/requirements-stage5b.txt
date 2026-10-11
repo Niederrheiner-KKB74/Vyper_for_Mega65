@@ -1,0 +1,3 @@
+# Original-frame previews and the existing assembled CPU/DMA test adapter.
+Pillow==12.3.0
+py65==1.2.0
