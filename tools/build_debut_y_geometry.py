@@ -46,7 +46,7 @@ def build(variant,jar,output):
         print(run.stdout);run.check_returncode();prg=(w/f'VYPER_Y_{variant}.PRG').read_bytes()
         entries=[(f'VYPER_Y_{variant}',prg,0x82)]+[(n,b,0x81) for n,b in dats.items()]
         disk=bytearray(BASE.build_disk(entries));header=39*40*256;disk[header+4:header+20]=f'VYPER Y TEST {variant}'.encode().ljust(16,b'\xa0');disk=bytes(disk);checked=BASE.verify_disk(disk,entries)
-        out={f'VYPER_Y_{variant}.PRG':prg,f'VYPER_Y_{variant}.D81':disk,f'VYPER_Y_{variant}.sym':(w/'stage5c.sym').read_bytes(),**dats,**sources,'memory-map.txt':run.stdout[run.stdout.index('Memory Map'):].split('Writing Symbol file')[0].encode()}
+        out={f'VYPER_Y_{variant}.PRG':prg,f'VYPER_Y_{variant}.D81':disk,f'VYPER_Y_{variant}.sym':(w/'stage5c.sym').read_bytes(),**dats,**sources,'memory-map.txt':(run.stdout[run.stdout.index('Memory Map'):].split('Writing Symbol file')[0].rstrip()+'\n').encode()}
         report={'issue':37,'variant':variant,'stable':False,'baseline':TAG,'baseline_commit':subprocess.check_output(['git','rev-parse',TAG+'^{}'],cwd=ROOT,text=True).strip(),'files':checked,'transform':{'A':'Y','B':'Y-16','C':'floor(Y*25/29)'}[variant],'xemu':'NOT_RUN; user comparison pending'}
         out['build-report.json']=(json.dumps(report,indent=2)+'\n').encode()
         out['SHA256SUMS.txt']=''.join(f'{BASE.sha(b)}  {n}\n' for n,b in sorted(out.items())).encode()

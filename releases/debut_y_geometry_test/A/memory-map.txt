@@ -64,4 +64,3 @@ Default-segment:
   $c800-$c8ff Unnamed
   $c900-$c9ff Unnamed
   $ca00-$caff Stage 4a private guarded NCM crop
-
