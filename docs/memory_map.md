@@ -383,7 +383,7 @@ Stage5c vom Benutzer mit originalgetreuen Level-Farben, unveränderten Player-/
 HUD-/Explosionsfarben und funktionierendem BASIC-Exit bestätigt (`stage5c-stable`).
 Die Stable-Sicherung verändert weder Speicherlayout noch Quellcode oder Release-Dateien.
 
-## Stage 5d-0 – unabhängiger Titeltest, kein produktiver Loader
+## Stage 5d-0 – unabhängiger Titeltest (Stable), kein produktiver Loader
 
 Basis `stage5c-stable` unverändert. Separates PRG nutzt `$2100–$2737` für Code/
 Zustände, `$4000–$4A4F` für leere Attribute, `$6800/$6900` für SEQ-/DMA-Puffer,
@@ -395,4 +395,6 @@ unangetastet. VYTI lädt nach `$40000–$54A74`; Tiles werden auf
 Dieser Titelbereich überschneidet sich bewusst mit den produktiven DAT-Zielen,
 die dieses unabhängige Programm **nicht lädt**. Er darf nicht unverändert in den
 Stage5c-Loader übernommen werden. Vollständige Register-/Exit-/Speicherprüfung:
-[Stage5d-0](stage5d0_title_test.md). Testbuild, noch nicht Stable.
+[Stage5d-0](stage5d0_title_test.md). Vom Benutzer als Stable bestätigt
+(`stage5d0-stable`); die Stable-Sicherung verändert weder Speicherlayout noch
+Quellen, PRG, D81 oder Originaldaten.

@@ -4,7 +4,8 @@ Issue #33; separater Branch `stage5d-title-test` aus `stage5c-stable`.
 Die Originalpalette und das originale PNG liegen inzwischen vor. Der eigenständige
 Build mit PRG/D81 und erfolgreicher verlustfreier Konvertierung ist abgeschlossen.
 Aktueller Stand: [Titeltest, Register, Speicher und Abnahme](stage5d0_title_test.md).
-Kein eigener XEMU-/WinUAE-Lauf; keine Stable-Markierung.
+Vom Benutzer unter XEMU bestätigt: `stage5d0-stable`. Kein eigener
+XEMU-/WinUAE-Lauf; aktive Amiga-Titel-Overscan-Geometrie weiterhin unbelegt.
 
 ## VIC-IV-Befund
 

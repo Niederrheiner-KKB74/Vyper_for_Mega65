@@ -1,9 +1,22 @@
 # Stage 5d-0 – Originaltitel als eigenständiger FCM-Test
 
 Issue #33, Branch `stage5d-title-test`, Basis `stage5c-stable`
-(`2997719d704095afc630830435cb2d2f76b7f696`). **Testbuild, nicht Stable.**
+(`2997719d704095afc630830435cb2d2f76b7f696`). **Vom Benutzer als Stable bestätigt**
+(`stage5d0-stable`); weiterhin ein eigenständiges Testprogramm.
 Stage-5c-Quellen, Originaldaten und Release bleiben byteidentisch; das Programm
 importiert keine Engine. Es lädt nur `VYTI.DAT`, zeigt den Titel und akzeptiert X.
+
+## Stable-Abnahme
+
+Der Benutzer bestätigt: „Stage 5d0 funktioniert und ist stable“.
+Der getestete Programmcommit ist `671054337daa76dc2019660b111505d00a818cd6`.
+Die Referenz `stage5d0-stable` sichert diesen Build mit aktualisierter Dokumentation.
+Quellen, Originalinputs, Buildwerkzeuge, PRG, D81 und ZIP bleiben byteidentisch.
+Die XEMU-Abnahme stammt vom Benutzer; ein eigener XEMU-/Hardwarelauf wird nicht
+behauptet. Die archivierten Buildberichte und das unveränderte ZIP beschreiben
+noch den historischen Teststatus zum Erstellzeitpunkt. Maßgeblich für die
+aktuelle Stable-Freigabe sind diese Abnahme und der Git-Tag.
+Die separat offene Amiga-Copper-/Overscan-Beweisfrage bleibt bestehen.
 
 ## Originaldaten und verlustfreie Konvertierung
 

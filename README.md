@@ -85,11 +85,12 @@ getrennte NCM-Farben für Gegner; Player, HUD und Explosionen behalten ihre Farb
 Start: `LOAD "STAGE5C",8`, `RUN`. Basis `stage5b-stable` bleibt unverändert.
 Vom Benutzer unter XEMU bestätigt; stabile Referenz: `stage5c-stable`.
 
-## Stage 5d-0 (Titeltest, noch nicht Stable)
+## Stage 5d-0 (Stable, eigenständiger Titeltest)
 
 Eigenständiges Originaltitel-PRG aus `stage5c-stable`, 352×240 verlustfreie FCM-
 Darstellung; X/x zurück zu BASIC. Stage5c bleibt unverändert.
 [D81](releases/stage_5d0/VYPER_STAGE5D0.d81),
 [ZIP mit Quellen und Originalinputs](releases/stage_5d0/VYPER_STAGE5D0_test.zip),
 [Build, Speicher, Copper-Befunde und XEMU-Abnahme](docs/stage5d0_title_test.md).
-Start: `LOAD "STAGE5D0",8`, `RUN`. PAL/50 Hz; noch keine Benutzerabnahme.
+Start: `LOAD "STAGE5D0",8`, `RUN`. PAL/50 Hz; vom Benutzer unter XEMU bestätigt.
+Stabile Referenz: `stage5d0-stable`. Quellen und Release bleiben unverändert.
