@@ -85,11 +85,11 @@ getrennte NCM-Farben für Gegner; Player, HUD und Explosionen behalten ihre Farb
 Start: `LOAD "STAGE5C",8`, `RUN`. Basis `stage5b-stable` bleibt unverändert.
 Vom Benutzer unter XEMU bestätigt; stabile Referenz: `stage5c-stable`.
 
-## Stage 5d-1 – Titel während des Ladens (Teststand)
+## Stage 5d-1 – Titel während des Ladens (Stable)
 
 Branch `stage5d-1`, Ausgangsbasis `stage5c-stable`, Titelrenderer aus
 `stage5d0-stable`. Titel vor VYLV/VYGR/VYCL; danach automatisch Level 1.
 [D81 im Branch herunterladen](https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/blob/stage5d-1/releases/stage_5d_1/VYPER_STAGE5D1.d81)
 (bei privatem Repository bei GitHub anmelden und **Download raw file** verwenden).
 [Technik, Build und XEMU-Test](docs/stage5d1_title_loader_integration.md).
-Noch nicht Stable; Benutzerabnahme steht aus.
+Vom Benutzer nach der HOTREG-Korrektur in XEMU bestätigt; Referenz `stage5d1-stable`.

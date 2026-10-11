@@ -383,7 +383,7 @@ Stage5c vom Benutzer mit originalgetreuen Level-Farben, unveränderten Player-/
 HUD-/Explosionsfarben und funktionierendem BASIC-Exit bestätigt (`stage5c-stable`).
 Die Stable-Sicherung verändert weder Speicherlayout noch Quellcode oder Release-Dateien.
 
-## Stage 5d-1 – Titel-/Loader-Integration (Teststand)
+## Stage 5d-1 – Titel-/Loader-Integration (Stable)
 
 Neue Quellen und Release separat; Stage 5c und Stage 5d-0 unverändert.
 900 verlustfrei deduplizierte FCM-Kacheln liegen während des DAT-Ladens bei
@@ -400,3 +400,7 @@ Stage-5d-1-Nachkorrektur: HOTREG-Legacy-Neuberechnung erfolgt nun vor der
 Restaurierung präziser VIC-IV-Geometrie. Zusätzliche Instruktionen bleiben
 innerhalb des reservierten Titelbootstraps `$4000–$47FF`; keine Puffer-,
 Screen-, Color-RAM-, DMA- oder Originaldatenadressen geändert.
+
+Stage 5d-1 nach HOTREG-Korrektur vom Benutzer als Stable bestätigt
+(`stage5d1-stable`). Die Stable-Sicherung verändert keine Speicherbereiche,
+Quellen, Originaldaten oder Release-Artefakte.

@@ -2,7 +2,7 @@
   "stage": "5d-1",
   "issue": 35,
   "branch": "stage5d-1",
-  "stable": false,
+  "stable": true,
   "baseline": "stage5c-stable",
   "renderer": "stage5d0-stable",
   "tests": {
@@ -63,7 +63,7 @@
   "original_enemy_frames": 259,
   "clipping_cases": 1813,
   "overlap_cases": 259,
-  "xemu": "NOT_RUN; awaiting user acceptance",
+  "xemu": "USER_CONFIRMED after HOTREG fix; no own XEMU/hardware run",
   "PRG_sha256": "ad64321cfd2b7d56edfbed6209e7bed6bbfdaa57c8854f8f9569caa072091abc",
   "protected_baseline_files": 61,
   "DAT_files_match_Stage5c_Stable": true,
@@ -87,5 +87,8 @@
       "D066",
       "D067"
     ]
-  }
+  },
+  "stable_reference": "stage5d1-stable",
+  "program_commit": "7d6e77f0c2da42065941ab9a2f93f8f589ce2dda",
+  "user_acceptance": "Mit den Korrekturen funktioniert jetzt alles wieder. Der Build ist stable."
 }

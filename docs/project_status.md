@@ -476,7 +476,7 @@ bestätigter Programmcommit `671054337daa76dc2019660b111505d00a818cd6`.
 Die hier übernommenen Quellen, Originalassets und Release-Dateien sind gegenüber
 dieser Referenz unverändert. Die Stage-5c-Basis bleibt ebenfalls erhalten.
 
-## Stage 5d-1 – Titel während des Ladens (noch nicht Stable)
+## Stage 5d-1 – Titel während des Ladens (Stable)
 
 Issue #35, Branch `stage5d-1` aus unverändertem `stage5c-stable`.
 Der vom Benutzer bestätigte FCM-Titelrenderer aus `stage5d0-stable` wird gezielt
@@ -488,8 +488,8 @@ mit dem HUD-Font geteilte Bootstrap wird für erneutes RUN wiederhergestellt.
 Original-Spielmechanik und alle 100 Level bleiben die Stage-5c-Implementierung.
 Quellen, PRG, vollständiges D81 und vier DAT-Dateien: `releases/stage_5d_1/`.
 [Build, Speicherprüfung, Fehler und XEMU-Abnahme](stage5d1_title_loader_integration.md).
-Automatische Tests sind Hostmodelle; die neue XEMU-Abnahme steht aus.
-Stage 5d-1 wird erst nach ausdrücklicher Benutzerbestätigung Stable.
+Automatische Tests sind Hostmodelle; die XEMU-Abnahme nach der HOTREG-Korrektur
+wurde inzwischen vom Benutzer bestätigt.
 
 ## Stage-5d-1-Nachkorrektur: Titel → Spiel
 
@@ -503,7 +503,7 @@ HOTREG-on-Modellen (XEMU/Core), besteht mit dem neuen in allen vier Fällen.
 Spielrenderer und sämtliche normalisierten Stage-5c-Spielkomponenten sowie
 alle Original-DAT-Dateien bleiben unverändert. Vollständige erneute Host-
 Regression und unabhängiger Zweitbuild: `docs/stage5d1-test-results.json`.
-Die visuelle XEMU-Nachprüfung der Korrektur steht aus; weiterhin nicht Stable.
+Die visuelle XEMU-Nachprüfung wurde inzwischen vom Benutzer bestätigt.
 
 Automatische Nachprüfung: vollständiger Vorlauf 50/50 erfolgreich; endgültiger
 38-Register-Build mit sechs gezielten Prüfungen zu Geometrie, Pixeln, Ladefehler,
@@ -511,3 +511,12 @@ ROM-Cursor, Exit und erneutem RUN bestätigt. Prüfbericht trennt die Buildstän
 und dokumentiert die Testvorgaben-Korrektur zur BASIC-Hintergrundfarbe.
 27 Artefakte im unabhängigen Zweitbuild byteidentisch, 61 Stable-Dateien geschützt.
 Nur 590 PRG-Bytes innerhalb des Titelbootstraps geändert; übriger Spielcode identisch.
+
+## Stage 5d-1: bestätigte Stable-Referenz
+
+Benutzerbestätigung: „Mit den Korrekturen funktioniert jetzt alles wieder.
+Der Build ist stable.“ Referenz: `stage5d1-stable`, Branch `stage5d-1`.
+Bestätigter Programmcommit: `7d6e77f0c2da42065941ab9a2f93f8f589ce2dda`.
+Die Sicherung verändert ausschließlich Dokumentation; vollständige Quellen,
+Originalassets, PRG, D81 und Release-ZIP bleiben byteidentisch.
+Die XEMU-Abnahme stammt vom Benutzer; kein eigener XEMU-/Hardwarelauf.

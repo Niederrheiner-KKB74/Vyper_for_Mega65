@@ -13,5 +13,6 @@
 
 11. **Titelbaseline:** Stage 5d-0 wurde vom Benutzer in XEMU bestätigt und als
     `stage5d0-stable` gesichert (Branch `stage5d-title-test`). Quellen, Assets und
-    Release dieser Referenz ebenfalls unverändert erhalten. Stage 5d-1 ist ein
-    separater Teststand aus `stage5c-stable`, noch nicht Stable.
+    Release dieser Referenz ebenfalls unverändert erhalten. Stage 5d-1 ist vom Benutzer nach der HOTREG-Korrektur bestätigt und als
+    `stage5d1-stable` gesichert (Branch `stage5d-1`). Auch diese Quellen und
+    Release-Dateien unverändert erhalten.

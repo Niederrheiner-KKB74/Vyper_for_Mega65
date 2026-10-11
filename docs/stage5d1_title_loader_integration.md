@@ -1,7 +1,7 @@
 # Stage 5d-1 – Titelgrafik während des SEQ-Ladens
 
 Issue [#35](https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/issues/35),
-Branch `stage5d-1`. **Teststand, noch nicht Stable.** Ausgangsbasis ist
+Branch `stage5d-1`. **Stable, vom Benutzer nach HOTREG-Korrektur in XEMU bestätigt.** Ausgangsbasis ist
 `stage5c-stable` (`2997719d704095afc630830435cb2d2f76b7f696`). Der bestätigte
 Titelrenderer stammt aus `stage5d0-stable`
 (`d6421606109993f481fb3e3e76d9bd70fb12f48a`, Branch `stage5d-title-test`).
@@ -195,7 +195,7 @@ Kein eigener XEMU-/Hardwarelauf behauptet. PAL, ROM V920395, BASIC 80×25:
 6. Auf einer D81-Kopie eine DAT-Datei entfernen/beschädigen: lesbarer Fehler mit
    Dateiname, danach BASIC/DIRECTORY nutzbar und keine offene Eingabedatei.
 
-Erst nach ausdrücklicher Bestätigung wird Stage 5d-1 als Stable gesichert.
+Die ausdrückliche Benutzerbestätigung liegt vor; Referenz `stage5d1-stable`.
 
 ## Korrektur nach dem ersten XEMU-Test: flackernde obere Zeilen
 
@@ -235,10 +235,15 @@ jeweils bei ursprünglich an-/abgeschaltetem HOTREG. Der vorherige PRG-Stand
 verliert die präzise Geometrie in beiden HOTREG-on-Fällen; die Korrektur besteht
 alle vier Fälle. Das belegt den Restore-Fehler und seine Korrektur, aber keine
 zyklusgenaue Reproduktion des sichtbaren Flackerns. Die visuelle Wirksamkeit
-muss der Benutzer in XEMU bestätigen: insbesondere obere drei Zeilen bei
+wurde inzwischen vom Benutzer in XEMU bestätigt. Die Nachprüfung betraf die
+oberen drei Zeilen bei
 ENTRY, FORMATION und ATTACK, vollständige Pixies, X/DIRECTORY/erneutes RUN.
 Der Binärvergleich gegen den vorherigen PRG-Stand (SHA256
 `6b96d2958da2a3846bdd4444029e8bcaf93ba5c75e6abc63bad2a6131d5ea84f`)
 zeigt 590 geänderte Bytes ausschließlich bei `$4038–$45C9`; alle Änderungen
 liegen im Titelbootstrap. Das PRG bleibt 43.777 Bytes groß, die übrigen
-Programmbytes sind identisch. Stage 5d-1 bleibt bis dahin ausdrücklich nicht Stable.
+Programmbytes sind identisch. Stage 5d-1 ist nach ausdrücklicher Benutzerbestätigung Stable.
+
+Stable-Referenz: `stage5d1-stable`; bestätigter Programmcommit `7d6e77f0c2da42065941ab9a2f93f8f589ce2dda`.
+Die Stable-Sicherung ändert ausschließlich Dokumentation und lässt alle
+Quellen und Release-Dateien byteidentisch. Kein eigener XEMU-/Hardwarelauf.
