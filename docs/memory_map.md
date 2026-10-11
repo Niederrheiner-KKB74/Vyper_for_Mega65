@@ -312,7 +312,7 @@ ROM und alle gesicherten Release-Artefakte bleiben erhalten.
 Stage 4b-3 ist vom Benutzer unter XEMU bestätigt (`stage4b3-stable`).
 Die Stable-Sicherung verändert keine Speicherbereiche oder Release-Artefakte.
 
-## Stage 4c – vier Kurvendeskriptoren (Teststand)
+## Stage 4c – vier Kurvendeskriptoren (Stable)
 
 Basis Stage4b-3 Stable, keine neue RAM-Allokation. Innerhalb bestehender freier
 Lücke `$6F80–$6FFF`: Pointer-Low4 bei`$6FEC–$6FEF`, Pointer-High4 bei
@@ -323,3 +323,14 @@ alle unter`$A000`. Originalkurvenpointer Level1 bleiben`$77E1/$789A`.
 Player/ENTRY-Schüsse/Renderer/Backupbereiche und gesamte übrige Speicherkarte
 wie Stage4b-3. Quellen/Releases der Stable-Basis unverändert.
 [Details](stage4c_attack_mapping_and_drift.md).
+
+## Stage 5a – zentrale Levelverwaltung (Teststand)
+
+Aktiver Record neu in physischer Bank1 `$12000–$126FF`, bounded1792 Bytes.
+Kopfkopie nur `$7600–$7607`; Kurvenparser nach `$7608–$76B1` verlegt.
+Manager `$6000–$6627` ersetzt obsolete Color-Vorlage, Blank `$6700–$67FF`.
+Runtime `$1D80–$1DB1` / `$6A20–$6AD7`, vier Gruppen und22 Grafikmetadaten.
+Cachehelper `$3400–$3472`, optimierter Crop `$34A0–$3554`.
+Vorhandene22 Pixiepuffer `$10000–$115FF`,24 RRB-Slots, Screen/Color-/BASIC-Backups,
+Originaldaten und alle alten Stable-Releases unverändert. Kein neuer Code im ROM-Overlay.
+[Gesamtkarte und genaue Änderungen](stage5a_level_management.md).

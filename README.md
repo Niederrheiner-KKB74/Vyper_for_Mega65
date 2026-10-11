@@ -60,3 +60,10 @@ Ausschließlich aus lokaler bestätigter `stage4b3-stable`: Formationsdrift
 begrenzte Deskriptoren. Player weiterhin1 Pixel/Frame, übrige Mechanik erhalten.
 [Build, Datenprüfung und XEMU-Abnahme](docs/stage4c_attack_mapping_and_drift.md).
 Quellen/PRG/D81: `releases/stage_4c/`; vom Benutzer in XEMU bestätigt; Referenz `stage4c-stable`.
+
+## Stage 5a (Teststand)
+
+Zentrale Verwaltung aller100 Originallevel, Level Clear/Joystick-Fortsetzung und
++/− Testnavigation; aus `stage4c-stable`. [D81](releases/stage_5a/VYPER_STAGE5A.d81),
+[Build, freigegebene Sonderlevel-Einschränkungen und Testplan](docs/stage5a_level_management.md).
+Start: `LOAD "STAGE5A",8`, `RUN`. XEMU-Abnahme ausstehend.
