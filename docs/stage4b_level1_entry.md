@@ -1,7 +1,12 @@
 # Stage 4b – Originaler Level-1-Einflug und Player-Position
 
 Teststand auf `stage4a-stable` (`095b83e`), Branch `stage4b`, PR #13.
-Keine Änderung an stabilen Quellen, Releases oder Tags. Keine Stable-Freigabe.
+**Stage 4b ist vom Benutzer unter XEMU als Stable bestätigt.**
+Referenz `stage4b-stable`, bestätigter Programmcommit
+`12f4b4062d556389622b44cbf62dfbe6034d1711`. PRG/D81 bleiben unverändert.
+Frühere Hinweise „XEMU offen“/„nicht Stable“ unten beschreiben historische
+Zwischenstände; die aktuelle Freigabe ersetzt diese Abnahmevorbehalte.
+Offene Fragen zur exakten Amiga-Rekonstruktion bleiben dokumentiert.
 
 ## Daten und historische Rekonstruktion
 
@@ -325,3 +330,18 @@ Tests. Vollständige Suite einschließlich Originalkurven/Targets, sechs
 Animationsframes, signed Kanten/Ecken, HUD, Player/Joystick, Projektile,
 Treffer/Punkte/Leben, sieben Explosionsframes, Unverwundbarkeit, GAME OVER,
 R/Highscore und X/zweiter RUN. CPU-/DMA-/RRB-Modelle, kein XEMU-Lauf.
+
+## Finale Benutzerfreigabe
+
+„Alles funktioniert wie vorgesehen, der Build kann als Stabil angesehen werden.“
+Bestätigt ist der DMA-Stand `12f4b40`, nicht ein früherer schwarzer/flackernder
+Build. Stage 4b wird mit `stage4b-stable` als unveränderliche Referenz gesichert.
+XEMU-Abnahme durch den Benutzer; keine zusätzlich behauptete Hardware- oder
+WinUAE-Verifikation. Alle Releasebytes bleiben erhalten.
+
+SHA256 der abgenommenen Artefakte:
+
+```
+7fbd513baaa393cbde281dd1875bfc6cb8da7cae47efea2585e9b2f70e1dc9d4  STAGE4B.PRG
+97ff7fbe04cc5b240b8c671f7c71f8646932da220ecacceb77bec27447491448  VYPER_STAGE4B.d81
+```

@@ -264,3 +264,6 @@ Stage-4b-Rasterkorrektur: `$5B80–$5C10` enthält Screen-Clear-Helper,
 F018A-Descriptor und 100-Byte-Template mit GOTOX640/NCM200-Leereinträgen.
 Innerhalb des bereits reservierten Controllerbereichs `$5700–$5C7F`;
 Screen-/Color-RAM-Größe, Player/HUD-Geometrie und DMA-/Loaderdaten unverändert.
+
+**Stage 4b Stable:** Der Benutzer hat den finalen DMA-Stand `12f4b40` in
+XEMU bestätigt. Speicherlayout unverändert; Referenz `stage4b-stable`.

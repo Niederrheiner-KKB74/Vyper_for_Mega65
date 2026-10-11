@@ -222,7 +222,21 @@ Bestätigter Programmstand: `7c3a466`; stabile Referenz `stage4a-stable`.
 Die Stable-Markierung ändert ausschließlich Dokumentation, keine Quellen oder
 Release-Artefakte.
 
-## Stage 4b – Originaler Level-1-Einflug, Teststand
+## Stage 4b – Stable, vom Benutzer unter XEMU bestätigt
+
+Der Benutzer bestätigt den finalen DMA-Build als vollständig funktionsfähig.
+Bestätigter Programmcommit: `12f4b4062d556389622b44cbf62dfbe6034d1711`.
+Stabile Referenz: `stage4b-stable`. PRG/D81/Quellen unter `releases/stage_4b/`
+bleiben byteidentisch zum abgenommenen Build. 33/33 automatische Tests,
+reproduzierbarer Zweitbuild und Benutzer-XEMU-Abnahme sind dokumentiert.
+
+Die früheren offenen XEMU-Abnahmen unten sind historisch und durch diese
+Freigabe erledigt. Offene Fragen zur exakten Amiga-Zeit-/Debut-Übergangslogik
+bleiben historische Rekonstruktionsgrenzen; die Benutzerfreigabe ist keine
+zusätzliche Amiga-Binärverifikation. Neue Entwicklung separat auf dieser Referenz.
+
+### Historische Stage-4b-Entwicklung und Fehlerkorrekturen
+
 
 Auf `stage4a-stable`: 22 Gegner in zwei Originalgruppen, signed Kurvencontroller,
 kontinuierlicher Formationsübergang, Player (112,184) mit X-only-Steuerung.
