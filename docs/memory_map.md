@@ -358,3 +358,25 @@ DMA-Operandrelokationen; Palette und Spielregeln bleiben unverändert. [Mapping,
 Stage5b einschließlich DOS-Exit-Korrektur vom Benutzer vollständig bestätigt;
 Referenz `stage5b-stable`. Die Stable-Sicherung verändert weder Speicherlayout
 noch Quellcode oder Release-Dateien.
+
+## Stage 5c – originale Levelpaletten (Teststand)
+
+Unveränderte Stable-Basis `stage5b-stable`. Neue VYCL:476 Bytes bei
+`$5C300–$5C4DB`,72 Bytes Abstand hinter unveränderter VYGR. VYLV/VYGR,
+Record`$12000–$126FF`, Pixiepool`$14000–$155FF`, DOS und ROM unverändert.
+Palettencode`$6B00–$6CFF`, validierter Spiegel`$6D00–$6EDB`,
+State`$6EF0–$6EF3`; kein Überlappen mit Angriffsdaten`$6F80–$6FFF`.
+
+Der bisherige Laufzeit-Color-RAM-Sicherungspuffer`$6B00–$6F7F` musste nach
+`$15600–$15A7F` verlegt werden, direkt hinter die privaten Pixiepuffer.
+Nur die beiden DMA-Quell-/Zieladressen ändern sich; vollständige Sicherung und
+Exit-Rückkopie bleiben erhalten. Der Bereich liegt wie Record/Pixiepool im
+während RUN verwendeten BASIC-Array-/String-RAM; keine BASIC-Arrays im ML-Spiel.
+
+Gegner: Bank1 Einträge17..24, NCM-Glyph-Farbbyte1`$10`; Explosionen: Bank1
+Einträge0..15 unverändert, auch in privaten Crops Farbbyte1`$00`.
+Player/HUD/Projektile: Bank2 unverändert; BASIC-ROM-Palette: Bank3 unangetastet.
+D070 CPU-Bank wird beim Levelwechsel kurzzeitig umgeschaltet und vollständig
+wiederhergestellt. Kein zusätzlicher Bankwechsel im 50-Hz-Animationspfad.
+[Format, Speicherprüfung und Originalbeleglage](stage5c_original_palettes.md).
+Stage5c nicht Stable; XEMU-Abnahme durch den Benutzer ausstehend.

@@ -1,0 +1,80 @@
+{
+  "stage": "5c",
+  "issue": 31,
+  "branch": "stage5c",
+  "stable": false,
+  "baseline": "stage5b-stable",
+  "baseline_commit": "88e19bbd3b785631a55678d1df8ef2c4abca56f7",
+  "analysis_branch": "analysis-color-palettes",
+  "analysis_commit": "301f31f2162a32138e4ef3c3e60b9b51d6cdb182",
+  "tests": {
+    "passed": 43,
+    "failures": 0,
+    "seconds": 515.18,
+    "command": "PYTHONPATH=tests:tools MEGA65_ROM=/path/MEGA65.ROM python3 -m unittest test_stage5c -v",
+    "model": "Stage5c PRG and symbols rebound into inherited CPU/KERNAL/DMA/RRB/palette fixtures; not XEMU"
+  },
+  "palettes": 20,
+  "RGB4_words": 180,
+  "level_indices": 100,
+  "all100_runtime_palette_checks": true,
+  "original_Color_bytes_compared": 362,
+  "original_Level_index_fields_compared": 100,
+  "VYCL_bytes": 476,
+  "VYCL_sum16": "3A1B",
+  "VYCL_payload_sum16": "36A4",
+  "VYCL_host_roundtrip": true,
+  "VYCL_runtime_failure_cases": [
+    "missing",
+    "truncated",
+    "header",
+    "index",
+    "RGB4",
+    "checksum",
+    "trailing"
+  ],
+  "all_level_initializations": 100,
+  "original_frames": 259,
+  "original_pixel_comparisons": 66304,
+  "all_frame_clipping_cases": 1813,
+  "all_frame_overlap_cases": 259,
+  "stable4c_entry_formation_differential_updates": 402,
+  "palette_isolation": "bank1 17..24 enemy; bank1 0..15 explosion unchanged; bank2 player/HUD/projectiles and bank3 unchanged across100 levels",
+  "DOS_preserved_bytes": 8192,
+  "full_colour_restored_bytes": 4800,
+  "cursor_preserved_bytes": 1536,
+  "extended_colour_backup": "$15600-$15A7F; original $6B00-$6F7F overlaps new palette module",
+  "program_load_device_test": {
+    "device": 9,
+    "SEQ_SETLFS_devices": [
+      9,
+      9,
+      9
+    ]
+  },
+  "reproducible_release_files": 23,
+  "renderer_cpu_model_worst_cycles": 444471,
+  "prg_bytes": 43777,
+  "prg_changed_bytes_vs_stable5b": 2144,
+  "d81_bytes": 819200,
+  "original_Amiga_palette_field_code_usage_proven": false,
+  "original_Amiga_COLOR_register_mapping_proven": false,
+  "independent_xemu": "NOT_RUN",
+  "WinUAE_colour_comparison": "NOT_RUN",
+  "user_acceptance": "PENDING",
+  "restrictions": {
+    "attack_disabled_levels": [
+      25,
+      50,
+      99,
+      100
+    ]
+  },
+  "sha256": {
+    "STAGE5C.PRG": "6918bcd6077cac381db0bf410739bc57eb66a406b5c52f369a82acb5fbfc7fed",
+    "VYPER_STAGE5C.d81": "d652879aecb6b94dca96750deed9ddce27f62e4949756beb78bc8935f3ebff32",
+    "VYLV.DAT": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283",
+    "VYGR.DAT": "974e8eff97efd0c0f67db2780cb668311b9d8731395d43641d4602c0a7c96b50",
+    "VYCL.DAT": "061e0e20aa77195b79ae80daf469387ed61e680f3f3841d8d5ed65ee8eeb491d"
+  }
+}

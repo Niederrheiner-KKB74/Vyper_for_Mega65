@@ -75,3 +75,12 @@ NCM-Konvertierung aus den originalen Amiga-Deskriptoren. Stage5a Stable unverän
 [D81](releases/stage_5b/VYPER_STAGE5B.d81),
 [Extraktion, Mapping-Beleglage, Build und XEMU-Testplan](docs/stage5b_graphics_mapping.md).
 Start: `LOAD "STAGE5B",8`, `RUN`. Vom Benutzer vollständig bestätigt; stabile Referenz: `stage5b-stable`. Original-Levelpaletten folgen separat.
+
+## Stage 5c (Teststand)
+
+Originale Levelpaletten aus Amiga-Color/Level, verlustfreie `VYCL.DAT` und
+getrennte NCM-Farben für Gegner; Player, HUD und Explosionen behalten ihre Farben.
+[D81](releases/stage_5c/VYPER_STAGE5C.d81),
+[Format, Originalnachweis, Build und XEMU-Testplan](docs/stage5c_original_palettes.md).
+Start: `LOAD "STAGE5C",8`, `RUN`. Basis `stage5b-stable` bleibt unverändert.
+Stage5c ist erst nach ausdrücklicher Benutzerbestätigung Stable.
