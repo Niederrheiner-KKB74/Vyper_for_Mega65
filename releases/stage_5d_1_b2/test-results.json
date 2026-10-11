@@ -1,0 +1,35 @@
+{
+  "issue": 41,
+  "stage": "5d-1a",
+  "stable": false,
+  "validation": "59 distinct checks passed across broad run plus two corrected targeted reruns",
+  "broad_run": {
+    "cases": 59,
+    "passed": 57,
+    "obsolete_geometry_expectations": 2,
+    "seconds": 934.015
+  },
+  "final_targeted_run": {
+    "cases": 2,
+    "passed": 2,
+    "seconds": 82.384,
+    "changes": "Original-Y expectations replaced by confirmed-B2 comparison and projected long-curve assertions"
+  },
+  "b2_comparison": {
+    "levels": [
+      1,
+      2,
+      3,
+      29,
+      60,
+      100
+    ],
+    "updates_per_level_per_build": 1000,
+    "total_updates_per_build": 6000,
+    "identical_transition_events_levels1_2_3": 128
+  },
+  "independent_build_identical_files": 28,
+  "xemu": "NOT_RUN for integrated Stage5d1a; prior B2 and Stage5d1 were user-confirmed",
+  "baseline": "e295fa81d5c18b009eb22841ea5db2da7c8a6279",
+  "B2": "4cb73e71974f4102bdad003cdbc1cae1b0896407"
+}

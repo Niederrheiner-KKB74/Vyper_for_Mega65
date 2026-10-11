@@ -404,3 +404,7 @@ Screen-, Color-RAM-, DMA- oder Originaldatenadressen geändert.
 Stage 5d-1 nach HOTREG-Korrektur vom Benutzer als Stable bestätigt
 (`stage5d1-stable`). Die Stable-Sicherung verändert keine Speicherbereiche,
 Quellen, Originaldaten oder Release-Artefakte.
+
+## Stage 5d-1a B2 integration (Issue #41)
+
+New signed ENTRY projection/cache $7700–$7889 fits below aimed shots $7951; ENTRY hooks grow its segment to $5700–$5B68, below row retirement $5B80. All title caches, screen, bootstrap backup, SEQ/DMA and game-data buffers retain Stage 5d-1 addresses/lifetimes. See [integration report](stage5d1_b2_integration.md).

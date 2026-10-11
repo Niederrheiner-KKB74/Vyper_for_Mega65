@@ -520,3 +520,7 @@ Bestätigter Programmcommit: `7d6e77f0c2da42065941ab9a2f93f8f589ce2dda`.
 Die Sicherung verändert ausschließlich Dokumentation; vollständige Quellen,
 Originalassets, PRG, D81 und Release-ZIP bleiben byteidentisch.
 Die XEMU-Abnahme stammt vom Benutzer; kein eigener XEMU-/Hardwarelauf.
+
+## Stage 5d-1a / Issue #41 (acceptance pending)
+
+Separate branch `stage5d-1-b2`, based on current Stage 5d-1 commit `e295fa8`. User-confirmed B2 ENTRY Y−16 and continuous RETURN handoff integrated in new sources only. Title/loader, ATTACK, all 100 levels and palettes preserved. Release `releases/stage_5d_1_b2/`; no Stable tag. See [integration report](stage5d1_b2_integration.md).
