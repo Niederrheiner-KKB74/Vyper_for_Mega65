@@ -1,0 +1,66 @@
+{
+  "stage": "5d-0",
+  "issue": 33,
+  "stable": false,
+  "baseline": "stage5c-stable",
+  "baseline_commit": "2997719d704095afc630830435cb2d2f76b7f696",
+  "protected_paths_checked": 37,
+  "assembler": "KickAssembler5.25",
+  "files": [
+    {
+      "name": "STAGE5D0",
+      "bytes": 23121,
+      "blocks": 92,
+      "sha256": "dd78f52710ab43b438b429bcca004ccd2b7428299fc9fd39d6d28a8cd8688ac8"
+    },
+    {
+      "name": "VYTI.DAT",
+      "bytes": 84597,
+      "blocks": 334,
+      "sha256": "5748d68e9210ffaa96db69d521050add6a43b6468426e429f3106ac05529c432"
+    }
+  ],
+  "conversion": {
+    "source_png_sha256": "faa19d74583ec1a35f5ed81f1727f026e03a2de1fce9eb86dd73315ded484eea",
+    "source_palette_sha256": "a108f6346556a15d6a6e2cb712fde23995eda05557f5d85c69cea5857c4e492e",
+    "size": [
+      352,
+      240
+    ],
+    "mode": "RGB",
+    "source_unique_RGB_colours": 31,
+    "original_palette_entries": 33,
+    "duplicate_RGB_indices": [
+      [
+        0,
+        6,
+        32
+      ]
+    ],
+    "exact_RGB_roundtrip_pixels": 84480,
+    "PNG_indices_preserved_when_matching_named_original_index": false,
+    "remapped_PNG_indices_pixels": 0,
+    "RGB_input_index_policy": "lowest exactly matching original index; duplicate RGB does not prove original index identity",
+    "tile_grid": [
+      44,
+      30
+    ],
+    "tile_bytes": 84480,
+    "format": "VYTI v1;18-byte little-endian header,99 RGB bytes,84480 tile bytes",
+    "VYTI_bytes": 84597,
+    "VYTI_sha256": "5748d68e9210ffaa96db69d521050add6a43b6468426e429f3106ac05529c432",
+    "xemu": "NOT_RUN"
+  },
+  "mode": "FCM CHR16/FCLRHI,44x30 cells,8x8,352x240 logical pixels;2x2 native PAL pixels",
+  "memory": {
+    "code": "$2100-$2737 (see assembly map)",
+    "SEQ_buffers": "$6800-$69FF",
+    "screen": "$7000-$7A4F",
+    "colour": "$FF82000-$FF82A4F",
+    "colour_backup": "$15000-$15A4F",
+    "VYTI_load": "$40000-$54A74",
+    "aligned_FCM": "$40000-$549FF"
+  },
+  "xemu": "NOT_RUN; user acceptance required",
+  "Amiga_Copper": "Static saved-register/list analysis; active title execution not proven"
+}
