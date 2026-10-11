@@ -1,11 +1,13 @@
-// Stage5d-1: Stage5d0 Stable FCM renderer, lossless cache relocation only.
+// Stage5d-1: Stage5d0 Stable FCM renderer, lossless cache relocation and ordered VIC-IV handoff.
 // Phase-shared $4000-$47FF becomes the unchanged game HUD charset later.
 *=$4000 "Stage5d1 title bootstrap (then private HUD charset)"
 .namespace splash {
 .const T_SCREEN=$f300
 .const T_CHECK=$6900
 .const T_CELLS=1320
-.const T_REG_COUNT=32
+.const T_REG_COUNT=38
+.const T_REG_D016=2
+.const T_REG_D031=6
 .const T_REG_D011=0
 .const T_REG_D07A=30
 .const T_REG_D05D=21
@@ -398,13 +400,33 @@ restore_palette_loop:
     lda #8
     sta t_dma_dst_bank
     jsr t_dma_copy
-    // Restore all registers except HOTREG and DEN first.
+    // Drain pending legacy updates BEFORE restoring precise geometry.
+    // Enabling HOTREG last would recalculate/overwrite the restored VIC-IV
+    // borders, origins, stride and pointers (XEMU vic4.c and VIC-IV core).
+    lda t_saved_regs+T_REG_D05D
+    sta $d05d
+    lda t_saved_regs+T_REG_D011
+    sta $d011
+    lda t_saved_regs+T_REG_D016
+    sta $d016
+    lda t_saved_regs+T_REG_D031
+    sta $d031
+    // No further hot-register writes after this point. Restore precise
+    // fields with HOTREG disabled; final enable has no pending update.
+    lda t_saved_regs+T_REG_D05D
+    and #$7f
+    sta $d05d
+    // Restore all registers except already-restored hot registers/HOTREG.
     ldx #T_REG_COUNT-1
 restore_reg_loop:
     lda t_regs,x
     cmp #$5d
     beq restore_next_reg
     cmp #$11
+    beq restore_next_reg
+    cmp #$16
+    beq restore_next_reg
+    cmp #$31
     beq restore_next_reg
     sta write_vic+1
     lda t_saved_regs,x
@@ -413,10 +435,8 @@ write_vic:
 restore_next_reg:
     dex
     bpl restore_reg_loop
-    lda t_saved_regs+T_REG_D011
-    sta $d011
     lda t_saved_regs+T_REG_D07A
-    sta $d07a // restore full comparator/source after D011
+    sta $d07a // restore full comparator/source after earlier D011
     lda t_saved_regs+T_REG_D05D
     sta $d05d // original HOTREG value LAST
     lda t_saved_cursor
@@ -450,7 +470,7 @@ t_dma_dst_lo: .byte 0
 t_dma_dst_hi: .byte 0
 t_dma_dst_bank: .byte 0
     .word 0
-t_regs: .byte $11,$15,$16,$20,$21,$30,$31,$48,$49,$4a,$4b,$4c,$4d,$4e,$4f,$54,$58,$59,$5a,$5b,$5c,$5d,$5e,$60,$61,$62,$63,$64,$65,$70,$7a,$7b
+t_regs: .byte $11,$15,$16,$20,$21,$30,$31,$48,$49,$4a,$4b,$4c,$4d,$4e,$4f,$54,$58,$59,$5a,$5b,$5c,$5d,$5e,$60,$61,$62,$63,$64,$65,$70,$7a,$7b,$68,$69,$6a,$6c,$6d,$6e
 t_saved_regs: .fill T_REG_COUNT,0
 t_saved_compare_bit: .byte 0
 t_saved_cursor: .byte 0

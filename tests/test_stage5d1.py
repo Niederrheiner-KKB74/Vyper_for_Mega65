@@ -11,7 +11,7 @@ N=OLD.T.BUILD.symbols((ART/'STAGE5D1.sym').read_text())
 BaseMachine=OLD.Machine
 BaseMemory=OLD.T.EntryMemory
 TITLE_RANGES=[(a,a+n*64) for a,n in CONVERT.RANGES]+[(0xf300,0xfd50)]
-VIC_REGS=[0x11,0x15,0x16,0x20,0x21,0x30,0x31,*range(0x48,0x50),0x54,*range(0x58,0x5f),*range(0x60,0x66),0x70,0x7a,0x7b]
+VIC_REGS=[0x11,0x15,0x16,0x20,0x21,0x30,0x31,*range(0x48,0x50),0x54,*range(0x58,0x5f),*range(0x60,0x66),0x70,0x7a,0x7b,0x68,0x69,0x6a,0x6c,0x6d,0x6e]
 class TitleMemory(BaseMemory):
     def __setitem__(self,a,v):
         if getattr(self,'watch_title',False) and a==N['t_shown']:
@@ -127,6 +127,63 @@ class PaletteRegression(OLD.PaletteTests):
         self.assertEqual(m.memory.colour[0x2000:0x2a50],m.title_colour_before)
         self.assertEqual(m.memory.data[0x1120],0x10)
         for n,a in [('VYLV.DAT',0x40000),('VYGR.DAT',0x54000),('VYCL.DAT',0x5c300)]:self.assertEqual(m.memory.data[a:a+len(m.files[n])],m.files[n])
+class HotregMemory(TitleMemory):
+    """Narrow pending-HOTREG model from XEMU vic4.c / VIC-IV core.
+
+    Model the relevant overwritten precise fields, not a raster renderer.
+    Both models remember legacy writes while disabled; XEMU additionally
+    cancels a pending update on an explicit HOTREG-disable write.
+    """
+    def __setitem__(self,a,v):
+        super().__setitem__(a,v)
+        if not getattr(self,'hotreg_model',False):return
+        if a in (0xd011,0xd016,0xd031):self.pending_hotreg=True
+        if a==0xd05d and not v&128 and self.cancel_on_disable:self.pending_hotreg=False
+        if self.pending_hotreg and self.data[0xd05d]&128:
+            self.hotreg_updates+=1;self.pending_hotreg=False
+            # Legacy interpretation overwrites precise geometry and pointers.
+            width=80 if self.data[0xd031]&128 else 40
+            self.data[0xd058:0xd05a]=bytes([width,0])
+            self.data[0xd05e]=width
+            self.data[0xd064:0xd066]=bytes(2)
+            self.data[0xd068:0xd06b]=bytes([0,0x20,0])
+            self.data[0xd06c:0xd06f]=bytes([0xf8,7,0])
+            self.data[0xd060:0xd064]=bytes([0,4,0,0])
+            self.data[0xd048:0xd050]=bytes([104,0,247,1,80,0,104,0])
+
+class HotregHandoffTests(unittest.TestCase):
+    def test_missing_game_file_restores_all_saved_video_fields(self):
+        m=Machine();del m.files['VYLV.DAT'];m.execute()
+        self.assertEqual(m.error,1);self.assertEqual(m.cpu.pc,0x200)
+        self.assertFalse(m.active or m.opened)
+        for r in VIC_REGS:
+            expected=0 if r==0x15 else m.before[0xd000+r] # Error returns through hud.startup, restoring BASIC background.
+            self.assertEqual(m.memory.data[0xd000+r],expected,hex(r))
+        self.assertEqual(m.memory.data[0x1120],0x10)
+
+    def test_precise_geometry_survives_pending_legacy_updates(self):
+        for cancel in (True,False):
+            for enabled in (False,True):
+                with self.subTest(xemu_cancel=cancel,original_hotreg=enabled):
+                    m=Machine();mem=m.memory;mem.__class__=HotregMemory
+                    mem.hotreg_model=True;mem.pending_hotreg=False
+                    mem.hotreg_updates=0;mem.cancel_on_disable=cancel
+                    # Valid precise geometry intentionally differs from legacy
+                    # defaults: restoring only legacy mode must not lose it.
+                    mem.data[0xd011]=0x1b;mem.data[0xd016]=8
+                    mem.data[0xd031]=0xc0;mem.data[0xd05d]=0xc0 if enabled else 0x40
+                    mem.data[0xd07a]=0x80
+                    mem.data[0xd048:0xd050]=bytes([98,0,241,1,82,0,98,0])
+                    mem.data[0xd058:0xd05a]=bytes([160,0]);mem.data[0xd05e]=80
+                    mem.data[0xd060:0xd066]=bytes([0,0x80,0,0,0,4])
+                    before={r:mem.data[0xd000+r] for r in VIC_REGS}
+                    OLD.T.call(m,'t_save_video');OLD.T.call(m,'t_show')
+                    mem.data[N['t_shown']]=1
+                    OLD.T.call(m,'t_restore_video')
+                    self.assertEqual({r:mem.data[0xd000+r] for r in VIC_REGS},before)
+                    if enabled:self.assertFalse(mem.pending_hotreg)
+                    self.assertEqual(mem.data[0x1120],0x10)
+
 class TitleIntegrationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):cls.boot=Machine().execute()

@@ -6,45 +6,86 @@
   "baseline": "stage5c-stable",
   "renderer": "stage5d0-stable",
   "tests": {
-    "run": 49,
-    "passed": 49,
-    "failures": 0,
-    "errors": 0,
-    "skipped": 0,
-    "seconds": 919.433,
-    "command": "PYTHONPATH=tests:tools python -m unittest test_stage5d1 -v",
-    "model": "Actual assembled PRG; narrow CPU/KERNAL/DMA/VIC/palette models, original ROM cursor instructions; not XEMU",
-    "execution": "Full regression plus successful targeted recheck after updating the test-only file-count expectation; current suite has 49 unique cases"
+    "unique_cases_validated": 51,
+    "full_regression": {
+      "run": 50,
+      "passed": 50,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 900.158,
+      "command": "PYTHONPATH=tests:tools python -m unittest test_stage5d1 -v",
+      "model": "Actual assembled PRG; narrow CPU/KERNAL/DMA/VIC/palette models, original ROM cursor instructions; not XEMU",
+      "PRG_sha256": "9852304746b0075cf9d4b7d36c8421c46a8f6a54d1a717d58f6ebb32bce8b595",
+      "VIC_saved_registers": 40
+    },
+    "final_PRG_targeted": {
+      "run": 6,
+      "passed": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 67.821,
+      "test_names": [
+        "test_stage5d1.HotregHandoffTests",
+        "test_stage5d1.TitleIntegrationTests.test_FCM_scene_all_original_pixels_and_geometry",
+        "test_stage5d1.TitleIntegrationTests.test_restored_Basic_before_engine_and_phase_code_backup",
+        "test_stage5d1.TitleIntegrationTests.test_live_original_ROM_cursor_cannot_touch_title",
+        "test_stage5d1.PaletteRegression.test_full_colour_cursor_ROM_palette_exit_and_repeat_start"
+      ],
+      "PRG_sha256": "ad64321cfd2b7d56edfbed6209e7bed6bbfdaa57c8854f8f9569caa072091abc",
+      "VIC_saved_registers": 38,
+      "execution": "Five cases passed in targeted run; sixth passed after correcting test-only expectation: error return restores BASIC background rather than keeping startup black. PRG unchanged.",
+      "initial_run": {
+        "run": 6,
+        "passed": 5,
+        "failures": 1,
+        "seconds": 63.321
+      },
+      "successful_recheck": {
+        "test": "test_missing_game_file_restores_all_saved_video_fields",
+        "run": 1,
+        "passed": 1,
+        "seconds": 4.5
+      }
+    },
+    "reason_for_final_recheck": "Final register table excludes D066/D067 debug registers; only six additional charset/sprite pointer bytes are saved. Gameplay bytes unchanged.",
+    "model": "Assembled PRGs in narrow CPU/KERNAL/DMA/VIC/palette/HOTREG models; not XEMU"
   },
   "failures": [],
   "reproducible_build": {
     "byte_identical_artifacts": 27,
-    "independent_output": "/tmp/stage5d1-rebuild"
+    "independent_output": "/tmp/stage5d1-hotreg-rebuild"
   },
-  "D81_sha256": "ab694cbe2ec44c9e8d8c5f3532a65dc52c2c9dedf62e84c965e6dfb07acb27cb",
+  "D81_sha256": "81e52d0b9dab48e5f8e027e28531a506506b9352ef3490845e3df65b78bb5c72",
   "title_original_pixel_count": 84480,
   "game_levels": 100,
   "original_enemy_frames": 259,
   "clipping_cases": 1813,
   "overlap_cases": 259,
   "xemu": "NOT_RUN; awaiting user acceptance",
-  "verification": {
-    "full_run": {
-      "run": 50,
-      "passed": 49,
-      "failures": 1,
-      "seconds": 893.194
-    },
-    "test_fixture_correction": "An inherited expectation still counted three disk files. Updated to four including VYTI; removed duplicate test alias. No PRG change.",
-    "targeted_recheck": {
-      "test": "test_stage5d1.PaletteRegression.test_program_load_device_retained_for_all_SEQs",
-      "passed": 1,
-      "failures": 0,
-      "seconds": 26.239
-    },
-    "final_unique_cases": 49
-  },
+  "PRG_sha256": "ad64321cfd2b7d56edfbed6209e7bed6bbfdaa57c8854f8f9569caa072091abc",
   "protected_baseline_files": 61,
-  "program_commit": "4d8bded",
-  "DAT_files_match_Stage5c_Stable": true
+  "DAT_files_match_Stage5c_Stable": true,
+  "hotreg_regression": {
+    "old_PRG_sha256": "6b96d2958da2a3846bdd4444029e8bcaf93ba5c75e6abc63bad2a6131d5ea84f",
+    "new_PRG_sha256": "ad64321cfd2b7d56edfbed6209e7bed6bbfdaa57c8854f8f9569caa072091abc",
+    "changed_bytes": 590,
+    "first_changed_address": "0x4038",
+    "last_changed_address": "0x45c9",
+    "all_changes_in_title_bootstrap": true,
+    "old_PRG_hotreg_on_failures": 2,
+    "old_PRG_hotreg_off_passes": 2,
+    "corrected_PRG_configurations_passed": 4,
+    "models": [
+      "XEMU pending flag cleared on HOTREG-disable",
+      "Core pending flag retained while HOTREG disabled"
+    ],
+    "raster_emulation": false,
+    "saved_registers": 38,
+    "debug_registers_excluded": [
+      "D066",
+      "D067"
+    ]
+  }
 }

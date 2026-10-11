@@ -491,9 +491,23 @@ Quellen, PRG, vollständiges D81 und vier DAT-Dateien: `releases/stage_5d_1/`.
 Automatische Tests sind Hostmodelle; die neue XEMU-Abnahme steht aus.
 Stage 5d-1 wird erst nach ausdrücklicher Benutzerbestätigung Stable.
 
-Finale automatische Prüfung: 49 eindeutige Tests erfolgreich (vollständiger Lauf
-plus gezielte Wiederholung nach Anpassung einer übernommenen Geräte-/Dateianzahl-
-Testvorgabe auf vier SEQ-Dateien). Alle100 Level,259 Originalframes,1813 Clipping-
-und259 Überlappungsfälle, Ladefehler und wiederholtes RUN geprüft. 27 Artefakte
-im unabhängigen Zweitbuild byteidentisch; 61 Stable-Dateien geschützt.
-Kein eigener XEMU-/Hardwarelauf; Stage 5d-1 weiterhin nicht Stable.
+## Stage-5d-1-Nachkorrektur: Titel → Spiel
+
+Benutzer-XEMU-Befund: Titel lädt korrekt, im Level flackern die oberen etwa
+drei Zeilen und Pixieteile fehlen. Nachgewiesen wurde eine ausstehende
+HOTREG-Legacy-Neuberechnung beim abschließenden Aktivieren von HOTREG, die
+bereits restaurierte präzise Geometrie wieder überschreiben kann. Die
+Restore-Reihenfolge wurde ausschließlich im neuen Titelbootstrap korrigiert.
+Der zusätzliche Regressionstest scheitert mit dem alten PRG in beiden
+HOTREG-on-Modellen (XEMU/Core), besteht mit dem neuen in allen vier Fällen.
+Spielrenderer und sämtliche normalisierten Stage-5c-Spielkomponenten sowie
+alle Original-DAT-Dateien bleiben unverändert. Vollständige erneute Host-
+Regression und unabhängiger Zweitbuild: `docs/stage5d1-test-results.json`.
+Die visuelle XEMU-Nachprüfung der Korrektur steht aus; weiterhin nicht Stable.
+
+Automatische Nachprüfung: vollständiger Vorlauf 50/50 erfolgreich; endgültiger
+38-Register-Build mit sechs gezielten Prüfungen zu Geometrie, Pixeln, Ladefehler,
+ROM-Cursor, Exit und erneutem RUN bestätigt. Prüfbericht trennt die Buildstände
+und dokumentiert die Testvorgaben-Korrektur zur BASIC-Hintergrundfarbe.
+27 Artefakte im unabhängigen Zweitbuild byteidentisch, 61 Stable-Dateien geschützt.
+Nur 590 PRG-Bytes innerhalb des Titelbootstraps geändert; übriger Spielcode identisch.

@@ -395,3 +395,8 @@ Titelbootstrap `$4000–$47FF` wird vor HUD-Fontinitialisierung nach
 `$15B00–$162FF` gesichert (Titel bereits abgeschaltet); Helfer `$3340–$33AA`
 restauriert ihn beim Exit für erneutes RUN. Keine DOS-/ROM-Überschreibung.
 [Speicherkarte, Lebensdauern und IRQ-/Palette-Restaurierung](stage5d1_title_loader_integration.md).
+
+Stage-5d-1-Nachkorrektur: HOTREG-Legacy-Neuberechnung erfolgt nun vor der
+Restaurierung präziser VIC-IV-Geometrie. Zusätzliche Instruktionen bleiben
+innerhalb des reservierten Titelbootstraps `$4000–$47FF`; keine Puffer-,
+Screen-, Color-RAM-, DMA- oder Originaldatenadressen geändert.

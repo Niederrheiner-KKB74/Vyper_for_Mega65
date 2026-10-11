@@ -47,7 +47,7 @@ Alle Endadressen sind einschließlich. Die vollständige Assemblermap liegt im R
 | `$2001–$CAFF` | PRG, ursprüngliche Engine-Origins erhalten |
 | `$3340–$33AA` | Dauerhafter DMA-Helfer für Bootstrap-Sicherung/Rückkopie |
 | `$4000–$47FF` | Titelbootstrap bis Ladeabschluss; danach bisheriger HUD-Zeichensatz |
-| `$4800–$4B48` | Gemeinsamer SEQ-Loader und Übergabesteuerung |
+| `$4800–$4B4A` | Gemeinsamer SEQ-Loader und Übergabesteuerung |
 | `$6800–$68FF`, `$6900–$69FF` | SEQ-Eingabepuffer / DMA-Rücklesepuffer |
 | `$6B00–$6CF6`, `$6D00–$6EDB` | VYCL-Code / validierter Palettenspiegel |
 | `$7600–$7607` | Nur Level-1-Signaturprefix; Angriffscode beginnt bei `$7608` |
@@ -101,9 +101,10 @@ im Hosttest ausgeführt. Die übrigen Cursorbytes werden nicht umdefiniert.
 Nur Moduswechsel und DMA-Sicherung erfolgen atomar. Keine KERNAL-Ausgabe während
 des sichtbaren Titels oder eines aktivierten Eingabekanals.
 
-Der Titel sichert 32 VIC-IV-Register, 33×3 Palettebytes und seine 2640 Color-
-RAM-Bytes. Beim Restaurieren bleiben HOTREG und DEN bis zur fertigen Geometrie
-kontrolliert; der gelesene Raster-Bitwert von `D011` wird für den gespeicherten
+Der Titel sichert 38 VIC-IV-Register, 33×3 Palettebytes und seine 2640 Color-
+RAM-Bytes. Beim Restaurieren werden ausstehende Legacy-Neuberechnungen vor
+der präzisen Geometrie abgearbeitet; danach erfolgen keine HOTREG-Schreibzugriffe
+auf Legacy-Register mehr; der gelesene Raster-Bitwert von `D011` wird für den gespeicherten
 IRQ-Vergleich aus `D07A` rekonstruiert. Palette und Cursor werden restauriert,
 danach initialisiert die unveränderte Engine ihr RRB-/Sprite-/HUD-System.
 Gegnerpalette, Playerbank und Explosionen werden wie in Stage 5c eingerichtet.
@@ -162,11 +163,14 @@ Dateiketten und Inhalte werden vollständig zurückgelesen. `SHA256SUMS.txt`
 dokumentiert alle Build-Artefakte; das ZIP enthält Quellen, Assets und Tools.
 
 Automatische Ergebnisse: `docs/stage5d1-test-results.json`.
-**49 eindeutige Prüfungen erfolgreich**, 919,433 Sekunden einschließlich gezielter
-Wiederholung. Im vollständigen Lauf zählte eine übernommene Testvorgabe noch drei
-SEQ-Dateien; nach Anpassung auf vier einschließlich VYTI bestand der betroffene
-Test erneut. Ein doppelter Testalias wurde entfernt. Das PRG änderte sich dadurch
-nicht. Alle übrigen Prüfungen des vollständigen Laufs bestanden. Kein XEMU-Lauf.
+50 Prüfungen im vollständigen Lauf erfolgreich (900,158 Sekunden). Nach
+Entfernung der beiden nicht benötigten Debugregister aus der Sicherung wurden
+sechs gezielte Prüfungen am endgültigen PRG erfolgreich ausgeführt (67,821
+Sekunden einschließlich Wiederholung einer korrigierten Testvorgabe zur
+BASIC-Hintergrundfarbe im Fehlerpfad). Keine PRG-Änderung durch diese
+Testvorgaben-Korrektur. Insgesamt 51 eindeutige Fälle validiert; der Prüfbericht
+unterscheidet vollständigen Vorlauf und Prüfungen des endgültigen Builds.
+Kein eigener XEMU-Lauf.
  Tests führen die
 assemblierten Instruktionen aus, mit begrenzten KERNAL-/DMA-/VIC-Modellen:
 Titelpixel und Registergeometrie, unveränderte Caches über alle drei SEQ-Läufe,
@@ -192,3 +196,49 @@ Kein eigener XEMU-/Hardwarelauf behauptet. PAL, ROM V920395, BASIC 80×25:
    Dateiname, danach BASIC/DIRECTORY nutzbar und keine offene Eingabedatei.
 
 Erst nach ausdrücklicher Bestätigung wird Stage 5d-1 als Stable gesichert.
+
+## Korrektur nach dem ersten XEMU-Test: flackernde obere Zeilen
+
+Der Benutzer bestätigt die Titelanzeige, meldet aber Flackern und fehlende
+Pixieteile in etwa den oberen drei Spielzeilen. Die normalisierten Renderer-,
+HUD- und Kampfquellen sind weiterhin bytegleich zu Stage 5c Stable.
+
+Nachgewiesener Fehler in `splash.t_restore_video`: D031/D016/D011 wurden bei
+ausgeschaltetem HOTREG zurückgeschrieben, präzise VIC-IV-Geometriewerte
+restauriert und HOTREG zuletzt aktiviert. Die Legacy-Schreibzugriffe können
+noch als ausstehend gespeichert sein. Das Aktivieren löst dann erneut eine
+Legacy-Modusinterpretation aus: unter anderem werden Screenpointer, Stride,
+Color-RAM-Basis, Zeichenursprung und vertikale Grenzen überschrieben. Die
+Engine übernimmt ihre vertikale Geometrie aus diesem restaurierten Kontext.
+
+Belege: XEMU `targets/mega65/vic4.c` (Commit
+`40dfef0d`, `vic_write_reg`, `vic4_interpret_legacy_mode_registers`) und
+VIC-IV-Core `src/vhdl/viciv.vhdl` (Commit
+`99538d0e735ee8d1567b8e5578b2e49d1d1a33bd`,
+`viciv_legacy_mode_registers_touched`/`vicii_hot_regs_enable`). Die bisherigen
+flachen Registermodelle hatten diese Nebenwirkung nicht abgebildet.
+
+Korrektur ausschließlich im Titelbootstrap: zuerst den ursprünglichen
+HOTREG-Zustand und D011/D016/D031 herstellen und eine eventuelle
+Legacy-Neuberechnung abarbeiten. Danach HOTREG abschalten, die präzisen
+VIC-IV-Felder zurückschreiben und HOTREG ohne weitere Legacy-Schreibzugriffe
+auf den ursprünglichen Zustand setzen. D07A wird weiterhin nach D011
+restauriert. Keine Renderer-, Timing-, Animations-, Paletten- oder
+Originaldatenänderung. Sechs zusätzliche Sicherungsbytes erhalten auch die
+von Legacy-Neuberechnungen betroffenen Zeichensatz- und
+Spritepointer-Bytes (D068–D06A, D06C–D06E); Speicherbereiche und Dateiformate bleiben unverändert.
+
+Neuer Regressionstest führt die tatsächliche assemblierte Restore-Routine
+mit einem schmalen Modell der ausstehenden HOTREG-Updates aus. Er prüft sowohl
+XEMUs Löschung bei HOTREG-off als auch das Core-Modell ohne diese Löschung,
+jeweils bei ursprünglich an-/abgeschaltetem HOTREG. Der vorherige PRG-Stand
+verliert die präzise Geometrie in beiden HOTREG-on-Fällen; die Korrektur besteht
+alle vier Fälle. Das belegt den Restore-Fehler und seine Korrektur, aber keine
+zyklusgenaue Reproduktion des sichtbaren Flackerns. Die visuelle Wirksamkeit
+muss der Benutzer in XEMU bestätigen: insbesondere obere drei Zeilen bei
+ENTRY, FORMATION und ATTACK, vollständige Pixies, X/DIRECTORY/erneutes RUN.
+Der Binärvergleich gegen den vorherigen PRG-Stand (SHA256
+`6b96d2958da2a3846bdd4444029e8bcaf93ba5c75e6abc63bad2a6131d5ea84f`)
+zeigt 590 geänderte Bytes ausschließlich bei `$4038–$45C9`; alle Änderungen
+liegen im Titelbootstrap. Das PRG bleibt 43.777 Bytes groß, die übrigen
+Programmbytes sind identisch. Stage 5d-1 bleibt bis dahin ausdrücklich nicht Stable.
