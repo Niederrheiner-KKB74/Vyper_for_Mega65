@@ -178,6 +178,7 @@
   .label lives_done=$3c28
   .label font_codes=$9900
   .label set_row_pointer=$3ccf
+  .label row_pointer=$1a70
   .label score_work=$3a4d
   .label hud_update_points=$3a89
   .label long_row_store=$3c97
@@ -371,6 +372,7 @@
   .label e_return_y_lowdec=$7544
   .label e_invalid=$5892
   .label e_dma_source=$5b70
+  .label e_empty_screen=$5bad
   .label e_gylo=$1d44
   .label e_clear_row=$5a1b
   .label e_slot=$1d53
@@ -400,6 +402,7 @@
   .label e_return_x_inc=$7523
   .label e_dy=$1d59
   .label e_dx=$1d58
+  .label e_screen_destination=$5ba8
   .label e_gxhi=$1d42
   .label e_mirror_done=$59be
   .label e_delay=$1e84
@@ -417,6 +420,7 @@
   .label e_restore_dma=$7596
   .label e_decode=$599d
   .label e_demo_step=$874b
+  .label e_screen_dma=$5b9c
   .label e_cursor=$1e9a
   .label e_entry=$5902
   .label e_ty=$1e6e
@@ -449,6 +453,7 @@
   .label e_original_frame=$5ad8
   .label e_decode_done=$59a8
   .label e_gptrhi=$1d4a
+  .label e_clear_screen=$5b80
   .label e_copy_dma=$5b67
   .label e_move_done=$59a9
   .label e_last=$1d5f

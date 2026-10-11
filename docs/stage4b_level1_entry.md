@@ -260,3 +260,68 @@ Rendering aller sechs Frames/Kanten/Ecken, negative Koordinaten, Originalkurven/
 Targets, HUD, Player, Schüsse, Kollisionen/Punkte/Leben, sieben Explosionsframes,
 150-Tick-Unverwundbarkeit, GAME OVER, wiederholtes R, X und zweiter RUN.
 Keine übersprungenen Tests; weiterhin CPU-/DMA-/RRB-Modell, kein XEMU-Lauf.
+
+## Korrektur der flackernden oberen HUD-Zeilen / linken Pixel
+
+Benutzer-XEMU-Befund für `69894cb`: obere zwei HUD-Zeilen verschwinden
+zeitweise, links sporadische Pixel; mit allen Gegnern DEAD stabil.
+Die Listen-/Prefix-Grenzen bleiben im Hostmodell korrekt; der aktive
+Framebuffer wird jedoch während des laufenden Rasterzyklus umgebaut.
+Ab Rasterwartepunkt 250 löscht der bisherige Renderer 25×100 Screenbytes
+über registererhaltende Long-Stores. Die Zeilenabschlüsse werden erst nach
+allen Gegnern gesetzt. Screen-/Color-Listen enthalten in der Zwischenzeit
+Nullrecords; der VIC-IV kann diese als normale Zeichen statt GOTOX/NCM lesen.
+Das erklärt die Abhängigkeit von Gegnerzahl und Rasterphase.
+
+Reproduzierbarer CPU-Modellvergleich derselben Original-Formation:
+
+| Fall | `69894cb` | korrigierter Stand |
+| --- | ---: | ---: |
+| alle Gegner DEAD, Player aktiv | 258.127 CPU-Zyklen | 33.177 CPU-Zyklen |
+| 22 Gegner FORMATION, Player aktiv | 327.427 CPU-Zyklen | 102.477 CPU-Zyklen |
+
+Dies ist der vorhandene schmale CPU-Adapter, **keine zyklusgenaue
+VIC-IV-/XEMU-Messung**. DMA-Buszeit/IRQs/Render-Pipeline sind darin nicht
+vollständig enthalten. Der Vergleich belegt die entfernte CPU-Last, nicht
+die endgültige Raster-Abnahme oder eine garantierte Hardware-Framerate.
+
+Korrektur: pro Zeile ein physischer F018A-DMA-Copy von 100 Bytes statt
+100 einzelnen Long-Stores. Screenquelle wiederholt `80 02 00 02`: GOTOX640
+mit blankem NCM-Glyph `$200`. Die Colorquelle wiederholt `10 00 08 00`.
+Damit stehen freie Slots jederzeit als gültige unsichtbare Records, keine
+langen Null-/Mono-Tails und keine fortlaufenden X-Zähler über den Rand.
+Alle 24 Pixie-Slots plus reservierter Abschluss bleiben vorhanden.
+HUD-Prefix 84 Bytes und die letzten acht statischen Bytes bleiben erhalten.
+
+Helper/Descriptor/Screen-Template: `$5B80–$5C10`, innerhalb des bereits
+reservierten Controllerbereichs; die Colorquelle nutzt ihre bisherigen
+100 Bytes im HUD-Code. Rasterwartepunkt, Bildschirmgeometrie, Screen-RAM,
+Color-RAM, Originaldaten, Animation, Bewegung und Kampf bleiben unverändert.
+Keine doppelte Rendererarchitektur oder Änderung an Player/Joystick/Exit.
+
+Neuer Regressionstest prüft alle 25 physischen DMA-Copies mit je 100 Bytes,
+alle freien Screen-/Color-Slots, unveränderten HUD-Prefix, keine ROMwrites,
+keinen Listenüberlauf sowie die reduzierte CPU-Arbeit mit/ohne Gegner.
+DMA wird im Hostmodell getrennt von CPU-MAP als physischer Zugriff behandelt.
+Alle 15 Release-Dateien beim unabhängigen Zweitbuild byteidentisch.
+
+Neue Hashes:
+
+```
+7fbd513baaa393cbde281dd1875bfc6cb8da7cae47efea2585e9b2f70e1dc9d4  STAGE4B.PRG
+97ff7fbe04cc5b240b8c671f7c71f8646932da220ecacceb77bec27447491448  VYPER_STAGE4B.d81
+```
+
+XEMU erneut prüfen: Einflug mit vielen lebenden Gegnern, Formation, obere
+HUD-Zeilen und linker Rand; anschließend Kampf, DEAD aller Gegner, R/X.
+XEMU-Lauf hier nicht ausgeführt, Stage 4b weiterhin nicht Stable.
+
+Gegenüber `69894cb` ändern sich nur **169 PRG-Bytes** bei unveränderter
+PRG-/D81-Größe. Kein Renderer-Double-Buffering oder weiterer Speicherumbau.
+
+**Finale automatische Abnahme des DMA-Stands:** 33/33 Tests bestanden
+(285,571 Sekunden), ROM-V920395-Blinkroutine aktiviert, keine übersprungenen
+Tests. Vollständige Suite einschließlich Originalkurven/Targets, sechs
+Animationsframes, signed Kanten/Ecken, HUD, Player/Joystick, Projektile,
+Treffer/Punkte/Leben, sieben Explosionsframes, Unverwundbarkeit, GAME OVER,
+R/Highscore und X/zweiter RUN. CPU-/DMA-/RRB-Modelle, kein XEMU-Lauf.

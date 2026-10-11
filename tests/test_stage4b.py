@@ -16,7 +16,7 @@ class EntryMemory(PREV.OLD.HUD.Memory):
             self.map_rom_writes.append((a,v))
             return # SYS MAP to protected bank-3 KERNAL; VIC still fetches bank 0.
         pointer=self.data[0xd701]*256+v if a==0xd705 else -1
-        names=['font_dma','colour_backup_dma','colour_restore_dma','clear_dma','e_save_dma','e_restore_dma','e_copy_dma']
+        names=['font_dma','colour_backup_dma','colour_restore_dma','clear_dma','e_save_dma','e_restore_dma','e_copy_dma','e_screen_dma']
         if pointer in [N[k] for k in names]:
             self.data[a]=v
             p=pointer;src_mb=dst_mb=0
@@ -32,8 +32,12 @@ class EntryMemory(PREV.OLD.HUD.Memory):
             n=int.from_bytes(d[1:3],'little')
             src=int.from_bytes(d[3:6],'little')+(src_mb<<20)
             dst=int.from_bytes(d[6:9],'little')+(dst_mb<<20)
-            payload=self.char_wom[src-0xff7e000:src-0xff7e000+n] if 0xff7e000<=src<0xff80000 else bytes(self[src+i] for i in range(n))
-            for i,b in enumerate(payload):self[dst+i]=b
+            previous_linear=getattr(self,'linear',False)
+            self.linear=True # DMA uses physical addresses, never CPU MAP.
+            try:
+                payload=self.char_wom[src-0xff7e000:src-0xff7e000+n] if 0xff7e000<=src<0xff80000 else bytes(self[src+i] for i in range(n))
+                for i,b in enumerate(payload):self[dst+i]=b
+            finally:self.linear=previous_linear
             self.base.transfers.append((src,dst,n));return
         super().__setitem__(a,v)
 class MappedCPU(PREV.OLD.HUD.CPU):
@@ -410,6 +414,33 @@ class EntryTests(unittest.TestCase):
         self.assertFalse(m.memory.map_rom_writes)
         self.assertEqual(bytes(m.memory.data[0x3e000:0x40000]),kernel)
         self.assertEqual(bytes(m.memory.data[0xd060:0xd063]),bytes([0,0xe0,0]))
+
+    def test_dma_retirement_valid_empty_lists_cpu_budget_and_unchanged_hud(self):
+        m=start()
+        prefix=[bytes(m.memory.data[0xe000+r*192:0xe000+r*192+84]) for r in range(25)]
+        cpu_cost=[]
+        for live in (False,True):
+            for i in range(22):
+                setv(m,'c_es',1 if live else 0,i)
+                setv(m,'e_xlo',get(m,'e_tx',i),i);setv(m,'e_ylo',get(m,'e_ty',i),i)
+                setv(m,'e_xhi',0,i);setv(m,'e_yhi',0,i)
+            m.memory.base.transfers.clear()
+            before=m.cpu.processorCycles
+            call(m,'e_render')
+            cpu_cost.append(m.cpu.processorCycles-before)
+            copies=[x for x in m.memory.base.transfers if 0xe000<=x[1]<0xf2c0]
+            self.assertEqual(len(copies),25)
+            self.assertTrue(all(n==100 for _,_,n in copies))
+            self.assertEqual(get(m,'v014_overflow_count'),0)
+            for r in range(25):
+                self.assertEqual(bytes(m.memory.data[0xe000+r*192:0xe000+r*192+84]),prefix[r])
+                off=84+4*get(m,'v014_row_count',r)
+                remaining=(184-off)//4
+                self.assertEqual(bytes(m.memory.data[0xe000+r*192+off:0xe000+r*192+184]),bytes([0x80,2,0,2])*remaining)
+                self.assertEqual(bytes(m.memory.colour[r*192+off:r*192+184]),bytes([0x10,0,8,0])*remaining)
+            self.assertFalse(m.memory.map_rom_writes)
+        self.assertLess(cpu_cost[1],110000) # Narrow CPU model; old 327427, not hardware timing.
+        self.assertLess(cpu_cost[0],40000)
 
     def test_decoder_all_bytes_and_byte_exact_curves(self):
         import analyze_stage3b2_data as data

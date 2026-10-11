@@ -767,4 +767,32 @@ e_demo_no:
     clc
     rts
 .if (* > $8800) { .error "Legacy demo exceeds free slot" }
+*=$5b80 "Stage 4b fast valid RRB row retirement"
+e_clear_screen:
+    php
+    pha
+    txa
+    pha
+    lda hud.row_pointer
+    sta e_screen_destination
+    lda hud.row_pointer+1
+    sta e_screen_destination+1
+    lda #>e_screen_dma
+    ldx #<e_screen_dma
+    jsr hud.transfer
+    pla
+    tax
+    pla
+    plp
+    rts
+e_screen_dma:
+    .byte $80,0,$81,0,$0a,0,0
+    .word RRB_BYTES
+    .byte <e_empty_screen,>e_empty_screen,0
+e_screen_destination: .byte 0,0,0
+    .word 0
+e_empty_screen:
+    .fill RRB_BYTES, (mod(i,4)==0) ? $80 : ((mod(i,4)==2) ? 0 : 2)
+.if (* > $5c80) { .error "Row retirement overlaps legacy table" }
+
 }

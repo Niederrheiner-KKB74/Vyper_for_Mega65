@@ -30,7 +30,7 @@
 .const life_x=state+$50
 .const colour_pointer=state+$60
 .const screen_pointer=state+$6c
-.const row_pointer=state+$70
+.label row_pointer=state+$70
 .const background_pointer=state+$74
 .const store_value=state+$65
 .const startup_bg=state+$66
@@ -813,7 +813,8 @@ clear_dma:
     .byte <zero_colours,>zero_colours,0
 clear_destination: .byte 0,0,8
     .word 0
-zero_colours: .fill RRB_BYTES,0
+// Empty records are GOTOX 640 / transparent NCM $200, never zero/mono tails.
+zero_colours: .fill RRB_BYTES, (mod(i,4)==0) ? $10 : ((mod(i,4)==2) ? $08 : 0)
 colour_backup_dma:
     .byte $80,$ff,$81,0,$0a,0,0
     .word $480

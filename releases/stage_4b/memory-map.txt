@@ -17,6 +17,7 @@ Default-segment:
   $4e30-$4efe Stage 4a mode and RRB hook
   $5000-$563f Additional BASIC colour backup
   $5700-$5b77 Stage 4b Level-1 parser and motion
+  $5b80-$5c10 Stage 4b fast valid RRB row retirement
   $5c80-$5c8f Unnamed
   $5c90-$5fd7 HUD attributes rows 0-19
   $6000-$67cf Unnamed

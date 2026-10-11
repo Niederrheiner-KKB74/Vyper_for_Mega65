@@ -239,3 +239,14 @@ Regression jetzt mit SYS-MAP-Modell. Erneute XEMU-Abnahme erforderlich.
 Korrigierter Screenstand: 32/32 automatische Tests bestanden (408,498 s),
 ROM-V920395-Blinkroutine aktiv; alle 15 Release-Dateien beim Zweitbuild
 byteidentisch. D81/PRG unter `releases/stage_4b/`, Benutzer-XEMU-Test offen.
+
+Weiterer XEMU-Befund: obere zwei HUD-Zeilen und linke Pixel flackern,
+verschwinden bei DEAD aller Gegner. Die Live-RRB-Listen wurden durch
+2.500 einzelne Screen-Clears pro Frame lange in ungültigem Zustand belassen.
+Korrektur: physischer DMA-Clear plus gültige unsichtbare Screen-/Color-Records
+für sämtliche freien Slots. Rasterabnahme in XEMU erneut offen; kein Stable-Tag.
+
+DMA-Korrektur: 33/33 Tests bestanden (285,571 s), bereitgestellte ROM-
+Blinkroutine aktiv, 15 Release-Dateien byteidentisch reproduziert.
+CPU-Modell: 22-Gegner-Formation 327.427 → 102.477 Zyklen.
+Aktuelles D81 unter `releases/stage_4b/`; erneute XEMU-Abnahme offen.

@@ -259,3 +259,8 @@ Stage-4b-Screenfix: physische Screenwrites jetzt per 32-bit-indirektem Store,
 da SYS `$E000–$FFFF` per MAP auf KERNAL-ROM in Bank 3 abbildet. Drei Pointer
 bei `$1A6C–$1A77`; HUD-Code endet jetzt `$3E59`, innerhalb der bisherigen
 Grenze `$3E80`. Screen-RAM, RRB-Stride, Daten-/Clippingpuffer unverändert.
+
+Stage-4b-Rasterkorrektur: `$5B80–$5C10` enthält Screen-Clear-Helper,
+F018A-Descriptor und 100-Byte-Template mit GOTOX640/NCM200-Leereinträgen.
+Innerhalb des bereits reservierten Controllerbereichs `$5700–$5C7F`;
+Screen-/Color-RAM-Größe, Player/HUD-Geometrie und DMA-/Loaderdaten unverändert.

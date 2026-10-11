@@ -4,7 +4,7 @@
   "comparison": {
     "baseline": "stage4a-stable",
     "baseline_prg_sha256": "3da4cf49117ad07ac630dfad10ec30407ff62bc6e5051eac3c974bd8c5d002e2",
-    "changed_bytes": 5796,
+    "changed_bytes": 5964,
     "extended_bytes": 0,
     "screen": "$E000-$F2BF,192-byte stride,24 slots",
     "player_start": [
@@ -17,7 +17,7 @@
       "name": "STAGE4B",
       "bytes": 43777,
       "blocks": 173,
-      "sha256": "2bce62b77189343839fdaa9a7b295fa42d0d8b65d1a63d4eec33d29a434a78a7"
+      "sha256": "7fbd513baaa393cbde281dd1875bfc6cb8da7cae47efea2585e9b2f70e1dc9d4"
     },
     {
       "name": "VYLV.DAT",
@@ -38,6 +38,7 @@
     "physical_hud_x": 480,
     "physical_hud_width": 160,
     "screen_write_addressing": "45GS02 32-bit indirect, bypasses SYS MAPH bank-3 KERNAL",
+    "dynamic_clear": "25 physical DMA copies of 100 bytes; valid GOTOX640/NCM200 empty records",
     "screen_row_stride": 192,
     "screen_entries_per_row": 96,
     "dynamic_row_offset": 84,

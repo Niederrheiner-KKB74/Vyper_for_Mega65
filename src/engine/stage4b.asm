@@ -2688,11 +2688,8 @@ s2ia_clear_row:
     jsr v012a_set_row_pointer
     ldy #0
 s2ia_clear_screen:
-    lda #0
-    jsr v012a_store
-    iny
-    cpy #RRB_BYTES
-    bne s2ia_clear_screen
+    jsr entry.e_clear_screen
+    .fill 7,$ea // DMA replaces 100 mapping-safe byte stores; old addresses retained.
     // Colour RAM is accessed in the same mode as the existing renderer.
     lda VIC_D030
     ora #1
