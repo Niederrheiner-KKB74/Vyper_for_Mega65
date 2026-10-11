@@ -17,9 +17,9 @@ Default-segment:
   $4b4a-$4beb Stage 4b-2 bounded attack parser
   $4c00-$4e2b Stage 3b-5c states and restart
   $4e30-$4efe Stage 4a mode and RRB hook
-  $4f00-$4fb1 Stage 4b-2 formation and selection
+  $4f00-$4fbc Stage 4b-2 formation and selection
   $5000-$563f Additional BASIC colour backup
-  $5700-$5b7d Stage 4b Level-1 parser and motion
+  $5700-$5b7e Stage 4b Level-1 parser and motion
   $5b80-$5c10 Stage 4b fast valid RRB row retirement
   $5c20-$5c4e Stage 4b-1 entry visibility
   $5c80-$5c8f Unnamed
@@ -46,7 +46,7 @@ Default-segment:
   $9000-$97ff Unnamed
   $9800-$98ff Stage 3b-2 loaded path-pixie glyphs
   $9900-$9a55 Thin HUD font
-  $9a56-$9acd Stage 4b-2 attack start and visibility
+  $9a56-$9ae7 Stage 4b-2 attack start and visibility
   $9b00-$9d6e Stage 3b-5b direction and BASIC sprite restoration
   $9d70-$9f0b Stage 3b-5c conditional RRB renderer and game-over overlay
   $9f10-$9fe2 Stage 4b-2 original attack motion

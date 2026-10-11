@@ -53,7 +53,7 @@ und originale Angriffsauswahl/-wahrscheinlichkeit bleiben ausdrücklich offen.
 ## Zustandsmaschine und Originalbewegung
 
 Die bestätigte WAIT-/ENTRY-Logik und ihre Sichtbarkeitsfreigabe bleiben erhalten.
-Erst nach Abschluss des gesamten Einflugs (ohne Abschüsse Update 361) wird der
+Erst nach Abschluss des gesamten Einflugs (ohne Abschüsse Update 353) wird der
 neue Controller freigegeben. DEAD/EXPLOSION blockieren diese Aufbau-Barriere
 nicht dauerhaft; noch wartende/einfliegende lebende Gegner blockieren sie.
 
@@ -89,7 +89,8 @@ Kurvenbytes; sie ist die notwendige, ausdrücklich vorläufige MEGA65-Randlogik.
 
 RETURN ist kein ATTACK und kann nicht erneut ausgewählt werden. Jede Rückkehr
 berechnet das Ziel erneut aus originalem `e_tx` + aktuellem Offset, Y=`e_ty`.
-Originalslotdaten bleiben unverändert. Getroffene Gegner explodieren sieben
+Originaldaten in VYLV bleiben unverändert; nur die eingelesenen Y-Ziele
+werden um acht Pixel angepasst. Getroffene Gegner explodieren sieben
 Originalframes lang und bleiben DEAD; kein Wiederbeleben durch den Controller.
 Score bleibt FORMATION 100, ATTACK/RETURN 175 (Level 1); Rammen und Respawn
 verwenden die vorhandene Kampfmechanik.
@@ -100,7 +101,8 @@ Alle Konstanten stehen am Anfang von `stage4b2_attack.asm`:
 
 | Parameter | Vorgabe | Bedeutung |
 |---|---|---|
-| `a_FORM_STEP_TICKS` | 50 | ein Offset-Schritt pro 50 Gameplay-Updates |
+| `a_FORM_STEP_TICKS` | 10 | ein Offset-Schritt pro 10 Gameplay-Updates |
+| `a_FORM_Y_SHIFT` | 8 | Originalslot-Y minus eine Bildschirmzeile |
 | `a_FORM_MIN/MAX` | -8/+8 | insgesamt 16 Pixel zwischen den Umkehrpunkten |
 | `a_INITIAL_INTERVAL` | 100 | erste Startchance nach Aufbau-Barriere |
 | `a_START_INTERVAL` | 60 | weitere Angriffsversuche |
@@ -109,11 +111,14 @@ Alle Konstanten stehen am Anfang von `stage4b2_attack.asm`:
 
 Die Grenzen ergeben mit den Originalslot-X 30–195 den Bereich 22–203
 (16-Pixel-Pixies vollständig innerhalb X<240, kein HUD-Kontakt). Beginn bei
-Offset 0, Richtung +1; exakt 50 spätere Updates ergeben +1, nach 400 +8;
-Umkehr ohne zusätzliche Pause oder Drift. Grund-Y bleibt unverändert. Die
-Geschwindigkeit 1 px/s ist die vorläufige Benutzerbeobachtung, kein binär
-verifizierter Originalwert. Die Originalankunftszeiten des Einflugs bleiben
-unverändert, weil vorher Offset 0 und der neue Scheduler gesperrt sind.
+Offset 0, Richtung +1; exakt 10 spätere Updates ergeben +1, nach 80 +8;
+Umkehr ohne zusätzliche Pause oder Drift. Die Geschwindigkeit beträgt bei
+50 Hz fünf Pixel pro Sekunde; dies ist die ausdrückliche Benutzervorgabe.
+Die Formationsziele werden beim Einlesen zentral um acht Y-Pixel nach oben
+verschoben. Einflug und RETURN benutzen beide diese Ziele. Originaldaten,
+Startkoordinaten, Kurvenbytes und Startabstände bleiben unverändert; die
+höheren Ziele sind vollständig nach Update 353 statt 361 erreicht. Der
+Parser lehnt Y unter 8 oder über 184 ab, statt die Subtraktion umbrechen zu lassen.
 
 Der vorhandene 16-Bit-Galois-LFSR wird mit festem Seed initialisiert und weiter
 für Schüsse verwendet. Beim Startversuch ein weiterer LFSR-Schritt: untere
@@ -143,6 +148,23 @@ aktiven Originalangreifern wird kein vierter Testangreifer gestartet.
 GAME OVER pausiert Controller/Schüsse; R setzt Level 1, Offset/Flags/Seed und
 Einflug neu auf und erhält den Highscore. X/BASIC-Exit unverändert.
 
+## Korrektur nach dem XEMU-Test
+
+Der Player erreichte nach sieben Explosionsframes korrekt WAIT. `c_wait`
+wartet auf DEAD oder FORMATION aller Gegner. Die automatische Angriffssteuerung
+startete währenddessen weitere Angriffe: ein Lauf mit drei bestehenden
+Angreifern blieb nach 4.000 Updates ohne Respawn (46 neue Starts).
+Neue Starts sind jetzt während PLAYER_EXP und WAIT gesperrt, einschließlich
+des isolierten T-Testmodus. Bereits fliegende Gegner führen ihre Kurven und
+RETURN weiter aus; sobald die Formation wieder vollständig ist, folgt der
+unveränderte steuerbare Respawn mit 150 Updates Unverwundbarkeit.
+
+Ein neuer Regressionstest löst eine echte Rammkollision mit aktivem Scheduler
+aus, prüft Explosion/Lebensabzug, erzwingt jeden Update eine neue Startchance
+und prüft ausbleibende Starts, anschließenden Respawn, horizontale Steuerung
+sowie den Übergang zur normalen Verwundbarkeit. Keine Explosions-, Kollisions-,
+Schuss- oder Player-Bewegungsroutine wurde geändert.
+
 ## Speicher, Build und Basisschutz
 
 Neu `$6F80–$6FFF` (freie 128-Byte-Lücke hinter dem Color-Backup): Indizes,
@@ -154,10 +176,10 @@ Lücken **unter `$A000`**:
 |---|---|
 | `$36B0–$36F2` | Auslauf und Reentry |
 | `$4B4A–$4BEB` | begrenzter Angriffsparser |
-| `$4F00–$4FB1` | Formation und Angriffsauswahl |
+| `$4F00–$4FBC` | Formation und Angriffsauswahl |
 | `$7951–$79F1` | Schussinitialisierung; nach Ende der Levelkopie |
 | `$895C–$89D3` | Schussauswahl |
-| `$9A56–$9ACD` | Angriffsbeginn und Sichtbarkeit |
+| `$9A56–$9AE7` | Angriffsbeginn und Sichtbarkeit |
 | `$9F10–$9FE2` | Kurvenbewegung |
 
 Wichtig: `$D030` ROMA/ROMC und C64-Banking können CPU-Reads in `$A000–$CFFF`
@@ -199,7 +221,7 @@ Ein unabhängiger Zweitbuild erzeugt alle 16 Release-Dateien byteidentisch.
 Die Tests führen assemblierten Code im CPU-/DMA-/SYS-MAP-Modell aus. Die
 36 übernommenen Regressionen isolieren die neue Automatik durch ein Test-
 Fixture-Flag; im ausgelieferten Programm ist sie standardmäßig aktiv. Neue
-Tests prüfen den aktiven Aufbau bis Update 361, 50-Frame-Pendeltakt über mehr
+Tests prüfen den aktiven Aufbau bis Update 353, 10-Frame-Pendeltakt über mehr
 als einen Zyklus, alle Punkte beider Angriffskurven, Seed/Wiederholbarkeit,
 Drei-Angreifer-Limit, globale Vier-Schuss-Grenze, Zielmomentaufnahme, DEAD- und
 unsichtbare Quellen, RETURN zum während des Flugs bewegten Ziel, Original-
@@ -209,17 +231,19 @@ am unteren und oberen Rand. Ein zusätzlicher Hauptschleifentest durchläuft
 die erste Schusschance benutzt er den expliziten gültigen Testseed `$0100`.
 Ein Zufallslauf muss nicht innerhalb kurzer Zeit einen Schuss erzeugen.
 
-Finales Ergebnis: **48/48 Tests bestanden**, keine übersprungenen Tests,
-506,244 s mit bereitgestelltem ROM V920395. Hauptschleifentest: durchschnittlich
-112.506, maximal 117.705 Modellzyklen/Frame; maximal drei aktive Gegnerschüsse
+Finales Ergebnis: **49/49 Tests bestanden**, keine übersprungenen Tests,
+511,317 s mit bereitgestelltem ROM V920395. Hauptschleifentest: durchschnittlich
+112.575, maximal 117.725 Modellzyklen/Frame; maximal drei aktive Gegnerschüsse
 in diesem Szenario (die separate Pool-Prüfung belegt die globale Grenze vier).
 Boot/Controller/Render/R/X unter ROMC sowie neue Routinen unter ROMA bestanden.
 Alle 16 Release-Dateien sind im unabhängigen Zweitbuild byteidentisch.
+Der anschließend ergänzte gezielte Parsertest bestätigt zusätzlich alle
+22 Y-Ziele gegen VYLV und die Grenzen 0/7/8/25/184/185/255.
 
 | Artefakt | SHA256 |
 |---|---|
-| `STAGE4B2.PRG` | `e151539f9054702f321ee182c79eea8aa000a04ab9d580786f942aba4a767ab2` |
-| `VYPER_STAGE4B2.d81` | `3c411a1019cf63516d468d088b8ce9fe62dd99080fb0d8f0e0a3542287bc9391` |
+| `STAGE4B2.PRG` | `d55a4309aa6d431cb56b812393215a36bc5512d5b7b0d7846a150325183ddb66` |
+| `VYPER_STAGE4B2.d81` | `a2cbbc69f4d934ea228e40b3c2ef9f7cc9088ff252344147f0bcaabb16458aea` |
 
 CPU-Zyklen des Modells und DMA-Records sind Regressionsevidenz, keine Messung
 der wirklichen Rasterzeit. Raster-/50-Hz-Abnahme muss unter XEMU erfolgen.
@@ -233,7 +257,7 @@ RUN
 ```
 
 Den vollständigen Einflug ohne Schießen vergleichen; rechts kein stehender
-Vorlauf, ursprüngliche Formation erreicht. Danach das langsame Pendeln mehrere
+Vorlauf, um eine Zeile höhere Formation erreicht. Danach das schnellere Pendeln mehrere
 Sekunden beobachten (Endpunkte 16 px auseinander), zufällige Angriffe beider
 Varianten und Rückkehr oben zu den bewegten Slots prüfen. Nie mehr als drei
 ATTACK bzw. vier Gegnerschüsse. HUD/obere Zeilen dürfen nicht flackern;

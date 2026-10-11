@@ -198,7 +198,7 @@ e_assign:
 !valid:
     ldx e_slot
     lda s3b2.word_value
-    cmp #185
+    jsr attack.a_formation_y
     bcc !valid+
     jmp e_invalid
 !valid:

@@ -4,7 +4,7 @@
   "comparison": {
     "baseline": "stage4b1-stable",
     "baseline_prg_sha256": "729b68d6d2ff221811c1bda74ea4cf18371c8edbaa68282d0239743227487ea6",
-    "changed_bytes": 2243,
+    "changed_bytes": 2319,
     "extended_bytes": 0,
     "relocations": [
       "e_save_colour",
@@ -23,7 +23,7 @@
       "name": "STAGE4B2",
       "bytes": 43777,
       "blocks": 173,
-      "sha256": "e151539f9054702f321ee182c79eea8aa000a04ab9d580786f942aba4a767ab2"
+      "sha256": "d55a4309aa6d431cb56b812393215a36bc5512d5b7b0d7846a150325183ddb66"
     },
     {
       "name": "VYLV.DAT",
@@ -459,11 +459,13 @@
       "consume all 183 bytes; latch invisibility after first bottom crossing",
       "if finite end is above bottom, continue X=constant, Y+=2 until Y>=200",
       "after an invisible update reenter at Y=-16; return +/-1 toward current slot",
-      "offset -8..8, 1 pixel/50 updates; after full entry barrier",
+      "offset -8..8, 1 pixel/10 updates; after full entry barrier; formation targets original Y minus 8 pixels",
+      "no new attack launches during player explosion/respawn wait; existing attacks drain",
       "fixed seed 0xc3a5, initial 100 updates then 60-update attempts, max 3 ATTACK"
     ],
     "parameters": {
-      "a_FORM_STEP_TICKS": 50,
+      "a_FORM_STEP_TICKS": 10,
+      "a_FORM_Y_SHIFT": 8,
       "a_FORM_MIN": -8,
       "a_FORM_MAX": 8,
       "a_START_INTERVAL": 60,

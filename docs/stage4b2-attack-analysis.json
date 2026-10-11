@@ -107,7 +107,8 @@
     "consume all 183 bytes; latch invisibility after first bottom crossing",
     "if finite end is above bottom, continue X=constant, Y+=2 until Y>=200",
     "after an invisible update reenter at Y=-16; return +/-1 toward current slot",
-    "offset -8..8, 1 pixel/50 updates; after full entry barrier",
+    "offset -8..8, 1 pixel/10 updates; after full entry barrier; formation targets original Y minus 8 pixels",
+    "no new attack launches during player explosion/respawn wait; existing attacks drain",
     "fixed seed 0xc3a5, initial 100 updates then 60-update attempts, max 3 ATTACK"
   ]
 }

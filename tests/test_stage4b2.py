@@ -479,7 +479,7 @@ class EntryTests(unittest.TestCase):
                     a['cursor']+=1
                     if a['cursor']==len(curve):a['phase']=2
                 elif a['phase']==2:
-                    tx,ty=target['formation_x'],target['formation_y']
+                    tx,ty=target['formation_x'],target['formation_y']-8
                     a['x']+=(tx>a['x'])-(tx<a['x']);a['y']+=(ty>a['y'])-(ty<a['y'])
                     if (a['x'],a['y'])==(tx,ty):a.update(state=1,phase=3)
                 self.assertEqual((get(m,'c_es',i),get(m,'e_phase',i),get(m,'e_cursor',i)),(a['state'],a['phase'],a['cursor']),(tick,i))
@@ -634,7 +634,7 @@ class AttackTests(unittest.TestCase):
         m=start();setv(m,'a_enabled',1);return m
     def formed(self):
         m=self.feature_start()
-        for _ in range(361):call(m,'a_objects')
+        for _ in range(353):call(m,'a_objects')
         self.assertEqual(get(m,'a_ready'),1)
         self.assertEqual([get(m,'c_es',i) for i in range(22)],[1]*22)
         return m
@@ -642,11 +642,49 @@ class AttackTests(unittest.TestCase):
         def axis(lo,hi):
             n=get(m,lo,i)+256*get(m,hi,i);return n-65536 if n>=32768 else n
         return axis('e_xlo','e_xhi'),axis('e_ylo','e_yhi')
+    def test_ram_explosion_drains_attacks_and_respawns_with_active_scheduler(self):
+        m=self.formed()
+        # Three live attacks overlap the collision; preserve the actual scheduler.
+        for i in (0,1,11):
+            m.cpu.x=i;call(m,'a_start')
+        target(m,0,state=3,x=112,y=184);setv(m,'e_phase',4)
+        player(m,112,184)
+        lives=m.memory.data[N['player1_lives']]
+        call(m,'c_collisions')
+        self.assertEqual(get(m,'c_ps'),1)
+        self.assertEqual(m.memory.data[N['player1_lives']],lives-1)
+        waiting=False
+        for tick in range(500):
+            setv(m,'a_start_tick',1) # force a launch opportunity on every update
+            setv(m,'a_event',0)
+            call(m,'a_objects');call(m,'p_random_step');call(m,'c_timers')
+            self.assertNotEqual(get(m,'a_event'),1,'new attack prevents respawn')
+            waiting |= get(m,'c_ps')==2
+            call(m,'c_wait')
+            if get(m,'c_ps')==3:break
+        else:self.fail('player never respawned with the attack scheduler enabled')
+        self.assertTrue(waiting)
+        self.assertEqual(get(m,'c_blink'),150)
+        self.assertEqual((m.memory.data[0x1662],m.memory.data[0x1664]),(112,184))
+        before=m.memory.data[0x1662]
+        m.memory.data[0xdc00]=0xfa;call(m,'c_move')
+        call(m,'c_timers')
+        self.assertNotEqual(m.memory.data[0x1662],before)
+        self.assertEqual(m.memory.data[0x1664],184)
+        for _ in range(149):call(m,'c_timers')
+        self.assertEqual(get(m,'c_ps'),0)
+
     def test_runtime_parser_original_indices_two_separate_curves(self):
         import analyze_stage3b2_data as data
         p=data.parse_level_record(data.level_records((ROOT/'assets/VYLV.DAT').read_bytes())[0][1])
         m=self.feature_start()
         self.assertEqual([get(m,'a_index',i) for i in range(22)],[0]*11+[1]*11)
+        for i,enemy in enumerate(p['enemies']):
+            self.assertEqual(get(m,'e_ty',i),enemy['formation_y']-8)
+        for raw in (0,7,8,25,184,185,255):
+            m.cpu.a=raw;call(m,'a_formation_y')
+            self.assertEqual(bool(m.cpu.p&1),not 8<=raw<=184)
+            if 8<=raw<=184:self.assertEqual(m.cpu.a,raw-8)
         for i,h in enumerate(p['attack_curves_hex']):
             pointer=get(m,'a_ptrlo',i)+256*get(m,'a_ptrhi',i)
             self.assertEqual(get(m,'a_length',i),183)
@@ -654,15 +692,15 @@ class AttackTests(unittest.TestCase):
         setv(m,'a_index',2);call(m,'a_init');self.assertEqual(get(m,'error'),7)
     def test_enabled_entry_barrier_and_exact_formation_pendulum(self):
         m=self.feature_start()
-        for tick in range(1,362):
+        for tick in range(1,354):
             call(m,'a_objects')
             self.assertEqual(get(m,'a_offset'),0)
-            self.assertEqual(get(m,'a_ready'),int(tick==361))
+            self.assertEqual(get(m,'a_ready'),int(tick==353))
         setv(m,'a_start_tick',255)
-        for tick in range(1,1651):
+        for tick in range(1,331):
             setv(m,'a_start_tick',255) # isolate pendulum from scheduler
             call(m,'a_objects')
-            steps=tick//50;phase=steps%32
+            steps=tick//10;phase=steps%32
             expected=phase if phase<=8 else 16-phase if phase<=24 else phase-32
             self.assertEqual(get(m,'a_offset'),expected&255,tick)
             for i in range(22):
@@ -794,7 +832,7 @@ class AttackTests(unittest.TestCase):
             if m.cpu.pc==N['main_loop']:break
             m.cpu.step()
         else:self.fail('ROM-overlay boot')
-        for _ in range(361):call(m,'a_objects')
+        for _ in range(353):call(m,'a_objects')
         m.cpu.x=0;call(m,'a_start')
         for _ in range(10):
             m.memory.data[0xd030]|=0x10 # new helpers also execute with ROMA, unlike legacy B800 renderer

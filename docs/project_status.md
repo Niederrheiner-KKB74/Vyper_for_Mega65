@@ -286,15 +286,22 @@ und Release-Prüfsummen bleiben unverändert.
 
 Branch `stage4b-2` auf `stage4b1-stable`, originale getrennte 183-Byte-Kurven
 für Level 1, maximal drei ATTACK und vier gegnerische Hardware-Sprite-Schüsse.
-Formation pendelt -8..+8 mit 1 Pixel je 50 Frames nach vollständigem Einflug.
+Formation pendelt -8..+8 mit 1 Pixel je 10 Frames nach vollständigem Einflug.
 RETURN folgt den jeweils aktuellen Slotzielen. Auswahl, Y-Verankerung und
 Auslauf/Reentry sind ausdrücklich dokumentierte MEGA65-Übergangsregeln;
 historische Amiga-Endmarker-/Variantenauswahl nicht unabhängig belegt.
 [Analyse, Parameter und Abnahme](stage4b2_attack_formation.md).
 Release `releases/stage_4b_2/`; XEMU-Abnahme offen, kein Stable-Tag.
 
-Stage-4b-2-Prüfung: 48/48 Tests in 506,244 s mit ROM V920395 bestanden,
+Stage-4b-2-Prüfung: 49/49 Tests in 511,317 s mit ROM V920395 bestanden,
 inklusive aktiver Angriff-/Return-/Pendelmechanik und ROM-Overlay-Prüfung.
-Hauptschleifenmodell: Ø112.506 / maximal 117.705 Zyklen pro Frame.
+Hauptschleifenmodell: Ø112.575 / maximal 117.725 Zyklen pro Frame.
 Alle 16 Release-Dateien byteidentisch reproduziert; PRG unverändert 43.777
 Bytes, D81 819.200 Bytes. Keine XEMU-/Hardware-Abnahme behauptet.
+
+XEMU-Rückmeldung zu Stage 4b-2: Explosion und Lebensabzug funktionieren,
+Respawn wurde jedoch von laufend nachgestarteten Angriffen blockiert.
+Korrektur: neue Angriffe während Player-Explosion und WAIT sperren, bestehende
+Angriffe normal abschließen. Formation zentral acht Y-Pixel höher; Pendeltakt
+auf ausdrücklich gewünschte 10 Frames geändert. Neuer Teststand, erneut
+unter XEMU zu bestätigen; keine Stable-Markierung.

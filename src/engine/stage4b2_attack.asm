@@ -1,6 +1,7 @@
 // Issue #16. Original bytes; explicit MEGA65 scheduling/selection/exit rules.
 .namespace attack {
-.const a_FORM_STEP_TICKS=50
+.const a_FORM_STEP_TICKS=10
+.const a_FORM_Y_SHIFT=8 // one character row; applies to every parsed formation target
 .const a_FORM_MIN=-8
 .const a_FORM_MAX=8
 .const a_START_INTERVAL=60
@@ -175,6 +176,12 @@ a_postframe:
     sta a_ready
     rts // first movement/attack countdown begins on the next update
 !schedule:
+    // Drain current attacks before c_wait revives the player.
+    lda game.c_ps
+    cmp #1
+    beq !done+
+    cmp #2
+    beq !done+
     jsr a_recount
     lda a_start_tick
     beq !select+
@@ -238,6 +245,19 @@ a_start:
     sta game.c_es,x
     rts
 
+a_formation_y:
+    cmp #185
+    bcs !bad+
+    cmp #a_FORM_Y_SHIFT
+    bcc !bad+
+    sec
+    sbc #a_FORM_Y_SHIFT
+    clc
+    rts
+!bad:
+    sec
+    rts
+
 a_goal:
     lda entry.e_tx,x
     clc
@@ -259,6 +279,11 @@ a_visible:
     rts
 // The explicit old T demo shares the same global ATTACK cap.
 a_legacy_attack:
+    lda game.c_ps
+    cmp #1
+    beq !blocked+
+    cmp #2
+    beq !blocked+
     jsr a_recount
     lda a_count
     cmp #3
@@ -266,6 +291,7 @@ a_legacy_attack:
     lda game.c_es+18
     cmp #3
     beq !allow+ // already one of the three; caller verified legacy phase 3
+!blocked:
     lda #0
     sta shots.p_attacking
     rts
