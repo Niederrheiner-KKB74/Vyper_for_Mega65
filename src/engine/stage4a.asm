@@ -2165,7 +2165,7 @@ v012b_copy_row6:
     inx
     cpx #80
     bne v012b_copy_row6
-    ldx #2
+    ldx #0
 v012a_init_loop:
     jsr v012a_set_row_pointer
     ldy #0
@@ -2218,12 +2218,12 @@ v012a_init_loop:
     lda #0
     jsr v012a_store
     inx
-    cpx #23
+    cpx #25
     bne v012a_init_loop
     // Stage 2c: initialise each row with ZERO active dynamic fragments.
     // Do not emit any placeholder GOTOX records at X=0.
     // A single terminator is placed at the FIRST available slot.
-    ldx #2
+    ldx #0
 v014_prepare_row:
     stx v014_row
     lda #0
@@ -2231,7 +2231,7 @@ v014_prepare_row:
     jsr v014_write_terminator
     ldx v014_row
     inx
-    cpx #23
+    cpx #25
     bne v014_prepare_row
     jsr v014_render_all
     rts
@@ -2854,10 +2854,9 @@ v014_no_third:
 
 v014_append:
     ldx v014_row
-    cpx #23
+    cpx #25
     bcs v014_append_done
-    cpx #2
-    bcc v014_append_done
+    .fill 4,$ea // Rows 0..24 valid; preserve every subsequent symbol address.
     lda v014_row_count,x
     cmp #V014_CAPACITY
     bcs v014_append_overflow

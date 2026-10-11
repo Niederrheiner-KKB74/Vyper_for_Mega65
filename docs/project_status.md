@@ -211,3 +211,9 @@ normales Gameplay ist außerhalb des Tests unverändert. Keine originalen
 Einflug-/Angriffskurven integriert. Build/PRG/D81 unter `releases/stage_4a/`.
 [Technischer Nachweis und noch offene XEMU-Abnahme](stage4a_offscreen_clipping.md).
 Stage 4a ist ausdrücklich **nicht Stable**; die stabile Stage 3b-5c bleibt erhalten.
+
+Stage-4a-Erweiterung 11.10.2026: Nach fehlerfreier Benutzerprüfung des bisherigen
+Testmodus sind nun zusätzlich Y=0–15 und Y=184–199 für Pixies freigegeben.
+Rendering/Clipping verwenden alle 25 Zeilen, X<240 und sämtliche übrigen
+Gameplay-/Speicherparameter bleiben unverändert. Aktualisiertes D81 im selben
+Releasepfad; erneute XEMU-Abnahme der vollen Höhe ausstehend, nicht Stable.

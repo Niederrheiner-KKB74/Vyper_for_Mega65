@@ -28,11 +28,11 @@ def signed(m,name):
 def oracle(x,y,source):
     return {(x+sx,y+sy): (source[sy*8+sx//2]>>(4*(sx%2)))&15
             for sy in range(16) for sx in range(16)
-            if 0<=x+sx<240 and 16<=y+sy<184 and (source[sy*8+sx//2]>>(4*(sx%2)))&15}
+            if 0<=x+sx<240 and 0<=y+sy<200 and (source[sy*8+sx//2]>>(4*(sx%2)))&15}
 
 def fetched(m):
     pixels={}
-    for row in range(2,23):
+    for row in range(25):
         count=get(m,'v014_row_count',row)
         assert count<=1,('capacity',row,count)
         if not count:continue
@@ -48,7 +48,7 @@ def fetched(m):
                 addr=glyph*64+(ry+shift)*8+sx//2
                 value=(m.memory.data[addr]>>(4*(sx%2)))&15
                 if value:
-                    assert 0<=x+sx<240 and 16<=row*8+ry<184,('escaped',x+sx,row*8+ry)
+                    assert 0<=x+sx<240 and 0<=row*8+ry<200,('escaped',x+sx,row*8+ry)
                     pixels[x+sx,row*8+ry]=value
     return pixels
 
@@ -67,25 +67,25 @@ class OffscreenTests(unittest.TestCase):
     def test_signed_rectangle_all_edges_and_extremes(self):
         m=Machine()
         xs=[-32768,-257,-256,-17,-16,*range(-15,1),1,112,224,*range(225,241),255,256,32767]
-        ys=[-32768,-257,-16,-1,0,*range(1,17),17,92,168,*range(169,185),255,256,32767]
+        ys=[-32768,-257,-16,-1,0,*range(1,17),17,92,184,*range(185,201),255,256,32767]
         for x in xs:
             for y in ys:
                 position(m,x,y);call(m,'r_clip')
                 width=max(0,min(x+16,240)-max(x,0))
-                height=max(0,min(y+16,184)-max(y,16))
+                height=max(0,min(y+16,200)-max(y,0))
                 decision=0 if not width or not height else 1 if width==height==16 else 2
                 self.assertEqual(get(m,'r_decision'),decision,(x,y))
                 self.assertEqual(get(m,'r_width'),width,(x,y))
                 self.assertEqual(get(m,'r_height'),height,(x,y))
                 if decision:
-                    self.assertEqual((get(m,'r_draw_x'),get(m,'r_draw_y')),(max(x,0),max(y,16)))
-                    self.assertEqual((get(m,'r_src_x'),get(m,'r_src_y')),(max(-x,0),max(16-y,0)))
+                    self.assertEqual((get(m,'r_draw_x'),get(m,'r_draw_y')),(max(x,0),max(y,0)))
+                    self.assertEqual((get(m,'r_src_x'),get(m,'r_src_y')),(max(-x,0),max(-y,0)))
     def test_actual_rrb_pixels_six_frames_edges_corners_guards_and_hud(self):
         m=start();setv(m,'r_enabled',1)
         types=PREV.OLD.HUD.PREVIOUS.R.DATA.graphics_types((ROOT/'assets/VYGR.DAT').read_bytes())
-        locations=[(-16,92),(240,92),(112,0),(112,184),(112,16),(224,168),(-257,92),(256,92),(112,-1),(112,256)]
+        locations=[(-16,92),(240,92),(112,0),(112,200),(112,0),(224,184),(-257,92),(256,92),(112,-1),(112,256)]
         for n in range(1,16):
-            locations += [(-n,92),(240-n,92),(112,16-n),(112,184-n),(-n,16-n),(240-n,184-n),(-n,184-n),(240-n,16-n)]
+            locations += [(-n,92),(240-n,92),(112,0-n),(112,200-n),(-n,0-n),(240-n,200-n),(-n,200-n),(240-n,0-n)]
         protected=[(0x1000,0x1600),(0x9000,0x9840),(0x98c0,0xb800),(0xbf07,0xca40),(0xcac0,0xcb00)]
         screen_before=bytes(m.memory.data[0x5000:0x5c80])
         colour_before=bytes(m.memory.colour[:3200])
@@ -100,16 +100,25 @@ class OffscreenTests(unittest.TestCase):
                 for a,b in protected:self.assertEqual(bytes(m.memory.data[a:b]),sentinel[a],hex(a))
                 for row in range(25):
                     off=row*128
-                    end=128 if row in (0,1,23,24) else 84
+                    end=84
                     self.assertEqual(m.memory.data[0x5000+off:0x5000+off+end],screen_before[off:off+end])
                     self.assertEqual(m.memory.colour[off:off+end],colour_before[off:off+end])
                 if get(m,'r_decision')==1:
-                    rows=[r for r in range(2,23) if get(m,'v014_row_count',r)]
+                    rows=[r for r in range(25) if get(m,'v014_row_count',r)]
                     self.assertEqual(PREV.word(m,0x5000+rows[0]*128+86,2)&8191,0x261)
+    def test_normal_renderer_uses_new_top_and_bottom_rows(self):
+        m=start();PREV.enemies(m);setv(m,'c_ps',2)
+        source=bytes(m.memory.data[0x9840:0x98c0])
+        for y in (0,15,184,199):
+            PREV.target(m,0,1,x=112,y=y)
+            call(m,'c_render')
+            self.assertEqual(fetched(m),oracle(112,y,source),y)
+            self.assertEqual(get(m,'v014_overflow_count'),0)
+            self.assertEqual(get(m,'r_enabled'),0)
     def test_private_crop_pixels_transparency_and_odd_nibbles(self):
         m=Machine();source=bytes(((i*13+7)&255) for i in range(128))
         m.memory.data[0x9840:0x98c0]=source
-        for x,y in [(-n,16-n) for n in range(1,16)]+[(240-n,184-n) for n in range(1,16)]:
+        for x,y in [(-n,0-n) for n in range(1,16)]+[(240-n,200-n) for n in range(1,16)]:
             position(m,x,y);call(m,'r_clip');call(m,'r_crop')
             w,h=get(m,'r_width'),get(m,'r_height')
             sx,sy=get(m,'r_src_x'),get(m,'r_src_y')
@@ -123,17 +132,17 @@ class OffscreenTests(unittest.TestCase):
         m=Machine();m.memory.data[0x1d00:0x1d40]=bytes(64);setv(m,'r_enabled',1);call(m,'r_begin')
         seen={i:set() for i in range(5)}
         last=None;cycles=0
-        for _ in range(2400):
+        for _ in range(2600):
             case=get(m,'r_case');x,y=signed(m,'r_x'),signed(m,'r_y')
             seen[case].add((x,y))
             if last and case==last[0]:
                 self.assertLessEqual(abs(x-last[1]),1);self.assertLessEqual(abs(y-last[2]),1)
             if last and last[0]==4 and case==0:cycles+=1
             call(m,'r_clip')
-            if (x+16<=0 or x>=240 or y+16<=16 or y>=184):self.assertEqual(get(m,'r_decision'),0)
+            if (x+16<=0 or x>=240 or y+16<=0 or y>=200):self.assertEqual(get(m,'r_decision'),0)
             last=case,x,y;call(m,'r_objects')
         self.assertGreaterEqual(cycles,2)
-        for case,ends in enumerate([[(112,-16),(112,184)],[(112,200),(112,0)],[(-16,92),(240,92)],[(240,92),(-16,92)],[(-16,0),(240,256)]]):
+        for case,ends in enumerate([[(112,-16),(112,200)],[(112,200),(112,-16)],[(-16,92),(240,92)],[(240,92),(-16,92)],[(-16,-16),(240,240)]]):
             for point in ends:self.assertIn(point,seen[case])
     def test_toggle_pause_next_animation_freeze_resume_and_basic_exit(self):
         m=start();PREV.shot(m,0,120,50)

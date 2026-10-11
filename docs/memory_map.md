@@ -236,8 +236,8 @@ Neue Stage auf `stage3b5c-stable`, keine Änderungen an der Referenz.
 `$4E30–$4EFE`, `$8660–$874A`, `$8E20–$8F7D`: schmale Modus-/Renderhooks,
 Testbewegung und Crop, ausschließlich in nachweislich nullbelegten Lücken.
 `$CA00–$CAFF`: privater transparent geclipter NCM-Pixie mit zwei Blank-Guards;
-PRG wächst um 256 Bytes. Aktiver Pixie-Bereich `[0,240) × [16,184)`;
-HUD und reservierte Randzeilen bleiben unverändert. Keine neuen DMA-Listen,
+PRG wächst um 256 Bytes. Aktiver Pixie-Bereich seit 11.10.2026 `[0,240) × [0,200)`;
+alle 25 bereits vorhandenen RRB-Zeilen nutzbar. HUD und Speicherlayout bleiben unverändert. Keine neuen DMA-Listen,
 Zero-Page-Nutzung oder Hardware-Sprite-Kanäle. Alle alten Symboladressen erhalten.
 Exakte finale Codegrenzen: `releases/stage_4a/memory-map.txt`.
 [Analyse, Diagnose und Testanleitung](stage4a_offscreen_clipping.md).

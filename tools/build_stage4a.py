@@ -47,6 +47,23 @@ def verify_engine(prg,names):
         sites=[i for i in range(at(lo),at(hi)) if old[i:i+3]==call]
         if len(sites)!=1:raise ValueError('Nonunique hook '+oldname)
         i=sites[0];expected[i:i+3]=b'\x20'+names[newname].to_bytes(2,'little');patches.append(hex(i-2+0x2001))
+    # User-authorized extension to all 25 rows; no layout or object limits change.
+    row_patches=[]
+    def replace_one(lo,hi,before,after):
+        sites=[i for i in range(at(lo),at(hi)) if old[i:i+len(before)]==before]
+        if len(sites)!=1:raise ValueError('Nonunique row patch '+hex(lo))
+        i=sites[0];expected[i:i+len(after)]=after;row_patches.append(hex(i-2+0x2001))
+    for label in ('v012a_init_loop','v014_prepare_row'):
+        replace_one(original[label]-2,original[label],b'\xa2\x02',b'\xa2\x00')
+    for lo,hi in [('v012a_init_loop','v014_prepare_row'),('v014_prepare_row','v012a_blank_original'),
+                  ('c_render_clear','c_render_player'),('c_render_finish','c_render_enemy')]:
+        replace_one(original[lo],original[hi],b'\xe0\x17',b'\xe0\x19')
+    for lo,hi in [('c_render','c_render_clear'),('c_render_paths','c_render_finish')]:
+        replace_one(original[lo],original[hi],b'\xa2\x02',b'\xa2\x00')
+    replace_one(original['v014_append'],original['v014_append_done'],b'\xe0\x17',b'\xe0\x19')
+    i=at(original['v014_append']+7)
+    if old[i:i+3]!=b'\xe0\x02\x90':raise ValueError('Unexpected lower row guard')
+    expected[i:i+4]=b'\xea'*4;row_patches.append(hex(i-2+0x2001))
     for lo,hi in ((0x4e30,0x5000),(0x8660,0x8800),(0x8e20,0x9000),(0xca00,0xcb00)):
         if lo<0xca00 and any(old[at(lo):at(hi)]):raise ValueError('Occupied region '+hex(lo))
         expected[at(lo):at(hi)]=prg[at(lo):at(hi)]
@@ -54,7 +71,7 @@ def verify_engine(prg,names):
         raise ValueError('Unexpected baseline changes '+str([hex(i-2+0x2001) for i,(a,b) in enumerate(zip(expected,prg)) if a!=b][:20]))
     for name,address in original.items():
         if name in names and names[name]!=address:raise ValueError('Old label moved '+name)
-    return {'baseline_prg_sha256':BASE.sha(old),'engine_hooks':patches,'changed_bytes':sum(a!=b for a,b in zip(old,prg)),'extended_bytes':len(prg)-len(old)}
+    return {'baseline_prg_sha256':BASE.sha(old),'engine_hooks':patches,'full_height_row_patches':row_patches,'changed_bytes':sum(a!=b for a,b in zip(old,prg)),'extended_bytes':len(prg)-len(old)}
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -95,7 +112,7 @@ def main():
         report={'assembler':'KickAssembler 5.25','baseline':'stage3b5c-stable','comparison':comparison,'files':BASE.verify_disk(disk,entries),'hud':{'mode':'H640, CHARXSCALE=60; logical X doubled','logical_playfield_right_exclusive':240,'physical_hud_x':480,'physical_hud_width':160,'screen_row_stride':128,'screen_entries_per_row':64,'dynamic_row_offset':84,'font':'authored thin 5x7 glyphs, 8-column cells','colour_ram_bytes_saved':3200,'life_columns':4,'life_rows':2,'life_logical_x':[245,262,279,296],'life_y':[58,75],'initial_lives':3,'player2_active':False},'projectiles':{'player_channels':[0,1],'enemy_channels':[2,3,4,5],'free_channels':[6,7],'player_speed':3,'enemy_vy':1,'max_abs_vx':2,'enemy_probability':'1/8 per eligible frame','enemy_cooldown_frames':12,'test_enemy_0based':18,'attack_window_frames':96,'attack_period_frames':128,'test_toggle':'T','coordinates':'logical 240x200; sprite native X/Y from D04C-D04F','collisions':True},'mapping_status':json.loads((ROOT/'assets/vylv_vygr_mapping.json').read_text()),'runtime_xemu':'NOT RUN; user confirmation required'}
         outputs={'STAGE4A.PRG':prg,'VYPER_STAGE4A.d81':disk,'STAGE4A.sym':sym.encode(),'build-report.json':(json.dumps(report,indent=2)+'\n').encode(),'memory-map.txt':(result.stdout[result.stdout.index('Memory Map'):].split('Writing Symbol file')[0].rstrip()+'\n').encode()}
         for name in sources: outputs[name]=(ROOT/'src/engine'/name).read_bytes()
-        report['offscreen']={'controls':{'F':'toggle isolated test','N':'next direction','P':'pause movement','X':'BASIC'},'signed_coordinates':'16-bit','clip_rect_exclusive':[0,16,240,184],'cases':['top','bottom','left','right','top-left diagonal'],'crop_buffer':'$CA00-$CAFF','diagnostics':'$1D00-$1D3F','stable':False}
+        report['offscreen']={'controls':{'F':'toggle isolated test','N':'next direction','P':'pause movement','X':'BASIC'},'signed_coordinates':'16-bit','clip_rect_exclusive':[0,0,240,200],'cases':['top','bottom','left','right','top-left diagonal'],'crop_buffer':'$CA00-$CAFF','diagnostics':'$1D00-$1D3F','stable':False}
         report['stage3b5c_preserved']={'explosions':json.loads((ROOT/'assets/explosions/conversion.json').read_text()),'enemies':23,'explosion_ticks_per_frame':3,'respawn_ticks':150,'blink_period_ticks':25,'score_bits':32,'score_overflow':'saturate','display':'low seven decimal digits','baseline_xemu':'Stage 3b-5c accepted by user; Stage 4a pending'}
         outputs['build-report.json']=(json.dumps(report,indent=2)+'\n').encode()
         outputs['vylv_vygr_mapping.json']=(ROOT/'assets/vylv_vygr_mapping.json').read_bytes()

@@ -829,13 +829,13 @@ c_tables_end:
 c_render:
     lda #0
     sta v014_overflow_count
-    ldx #2
+    ldx #0
 c_render_clear:
     lda #0
     sta v014_row_count,x
     jsr s2ia_clear_row
     inx
-    cpx #23
+    cpx #25
     bne c_render_clear
     lda c_ps
     cmp #c_WAIT
@@ -879,13 +879,13 @@ c_render_paths:
     lda c_index
     cmp #22
     bne c_render_paths
-    ldx #2
+    ldx #0
 c_render_finish:
     stx v014_row
     jsr v014_write_terminator
     ldx v014_row
     inx
-    cpx #23
+    cpx #25
     bne c_render_finish
     rts
 c_render_enemy:

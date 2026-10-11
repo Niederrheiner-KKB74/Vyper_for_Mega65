@@ -11,7 +11,19 @@
       "0x22b7",
       "0x38a8"
     ],
-    "changed_bytes": 760,
+    "full_height_row_patches": [
+      "0xb846",
+      "0xb8b1",
+      "0xb8ad",
+      "0xb8c2",
+      "0x9d80",
+      "0x9df0",
+      "0x9d75",
+      "0x9de4",
+      "0xbdb6",
+      "0xbdba"
+    ],
+    "changed_bytes": 774,
     "extended_bytes": 256
   },
   "files": [
@@ -19,7 +31,7 @@
       "name": "STAGE4A",
       "bytes": 43777,
       "blocks": 173,
-      "sha256": "a96dd1e5347c0058dbb1a8d96caa6fe8864af8ba4900f73b91a1f19b9caccfd8"
+      "sha256": "3da4cf49117ad07ac630dfad10ec30407ff62bc6e5051eac3c974bd8c5d002e2"
     },
     {
       "name": "VYLV.DAT",
@@ -327,9 +339,9 @@
     "signed_coordinates": "16-bit",
     "clip_rect_exclusive": [
       0,
-      16,
+      0,
       240,
-      184
+      200
     ],
     "cases": [
       "top",

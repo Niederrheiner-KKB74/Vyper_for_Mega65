@@ -11,7 +11,8 @@ Die Quellen `src/engine/stage3b5c.asm`, `_hud.asm`, `_game.asm`, `_shots.asm`
 bleiben erhalten. Ihre entsprechenden Stage-4a-Kopien behalten sämtliche alten
 Symboladressen. Der Build vergleicht das neue PRG byteweise mit dem stabilen PRG
 (SHA256 `2de5edcc91b8d4a24afb7ec427b89ca0b17cbe4841b5cb5d9fe2c0a6f5f62d04`).
-Er erlaubt ausschließlich sechs JSR-Zieländerungen und drei zuvor vollständig
+Er erlaubt sechs JSR-Zieländerungen, zehn gezielt geprüfte Zeilenbereich-Patches
+für die freigegebenen Randzeilen und drei zuvor vollständig
 nullbelegte Codebereiche sowie die private Erweiterung um 256 Grafikbytes.
 
 Quellstellen der stabilen Engine (Symbolnamen sind in Stage 4a gleich):
@@ -40,7 +41,8 @@ oder reduziert diese Baselinezahl außerhalb des isolierten Tests nicht.
 - Bisheriger aktiver Pixie-Bereich: **`[0,240) × [16,184)`**, also X 0–239,
   Y 16–183. Die Y-Grenzen folgen direkt aus den vorhandenen Zeilen 2–22.
   Y 0–15 und 184–199 gehören zum schwarzen Rand der Bildschirmfläche;
-  Stage 4a erweitert diese Zeilen nicht. Die rechte Grenze liegt bei nativ X=480;
+  Die Erweiterung vom 11.10.2026 nutzt dagegen **alle Zeilen 0–24**, also
+  **`[0,240) × [0,200)`**. Die rechte Grenze liegt weiterhin bei nativ X=480;
   dahinter beginnt das HUD mit 160 nativen Pixeln Breite.
 - VIC-IV-Hardwareborder: äußere Bildgrenze. Die HUD-Trennlinie ist **keine**
   Hardware-Clipping-Grenze. Spritekoordinaten verwenden zusätzlich den aus
@@ -83,7 +85,7 @@ signed 16-Bit-Wörter. Für 16×16 gelten die exklusiven Schnitte:
 
 ```
 left=max(x,0)     right=min(x+16,240)
-top=max(y,16)     bottom=min(y+16,184)
+top=max(y,0)      bottom=min(y+16,200)
 ```
 
 Ein leerer Schnitt erzeugt **keinen Pixie-RRB-Eintrag**. Die Listen werden trotzdem
@@ -103,7 +105,7 @@ einer negativen Position erzeugt. CPU-Code liest keine Cropdaten unter BASIC-ROM
 er schreibt ausschließlich `$CA40–$CABF`, die der VIC als physisches RAM liest.
 
 **Pixelgenaues Clipping ist damit im Software-/RRB-Fetch-Modell nachgewiesen.**
-Es erfordert keinen Architekturwechsel: dieselben Zeilenlisten, Glyphformate,
+Es erfordert keinen Architekturwechsel: dieselben 25 bereits reservierten Zeilenlisten, Glyphformate,
 Paletten, DMA-Listen, GOTOX-Routinen und Abschlussmarker bleiben bestehen.
 Es ist kein Übermalen außerhalb des Spielfelds. Die verworfenen Pixel fehlen
 bereits im transparenten Glyph. Guards verhindern den Subzeilen-Fetch in fremde
@@ -143,14 +145,15 @@ Die fünf Fälle laufen automatisch endlos, mit **einem logischen Pixel pro
 
 | Fall | Start | Ende | Bewegung |
 | --- | --- | --- | --- |
-| oben | (112,-16) | (112,184) | Y +1 |
-| unten | (112,200) | (112,0) | Y -1 |
+| oben | (112,-16) | (112,200) | Y +1 |
+| unten | (112,200) | (112,-16) | Y -1 |
 | links | (-16,92) | (240,92) | X +1 |
 | rechts / neben HUD | (240,92) | (-16,92) | X -1 |
-| diagonal oben links | (-16,0) | (240,256) | X +1, Y +1 |
+| diagonal oben links | (-16,-16) | (240,240) | X +1, Y +1 |
 
 Beim diagonalen Fall ist der Pixie nach dem unteren Austritt weiter logisch
-beweglich bis Y=256; dieser Zustand darf nicht auf Zeile 0 zurückspringen.
+beweglich bis Y=240; zusätzliche CPU-Tests prüfen auch Y=256 gegen
+Wraparound auf Zeile 0.
 Kein Debugtext wird während der Darstellung oder in IRQs ausgegeben.
 
 ## Speicher und Diagnose
@@ -200,8 +203,8 @@ realen assemblierten Routinen im py65-NMOS-Instruktionsmodell:
 | (-16,92), unsichtbar | 283 | 0 |
 | (112,92), vollständig | 328 | 0 |
 | (-1,92), 15×16 sichtbar | 322 | 30959 |
-| (-15,1), 1×1 sichtbar | 323 | 15018 |
-| (239,183), 1×1 sichtbar | 319 | 15013 |
+| (-15,-15), 1×1 sichtbar | 323 | 15018 |
+| (239,199), 1×1 sichtbar | 319 | 15013 |
 
 Das sind **keine gemessenen 45GS02-/XEMU-Framezeiten**. DMA-Stalls, echter VIC-Fetch
 und Maschinen-/Emulatortakt sind darin nicht bewertet; die stabile 50-Hz-Ausgabe
@@ -232,22 +235,24 @@ MEGA65_ROM=/pfad/zu/MEGA65.ROM PYTHONPATH=tests python3 -m unittest test_stage4a
 python3 tools/build_stage4a.py --kickass /pfad/zu/KickAss.jar --output /tmp/stage4a-rebuild
 ```
 
-Ausgeführt am 10.10.2026 im Cloud-Host:
+Aktualisiert und ausgeführt am 11.10.2026 im Cloud-Host:
 
 - KickAssembler 5.25 erfolgreich; PRG **43.777 Bytes**, Load $2001 bis $CAFF.
-- Finale Suite **20/20 bestanden**, 98,160 Sekunden; optionaler ROM-Test mit dem
+- **21/21 Tests bestanden**: bestehende Suite 20/20 in 101,112 Sekunden plus
+  zusätzlicher Normalrenderer-Randzeilentest 1/1 in 4,382 Sekunden. Optionaler ROM-Test mit dem
   bereitgestellten V920395 tatsächlich aktiviert. Das ROM wird nicht verteilt.
 - 1.849 signed Rechteckschnitte inkl. INT16-Extremen, 780 Vergleiche tatsächlich
   gefetchter RRB-Pixel (130 Kanten-/Eckenpositionen × sechs Originalframes),
   Crop-Nibble-Reihenfolge/Transparenz/Guards, HUD-/System-/Grafikschutz.
-- 2.400 Bewegungsupdates umfassen mindestens zwei vollständige Fünffallzyklen;
-  Start/Ende, Kontinuität, unsichtbare Bewegung und Y=256 geprüft.
+  Normalrenderer zusätzlich bei Y=0, 15, 184 und 199 direkt geprüft.
+- 2.600 Bewegungsupdates umfassen mindestens zwei vollständige Fünffallzyklen;
+  Start/Ende, Kontinuität, unsichtbare Bewegung und Extremkoordinaten geprüft.
 - F/N/P, eingefrorene Spielzustände einschließlich ignorierter T/E-Tasten,
   sechs weiterlaufende Animationsframes, Test verlassen, X und zweiter RUN.
 - Geerbte 14 Gameplayprüfungen: Loader, korrekte Originalgrafiken/Bewegung,
   Softwarekollisionen, unabhängige sieben Originalexplosionsframes, Punkte,
   Highscore, Leben, steuerbarer 150-Tick-Respawn, GAME OVER/R und Fehler-Exit.
-- Genau sechs Hooks und drei freie Codebereiche; alle alten Symbole erhalten.
+- Sechs Hooks, zehn eng begrenzte Zeilenbereich-Patches und drei freie Codebereiche; alle alten Symbole erhalten.
   Die sechs stabilen Quellen und sämtliche stabilen Releases bleiben unverändert.
 - **Alle 14 Release-Dateien byteidentisch** beim unabhängigen Zweitbuild.
 - D81 **819.200 Bytes**, PRG/SEQ-Dateitypen, BAM, Dateiketten, Originaldateigrößen,
@@ -256,8 +261,8 @@ Ausgeführt am 10.10.2026 im Cloud-Host:
 Finale SHA256:
 
 ```
-PRG a96dd1e5347c0058dbb1a8d96caa6fe8864af8ba4900f73b91a1f19b9caccfd8
-D81 ff5ac9d39a9be6f6ce7d935a7b0457c96ba8a610932c99967eb4712a2345ec2c
+PRG 3da4cf49117ad07ac630dfad10ec30407ff62bc6e5051eac3c974bd8c5d002e2
+D81 a608d67994b26100295f38f4ee9821e90ddde6e8763daee35ec293d51954df54
 ```
 
 Tests sind CPU-/DMA-/RRB-Fetch-Modelle, **kein XEMU-Lauf**.
@@ -271,9 +276,10 @@ ROM V920395, BASIC 80×25 wie bei Stable. Mindestens zwei komplette Testschleife
 2. F: ein Typ-15-Gegner; bei allen vier Richtungen erst einzelne sichtbare Pixel,
    dann gesamter Pixie, danach entsprechend abgeschnitten und unsichtbar.
 3. Rechter Rand: keinerlei Pixel/Schriftverschiebung im HUD. Oberer/unterer Rand:
-   keine Pixel in den schwarzen Randzeilen, keine Spuren/Wraparound.
+   pixelgenaue Ausgabe bis Y=0 beziehungsweise Y=199,
+   kein Zeichnen außerhalb Y=0–199, keine Spuren/Wraparound.
 4. N bis Diagonale: Ecke korrekt, Animation durchgehend sechs Frames,
-   Y=256 vollständig unsichtbar, mehrere Durchläufe ohne Störungen.
+   Endposition vollständig unsichtbar, mehrere Durchläufe ohne Störungen.
 5. P pausiert Bewegung; Animation bleibt erkennbar. F zurück: Gameplay,
    Projektile, Score/Leben und Player unverändert funktionsfähig.
 6. X aus einem partiell sichtbaren Testfall: normaler BASIC-Screen und Cursor;
@@ -283,3 +289,21 @@ ROM V920395, BASIC 80×25 wie bei Stable. Mindestens zwei komplette Testschleife
 
 XEMU-/Hardwareerfolg sowie stabiles 50-Hz-Timing sind **noch nicht bestätigt**.
 Stage 4a erhält keinen Stable-Tag vor ausdrücklicher Benutzerfreigabe.
+
+## Erweiterung vom 11.10.2026: volle Bildschirmhöhe
+
+Der Benutzer hat die bisherige Stage-4a-Clippingdarstellung unter XEMU als
+fehlerfrei bestätigt und anschließend die Freigabe für Y=0–15 und Y=184–199
+beauftragt. Die neue Version nutzt sämtliche 25 bereits vorhandenen RRB-Zeilen.
+Initialisierung, Löschen und Abschlussmarker umfassen nun 0–24; `v014_append`
+verwirft nur Zeilen >=25. Die entfallene Untergrenzenprüfung wird durch vier
+NOPs ersetzt, sodass sämtliche nachfolgenden Symboladressen unverändert bleiben.
+Die Test-Schnittgrenzen und vertikalen Start-/Endpositionen folgen dem neuen
+Bereich; X-Grenze 240, Geschwindigkeit, Animation und Tasten bleiben gleich.
+Player-Bewegungsgrenzen, Flugbahnen, Projektil-/Kollisionslogik, HUD und alle
+Register-/Speicherparameter werden nicht verändert. Insbesondere wächst das
+PRG nicht weiter. Die zusätzliche Zeilenarbeit im Renderer ist in XEMU erneut
+auf Timing und sauberen Exit zu prüfen.
+
+Die vorherige Benutzerabnahme gilt für den älteren eingeschränkten Bereich;
+die **erweiterte** Version benötigt eine neue XEMU-Abnahme und bleibt nicht Stable.

@@ -95,13 +95,13 @@ r_render:
 r_test_render:
     lda #0
     sta v014_overflow_count
-    ldx #2
+    ldx #0
 r_clear:
     lda #0
     sta v014_row_count,x
     jsr s2ia_clear_row
     inx
-    cpx #23
+    cpx #25
     bne r_clear
     jsr r_clip
     lda r_decision
@@ -123,13 +123,13 @@ r_submit:
     sta v014_y
     jsr v014_submit_pixie
 r_finish:
-    ldx #2
+    ldx #0
 r_terminators:
     stx v014_row
     jsr v014_write_terminator
     ldx v014_row
     inx
-    cpx #23
+    cpx #25
     bne r_terminators
     rts
 .if (* > $5000) { .error "Stage 4a mode overlaps screen" }
@@ -224,12 +224,12 @@ r_begin:
     rts
 r_start_x_lo: .byte 112,112,$f0,240,$f0
 r_start_x_hi: .byte 0,0,$ff,0,$ff
-r_start_y_lo: .byte $f0,200,92,92,0
-r_start_y_hi: .byte $ff,0,0,0,0
+r_start_y_lo: .byte $f0,200,92,92,$f0
+r_start_y_hi: .byte $ff,0,0,0,$ff
 r_end_x_lo: .byte 112,112,240,$f0,240
 r_end_x_hi: .byte 0,0,0,$ff,0
-r_end_y_lo: .byte 184,0,92,92,0
-r_end_y_hi: .byte 0,0,0,0,1
+r_end_y_lo: .byte 200,$f0,92,92,240
+r_end_y_hi: .byte 0,$ff,0,0,0
 r_dx: .byte 0,0,1,$ff,1
 r_dy: .byte 1,$ff,0,0,1
 .if (* > $8800) { .error "Stage 4a motion overlaps existing glyph" }
@@ -257,9 +257,9 @@ r_clip:
     sta r_axis
     lda r_y+1
     sta r_axis+1
-    lda #16
+    lda #0
     sta r_min
-    lda #184
+    lda #200
     sta r_max
     jsr r_clip_axis
     lda r_draw
