@@ -311,3 +311,15 @@ ROM und alle gesicherten Release-Artefakte bleiben erhalten.
 
 Stage 4b-3 ist vom Benutzer unter XEMU bestätigt (`stage4b3-stable`).
 Die Stable-Sicherung verändert keine Speicherbereiche oder Release-Artefakte.
+
+## Stage 4c – vier Kurvendeskriptoren (Teststand)
+
+Basis Stage4b-3 Stable, keine neue RAM-Allokation. Innerhalb bestehender freier
+Lücke `$6F80–$6FFF`: Pointer-Low4 bei`$6FEC–$6FEF`, Pointer-High4 bei
+`$6FF0–$6FF3`, Byte-Längen4 bei`$6FF4–$6FF7`, Kurvenzahl bei`$6FF8`.
+Gegnerindizes bleiben`$6F80–$6F95`; alte Zweierfelder`$6FD8–$6FDD` nicht mehr benutzt.
+Parser`$4B4A–$4BF0`, guarded Start/Helper`$9A56–$9AF2`, Motion`$9F10–$9FEA`,
+alle unter`$A000`. Originalkurvenpointer Level1 bleiben`$77E1/$789A`.
+Player/ENTRY-Schüsse/Renderer/Backupbereiche und gesamte übrige Speicherkarte
+wie Stage4b-3. Quellen/Releases der Stable-Basis unverändert.
+[Details](stage4c_attack_mapping_and_drift.md).
