@@ -267,3 +267,15 @@ Screen-/Color-RAM-Größe, Player/HUD-Geometrie und DMA-/Loaderdaten unveränder
 
 **Stage 4b Stable:** Der Benutzer hat den finalen DMA-Stand `12f4b40` in
 XEMU bestätigt. Speicherlayout unverändert; Referenz `stage4b-stable`.
+
+## Stage 4b-1 – ENTRY-Sichtbarkeit (Stable)
+
+23 neue Flagbytes `$1D64–$1D7A`; Helper ab `$5C20`, vor `$5C80`.
+Bisher freie Lücken, kein neuer DMA-/Grafikpuffer. Controllerlabels verschieben
+sich durch drei Initialisierungsbytes; Kollisions-/Rendererhooks verwenden
+denselben Sichtbarkeitstest. Übriges Stage-4b-Layout unverändert, insbesondere
+Y=0–199, 24 RRB-Slots und Originaldaten. Keine Änderung der stabilen Releasefiles.
+[Details](stage4b1_entry_visibility_fix.md).
+
+Stage 4b-1 ist vom Benutzer unter XEMU bestätigt (`stage4b1-stable`).
+Die Stable-Markierung verändert weder Speicherlayout noch Programm-/Release-Dateien.
