@@ -2,7 +2,7 @@
 
 Issue #18; Branch `stage4b-3`, Basis `stage4b2-stable` (Dokumentationscommit
 `fd7d9fe`, unveränderter bestätigter Programmcommit
-`5b88b9fa4a78d0340676a32bf9a10493fc73f79f`). **Teststand, nicht Stable.**
+`5b88b9fa4a78d0340676a32bf9a10493fc73f79f`). **Stable: vom Benutzer unter XEMU bestätigt; Referenz `stage4b3-stable`.**
 
 Die separate Untersuchung der Level-Deskriptoren verändert diese Stage nicht.
 Kurvenwahl und dokumentierte Übergangsregeln bleiben wie in
@@ -138,7 +138,12 @@ RRB-Pixel, HUD, Treffer/Score/Explosion/Leben/Respawn, R, X und zweiter Start so
 ROMA/ROMC/SYS-MAP-Sicherheit sind geprüft.
 CPU-/DMA-Modell ist keine Messung der Rasterzeit und keine XEMU-Abnahme.
 
-## XEMU-Protokoll – durch Benutzer auszufüllen
+## XEMU-Abnahme und Referenzcheckliste
+
+Der Benutzer hat den Build `a8766f8df9fcea8279181a5d13b772db15ecc954` als stabil bestätigt: er läuft
+stabil und verhält sich genau wie vorgesehen. Die folgende Tabelle bleibt eine
+Referenzcheckliste; separate Raster-/Frame-Einzelmesswerte wurden nicht geliefert.
+Ein unabhängiger Hardwaretest wird nicht behauptet.
 
 ROM V920395, BASIC 80×25, D81 einlegen:
 
@@ -165,11 +170,15 @@ Diagnoseadressen unverändert: X-Offset `$6FE0` signed, Drift-Timer `$6FE2`,
 Schusszahl `$6FE5`, `c_es` `$1C00`, `e_phase` `$1EC6`, gemeinsame Freigaben
 `$1D64`, transformierte Y-Ziele `$1E6E`, signed Live-Y `$1E2C/$1E42`,
 Kurvencursor `$1E9A`, Projektilaktivität `$1B00` (Gegnerslots2..5).
-Kein Hardwaretest und kein Stable-Tag ohne ausdrückliche Benutzerbestätigung.
+Kein unabhängiger Hardwaretest. Stable-Freigabe durch den Benutzer liegt vor.
 
 ## Bereitstellung
 
 GitHub-Push der Stable-Referenz und des neuen Branchs wurde von der automatischen
 Freigabeprüfung wegen eines Nutzungslimits blockiert; die Aktion wurde nicht
 ausgeführt und nicht als unsicher bewertet. Remote-Veröffentlichung/PR stehen
-daher aus. Lokale Quellen und Release sind vollständig; kein Stage-4b-3-Stable-Tag.
+daher aus. Lokale Quellen und Release sind vollständig; `stage4b3-stable` ist lokal gesichert.
+
+Stable-Sicherung: bestätigter Programmcommit `a8766f8df9fcea8279181a5d13b772db15ecc954`.
+Quellen und alle 16 Release-Dateien bleiben byteidentisch zum getesteten Build;
+Buildberichte enthalten bewusst ihren ursprünglichen Status vor der Abnahme.

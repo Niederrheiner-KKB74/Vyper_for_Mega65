@@ -42,6 +42,10 @@
   "mainloop_enemy_shots_peak": 3,
   "global_pool_limit_proven_separately": 4,
   "reproducible_release_files": 16,
-  "xemu": "NOT RUN; user acceptance pending",
-  "stable": false
+  "xemu": "User confirmed Stage 4b-3 runs stable and behaves exactly as intended",
+  "stable": true,
+  "stable_tag": "stage4b3-stable",
+  "accepted_program_commit": "a8766f8df9fcea8279181a5d13b772db15ecc954",
+  "individual_xemu_raster_measurements_supplied": false,
+  "independent_hardware_test": false
 }

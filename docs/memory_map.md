@@ -300,7 +300,7 @@ Scheduler-Sperre bei Player-Explosion/WAIT bis `$4FBC`. Keine ROM-Überlagerung.
 Stage 4b-2 ist vom Benutzer unter XEMU bestätigt (`stage4b2-stable`).
 Die Stable-Sicherung verändert keine Speicherbereiche oder Release-Dateien.
 
-## Stage 4b-3 – gezielte Gameplay-Anpassungen (Teststand)
+## Stage 4b-3 – gezielte Gameplay-Anpassungen (Stable)
 
 Keine neuen Puffer oder DMA-Listen. Schussauswahl erweitert auf `$895C–$89F0`,
 weiterhin unter Grafikbeginn `$8A00`. Timer- und Y-Konstanten im bestehenden
@@ -308,3 +308,6 @@ Code; zentrale, einmalige Y-Transformation wird in `e_ty` `$1E6E` gespeichert.
 Sonst identisches Layout zu Stage 4b-2 Stable: Y=0..199, 24 RRB-Slots, HUD,
 ROM und alle gesicherten Release-Artefakte bleiben erhalten.
 [Details](stage4b3_gameplay_adjustments.md).
+
+Stage 4b-3 ist vom Benutzer unter XEMU bestätigt (`stage4b3-stable`).
+Die Stable-Sicherung verändert keine Speicherbereiche oder Release-Artefakte.

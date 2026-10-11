@@ -310,7 +310,7 @@ Bestätigter Programmcommit: `5b88b9fa4a78d0340676a32bf9a10493fc73f79f`. Tag `st
 Die Stable-Sicherung verändert ausschließlich Dokumentation; sämtliche
 Quellen, PRG/D81 und Release-Prüfsummen bleiben unverändert.
 
-## Stage 4b-3 – Drift, ENTRY-Schüsse, Formation Y=0 (Teststand)
+## Stage 4b-3 – Stable, vom Benutzer unter XEMU bestätigt
 
 Neuer Branch `stage4b-3` aus der bestätigten Referenz `stage4b2-stable`.
 Drift −8..+8 mit 1 Pixel je 5 Frames; zentrale Y-Transformation Original-Y−25.
@@ -320,7 +320,7 @@ Originalkurven und Gruppenstart-Timing unverändert; höhere Ziele nach Update33
 Originaltransparenz ergibt opake Oberkanten Y=0/1/2 je Animationsframe.
 Quellen/PRG/D81 unter `releases/stage_4b_3/`, reproduzierbarer Build.
 [Regeln, geometrische Diagnose und XEMU-Protokoll](stage4b3_gameplay_adjustments.md).
-XEMU-Abnahme offen, keine Stable-Markierung.
+XEMU-Abnahme durch den Benutzer bestätigt; Referenz `stage4b3-stable`.
 
 Stage-4b-3-Prüfung: 52 unterschiedliche automatische Checks abschließend bestanden
 (Gesamtlauf49/51, zwei veraltete Test-Fixtures gezielt korrigiert und erneut
@@ -329,3 +329,10 @@ Update179/Slot14; Formationsbarriere336. CPU-Modell Ø116.340/max.121.548 Zyklen
 Alle16 Release-Dateien byteidentisch; Stage-4b-2-Quellen/Releases geschützt.
 GitHub-Veröffentlichung der Stable-Sicherung und Stage4b-3 wegen fehlgeschlagener
 automatischer Freigabeprüfung (Nutzungslimit) ausstehend. Lokaler Testbuild fertig.
+
+Der Benutzer bestätigt: Stage 4b-3 läuft stabil und verhält sich genau wie
+vorgesehen. Bestätigter Programmcommit: `a8766f8df9fcea8279181a5d13b772db15ecc954`.
+Die Stable-Sicherung verändert ausschließlich Dokumentation; sämtliche Quellen,
+PRG/D81 und Release-Prüfsummen bleiben unverändert. Kein unabhängiger Hardwaretest.
+Branch/Stable-Tags sind lokal gesichert; GitHub-Veröffentlichung bleibt bis zur
+wieder verfügbaren automatischen Freigabeprüfung ausstehend.
