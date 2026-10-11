@@ -2044,8 +2044,8 @@ v012a_init:
     lda #0
     sta v013_suby
     sta v012a_y_latch
-    // Initialise two animation glyphs from original fixed positions.
-    lda SCREEN_RAM+364
+    // Obsolete stationary-slot init reads/writes SYS-mapped ROM. Skip it.
+    jmp hud.screen_init
     sta v012a_top_lo
     lda SCREEN_RAM+365
     sta v012a_top_hi

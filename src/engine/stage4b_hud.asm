@@ -29,6 +29,9 @@
 .const life_ybits=state+$4f
 .const life_x=state+$50
 .const colour_pointer=state+$60
+.const screen_pointer=state+$6c
+.const row_pointer=state+$70
+.const background_pointer=state+$74
 .const store_value=state+$65
 .const startup_bg=state+$66
 .const hud_start=480
@@ -238,7 +241,7 @@ hud_static_byte:
 template_read:
     lda $ffff,y
 screen_store:
-    sta $ffff,y
+    jsr long_screen_store
 attribute_read:
     lda $ffff,y
 colour_store:
@@ -272,13 +275,12 @@ hud_static_suffix:
 
 set_prefix:
     lda prefix_lo,x
-    sta screen_store+1
-    sta number_store+1
-    sta life_store+1
+    sta screen_pointer
     lda prefix_hi,x
-    sta screen_store+2
-    sta number_store+2
-    sta life_store+2
+    sta screen_pointer+1
+    lda #0
+    sta screen_pointer+2
+    sta screen_pointer+3
     lda colour_lo,x
     sta colour_pointer
     lda colour_hi,x
@@ -433,7 +435,7 @@ divide_next:
     clc
     adc #$30
 number_store:
-    sta $ffff,y
+    jsr long_screen_store
     dey
     dey
     dec digit
@@ -592,8 +594,7 @@ life_character_mono:
     iny
     rts
 life_store:
-    sta $ffff,y
-    rts
+    jmp long_screen_store
 life_colour:
     jmp long_colour_store
 
@@ -613,7 +614,7 @@ long_colour_store:
     tya
     .byte $4b // TAZ
     lda store_value
-    .byte $ea,$92,$60 // EOM; STA [$60],Z in base page $1A
+    .byte $ea,$92,$60 // EOM; physical 32-bit store in base page $1A
     pla
     .byte $4b // TAZ
     pla
@@ -622,11 +623,85 @@ long_colour_store:
     plp
     rts
 
+// SYS keeps E000-FFFF MAPped to bank-3 KERNAL. Long stores bypass MAP.
+long_screen_store:
+    php
+    pha
+    sei
+    sta store_value
+    .byte $7b // TBA
+    pha
+    .byte $6b // TZA
+    pha
+    lda #$1a
+    .byte $5b // TAB
+    tya
+    .byte $4b // TAZ
+    lda store_value
+    .byte $ea,$92,$6c // EOM; physical 32-bit store in base page $1A
+    pla
+    .byte $4b // TAZ
+    pla
+    .byte $5b // TAB
+    pla
+    plp
+    rts
+
+long_row_store:
+    php
+    pha
+    sei
+    sta store_value
+    .byte $7b // TBA
+    pha
+    .byte $6b // TZA
+    pha
+    lda #$1a
+    .byte $5b // TAB
+    tya
+    .byte $4b // TAZ
+    lda store_value
+    .byte $ea,$92,$70 // EOM; physical 32-bit store in base page $1A
+    pla
+    .byte $4b // TAZ
+    pla
+    .byte $5b // TAB
+    pla
+    plp
+    rts
+
+long_background_store:
+    php
+    pha
+    sei
+    sta store_value
+    .byte $7b // TBA
+    pha
+    .byte $6b // TZA
+    pha
+    lda #$1a
+    .byte $5b // TAB
+    tya
+    .byte $4b // TAZ
+    lda store_value
+    .byte $ea,$92,$74 // EOM; physical 32-bit store in base page $1A
+    pla
+    .byte $4b // TAZ
+    pla
+    .byte $5b // TAB
+    pla
+    plp
+    rts
+
+
 set_row_pointer:
     lda v012a_screen_lo,x
-    sta direct_store+1
+    sta row_pointer
     lda v012a_screen_hi,x
-    sta direct_store+2
+    sta row_pointer+1
+    lda #0
+    sta row_pointer+2
+    sta row_pointer+3
     lda #<direct_store
     sta v012a_store+1
     lda #>direct_store
@@ -648,19 +723,21 @@ set_colour_pointer:
     rts
 store:
 direct_store:
-    sta $ffff,y
-    rts
+    jmp long_row_store
 
 draw_background:
     // Every raster starts with opaque black covering the entire 640-pixel raster.
     // The prefix pointers are 42 bytes beyond the row origin.
     sec
-    lda screen_store+1
+    lda screen_pointer
     sbc #42
-    sta background_store+1
-    lda screen_store+2
+    sta background_pointer
+    lda screen_pointer+1
     sbc #0
-    sta background_store+2
+    sta background_pointer+1
+    lda #0
+    sta background_pointer+2
+    sta background_pointer+3
     sec
     lda colour_pointer
     sbc #42
@@ -693,8 +770,7 @@ background_blank:
     bne background_blank
     rts
 background_store:
-    sta $ffff,y
-    rts
+    jmp long_background_store
 
 save_all_colour:
     jsr save_basic_color_ram
@@ -759,6 +835,9 @@ font_mb: .byte 0
 font_source: .byte 0,0,0
     .byte 0,$40,0
     .word 0
+screen_init:
+    ldx #0
+    jmp v014_prepare_row
 code_end:
 .if (code_end > $3e80) { .error "HUD code overlaps defaults" }
 }

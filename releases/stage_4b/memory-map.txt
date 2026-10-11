@@ -8,7 +8,7 @@ Default-segment:
   $3200-$35d9 Stage 3b-2 graphics and parser
   $3600-$36af Stage 3b-3 approved player source
   $3700-$375e Stage 3b-3 player integration
-  $3800-$3df7 Stage 3b-4a HUD code
+  $3800-$3e59 Stage 3b-4a HUD code
   $3e80-$3eb6 HUD defaults
   $3f00-$3fd1 HUD attributes rows 20-24
   $4000-$47ff Unnamed

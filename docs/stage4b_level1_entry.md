@@ -141,9 +141,17 @@ Alle statischen Restslots erhalten unsichtbare GOTOX-Tokens, keine RAM-Reste.
 Vorhandene Sicherungen `$9000–$97FF` und `$6B00–$6F7F` bleiben erhalten.
 `$CA00–$CAFF` ist nur die bisherige Clipping-Zwischenstufe; Originalfonts,
 Gegner-/Explosionsframes und `$20000–$3FFFF` bleiben geschützt.
-Writes auf `$E000` gehen ins physische RAM unter dem ROM; aktive Screenpfade
-lesen dieses RAM nicht über CPU-ROM-Mapping. Xemu-Referenz:
-`targets/mega65/memory_mapper.c`, `BANK_POLICY_ROM`, getrennte Read-/Write-Adressen.
+Screenzugriffe verwenden jetzt 32-bit-indirekte 45GS02-Stores, die MAP umgehen.
+`SYS` hält `$E000–$FFFF` per MAPH in Bank 3 (KERNAL-ROM). Normale absolute
+Writes erreichen deshalb **nicht** das physische Screen-RAM in Bank 0.
+Die frühere Annahme anhand von `BANK_POLICY_ROM` war unvollständig: eine
+aktive MAP-Zuordnung hat Vorrang vor der D030-/6502-Banking-Regel.
+Referenz: MEGA65 User Guide `memory.tex`, Abschnitt zur SYS-Memory-Zuordnung;
+Xemu `memory_mapper.c`, `apply_cpu_memory_policy()`/`resolve_cpu_slot()`.
+Neue vierbyteige Pointer `$1A6C–$1A77` liegen im bereits reservierten HUD-RAM:
+Prefix/HUD, dynamische RRB-Zeile und Hintergrund. A/X/Y/Flags/B/Z bleiben
+bei jedem Store erhalten; IRQs werden nur während der temporären Basepage
+maskiert. MAP und KERNAL-ROM bleiben unverändert.
 Exit restauriert alle 4800 Color-Bytes, alte VIC-Register/Screenpointer,
 BASIC-Font/Palette/Cursor. PRG bleibt 43.777 Bytes; keine PRG-Ladesegmente im I/O.
 
@@ -168,7 +176,10 @@ GAME OVER mit R/X. T/E und F/N/P separat prüfen. X muss BASIC vollständig
 restaurieren, erneutes LOAD/RUN funktionieren. Historische offene Details
 mit Originalreferenz vergleichen; keine Stable-Markierung vor Benutzerfreigabe.
 
-## Tatsächlich ausgeführte automatische Prüfungen
+## Automatische Prüfungen des vorherigen Builds `8045364`
+
+Diese vorherigen Tests bildeten SYS-MAPH nicht ab und übersahen deshalb den
+schwarzen Bildschirm. Sie sind keine Bestätigung des korrigierten Builds.
 
 30/30 Tests im Gesamtlauf bestanden (184,732 s), zusätzlich 1/1 neuer
 T/E-Isolationstest (6,196 s): insgesamt 31 erfolgreiche Tests.
@@ -195,3 +206,57 @@ SHA256:
 84e598a59779d4582879ed7f3b02e81e30edec307783c0aa024a0baa1c0bb4f2  STAGE4B.PRG
 40103cfd40965ffe3f644d92f957ca5667c0f45e2c2253e79febd3645064a0af  VYPER_STAGE4B.d81
 ```
+
+## Korrektur des schwarzen Bildschirms
+
+Benutzerbefund für `8045364`: nach dem erfolgreichen Laden schwarz, X
+funktioniert. Ursache vor Änderung anhand des SYS-Memory-Vertrags und
+Xemu-Mappers geprüft: MAPH bildet E000–FFFF auf Bank-3-KERNAL ab. VIC-IV
+liest dagegen physisches Screen-RAM E000–F2BF in Bank 0. Der frühere Vergleich
+mit BANK_POLICY_ROM übersah die vorrangige MAP-Zuordnung.
+
+Der ursprüngliche PRG-Build wurde im erweiterten CPU-Memory-Modell erneut
+ausgeführt: 7.887 normale ROM-Schreibversuche, alle 4.800 physischen Screenbytes
+unverändert, X funktioniert. Dieses Ergebnis reproduziert die Ursache im Modell,
+ist kein XEMU-Test. Die bisherige Testsuite hatte E000-Writes direkt auf
+physisches RAM geleitet und konnte diesen Fehler deshalb nicht erkennen.
+
+Korrektur ausschließlich in den Screen-Schreibpfaden: HUD-Zeichen/Zahlen/
+Lebenssymbole, Hintergrund und dynamische RRB-Listen nutzen nun EOM/STA
+[32-bit-Pointer],Z. Drei neue Pointer im vorhandenen HUD-Workspace;
+A/X/Y/B/Z und Flags werden erhalten, IRQs während temporärer Basepage maskiert.
+Kein Umschalten von MAP, keine Veränderung an KERNAL-ROM oder Exit. Die
+obsolete stationäre Initialisierung mit absoluten Screen-Reads/Writes wird
+übersprungen; vollständiger HUD-/RRB-Aufbau bleibt erhalten.
+Loader, Originalkurven, Grafikmapping, Animation, Kampf- und Joystickcode
+sowie sämtliche Speicher-/VIC-Geometrieparameter bleiben unverändert.
+
+Der neue Test modelliert SYS-MAPH für normale CPU-Zugriffe und physische
+32-bit-Stores getrennt. Er prüft explizit ROM-Schreibsperre, Screen-/Pixie-Daten,
+Registererhaltung und unveränderten KERNAL-Speicher. Initialisierung und R
+benötigen durch die zusätzlichen Stores mehr CPU-Instruktionen; der Hosttest
+wartet auf die Rückkehr zum Mainloop innerhalb einer endlichen höheren Grenze.
+Er prüft damit keine Echtzeit-Framerate. Rendering-Timing unter XEMU prüfen.
+
+Alle 15 Release-Dateien erneut unabhängig byteidentisch gebaut. Neue Hashes:
+
+```
+2bce62b77189343839fdaa9a7b295fa42d0d8b65d1a63d4eec33d29a434a78a7  STAGE4B.PRG
+5ccddf9df08e0b3d74182613b23ae66b79ce50327317551d055cfab39bd8fddd  VYPER_STAGE4B.d81
+```
+
+Erneute XEMU-Abnahme erforderlich; Stage 4b bleibt nicht Stable.
+
+PRG-Vergleich zum schwarzen Build `8045364`: 1.071 geänderte Bytes bei
+unveränderter Größe. Änderungen liegen im HUD-Code und der alten
+Initialisierung; die zwölf geänderten Bytes außerhalb davon sind ausschließlich
+Assembler-Relokationen bestehender JSR/JMP-Aufrufe auf verschobene HUD-Helper
+(`save_all_colour`, `transfer`, `long_colour_store`). Die aufgerufenen Funktionen
+und übrige Logik wurden für diese Stellen byteweise abgeglichen.
+
+**Finaler Korrekturstand:** 32/32 Tests bestanden, 408,498 Sekunden,
+ROM-V920395-Blinkroutine aktiviert. Gesamte Stage-4b-Suite mit SYS-MAPH-Modell:
+Rendering aller sechs Frames/Kanten/Ecken, negative Koordinaten, Originalkurven/
+Targets, HUD, Player, Schüsse, Kollisionen/Punkte/Leben, sieben Explosionsframes,
+150-Tick-Unverwundbarkeit, GAME OVER, wiederholtes R, X und zweiter RUN.
+Keine übersprungenen Tests; weiterhin CPU-/DMA-/RRB-Modell, kein XEMU-Lauf.

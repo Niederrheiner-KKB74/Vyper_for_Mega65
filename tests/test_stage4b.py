@@ -7,7 +7,14 @@ ROOT=PREV.ROOT
 ART=ROOT/'releases/stage_4b'
 N=BUILD.symbols((ART/'STAGE4B.sym').read_text())
 class EntryMemory(PREV.OLD.HUD.Memory):
+    def __getitem__(self,a):
+        if getattr(self,'sys_map',False) and not getattr(self,'linear',False) and 0xe000<=a<=0xffff:
+            return self.data[0x30000+a]
+        return super().__getitem__(a)
     def __setitem__(self,a,v):
+        if getattr(self,'sys_map',False) and not getattr(self,'linear',False) and 0xe000<=a<=0xffff:
+            self.map_rom_writes.append((a,v))
+            return # SYS MAP to protected bank-3 KERNAL; VIC still fetches bank 0.
         pointer=self.data[0xd701]*256+v if a==0xd705 else -1
         names=['font_dma','colour_backup_dma','colour_restore_dma','clear_dma','e_save_dma','e_restore_dma','e_copy_dma']
         if pointer in [N[k] for k in names]:
@@ -29,6 +36,12 @@ class EntryMemory(PREV.OLD.HUD.Memory):
             for i,b in enumerate(payload):self[dst+i]=b
             self.base.transfers.append((src,dst,n));return
         super().__setitem__(a,v)
+class MappedCPU(PREV.OLD.HUD.CPU):
+    def step(self):
+        linear=self.eom and self.memory[self.pc]==0x92
+        self.memory.linear=linear
+        try:return super().step()
+        finally:self.memory.linear=False
 BaseMachine=PREV.Machine
 class Machine(BaseMachine):
     def __init__(self):
@@ -36,12 +49,33 @@ class Machine(BaseMachine):
         p=(ART/'STAGE4B.PRG').read_bytes()
         self.memory.data[0x2001:0x2001+len(p)-2]=p[2:]
         self.memory.__class__=EntryMemory
+        self.memory.sys_map=True
+        self.memory.map_rom_writes=[]
+        self.cpu.__class__=MappedCPU
         self.cpu.pc=N['p_startup']
         self.before=bytes(self.memory.data)
 PREV.Machine=Machine
 PREV.N=N
 # Keep baseline ART for original explosion source checks (unchanged bytes verified below).
-start,call,frame,setv,get=PREV.start,PREV.call,PREV.frame,PREV.setv,PREV.get
+call,setv,get=PREV.call,PREV.setv,PREV.get
+def frame(m,key=0,buttons=255):
+    m.memory.data[0xdc00]=buttons
+    sampled=False
+    for _ in range(800000): # R redraws 4800 bytes using mapping-safe stores.
+        if m.cpu.pc==0x200 or sampled and m.cpu.pc==N['main_loop']:return
+        if m.cpu.pc==0xffe4:
+            sampled=True;m.cpu.a=key;m.cpu.pc=m.cpu.stPopWord()+1
+        else:m.cpu.step()
+    raise AssertionError('frame or R redraw did not return')
+PREV.frame=frame
+def start():
+    m=Machine().execute()
+    assert m.error==0
+    for _ in range(800000):
+        if m.cpu.pc==N['main_loop']:return m
+        m.cpu.step()
+    raise AssertionError('boot')
+PREV.start=start
 enemies,player,shot=PREV.enemies,PREV.player,PREV.shot
 EXP_TICKS=PREV.EXP_TICKS
 word=PREV.word
@@ -177,7 +211,7 @@ class Regression(PREV.CollisionTests):
             for a,v in {0x111f:0,0x1120:0,0x1121:0x20,0x1122:1,0x1123:0}.items():m.memory.data[a]=v
             OLD.HUD.EXIT.blink(m,data)
         m.cpu.pc=N['p_startup'];m.cpu.sp=0xfd;m.cpu.stPushWord(0x1ff);m.execute()
-        for _ in range(300000):
+        for _ in range(800000):
             if m.cpu.pc==N['main_loop']:break
             m.cpu.step()
         else:self.fail('second RUN')
@@ -294,7 +328,7 @@ class OffscreenTests(unittest.TestCase):
         self.assertEqual(m.memory.data[0x1000:0x1600],m.before[0x1000:0x1600])
         self.assertEqual(m.memory.colour[:4800],m.before[0xd800:0xe000]+bytes([0xa5])*2752)
         m.cpu.pc=N['p_startup'];m.cpu.sp=0xfd;m.cpu.stPushWord(0x1ff);m.execute()
-        for _ in range(300000):
+        for _ in range(800000):
             if m.cpu.pc==N['main_loop']:break
             m.cpu.step()
         else:self.fail('second RUN')
@@ -355,6 +389,28 @@ class PlayerTests(unittest.TestCase):
         self.assertEqual((m.memory.data[0x1662],m.memory.data[0x1664]),(112,184))
         self.assertEqual(get(m,'c_ps'),0)
 class EntryTests(unittest.TestCase):
+    def test_sys_map_bank3_screen_long_stores_and_register_preservation(self):
+        m=start()
+        kernel=bytes(m.memory.data[0x3e000:0x40000])
+        self.assertFalse(m.memory.map_rom_writes)
+        m.memory[0xe000]=0x77
+        self.assertNotEqual(m.memory.data[0xe000],0x77)
+        m.memory.map_rom_writes.clear()
+        before=bytes(m.memory.data[0xe000:0xf2c0])
+        self.assertNotEqual(before,bytes([0xa5])*4800)
+        m.cpu.a=0x7a;m.cpu.x=0x39;m.cpu.y=3;m.cpu.b=0;m.cpu.z=0x5d
+        flags=m.cpu.p
+        m.memory.data[0x1a6c:0x1a70]=(0xe000).to_bytes(4,'little')
+        call(m,'long_screen_store')
+        self.assertEqual(m.memory.data[0xe003],0x7a)
+        self.assertEqual((m.cpu.a,m.cpu.x,m.cpu.y,m.cpu.b,m.cpu.z,m.cpu.p),(0x7a,0x39,3,0,0x5d,flags))
+        m.cpu.pc=N['main_loop']
+        for _ in range(30):frame(m)
+        self.assertTrue(fetched(m))
+        self.assertFalse(m.memory.map_rom_writes)
+        self.assertEqual(bytes(m.memory.data[0x3e000:0x40000]),kernel)
+        self.assertEqual(bytes(m.memory.data[0xd060:0xd063]),bytes([0,0xe0,0]))
+
     def test_decoder_all_bytes_and_byte_exact_curves(self):
         import analyze_stage3b2_data as data
         parsed=data.parse_level_record(data.level_records((ROOT/'assets/VYLV.DAT').read_bytes())[0][1])
@@ -445,13 +501,13 @@ class EntryTests(unittest.TestCase):
     def test_colour_all_4800_bytes_exit_and_second_run(self):
         m=Machine();original=bytes((i*53+19)&255 for i in range(4800));m.memory.colour[:4800]=original
         m.execute()
-        for _ in range(300000):
+        for _ in range(800000):
             if m.cpu.pc==N['main_loop']:break
             m.cpu.step()
         frame(m,0x58);self.assertEqual(m.cpu.pc,0x200)
         self.assertEqual(m.memory.colour[:4800],original)
         m.cpu.pc=N['p_startup'];m.cpu.sp=0xfd;m.cpu.stPushWord(0x1ff);m.execute()
-        for _ in range(300000):
+        for _ in range(800000):
             if m.cpu.pc==N['main_loop']:break
             m.cpu.step()
         else:self.fail('second RUN')

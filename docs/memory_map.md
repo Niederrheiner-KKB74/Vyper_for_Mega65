@@ -254,3 +254,8 @@ DMA `$7500–$75A6`, signed Kollisionshelper `$7EE2–$7F70`, Testhelper
 `$874B–$87FF`; 22 private Clippingpuffer `$10000–$115FF`.
 Zustände/Positionen `$1D40–$1D60` / `$1E00–$1EFF`.
 Kein Zugriff auf ROM als freien Speicher. [Vollständiger Vergleich](stage4b_level1_entry.md).
+
+Stage-4b-Screenfix: physische Screenwrites jetzt per 32-bit-indirektem Store,
+da SYS `$E000–$FFFF` per MAP auf KERNAL-ROM in Bank 3 abbildet. Drei Pointer
+bei `$1A6C–$1A77`; HUD-Code endet jetzt `$3E59`, innerhalb der bisherigen
+Grenze `$3E80`. Screen-RAM, RRB-Stride, Daten-/Clippingpuffer unverändert.

@@ -230,3 +230,12 @@ Historische Interpreteranalyse übernommen und mit VYLV abgeglichen; genaue
 Original-Zeit-/Debut-Übergangslogik bleibt ausdrücklich unbestätigt. RRB-Kapazität
 auf 24 pro Zeile erweitert, Geometrie/HUD unverändert.
 Nicht Stable, XEMU-Abnahme offen. [Details](stage4b_level1_entry.md).
+
+Benutzer meldet schwarzen Bildschirm für Build `8045364`, X funktioniert.
+Ursache: absolute Screenwrites nach `$E000` treffen SYS-MAPH/KERNAL-ROM in
+Bank 3 statt physischem Bank-0-Screen. Korrektur auf 32-bit-indirekte Stores,
+Regression jetzt mit SYS-MAP-Modell. Erneute XEMU-Abnahme erforderlich.
+
+Korrigierter Screenstand: 32/32 automatische Tests bestanden (408,498 s),
+ROM-V920395-Blinkroutine aktiv; alle 15 Release-Dateien beim Zweitbuild
+byteidentisch. D81/PRG unter `releases/stage_4b/`, Benutzer-XEMU-Test offen.
