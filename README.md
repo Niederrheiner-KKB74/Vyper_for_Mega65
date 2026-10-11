@@ -44,3 +44,10 @@ stabile Referenz bleiben erhalten. [Build und XEMU-Abnahme](docs/stage3b2.md).
 ## Nächster Schritt
 
 Stage 3b-2 unter XEMU mit `stage3b1-stable` vergleichen und abnehmen. Die stabilen Referenzen nicht überschreiben.
+
+## Stage 4b-3 (Teststand)
+
+Basis: bestätigte Stage 4b-2 (`stage4b2-stable`). Drift ein Pixel je fünf Frames,
+sichtbare ENTRY-/ATTACK-Schüsse mit global vier Projektilen, Formation-Y−25.
+[Build, Speicherprüfung und XEMU-Abnahme](docs/stage4b3_gameplay_adjustments.md).
+PRG/D81 und vollständige Quellen: `releases/stage_4b_3/`.

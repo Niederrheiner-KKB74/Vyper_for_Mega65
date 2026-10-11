@@ -309,3 +309,23 @@ korrigierten Build ausdrücklich als stabil bestätigt.
 Bestätigter Programmcommit: `5b88b9fa4a78d0340676a32bf9a10493fc73f79f`. Tag `stage4b2-stable`.
 Die Stable-Sicherung verändert ausschließlich Dokumentation; sämtliche
 Quellen, PRG/D81 und Release-Prüfsummen bleiben unverändert.
+
+## Stage 4b-3 – Drift, ENTRY-Schüsse, Formation Y=0 (Teststand)
+
+Neuer Branch `stage4b-3` aus der bestätigten Referenz `stage4b2-stable`.
+Drift −8..+8 mit 1 Pixel je 5 Frames; zentrale Y-Transformation Original-Y−25.
+Echte sichtbare ENTRY-Gegner schießen zusammen mit ATTACK aus dem globalen
+Vier-Projektil-Pool. WAIT_ENTRY/RETURN/DEAD/EXPLOSION/offscreen ausgeschlossen.
+Originalkurven und Gruppenstart-Timing unverändert; höhere Ziele nach Update336.
+Originaltransparenz ergibt opake Oberkanten Y=0/1/2 je Animationsframe.
+Quellen/PRG/D81 unter `releases/stage_4b_3/`, reproduzierbarer Build.
+[Regeln, geometrische Diagnose und XEMU-Protokoll](stage4b3_gameplay_adjustments.md).
+XEMU-Abnahme offen, keine Stable-Markierung.
+
+Stage-4b-3-Prüfung: 52 unterschiedliche automatische Checks abschließend bestanden
+(Gesamtlauf49/51, zwei veraltete Test-Fixtures gezielt korrigiert und erneut
+bestanden, zusätzlicher ENTRY-Hauptschleifentest bestanden). Erster ENTRY-Schuss
+Update179/Slot14; Formationsbarriere336. CPU-Modell Ø116.340/max.121.548 Zyklen.
+Alle16 Release-Dateien byteidentisch; Stage-4b-2-Quellen/Releases geschützt.
+GitHub-Veröffentlichung der Stable-Sicherung und Stage4b-3 wegen fehlgeschlagener
+automatischer Freigabeprüfung (Nutzungslimit) ausstehend. Lokaler Testbuild fertig.
