@@ -526,3 +526,21 @@ Die XEMU-Abnahme stammt vom Benutzer; kein eigener XEMU-/Hardwarelauf.
 Separate branch `stage5d-1-b2`, based on current Stage 5d-1 commit `e295fa8`. User-confirmed B2 ENTRY Y−16 and continuous RETURN handoff integrated in new sources only. Title/loader, ATTACK, all 100 levels and palettes preserved. Release `releases/stage_5d_1_b2/`; Stable tag `stage5d1a-stable`. See [integration report](stage5d1_b2_integration.md).
 
 Benutzerabnahme am 12.10.2026: „Der Build ist stable.“ Getesteter Programmcommit `08df921c6cca4614e540d6f50d6c853e8835ad40`. Nur Dokumentation wird zur Stable-Sicherung geändert; sämtliche Quellen und Release-Artefakte bleiben byteidentisch. Frühere Build-PRs #36/#38/#40 und der abgeschlossene Integrations-PR #42 werden geschlossen, zugehörige Issues #35/#37/#39/#41 abgeschlossen. Branches, Tags und historische Downloads bleiben erhalten; keine Integration in frühere Stable-Branches.
+
+## Stage 6b1 – Issue #47, Testbuild, noch nicht Stable
+
+Eigener Branch `stage6b1` auf unveränderter `stage5d1a-stable`-Spielengine
+(`39890c0`), mit gezielt integrierter `stage6a2-stable`-Menüreferenz (`24559e4`).
+Nach Titel/SEQ-Laden erscheint das originale animierte Menü; Auswahl per
+Joystick/Tastatur, zyklisches INITIAL LEVEL 001–100, F1-Spielstart und F2/F3-
+Platzhalter. Original-Color02-Cycling läuft im Spiel auf Bank1/Index19 weiter,
+während Player, HUD, Explosionen und übrige Levelpalettenfarben erhalten bleiben.
+HUD nutzt den rekonstruierten Menüfont. Stage 6a1 ist historische, obsolete
+Referenz; Stage 6a2 ist der vom Benutzer bestätigte Menüstand.
+
+Quellen `src/engine/stage6b1*.asm`, Builder `tools/build_stage6b1.py`, PRG/D81
+unter `releases/stage_6b1/`. Stable-Tags, deren Quellen und Releases unverändert.
+Automatische Prüfungen und XEMU-Checkliste:
+[Stage6b1-Menüintegration](stage6b1_menu_integration.md).
+Eine XEMU-Abnahme von Stage6b1 wird nicht behauptet; Stable erst nach ausdrücklicher
+Benutzerbestätigung.

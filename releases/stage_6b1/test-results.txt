@@ -1,0 +1,33 @@
+Stage6b1 / Issue47. Actual assembled CPU/DMA/VIC/KERNAL host models; NOT XEMU.
+Command: PYTHONPATH=tests:tools:/path/py65 python -m unittest test_stage6b1 -v
+
+test_all_original_animations_and_cycle (test_stage6b1.MenuTests.test_all_original_animations_and_cycle) ... ok
+test_full_loader_title_and_exact_menu_pixels (test_stage6b1.MenuTests.test_full_loader_title_and_exact_menu_pixels) ... ok
+test_level_nav_palette_cycle_and_exit_run (test_stage6b1.MenuTests.test_level_nav_palette_cycle_and_exit_run) ... ok
+test_menu_exit_restores_basic_and_engine (test_stage6b1.MenuTests.test_menu_exit_restores_basic_and_engine) ... ok
+test_menu_wrap_keys_joystick_repeat_and_fire (test_stage6b1.MenuTests.test_menu_wrap_keys_joystick_repeat_and_fire) ... ok
+test_placeholders_preserve_selection_and_level (test_stage6b1.MenuTests.test_placeholders_preserve_selection_and_level) ... ok
+test_release_guard_on_fire_confirm (test_stage6b1.MenuTests.test_release_guard_on_fire_confirm) ... ok
+test_selected_levels_handoff_fonts_and_static_palette (test_stage6b1.MenuTests.test_selected_levels_handoff_fonts_and_static_palette) ... ok
+test_X_during_pending_start_remains_responsive (test_stage6b1.ZCombatRegression.test_X_during_pending_start_remains_responsive) ... ok
+test_all100_palettes_keep_static_banks_and_cycle_phase (test_stage6b1.ZCombatRegression.test_all100_palettes_keep_static_banks_and_cycle_phase) ... ok
+test_combat_limits_return_respawn_and_invulnerable_control (test_stage6b1.ZCombatRegression.test_combat_limits_return_respawn_and_invulnerable_control) ... ok
+test_entry_fire_pool_fixed_target_and_wait_visibility (test_stage6b1.ZCombatRegression.test_entry_fire_pool_fixed_target_and_wait_visibility) ... ok
+test_game_over_complete_explosion_R_and_X (test_stage6b1.ZCombatRegression.test_game_over_complete_explosion_R_and_X) ... ok
+test_level_clear_press_release_wrap_score_lives_and_R (test_stage6b1.ZCombatRegression.test_level_clear_press_release_wrap_score_lives_and_R) ... ok
+test_new_menu_asset_failure_paths_restore_basic (test_stage6b1.ZCombatRegression.test_new_menu_asset_failure_paths_restore_basic) ... ok
+test_player_speed_and_keyboard_repeat (test_stage6b1.ZCombatRegression.test_player_speed_and_keyboard_repeat) ... ok
+test_return_follows_drifting_formation (test_stage6b1.ZCombatRegression.test_return_follows_drifting_formation) ... ok
+test_romc_basic_mapping_and_repeat_menu_start (test_stage6b1.ZCombatRegression.test_romc_basic_mapping_and_repeat_menu_start) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 201.506s
+
+OK
+
+KickAssembler5.25: successful PRG and separate menu-overlay assembly.
+Second build: all generated output files byte-identical.
+Five SEQ assets: exact sizes/checksums/EOF, full DMA page read-back, menu Attic header read-back.
+D81: BAM, complete file chains, types and extracted bytes verified (819200 bytes).
+Both stable tags, existing sources/assets/releases protected byte-for-byte.
+XEMU: NOT_RUN; awaiting user confirmation.

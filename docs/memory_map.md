@@ -410,3 +410,20 @@ Quellen, Originaldaten oder Release-Artefakte.
 New signed ENTRY projection/cache $7700–$7889 fits below aimed shots $7951; ENTRY hooks grow its segment to $5700–$5B68, below row retirement $5B80. All title caches, screen, bootstrap backup, SEQ/DMA and game-data buffers retain Stage 5d-1 addresses/lifetimes. See [integration report](stage5d1_b2_integration.md).
 
 Stage 5d-1a vom Benutzer am 12.10.2026 als Stable bestätigt (`stage5d1a-stable`). Stable-Sicherung ausschließlich in Dokumentation; keine Änderung an Speicherlayout, Quellen oder Release-Dateien.
+
+## Stage 6b1 – Titel/Menu/Game-Phasen, noch nicht Stable
+
+Spielengine unverändert aus `stage5d1a-stable`; kein Chip-RAM oberhalb `$5FFFF`.
+Das originale Stage6a2-FCM-Menü nutzt die nach der Titelphase freien Glyphbereiche
+`$12800–$1F7FF` und `$5C500–$5FFFF`. Die eigentlichen VYLV/VYGR/VYCL-Adressen
+bleiben unverändert. `$7000–$9FFF` wird während des Menüs gesichert und durch ein
+separat assembliertes Overlay ersetzt, vor Spielstart bytegleich restauriert.
+Danach werden der gewählte Levelrecord und private Gegnergrafiken neu initialisiert.
+
+Attic-DMA-Sicherungen: Bootstrap `$08000000–$080007FF`, Engine-Overlay
+`$08001000–$08003FFF`, Titel-Color-Backup `$08004000–$08004A4F`, Menüasset
+`$08010000–$080252BF`. VIC liest ausschließlich Chip-RAM. Persistenter Cycle-Code
+bei `$3100`, ROMC-Gates bei `$7900` (identisch in beiden Phasen), originales D030
+bei `$31F0`, Integrationsbrücke bei `$CB00`. BASIC- und DOS-Bereiche bleiben
+unberührt. Exakte Grenzen, begründete Phasen-Aliase und Modus-/Palette-Restoration:
+[Stage6b1](stage6b1_menu_integration.md), `releases/stage_6b1/memory-map.txt`.

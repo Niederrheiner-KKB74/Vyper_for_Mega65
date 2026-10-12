@@ -18,3 +18,9 @@
     Release-Dateien unverändert erhalten.
 
 12. **Stage 5d-1a Stable:** Vom Benutzer am 12.10.2026 bestätigt. Referenz `stage5d1a-stable`, Branch `stage5d-1-b2`, getesteter Programmcommit `08df921c6cca4614e540d6f50d6c853e8835ad40`. Quellen und Release `releases/stage_5d_1_b2/` unverändert schützen.
+
+13. **Stage 6a2 Stable:** `stage6a2-stable`, Commit
+    `24559e46c4f237492bc4e03439c86ea6c402a0b0`, vom Benutzer bestätigt.
+    Originalmenü mit 32 Animationen und bestätigtem COLOR02-Cycling schützen.
+    Stage6a1 ist obsolet und bleibt nur als historische Quelle erhalten.
+    Stage6b1 ist ein neuer Testbuild; keine Stable-Markierung ohne Benutzerabnahme.
