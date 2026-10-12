@@ -729,12 +729,12 @@
   },
   "menu_DAT": {
     "bytes": 86720,
-    "sum16": 60628,
-    "header": "56594d4e02002000000b0100500b0100c0220100c052010011e8000000000000",
+    "sum16": 60760,
+    "header": "56594d4e02002000000b0100500b0100c0220100c052010053e8000000000000",
     "offsets": {
-      "M_RESTORE_VIDEO": 17199,
+      "M_RESTORE_VIDEO": 17201,
       "M_FILE_BYTES": 86720,
-      "M_FILE_SUM": 60628,
+      "M_FILE_SUM": 60760,
       "M_ATLAS_BYTES": 68352,
       "M_OVERLAY": 134357696,
       "M_FONT": 134367936,
@@ -748,7 +748,7 @@
       "name": "STAGE6B1",
       "bytes": 44358,
       "blocks": 175,
-      "sha256": "f7d8a099bd4ce8690d9d3c6cdde20bc89da584a91eb93f23647d061c925d62cb"
+      "sha256": "a7e8b999afe9ce32208dcacb697f86f03e8120b3d454a423bbd51673ee938b6b"
     },
     {
       "name": "VYLV.DAT",
@@ -778,7 +778,7 @@
       "name": "VYMN.DAT",
       "bytes": 86720,
       "blocks": 342,
-      "sha256": "01d08bf7325f5dfbef7ddb2f5379ed428e09ff42c6e8f5618fe027f4aed8a44f"
+      "sha256": "c8f2b25abba715ddb06d877bde112f9c1d763d0cbf210143849baa968a471d47"
     }
   ],
   "xemu": "NOT_RUN; user acceptance required",

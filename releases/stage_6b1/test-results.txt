@@ -1,7 +1,7 @@
-Stage6b1 / Issue47. Actual assembled CPU/DMA/VIC/KERNAL host models; NOT XEMU.
-Command: PYTHONPATH=tests:tools:/path/py65 python -m unittest test_stage6b1 -v
+Stage6b1 CPU-clock correction. Actual assembled CPU/DMA/VIC/KERNAL host tests; NOT XEMU.
 
 test_all_original_animations_and_cycle (test_stage6b1.MenuTests.test_all_original_animations_and_cycle) ... ok
+test_full_cpu_clock_in_title_menu_game_and_basic_restore (test_stage6b1.MenuTests.test_full_cpu_clock_in_title_menu_game_and_basic_restore) ... ok
 test_full_loader_title_and_exact_menu_pixels (test_stage6b1.MenuTests.test_full_loader_title_and_exact_menu_pixels) ... ok
 test_level_nav_palette_cycle_and_exit_run (test_stage6b1.MenuTests.test_level_nav_palette_cycle_and_exit_run) ... ok
 test_menu_exit_restores_basic_and_engine (test_stage6b1.MenuTests.test_menu_exit_restores_basic_and_engine) ... ok
@@ -21,13 +21,11 @@ test_return_follows_drifting_formation (test_stage6b1.ZCombatRegression.test_ret
 test_romc_basic_mapping_and_repeat_menu_start (test_stage6b1.ZCombatRegression.test_romc_basic_mapping_and_repeat_menu_start) ... ok
 
 ----------------------------------------------------------------------
-Ran 18 tests in 201.506s
+Ran 19 tests in 249.919s
 
 OK
 
-KickAssembler5.25: successful PRG and separate menu-overlay assembly.
-Second build: all generated output files byte-identical.
-Five SEQ assets: exact sizes/checksums/EOF, full DMA page read-back, menu Attic header read-back.
-D81: BAM, complete file chains, types and extracted bytes verified (819200 bytes).
-Both stable tags, existing sources/assets/releases protected byte-for-byte.
-XEMU: NOT_RUN; awaiting user confirmation.
+KickAssembler5.25 successful. All generated files reproduced byte-identically.
+D81 BAM/chains/types/complete file bytes verified. Stable sources/assets/tags unchanged.
+FAST D031.6 and VFAST D054.6 verified in title/menu/game; exact BASIC restoration verified for slow/fast starts.
+XEMU not run; user acceptance pending.

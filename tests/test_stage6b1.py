@@ -118,6 +118,14 @@ class MenuTests(unittest.TestCase):
         for b in range(4):
             for c in range(3):
                 expected=bytearray(static[b][c]);actual=bytearray(m.memory.banks[b][c]);expected[2]=actual[2] if b==1 else expected[2];self.assertEqual(actual,expected)
+    def test_full_cpu_clock_in_title_menu_game_and_basic_restore(self):
+        for speed in (False,True):
+            m=Machine();m.memory.data[0xd031]=(m.memory.data[0xd031]&~64)|(64 if speed else 0);m.memory.data[0xd054]=(m.memory.data[0xd054]&~64)|(64 if speed else 0)
+            original=(m.memory.data[0xd031],m.memory.data[0xd054]);m.run_to([N['load_menu']])
+            self.assertEqual(m.memory.data[0xd031]&64,64);self.assertEqual(m.memory.data[0xd054]&64,64)
+            m.boot();self.assertEqual(m.memory.data[0xd031]&64,64);self.assertEqual(m.memory.data[0xd054]&64,64)
+            m.game();self.assertEqual(m.memory.data[0xd031]&64,64);self.assertEqual(m.memory.data[0xd054]&64,64)
+            m.frame(0x58);self.assertEqual(m.cpu.pc,0x200);self.assertEqual((m.memory.data[0xd031],m.memory.data[0xd054]),original)
     def test_selected_levels_handoff_fonts_and_static_palette(self):
         for level in (1,2,3,99,100):
             m=self.machine().game(level);self.assertEqual(m.cpu.pc,N['main_loop']);self.assertEqual(m.error,0)

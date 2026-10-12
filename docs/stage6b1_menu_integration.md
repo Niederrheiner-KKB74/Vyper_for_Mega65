@@ -103,7 +103,7 @@ Die neue deterministische Integration/Konvertierung läuft durch `tools/convert_
 
 ## Prüfungen und XEMU-Abnahme
 
-Alle **18 automatischen Tests bestanden** (201,506 s). Erfolgreiche Assembly, zweite byteidentische Reproduktion aller generierten Dateien und vollständige D81-Prüfung. Einzelresultate: `releases/stage_6b1/test-results.txt`. Hostprüfungen führen den tatsächlichen assemblierten Code mit schmalen CPU/DMA/VIC/KERNAL-Modellen aus. Das ist kein XEMU-/Hardwaretest.
+Alle **19 automatischen Tests bestanden** (249,919 s). Erfolgreiche Assembly, zweite byteidentische Reproduktion aller generierten Dateien und vollständige D81-Prüfung. Einzelresultate: `releases/stage_6b1/test-results.txt`. Hostprüfungen führen den tatsächlichen assemblierten Code mit schmalen CPU/DMA/VIC/KERNAL-Modellen aus. Das ist kein XEMU-/Hardwaretest.
 
 Unter XEMU ROM V920395, PAL, bitte prüfen:
 
@@ -117,3 +117,29 @@ Unter XEMU ROM V920395, PAL, bitte prüfen:
 8. X aus Menü/Platzhalter/Spiel: normaler BASIC-Cursor, DIRECTORY funktioniert, erneutes RUN zeigt Titel und Menü und startet wieder korrekt.
 
 Stage 6b1 bleibt bis zur ausdrücklichen Benutzerbestätigung ein Testbuild.
+
+## XEMU-Korrektur: CPU-Takt beim Titel-/Menüwechsel
+
+Der Benutzer meldet nach dem ersten Build einen Abfall auf 3,5 MHz unmittelbar
+nach dem Titelbildladen. Nachgewiesene Ursache: `t_show` schrieb `$05` nach
+`$D054` und löschte damit **VFAST, `$D054.6`**. Das übernommene Menü setzte zwar
+**FAST, `$D031.6`**, schrieb aber ebenfalls `$D054=$05`. FAST allein entspricht
+3,5 MHz; die ursprünglichen Hosttests modellierten keinen effektiven CPU-Takt.
+Belege: VIC-IV-Referenz/User Guide (VFAST) und XEMU
+`targets/mega65/mega65.c`, `machine_set_speed()`.
+
+Korrektur ausschließlich in Stage6b1: Titel und Menü verwenden `$D054=$45`
+(VFAST plus unveränderte CHR16/FCLRHI-Grafikbits) und setzen FAST. Auch der
+RRB-Spielstart einschließlich der nachfolgenden HUD-Initialisierung setzt beide Taktbits. Das ermöglicht vollen MEGA65-Takt
+(nominell 40 MHz; XEMU-Default 40,5 MHz), unabhängig vom BASIC-Starttakt.
+Die vorhandenen Register-Sicherungen restaurieren bei X/Fehlern die ursprünglichen
+BASIC-Werte. Keine Änderung an Kurven, Animationsteilern, 50-Hz-Gates, Schüssen,
+Grafikdaten oder Paletten. Der um zwei Bytes verschobene Titel-Restore-Einstieg
+wird im Menü-Gate angepasst und vom Builder gegen das tatsächliche Assembler-
+Symbol geprüft; PRG/D81 werden vollständig neu erstellt.
+
+Neue Regression: tatsächliche Registerwrites während des Titels, im Menü und
+Spiel bei langsamen/schnellen BASIC-Ausgangswerten; anschließend exakte
+D031/D054-Restoration nach X. Eigener XEMU-Lauf weiterhin nicht behauptet.
+Bitte den korrigierten Build zunächst auf konstanten vollen CPU-Takt während
+Laden/Menü/Spiel sowie korrektes BASIC/erneutes RUN testen.

@@ -2,7 +2,7 @@ Memory Map
 ----------
 Default-segment:
   $2001-$200d Unnamed
-  $2100-$2f32 Unnamed
+  $2100-$2f34 Unnamed
   $3000-$30a8 Unnamed
   $30c0-$30ff Unnamed
   $3100-$31c3 Original COLOR02 cycle and private state

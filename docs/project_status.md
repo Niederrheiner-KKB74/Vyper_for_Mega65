@@ -544,3 +544,11 @@ Automatische Prüfungen und XEMU-Checkliste:
 [Stage6b1-Menüintegration](stage6b1_menu_integration.md).
 Eine XEMU-Abnahme von Stage6b1 wird nicht behauptet; Stable erst nach ausdrücklicher
 Benutzerbestätigung.
+
+### Stage6b1 – Korrektur des gemeldeten 3,5-MHz-Taktabfalls
+
+Titel-/Menüinitialisierung löschte mit `$D054=$05` das VFAST-Bit. Stage6b1 setzt
+jetzt FAST und VFAST in Titel, Menü und Spiel; BASIC-Taktregister werden weiterhin
+exakt restauriert. Neuer Register-/Exit-Test für langsame und schnelle BASIC-
+Starts. Vollständiges PRG/D81 aktualisiert, Stable-Referenzen unverändert.
+Details und XEMU-Prüfschwerpunkt: `docs/stage6b1_menu_integration.md`.

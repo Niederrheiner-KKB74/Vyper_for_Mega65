@@ -7,11 +7,14 @@ Titel bleibt beim Laden sichtbar; danach erscheint das animierte Originalmenü.
 Joystick2/Cursor: Auswahl; links/rechts ändern INITIAL LEVEL zyklisch 001–100.
 F1/RETURN/Feuer: Einspielerspiel; F2/F3: rückkehrfähige Platzhalter; X: BASIC.
 
-18 automatische Tests bestanden; kein eigener XEMU-Lauf.
+19 automatische Tests bestanden; kein eigener XEMU-Lauf.
 Vollständige Quellen und alle fünf DATs sind enthalten.
 Build: `python tools/build_stage6b1.py --kickass /pfad/KickAss.jar` im Repository.
 Dokumentation: `docs/stage6b1_menu_integration.md`.
 
-PRG SHA-256: `f7d8a099bd4ce8690d9d3c6cdde20bc89da584a91eb93f23647d061c925d62cb`
+PRG SHA-256: `a7e8b999afe9ce32208dcacb697f86f03e8120b3d454a423bbd51673ee938b6b`
 
-D81 SHA-256: `10c7643d4212cfe543923b236b42486cd7d361d26c6c9d912445e2703297bf4e`
+D81 SHA-256: `be0712e6602d7a375a64d4550f770ad417c42de3a313d482f75880627a48ff62`
+
+CPU-Taktkorrektur: FAST und VFAST in Titel, Menü und Spiel aktiv;
+ursprünglicher BASIC-Takt wird bei X restauriert. Siehe technische Dokumentation.

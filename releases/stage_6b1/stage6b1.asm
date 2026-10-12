@@ -198,6 +198,7 @@ start:
     // H320 and ATTR off. NCM requires 8-bit colour attributes.
     lda saved_d031
     and #%01011111
+    ora #$40 // Keep full-speed CPU independently of BASIC speed.
     sta VIC_D031
 
     // CRAM2K + RAM palette enable.
@@ -211,7 +212,7 @@ start:
 
     // CHR16 (SEAM) + FCLRHI: chars <256 mono, chars >=256 full-colour/NCM.
     lda saved_d054
-    ora #%00000101
+    ora #%01000101 // VFAST + unchanged SEAM/FCLRHI flags
     sta VIC_D054
 
     // 40 RRB entries per row, each entry is two bytes.

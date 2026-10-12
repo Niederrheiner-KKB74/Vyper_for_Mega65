@@ -58,7 +58,7 @@ hud_init:
     sta saved_scale
     lda saved_d031
     and #$5f
-    ora #$80
+    ora #$c0 // H640 + FAST; HUD setup must retain full CPU clock.
     sta VIC_D031
     lda #60
     sta $d05a

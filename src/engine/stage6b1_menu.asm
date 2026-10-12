@@ -564,13 +564,13 @@ menu_show:
     sta $d030
     lda $d031
     and #$47 // H320 / V200, no VIC-III attributes or bitplanes
-    ora #$40 // guaranteed 3.5MHz FAST; saved original D031 restored on X
+    ora #$40 // FAST together with D054.VFAST; original restored on X
     sta $d031
     lda $d016
     and #$e0
     ora #8 // 40-col legacy CSEL flag; custom count is40
     sta $d016
-    lda #5 // CHR16 and FCLRHI; no NCM, RRB/GOTOX, alpha or flips
+    lda #$45 // VFAST + CHR16/FCLRHI; no NCM, RRB/GOTOX, alpha or flips
     sta $d054
     lda $d07a
     and #$ef // CHARY16 off
