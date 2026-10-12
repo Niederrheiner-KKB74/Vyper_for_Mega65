@@ -3,14 +3,24 @@
 *=$7900 "Stage6b1 ROMC-safe phase gates"
 .namespace menubank {
 load:
+    sei // No KERNAL IRQ may run while its ROMC bank is disabled.
     lda $d030
     sta original
     and #$df
     sta $d030
-    jsr $cb00
+    jsr $cb00 // Configure filename/count only, no KERNAL calls in bridge.
     lda original
     sta $d030
-    rts
+    cli
+    jsr M_SEQ_LOAD // Original ROM mapping + IRQs, exactly as stable loader.
+    sei
+    lda original
+    and #$df
+    sta $d030
+    jsr $cb15 // Verify/copy asset with IRQ masked, no open channels.
+    lda original
+    sta $d030
+    rts // Caller enables IRQs only after returning to its low-RAM code.
 enter:
     lda $d030
     sta original // after title restore: preserve exact BASIC bits, including CRAM2K

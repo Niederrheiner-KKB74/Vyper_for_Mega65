@@ -18,9 +18,9 @@
   .label original=$31f0 {
   }
   .label load=$7900
-  .label restore=$7923
-  .label finish=$7932
-  .label enter=$7915
+  .label restore=$793a
+  .label finish=$7949
+  .label enter=$792c
 }
 .label digit_col=$74fc
 .label menu_frames=$8b5c

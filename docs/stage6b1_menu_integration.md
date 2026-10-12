@@ -59,7 +59,7 @@ VIC-IV kann nur die dokumentierten 384 KB Chip-RAM direkt lesen. `$60000` und h�
 | `$4000–$47FF` | Titelbootstrap | erhalten | privater Original-HUD-Font |
 | `$6800/$6900` | SEQ/Rückvergleich | nicht als Menügrafik genutzt | bisherige DMA-Arbeitspuffer |
 | `$7000–$9FFF` | Enginecode/-daten | gesicherte, danach separate Menü-Overlayphase | Engine bytegenau zurückkopiert |
-| `$7900–$7939` | ROMC-Gates | identische Gates im Menü-Overlay | gleiche Gates |
+| `$7900–$7950` | ROMC-Gates | identische Gates im Menü-Overlay | gleiche Gates |
 | `$9000–$97CF` | ursprüngliche Engine-Daten | 40×25-FCM-Screen | wiederhergestellte BASIC-Colorsicherung |
 | `$9800–$9FFF` | Enginecode/-daten | Originalfont für dynamische Texte/Ziffern | Engine bytegleich restauriert |
 | `$12000–$1217F` | Levelrecord | sechs dynamische Ziffern-FCM-Glyphen | Levelrecord neu geladen |
@@ -71,7 +71,7 @@ VIC-IV kann nur die dokumentierten 384 KB Chip-RAM direkt lesen. `$60000` und h�
 | `$5C300–$5C4DB` | VYCL | unverändert | unverändert |
 | `$5C500–$5FFFF` | Titelglyphen/-Colorsicherung | restliche 236 Menü-FCM-Glyphen | Menü nicht mehr sichtbar |
 | `$E000…` | vorhandener Spielscreen | nicht verwendet | unveränderter RRB-Screen |
-| `$CB00–$CD44` | persistente Integration | gleich | gleich |
+| `$CB00–$CD45` | persistente Integration | gleich | gleich |
 | `$FF82000–$FF82A4F` | Titel-Color-RAM | FCM-Menü-Attribute in ersten 2000 Bytes | wiederhergestellt |
 | `$08000000–$080007FF` | Titelbootstrap-Sicherung | dauerhaft | Restore bei X |
 | `$08001000–$08003FFF` | frei | Engine-Overlay-Sicherung | bleibt für nächsten RUN überschreibbar |
@@ -103,7 +103,7 @@ Die neue deterministische Integration/Konvertierung läuft durch `tools/convert_
 
 ## Prüfungen und XEMU-Abnahme
 
-Alle **19 automatischen Tests bestanden** (249,919 s). Erfolgreiche Assembly, zweite byteidentische Reproduktion aller generierten Dateien und vollständige D81-Prüfung. Einzelresultate: `releases/stage_6b1/test-results.txt`. Hostprüfungen führen den tatsächlichen assemblierten Code mit schmalen CPU/DMA/VIC/KERNAL-Modellen aus. Das ist kein XEMU-/Hardwaretest.
+Alle **20 Laufzeittests bestanden** (271,427 s), dazu drei Belegprüfungen mit dem Benutzer-ROM V920413. Erfolgreiche Assembly, zweite byteidentische Reproduktion aller generierten Dateien und vollständige D81-Prüfung. Einzelresultate: `releases/stage_6b1/test-results.txt`. Hostprüfungen führen den tatsächlichen assemblierten Code mit schmalen CPU/DMA/VIC/KERNAL-Modellen aus. Das ist kein XEMU-/Hardwaretest.
 
 Unter XEMU ROM V920395, PAL, bitte prüfen:
 
@@ -143,3 +143,59 @@ Spiel bei langsamen/schnellen BASIC-Ausgangswerten; anschließend exakte
 D031/D054-Restoration nach X. Eigener XEMU-Lauf weiterhin nicht behauptet.
 Bitte den korrigierten Build zunächst auf konstanten vollen CPU-Takt während
 Laden/Menü/Spiel sowie korrektes BASIC/erneutes RUN testen.
+
+## XEMU-Meldung: stehender PC $FA29 nach Titelbild
+
+Die PC-Adresse lässt sich mit dem früher bereitgestellten 128-KB-ROM V920395
+nicht als passende Warteschleife identifizieren; tatsächliche ROM-Version und
+Bytes wurden beim Benutzer angefragt. Keine unbelegte Zuordnung zu einer
+bestimmten Disk-/IRQ-Routine.
+
+Unabhängig davon ist ein konkreter Integrationsfehler nachgewiesen: Die neue
+Menüdatei wurde vom RAM-Bridge-Code `$CB00` mit abgeschaltetem `$D030.ROMC`
+geladen, während KERNAL-IRQs aktiv waren. Die Stable-SEQ-Routine selbst war
+unverändert, aber ihre Aufrufumgebung nicht. Die bisherigen KERNAL-Traps
+modellierten keine ROM-/IRQ-Ausführung und erkannten diesen Fehler nicht.
+
+Korrektur: Low-RAM-Gate `$7900` maskiert IRQs nur für Parameterkonfiguration
+in der Bridge, restauriert danach die ursprüngliche ROM-Abbildung und aktiviert
+IRQs **vor** jedem KERNAL-Dateiaufruf. Der eigentliche SEQ-Lader läuft in seinem
+bestehenden Low-RAM-Bereich. Nach CLOSE/CLRCHN folgen Prüfung und Attic-DMA mit
+maskierten IRQs; ROM-Abbildung wird vor dem erneuten CLI restauriert. Menü-
+Overlay enthält dieselben Gates; kein Datei-I/O aus ungemapptem Bridge-Code.
+Der Builder prüft auch den tatsächlichen SEQ-Einstieg gegen die Gate-Adresse.
+
+Zusätzliche Regression startet mit ROMC aktiv und überprüft an allen tatsächlich
+abgearbeiteten KERNAL-Aufrufen für VYMN sowohl ROMC-Abbildung als auch aktivierte
+IRQs. Die beiden RAM-Bridge-Phasen müssen dagegen IRQ-maskiert sein und die
+Prüfphase muss geschlossene Kanäle sehen. Der FAST/VFAST-Fix bleibt erhalten.
+Eine Behebung des konkreten XEMU-Hangs ist erst nach erneutem Benutzer-Test
+bestätigt. Die nachgelieferte ROM-Analyse unten ordnet beide beobachteten PCs zu.
+
+### Nachgeliefertes ROM V920413 und zweiter PC $CE26
+
+Benutzer-ROM SHA-256:
+`af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0`.
+Die vollständige ROM-Datei wird nicht ins Repository kopiert.
+
+- IRQ-Vektor `$FFFE` in der zweiten ROM-Hälfte: `$FA23`.
+- `$FA29`: Bytes `A9 00 5B`, also `LDA #$00; TAB`, im IRQ/BRK-Register-Prolog.
+- `$FA36`: `AND #$10; BNE $FA3D`, Entscheidung nach dem BRK-Bit des gespeicherten Status.
+- IRQ-Zweig: `JMP ($0314)`; BRK-Zweig: `SEC; JMP ($0316)`.
+- Initiale Vektortabelle bei ROM `$FE08`: IRQ `$F9EC`, **BRK `$CE26`**, NMI `$F9B6`.
+- Original-ROM `$CE26` beginnt `08 42 42 AD 1C 01 48` (PHP und erweiterter ROM-Wrapper).
+
+Der zweite Benutzer-PC **linear `$000CE26`** bezeichnet RAM. Bei aktivem
+ROMC müsste CPU `$CE26` aus physischem **`$02CE26`** gelesen werden. Das passt
+zur ausgeschalteten ROM-Abbildung im ursprünglichen Menü-Dateiaufruf und erklärt,
+warum der BRK-Zweig in RAM statt in seinen ROM-Handler springt. `$FA29` ist
+also keine Disk-Warteschleife. Die einzelne zuerst BRK auslösende Instruktion
+ist ohne ausgeführten XEMU-Trace nicht festgestellt.
+
+Drei zusätzliche Prüfungen an den tatsächlichen ROM-Bytes und am CPU-Mapping-
+Modell bestanden. Reproduzierbar mit
+`MEGA65_ROM_V920413=/pfad/MEGA65.ROM PYTHONPATH=tests:tools:/pfad/py65 python -m unittest test_stage6b1_rom -v`.
+Ohne das passende Benutzer-ROM wird diese optionale Belegprüfung ausdrücklich
+übersprungen; der normale reproduzierbare PRG/D81-Build benötigt das ROM nicht.
+Aktueller XEMU-Abnahmeschwerpunkt: **V920413**, Titel → weitere SEQs → Menü,
+kein BRK-/RAM-ROM-Sprung, voller CPU-Takt, X und erneutes RUN.

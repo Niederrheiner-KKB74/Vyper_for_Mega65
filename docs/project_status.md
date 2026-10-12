@@ -552,3 +552,12 @@ jetzt FAST und VFAST in Titel, Menü und Spiel; BASIC-Taktregister werden weiter
 exakt restauriert. Neuer Register-/Exit-Test für langsame und schnelle BASIC-
 Starts. Vollständiges PRG/D81 aktualisiert, Stable-Referenzen unverändert.
 Details und XEMU-Prüfschwerpunkt: `docs/stage6b1_menu_integration.md`.
+
+### Stage6b1 – ROMC-/IRQ-Korrektur für V920413
+
+KERNAL-Menüdatei-I/O wurde mit abgeschalteter ROMC-Abbildung aufgerufen.
+Low-RAM-Gates restaurieren jetzt ROMC vor SEQ-I/O; nur Parameter-/Prüfphasen
+laufen IRQ-maskiert in der Bridge. V920413-ROM belegt FA29 als IRQ/BRK-Prolog
+und CE26 als BRK-Ziel; linear000CE26 zeigt fehlende ROM-Abbildung.
+20 Laufzeittests plus drei ROM-Belegprüfungen bestanden; neuer PRG/D81-Build
+bytegleich reproduziert. XEMU-Abnahme ausstehend, nicht Stable.

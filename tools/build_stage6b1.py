@@ -46,7 +46,8 @@ def build(jar,output):
         restore=int(re.search(r'\.label t_restore_video=\$([0-9a-f]+)',(ROOT/'releases/stage_5d_1_b2/STAGE5D1A.sym').read_text())[1],16)
         # Title FAST ORA adds two bytes before its restore routine.
         restore+=2
-        constants={'M_RESTORE_VIDEO':restore,'M_FILE_BYTES':file_len,'M_FILE_SUM':0,'M_ATLAS_BYTES':len(tiles),'M_OVERLAY':0x08010000+overlay_offset,'M_FONT':0x08010000+overlay_offset+0x2800}
+        seq=int(re.search(r'\.label load_file=\$([0-9a-f]+)',(ROOT/'releases/stage_5d_1_b2/STAGE5D1A.sym').read_text())[1],16)+12 # menu-load hook11 bytes + caller CLI1
+        constants={'M_SEQ_LOAD':seq,'M_RESTORE_VIDEO':restore,'M_FILE_BYTES':file_len,'M_FILE_SUM':0,'M_ATLAS_BYTES':len(tiles),'M_OVERLAY':0x08010000+overlay_offset,'M_FONT':0x08010000+overlay_offset+0x2800}
         constants.update({f'M_SCREEN{i}':0x08010000+screen_offset+2000*i for i in range(3)})
         def layout(): (w/'menu_layout.inc').write_text(''.join(f'.const {k}=${v:x}\n' for k,v in constants.items()))
         layout()
@@ -64,6 +65,8 @@ def build(jar,output):
         for name,b in data.items():(w/name).write_bytes(b)
         asm=assemble(w,jar,'stage6b1.asm','STAGE6B1.PRG');prg=(w/'STAGE6B1.PRG').read_bytes()
         actual_restore=int(re.search(r'\.label t_restore_video=\$([0-9a-f]+)',(w/'stage6b1.sym').read_text())[1],16)
+        actual_seq=int(re.search(r'\.label load_file=\$([0-9a-f]+)',(w/'stage6b1.sym').read_text())[1],16)
+        if actual_seq!=seq:raise ValueError('Menu SEQ gate does not match assembled loader')
         if actual_restore!=restore:raise ValueError('Menu BASIC-restore gate does not match assembled title routine')
         entries=[('STAGE6B1',prg,0x82)]+[(n,b,0x81) for n,b in data.items()]
         disk=bytearray(BASE.build_disk(entries));head=39*40*256;disk[head+4:head+20]=b'VYPER STAGE6B1'.ljust(16,b'\xa0');disk=bytes(disk)

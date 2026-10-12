@@ -2828,6 +2828,7 @@ entry:
     jmp failed
 !title_ok:
     jsr menubank.load
+    cli // ROM mapping is restored before any KERNAL interrupt resumes.
     lda error
     beq !menu_loaded+
     jmp failed

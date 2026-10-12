@@ -5,6 +5,7 @@ import test_stage5d1a as OLD
 import build_stage6b1 as BUILD
 ROOT=BUILD.ROOT;ART=ROOT/'releases/stage_6b1'
 N=OLD.OLD.T.BUILD.symbols((ART/'STAGE6B1.sym').read_text())
+N['original']=0x31f0
 MN=OLD.OLD.T.BUILD.symbols((ART/'MENU_OVERLAY.sym').read_text())
 OLD.N=N;OLD.OLD.N=N;OLD.OLD.T.N=N;OLD.OLD.T.PREV.N=N
 class MenuMemory(OLD.TitleMemory):
@@ -22,6 +23,15 @@ class Machine(OLD.Machine):
         self.memory.__class__=MenuMemory;self.memory.attic=bytearray(0x40000);self.memory.key=0
         self.files['VYMN.DAT']=(ART/'VYMN.DAT').read_bytes();self.cpu.pc=N['p_startup']
         self.memory.data[0xdc00]=255;self.before=bytes(self.memory.data)
+    def trap(self):
+        if self.cpu.pc==0xffbd:
+            c=self.cpu;name=bytes(self.memory.data[c.x+c.y*256:c.x+c.y*256+c.a]).decode()
+            self.menu_io=name.startswith('VYMN')
+        if getattr(self,'menu_io',False) and self.cpu.pc in self.KERNAL:
+            assert self.memory.data[0xd030]&32==self.memory.data[N['original']]&32,'KERNAL ROMC mapping changed during menu I/O'
+            assert not self.cpu.p&self.cpu.INTERRUPT,'KERNAL menu I/O with IRQ masked'
+            self.menu_io_calls=getattr(self,'menu_io_calls',0)+1
+        super().trap()
     def scene_bytes(self):
         scene=super().scene_bytes()
         regs=list(scene[-1]);regs[OLD.VIC_REGS.index(0x30)] &= 0xdf
@@ -126,6 +136,12 @@ class MenuTests(unittest.TestCase):
             m.boot();self.assertEqual(m.memory.data[0xd031]&64,64);self.assertEqual(m.memory.data[0xd054]&64,64)
             m.game();self.assertEqual(m.memory.data[0xd031]&64,64);self.assertEqual(m.memory.data[0xd054]&64,64)
             m.frame(0x58);self.assertEqual(m.cpu.pc,0x200);self.assertEqual((m.memory.data[0xd031],m.memory.data[0xd054]),original)
+    def test_KERNAL_menu_SEQ_has_original_romc_and_enabled_IRQ(self):
+        m=Machine();m.memory.data[0xd030]=0x20
+        m.run_to([N['load_menu']]);self.assertTrue(m.cpu.p&m.cpu.INTERRUPT);self.assertEqual(m.memory.data[0xd030]&32,0)
+        m.run_to([N['finish_menu_load']]);self.assertTrue(m.cpu.p&m.cpu.INTERRUPT);self.assertEqual(m.memory.data[0xd030]&32,0)
+        self.assertGreater(m.menu_io_calls,2*len(m.files['VYMN.DAT']))
+        self.assertFalse(m.opened or m.active);m.boot();self.assertEqual(m.error,0)
     def test_selected_levels_handoff_fonts_and_static_palette(self):
         for level in (1,2,3,99,100):
             m=self.machine().game(level);self.assertEqual(m.cpu.pc,N['main_loop']);self.assertEqual(m.error,0)

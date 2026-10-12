@@ -8,6 +8,7 @@
     jmp cc_publish
     jmp integration.restore_data
     jmp integration.enter_menu
+    jmp integration.finish_menu_load
 .namespace integration {
 load_menu:
     lda #0
@@ -29,7 +30,8 @@ load_menu:
     sta s3b.target_hi
     lda #4
     sta s3b.target_bank
-    jsr s3b.load_file
+    rts
+finish_menu_load:
     lda s3b.error
     beq !sum+
     rts

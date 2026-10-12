@@ -17,7 +17,7 @@ Default-segment:
   $3e80-$3eb6 HUD defaults
   $3f00-$3fd1 HUD attributes rows 20-24
   $4000-$47ff Stage5d1 title bootstrap (then private HUD charset)
-  $4800-$4b55 Stage 3b-2 preload
+  $4800-$4b56 Stage 3b-2 preload
   $4b60-$4c39 Stage 4a mode and RRB hook
   $4c40-$4e04 Stage 3b-5c states and restart
   $4f00-$4fc3 Stage 6b1 formation and selection
@@ -36,7 +36,7 @@ Default-segment:
   $7500-$75a9 Stage 4b formation return and colour backup extension
   $7608-$76b1 Stage 6b1 bounded attack parser
   $7700-$7889 Isolated Debut Y projection and private state
-  $7900-$7939 Stage6b1 ROMC-safe phase gates
+  $7900-$7950 Stage6b1 ROMC-safe phase gates
   $7951-$79f1 Stage 6b1 aimed shot initialization
   $7a00-$7ee1 HUD static screen and row lookup
   $7ee2-$7f71 Stage 4b signed collision boxes
@@ -67,4 +67,4 @@ Default-segment:
   $c800-$c8ff Unnamed
   $c900-$c9ff Unnamed
   $ca00-$caff Stage 4a private guarded NCM crop
-  $cb00-$cd44 Stage6b1 phase bridge
+  $cb00-$cd45 Stage6b1 phase bridge
