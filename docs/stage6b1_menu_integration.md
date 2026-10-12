@@ -1,6 +1,7 @@
 # Stage 6b1 – Originalmenü und vollständige Spielintegration (Issue #47)
 
-Entwicklungsbranch `stage6b1`, **noch nicht Stable**. Die XEMU-Abnahme steht aus.
+Branch `stage6b1`, **Stable vom Benutzer bestätigt am 12.10.2026**.
+Referenz `stage6b1-stable`; getesteter Programmcommit `5fa82452101cf690c3fa1f5eba0b172222541764`.
 
 ## Unveränderte Ausgangsstände
 
@@ -116,7 +117,7 @@ Unter XEMU ROM V920395, PAL, bitte prüfen:
 7. LEVEL CLEAR erst nach vollständigen Explosionen; neuer Buttondruck, 100→1, +/- begrenzt. GAME OVER nach letzter Explosion; R zurück zu Level1 mit erhaltenem Highscore.
 8. X aus Menü/Platzhalter/Spiel: normaler BASIC-Cursor, DIRECTORY funktioniert, erneutes RUN zeigt Titel und Menü und startet wieder korrekt.
 
-Stage 6b1 bleibt bis zur ausdrücklichen Benutzerbestätigung ein Testbuild.
+Stage 6b1 wurde inzwischen ausdrücklich als Stable bestätigt; siehe Abnahme unten.
 
 ## XEMU-Korrektur: CPU-Takt beim Titel-/Menüwechsel
 
@@ -199,3 +200,22 @@ Ohne das passende Benutzer-ROM wird diese optionale Belegprüfung ausdrücklich
 übersprungen; der normale reproduzierbare PRG/D81-Build benötigt das ROM nicht.
 Aktueller XEMU-Abnahmeschwerpunkt: **V920413**, Titel → weitere SEQs → Menü,
 kein BRK-/RAM-ROM-Sprung, voller CPU-Takt, X und erneutes RUN.
+
+## Abschließende Benutzerabnahme – 12.10.2026
+
+XEMU-Funktionskontrolle vom Benutzer mit ROM **V920413** bestätigt.
+Die gemeldete fehlende Joysticksteuerung war eine XEMU-Einstellung:
+Emulation auf Port1 statt des verlangten **Port2**. Nach Umschalten auf Port2
+funktioniert der Build; **keine weitere Codeänderung erforderlich**.
+
+Benutzerbestätigung:
+> Die Emulation war tatsächlich auf Port 1 eingestellt. Danke für den Hinweis.
+> Mit Änderung auf Port 2 funktioniert der Build. Ich bestätige den Build als
+> stable, XEMU-Funktionskontrolle ist bestätigt.
+
+Quellen, PRG, alle DATs, D81 und Test-ZIP bleiben bytegleich zum bestätigten
+Programmcommit `5fa82452101cf690c3fa1f5eba0b172222541764` erhalten.
+Historische Release-/Buildreports behalten ihren damaligen Testbuild-Status;
+der Stable-Status wird durch diese Benutzerabnahme und `stage6b1-stable` belegt.
+Kein eigener XEMU-Lauf durch Codex wird behauptet. Zukünftige Änderungen separat
+auf Grundlage dieses Stable-Tags entwickeln; `stage6b1` als Referenz erhalten.

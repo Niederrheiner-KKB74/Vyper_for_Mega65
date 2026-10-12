@@ -561,3 +561,12 @@ laufen IRQ-maskiert in der Bridge. V920413-ROM belegt FA29 als IRQ/BRK-Prolog
 und CE26 als BRK-Ziel; linear000CE26 zeigt fehlende ROM-Abbildung.
 20 Laufzeittests plus drei ROM-Belegprüfungen bestanden; neuer PRG/D81-Build
 bytegleich reproduziert. XEMU-Abnahme ausstehend, nicht Stable.
+
+## Stage6b1 Stable – Benutzerabnahme 12.10.2026
+
+Vom Benutzer nach XEMU-Funktionskontrolle mit ROM V920413 ausdrücklich bestätigt.
+Joystickfehler war XEMU-Port1; mit **Port2** funktionieren Menü und Spiel.
+Kein weiterer Programmfix. Stable-Referenz `stage6b1-stable`, Branch `stage6b1`,
+getesteter Programmcommit `5fa82452101cf690c3fa1f5eba0b172222541764`.
+Quellen und vollständiges Release `releases/stage_6b1/` bytegleich erhalten.
+Die Bestätigung stammt vom Benutzer, kein eigener XEMU-Test behauptet.

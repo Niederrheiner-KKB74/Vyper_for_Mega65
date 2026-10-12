@@ -23,4 +23,11 @@
     `24559e46c4f237492bc4e03439c86ea6c402a0b0`, vom Benutzer bestätigt.
     Originalmenü mit 32 Animationen und bestätigtem COLOR02-Cycling schützen.
     Stage6a1 ist obsolet und bleibt nur als historische Quelle erhalten.
-    Stage6b1 ist ein neuer Testbuild; keine Stable-Markierung ohne Benutzerabnahme.
+    Stage6b1 wurde inzwischen vom Benutzer als Stable bestätigt; siehe Regel14.
+
+14. **Stage6b1 Stable:** Vom Benutzer am 12.10.2026 mit XEMU/ROM V920413
+    bestätigt, Joystick Port2. Referenz `stage6b1-stable`, Branch `stage6b1`,
+    getesteter Programmcommit `5fa82452101cf690c3fa1f5eba0b172222541764`.
+    `src/engine/stage6b1*.asm` und `releases/stage_6b1/` unverändert schützen.
+    Keine weitere Joystickkorrektur: Port1 war die fehlerhafte XEMU-Einstellung.
+    Neue Entwicklung separat vom Stable-Tag ableiten.

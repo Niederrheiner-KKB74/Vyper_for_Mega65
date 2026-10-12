@@ -427,3 +427,10 @@ bei `$3100`, ROMC-Gates bei `$7900` (identisch in beiden Phasen), originales D03
 bei `$31F0`, Integrationsbrücke bei `$CB00`. BASIC- und DOS-Bereiche bleiben
 unberührt. Exakte Grenzen, begründete Phasen-Aliase und Modus-/Palette-Restoration:
 [Stage6b1](stage6b1_menu_integration.md), `releases/stage_6b1/memory-map.txt`.
+
+### Stage6b1 Stable – unveränderte Speicherkarte
+
+Benutzerabnahme am 12.10.2026 mit XEMU/ROM V920413, Joystick Port2.
+Referenz `stage6b1-stable`, Programmcommit `5fa82452101cf690c3fa1f5eba0b172222541764`.
+Alle bestätigten Speicherphasen, ROMC-/IRQ-Gates und FAST/VFAST-Korrekturen bleiben
+unverändert; Stable-Markierung ändert ausschließlich Dokumentation und Git-Referenz.
