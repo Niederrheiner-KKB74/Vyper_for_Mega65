@@ -1,6 +1,6 @@
 # Stage 5d-1a: confirmed B2 integration (Issue #41)
 
-**Pending integrated XEMU acceptance; not Stable.** Branch `stage5d-1-b2` starts from the actual current Stage 5d-1 GitHub commit `e295fa81d5c18b009eb22841ea5db2da7c8a6279`. This includes the confirmed title/loader and HOTREG handoff (program commit `7d6e77f`). B2 source is commit `4cb73e71974f4102bdad003cdbc1cae1b0896407`, confirmed by the user in XEMU for Issue #39. No whole-branch merge from the test branch: the title integration remains the basis.
+**Stable: vom Benutzer am 12.10.2026 in XEMU bestätigt; Tag `stage5d1a-stable`.** Branch `stage5d-1-b2` starts from the actual current Stage 5d-1 GitHub commit `e295fa81d5c18b009eb22841ea5db2da7c8a6279`. This includes the confirmed title/loader and HOTREG handoff (program commit `7d6e77f`). B2 source is commit `4cb73e71974f4102bdad003cdbc1cae1b0896407`, confirmed by the user in XEMU for Issue #39. No whole-branch merge from the test branch: the title integration remains the basis.
 
 ## Exact source changes
 
@@ -49,3 +49,7 @@ The direct assembled-code comparison matches confirmed B2 for 1,000 complete obj
 59 distinct CPU-model checks pass across the broad run and corrected targeted reruns. The initial broad run took 934.015 s: 57 passed, two inherited checks still expected pre-B2 geometry. Their Stage-5d-1a replacements were rerun together: both passed in 82.384 s. Raw logs and `test-results.json` retain this distinction; no tests were disabled. All 128 transition events for the 64 enemies of Levels 1–3 match the confirmed B2 trace exactly. All 28 independent build outputs are byte-identical. Integrated XEMU testing is still pending.
 
 A deterministic download bundle can be regenerated with `python tools/package_stage5d1a.py`; it includes the complete generated sources, DATs, PRG/D81, test evidence and documentation. Rebuilding requires the repository and its original assets/tags.
+
+## User acceptance and preserved artifacts — 12.10.2026
+
+The user confirmed the complete build as Stable. Tested commit: `08df921c6cca4614e540d6f50d6c853e8835ad40`. The Stable tag includes this documentation-only acceptance update. All source, PRG, D81, DAT and ZIP bytes remain unchanged. Earlier pending/XEMU-NOT_RUN statements in historical build reports and test logs describe the original delivery and our host tests; user acceptance supersedes the pending status, without claiming an assistant XEMU run. Closed development PRs retain their full review history and branches.

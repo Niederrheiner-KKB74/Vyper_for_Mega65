@@ -521,6 +521,8 @@ Die Sicherung verändert ausschließlich Dokumentation; vollständige Quellen,
 Originalassets, PRG, D81 und Release-ZIP bleiben byteidentisch.
 Die XEMU-Abnahme stammt vom Benutzer; kein eigener XEMU-/Hardwarelauf.
 
-## Stage 5d-1a / Issue #41 (acceptance pending)
+## Stage 5d-1a / Issue #41: Stable (12.10.2026)
 
-Separate branch `stage5d-1-b2`, based on current Stage 5d-1 commit `e295fa8`. User-confirmed B2 ENTRY Y−16 and continuous RETURN handoff integrated in new sources only. Title/loader, ATTACK, all 100 levels and palettes preserved. Release `releases/stage_5d_1_b2/`; no Stable tag. See [integration report](stage5d1_b2_integration.md).
+Separate branch `stage5d-1-b2`, based on current Stage 5d-1 commit `e295fa8`. User-confirmed B2 ENTRY Y−16 and continuous RETURN handoff integrated in new sources only. Title/loader, ATTACK, all 100 levels and palettes preserved. Release `releases/stage_5d_1_b2/`; Stable tag `stage5d1a-stable`. See [integration report](stage5d1_b2_integration.md).
+
+Benutzerabnahme am 12.10.2026: „Der Build ist stable.“ Getesteter Programmcommit `08df921c6cca4614e540d6f50d6c853e8835ad40`. Nur Dokumentation wird zur Stable-Sicherung geändert; sämtliche Quellen und Release-Artefakte bleiben byteidentisch. Frühere Build-PRs #36/#38/#40 und der abgeschlossene Integrations-PR #42 werden geschlossen, zugehörige Issues #35/#37/#39/#41 abgeschlossen. Branches, Tags und historische Downloads bleiben erhalten; keine Integration in frühere Stable-Branches.
