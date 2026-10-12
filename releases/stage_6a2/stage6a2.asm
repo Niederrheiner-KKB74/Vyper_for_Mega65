@@ -1,4 +1,4 @@
-// Stage 6a2 / Issue #43. Independent original animated menu; no gameplay imports.
+// Stage 6a2 / Issue #45. Independent original animated menu; no gameplay imports.
 // FCM 40x25, exact snapshot typography/palette, 32 original animated types.
 .import source "menu_assets.inc"
 .import source "color_cycle.inc"

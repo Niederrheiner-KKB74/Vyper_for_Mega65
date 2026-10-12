@@ -17,7 +17,7 @@ def protect_stable():
         if (ROOT/n).read_bytes()!=subprocess.check_output(['git','show',BASELINE+':'+n],cwd=ROOT):raise ValueError('Stage6a1 changed: '+n)
     if (ROOT/'src/tests/stage6a2_animation.asm').read_bytes()!=(ROOT/'src/tests/stage6a1_animation.asm').read_bytes():raise ValueError('Animation modified')
     # Reverse only the two hooks/module/config imports and stage labels.
-    new=(ROOT/'src/tests/stage6a2.asm').read_text().replace('Stage 6a2','Stage 6a1').replace('STAGE 6A2','STAGE 6A1').replace('stage6a2_animation','stage6a1_animation')
+    new=(ROOT/'src/tests/stage6a2.asm').read_text().replace('Stage 6a2','Stage 6a1').replace('Issue #45','Issue #43').replace('STAGE 6A2','STAGE 6A1').replace('stage6a2_animation','stage6a1_animation')
     for hook in ['.import source "color_cycle.inc"\n','    jsr cc_init\n','    jsr cc_tick // shared COLOR02 after animation, in the same blanking tick\n','\n.import source "stage6a2_cycling.asm"\n']:new=new.replace(hook,'')
     if new!=(ROOT/'src/tests/stage6a1.asm').read_text():raise ValueError('Unexpected menu/loader change')
     return checked+len(names)
