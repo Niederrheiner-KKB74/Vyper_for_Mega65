@@ -1,0 +1,12 @@
+{
+  "issue": 43,
+  "stage": "6a1",
+  "stable": false,
+  "tests_passed": 8,
+  "test_seconds": 17.223,
+  "independent_build_identical_files": 15,
+  "all32_types_all_original_frames_tested": true,
+  "initial_original_indices_verified": 64000,
+  "animation_tick_test_frames": 80,
+  "xemu": "NOT_RUN; user acceptance pending"
+}

@@ -1,0 +1,13 @@
+test_32_animations_every_original_frame_and_no_ghosts (test_stage6a1.MenuTests.test_32_animations_every_original_frame_and_no_ghosts) ... ok
+test_disk_complete_and_stable_unchanged (test_stage6a1.MenuTests.test_disk_complete_and_stable_unchanged) ... ok
+test_exit_pending_HOTREG_and_original_IRQ_state (test_stage6a1.MenuTests.test_exit_pending_HOTREG_and_original_IRQ_state) ... ok
+test_frame_gate_once_per_PAL_raster_and_outside_display (test_stage6a1.MenuTests.test_frame_gate_once_per_PAL_raster_and_outside_display) ... ok
+test_loader_errors_visible_closed_and_video_untouched (test_stage6a1.MenuTests.test_loader_errors_visible_closed_and_video_untouched) ... ok
+test_loader_initial_exact_64000_pixels_and_geometry (test_stage6a1.MenuTests.test_loader_initial_exact_64000_pixels_and_geometry) ... ok
+test_only_X_exit_all_state_restored_and_repeated_RUN (test_stage6a1.MenuTests.test_only_X_exit_all_state_restored_and_repeated_RUN) ... ok
+test_original_32_types_positions_palette_texts_and_conversion (test_stage6a1.MenuTests.test_original_32_types_positions_palette_texts_and_conversion) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 17.223s
+
+OK

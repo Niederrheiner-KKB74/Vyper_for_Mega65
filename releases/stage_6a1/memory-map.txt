@@ -1,0 +1,10 @@
+Memory Map
+----------
+Default-segment:
+  $2001-$200c BASIC SYS 8448
+  $2100-$2789 Standalone menu loader and video
+  $2800-$28cb 32 independent menu animations
+  $4000-$47cf FCM zero attributes source
+  $5000-$57cf Persistent initial menu screen, for repeated RUN
+  $7000-$77cf Independent FCM 40x25 screen
+  $8000-$8b9c 32 actor FCM frame pointer tables
