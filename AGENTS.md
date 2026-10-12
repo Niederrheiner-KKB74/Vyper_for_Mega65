@@ -18,3 +18,5 @@
     Release-Dateien unverändert erhalten.
 
 12. **Stage 5d-1a Stable:** Vom Benutzer am 12.10.2026 bestätigt. Referenz `stage5d1a-stable`, Branch `stage5d-1-b2`, getesteter Programmcommit `08df921c6cca4614e540d6f50d6c853e8835ad40`. Quellen und Release `releases/stage_5d_1_b2/` unverändert schützen.
+
+13. **Stage 6a2 Stable:** Vom Benutzer bestätigt; Referenz `stage6a2-stable`, Branch `stage6a2`, getesteter Programmcommit `a2e3743f8eff071c19f73bda8c3afa584319513e`. Eigenständiges Originalmenü mit COLOR02-Cycling. Quellen/Assets und Release `releases/stage_6a2/` unverändert schützen. Stage6a1 ist abgelöst, bleibt als historische Referenz erhalten; keine Integration in die Spielengine.

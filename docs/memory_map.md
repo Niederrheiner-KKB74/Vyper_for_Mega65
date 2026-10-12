@@ -418,3 +418,5 @@ FCM-Screen $7000–$77CF, private Animation $2800–$28CB, Zeigertabellen/Zustä
 ## Stage 6a2: isoliertes COLOR02-Cycling
 
 Zusatzcode/-zustände $3000–$30BF; zwei JSR-Hooks erweitern Hauptsegment auf$2100–$278F. Alle6a1-Grafik-, Screen-, Animations-, SEQ- und Color-RAM-Adressen unverändert. PerTick ausschließlich RGB-Register $D102/$D202/$D302 für Palettebank1/Index2; Mapping und BASIC-Palette restauriert. [Analyse](stage6a2_color_cycling.md).
+
+Stage6a2 vom Benutzer als Stable bestätigt (`stage6a2-stable`); Stage6a1 abgelöst. Dokumentationssicherung verändert keine Quellen, Speicherbereiche oder Release-Dateien.

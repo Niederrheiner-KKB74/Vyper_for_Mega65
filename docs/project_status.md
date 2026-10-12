@@ -534,3 +534,7 @@ Branch `stage6a1`, Originalmenü320×200 mit32 animierten, pixelgenau zugeordnet
 ## Stage 6a2 / Issue #45 – Original-Menü-Color-Cycling
 
 Separater Branch `stage6a2` aus funktionierendem6a1. COLOR02-Deltaalgorithmus, Copper-IRQ-Bindung und42-Schritt-Zyklus rekonstruiert; PAL-abgeleitet840ms. Nur Menüpalette Bank1/Index2 verändert. 32Animationen/Originaldaten bleiben identisch; Stage5d-1a Stable geschützt. Release `releases/stage_6a2/`; 12automatische Tests bestanden, XEMU-Abnahme ausstehend, nicht Stable. [Originalbelege und Abnahme](stage6a2_color_cycling.md).
+
+## Benutzerabnahme: Stage 6a2 Stable, Stage 6a1 abgelöst
+
+Benutzerbestätigung: „Stage 6a2 ist stable; 6a1 ist damit obsolet“. Referenz `stage6a2-stable`, Branch `stage6a2`, getesteter Programmcommit `a2e3743f8eff071c19f73bda8c3afa584319513e`. Stage6a2 ist die aktuelle eigenständige Menüreferenz; Stage6a1 nur noch historisch. PRs #44/#46 und Issues #43/#45 werden geschlossen. Frühere Branches, Tags und Releases bleiben erhalten. Stable-Sicherung ausschließlich in Dokumentation, PRG/D81/ZIP/Quellen unverändert. Benutzer-XEMU-Abnahme, kein eigener Emulatorlauf. Stage5d-1a Stable bleibt unverändert.

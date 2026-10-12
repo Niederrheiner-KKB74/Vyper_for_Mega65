@@ -1,6 +1,6 @@
 # Stage 6a2 – originales COLOR02-Cycling (Issue #45)
 
-Eigenständiger Testbranch `stage6a2`, **nicht Stable**. Ausgangsbasis ist der vom Benutzer funktionierend bestätigte Stage-6a1-Testcommit `65e8b4e700626288906ea79954eb52641fd0bb15`. Stage6a1-Dateien und `stage5d1a-stable` bleiben unverändert. Keine Integration in Spielengine oder produktiven Loader.
+Eigenständiger Testbranch `stage6a2`, **Stable: vom Benutzer bestätigt, Tag `stage6a2-stable`**. Ausgangsbasis ist der vom Benutzer funktionierend bestätigte Stage-6a1-Testcommit `65e8b4e700626288906ea79954eb52641fd0bb15`. Stage6a1-Dateien und `stage5d1a-stable` bleiben unverändert. Keine Integration in Spielengine oder produktiven Loader.
 
 ## Nachgewiesener gemeinsamer Farbindex
 
@@ -82,3 +82,7 @@ PAL-XEMU: `VYPER_STAGE6A2.d81` mounten, `LOAD"STAGE6A2",8`, `RUN`. Rahmen, BONUS
 Stage6a2 bleibt **nicht Stable** bis zur ausdrücklichen Abnahme. Gameplay-Cycling wird später separat integriert; der Menü-FCM-Index2 darf nicht ungeprüft als Spieler-/Gegner-NCM-Palettenindex übernommen werden.
 
 Testlauf:12/12 erfolgreich in21,883s. Unabhängiger Zweitbuild: alle18 Builddateien byteidentisch. Sämtliche sieben bestehenden Menü-Assetdateien stimmen bytegenau mit6a1 überein. ZIP enthält die vollständigen generierten Assembly-/Include-/Binärdateien und wird deterministisch geprüft.
+
+## Abnahme und aktuelle Referenz
+
+Benutzer: „Stage 6a2 ist stable; 6a1 ist damit obsolet“. Getesteter Programmcommit `a2e3743f8eff071c19f73bda8c3afa584319513e`, Stable-Tag `stage6a2-stable`, Branch `stage6a2`. Stage6a1 ist abgelöst und bleibt archiviert. Historische NOT_RUN-/Abnahme-ausstehend-Angaben in Buildberichten beschreiben die Auslieferung und die eigenen Hosttests; die Benutzerabnahme hebt den ausstehenden Status auf. Keine Änderungen an Quellen, Assets, PRG, D81 oder ZIP durch die Stable-Dokumentation. Keine Spielintegration.

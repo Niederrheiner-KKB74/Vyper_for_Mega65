@@ -1,3 +1,7 @@
+# Historische Referenz – durch Stage 6a2 Stable abgelöst
+
+Stage6a1 ist laut Benutzer obsolet. Aktuelle eigenständige Menüreferenz: [Stage6a2 Stable](stage6a2_color_cycling.md), Tag `stage6a2-stable`. Dateien und ursprünglicher Bericht bleiben zur Nachvollziehbarkeit erhalten.
+
 # Stage 6a1 – original animated start screen (Issue #43)
 
 Eigenständiger Testbranch `stage6a1`, **nicht Stable**. Stage 5d-1a Stable (`stage5d1a-stable`, Commit `39890c0`) bleibt unverändert. Keine Einbindung in Loader oder Spielengine. Keine Menüfunktion außer X.
