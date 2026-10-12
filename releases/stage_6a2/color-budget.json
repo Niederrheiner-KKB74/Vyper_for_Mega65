@@ -1,0 +1,5 @@
+{
+  "cycle_update_6502_model_cycles": 231,
+  "milliseconds_at_3_5MHz": 0.066,
+  "note": "CPU model only; no raster/bus-contention measurement"
+}

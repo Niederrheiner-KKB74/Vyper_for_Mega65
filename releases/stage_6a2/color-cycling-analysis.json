@@ -1,0 +1,2330 @@
+{
+  "issue": 45,
+  "source_uss_sha256": "d836cbf88f0ac35b6ed3776df2add39f699113c1aeb9d02cdfe4651c82793916",
+  "evidence": "static exact opcodes, saved live ISR node/state, active Copper list and indexed pixels; not WinUAE runtime",
+  "original_register": "COLOR02 / $DFF184",
+  "FCM_index": 2,
+  "delta_table_CRAM": "$18214",
+  "signed_RGB4_deltas": [
+    32,
+    -512,
+    2,
+    -32,
+    512,
+    -2
+  ],
+  "phase_steps": 7,
+  "steps_per_cycle": 42,
+  "IRQ_registration": {
+    "function": "$C0CFF2",
+    "init_code": "BRAM $9D10-$9D24",
+    "interrupt_number": 4,
+    "Exec_bridge": "$C1180E -> -$A8 (AddIntServer)",
+    "saved_node": "$22E5E",
+    "Copper_INTREQ": {
+      "address": "0x18572",
+      "register": "0x9c",
+      "value": "0x8010"
+    }
+  },
+  "timebase": "one COPER request per active Copper list/display frame; PAL50 implies one RGB step per20ms, complete cycle840ms; code-derived, not timed with WinUAE",
+  "startup_state": [
+    3584,
+    0,
+    7
+  ],
+  "snapshot_state": [
+    236,
+    2,
+    1
+  ],
+  "gate": "A4+$2C42 !=0; skipped updates preserve word/phase/countdown",
+  "seed_policy": "keep Stage6a1 snapshot palette $0EC and matching saved phase/countdown for initial appearance; restart this snapshot state on RUN",
+  "other_effect_not_implemented": "COLOR03 at $DFF186 toggles XOR $DD0 every20 interrupts; outside requested COLOR02 change and remaining text preservation",
+  "menu_regions_index2": {
+    "border_corners": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "bonus_pixels": 338,
+    "option_pixels": 530
+  },
+  "actors": [
+    {
+      "slot": 0,
+      "type": 1,
+      "COLOR02_pixels_by_frame": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "slot": 1,
+      "type": 2,
+      "COLOR02_pixels_by_frame": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "slot": 2,
+      "type": 3,
+      "COLOR02_pixels_by_frame": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "slot": 3,
+      "type": 4,
+      "COLOR02_pixels_by_frame": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "slot": 4,
+      "type": 5,
+      "COLOR02_pixels_by_frame": [
+        2,
+        2,
+        2,
+        2,
+        0,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "slot": 5,
+      "type": 23,
+      "COLOR02_pixels_by_frame": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    {
+      "slot": 6,
+      "type": 9,
+      "COLOR02_pixels_by_frame": [
+        4,
+        4,
+        4,
+        4,
+        0,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "slot": 7,
+      "type": 10,
+      "COLOR02_pixels_by_frame": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "slot": 8,
+      "type": 11,
+      "COLOR02_pixels_by_frame": [
+        9,
+        6,
+        0,
+        0,
+        0,
+        6
+      ]
+    },
+    {
+      "slot": 9,
+      "type": 13,
+      "COLOR02_pixels_by_frame": [
+        14,
+        14,
+        14,
+        14
+      ]
+    },
+    {
+      "slot": 10,
+      "type": 14,
+      "COLOR02_pixels_by_frame": [
+        8,
+        6,
+        5,
+        3,
+        0,
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "slot": 11,
+      "type": 15,
+      "COLOR02_pixels_by_frame": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ]
+    },
+    {
+      "slot": 12,
+      "type": 16,
+      "COLOR02_pixels_by_frame": [
+        8,
+        6,
+        1,
+        7,
+        8,
+        8
+      ]
+    },
+    {
+      "slot": 13,
+      "type": 17,
+      "COLOR02_pixels_by_frame": [
+        0,
+        0,
+        0,
+        4,
+        7,
+        10,
+        12,
+        10,
+        7,
+        4,
+        0,
+        0
+      ]
+    },
+    {
+      "slot": 14,
+      "type": 18,
+      "COLOR02_pixels_by_frame": [
+        0,
+        0,
+        0,
+        8,
+        14,
+        20,
+        20,
+        20,
+        14,
+        8,
+        0,
+        0
+      ]
+    },
+    {
+      "slot": 15,
+      "type": 19,
+      "COLOR02_pixels_by_frame": [
+        13,
+        13,
+        13,
+        9
+      ]
+    },
+    {
+      "slot": 16,
+      "type": 20,
+      "COLOR02_pixels_by_frame": [
+        3,
+        3,
+        3,
+        2,
+        0,
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "slot": 17,
+      "type": 21,
+      "COLOR02_pixels_by_frame": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "slot": 18,
+      "type": 22,
+      "COLOR02_pixels_by_frame": [
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "slot": 19,
+      "type": 24,
+      "COLOR02_pixels_by_frame": [
+        1,
+        1,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        1,
+        1
+      ]
+    },
+    {
+      "slot": 20,
+      "type": 25,
+      "COLOR02_pixels_by_frame": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "slot": 21,
+      "type": 26,
+      "COLOR02_pixels_by_frame": [
+        6,
+        2,
+        4,
+        2,
+        5,
+        2,
+        4,
+        2
+      ]
+    },
+    {
+      "slot": 22,
+      "type": 27,
+      "COLOR02_pixels_by_frame": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "slot": 23,
+      "type": 28,
+      "COLOR02_pixels_by_frame": [
+        8,
+        8,
+        8,
+        8,
+        5,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "slot": 24,
+      "type": 29,
+      "COLOR02_pixels_by_frame": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "slot": 25,
+      "type": 30,
+      "COLOR02_pixels_by_frame": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "slot": 26,
+      "type": 31,
+      "COLOR02_pixels_by_frame": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "slot": 27,
+      "type": 32,
+      "COLOR02_pixels_by_frame": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "slot": 28,
+      "type": 33,
+      "COLOR02_pixels_by_frame": [
+        3,
+        3,
+        3,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "slot": 29,
+      "type": 34,
+      "COLOR02_pixels_by_frame": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "slot": 30,
+      "type": 35,
+      "COLOR02_pixels_by_frame": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "slot": 31,
+      "type": 36,
+      "COLOR02_pixels_by_frame": [
+        20,
+        20,
+        20,
+        20
+      ]
+    }
+  ],
+  "trace": [
+    {
+      "tick": 0,
+      "RGB4": "$0EC",
+      "rgb": [
+        0,
+        238,
+        204
+      ],
+      "phase": 2,
+      "remaining": 1
+    },
+    {
+      "tick": 1,
+      "RGB4": "$0EE",
+      "rgb": [
+        0,
+        238,
+        238
+      ],
+      "phase": 3,
+      "remaining": 7
+    },
+    {
+      "tick": 2,
+      "RGB4": "$0CE",
+      "rgb": [
+        0,
+        204,
+        238
+      ],
+      "phase": 3,
+      "remaining": 6
+    },
+    {
+      "tick": 3,
+      "RGB4": "$0AE",
+      "rgb": [
+        0,
+        170,
+        238
+      ],
+      "phase": 3,
+      "remaining": 5
+    },
+    {
+      "tick": 4,
+      "RGB4": "$08E",
+      "rgb": [
+        0,
+        136,
+        238
+      ],
+      "phase": 3,
+      "remaining": 4
+    },
+    {
+      "tick": 5,
+      "RGB4": "$06E",
+      "rgb": [
+        0,
+        102,
+        238
+      ],
+      "phase": 3,
+      "remaining": 3
+    },
+    {
+      "tick": 6,
+      "RGB4": "$04E",
+      "rgb": [
+        0,
+        68,
+        238
+      ],
+      "phase": 3,
+      "remaining": 2
+    },
+    {
+      "tick": 7,
+      "RGB4": "$02E",
+      "rgb": [
+        0,
+        34,
+        238
+      ],
+      "phase": 3,
+      "remaining": 1
+    },
+    {
+      "tick": 8,
+      "RGB4": "$00E",
+      "rgb": [
+        0,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 7
+    },
+    {
+      "tick": 9,
+      "RGB4": "$20E",
+      "rgb": [
+        34,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 6
+    },
+    {
+      "tick": 10,
+      "RGB4": "$40E",
+      "rgb": [
+        68,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 5
+    },
+    {
+      "tick": 11,
+      "RGB4": "$60E",
+      "rgb": [
+        102,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 4
+    },
+    {
+      "tick": 12,
+      "RGB4": "$80E",
+      "rgb": [
+        136,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 3
+    },
+    {
+      "tick": 13,
+      "RGB4": "$A0E",
+      "rgb": [
+        170,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 2
+    },
+    {
+      "tick": 14,
+      "RGB4": "$C0E",
+      "rgb": [
+        204,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 1
+    },
+    {
+      "tick": 15,
+      "RGB4": "$E0E",
+      "rgb": [
+        238,
+        0,
+        238
+      ],
+      "phase": 5,
+      "remaining": 7
+    },
+    {
+      "tick": 16,
+      "RGB4": "$E0C",
+      "rgb": [
+        238,
+        0,
+        204
+      ],
+      "phase": 5,
+      "remaining": 6
+    },
+    {
+      "tick": 17,
+      "RGB4": "$E0A",
+      "rgb": [
+        238,
+        0,
+        170
+      ],
+      "phase": 5,
+      "remaining": 5
+    },
+    {
+      "tick": 18,
+      "RGB4": "$E08",
+      "rgb": [
+        238,
+        0,
+        136
+      ],
+      "phase": 5,
+      "remaining": 4
+    },
+    {
+      "tick": 19,
+      "RGB4": "$E06",
+      "rgb": [
+        238,
+        0,
+        102
+      ],
+      "phase": 5,
+      "remaining": 3
+    },
+    {
+      "tick": 20,
+      "RGB4": "$E04",
+      "rgb": [
+        238,
+        0,
+        68
+      ],
+      "phase": 5,
+      "remaining": 2
+    },
+    {
+      "tick": 21,
+      "RGB4": "$E02",
+      "rgb": [
+        238,
+        0,
+        34
+      ],
+      "phase": 5,
+      "remaining": 1
+    },
+    {
+      "tick": 22,
+      "RGB4": "$E00",
+      "rgb": [
+        238,
+        0,
+        0
+      ],
+      "phase": 0,
+      "remaining": 7
+    },
+    {
+      "tick": 23,
+      "RGB4": "$E20",
+      "rgb": [
+        238,
+        34,
+        0
+      ],
+      "phase": 0,
+      "remaining": 6
+    },
+    {
+      "tick": 24,
+      "RGB4": "$E40",
+      "rgb": [
+        238,
+        68,
+        0
+      ],
+      "phase": 0,
+      "remaining": 5
+    },
+    {
+      "tick": 25,
+      "RGB4": "$E60",
+      "rgb": [
+        238,
+        102,
+        0
+      ],
+      "phase": 0,
+      "remaining": 4
+    },
+    {
+      "tick": 26,
+      "RGB4": "$E80",
+      "rgb": [
+        238,
+        136,
+        0
+      ],
+      "phase": 0,
+      "remaining": 3
+    },
+    {
+      "tick": 27,
+      "RGB4": "$EA0",
+      "rgb": [
+        238,
+        170,
+        0
+      ],
+      "phase": 0,
+      "remaining": 2
+    },
+    {
+      "tick": 28,
+      "RGB4": "$EC0",
+      "rgb": [
+        238,
+        204,
+        0
+      ],
+      "phase": 0,
+      "remaining": 1
+    },
+    {
+      "tick": 29,
+      "RGB4": "$EE0",
+      "rgb": [
+        238,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 7
+    },
+    {
+      "tick": 30,
+      "RGB4": "$CE0",
+      "rgb": [
+        204,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 6
+    },
+    {
+      "tick": 31,
+      "RGB4": "$AE0",
+      "rgb": [
+        170,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 5
+    },
+    {
+      "tick": 32,
+      "RGB4": "$8E0",
+      "rgb": [
+        136,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 4
+    },
+    {
+      "tick": 33,
+      "RGB4": "$6E0",
+      "rgb": [
+        102,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 3
+    },
+    {
+      "tick": 34,
+      "RGB4": "$4E0",
+      "rgb": [
+        68,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 2
+    },
+    {
+      "tick": 35,
+      "RGB4": "$2E0",
+      "rgb": [
+        34,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 1
+    },
+    {
+      "tick": 36,
+      "RGB4": "$0E0",
+      "rgb": [
+        0,
+        238,
+        0
+      ],
+      "phase": 2,
+      "remaining": 7
+    },
+    {
+      "tick": 37,
+      "RGB4": "$0E2",
+      "rgb": [
+        0,
+        238,
+        34
+      ],
+      "phase": 2,
+      "remaining": 6
+    },
+    {
+      "tick": 38,
+      "RGB4": "$0E4",
+      "rgb": [
+        0,
+        238,
+        68
+      ],
+      "phase": 2,
+      "remaining": 5
+    },
+    {
+      "tick": 39,
+      "RGB4": "$0E6",
+      "rgb": [
+        0,
+        238,
+        102
+      ],
+      "phase": 2,
+      "remaining": 4
+    },
+    {
+      "tick": 40,
+      "RGB4": "$0E8",
+      "rgb": [
+        0,
+        238,
+        136
+      ],
+      "phase": 2,
+      "remaining": 3
+    },
+    {
+      "tick": 41,
+      "RGB4": "$0EA",
+      "rgb": [
+        0,
+        238,
+        170
+      ],
+      "phase": 2,
+      "remaining": 2
+    },
+    {
+      "tick": 42,
+      "RGB4": "$0EC",
+      "rgb": [
+        0,
+        238,
+        204
+      ],
+      "phase": 2,
+      "remaining": 1
+    },
+    {
+      "tick": 43,
+      "RGB4": "$0EE",
+      "rgb": [
+        0,
+        238,
+        238
+      ],
+      "phase": 3,
+      "remaining": 7
+    },
+    {
+      "tick": 44,
+      "RGB4": "$0CE",
+      "rgb": [
+        0,
+        204,
+        238
+      ],
+      "phase": 3,
+      "remaining": 6
+    },
+    {
+      "tick": 45,
+      "RGB4": "$0AE",
+      "rgb": [
+        0,
+        170,
+        238
+      ],
+      "phase": 3,
+      "remaining": 5
+    },
+    {
+      "tick": 46,
+      "RGB4": "$08E",
+      "rgb": [
+        0,
+        136,
+        238
+      ],
+      "phase": 3,
+      "remaining": 4
+    },
+    {
+      "tick": 47,
+      "RGB4": "$06E",
+      "rgb": [
+        0,
+        102,
+        238
+      ],
+      "phase": 3,
+      "remaining": 3
+    },
+    {
+      "tick": 48,
+      "RGB4": "$04E",
+      "rgb": [
+        0,
+        68,
+        238
+      ],
+      "phase": 3,
+      "remaining": 2
+    },
+    {
+      "tick": 49,
+      "RGB4": "$02E",
+      "rgb": [
+        0,
+        34,
+        238
+      ],
+      "phase": 3,
+      "remaining": 1
+    },
+    {
+      "tick": 50,
+      "RGB4": "$00E",
+      "rgb": [
+        0,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 7
+    },
+    {
+      "tick": 51,
+      "RGB4": "$20E",
+      "rgb": [
+        34,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 6
+    },
+    {
+      "tick": 52,
+      "RGB4": "$40E",
+      "rgb": [
+        68,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 5
+    },
+    {
+      "tick": 53,
+      "RGB4": "$60E",
+      "rgb": [
+        102,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 4
+    },
+    {
+      "tick": 54,
+      "RGB4": "$80E",
+      "rgb": [
+        136,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 3
+    },
+    {
+      "tick": 55,
+      "RGB4": "$A0E",
+      "rgb": [
+        170,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 2
+    },
+    {
+      "tick": 56,
+      "RGB4": "$C0E",
+      "rgb": [
+        204,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 1
+    },
+    {
+      "tick": 57,
+      "RGB4": "$E0E",
+      "rgb": [
+        238,
+        0,
+        238
+      ],
+      "phase": 5,
+      "remaining": 7
+    },
+    {
+      "tick": 58,
+      "RGB4": "$E0C",
+      "rgb": [
+        238,
+        0,
+        204
+      ],
+      "phase": 5,
+      "remaining": 6
+    },
+    {
+      "tick": 59,
+      "RGB4": "$E0A",
+      "rgb": [
+        238,
+        0,
+        170
+      ],
+      "phase": 5,
+      "remaining": 5
+    },
+    {
+      "tick": 60,
+      "RGB4": "$E08",
+      "rgb": [
+        238,
+        0,
+        136
+      ],
+      "phase": 5,
+      "remaining": 4
+    },
+    {
+      "tick": 61,
+      "RGB4": "$E06",
+      "rgb": [
+        238,
+        0,
+        102
+      ],
+      "phase": 5,
+      "remaining": 3
+    },
+    {
+      "tick": 62,
+      "RGB4": "$E04",
+      "rgb": [
+        238,
+        0,
+        68
+      ],
+      "phase": 5,
+      "remaining": 2
+    },
+    {
+      "tick": 63,
+      "RGB4": "$E02",
+      "rgb": [
+        238,
+        0,
+        34
+      ],
+      "phase": 5,
+      "remaining": 1
+    },
+    {
+      "tick": 64,
+      "RGB4": "$E00",
+      "rgb": [
+        238,
+        0,
+        0
+      ],
+      "phase": 0,
+      "remaining": 7
+    },
+    {
+      "tick": 65,
+      "RGB4": "$E20",
+      "rgb": [
+        238,
+        34,
+        0
+      ],
+      "phase": 0,
+      "remaining": 6
+    },
+    {
+      "tick": 66,
+      "RGB4": "$E40",
+      "rgb": [
+        238,
+        68,
+        0
+      ],
+      "phase": 0,
+      "remaining": 5
+    },
+    {
+      "tick": 67,
+      "RGB4": "$E60",
+      "rgb": [
+        238,
+        102,
+        0
+      ],
+      "phase": 0,
+      "remaining": 4
+    },
+    {
+      "tick": 68,
+      "RGB4": "$E80",
+      "rgb": [
+        238,
+        136,
+        0
+      ],
+      "phase": 0,
+      "remaining": 3
+    },
+    {
+      "tick": 69,
+      "RGB4": "$EA0",
+      "rgb": [
+        238,
+        170,
+        0
+      ],
+      "phase": 0,
+      "remaining": 2
+    },
+    {
+      "tick": 70,
+      "RGB4": "$EC0",
+      "rgb": [
+        238,
+        204,
+        0
+      ],
+      "phase": 0,
+      "remaining": 1
+    },
+    {
+      "tick": 71,
+      "RGB4": "$EE0",
+      "rgb": [
+        238,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 7
+    },
+    {
+      "tick": 72,
+      "RGB4": "$CE0",
+      "rgb": [
+        204,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 6
+    },
+    {
+      "tick": 73,
+      "RGB4": "$AE0",
+      "rgb": [
+        170,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 5
+    },
+    {
+      "tick": 74,
+      "RGB4": "$8E0",
+      "rgb": [
+        136,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 4
+    },
+    {
+      "tick": 75,
+      "RGB4": "$6E0",
+      "rgb": [
+        102,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 3
+    },
+    {
+      "tick": 76,
+      "RGB4": "$4E0",
+      "rgb": [
+        68,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 2
+    },
+    {
+      "tick": 77,
+      "RGB4": "$2E0",
+      "rgb": [
+        34,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 1
+    },
+    {
+      "tick": 78,
+      "RGB4": "$0E0",
+      "rgb": [
+        0,
+        238,
+        0
+      ],
+      "phase": 2,
+      "remaining": 7
+    },
+    {
+      "tick": 79,
+      "RGB4": "$0E2",
+      "rgb": [
+        0,
+        238,
+        34
+      ],
+      "phase": 2,
+      "remaining": 6
+    },
+    {
+      "tick": 80,
+      "RGB4": "$0E4",
+      "rgb": [
+        0,
+        238,
+        68
+      ],
+      "phase": 2,
+      "remaining": 5
+    },
+    {
+      "tick": 81,
+      "RGB4": "$0E6",
+      "rgb": [
+        0,
+        238,
+        102
+      ],
+      "phase": 2,
+      "remaining": 4
+    },
+    {
+      "tick": 82,
+      "RGB4": "$0E8",
+      "rgb": [
+        0,
+        238,
+        136
+      ],
+      "phase": 2,
+      "remaining": 3
+    },
+    {
+      "tick": 83,
+      "RGB4": "$0EA",
+      "rgb": [
+        0,
+        238,
+        170
+      ],
+      "phase": 2,
+      "remaining": 2
+    },
+    {
+      "tick": 84,
+      "RGB4": "$0EC",
+      "rgb": [
+        0,
+        238,
+        204
+      ],
+      "phase": 2,
+      "remaining": 1
+    },
+    {
+      "tick": 85,
+      "RGB4": "$0EE",
+      "rgb": [
+        0,
+        238,
+        238
+      ],
+      "phase": 3,
+      "remaining": 7
+    },
+    {
+      "tick": 86,
+      "RGB4": "$0CE",
+      "rgb": [
+        0,
+        204,
+        238
+      ],
+      "phase": 3,
+      "remaining": 6
+    },
+    {
+      "tick": 87,
+      "RGB4": "$0AE",
+      "rgb": [
+        0,
+        170,
+        238
+      ],
+      "phase": 3,
+      "remaining": 5
+    },
+    {
+      "tick": 88,
+      "RGB4": "$08E",
+      "rgb": [
+        0,
+        136,
+        238
+      ],
+      "phase": 3,
+      "remaining": 4
+    },
+    {
+      "tick": 89,
+      "RGB4": "$06E",
+      "rgb": [
+        0,
+        102,
+        238
+      ],
+      "phase": 3,
+      "remaining": 3
+    },
+    {
+      "tick": 90,
+      "RGB4": "$04E",
+      "rgb": [
+        0,
+        68,
+        238
+      ],
+      "phase": 3,
+      "remaining": 2
+    },
+    {
+      "tick": 91,
+      "RGB4": "$02E",
+      "rgb": [
+        0,
+        34,
+        238
+      ],
+      "phase": 3,
+      "remaining": 1
+    },
+    {
+      "tick": 92,
+      "RGB4": "$00E",
+      "rgb": [
+        0,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 7
+    },
+    {
+      "tick": 93,
+      "RGB4": "$20E",
+      "rgb": [
+        34,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 6
+    },
+    {
+      "tick": 94,
+      "RGB4": "$40E",
+      "rgb": [
+        68,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 5
+    },
+    {
+      "tick": 95,
+      "RGB4": "$60E",
+      "rgb": [
+        102,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 4
+    },
+    {
+      "tick": 96,
+      "RGB4": "$80E",
+      "rgb": [
+        136,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 3
+    },
+    {
+      "tick": 97,
+      "RGB4": "$A0E",
+      "rgb": [
+        170,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 2
+    },
+    {
+      "tick": 98,
+      "RGB4": "$C0E",
+      "rgb": [
+        204,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 1
+    },
+    {
+      "tick": 99,
+      "RGB4": "$E0E",
+      "rgb": [
+        238,
+        0,
+        238
+      ],
+      "phase": 5,
+      "remaining": 7
+    },
+    {
+      "tick": 100,
+      "RGB4": "$E0C",
+      "rgb": [
+        238,
+        0,
+        204
+      ],
+      "phase": 5,
+      "remaining": 6
+    },
+    {
+      "tick": 101,
+      "RGB4": "$E0A",
+      "rgb": [
+        238,
+        0,
+        170
+      ],
+      "phase": 5,
+      "remaining": 5
+    },
+    {
+      "tick": 102,
+      "RGB4": "$E08",
+      "rgb": [
+        238,
+        0,
+        136
+      ],
+      "phase": 5,
+      "remaining": 4
+    },
+    {
+      "tick": 103,
+      "RGB4": "$E06",
+      "rgb": [
+        238,
+        0,
+        102
+      ],
+      "phase": 5,
+      "remaining": 3
+    },
+    {
+      "tick": 104,
+      "RGB4": "$E04",
+      "rgb": [
+        238,
+        0,
+        68
+      ],
+      "phase": 5,
+      "remaining": 2
+    },
+    {
+      "tick": 105,
+      "RGB4": "$E02",
+      "rgb": [
+        238,
+        0,
+        34
+      ],
+      "phase": 5,
+      "remaining": 1
+    },
+    {
+      "tick": 106,
+      "RGB4": "$E00",
+      "rgb": [
+        238,
+        0,
+        0
+      ],
+      "phase": 0,
+      "remaining": 7
+    },
+    {
+      "tick": 107,
+      "RGB4": "$E20",
+      "rgb": [
+        238,
+        34,
+        0
+      ],
+      "phase": 0,
+      "remaining": 6
+    },
+    {
+      "tick": 108,
+      "RGB4": "$E40",
+      "rgb": [
+        238,
+        68,
+        0
+      ],
+      "phase": 0,
+      "remaining": 5
+    },
+    {
+      "tick": 109,
+      "RGB4": "$E60",
+      "rgb": [
+        238,
+        102,
+        0
+      ],
+      "phase": 0,
+      "remaining": 4
+    },
+    {
+      "tick": 110,
+      "RGB4": "$E80",
+      "rgb": [
+        238,
+        136,
+        0
+      ],
+      "phase": 0,
+      "remaining": 3
+    },
+    {
+      "tick": 111,
+      "RGB4": "$EA0",
+      "rgb": [
+        238,
+        170,
+        0
+      ],
+      "phase": 0,
+      "remaining": 2
+    },
+    {
+      "tick": 112,
+      "RGB4": "$EC0",
+      "rgb": [
+        238,
+        204,
+        0
+      ],
+      "phase": 0,
+      "remaining": 1
+    },
+    {
+      "tick": 113,
+      "RGB4": "$EE0",
+      "rgb": [
+        238,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 7
+    },
+    {
+      "tick": 114,
+      "RGB4": "$CE0",
+      "rgb": [
+        204,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 6
+    },
+    {
+      "tick": 115,
+      "RGB4": "$AE0",
+      "rgb": [
+        170,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 5
+    },
+    {
+      "tick": 116,
+      "RGB4": "$8E0",
+      "rgb": [
+        136,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 4
+    },
+    {
+      "tick": 117,
+      "RGB4": "$6E0",
+      "rgb": [
+        102,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 3
+    },
+    {
+      "tick": 118,
+      "RGB4": "$4E0",
+      "rgb": [
+        68,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 2
+    },
+    {
+      "tick": 119,
+      "RGB4": "$2E0",
+      "rgb": [
+        34,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 1
+    },
+    {
+      "tick": 120,
+      "RGB4": "$0E0",
+      "rgb": [
+        0,
+        238,
+        0
+      ],
+      "phase": 2,
+      "remaining": 7
+    },
+    {
+      "tick": 121,
+      "RGB4": "$0E2",
+      "rgb": [
+        0,
+        238,
+        34
+      ],
+      "phase": 2,
+      "remaining": 6
+    },
+    {
+      "tick": 122,
+      "RGB4": "$0E4",
+      "rgb": [
+        0,
+        238,
+        68
+      ],
+      "phase": 2,
+      "remaining": 5
+    },
+    {
+      "tick": 123,
+      "RGB4": "$0E6",
+      "rgb": [
+        0,
+        238,
+        102
+      ],
+      "phase": 2,
+      "remaining": 4
+    },
+    {
+      "tick": 124,
+      "RGB4": "$0E8",
+      "rgb": [
+        0,
+        238,
+        136
+      ],
+      "phase": 2,
+      "remaining": 3
+    },
+    {
+      "tick": 125,
+      "RGB4": "$0EA",
+      "rgb": [
+        0,
+        238,
+        170
+      ],
+      "phase": 2,
+      "remaining": 2
+    },
+    {
+      "tick": 126,
+      "RGB4": "$0EC",
+      "rgb": [
+        0,
+        238,
+        204
+      ],
+      "phase": 2,
+      "remaining": 1
+    },
+    {
+      "tick": 127,
+      "RGB4": "$0EE",
+      "rgb": [
+        0,
+        238,
+        238
+      ],
+      "phase": 3,
+      "remaining": 7
+    },
+    {
+      "tick": 128,
+      "RGB4": "$0CE",
+      "rgb": [
+        0,
+        204,
+        238
+      ],
+      "phase": 3,
+      "remaining": 6
+    },
+    {
+      "tick": 129,
+      "RGB4": "$0AE",
+      "rgb": [
+        0,
+        170,
+        238
+      ],
+      "phase": 3,
+      "remaining": 5
+    },
+    {
+      "tick": 130,
+      "RGB4": "$08E",
+      "rgb": [
+        0,
+        136,
+        238
+      ],
+      "phase": 3,
+      "remaining": 4
+    },
+    {
+      "tick": 131,
+      "RGB4": "$06E",
+      "rgb": [
+        0,
+        102,
+        238
+      ],
+      "phase": 3,
+      "remaining": 3
+    },
+    {
+      "tick": 132,
+      "RGB4": "$04E",
+      "rgb": [
+        0,
+        68,
+        238
+      ],
+      "phase": 3,
+      "remaining": 2
+    },
+    {
+      "tick": 133,
+      "RGB4": "$02E",
+      "rgb": [
+        0,
+        34,
+        238
+      ],
+      "phase": 3,
+      "remaining": 1
+    },
+    {
+      "tick": 134,
+      "RGB4": "$00E",
+      "rgb": [
+        0,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 7
+    },
+    {
+      "tick": 135,
+      "RGB4": "$20E",
+      "rgb": [
+        34,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 6
+    },
+    {
+      "tick": 136,
+      "RGB4": "$40E",
+      "rgb": [
+        68,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 5
+    },
+    {
+      "tick": 137,
+      "RGB4": "$60E",
+      "rgb": [
+        102,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 4
+    },
+    {
+      "tick": 138,
+      "RGB4": "$80E",
+      "rgb": [
+        136,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 3
+    },
+    {
+      "tick": 139,
+      "RGB4": "$A0E",
+      "rgb": [
+        170,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 2
+    },
+    {
+      "tick": 140,
+      "RGB4": "$C0E",
+      "rgb": [
+        204,
+        0,
+        238
+      ],
+      "phase": 4,
+      "remaining": 1
+    },
+    {
+      "tick": 141,
+      "RGB4": "$E0E",
+      "rgb": [
+        238,
+        0,
+        238
+      ],
+      "phase": 5,
+      "remaining": 7
+    },
+    {
+      "tick": 142,
+      "RGB4": "$E0C",
+      "rgb": [
+        238,
+        0,
+        204
+      ],
+      "phase": 5,
+      "remaining": 6
+    },
+    {
+      "tick": 143,
+      "RGB4": "$E0A",
+      "rgb": [
+        238,
+        0,
+        170
+      ],
+      "phase": 5,
+      "remaining": 5
+    },
+    {
+      "tick": 144,
+      "RGB4": "$E08",
+      "rgb": [
+        238,
+        0,
+        136
+      ],
+      "phase": 5,
+      "remaining": 4
+    },
+    {
+      "tick": 145,
+      "RGB4": "$E06",
+      "rgb": [
+        238,
+        0,
+        102
+      ],
+      "phase": 5,
+      "remaining": 3
+    },
+    {
+      "tick": 146,
+      "RGB4": "$E04",
+      "rgb": [
+        238,
+        0,
+        68
+      ],
+      "phase": 5,
+      "remaining": 2
+    },
+    {
+      "tick": 147,
+      "RGB4": "$E02",
+      "rgb": [
+        238,
+        0,
+        34
+      ],
+      "phase": 5,
+      "remaining": 1
+    },
+    {
+      "tick": 148,
+      "RGB4": "$E00",
+      "rgb": [
+        238,
+        0,
+        0
+      ],
+      "phase": 0,
+      "remaining": 7
+    },
+    {
+      "tick": 149,
+      "RGB4": "$E20",
+      "rgb": [
+        238,
+        34,
+        0
+      ],
+      "phase": 0,
+      "remaining": 6
+    },
+    {
+      "tick": 150,
+      "RGB4": "$E40",
+      "rgb": [
+        238,
+        68,
+        0
+      ],
+      "phase": 0,
+      "remaining": 5
+    },
+    {
+      "tick": 151,
+      "RGB4": "$E60",
+      "rgb": [
+        238,
+        102,
+        0
+      ],
+      "phase": 0,
+      "remaining": 4
+    },
+    {
+      "tick": 152,
+      "RGB4": "$E80",
+      "rgb": [
+        238,
+        136,
+        0
+      ],
+      "phase": 0,
+      "remaining": 3
+    },
+    {
+      "tick": 153,
+      "RGB4": "$EA0",
+      "rgb": [
+        238,
+        170,
+        0
+      ],
+      "phase": 0,
+      "remaining": 2
+    },
+    {
+      "tick": 154,
+      "RGB4": "$EC0",
+      "rgb": [
+        238,
+        204,
+        0
+      ],
+      "phase": 0,
+      "remaining": 1
+    },
+    {
+      "tick": 155,
+      "RGB4": "$EE0",
+      "rgb": [
+        238,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 7
+    },
+    {
+      "tick": 156,
+      "RGB4": "$CE0",
+      "rgb": [
+        204,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 6
+    },
+    {
+      "tick": 157,
+      "RGB4": "$AE0",
+      "rgb": [
+        170,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 5
+    },
+    {
+      "tick": 158,
+      "RGB4": "$8E0",
+      "rgb": [
+        136,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 4
+    },
+    {
+      "tick": 159,
+      "RGB4": "$6E0",
+      "rgb": [
+        102,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 3
+    },
+    {
+      "tick": 160,
+      "RGB4": "$4E0",
+      "rgb": [
+        68,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 2
+    },
+    {
+      "tick": 161,
+      "RGB4": "$2E0",
+      "rgb": [
+        34,
+        238,
+        0
+      ],
+      "phase": 1,
+      "remaining": 1
+    },
+    {
+      "tick": 162,
+      "RGB4": "$0E0",
+      "rgb": [
+        0,
+        238,
+        0
+      ],
+      "phase": 2,
+      "remaining": 7
+    },
+    {
+      "tick": 163,
+      "RGB4": "$0E2",
+      "rgb": [
+        0,
+        238,
+        34
+      ],
+      "phase": 2,
+      "remaining": 6
+    },
+    {
+      "tick": 164,
+      "RGB4": "$0E4",
+      "rgb": [
+        0,
+        238,
+        68
+      ],
+      "phase": 2,
+      "remaining": 5
+    },
+    {
+      "tick": 165,
+      "RGB4": "$0E6",
+      "rgb": [
+        0,
+        238,
+        102
+      ],
+      "phase": 2,
+      "remaining": 4
+    },
+    {
+      "tick": 166,
+      "RGB4": "$0E8",
+      "rgb": [
+        0,
+        238,
+        136
+      ],
+      "phase": 2,
+      "remaining": 3
+    },
+    {
+      "tick": 167,
+      "RGB4": "$0EA",
+      "rgb": [
+        0,
+        238,
+        170
+      ],
+      "phase": 2,
+      "remaining": 2
+    },
+    {
+      "tick": 168,
+      "RGB4": "$0EC",
+      "rgb": [
+        0,
+        238,
+        204
+      ],
+      "phase": 2,
+      "remaining": 1
+    }
+  ]
+}

@@ -414,3 +414,7 @@ Stage 5d-1a vom Benutzer am 12.10.2026 als Stable bestätigt (`stage5d1a-stable`
 ## Stage 6a1: separater Menü-Test
 
 FCM-Screen $7000–$77CF, private Animation $2800–$28CB, Zeigertabellen/Zustände $8000–$8B9C, Initial-Screen $5000–$57CF. Menü-SEQ $40000–$4F674, ausgerichtete Kacheln $40000–$4F5FF, eigenes Color-RAM $FF82000–$FF827CF, Sicherung $15000–$157CF. Keine Spielengine-Integration, ROM-/DOS-Bereiche unberührt. [Speicher- und Rendererprüfung](stage6a1_start_screen_visual.md).
+
+## Stage 6a2: isoliertes COLOR02-Cycling
+
+Zusatzcode/-zustände $3000–$30BF; zwei JSR-Hooks erweitern Hauptsegment auf$2100–$278F. Alle6a1-Grafik-, Screen-, Animations-, SEQ- und Color-RAM-Adressen unverändert. PerTick ausschließlich RGB-Register $D102/$D202/$D302 für Palettebank1/Index2; Mapping und BASIC-Palette restauriert. [Analyse](stage6a2_color_cycling.md).

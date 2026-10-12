@@ -1,0 +1,2992 @@
+{
+  "stage": "6a2",
+  "issue": 45,
+  "menu_baseline": "65e8b4e700626288906ea79954eb52641fd0bb15",
+  "stable": false,
+  "baseline": "stage5d1a-stable",
+  "baseline_commit": "39890c0095fab55b2ea71f95cccf59a3419848c6",
+  "protected_files": 192,
+  "files": [
+    {
+      "name": "STAGE6A2",
+      "bytes": 27550,
+      "blocks": 109,
+      "sha256": "3005dea3593004fb96b1cbc0c951bcacbcfe769e85a2801da2f9cb037dd37c76"
+    },
+    {
+      "name": "VYMN.DAT",
+      "bytes": 63093,
+      "blocks": 249,
+      "sha256": "64c8db7746470cba35925d86f5641c03ed09a224d0181de2ceb242037cc83e5a"
+    }
+  ],
+  "conversion": {
+    "issue": 43,
+    "source_uss_sha256": "d836cbf88f0ac35b6ed3776df2add39f699113c1aeb9d02cdfe4651c82793916",
+    "VYGR_sha256": "974e8eff97efd0c0f67db2780cb668311b9d8731395d43641d4602c0a7c96b50",
+    "size": [
+      320,
+      200
+    ],
+    "Copper2": "0x184ae",
+    "planes": [
+      "0x27770",
+      "0x29bb0",
+      "0x2bff0",
+      "0x2e430"
+    ],
+    "CHIP_palette_offset": "$E4",
+    "palette_RGB4": [
+      "$000",
+      "$FFF",
+      "$0EC",
+      "$DD0",
+      "$899",
+      "$344",
+      "$566",
+      "$ABB",
+      "$F00",
+      "$FFF",
+      "$FFF",
+      "$FFF",
+      "$FFF",
+      "$FFF",
+      "$FFF",
+      "$FFF"
+    ],
+    "actors": [
+      {
+        "slot": 0,
+        "type": 1,
+        "x": 40,
+        "y": 20,
+        "frame_count": 4,
+        "initial_frame": 3,
+        "identical_snapshot_frame_candidates": [
+          1,
+          3
+        ],
+        "original_current_frame": 0,
+        "period_frames": 4,
+        "initial_delay": 4,
+        "original_object": "0x2404a",
+        "screen_address": 28842,
+        "table_offset": 0
+      },
+      {
+        "slot": 1,
+        "type": 2,
+        "x": 72,
+        "y": 20,
+        "frame_count": 7,
+        "initial_frame": 0,
+        "identical_snapshot_frame_candidates": [
+          0
+        ],
+        "original_current_frame": 1,
+        "period_frames": 4,
+        "initial_delay": 4,
+        "original_object": "0x240dc",
+        "screen_address": 28850,
+        "table_offset": 48
+      },
+      {
+        "slot": 2,
+        "type": 3,
+        "x": 104,
+        "y": 20,
+        "frame_count": 10,
+        "initial_frame": 9,
+        "identical_snapshot_frame_candidates": [
+          1,
+          9
+        ],
+        "original_current_frame": 9,
+        "period_frames": 4,
+        "initial_delay": 1,
+        "original_object": "0x2416e",
+        "screen_address": 28858,
+        "table_offset": 132
+      },
+      {
+        "slot": 3,
+        "type": 4,
+        "x": 136,
+        "y": 20,
+        "frame_count": 6,
+        "initial_frame": 4,
+        "identical_snapshot_frame_candidates": [
+          2,
+          4
+        ],
+        "original_current_frame": 4,
+        "period_frames": 5,
+        "initial_delay": 2,
+        "original_object": "0x24200",
+        "screen_address": 28866,
+        "table_offset": 252
+      },
+      {
+        "slot": 4,
+        "type": 5,
+        "x": 168,
+        "y": 20,
+        "frame_count": 8,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1
+        ],
+        "original_current_frame": 2,
+        "period_frames": 4,
+        "initial_delay": 4,
+        "original_object": "0x24292",
+        "screen_address": 28874,
+        "table_offset": 324
+      },
+      {
+        "slot": 5,
+        "type": 23,
+        "x": 200,
+        "y": 20,
+        "frame_count": 4,
+        "initial_frame": 0,
+        "identical_snapshot_frame_candidates": [
+          0
+        ],
+        "original_current_frame": 0,
+        "period_frames": 3,
+        "initial_delay": 1,
+        "original_object": "0x24324",
+        "screen_address": 28882,
+        "table_offset": 420
+      },
+      {
+        "slot": 6,
+        "type": 9,
+        "x": 232,
+        "y": 20,
+        "frame_count": 8,
+        "initial_frame": 5,
+        "identical_snapshot_frame_candidates": [
+          5
+        ],
+        "original_current_frame": 5,
+        "period_frames": 5,
+        "initial_delay": 1,
+        "original_object": "0x243b6",
+        "screen_address": 28890,
+        "table_offset": 468
+      },
+      {
+        "slot": 7,
+        "type": 10,
+        "x": 264,
+        "y": 20,
+        "frame_count": 4,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 3,
+        "period_frames": 2,
+        "initial_delay": 2,
+        "original_object": "0x24448",
+        "screen_address": 28898,
+        "table_offset": 564
+      },
+      {
+        "slot": 8,
+        "type": 11,
+        "x": 24,
+        "y": 44,
+        "frame_count": 6,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1
+        ],
+        "original_current_frame": 1,
+        "period_frames": 5,
+        "initial_delay": 1,
+        "original_object": "0x244da",
+        "screen_address": 29078,
+        "table_offset": 612
+      },
+      {
+        "slot": 9,
+        "type": 13,
+        "x": 56,
+        "y": 44,
+        "frame_count": 4,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 2,
+        "period_frames": 3,
+        "initial_delay": 2,
+        "original_object": "0x2456c",
+        "screen_address": 29086,
+        "table_offset": 684
+      },
+      {
+        "slot": 10,
+        "type": 14,
+        "x": 88,
+        "y": 44,
+        "frame_count": 8,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1
+        ],
+        "original_current_frame": 2,
+        "period_frames": 4,
+        "initial_delay": 4,
+        "original_object": "0x245fe",
+        "screen_address": 29094,
+        "table_offset": 732
+      },
+      {
+        "slot": 11,
+        "type": 15,
+        "x": 120,
+        "y": 44,
+        "frame_count": 6,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1
+        ],
+        "original_current_frame": 1,
+        "period_frames": 6,
+        "initial_delay": 4,
+        "original_object": "0x24690",
+        "screen_address": 29102,
+        "table_offset": 828
+      },
+      {
+        "slot": 12,
+        "type": 16,
+        "x": 152,
+        "y": 44,
+        "frame_count": 6,
+        "initial_frame": 4,
+        "identical_snapshot_frame_candidates": [
+          4
+        ],
+        "original_current_frame": 4,
+        "period_frames": 5,
+        "initial_delay": 4,
+        "original_object": "0x24722",
+        "screen_address": 29110,
+        "table_offset": 900
+      },
+      {
+        "slot": 13,
+        "type": 17,
+        "x": 184,
+        "y": 44,
+        "frame_count": 12,
+        "initial_frame": 7,
+        "identical_snapshot_frame_candidates": [
+          5,
+          7
+        ],
+        "original_current_frame": 8,
+        "period_frames": 5,
+        "initial_delay": 5,
+        "original_object": "0x247b4",
+        "screen_address": 29118,
+        "table_offset": 972
+      },
+      {
+        "slot": 14,
+        "type": 18,
+        "x": 216,
+        "y": 44,
+        "frame_count": 12,
+        "initial_frame": 4,
+        "identical_snapshot_frame_candidates": [
+          4,
+          8
+        ],
+        "original_current_frame": 4,
+        "period_frames": 5,
+        "initial_delay": 2,
+        "original_object": "0x24846",
+        "screen_address": 29126,
+        "table_offset": 1116
+      },
+      {
+        "slot": 15,
+        "type": 19,
+        "x": 248,
+        "y": 44,
+        "frame_count": 4,
+        "initial_frame": 0,
+        "identical_snapshot_frame_candidates": [
+          0
+        ],
+        "original_current_frame": 1,
+        "period_frames": 1,
+        "initial_delay": 1,
+        "original_object": "0x248d8",
+        "screen_address": 29134,
+        "table_offset": 1260
+      },
+      {
+        "slot": 16,
+        "type": 20,
+        "x": 280,
+        "y": 44,
+        "frame_count": 8,
+        "initial_frame": 6,
+        "identical_snapshot_frame_candidates": [
+          6
+        ],
+        "original_current_frame": 7,
+        "period_frames": 4,
+        "initial_delay": 4,
+        "original_object": "0x2496a",
+        "screen_address": 29142,
+        "table_offset": 1308
+      },
+      {
+        "slot": 17,
+        "type": 21,
+        "x": 40,
+        "y": 68,
+        "frame_count": 9,
+        "initial_frame": 3,
+        "identical_snapshot_frame_candidates": [
+          3,
+          5
+        ],
+        "original_current_frame": 3,
+        "period_frames": 2,
+        "initial_delay": 1,
+        "original_object": "0x249fc",
+        "screen_address": 29322,
+        "table_offset": 1404
+      },
+      {
+        "slot": 18,
+        "type": 22,
+        "x": 72,
+        "y": 68,
+        "frame_count": 4,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 2,
+        "period_frames": 3,
+        "initial_delay": 1,
+        "original_object": "0x24a8e",
+        "screen_address": 29330,
+        "table_offset": 1512
+      },
+      {
+        "slot": 19,
+        "type": 24,
+        "x": 104,
+        "y": 68,
+        "frame_count": 12,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1,
+          10
+        ],
+        "original_current_frame": 1,
+        "period_frames": 2,
+        "initial_delay": 1,
+        "original_object": "0x24b20",
+        "screen_address": 29338,
+        "table_offset": 1560
+      },
+      {
+        "slot": 20,
+        "type": 25,
+        "x": 136,
+        "y": 68,
+        "frame_count": 6,
+        "initial_frame": 4,
+        "identical_snapshot_frame_candidates": [
+          4
+        ],
+        "original_current_frame": 4,
+        "period_frames": 3,
+        "initial_delay": 2,
+        "original_object": "0x24bb2",
+        "screen_address": 29346,
+        "table_offset": 1704
+      },
+      {
+        "slot": 21,
+        "type": 26,
+        "x": 168,
+        "y": 68,
+        "frame_count": 8,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 2,
+        "period_frames": 6,
+        "initial_delay": 1,
+        "original_object": "0x24c44",
+        "screen_address": 29354,
+        "table_offset": 1776
+      },
+      {
+        "slot": 22,
+        "type": 27,
+        "x": 200,
+        "y": 68,
+        "frame_count": 4,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 3,
+        "period_frames": 3,
+        "initial_delay": 3,
+        "original_object": "0x24cd6",
+        "screen_address": 29362,
+        "table_offset": 1872
+      },
+      {
+        "slot": 23,
+        "type": 28,
+        "x": 232,
+        "y": 68,
+        "frame_count": 8,
+        "initial_frame": 0,
+        "identical_snapshot_frame_candidates": [
+          0
+        ],
+        "original_current_frame": 1,
+        "period_frames": 3,
+        "initial_delay": 3,
+        "original_object": "0x24d68",
+        "screen_address": 29370,
+        "table_offset": 1920
+      },
+      {
+        "slot": 24,
+        "type": 29,
+        "x": 264,
+        "y": 68,
+        "frame_count": 6,
+        "initial_frame": 3,
+        "identical_snapshot_frame_candidates": [
+          3
+        ],
+        "original_current_frame": 3,
+        "period_frames": 5,
+        "initial_delay": 2,
+        "original_object": "0x24dfa",
+        "screen_address": 29378,
+        "table_offset": 2016
+      },
+      {
+        "slot": 25,
+        "type": 30,
+        "x": 56,
+        "y": 92,
+        "frame_count": 8,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 2,
+        "period_frames": 3,
+        "initial_delay": 2,
+        "original_object": "0x24e8c",
+        "screen_address": 29566,
+        "table_offset": 2088
+      },
+      {
+        "slot": 26,
+        "type": 31,
+        "x": 88,
+        "y": 92,
+        "frame_count": 8,
+        "initial_frame": 0,
+        "identical_snapshot_frame_candidates": [
+          0
+        ],
+        "original_current_frame": 0,
+        "period_frames": 4,
+        "initial_delay": 2,
+        "original_object": "0x24f1e",
+        "screen_address": 29574,
+        "table_offset": 2184
+      },
+      {
+        "slot": 27,
+        "type": 32,
+        "x": 120,
+        "y": 92,
+        "frame_count": 8,
+        "initial_frame": 5,
+        "identical_snapshot_frame_candidates": [
+          5,
+          7
+        ],
+        "original_current_frame": 5,
+        "period_frames": 3,
+        "initial_delay": 2,
+        "original_object": "0x24fb0",
+        "screen_address": 29582,
+        "table_offset": 2280
+      },
+      {
+        "slot": 28,
+        "type": 33,
+        "x": 152,
+        "y": 92,
+        "frame_count": 12,
+        "initial_frame": 8,
+        "identical_snapshot_frame_candidates": [
+          8
+        ],
+        "original_current_frame": 8,
+        "period_frames": 4,
+        "initial_delay": 2,
+        "original_object": "0x25042",
+        "screen_address": 29590,
+        "table_offset": 2376
+      },
+      {
+        "slot": 29,
+        "type": 34,
+        "x": 184,
+        "y": 92,
+        "frame_count": 4,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 2,
+        "period_frames": 6,
+        "initial_delay": 2,
+        "original_object": "0x250d4",
+        "screen_address": 29598,
+        "table_offset": 2520
+      },
+      {
+        "slot": 30,
+        "type": 35,
+        "x": 216,
+        "y": 92,
+        "frame_count": 3,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1
+        ],
+        "original_current_frame": 2,
+        "period_frames": 2,
+        "initial_delay": 2,
+        "original_object": "0x25166",
+        "screen_address": 29606,
+        "table_offset": 2568
+      },
+      {
+        "slot": 31,
+        "type": 36,
+        "x": 248,
+        "y": 92,
+        "frame_count": 4,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1
+        ],
+        "original_current_frame": 1,
+        "period_frames": 5,
+        "initial_delay": 2,
+        "original_object": "0x251f8",
+        "screen_address": 29614,
+        "table_offset": 2604
+      }
+    ],
+    "texts": [
+      {
+        "SlowRAM_offset": "0xc30e",
+        "format": "- VYPER -",
+        "display": "- VYPER -"
+      },
+      {
+        "SlowRAM_offset": "0xc318",
+        "format": "- bonus ship every %d waves -",
+        "display": "- BONUS SHIP EVERY 3 WAVES -"
+      },
+      {
+        "SlowRAM_offset": "0xc336",
+        "format": "- select option with joystick or keyboard -",
+        "display": "- SELECT OPTION WITH JOYSTICK OR KEYBOARD -"
+      },
+      {
+        "SlowRAM_offset": "0xc362",
+        "format": "initial level %03d",
+        "display": "INITIAL LEVEL 001"
+      },
+      {
+        "SlowRAM_offset": "0xc375",
+        "format": "f1 start 1 player game",
+        "display": "F1 START 1 PLAYER GAME"
+      },
+      {
+        "SlowRAM_offset": "0xc38c",
+        "format": "f2 start 2 player game",
+        "display": "F2 START 2 PLAYER GAME"
+      },
+      {
+        "SlowRAM_offset": "0xc3a3",
+        "format": "f3 View high Scores",
+        "display": "F3 VIEW HIGH SCORES"
+      }
+    ],
+    "palette_policy": "original menu COLOR0..15, not level palettes; unused loader-compatible entries16..32 zero",
+    "unique_FCM_tiles": 984,
+    "tile_bytes": 62976,
+    "VYMN_bytes": 63093,
+    "VYMN_sha256": "64c8db7746470cba35925d86f5641c03ed09a224d0181de2ceb242037cc83e5a",
+    "max_actors_per_scanline": 9,
+    "animation_frame_divider": 1,
+    "animation_period_note": "Original per-actor countdown and period, BRAM routine $D890-$D8C8; visible frame phase selected against raster where front/back states differ; no WinUAE runtime trace",
+    "initial_64000_indices_exact": true,
+    "renderer": "isolated CHR16/FCLRHI FCM 40x25; six pointers per actor; no RRB or gameplay imports",
+    "xemu": "NOT_RUN"
+  },
+  "cycling": {
+    "issue": 45,
+    "source_uss_sha256": "d836cbf88f0ac35b6ed3776df2add39f699113c1aeb9d02cdfe4651c82793916",
+    "evidence": "static exact opcodes, saved live ISR node/state, active Copper list and indexed pixels; not WinUAE runtime",
+    "original_register": "COLOR02 / $DFF184",
+    "FCM_index": 2,
+    "delta_table_CRAM": "$18214",
+    "signed_RGB4_deltas": [
+      32,
+      -512,
+      2,
+      -32,
+      512,
+      -2
+    ],
+    "phase_steps": 7,
+    "steps_per_cycle": 42,
+    "IRQ_registration": {
+      "function": "$C0CFF2",
+      "init_code": "BRAM $9D10-$9D24",
+      "interrupt_number": 4,
+      "Exec_bridge": "$C1180E -> -$A8 (AddIntServer)",
+      "saved_node": "$22E5E",
+      "Copper_INTREQ": {
+        "address": "0x18572",
+        "register": "0x9c",
+        "value": "0x8010"
+      }
+    },
+    "timebase": "one COPER request per active Copper list/display frame; PAL50 implies one RGB step per20ms, complete cycle840ms; code-derived, not timed with WinUAE",
+    "startup_state": [
+      3584,
+      0,
+      7
+    ],
+    "snapshot_state": [
+      236,
+      2,
+      1
+    ],
+    "gate": "A4+$2C42 !=0; skipped updates preserve word/phase/countdown",
+    "seed_policy": "keep Stage6a1 snapshot palette $0EC and matching saved phase/countdown for initial appearance; restart this snapshot state on RUN",
+    "other_effect_not_implemented": "COLOR03 at $DFF186 toggles XOR $DD0 every20 interrupts; outside requested COLOR02 change and remaining text preservation",
+    "menu_regions_index2": {
+      "border_corners": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "bonus_pixels": 338,
+      "option_pixels": 530
+    },
+    "actors": [
+      {
+        "slot": 0,
+        "type": 1,
+        "COLOR02_pixels_by_frame": [
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "slot": 1,
+        "type": 2,
+        "COLOR02_pixels_by_frame": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "slot": 2,
+        "type": 3,
+        "COLOR02_pixels_by_frame": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "slot": 3,
+        "type": 4,
+        "COLOR02_pixels_by_frame": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "slot": 4,
+        "type": 5,
+        "COLOR02_pixels_by_frame": [
+          2,
+          2,
+          2,
+          2,
+          0,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "slot": 5,
+        "type": 23,
+        "COLOR02_pixels_by_frame": [
+          12,
+          12,
+          12,
+          12
+        ]
+      },
+      {
+        "slot": 6,
+        "type": 9,
+        "COLOR02_pixels_by_frame": [
+          4,
+          4,
+          4,
+          4,
+          0,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "slot": 7,
+        "type": 10,
+        "COLOR02_pixels_by_frame": [
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "slot": 8,
+        "type": 11,
+        "COLOR02_pixels_by_frame": [
+          9,
+          6,
+          0,
+          0,
+          0,
+          6
+        ]
+      },
+      {
+        "slot": 9,
+        "type": 13,
+        "COLOR02_pixels_by_frame": [
+          14,
+          14,
+          14,
+          14
+        ]
+      },
+      {
+        "slot": 10,
+        "type": 14,
+        "COLOR02_pixels_by_frame": [
+          8,
+          6,
+          5,
+          3,
+          0,
+          3,
+          5,
+          6
+        ]
+      },
+      {
+        "slot": 11,
+        "type": 15,
+        "COLOR02_pixels_by_frame": [
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ]
+      },
+      {
+        "slot": 12,
+        "type": 16,
+        "COLOR02_pixels_by_frame": [
+          8,
+          6,
+          1,
+          7,
+          8,
+          8
+        ]
+      },
+      {
+        "slot": 13,
+        "type": 17,
+        "COLOR02_pixels_by_frame": [
+          0,
+          0,
+          0,
+          4,
+          7,
+          10,
+          12,
+          10,
+          7,
+          4,
+          0,
+          0
+        ]
+      },
+      {
+        "slot": 14,
+        "type": 18,
+        "COLOR02_pixels_by_frame": [
+          0,
+          0,
+          0,
+          8,
+          14,
+          20,
+          20,
+          20,
+          14,
+          8,
+          0,
+          0
+        ]
+      },
+      {
+        "slot": 15,
+        "type": 19,
+        "COLOR02_pixels_by_frame": [
+          13,
+          13,
+          13,
+          9
+        ]
+      },
+      {
+        "slot": 16,
+        "type": 20,
+        "COLOR02_pixels_by_frame": [
+          3,
+          3,
+          3,
+          2,
+          0,
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "slot": 17,
+        "type": 21,
+        "COLOR02_pixels_by_frame": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "slot": 18,
+        "type": 22,
+        "COLOR02_pixels_by_frame": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      {
+        "slot": 19,
+        "type": 24,
+        "COLOR02_pixels_by_frame": [
+          1,
+          1,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          1,
+          1
+        ]
+      },
+      {
+        "slot": 20,
+        "type": 25,
+        "COLOR02_pixels_by_frame": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "slot": 21,
+        "type": 26,
+        "COLOR02_pixels_by_frame": [
+          6,
+          2,
+          4,
+          2,
+          5,
+          2,
+          4,
+          2
+        ]
+      },
+      {
+        "slot": 22,
+        "type": 27,
+        "COLOR02_pixels_by_frame": [
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "slot": 23,
+        "type": 28,
+        "COLOR02_pixels_by_frame": [
+          8,
+          8,
+          8,
+          8,
+          5,
+          8,
+          8,
+          8
+        ]
+      },
+      {
+        "slot": 24,
+        "type": 29,
+        "COLOR02_pixels_by_frame": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "slot": 25,
+        "type": 30,
+        "COLOR02_pixels_by_frame": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "slot": 26,
+        "type": 31,
+        "COLOR02_pixels_by_frame": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "slot": 27,
+        "type": 32,
+        "COLOR02_pixels_by_frame": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "slot": 28,
+        "type": 33,
+        "COLOR02_pixels_by_frame": [
+          3,
+          3,
+          3,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "slot": 29,
+        "type": 34,
+        "COLOR02_pixels_by_frame": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "slot": 30,
+        "type": 35,
+        "COLOR02_pixels_by_frame": [
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "slot": 31,
+        "type": 36,
+        "COLOR02_pixels_by_frame": [
+          20,
+          20,
+          20,
+          20
+        ]
+      }
+    ],
+    "trace": [
+      {
+        "tick": 0,
+        "RGB4": "$0EC",
+        "rgb": [
+          0,
+          238,
+          204
+        ],
+        "phase": 2,
+        "remaining": 1
+      },
+      {
+        "tick": 1,
+        "RGB4": "$0EE",
+        "rgb": [
+          0,
+          238,
+          238
+        ],
+        "phase": 3,
+        "remaining": 7
+      },
+      {
+        "tick": 2,
+        "RGB4": "$0CE",
+        "rgb": [
+          0,
+          204,
+          238
+        ],
+        "phase": 3,
+        "remaining": 6
+      },
+      {
+        "tick": 3,
+        "RGB4": "$0AE",
+        "rgb": [
+          0,
+          170,
+          238
+        ],
+        "phase": 3,
+        "remaining": 5
+      },
+      {
+        "tick": 4,
+        "RGB4": "$08E",
+        "rgb": [
+          0,
+          136,
+          238
+        ],
+        "phase": 3,
+        "remaining": 4
+      },
+      {
+        "tick": 5,
+        "RGB4": "$06E",
+        "rgb": [
+          0,
+          102,
+          238
+        ],
+        "phase": 3,
+        "remaining": 3
+      },
+      {
+        "tick": 6,
+        "RGB4": "$04E",
+        "rgb": [
+          0,
+          68,
+          238
+        ],
+        "phase": 3,
+        "remaining": 2
+      },
+      {
+        "tick": 7,
+        "RGB4": "$02E",
+        "rgb": [
+          0,
+          34,
+          238
+        ],
+        "phase": 3,
+        "remaining": 1
+      },
+      {
+        "tick": 8,
+        "RGB4": "$00E",
+        "rgb": [
+          0,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 7
+      },
+      {
+        "tick": 9,
+        "RGB4": "$20E",
+        "rgb": [
+          34,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 6
+      },
+      {
+        "tick": 10,
+        "RGB4": "$40E",
+        "rgb": [
+          68,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 5
+      },
+      {
+        "tick": 11,
+        "RGB4": "$60E",
+        "rgb": [
+          102,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 4
+      },
+      {
+        "tick": 12,
+        "RGB4": "$80E",
+        "rgb": [
+          136,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 3
+      },
+      {
+        "tick": 13,
+        "RGB4": "$A0E",
+        "rgb": [
+          170,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 2
+      },
+      {
+        "tick": 14,
+        "RGB4": "$C0E",
+        "rgb": [
+          204,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 1
+      },
+      {
+        "tick": 15,
+        "RGB4": "$E0E",
+        "rgb": [
+          238,
+          0,
+          238
+        ],
+        "phase": 5,
+        "remaining": 7
+      },
+      {
+        "tick": 16,
+        "RGB4": "$E0C",
+        "rgb": [
+          238,
+          0,
+          204
+        ],
+        "phase": 5,
+        "remaining": 6
+      },
+      {
+        "tick": 17,
+        "RGB4": "$E0A",
+        "rgb": [
+          238,
+          0,
+          170
+        ],
+        "phase": 5,
+        "remaining": 5
+      },
+      {
+        "tick": 18,
+        "RGB4": "$E08",
+        "rgb": [
+          238,
+          0,
+          136
+        ],
+        "phase": 5,
+        "remaining": 4
+      },
+      {
+        "tick": 19,
+        "RGB4": "$E06",
+        "rgb": [
+          238,
+          0,
+          102
+        ],
+        "phase": 5,
+        "remaining": 3
+      },
+      {
+        "tick": 20,
+        "RGB4": "$E04",
+        "rgb": [
+          238,
+          0,
+          68
+        ],
+        "phase": 5,
+        "remaining": 2
+      },
+      {
+        "tick": 21,
+        "RGB4": "$E02",
+        "rgb": [
+          238,
+          0,
+          34
+        ],
+        "phase": 5,
+        "remaining": 1
+      },
+      {
+        "tick": 22,
+        "RGB4": "$E00",
+        "rgb": [
+          238,
+          0,
+          0
+        ],
+        "phase": 0,
+        "remaining": 7
+      },
+      {
+        "tick": 23,
+        "RGB4": "$E20",
+        "rgb": [
+          238,
+          34,
+          0
+        ],
+        "phase": 0,
+        "remaining": 6
+      },
+      {
+        "tick": 24,
+        "RGB4": "$E40",
+        "rgb": [
+          238,
+          68,
+          0
+        ],
+        "phase": 0,
+        "remaining": 5
+      },
+      {
+        "tick": 25,
+        "RGB4": "$E60",
+        "rgb": [
+          238,
+          102,
+          0
+        ],
+        "phase": 0,
+        "remaining": 4
+      },
+      {
+        "tick": 26,
+        "RGB4": "$E80",
+        "rgb": [
+          238,
+          136,
+          0
+        ],
+        "phase": 0,
+        "remaining": 3
+      },
+      {
+        "tick": 27,
+        "RGB4": "$EA0",
+        "rgb": [
+          238,
+          170,
+          0
+        ],
+        "phase": 0,
+        "remaining": 2
+      },
+      {
+        "tick": 28,
+        "RGB4": "$EC0",
+        "rgb": [
+          238,
+          204,
+          0
+        ],
+        "phase": 0,
+        "remaining": 1
+      },
+      {
+        "tick": 29,
+        "RGB4": "$EE0",
+        "rgb": [
+          238,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 7
+      },
+      {
+        "tick": 30,
+        "RGB4": "$CE0",
+        "rgb": [
+          204,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 6
+      },
+      {
+        "tick": 31,
+        "RGB4": "$AE0",
+        "rgb": [
+          170,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 5
+      },
+      {
+        "tick": 32,
+        "RGB4": "$8E0",
+        "rgb": [
+          136,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 4
+      },
+      {
+        "tick": 33,
+        "RGB4": "$6E0",
+        "rgb": [
+          102,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 3
+      },
+      {
+        "tick": 34,
+        "RGB4": "$4E0",
+        "rgb": [
+          68,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 2
+      },
+      {
+        "tick": 35,
+        "RGB4": "$2E0",
+        "rgb": [
+          34,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 1
+      },
+      {
+        "tick": 36,
+        "RGB4": "$0E0",
+        "rgb": [
+          0,
+          238,
+          0
+        ],
+        "phase": 2,
+        "remaining": 7
+      },
+      {
+        "tick": 37,
+        "RGB4": "$0E2",
+        "rgb": [
+          0,
+          238,
+          34
+        ],
+        "phase": 2,
+        "remaining": 6
+      },
+      {
+        "tick": 38,
+        "RGB4": "$0E4",
+        "rgb": [
+          0,
+          238,
+          68
+        ],
+        "phase": 2,
+        "remaining": 5
+      },
+      {
+        "tick": 39,
+        "RGB4": "$0E6",
+        "rgb": [
+          0,
+          238,
+          102
+        ],
+        "phase": 2,
+        "remaining": 4
+      },
+      {
+        "tick": 40,
+        "RGB4": "$0E8",
+        "rgb": [
+          0,
+          238,
+          136
+        ],
+        "phase": 2,
+        "remaining": 3
+      },
+      {
+        "tick": 41,
+        "RGB4": "$0EA",
+        "rgb": [
+          0,
+          238,
+          170
+        ],
+        "phase": 2,
+        "remaining": 2
+      },
+      {
+        "tick": 42,
+        "RGB4": "$0EC",
+        "rgb": [
+          0,
+          238,
+          204
+        ],
+        "phase": 2,
+        "remaining": 1
+      },
+      {
+        "tick": 43,
+        "RGB4": "$0EE",
+        "rgb": [
+          0,
+          238,
+          238
+        ],
+        "phase": 3,
+        "remaining": 7
+      },
+      {
+        "tick": 44,
+        "RGB4": "$0CE",
+        "rgb": [
+          0,
+          204,
+          238
+        ],
+        "phase": 3,
+        "remaining": 6
+      },
+      {
+        "tick": 45,
+        "RGB4": "$0AE",
+        "rgb": [
+          0,
+          170,
+          238
+        ],
+        "phase": 3,
+        "remaining": 5
+      },
+      {
+        "tick": 46,
+        "RGB4": "$08E",
+        "rgb": [
+          0,
+          136,
+          238
+        ],
+        "phase": 3,
+        "remaining": 4
+      },
+      {
+        "tick": 47,
+        "RGB4": "$06E",
+        "rgb": [
+          0,
+          102,
+          238
+        ],
+        "phase": 3,
+        "remaining": 3
+      },
+      {
+        "tick": 48,
+        "RGB4": "$04E",
+        "rgb": [
+          0,
+          68,
+          238
+        ],
+        "phase": 3,
+        "remaining": 2
+      },
+      {
+        "tick": 49,
+        "RGB4": "$02E",
+        "rgb": [
+          0,
+          34,
+          238
+        ],
+        "phase": 3,
+        "remaining": 1
+      },
+      {
+        "tick": 50,
+        "RGB4": "$00E",
+        "rgb": [
+          0,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 7
+      },
+      {
+        "tick": 51,
+        "RGB4": "$20E",
+        "rgb": [
+          34,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 6
+      },
+      {
+        "tick": 52,
+        "RGB4": "$40E",
+        "rgb": [
+          68,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 5
+      },
+      {
+        "tick": 53,
+        "RGB4": "$60E",
+        "rgb": [
+          102,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 4
+      },
+      {
+        "tick": 54,
+        "RGB4": "$80E",
+        "rgb": [
+          136,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 3
+      },
+      {
+        "tick": 55,
+        "RGB4": "$A0E",
+        "rgb": [
+          170,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 2
+      },
+      {
+        "tick": 56,
+        "RGB4": "$C0E",
+        "rgb": [
+          204,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 1
+      },
+      {
+        "tick": 57,
+        "RGB4": "$E0E",
+        "rgb": [
+          238,
+          0,
+          238
+        ],
+        "phase": 5,
+        "remaining": 7
+      },
+      {
+        "tick": 58,
+        "RGB4": "$E0C",
+        "rgb": [
+          238,
+          0,
+          204
+        ],
+        "phase": 5,
+        "remaining": 6
+      },
+      {
+        "tick": 59,
+        "RGB4": "$E0A",
+        "rgb": [
+          238,
+          0,
+          170
+        ],
+        "phase": 5,
+        "remaining": 5
+      },
+      {
+        "tick": 60,
+        "RGB4": "$E08",
+        "rgb": [
+          238,
+          0,
+          136
+        ],
+        "phase": 5,
+        "remaining": 4
+      },
+      {
+        "tick": 61,
+        "RGB4": "$E06",
+        "rgb": [
+          238,
+          0,
+          102
+        ],
+        "phase": 5,
+        "remaining": 3
+      },
+      {
+        "tick": 62,
+        "RGB4": "$E04",
+        "rgb": [
+          238,
+          0,
+          68
+        ],
+        "phase": 5,
+        "remaining": 2
+      },
+      {
+        "tick": 63,
+        "RGB4": "$E02",
+        "rgb": [
+          238,
+          0,
+          34
+        ],
+        "phase": 5,
+        "remaining": 1
+      },
+      {
+        "tick": 64,
+        "RGB4": "$E00",
+        "rgb": [
+          238,
+          0,
+          0
+        ],
+        "phase": 0,
+        "remaining": 7
+      },
+      {
+        "tick": 65,
+        "RGB4": "$E20",
+        "rgb": [
+          238,
+          34,
+          0
+        ],
+        "phase": 0,
+        "remaining": 6
+      },
+      {
+        "tick": 66,
+        "RGB4": "$E40",
+        "rgb": [
+          238,
+          68,
+          0
+        ],
+        "phase": 0,
+        "remaining": 5
+      },
+      {
+        "tick": 67,
+        "RGB4": "$E60",
+        "rgb": [
+          238,
+          102,
+          0
+        ],
+        "phase": 0,
+        "remaining": 4
+      },
+      {
+        "tick": 68,
+        "RGB4": "$E80",
+        "rgb": [
+          238,
+          136,
+          0
+        ],
+        "phase": 0,
+        "remaining": 3
+      },
+      {
+        "tick": 69,
+        "RGB4": "$EA0",
+        "rgb": [
+          238,
+          170,
+          0
+        ],
+        "phase": 0,
+        "remaining": 2
+      },
+      {
+        "tick": 70,
+        "RGB4": "$EC0",
+        "rgb": [
+          238,
+          204,
+          0
+        ],
+        "phase": 0,
+        "remaining": 1
+      },
+      {
+        "tick": 71,
+        "RGB4": "$EE0",
+        "rgb": [
+          238,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 7
+      },
+      {
+        "tick": 72,
+        "RGB4": "$CE0",
+        "rgb": [
+          204,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 6
+      },
+      {
+        "tick": 73,
+        "RGB4": "$AE0",
+        "rgb": [
+          170,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 5
+      },
+      {
+        "tick": 74,
+        "RGB4": "$8E0",
+        "rgb": [
+          136,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 4
+      },
+      {
+        "tick": 75,
+        "RGB4": "$6E0",
+        "rgb": [
+          102,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 3
+      },
+      {
+        "tick": 76,
+        "RGB4": "$4E0",
+        "rgb": [
+          68,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 2
+      },
+      {
+        "tick": 77,
+        "RGB4": "$2E0",
+        "rgb": [
+          34,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 1
+      },
+      {
+        "tick": 78,
+        "RGB4": "$0E0",
+        "rgb": [
+          0,
+          238,
+          0
+        ],
+        "phase": 2,
+        "remaining": 7
+      },
+      {
+        "tick": 79,
+        "RGB4": "$0E2",
+        "rgb": [
+          0,
+          238,
+          34
+        ],
+        "phase": 2,
+        "remaining": 6
+      },
+      {
+        "tick": 80,
+        "RGB4": "$0E4",
+        "rgb": [
+          0,
+          238,
+          68
+        ],
+        "phase": 2,
+        "remaining": 5
+      },
+      {
+        "tick": 81,
+        "RGB4": "$0E6",
+        "rgb": [
+          0,
+          238,
+          102
+        ],
+        "phase": 2,
+        "remaining": 4
+      },
+      {
+        "tick": 82,
+        "RGB4": "$0E8",
+        "rgb": [
+          0,
+          238,
+          136
+        ],
+        "phase": 2,
+        "remaining": 3
+      },
+      {
+        "tick": 83,
+        "RGB4": "$0EA",
+        "rgb": [
+          0,
+          238,
+          170
+        ],
+        "phase": 2,
+        "remaining": 2
+      },
+      {
+        "tick": 84,
+        "RGB4": "$0EC",
+        "rgb": [
+          0,
+          238,
+          204
+        ],
+        "phase": 2,
+        "remaining": 1
+      },
+      {
+        "tick": 85,
+        "RGB4": "$0EE",
+        "rgb": [
+          0,
+          238,
+          238
+        ],
+        "phase": 3,
+        "remaining": 7
+      },
+      {
+        "tick": 86,
+        "RGB4": "$0CE",
+        "rgb": [
+          0,
+          204,
+          238
+        ],
+        "phase": 3,
+        "remaining": 6
+      },
+      {
+        "tick": 87,
+        "RGB4": "$0AE",
+        "rgb": [
+          0,
+          170,
+          238
+        ],
+        "phase": 3,
+        "remaining": 5
+      },
+      {
+        "tick": 88,
+        "RGB4": "$08E",
+        "rgb": [
+          0,
+          136,
+          238
+        ],
+        "phase": 3,
+        "remaining": 4
+      },
+      {
+        "tick": 89,
+        "RGB4": "$06E",
+        "rgb": [
+          0,
+          102,
+          238
+        ],
+        "phase": 3,
+        "remaining": 3
+      },
+      {
+        "tick": 90,
+        "RGB4": "$04E",
+        "rgb": [
+          0,
+          68,
+          238
+        ],
+        "phase": 3,
+        "remaining": 2
+      },
+      {
+        "tick": 91,
+        "RGB4": "$02E",
+        "rgb": [
+          0,
+          34,
+          238
+        ],
+        "phase": 3,
+        "remaining": 1
+      },
+      {
+        "tick": 92,
+        "RGB4": "$00E",
+        "rgb": [
+          0,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 7
+      },
+      {
+        "tick": 93,
+        "RGB4": "$20E",
+        "rgb": [
+          34,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 6
+      },
+      {
+        "tick": 94,
+        "RGB4": "$40E",
+        "rgb": [
+          68,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 5
+      },
+      {
+        "tick": 95,
+        "RGB4": "$60E",
+        "rgb": [
+          102,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 4
+      },
+      {
+        "tick": 96,
+        "RGB4": "$80E",
+        "rgb": [
+          136,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 3
+      },
+      {
+        "tick": 97,
+        "RGB4": "$A0E",
+        "rgb": [
+          170,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 2
+      },
+      {
+        "tick": 98,
+        "RGB4": "$C0E",
+        "rgb": [
+          204,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 1
+      },
+      {
+        "tick": 99,
+        "RGB4": "$E0E",
+        "rgb": [
+          238,
+          0,
+          238
+        ],
+        "phase": 5,
+        "remaining": 7
+      },
+      {
+        "tick": 100,
+        "RGB4": "$E0C",
+        "rgb": [
+          238,
+          0,
+          204
+        ],
+        "phase": 5,
+        "remaining": 6
+      },
+      {
+        "tick": 101,
+        "RGB4": "$E0A",
+        "rgb": [
+          238,
+          0,
+          170
+        ],
+        "phase": 5,
+        "remaining": 5
+      },
+      {
+        "tick": 102,
+        "RGB4": "$E08",
+        "rgb": [
+          238,
+          0,
+          136
+        ],
+        "phase": 5,
+        "remaining": 4
+      },
+      {
+        "tick": 103,
+        "RGB4": "$E06",
+        "rgb": [
+          238,
+          0,
+          102
+        ],
+        "phase": 5,
+        "remaining": 3
+      },
+      {
+        "tick": 104,
+        "RGB4": "$E04",
+        "rgb": [
+          238,
+          0,
+          68
+        ],
+        "phase": 5,
+        "remaining": 2
+      },
+      {
+        "tick": 105,
+        "RGB4": "$E02",
+        "rgb": [
+          238,
+          0,
+          34
+        ],
+        "phase": 5,
+        "remaining": 1
+      },
+      {
+        "tick": 106,
+        "RGB4": "$E00",
+        "rgb": [
+          238,
+          0,
+          0
+        ],
+        "phase": 0,
+        "remaining": 7
+      },
+      {
+        "tick": 107,
+        "RGB4": "$E20",
+        "rgb": [
+          238,
+          34,
+          0
+        ],
+        "phase": 0,
+        "remaining": 6
+      },
+      {
+        "tick": 108,
+        "RGB4": "$E40",
+        "rgb": [
+          238,
+          68,
+          0
+        ],
+        "phase": 0,
+        "remaining": 5
+      },
+      {
+        "tick": 109,
+        "RGB4": "$E60",
+        "rgb": [
+          238,
+          102,
+          0
+        ],
+        "phase": 0,
+        "remaining": 4
+      },
+      {
+        "tick": 110,
+        "RGB4": "$E80",
+        "rgb": [
+          238,
+          136,
+          0
+        ],
+        "phase": 0,
+        "remaining": 3
+      },
+      {
+        "tick": 111,
+        "RGB4": "$EA0",
+        "rgb": [
+          238,
+          170,
+          0
+        ],
+        "phase": 0,
+        "remaining": 2
+      },
+      {
+        "tick": 112,
+        "RGB4": "$EC0",
+        "rgb": [
+          238,
+          204,
+          0
+        ],
+        "phase": 0,
+        "remaining": 1
+      },
+      {
+        "tick": 113,
+        "RGB4": "$EE0",
+        "rgb": [
+          238,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 7
+      },
+      {
+        "tick": 114,
+        "RGB4": "$CE0",
+        "rgb": [
+          204,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 6
+      },
+      {
+        "tick": 115,
+        "RGB4": "$AE0",
+        "rgb": [
+          170,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 5
+      },
+      {
+        "tick": 116,
+        "RGB4": "$8E0",
+        "rgb": [
+          136,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 4
+      },
+      {
+        "tick": 117,
+        "RGB4": "$6E0",
+        "rgb": [
+          102,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 3
+      },
+      {
+        "tick": 118,
+        "RGB4": "$4E0",
+        "rgb": [
+          68,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 2
+      },
+      {
+        "tick": 119,
+        "RGB4": "$2E0",
+        "rgb": [
+          34,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 1
+      },
+      {
+        "tick": 120,
+        "RGB4": "$0E0",
+        "rgb": [
+          0,
+          238,
+          0
+        ],
+        "phase": 2,
+        "remaining": 7
+      },
+      {
+        "tick": 121,
+        "RGB4": "$0E2",
+        "rgb": [
+          0,
+          238,
+          34
+        ],
+        "phase": 2,
+        "remaining": 6
+      },
+      {
+        "tick": 122,
+        "RGB4": "$0E4",
+        "rgb": [
+          0,
+          238,
+          68
+        ],
+        "phase": 2,
+        "remaining": 5
+      },
+      {
+        "tick": 123,
+        "RGB4": "$0E6",
+        "rgb": [
+          0,
+          238,
+          102
+        ],
+        "phase": 2,
+        "remaining": 4
+      },
+      {
+        "tick": 124,
+        "RGB4": "$0E8",
+        "rgb": [
+          0,
+          238,
+          136
+        ],
+        "phase": 2,
+        "remaining": 3
+      },
+      {
+        "tick": 125,
+        "RGB4": "$0EA",
+        "rgb": [
+          0,
+          238,
+          170
+        ],
+        "phase": 2,
+        "remaining": 2
+      },
+      {
+        "tick": 126,
+        "RGB4": "$0EC",
+        "rgb": [
+          0,
+          238,
+          204
+        ],
+        "phase": 2,
+        "remaining": 1
+      },
+      {
+        "tick": 127,
+        "RGB4": "$0EE",
+        "rgb": [
+          0,
+          238,
+          238
+        ],
+        "phase": 3,
+        "remaining": 7
+      },
+      {
+        "tick": 128,
+        "RGB4": "$0CE",
+        "rgb": [
+          0,
+          204,
+          238
+        ],
+        "phase": 3,
+        "remaining": 6
+      },
+      {
+        "tick": 129,
+        "RGB4": "$0AE",
+        "rgb": [
+          0,
+          170,
+          238
+        ],
+        "phase": 3,
+        "remaining": 5
+      },
+      {
+        "tick": 130,
+        "RGB4": "$08E",
+        "rgb": [
+          0,
+          136,
+          238
+        ],
+        "phase": 3,
+        "remaining": 4
+      },
+      {
+        "tick": 131,
+        "RGB4": "$06E",
+        "rgb": [
+          0,
+          102,
+          238
+        ],
+        "phase": 3,
+        "remaining": 3
+      },
+      {
+        "tick": 132,
+        "RGB4": "$04E",
+        "rgb": [
+          0,
+          68,
+          238
+        ],
+        "phase": 3,
+        "remaining": 2
+      },
+      {
+        "tick": 133,
+        "RGB4": "$02E",
+        "rgb": [
+          0,
+          34,
+          238
+        ],
+        "phase": 3,
+        "remaining": 1
+      },
+      {
+        "tick": 134,
+        "RGB4": "$00E",
+        "rgb": [
+          0,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 7
+      },
+      {
+        "tick": 135,
+        "RGB4": "$20E",
+        "rgb": [
+          34,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 6
+      },
+      {
+        "tick": 136,
+        "RGB4": "$40E",
+        "rgb": [
+          68,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 5
+      },
+      {
+        "tick": 137,
+        "RGB4": "$60E",
+        "rgb": [
+          102,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 4
+      },
+      {
+        "tick": 138,
+        "RGB4": "$80E",
+        "rgb": [
+          136,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 3
+      },
+      {
+        "tick": 139,
+        "RGB4": "$A0E",
+        "rgb": [
+          170,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 2
+      },
+      {
+        "tick": 140,
+        "RGB4": "$C0E",
+        "rgb": [
+          204,
+          0,
+          238
+        ],
+        "phase": 4,
+        "remaining": 1
+      },
+      {
+        "tick": 141,
+        "RGB4": "$E0E",
+        "rgb": [
+          238,
+          0,
+          238
+        ],
+        "phase": 5,
+        "remaining": 7
+      },
+      {
+        "tick": 142,
+        "RGB4": "$E0C",
+        "rgb": [
+          238,
+          0,
+          204
+        ],
+        "phase": 5,
+        "remaining": 6
+      },
+      {
+        "tick": 143,
+        "RGB4": "$E0A",
+        "rgb": [
+          238,
+          0,
+          170
+        ],
+        "phase": 5,
+        "remaining": 5
+      },
+      {
+        "tick": 144,
+        "RGB4": "$E08",
+        "rgb": [
+          238,
+          0,
+          136
+        ],
+        "phase": 5,
+        "remaining": 4
+      },
+      {
+        "tick": 145,
+        "RGB4": "$E06",
+        "rgb": [
+          238,
+          0,
+          102
+        ],
+        "phase": 5,
+        "remaining": 3
+      },
+      {
+        "tick": 146,
+        "RGB4": "$E04",
+        "rgb": [
+          238,
+          0,
+          68
+        ],
+        "phase": 5,
+        "remaining": 2
+      },
+      {
+        "tick": 147,
+        "RGB4": "$E02",
+        "rgb": [
+          238,
+          0,
+          34
+        ],
+        "phase": 5,
+        "remaining": 1
+      },
+      {
+        "tick": 148,
+        "RGB4": "$E00",
+        "rgb": [
+          238,
+          0,
+          0
+        ],
+        "phase": 0,
+        "remaining": 7
+      },
+      {
+        "tick": 149,
+        "RGB4": "$E20",
+        "rgb": [
+          238,
+          34,
+          0
+        ],
+        "phase": 0,
+        "remaining": 6
+      },
+      {
+        "tick": 150,
+        "RGB4": "$E40",
+        "rgb": [
+          238,
+          68,
+          0
+        ],
+        "phase": 0,
+        "remaining": 5
+      },
+      {
+        "tick": 151,
+        "RGB4": "$E60",
+        "rgb": [
+          238,
+          102,
+          0
+        ],
+        "phase": 0,
+        "remaining": 4
+      },
+      {
+        "tick": 152,
+        "RGB4": "$E80",
+        "rgb": [
+          238,
+          136,
+          0
+        ],
+        "phase": 0,
+        "remaining": 3
+      },
+      {
+        "tick": 153,
+        "RGB4": "$EA0",
+        "rgb": [
+          238,
+          170,
+          0
+        ],
+        "phase": 0,
+        "remaining": 2
+      },
+      {
+        "tick": 154,
+        "RGB4": "$EC0",
+        "rgb": [
+          238,
+          204,
+          0
+        ],
+        "phase": 0,
+        "remaining": 1
+      },
+      {
+        "tick": 155,
+        "RGB4": "$EE0",
+        "rgb": [
+          238,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 7
+      },
+      {
+        "tick": 156,
+        "RGB4": "$CE0",
+        "rgb": [
+          204,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 6
+      },
+      {
+        "tick": 157,
+        "RGB4": "$AE0",
+        "rgb": [
+          170,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 5
+      },
+      {
+        "tick": 158,
+        "RGB4": "$8E0",
+        "rgb": [
+          136,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 4
+      },
+      {
+        "tick": 159,
+        "RGB4": "$6E0",
+        "rgb": [
+          102,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 3
+      },
+      {
+        "tick": 160,
+        "RGB4": "$4E0",
+        "rgb": [
+          68,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 2
+      },
+      {
+        "tick": 161,
+        "RGB4": "$2E0",
+        "rgb": [
+          34,
+          238,
+          0
+        ],
+        "phase": 1,
+        "remaining": 1
+      },
+      {
+        "tick": 162,
+        "RGB4": "$0E0",
+        "rgb": [
+          0,
+          238,
+          0
+        ],
+        "phase": 2,
+        "remaining": 7
+      },
+      {
+        "tick": 163,
+        "RGB4": "$0E2",
+        "rgb": [
+          0,
+          238,
+          34
+        ],
+        "phase": 2,
+        "remaining": 6
+      },
+      {
+        "tick": 164,
+        "RGB4": "$0E4",
+        "rgb": [
+          0,
+          238,
+          68
+        ],
+        "phase": 2,
+        "remaining": 5
+      },
+      {
+        "tick": 165,
+        "RGB4": "$0E6",
+        "rgb": [
+          0,
+          238,
+          102
+        ],
+        "phase": 2,
+        "remaining": 4
+      },
+      {
+        "tick": 166,
+        "RGB4": "$0E8",
+        "rgb": [
+          0,
+          238,
+          136
+        ],
+        "phase": 2,
+        "remaining": 3
+      },
+      {
+        "tick": 167,
+        "RGB4": "$0EA",
+        "rgb": [
+          0,
+          238,
+          170
+        ],
+        "phase": 2,
+        "remaining": 2
+      },
+      {
+        "tick": 168,
+        "RGB4": "$0EC",
+        "rgb": [
+          0,
+          238,
+          204
+        ],
+        "phase": 2,
+        "remaining": 1
+      }
+    ]
+  },
+  "animation": "PAL50Hz frame gate; original per-actor 1..6-frame periods/countdowns; adjustable global divider; no Amiga runtime trace",
+  "xemu": "NOT_RUN; user acceptance pending"
+}

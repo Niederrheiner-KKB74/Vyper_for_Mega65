@@ -1,0 +1,14 @@
+{
+  "issue": 45,
+  "stage": "6a2",
+  "stable": false,
+  "tests_passed": 12,
+  "test_seconds": 21.883,
+  "independent_build_identical_files": 18,
+  "menu_assets_unchanged_files": 7,
+  "tested_original_color_cycles": 4,
+  "steps_each": 42,
+  "PAL_cycle_ms_code_derived": 840,
+  "xemu": "NOT_RUN; user comparison/acceptance pending",
+  "baseline_stage6a1": "65e8b4e700626288906ea79954eb52641fd0bb15"
+}

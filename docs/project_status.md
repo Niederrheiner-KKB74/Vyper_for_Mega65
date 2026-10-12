@@ -530,3 +530,7 @@ Benutzerabnahme am 12.10.2026: „Der Build ist stable.“ Getesteter Programmco
 ## Stage 6a1 / Issue #43 – eigenständiger visueller Test
 
 Branch `stage6a1`, Originalmenü320×200 mit32 animierten, pixelgenau zugeordneten Gegnertypen, Originalschrift und eigener Menüpalette. Separater FCM-Renderer, keine Änderungen an Stage5d-1a Stable. Release `releases/stage_6a1/`. Acht automatische Tests bestanden; XEMU-Abnahme ausstehend, nicht Stable. [Analyse und Abnahme](stage6a1_start_screen_visual.md).
+
+## Stage 6a2 / Issue #45 – Original-Menü-Color-Cycling
+
+Separater Branch `stage6a2` aus funktionierendem6a1. COLOR02-Deltaalgorithmus, Copper-IRQ-Bindung und42-Schritt-Zyklus rekonstruiert; PAL-abgeleitet840ms. Nur Menüpalette Bank1/Index2 verändert. 32Animationen/Originaldaten bleiben identisch; Stage5d-1a Stable geschützt. Release `releases/stage_6a2/`; 12automatische Tests bestanden, XEMU-Abnahme ausstehend, nicht Stable. [Originalbelege und Abnahme](stage6a2_color_cycling.md).

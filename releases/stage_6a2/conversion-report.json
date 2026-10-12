@@ -1,0 +1,637 @@
+{
+  "issue": 43,
+  "source_uss_sha256": "d836cbf88f0ac35b6ed3776df2add39f699113c1aeb9d02cdfe4651c82793916",
+  "VYGR_sha256": "974e8eff97efd0c0f67db2780cb668311b9d8731395d43641d4602c0a7c96b50",
+  "size": [
+    320,
+    200
+  ],
+  "Copper2": "0x184ae",
+  "planes": [
+    "0x27770",
+    "0x29bb0",
+    "0x2bff0",
+    "0x2e430"
+  ],
+  "CHIP_palette_offset": "$E4",
+  "palette_RGB4": [
+    "$000",
+    "$FFF",
+    "$0EC",
+    "$DD0",
+    "$899",
+    "$344",
+    "$566",
+    "$ABB",
+    "$F00",
+    "$FFF",
+    "$FFF",
+    "$FFF",
+    "$FFF",
+    "$FFF",
+    "$FFF",
+    "$FFF"
+  ],
+  "actors": [
+    {
+      "slot": 0,
+      "type": 1,
+      "x": 40,
+      "y": 20,
+      "frame_count": 4,
+      "initial_frame": 3,
+      "identical_snapshot_frame_candidates": [
+        1,
+        3
+      ],
+      "original_current_frame": 0,
+      "period_frames": 4,
+      "initial_delay": 4,
+      "original_object": "0x2404a",
+      "screen_address": 28842,
+      "table_offset": 0
+    },
+    {
+      "slot": 1,
+      "type": 2,
+      "x": 72,
+      "y": 20,
+      "frame_count": 7,
+      "initial_frame": 0,
+      "identical_snapshot_frame_candidates": [
+        0
+      ],
+      "original_current_frame": 1,
+      "period_frames": 4,
+      "initial_delay": 4,
+      "original_object": "0x240dc",
+      "screen_address": 28850,
+      "table_offset": 48
+    },
+    {
+      "slot": 2,
+      "type": 3,
+      "x": 104,
+      "y": 20,
+      "frame_count": 10,
+      "initial_frame": 9,
+      "identical_snapshot_frame_candidates": [
+        1,
+        9
+      ],
+      "original_current_frame": 9,
+      "period_frames": 4,
+      "initial_delay": 1,
+      "original_object": "0x2416e",
+      "screen_address": 28858,
+      "table_offset": 132
+    },
+    {
+      "slot": 3,
+      "type": 4,
+      "x": 136,
+      "y": 20,
+      "frame_count": 6,
+      "initial_frame": 4,
+      "identical_snapshot_frame_candidates": [
+        2,
+        4
+      ],
+      "original_current_frame": 4,
+      "period_frames": 5,
+      "initial_delay": 2,
+      "original_object": "0x24200",
+      "screen_address": 28866,
+      "table_offset": 252
+    },
+    {
+      "slot": 4,
+      "type": 5,
+      "x": 168,
+      "y": 20,
+      "frame_count": 8,
+      "initial_frame": 1,
+      "identical_snapshot_frame_candidates": [
+        1
+      ],
+      "original_current_frame": 2,
+      "period_frames": 4,
+      "initial_delay": 4,
+      "original_object": "0x24292",
+      "screen_address": 28874,
+      "table_offset": 324
+    },
+    {
+      "slot": 5,
+      "type": 23,
+      "x": 200,
+      "y": 20,
+      "frame_count": 4,
+      "initial_frame": 0,
+      "identical_snapshot_frame_candidates": [
+        0
+      ],
+      "original_current_frame": 0,
+      "period_frames": 3,
+      "initial_delay": 1,
+      "original_object": "0x24324",
+      "screen_address": 28882,
+      "table_offset": 420
+    },
+    {
+      "slot": 6,
+      "type": 9,
+      "x": 232,
+      "y": 20,
+      "frame_count": 8,
+      "initial_frame": 5,
+      "identical_snapshot_frame_candidates": [
+        5
+      ],
+      "original_current_frame": 5,
+      "period_frames": 5,
+      "initial_delay": 1,
+      "original_object": "0x243b6",
+      "screen_address": 28890,
+      "table_offset": 468
+    },
+    {
+      "slot": 7,
+      "type": 10,
+      "x": 264,
+      "y": 20,
+      "frame_count": 4,
+      "initial_frame": 2,
+      "identical_snapshot_frame_candidates": [
+        2
+      ],
+      "original_current_frame": 3,
+      "period_frames": 2,
+      "initial_delay": 2,
+      "original_object": "0x24448",
+      "screen_address": 28898,
+      "table_offset": 564
+    },
+    {
+      "slot": 8,
+      "type": 11,
+      "x": 24,
+      "y": 44,
+      "frame_count": 6,
+      "initial_frame": 1,
+      "identical_snapshot_frame_candidates": [
+        1
+      ],
+      "original_current_frame": 1,
+      "period_frames": 5,
+      "initial_delay": 1,
+      "original_object": "0x244da",
+      "screen_address": 29078,
+      "table_offset": 612
+    },
+    {
+      "slot": 9,
+      "type": 13,
+      "x": 56,
+      "y": 44,
+      "frame_count": 4,
+      "initial_frame": 2,
+      "identical_snapshot_frame_candidates": [
+        2
+      ],
+      "original_current_frame": 2,
+      "period_frames": 3,
+      "initial_delay": 2,
+      "original_object": "0x2456c",
+      "screen_address": 29086,
+      "table_offset": 684
+    },
+    {
+      "slot": 10,
+      "type": 14,
+      "x": 88,
+      "y": 44,
+      "frame_count": 8,
+      "initial_frame": 1,
+      "identical_snapshot_frame_candidates": [
+        1
+      ],
+      "original_current_frame": 2,
+      "period_frames": 4,
+      "initial_delay": 4,
+      "original_object": "0x245fe",
+      "screen_address": 29094,
+      "table_offset": 732
+    },
+    {
+      "slot": 11,
+      "type": 15,
+      "x": 120,
+      "y": 44,
+      "frame_count": 6,
+      "initial_frame": 1,
+      "identical_snapshot_frame_candidates": [
+        1
+      ],
+      "original_current_frame": 1,
+      "period_frames": 6,
+      "initial_delay": 4,
+      "original_object": "0x24690",
+      "screen_address": 29102,
+      "table_offset": 828
+    },
+    {
+      "slot": 12,
+      "type": 16,
+      "x": 152,
+      "y": 44,
+      "frame_count": 6,
+      "initial_frame": 4,
+      "identical_snapshot_frame_candidates": [
+        4
+      ],
+      "original_current_frame": 4,
+      "period_frames": 5,
+      "initial_delay": 4,
+      "original_object": "0x24722",
+      "screen_address": 29110,
+      "table_offset": 900
+    },
+    {
+      "slot": 13,
+      "type": 17,
+      "x": 184,
+      "y": 44,
+      "frame_count": 12,
+      "initial_frame": 7,
+      "identical_snapshot_frame_candidates": [
+        5,
+        7
+      ],
+      "original_current_frame": 8,
+      "period_frames": 5,
+      "initial_delay": 5,
+      "original_object": "0x247b4",
+      "screen_address": 29118,
+      "table_offset": 972
+    },
+    {
+      "slot": 14,
+      "type": 18,
+      "x": 216,
+      "y": 44,
+      "frame_count": 12,
+      "initial_frame": 4,
+      "identical_snapshot_frame_candidates": [
+        4,
+        8
+      ],
+      "original_current_frame": 4,
+      "period_frames": 5,
+      "initial_delay": 2,
+      "original_object": "0x24846",
+      "screen_address": 29126,
+      "table_offset": 1116
+    },
+    {
+      "slot": 15,
+      "type": 19,
+      "x": 248,
+      "y": 44,
+      "frame_count": 4,
+      "initial_frame": 0,
+      "identical_snapshot_frame_candidates": [
+        0
+      ],
+      "original_current_frame": 1,
+      "period_frames": 1,
+      "initial_delay": 1,
+      "original_object": "0x248d8",
+      "screen_address": 29134,
+      "table_offset": 1260
+    },
+    {
+      "slot": 16,
+      "type": 20,
+      "x": 280,
+      "y": 44,
+      "frame_count": 8,
+      "initial_frame": 6,
+      "identical_snapshot_frame_candidates": [
+        6
+      ],
+      "original_current_frame": 7,
+      "period_frames": 4,
+      "initial_delay": 4,
+      "original_object": "0x2496a",
+      "screen_address": 29142,
+      "table_offset": 1308
+    },
+    {
+      "slot": 17,
+      "type": 21,
+      "x": 40,
+      "y": 68,
+      "frame_count": 9,
+      "initial_frame": 3,
+      "identical_snapshot_frame_candidates": [
+        3,
+        5
+      ],
+      "original_current_frame": 3,
+      "period_frames": 2,
+      "initial_delay": 1,
+      "original_object": "0x249fc",
+      "screen_address": 29322,
+      "table_offset": 1404
+    },
+    {
+      "slot": 18,
+      "type": 22,
+      "x": 72,
+      "y": 68,
+      "frame_count": 4,
+      "initial_frame": 2,
+      "identical_snapshot_frame_candidates": [
+        2
+      ],
+      "original_current_frame": 2,
+      "period_frames": 3,
+      "initial_delay": 1,
+      "original_object": "0x24a8e",
+      "screen_address": 29330,
+      "table_offset": 1512
+    },
+    {
+      "slot": 19,
+      "type": 24,
+      "x": 104,
+      "y": 68,
+      "frame_count": 12,
+      "initial_frame": 1,
+      "identical_snapshot_frame_candidates": [
+        1,
+        10
+      ],
+      "original_current_frame": 1,
+      "period_frames": 2,
+      "initial_delay": 1,
+      "original_object": "0x24b20",
+      "screen_address": 29338,
+      "table_offset": 1560
+    },
+    {
+      "slot": 20,
+      "type": 25,
+      "x": 136,
+      "y": 68,
+      "frame_count": 6,
+      "initial_frame": 4,
+      "identical_snapshot_frame_candidates": [
+        4
+      ],
+      "original_current_frame": 4,
+      "period_frames": 3,
+      "initial_delay": 2,
+      "original_object": "0x24bb2",
+      "screen_address": 29346,
+      "table_offset": 1704
+    },
+    {
+      "slot": 21,
+      "type": 26,
+      "x": 168,
+      "y": 68,
+      "frame_count": 8,
+      "initial_frame": 2,
+      "identical_snapshot_frame_candidates": [
+        2
+      ],
+      "original_current_frame": 2,
+      "period_frames": 6,
+      "initial_delay": 1,
+      "original_object": "0x24c44",
+      "screen_address": 29354,
+      "table_offset": 1776
+    },
+    {
+      "slot": 22,
+      "type": 27,
+      "x": 200,
+      "y": 68,
+      "frame_count": 4,
+      "initial_frame": 2,
+      "identical_snapshot_frame_candidates": [
+        2
+      ],
+      "original_current_frame": 3,
+      "period_frames": 3,
+      "initial_delay": 3,
+      "original_object": "0x24cd6",
+      "screen_address": 29362,
+      "table_offset": 1872
+    },
+    {
+      "slot": 23,
+      "type": 28,
+      "x": 232,
+      "y": 68,
+      "frame_count": 8,
+      "initial_frame": 0,
+      "identical_snapshot_frame_candidates": [
+        0
+      ],
+      "original_current_frame": 1,
+      "period_frames": 3,
+      "initial_delay": 3,
+      "original_object": "0x24d68",
+      "screen_address": 29370,
+      "table_offset": 1920
+    },
+    {
+      "slot": 24,
+      "type": 29,
+      "x": 264,
+      "y": 68,
+      "frame_count": 6,
+      "initial_frame": 3,
+      "identical_snapshot_frame_candidates": [
+        3
+      ],
+      "original_current_frame": 3,
+      "period_frames": 5,
+      "initial_delay": 2,
+      "original_object": "0x24dfa",
+      "screen_address": 29378,
+      "table_offset": 2016
+    },
+    {
+      "slot": 25,
+      "type": 30,
+      "x": 56,
+      "y": 92,
+      "frame_count": 8,
+      "initial_frame": 2,
+      "identical_snapshot_frame_candidates": [
+        2
+      ],
+      "original_current_frame": 2,
+      "period_frames": 3,
+      "initial_delay": 2,
+      "original_object": "0x24e8c",
+      "screen_address": 29566,
+      "table_offset": 2088
+    },
+    {
+      "slot": 26,
+      "type": 31,
+      "x": 88,
+      "y": 92,
+      "frame_count": 8,
+      "initial_frame": 0,
+      "identical_snapshot_frame_candidates": [
+        0
+      ],
+      "original_current_frame": 0,
+      "period_frames": 4,
+      "initial_delay": 2,
+      "original_object": "0x24f1e",
+      "screen_address": 29574,
+      "table_offset": 2184
+    },
+    {
+      "slot": 27,
+      "type": 32,
+      "x": 120,
+      "y": 92,
+      "frame_count": 8,
+      "initial_frame": 5,
+      "identical_snapshot_frame_candidates": [
+        5,
+        7
+      ],
+      "original_current_frame": 5,
+      "period_frames": 3,
+      "initial_delay": 2,
+      "original_object": "0x24fb0",
+      "screen_address": 29582,
+      "table_offset": 2280
+    },
+    {
+      "slot": 28,
+      "type": 33,
+      "x": 152,
+      "y": 92,
+      "frame_count": 12,
+      "initial_frame": 8,
+      "identical_snapshot_frame_candidates": [
+        8
+      ],
+      "original_current_frame": 8,
+      "period_frames": 4,
+      "initial_delay": 2,
+      "original_object": "0x25042",
+      "screen_address": 29590,
+      "table_offset": 2376
+    },
+    {
+      "slot": 29,
+      "type": 34,
+      "x": 184,
+      "y": 92,
+      "frame_count": 4,
+      "initial_frame": 2,
+      "identical_snapshot_frame_candidates": [
+        2
+      ],
+      "original_current_frame": 2,
+      "period_frames": 6,
+      "initial_delay": 2,
+      "original_object": "0x250d4",
+      "screen_address": 29598,
+      "table_offset": 2520
+    },
+    {
+      "slot": 30,
+      "type": 35,
+      "x": 216,
+      "y": 92,
+      "frame_count": 3,
+      "initial_frame": 1,
+      "identical_snapshot_frame_candidates": [
+        1
+      ],
+      "original_current_frame": 2,
+      "period_frames": 2,
+      "initial_delay": 2,
+      "original_object": "0x25166",
+      "screen_address": 29606,
+      "table_offset": 2568
+    },
+    {
+      "slot": 31,
+      "type": 36,
+      "x": 248,
+      "y": 92,
+      "frame_count": 4,
+      "initial_frame": 1,
+      "identical_snapshot_frame_candidates": [
+        1
+      ],
+      "original_current_frame": 1,
+      "period_frames": 5,
+      "initial_delay": 2,
+      "original_object": "0x251f8",
+      "screen_address": 29614,
+      "table_offset": 2604
+    }
+  ],
+  "texts": [
+    {
+      "SlowRAM_offset": "0xc30e",
+      "format": "- VYPER -",
+      "display": "- VYPER -"
+    },
+    {
+      "SlowRAM_offset": "0xc318",
+      "format": "- bonus ship every %d waves -",
+      "display": "- BONUS SHIP EVERY 3 WAVES -"
+    },
+    {
+      "SlowRAM_offset": "0xc336",
+      "format": "- select option with joystick or keyboard -",
+      "display": "- SELECT OPTION WITH JOYSTICK OR KEYBOARD -"
+    },
+    {
+      "SlowRAM_offset": "0xc362",
+      "format": "initial level %03d",
+      "display": "INITIAL LEVEL 001"
+    },
+    {
+      "SlowRAM_offset": "0xc375",
+      "format": "f1 start 1 player game",
+      "display": "F1 START 1 PLAYER GAME"
+    },
+    {
+      "SlowRAM_offset": "0xc38c",
+      "format": "f2 start 2 player game",
+      "display": "F2 START 2 PLAYER GAME"
+    },
+    {
+      "SlowRAM_offset": "0xc3a3",
+      "format": "f3 View high Scores",
+      "display": "F3 VIEW HIGH SCORES"
+    }
+  ],
+  "palette_policy": "original menu COLOR0..15, not level palettes; unused loader-compatible entries16..32 zero",
+  "unique_FCM_tiles": 984,
+  "tile_bytes": 62976,
+  "VYMN_bytes": 63093,
+  "VYMN_sha256": "64c8db7746470cba35925d86f5641c03ed09a224d0181de2ceb242037cc83e5a",
+  "max_actors_per_scanline": 9,
+  "animation_frame_divider": 1,
+  "animation_period_note": "Original per-actor countdown and period, BRAM routine $D890-$D8C8; visible frame phase selected against raster where front/back states differ; no WinUAE runtime trace",
+  "initial_64000_indices_exact": true,
+  "renderer": "isolated CHR16/FCLRHI FCM 40x25; six pointers per actor; no RRB or gameplay imports",
+  "xemu": "NOT_RUN"
+}
