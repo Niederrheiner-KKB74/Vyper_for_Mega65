@@ -434,3 +434,21 @@ Benutzerabnahme am 12.10.2026 mit XEMU/ROM V920413, Joystick Port2.
 Referenz `stage6b1-stable`, Programmcommit `5fa82452101cf690c3fa1f5eba0b172222541764`.
 Alle bestätigten Speicherphasen, ROMC-/IRQ-Gates und FAST/VFAST-Korrekturen bleiben
 unverändert; Stable-Markierung ändert ausschließlich Dokumentation und Git-Referenz.
+
+## Stage7a1 – isolierter Sternentest, nicht Stable
+
+Branch `stage7a1-starfield-test`, ab `stage6b1-stable`; historische Quellen und
+Releases bleiben unverändert. Spielphasen-Ergänzung: 24.000 NCM-Bytes bei
+`$18000–$1DDBF`, Glyphen `$600–$776`, statt der ersten 15 schwarzen Prefix-Zellen
+je RRB-Zeile. Menü-Atlas nutzt denselben Bereich nur vor F1; Sterne werden erst
+nach dem Engine-Handoff initialisiert. Keine zusätzlichen RRB- oder Sprite-Slots.
+
+Neue CPU-Bereiche: `$4E10–$4E3F` Y-State, `$4E40–$4EF7` Binder,
+`$B480–$B6FE` Kern/DMA, `$CD80–$CFD2` Adresstabellen, `$CFD8–$CFFF` State,
+Palettensicherung und Profiling. Temporär `$6800` für ein DMA-Pixelbyte.
+Bank1, Indizes48–51 sind getrennt von Gegnern/Cycling/Explosionen; zwölf RGB-
+Bytes werden vor BASIC restauriert. Screen `$E000`, Stride192, 96 Einträge,
+HUD und Clippingrechteck `[0,240)×[0,200)` bleiben unverändert.
+
+Vollständige Karte, Phasenabgrenzung, DMA-/Timingnachweise und offene XEMU-Abnahme:
+[Stage7a1-Prüfbericht](stage7a1_starfield_feasibility.md).

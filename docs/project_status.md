@@ -570,3 +570,24 @@ Kein weiterer Programmfix. Stable-Referenz `stage6b1-stable`, Branch `stage6b1`,
 getesteter Programmcommit `5fa82452101cf690c3fa1f5eba0b172222541764`.
 Quellen und vollständiges Release `releases/stage_6b1/` bytegleich erhalten.
 Die Bestätigung stammt vom Benutzer, kein eigener XEMU-Test behauptet.
+
+## Stage7a1 – separater technischer Sternentest, 13.10.2026
+
+Issue49, Branch `stage7a1-starfield-test`, **nicht Stable**, kein produktiver Merge.
+Ausgangspunkt `stage6b1-stable`, unveränderte geschützte Quellen/Assets/Releases.
+Separates PRG und vollständiges D81 unter `releases/stage_7a1/`.
+
+F1 startet den bestehenden Spielablauf mit 48 reproduzierbaren Ein-Pixel-Sternen:
+Blau +1 Y/8 Frames, Rot /4, Gelb /2. Diese RGB-/Dichte-/Geschwindigkeitswerte
+sind ausdrücklich Testparameter. Eigener 24-KB-NCM-Charset nutzt den bestehenden
+opaken Hintergrundprefix; keine zusätzlichen Hardware-Sprites oder RRB-Pixies.
+Originalgrafiken, Paletten/Cycling, HUD, Schüsse und sämtliche Level bleiben erhalten.
+B schaltet Sterne sauber aus/ein; V aktiviert Rastermarker; X/RUN bleibt erhalten.
+
+28 Hosttests des assemblierten PRG bestanden, darunter 1.600 Sternframes,
+Clipping/Transparenz, DMA-/Speichergrenzen, Paletten und bisherige Menü-/Kampf-
+Regression. Spitzenlast:192 Ein-Byte-DMA-Aufträge, Mittel56. CPU-Modellwerte
+und echte PAL-Rasterinstrumentierung getrennt dokumentiert. Kein eigener
+XEMU-Test; mehrminütige optische Abnahme und reale Rasterzeit noch erforderlich.
+Architektur als Integrationskandidat empfohlen, Stable erst nach Benutzerbestätigung.
+Details: [Machbarkeit/Messungen/Build](stage7a1_starfield_feasibility.md).

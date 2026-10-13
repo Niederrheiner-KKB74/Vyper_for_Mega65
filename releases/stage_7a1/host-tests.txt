@@ -1,0 +1,42 @@
+test_KERNAL_menu_SEQ_has_original_romc_and_enabled_IRQ (test_stage7a1.MenuTests.test_KERNAL_menu_SEQ_has_original_romc_and_enabled_IRQ) ... ok
+test_all_original_animations_and_cycle (test_stage7a1.MenuTests.test_all_original_animations_and_cycle) ... ok
+test_full_cpu_clock_in_title_menu_game_and_basic_restore (test_stage7a1.MenuTests.test_full_cpu_clock_in_title_menu_game_and_basic_restore) ... ok
+test_full_loader_title_and_exact_menu_pixels (test_stage7a1.MenuTests.test_full_loader_title_and_exact_menu_pixels) ... ok
+test_level_nav_palette_cycle_and_exit_run (test_stage7a1.MenuTests.test_level_nav_palette_cycle_and_exit_run) ... ok
+test_menu_exit_restores_basic_and_engine (test_stage7a1.MenuTests.test_menu_exit_restores_basic_and_engine) ... ok
+test_menu_wrap_keys_joystick_repeat_and_fire (test_stage7a1.MenuTests.test_menu_wrap_keys_joystick_repeat_and_fire) ... ok
+test_placeholders_preserve_selection_and_level (test_stage7a1.MenuTests.test_placeholders_preserve_selection_and_level) ... ok
+test_release_guard_on_fire_confirm (test_stage7a1.MenuTests.test_release_guard_on_fire_confirm) ... ok
+test_selected_levels_handoff_fonts_and_static_palette (test_stage7a1.MenuTests.test_selected_levels_handoff_fonts_and_static_palette) ... ok
+test_1600_frames_exact_rates_wrap_and_dma_bounds (test_stage7a1.StarTests.test_1600_frames_exact_rates_wrap_and_dma_bounds) ... ok
+test_all_edges_adjacent_nibbles_and_toggle (test_stage7a1.StarTests.test_all_edges_adjacent_nibbles_and_toggle) ... ok
+test_background_binding_buffer_and_exact_colours (test_stage7a1.StarTests.test_background_binding_buffer_and_exact_colours) ... ok
+test_disk_and_original_assets (test_stage7a1.StarTests.test_disk_and_original_assets) ... ok
+test_level_changes_keep_background_and_exit_restores_palette (test_stage7a1.StarTests.test_level_changes_keep_background_and_exit_restores_palette) ... ok
+test_prefix_hud_slots_and_palettes_unmodified_during_updates (test_stage7a1.StarTests.test_prefix_hud_slots_and_palettes_unmodified_during_updates) ... ok
+test_raster_wrap_instrument_and_measured_host_cost (test_stage7a1.StarTests.test_raster_wrap_instrument_and_measured_host_cost) ... ok
+test_transparency_clipping_all_four_edges_and_no_trails (test_stage7a1.StarTests.test_transparency_clipping_all_four_edges_and_no_trails) ... ok
+test_X_during_pending_start_remains_responsive (test_stage7a1.ZCombatRegression.test_X_during_pending_start_remains_responsive) ... ok
+test_all100_palettes_keep_static_banks_and_cycle_phase (test_stage7a1.ZCombatRegression.test_all100_palettes_keep_static_banks_and_cycle_phase) ... ok
+test_combat_limits_return_respawn_and_invulnerable_control (test_stage7a1.ZCombatRegression.test_combat_limits_return_respawn_and_invulnerable_control) ... ok
+test_entry_fire_pool_fixed_target_and_wait_visibility (test_stage7a1.ZCombatRegression.test_entry_fire_pool_fixed_target_and_wait_visibility) ... ok
+test_game_over_complete_explosion_R_and_X (test_stage7a1.ZCombatRegression.test_game_over_complete_explosion_R_and_X) ... ok
+test_level_clear_press_release_wrap_score_lives_and_R (test_stage7a1.ZCombatRegression.test_level_clear_press_release_wrap_score_lives_and_R) ... ok
+test_new_menu_asset_failure_paths_restore_basic (test_stage7a1.ZCombatRegression.test_new_menu_asset_failure_paths_restore_basic) ... ok
+test_player_speed_and_keyboard_repeat (test_stage7a1.ZCombatRegression.test_player_speed_and_keyboard_repeat) ... ok
+test_return_follows_drifting_formation (test_stage7a1.ZCombatRegression.test_return_follows_drifting_formation) ... ok
+test_romc_basic_mapping_and_repeat_menu_start (test_stage7a1.ZCombatRegression.test_romc_basic_mapping_and_repeat_menu_start) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 308.602s
+
+OK
+Stage7a1 actual instruction/DMA host model: {"stage": "7a1", "measurement_kind": "assembled instructions in 6502/45GS02 host adapter; instantaneous DMA model, NOT XEMU timings", "period_frames": 8, "phases": [{"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2134}, {"dma_jobs": 64, "payload_bytes": 64, "CPU_model_cycles": 7954}, {"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2134}, {"dma_jobs": 128, "payload_bytes": 128, "CPU_model_cycles": 13781}, {"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2134}, {"dma_jobs": 64, "payload_bytes": 64, "CPU_model_cycles": 7956}, {"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2134}, {"dma_jobs": 192, "payload_bytes": 192, "CPU_model_cycles": 19600}], "mean_CPU_model_cycles": 7228.375, "max_CPU_model_cycles": 19600, "mean_DMA_jobs": 56.0, "max_DMA_jobs": 192, "full_background_copy_per_frame": false, "pal_raster_wrap_test": {"start": 310, "end": 3, "expected_span": 5}, "hardware_measurement": "NOT_RUN; V border marker and $CFF0/$CFF2 raw PAL raster-line counters available"}
+
+Additional all48-wrap workload: test_raster_wrap_instrument_and_measured_host_cost (test_stage7a1.StarTests.test_raster_wrap_instrument_and_measured_host_cost) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 23.864s
+
+OK
+Stage7a1 actual instruction/DMA host model: {"stage": "7a1", "measurement_kind": "assembled instructions in 6502/45GS02 host adapter; instantaneous DMA model, NOT XEMU timings", "period_frames": 8, "phases": [{"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2134}, {"dma_jobs": 64, "payload_bytes": 64, "CPU_model_cycles": 7954}, {"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2134}, {"dma_jobs": 128, "payload_bytes": 128, "CPU_model_cycles": 13781}, {"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2134}, {"dma_jobs": 64, "payload_bytes": 64, "CPU_model_cycles": 7956}, {"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2134}, {"dma_jobs": 192, "payload_bytes": 192, "CPU_model_cycles": 19600}], "mean_CPU_model_cycles": 7228.375, "max_CPU_model_cycles": 19600, "mean_DMA_jobs": 56.0, "max_DMA_jobs": 192, "full_background_copy_per_frame": false, "pal_raster_wrap_test": {"start": 310, "end": 3, "expected_span": 5}, "hardware_measurement": "NOT_RUN; V border marker and $CFF0/$CFF2 raw PAL raster-line counters available", "simultaneous_all_stars_wrap": {"CPU_model_cycles": 19942, "dma_jobs": 192, "stars": 48, "from_y": 199, "to_y": 0}, "PRG_sha256": "2e7a62183b4e5e099052de5b9cfcba052565c72b466670cec8b0cb12930fc729"}
