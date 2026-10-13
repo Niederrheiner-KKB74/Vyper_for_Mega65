@@ -51,6 +51,21 @@ def analyze(out):
             'Original candidate has grey flanks and extent3x7; do not silently replace1x4 gameplay geometry or hitboxes.',
             'Final rendering is documented1x4 approximation:3 white+1 red; grey flanks omitted, hitboxes unchanged.']}
     out.mkdir(parents=True,exist_ok=True)
+    # Original indices1 white,2 red,3 grey -> VIC MCM01,11,10.
+    rows=candidate['candidate_rows_at_saved_pointer'][:7]
+    code={0:0,1:1,2:3,3:2}
+    def sprite(sequence):
+        payload=bytearray(64)
+        for y,row in enumerate(sequence):
+            packed=sum(code[v]<<(6-2*x) for x,v in enumerate(row[:3]))
+            payload[y*6]=packed;payload[y*6+3]=packed
+        return bytes(payload)
+    player=sprite(list(reversed(rows)));enemy=sprite(rows)
+    (out/'projectile_sprites.bin').write_bytes(player+enemy)
+    report['implementation']={'size':[3,7],'player':'vertical reflection; red tip above',
+        'original_to_VIC_MCM':code,'hardware_sprite_RGB_indices':[10,13,16],
+        'binary_sha256':hashlib.sha256(player+enemy).hexdigest()}
+    report['limitations']=[x for x in report['limitations'] if not x.startswith(('Original candidate has grey','Final rendering is documented'))]
     (out/'projectile_analysis.json').write_text(json.dumps(report,indent=2)+'\n')
     return report
 if __name__=='__main__':

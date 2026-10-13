@@ -107,34 +107,50 @@ Der weiße Schaft/rote Fuß passen visuell zum Screenshot. Die Kandidatin hat
 jedoch graue Flanken und 3×7 Pixel; die exakte sichtbare Originalhöhe lässt
 sich aus dem vergrößerten Screenshot nicht zuverlässig ablesen.
 
-Deshalb verwendet dieser Build die in Issue55 erlaubte, ausdrücklich als
-Annäherung deklarierte **1×4-Grafik: drei weiße Pixel plus ein roter unterer
-Pixel**. Graue Flanken werden nicht übernommen. Die Playergrafik bleibt 1×4
-weiß. Dies ist keine Behauptung einer exakten 3×7-Rekonstruktion.
+### Revision nach Benutzerprüfung: Original3×7
 
-VIC-IV: D01C=$3C aktiviert Multicolor ausschließlich für Gegnerkanäle 2..5.
-D025=10 liefert Bitpaar01 (weiß), D026=13 Bitpaar11 (rot). Die Bits liegen im
-zweiten Paar, sodass das frühere X-Padding und der Schussursprung erhalten
-bleiben. SPR640 bleibt gesetzt: ein Multicolor-Paar aus zwei nativen H640-
-Pixeln ergibt einen logischen Pixel. V400 bleibt erhalten: sechs native weiße
-Zeilen plus zwei rote Zeilen ergeben drei plus einen logischen Pixel.
-Playerkanäle 0/1 bleiben monochrom. Sechs Hardware-Sprites insgesamt;
-Schusslimits, Geschwindigkeiten, Zielaufnahme und Flugbahnen bleiben erhalten.
-D025/D026 werden zusätzlich zur bisherigen Sprite-Sicherung gesichert und
-beim Exit wiederhergestellt. D01C wird aus der bereits vorhandenen
-Original-Sicherung wiederhergestellt (Index28 in p_regs). Keine Erweiterung der dichten alten Save-Routine.
+Der Benutzer hat den Levelübergang unter XEMU als perfekt bestätigt und die
+kleine1×4-Projektilannäherung verworfen. Auf seinen Auftrag wird jetzt die
+oben binär ermittelte3×7-Matrix vollständig übernommen, einschließlich grauer
+Flanken. Gegner: rote Spitze unten; Player: Spiegelung an der **horizontalen
+Achse**, also umgekehrte Zeilenfolge und rote Spitze oben. Eine Links-rechts-
+Spiegelung wäre wegen der symmetrischen Matrix optisch identisch gewesen;
+die gewünschte Achse wurde deshalb ausdrücklich geklärt.
 
-Die unveränderte Kollisionsgrafikbox beträgt Player1×4, Gegner3×4. Der Gegner
-hat damit weiterhin ein Pixel horizontalen Kollisionsrand auf jeder Seite
-seines sichtbaren 1×4-Strichs. Es gibt keine heimliche Gameplayänderung.
+`analyze_stage7b2_projectiles.py` erzeugt reproduzierbar128 Bytes
+`projectile_sprites.bin`:64 Player-,64 Gegnerbytes. Originalindex1→MCM01
+(weiß),2→MCM11 (rot),3→MCM10 (grau),0→MCM00 (transparent). Jeder Originalpixel
+entspricht einem nativen2-Pixel-Paar und jede Originalzeile wird zweimal
+codiert: sechs native Pixel Breite und14 native Zeilen ergeben3×7 logische
+Pixel bei unverändertem SPR640/V400. Übrige Spritebits bleiben transparent.
+
+D01C=$3F aktiviert MCM für alle sechs Schusskanäle. D025=10 (weiß$FFF),
+D026=13 (rot$E00); D027..D02C=16 (grau$344, RGB8 51/68/68) in der festen
+Spritepalette Bank2. Index16 war bisher unbenutzt; Player/HUD/Explosionen
+bleiben in ihren bisherigen Einträgen. Die drei Original-RGB-Komponenten
+werden vorab gesichert und beim Exit exakt wiederhergestellt. Auch D025,
+D026 und das ursprüngliche D01C werden wiederhergestellt. Levelpaletten und
+Cycling ändern keine der drei Projektileinträge.
+
+Beide Spritearten verwenden nun `CHARX+2*shotX-3`; damit liegt der mittlere
+Pixel weiterhin auf derselben Schussachse. Der bisherige Player-X-Ursprung
+wird nur für die breitere Grafik um zwei native Pixel angepasst. Logische
+Koordinaten, Y-Ursprung, Geschwindigkeiten, Zielberechnung, Limits und
+Flugbahnen bleiben erhalten. Keine Änderung am bestätigten Übergangscode.
+
+**Trefferboxen bleiben ausdrücklich unverändert:** Player1×4, Gegner3×4.
+Die größere Grafik enthält damit dekorative Pixel außerhalb der bisherigen
+Trefferbox. Diese Revision betrifft die angeforderte Grafik, keine Änderung
+der bisherigen Treffer-/Schussregeln. Die neue Grafik muss noch in XEMU
+bestätigt werden; die vorherige Benutzerbestätigung betrifft den Übergang.
 
 ## Speicherprüfung
 
-Zusätzliche Zustände: $1B90..$1B91 (D025/D026), $1BA0..$1BAB (12 RGB-Bytes),
+Zusätzliche Zustände: $1B90..$1B91 (D025/D026), $1B92..$1B94 (Sprite-Grau), $1BA0..$1BAB (12 RGB-Bytes),
 $1BAC..$1BAD (Palette bereit / D070), $1BC0..$1BCF (Übergang), nach dem bisherigen
 Spritebackup $1B60..$1B88 und vor dem Spielzustand ab $1C00.
 Neue Helfer liegen in geprüften Assemblerlücken: $6650, $80C0, $8180, $87A0,
-$B668, $B6C0 und $BF10; Endgrenzen werden beim Assemblieren geprüft.
+$B668, $B6C0, $BF10 und $BF96; Endgrenzen werden beim Assemblieren geprüft.
 Der erweiterte Sternkern endet vor dem Filter. Der tatsächliche vollständige
 Speicherplan liegt im Release als `memory-map.txt`.
 
@@ -172,7 +188,7 @@ D81 mounten, `LOAD"STAGE7B2",8`, `RUN`; Joystick **Port2**, Menü/F1.
   konzentrische Expansion, dann schwarze Expansion, dann normaler Einflug.
 - HUD bleibt unbeeinträchtigt, Ringe ohne Löcher/Flackern und danach keine
   Reste/Sternsprünge. Sichtprüfung auch während der äußeren Ringzeichnung.
-- Player-Schüsse weiß1×4; Gegner weiß mit roter unterer Spitze. Treffer,
+- Beide Schussarten3×7 weiß/rot/grau: Player rote Spitze oben, Gegner unten. Treffer,
   maximal2/4 Schüsse, Schussrichtung, Explosion, steuerbarer Respawn,
   Game Over/R und Farben in verschiedenen Levelpaletten prüfen.
 - +/- im laufenden Spiel ohne Effekt; X während Beschleunigung, Farbringen,
@@ -198,3 +214,14 @@ Frame129 enthält zusätzlich die unveränderte vollständige Levelinitialisieru
 und ist deshalb separat zu betrachten (996821 Modellzyklen,496 DMA-Jobs).
 Die reale VIC-IV-/DMA-Zeit und eine mögliche sichtbare Rasterartefaktbildung
 sind damit **nicht** gemessen. Sie bleiben Bestandteil der XEMU-Abnahme.
+
+Die Grafikrevision besitzt einen eigenen Testbericht und Buildhash. Frühere
+Hostlogs beziehen sich auf den im jeweiligen Bericht genannten Build; sie
+werden nicht als Prüfung der neuen Spritebitmap ausgegeben.
+
+Aktuelle3×7-Revision:16 Hosttests bestanden (Projektilmatrix/Mirror, Farben
+über100 Level, unveränderte Trefferboxen, Übergang, Kampf, Respawn, R/X und
+Wiederanlauf). Alle48 Builddateien zweier unabhängiger Builds bytegleich.
+Stern-/Ring-/Übergangscode gegenüber dem vom Benutzer bestätigten Commit
+`bd54520` binär unverändert. Details: `projectile-3x7-tests.txt`,
+`test-report.json`, `reproducibility-report.json`.

@@ -175,10 +175,10 @@
     "approximation": "concentric8px bands, spatial outer-to-inner blue/yellow/red/darkblue; screenshot-derived geometry/RGB and3frames/ring approximation"
   },
   "projectiles": {
-    "colour": "white bank2/index10",
+    "colour": "white/red/grey bank2/indices10,13,16",
     "visual_logical_pixels": [
-      1,
-      4
+      3,
+      7
     ],
     "hitboxes_preserved": {
       "player": [
@@ -190,11 +190,26 @@
         4
       ]
     },
-    "native_patterns": [
-      "c0",
-      "10 white /30 red, enemy MCM only"
-    ],
-    "enemy": "3 white pixels +1 red bottom pixel;1x4 approximation, Original3x7 candidate archived"
+    "original_conversion": {
+      "size": [
+        3,
+        7
+      ],
+      "player": "vertical reflection; red tip above",
+      "original_to_VIC_MCM": {
+        "0": 0,
+        "1": 1,
+        "2": 3,
+        "3": 2
+      },
+      "hardware_sprite_RGB_indices": [
+        10,
+        13,
+        16
+      ],
+      "binary_sha256": "3c88a1a8469a223b4ba0fe3152f64d13c44a6c4c1c758cb699a928225ac82f50"
+    },
+    "enemy": "Original3x7 white/red/grey; player reflected vertically"
   },
   "menu": {
     "issue": 47,
@@ -939,7 +954,7 @@
       "name": "STAGE7B2",
       "bytes": 45057,
       "blocks": 178,
-      "sha256": "843bd5081fecf2fd6bda45e10cb13aa669ecb2d1c2e2933160e9bd34b3e3120f"
+      "sha256": "5ab2d3f416872176bc172106b9faa487231b34ee7ccf001be354f43ee4701125"
     },
     {
       "name": "VYLV.DAT",

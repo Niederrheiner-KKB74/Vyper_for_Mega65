@@ -118,11 +118,12 @@
   .label paint_ring=$b6c0
   .label palette_restore=$81ba
   .label red=$87b5
+  .label restore_sprite_palette=$bfb2
   .label timer=$1bc1
-  .label sprite_mode=$80ea
+  .label sprite_mode=$bfce
   .label next_level=$1bc3
   .label palette_ready=$1bac
-  .label restore_shared=$80d7
+  .label restore_shared=$80da
   .label star_visible=$b668
   .label finish=$bf7b
   .label state=$1bc0
@@ -137,16 +138,19 @@
   .label column=$1bc5
   .label count=$b7a5
   .label palette_init=$8180
+  .label save_sprite_palette=$bf96
   .label tick=$bf10
   .label fill=$b7a2
   .label done=$bf65
   .label accel=$bf66
   .label target=$b7aa
   .label colour=$1bc7
+  .label sprite_map=$80f0
   .label depth=$1bc6
   .label blue=$87bd
   .label cell_depth=$b780
   .label covered=$1bc8
+  .label saved_sprite_palette=$1b92
   .label begin=$6662
   .label saved_palette=$1ba0
   .label colours=$bf92
@@ -796,7 +800,7 @@
 .namespace shots {
   .label p_fire_pressed=$831d
   .label p_engine_init=$8234
-  .label p_publish_next=$857d
+  .label p_publish_next=$8579
   .label p_test_enabled=$1b4c
   .label p_disable=$8217
   .label p_enemy_fire=$838c
@@ -809,7 +813,7 @@
   .label p_random_hi=$1b4a
   .label p_target_x=$1b36
   .label p_save_registers=$9b70
-  .label p_no_ymsb=$856d
+  .label p_no_ymsb=$8569
   .label p_denominator=$1b5b
   .label p_map_type=$821d
   .label p_extra_end=$9d6f {
@@ -818,7 +822,7 @@
   .label p_get_key=$8222
   .label p_remainder=$1b5e
   .label p_deactivate=$849a
-  .label p_no_xbit9=$855d
+  .label p_no_xbit9=$8559
   .label p_ypos=$1b18
   .label p_publish=$84a0
   .label p_ymsb=$1b53
@@ -837,11 +841,11 @@
   .label p_fire_latch=$1b48
   .label p_test_attack=$835f
   .label p_update_slot=$8439
-  .label p_x_offset_done=$850c
+  .label p_x_offset_done=$8508
   .label p_xfrac=$1b06
   .label p_enabled_mask=$1b50
   .label p_attack_tick=$1b4d
-  .label p_masks=$85a4
+  .label p_masks=$85a0
   .label p_publish_active=$84bb
   .label p_init_pointer_low=$82c8
   .label p_enemy_find=$83a5
@@ -850,7 +854,7 @@
   .label p_enemy_ready=$8395
   .label p_mapping=$8910
   .label p_active=$1b00
-  .label p_core_end=$85aa {
+  .label p_core_end=$85a6 {
   }
   .label p_ybit9=$1b54
   .label p_seed_ok=$826f
@@ -863,9 +867,9 @@
   .label p_enemy_attacking=$839b
   .label p_mapping_confirmed=$8936
   .label p_random_done=$838b
-  .label p_publish_done=$8585
+  .label p_publish_done=$8581
   .label p_enemy_done=$8436
-  .label p_no_xmsb=$854d
+  .label p_no_xmsb=$8549
   .label p_subtract=$9b2c
   .label p_divide=$9b13
   .label p_vx=$1b24

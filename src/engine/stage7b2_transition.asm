@@ -391,6 +391,7 @@ blue: .byte (FX_RGB_BLUE&15)*17,(FX_RGB_YELLOW&15)*17,(FX_RGB_RED&15)*17,(FX_RGB
 *=$80c0 "Stage7b2 shared multicolour sprite register helpers"
 .namespace transitionfx {
 save_shared:
+    jsr save_sprite_palette
     lda #0
     sta palette_ready
     sta state // Filter must be idle before stars.init, even with stale low RAM.
@@ -400,6 +401,7 @@ save_shared:
     sta saved_shared+1
     jmp shots.p_save_registers
 restore_shared:
+    jsr restore_sprite_palette
     lda shots.p_saved_registers+28 // Original D01C, index in unchanged p_regs.
     sta $d01c
     lda saved_shared
@@ -407,14 +409,59 @@ restore_shared:
     lda saved_shared+1
     sta $d026
     rts
+sprite_map:
+    lda $d070
+    sta table
+    and #$3f
+    ora #$80
+    sta $d070
+    rts
+.if (*>$8100) { .error "Sprite helpers overlap original glyphs" }
+}
+*=$bf96 "Stage7b2 Original projectile palette and multicolour mode"
+.namespace transitionfx {
+.label saved_sprite_palette=$1b92
+save_sprite_palette:
+    php
+    sei
+    jsr sprite_map
+    lda $d110
+    sta saved_sprite_palette
+    lda $d210
+    sta saved_sprite_palette+1
+    lda $d310
+    sta saved_sprite_palette+2
+    jsr unmap
+    plp
+    rts
+restore_sprite_palette:
+    php
+    sei
+    jsr sprite_map
+    lda saved_sprite_palette
+    sta $d110
+    lda saved_sprite_palette+1
+    sta $d210
+    lda saved_sprite_palette+2
+    sta $d310
+    jsr unmap
+    plp
+    rts
 sprite_mode:
-    lda #$3c // Enemy channels2..5 only; player0..1 remain monochrome.
+    lda #$3f // All six channels now MCM3x7; codes01 white,11 red,10 grey.
     sta $d01c
     lda #10
     sta $d025
-    lda #13 // Existing fixed red in bank2, not enemy cycling palette.
+    lda #13
     sta $d026
-    lda #0 // Original p_init continues zeroing other registers.
+    jsr sprite_map
+    lda #$33
+    sta $d110
+    lda #$44
+    sta $d210
+    sta $d310
+    jsr unmap
+    lda #0
     rts
-.if (*>$8100) { .error "Sprite helpers overlap original glyphs" }
+.if (*>$c000) { .error "Projectile palette helpers overlap original graphics" }
 }

@@ -13,10 +13,10 @@ def package():
     files['README.txt']=(
         'Stage7b2 / Issue55. TEST BUILD, NOT Stable.\n'
         'Mount releases/stage_7b2/VYPER_STAGE7B2.d81; LOAD"STAGE7B2",8 then RUN.\n'
-        'Original title/loader/menu first; F1 starts the full game; white player1x4, white/red enemy1x4 shots; LEVEL CLEAR fire starts transition.\n'
+        'Original title/loader/menu first; F1 starts the full game; Original3x7 shots, player red tip up/enemy down; LEVEL CLEAR fire starts transition.\n'
         'Joystick PORT2. Blue 1px/8 frames, red /4, yellow /2; accepted Stage7a1 parameters.\n'
         'No star test keys or profiler. X BASIC, R after GAME OVER, +/- levels.\n'
-        'No XEMU test claimed; please confirm white shots, centre-out colour/black wipe and BASIC/RUN tests.\n'
+        'No XEMU test claimed; please confirm Original3x7 shots, centre-out colour/black wipe and BASIC/RUN tests.\n'
         'Full repository with original assets and protected stable tags required to rebuild.\n'
         'Build, measurements and test limits: docs/stage7b2_transition_and_projectiles.md.\n'
     ).encode()

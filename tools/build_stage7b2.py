@@ -33,6 +33,9 @@ def build(jar,output):
         w=Path(t);ti,title=TITLE.build(w);menu=MENU.convert(w)
         import convert_stage7a2_stars as STAR
         star=STAR.convert(w)
+        import analyze_stage7b2_projectiles as SHOT
+        shot=SHOT.analyze(w)
+        if (w/'projectile_sprites.bin').read_bytes()!=(ROOT/'assets/stage7b2/projectile_sprites.bin').read_bytes():raise ValueError('Projectile conversion differs')
         for name,payload in BASE.baseline_files().items():
             if name.startswith('vyper_original_animation_assets_v010/'):
                 p=w/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(payload)
@@ -73,9 +76,9 @@ def build(jar,output):
         entries=[('STAGE7B2',prg,0x82)]+[(n,b,0x81) for n,b in data.items()]
         disk=bytearray(BASE.build_disk(entries));head=39*40*256;disk[head+4:head+20]=b'VYPER STAGE7B2'.ljust(16,b'\xa0');disk=bytes(disk)
         files=BASE.verify_disk(disk,entries)
-        report={'stage':'7b2','issue':55,'stable':False,'starfield':star,'stable_bases':STABLES,'starfield_source_commit':'ed22f0d4e4ca0bd8f5ff6ebaa5892135ce9bdd9a','runtime_star_debug':False,'speed_API':'mode0 normal8/4/2; mode1 eightfold1/2/4 pixels per frame','transition':{'accelerated_frames':50,'ring_frames':3,'rings':13,'fill_frames':39,'black_frames':39,'initialization_frames':1,'bitmap':[0x18000,0x1ddbf],'approximation':'concentric8px bands, spatial outer-to-inner blue/yellow/red/darkblue; screenshot-derived geometry/RGB and3frames/ring approximation'},'projectiles':{'colour':'white bank2/index10','visual_logical_pixels':[1,4],'hitboxes_preserved':{'player':[1,4],'enemy':[3,4]},'native_patterns':['c0','10 white /30 red, enemy MCM only'],'enemy':'3 white pixels +1 red bottom pixel;1x4 approximation, Original3x7 candidate archived'},'menu':menu,'title':title,'menu_DAT':{'bytes':len(mn),'sum16':sum(mn)&65535,'header':header.hex(),'offsets':constants},'files':files,'xemu':'NOT_RUN; user acceptance required','DMA':jobs}
+        report={'stage':'7b2','issue':55,'stable':False,'starfield':star,'stable_bases':STABLES,'starfield_source_commit':'ed22f0d4e4ca0bd8f5ff6ebaa5892135ce9bdd9a','runtime_star_debug':False,'speed_API':'mode0 normal8/4/2; mode1 eightfold1/2/4 pixels per frame','transition':{'accelerated_frames':50,'ring_frames':3,'rings':13,'fill_frames':39,'black_frames':39,'initialization_frames':1,'bitmap':[0x18000,0x1ddbf],'approximation':'concentric8px bands, spatial outer-to-inner blue/yellow/red/darkblue; screenshot-derived geometry/RGB and3frames/ring approximation'},'projectiles':{'colour':'white/red/grey bank2/indices10,13,16','visual_logical_pixels':[3,7],'hitboxes_preserved':{'player':[1,4],'enemy':[3,4]},'original_conversion':shot['implementation'],'enemy':'Original3x7 white/red/grey; player reflected vertically'},'menu':menu,'title':title,'menu_DAT':{'bytes':len(mn),'sum16':sum(mn)&65535,'header':header.hex(),'offsets':constants},'files':files,'xemu':'NOT_RUN; user acceptance required','DMA':jobs}
         out={'STAGE7B2.PRG':prg,'STAGE7B2.sym':(w/'stage7b2.sym').read_bytes(),'MENU_OVERLAY.PRG':overlay,'MENU_OVERLAY.sym':(w/'stage7b2_menu.sym').read_bytes(),'VYPER_STAGE7B2.d81':disk,**data,'build-report.json':(json.dumps(report,indent=2)+'\n').encode(),'memory-map.txt':(asm[asm.index('Memory Map'):].split('Writing Symbol file')[0].rstrip()+'\n').encode()}
-        for name in SOURCES+['stage7b2_menu.asm','menu_layout.inc','menu_dma.inc','menu_header.bin','menu_palette.inc','menu_assets.inc','menu_fcm.bin','menu_screens.bin','menu_font.bin','digit_background.bin','original_menu_indices.bin','title_layout.inc','title_screen.bin','title_fcm_unique.bin','color_cycle.inc','stars_layout.inc']:out[name]=(w/name).read_bytes()
+        for name in SOURCES+['stage7b2_menu.asm','menu_layout.inc','menu_dma.inc','menu_header.bin','menu_palette.inc','menu_assets.inc','menu_fcm.bin','menu_screens.bin','menu_font.bin','digit_background.bin','original_menu_indices.bin','title_layout.inc','title_screen.bin','title_fcm_unique.bin','color_cycle.inc','stars_layout.inc','projectile_sprites.bin']:out[name]=(w/name).read_bytes()
         out['SHA256SUMS.txt']=''.join(f'{BASE.sha(b)}  {n}\n' for n,b in sorted(out.items())).encode()
         output.mkdir(parents=True,exist_ok=True)
         for name,b in out.items():(output/name).write_bytes(b)

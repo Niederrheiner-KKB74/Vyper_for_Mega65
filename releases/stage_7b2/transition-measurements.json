@@ -6,7 +6,7 @@
     "3": 39,
     "4": 1
   },
-  "max_CPU_model_cycles": 996821,
+  "max_CPU_model_cycles": 996885,
   "max_DMA_jobs": 496,
   "CPU_cycles_by_frame": [
     22385,
@@ -137,7 +137,7 @@
     15701,
     15700,
     103072,
-    996821
+    996885
   ],
   "DMA_jobs_by_frame": [
     192,

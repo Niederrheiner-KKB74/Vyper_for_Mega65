@@ -1909,8 +1909,25 @@
   "limitations": [
     "User screenshots archived in assets/stage7b2/reference; shaft/red tip visually match candidate.",
     "Snapshot is start-screen state; saved POS/CTL fields are zero, not an observed active gameplay projectile.",
-    "Rows decoded at saved pointer are a strong matching candidate, not a proven active sprite descriptor/start address.",
-    "Original candidate has grey flanks and extent3x7; do not silently replace1x4 gameplay geometry or hitboxes.",
-    "Final rendering is documented1x4 approximation:3 white+1 red; grey flanks omitted, hitboxes unchanged."
-  ]
+    "Rows decoded at saved pointer are a strong matching candidate, not a proven active sprite descriptor/start address."
+  ],
+  "implementation": {
+    "size": [
+      3,
+      7
+    ],
+    "player": "vertical reflection; red tip above",
+    "original_to_VIC_MCM": {
+      "0": 0,
+      "1": 1,
+      "2": 3,
+      "3": 2
+    },
+    "hardware_sprite_RGB_indices": [
+      10,
+      13,
+      16
+    ],
+    "binary_sha256": "3c88a1a8469a223b4ba0fe3152f64d13c44a6c4c1c758cb699a928225ac82f50"
+  }
 }

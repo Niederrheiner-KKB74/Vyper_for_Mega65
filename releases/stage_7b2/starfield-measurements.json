@@ -55,5 +55,6 @@
   "runtime_profiler": false,
   "XEMU": "NOT_RUN; user acceptance required",
   "final_release_PRG_sha256": "843bd5081fecf2fd6bda45e10cb13aa669ecb2d1c2e2933160e9bd34b3e3120f",
-  "applicability": "Measured before final D01C restore; starfield core/filter/data byte-identical in final release."
+  "applicability": "Starfield core/filter/address data byte-identical to prior measured build; separate current3x7 tests passed.",
+  "current_release_PRG_sha256": "5ab2d3f416872176bc172106b9faa487231b34ee7ccf001be354f43ee4701125"
 }

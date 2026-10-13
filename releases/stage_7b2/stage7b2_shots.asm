@@ -150,10 +150,10 @@ p_init_pointer_low:
     sta p_pointers+13
     sta p_pointers+14
     sta p_pointers+15
-    lda #10 // existing HUD white, sprite palette bank 2
+    lda #16 // Original projectile grey, fixed sprite bank2
     sta $d027
     sta $d028
-    lda #10 // invariant HUD white in sprite bank2, same as player
+    lda #16 // Same grey for enemy multicolour sprites
     sta $d029
     sta $d02a
     sta $d02b
@@ -377,7 +377,7 @@ p_publish_active:
     lda p_enabled_mask
     ora p_masks,x
     sta p_enabled_mask
-    // Native sprite X = CHARX + logicalX*2 -1 (player), -3 (enemy).
+    // Native sprite X = CHARX + logicalX*2 -3, centred3px MCM for both.
     lda p_xpos,x
     asl
     sta p_sx
@@ -399,8 +399,7 @@ p_publish_active:
     lda p_sx+1
     sbc #0
     sta p_sx+1
-    cpx #2
-    bcc p_x_offset_done
+    // Both3px-wide graphics use the former enemy-centred origin.
     lda p_sx
     sec
     sbc #2

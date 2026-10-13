@@ -550,19 +550,18 @@ class TransitionTests(unittest.TestCase):
         return bytes((raw[((y//8)*15+x//16)*64+(y%8)*8+(x%16)//2]>>(4 if x%2==0 else 0))&15 for y in range(200) for x in range(240))
     def test_actual_sprite_pixels_white_and_unchanged_hitboxes(self):
         m=self.machine();T=OLD.OLD.T
-        self.assertEqual(m.memory.data[0xd01c],0x3c)
+        self.assertEqual(m.memory.data[0xd01c],0x3f)
         self.assertEqual((m.memory.data[0xd025],m.memory.data[0xd026]),(10,13))
         for slot in range(6):
             g=int.from_bytes(m.memory.data[0x8900+slot*2:0x8902+slot*2],'little')*64
             raw=m.memory.data[g:g+64]
-            if slot<2:
-                pixels={(x,y) for y in range(21) for x in range(24) if raw[y*3+x//8]&(128>>(x%8))}
-                self.assertEqual(pixels,{(x,y) for x in range(2) for y in range(8)})
-            else:
-                # XEMU vic4_draw_sprite_row_multicolor:01=shared1,11=shared2,
-                # one pair=two nativeH640 pixels=one logical pixel.
-                matrix={(x,y):(raw[y*3+x//4]>>(6-2*(x%4)))&3 for y in range(21) for x in range(12)}
-                self.assertEqual({k:v for k,v in matrix.items() if v},{(1,y):1 if y<6 else 3 for y in range(8)})
+            matrix={(x,y):(raw[y*3+x//4]>>(6-2*(x%4)))&3 for y in range(21) for x in range(12)}
+            original=[[0,1,0],[0,1,0],[0,1,0],[3,1,3],[2,1,2],[2,2,2],[0,2,0]]
+            rows=list(reversed(original)) if slot<2 else original
+            code={0:0,1:1,2:3,3:2}
+            expected={(x,y):code[rows[y//2][x]] for y in range(14) for x in range(3) if rows[y//2][x]}
+            self.assertEqual({k:v for k,v in matrix.items() if v},expected)
+            self.assertEqual(m.memory.data[0xd027+slot],16)
             T.setv(m,'p_xpos',100,slot);T.setv(m,'p_ypos',60,slot)
             m.cpu.x=slot;m.call('c_shot_box')
             self.assertEqual((get(m,'c_ax'),get(m,'c_ar'),get(m,'c_ay'),get(m,'c_ab')),(100 if slot<2 else 99,101 if slot<2 else 102,60,64))
@@ -570,9 +569,10 @@ class TransitionTests(unittest.TestCase):
         self.assertEqual((ROOT/'src/engine/stage7b2_game.asm').read_text(),old)
         for level in range(1,101):
             m.call('transition',level)
-            self.assertEqual(m.memory.data[0xd01c],0x3c)
+            self.assertEqual(m.memory.data[0xd01c],0x3f)
             self.assertEqual(tuple(m.memory.banks[2][c][10] for c in range(3)),(255,255,255))
             self.assertEqual(tuple(m.memory.banks[2][c][13] for c in range(3)),(238,0,0))
+            self.assertEqual(tuple(m.memory.banks[2][c][16] for c in range(3)),(51,68,68))
     def test_fast_mode_modulo_rates_exact_and_same_DMA_peak(self):
         m=self.machine();before=bytes(m.memory.data[S['ys']:S['ys']+48])
         scall(m,'set_speed_mode',1);self.assertFalse(m.cpu.p&m.cpu.CARRY)
@@ -669,5 +669,6 @@ class TransitionTests(unittest.TestCase):
         self.assertEqual(b''.join(bytes(m.memory.banks[1][c][52:56]) for c in range(3)),saved)
         self.assertEqual(bytes(m.memory.data[0xd025:0xd027]),shared)
         self.assertEqual(m.memory.data[0xd01c],0x83)
+        self.assertEqual(bytes(m.memory.data[FX['saved_sprite_palette']:FX['saved_sprite_palette']+3]),bytes(m.memory.banks[2][c][16] for c in range(3)))
 
 if __name__=='__main__':unittest.main()

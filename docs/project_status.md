@@ -690,3 +690,11 @@ werden beim Build gegen ihre Git-Referenzen geprüft und bleiben unverändert.
 Automatik:39 vollständige Hostregressionen bestanden; nach finaler D01C-Restore-
 Ergänzung acht gezielte Wiederprüfungen bestanden.47 finale Builddateien plus
 Manifest aus zwei unabhängigen Builds bytegleich. Keine eigene XEMU-Abnahme.
+
+### Stage7b2 — Projektilrevision nach XEMU-Rückmeldung
+
+Benutzer bestätigt den konzentrischen Levelübergang als perfekt. Grafikgröße
+auf Original3×7 erweitert: Gegner Spitze unten, Player an horizontaler Achse
+gespiegelt (Spitze oben), inklusive Originalgrau. Alle sechs Kanäle MCM, feste
+Bank2-Einträge10/13/16. Grau16 zusätzlich gesichert/restauriert. Trefferboxen,
+Geschwindigkeiten und bestätigter Übergang erhalten. Noch kein Stable-Tag.

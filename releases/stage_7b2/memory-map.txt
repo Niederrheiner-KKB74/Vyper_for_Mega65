@@ -44,10 +44,10 @@ Default-segment:
   $7a00-$7ee1 HUD static screen and row lookup
   $7ee2-$7f71 Stage 4b signed collision boxes
   $8000-$80bf Unnamed
-  $80c0-$80fb Stage7b2 shared multicolour sprite register helpers
+  $80c0-$80fd Stage7b2 shared multicolour sprite register helpers
   $8100-$817f Unnamed
   $8180-$81e1 Stage7b2 isolated transition palette
-  $8200-$85a9 Stage 3b-5b projectile core
+  $8200-$85a5 Stage 3b-5b projectile core
   $85b0-$85fb Stage 3b-5c motion and frame coordinator
   $8660-$874a Stage 4a isolated movement
   $874b-$8796 Stage 4b optional legacy attack demo
@@ -56,7 +56,7 @@ Default-segment:
   $8840-$8878 Stage 3b-5c initial path phases and extra thin letters
   $8900-$895b Projectile pointers and mapping
   $895c-$89f1 Stage 6b1 enemy fire selection
-  $8a00-$8a7f Monochrome projectile graphics
+  $8a00-$8a7f Original3x7 projectile graphics; player red tip above
   $8b00-$8e0d Stage 3b-5c software collisions
   $8e40-$8faf Stage 4a signed clip and NCM crop
   $9000-$97ff Unnamed
@@ -72,6 +72,7 @@ Default-segment:
   $b6c0-$b7ae Stage7b2 bounded NCM annulus painter
   $b800-$bf07 Unnamed
   $bf10-$bf95 Stage7b2 concentric transition FSM
+  $bf96-$bff2 Stage7b2 Original projectile palette and multicolour mode
   $c000-$c0bf Unnamed
   $c100-$c7ff Original explosion frames 0-6, with transparent guards
   $c800-$c8ff Unnamed

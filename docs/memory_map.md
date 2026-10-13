@@ -520,3 +520,10 @@ Bereiche siehe Release `memory-map.txt`. Laufzeitscratch `$5640–$56BF`,
 `$6800`, `$6900`, Levelmetadaten `$6Axx/$6F80`, DOS und private Pixie-Puffer
 werden nicht als freier Code benutzt. Kein zusätzlicher Solidglyph-Pool.
 Details: [Stage7b2](stage7b2_transition_and_projectiles.md).
+
+### Stage7b2 — Original3×7-Projektile
+
+Neue3-Byte-Sicherung Bank2/16 bei `$1B92–$1B94`; alle sechs Hardware-Sprites
+MCM, Spritemapping/Helfer weiterhin `$80C0–$80FF`. Zusätzliche Spritepaletten-
+Save/Restore-/Initialisierung `$BF96–$BFF2`, nach unverändertem Übergangs-FSM
+und vor `$C000`. Die beiden64-Byte-Bitmaps bleiben `$8A00–$8A7F`.
