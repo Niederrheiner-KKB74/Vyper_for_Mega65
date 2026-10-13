@@ -458,3 +458,25 @@ Vollständige Karte, Phasenabgrenzung, DMA-/Timingnachweise und offene XEMU-Abna
 Benutzerabnahme unter XEMU und Merge-Freigabe am 13.10.2026, keine erkennbaren
 Probleme. Referenz `stage7a1-stable`, Programmcommit `ed22f0d4e4ca0bd8f5ff6ebaa5892135ce9bdd9a`.
 Keine Code-, Speicher-, PRG- oder D81-Änderung durch die Stable-Markierung.
+
+## Stage7a2 – vollständige Engine mit Sternen, nicht Stable
+
+Stage6b1-Engine plus bestätigter Stage7a1-NCM-Hintergrund im separaten Branch
+`stage7a2`. Gleiche24-KB-Fläche `$18000–$1DDBF`, Palette Bank1/48–51,
+Y-State `$4E10–$4E3F`, Binder `$4E40–$4EF7`, Tabellen `$CD80–$CFD2`.
+Sternkern jetzt `$B480–$B640`; kleiner durch entfernte Testbedienung/Profiling.
+State `$CFD8–$CFFF`: aktiv `$CFD8`, Normalmodus `$CFD9`, Phase `$CFDA`;
+ehemalige Raster-/Messbytes ungenutzt. `$6800` bleibt temporärer DMA-Puffer.
+
+Keine neuen RRB-Slots/Sprites, kein neuer Grafikmodus und keine Änderung der
+DOS-/Loader-/DAT-/Pixiepuffergrenzen. HUD-Neuaufbau überspringt bei aktiven
+Sternen den Schwarzprefix, bindet anschließend unveränderte Sternzellen.
+Level/R setzt weder Bitmap noch Phase zurück. Normalmodus-API vorhanden,
+keine tatsächliche Beschleunigung. Vollständige Verträge und Messnachweise:
+[Stage7a2](stage7a2_starfield_integration.md).
+
+### Stage7a2 Stable – unveränderte Speicherkarte
+
+XEMU-Benutzerabnahme und Merge-Freigabe am 13.10.2026. Referenz
+`stage7a2-stable`, Programmcommit `1e40e3ba1278c9836cd484739f36de8afe839585`.
+Keine Code-, Speicher-, PRG- oder D81-Änderung durch die Stable-Markierung.

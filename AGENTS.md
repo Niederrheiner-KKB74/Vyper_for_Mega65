@@ -38,3 +38,11 @@
     `ed22f0d4e4ca0bd8f5ff6ebaa5892135ce9bdd9a`.
     `src/engine/stage7a1*.asm` und `releases/stage_7a1/` unverändert schützen.
     Eigenständiger Sternentest; spätere Spielintegration separat entwickeln.
+
+16. **Stage7a2 Stable:** Vom Benutzer am 13.10.2026 unter XEMU getestet und
+    bestätigt, Merge ausdrücklich freigegeben. Referenz `stage7a2-stable`,
+    Branch `stage7a2`, getesteter Programmcommit
+    `1e40e3ba1278c9836cd484739f36de8afe839585`.
+    `src/engine/stage7a2*.asm` und `releases/stage_7a2/` unverändert schützen.
+    Vollständige Spielengine mit kontinuierlichem Sternenhintergrund; neue
+    Entwicklungsstages separat anlegen.

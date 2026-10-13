@@ -1,0 +1,12 @@
+.const CC_PALETTE_INDEX=2
+.const CC_START_WORD=$00ec
+.const CC_START_PHASE=2
+.const CC_START_LEFT=1
+.const CC_SEGMENT_STEPS=7
+.const CC_PHASES=6
+.const CC_DELTA_0=$0020
+.const CC_DELTA_1=$fe00
+.const CC_DELTA_2=$0002
+.const CC_DELTA_3=$ffe0
+.const CC_DELTA_4=$0200
+.const CC_DELTA_5=$fffe
