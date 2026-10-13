@@ -698,3 +698,22 @@ auf Original3×7 erweitert: Gegner Spitze unten, Player an horizontaler Achse
 gespiegelt (Spitze oben), inklusive Originalgrau. Alle sechs Kanäle MCM, feste
 Bank2-Einträge10/13/16. Grau16 zusätzlich gesichert/restauriert. Trefferboxen,
 Geschwindigkeiten und bestätigter Übergang erhalten. Noch kein Stable-Tag.
+
+## Stage7b3 — Testbuild für Issue57
+
+Branch `stage7b3`, feste unveränderte Referenz Stage7b2 `ec7a512`.
+Bestätigter Codebefund: einzelne zufällige Auswahl aus0..31 und Timerreset bei
+nicht verfügbarem Slot erzeugten den Restgegner-Abfall. Neue kompakte Liste
+lebender FORMATION-Gegner, power-of-two-Rang mit Rejection ohne neue Pause;
+Angriffsintervall30 Frames, maximal3 ATTACK. Schüsse aus berechtigter ENTRY/
+ATTACK-Liste, Cooldown6 und Wahrscheinlichkeit1/2; sechs Gegner- plus zwei
+Player-Schüsse auf allen acht Hardware-Sprites. Ursprüngliche3×7-Grafiken
+bleiben gemäß expliziter Benutzerklärung erhalten (Player rote Spitze oben).
+
+Messvergleich:3.000 Hostticks, SeedC3A5, verbleibend22/10/5/2/1. Bei stets
+verfügbarer Formation alt35/15/10/4/3, neu99/98/98/100/100 Angriffe. Echte
+Kurven/Rückkehr und Schussereignisse separat dokumentiert.42 Regressionen
+bestanden; nach finalem8-Sprite-BASIC-Restore vier gezielte Prüfungen bestanden.
+49 finale Builddateien plus Manifest bytegleich reproduziert. Kein eigener
+XEMU-Test, kein Stable-Tag oder Merge. Quellen/PRG/D81/ZIP unter
+`releases/stage_7b3/`; [Prüfbericht](stage7b3_attack_and_shot_frequency.md).

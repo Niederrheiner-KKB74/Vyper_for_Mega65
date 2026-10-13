@@ -527,3 +527,19 @@ Neue3-Byte-Sicherung Bank2/16 bei `$1B92–$1B94`; alle sechs Hardware-Sprites
 MCM, Spritemapping/Helfer weiterhin `$80C0–$80FF`. Zusätzliche Spritepaletten-
 Save/Restore-/Initialisierung `$BF96–$BFF2`, nach unverändertem Übergangs-FSM
 und vor `$C000`. Die beiden64-Byte-Bitmaps bleiben `$8A00–$8A7F`.
+
+## Stage7b3 — acht Projektilslots und verfügbare Gegnerliste
+
+Neue120-Byte-Projektilverwaltung `$1F00–$1F77`, zwölf8-Byte-Arrays plus24
+Skalarbytes. Eligibility-Liste22 Einträge `$1F80–$1F95`, Count/Mask/Scan/Kind
+`$1F96–$1F99`, hinter Entry bis `$1EF3` in der bisherigen Engine-Reserve und
+vor BASIC/Programm `$2001`. Assemblerguard trennt State und Liste.
+Registersicherung43 Bytes `$1B60–$1B8A` enthält nun auch D02D/D02E.
+Tabellenbasierte Snapshot-/Restore-Routine ab `$9B70` schafft freien Raum;
+Eligibility/Sampling und IRQ-geschützter8-Sprite-Exit bei `$9C00`, Endguard
+`$9D70` schützt den vorhandenen RRB-Renderer. Spritepointer weiterhin
+`$8900–$890F`, unveränderte128 Grafikbytes `$8A00–$8A7F`.
+Alle8 Spritebits, MCM/V400=$FF; fixed paletteBank2/10/13/16 unverändert.
+DATs, DOS, Privatepixies, Screen-/Color-RAM und Sternbitmap unverändert.
+Verbindliche Grenzen: Release `memory-map.txt` und
+[Stage7b3](stage7b3_attack_and_shot_frequency.md).

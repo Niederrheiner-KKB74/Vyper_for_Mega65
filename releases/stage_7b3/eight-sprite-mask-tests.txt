@@ -1,0 +1,6 @@
+test_eight_channel_X_Y_MSB_and_bit9_masks (test_stage7b3.ProjectileCapacityTests.test_eight_channel_X_Y_MSB_and_bit9_masks) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 23.073s
+
+OK
