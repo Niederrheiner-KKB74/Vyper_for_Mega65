@@ -634,3 +634,25 @@ Referenz `stage7a2-stable`, Branch `stage7a2`, getesteter Programmcommit
 Release `releases/stage_7a2/` unverändert. PR52 wird nach main gemergt.
 Alle bisherigen Stable-Referenzen bleiben erhalten. Kein eigener XEMU-Test
 oder neuer Hardware-Rastermesswert behauptet; Abnahme stammt vom Benutzer.
+
+## Stage7b1 – Levelübergang und weiße Projektile, 13.10.2026
+
+Issue53, Branch `stage7b1`, **nicht Stable; XEMU-Abnahme ausstehend**.
+Basis `stage7a2-stable`; dessen PR52-Merge verifiziert. Historische Stages
+bleiben unverändert. Alle sechs Hardware-Projektilkanäle weiß und1×4 logische
+Pixel, Ursprünge/Flugbahnen/Zielberechnung und Trefferboxen unverändert
+(Player1×4, Gegner3×4; Unterschied ausdrücklich dokumentiert).
+
+LEVEL CLEAR verlangt weiterhin neuen Feuerdruck. Danach FSM mit50 Frames
+Sternbeschleunigung,24 Farb- und24 Schwarzframes von Mitte nach außen, anschließend
+Levelinitialisierung. Mode1 der Stern-API beschleunigt achtfach bei unveränderten
+Farben/Parallax. Rechteckgeometrie/Takt/Faktor8 sind dokumentierte Annäherungen.
+Overlay nutzt bestehende Prefix-Zellen und vier Solidglyphen, kein zusätzlicher
+RRB-Slot/Sprite. HUD/Palette/Cycling geschützt; X in allen Phasen, +/- direkt
+im laufenden Spiel, Score/Leben/Highscore und100→1 erhalten.
+
+39 Hosttests bestanden,48 Dateien aus zwei Builds bytegleich; Weiß über alle100
+Levelpaletten, Hitbox-/Kampfregression, Overlaydeckung,99 Ticks und Abbruch/RUN
+geprüft. Der Laufzeit-Grafikpuffer `$5640–$56BF` bleibt frei; Overlayhelper bei
+`$B760`, Solidglyphen `$1DE00–$1DEFF`. Vollständiges Release `releases/stage_7b1/`.
+Details und XEMU-Prüfplan: [Stage7b1](stage7b1_level_transition.md).

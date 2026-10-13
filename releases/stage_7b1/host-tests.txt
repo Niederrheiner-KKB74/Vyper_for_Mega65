@@ -1,0 +1,46 @@
+test_KERNAL_menu_SEQ_has_original_romc_and_enabled_IRQ (test_stage7b1.MenuTests.test_KERNAL_menu_SEQ_has_original_romc_and_enabled_IRQ) ... ok
+test_all_original_animations_and_cycle (test_stage7b1.MenuTests.test_all_original_animations_and_cycle) ... ok
+test_full_cpu_clock_in_title_menu_game_and_basic_restore (test_stage7b1.MenuTests.test_full_cpu_clock_in_title_menu_game_and_basic_restore) ... ok
+test_full_loader_title_and_exact_menu_pixels (test_stage7b1.MenuTests.test_full_loader_title_and_exact_menu_pixels) ... ok
+test_level_nav_palette_cycle_and_exit_run (test_stage7b1.MenuTests.test_level_nav_palette_cycle_and_exit_run) ... ok
+test_menu_exit_restores_basic_and_engine (test_stage7b1.MenuTests.test_menu_exit_restores_basic_and_engine) ... ok
+test_menu_wrap_keys_joystick_repeat_and_fire (test_stage7b1.MenuTests.test_menu_wrap_keys_joystick_repeat_and_fire) ... ok
+test_placeholders_preserve_selection_and_level (test_stage7b1.MenuTests.test_placeholders_preserve_selection_and_level) ... ok
+test_release_guard_on_fire_confirm (test_stage7b1.MenuTests.test_release_guard_on_fire_confirm) ... ok
+test_selected_levels_handoff_fonts_and_static_palette (test_stage7b1.MenuTests.test_selected_levels_handoff_fonts_and_static_palette) ... ok
+test_1600_frames_exact_rates_wrap_and_dma_bounds (test_stage7b1.StarTests.test_1600_frames_exact_rates_wrap_and_dma_bounds) ... ok
+test_actual_host_cost_without_runtime_profiler (test_stage7b1.StarTests.test_actual_host_cost_without_runtime_profiler) ... ok
+test_all100_transitions_and_R_never_blank_or_reset_background (test_stage7b1.StarTests.test_all100_transitions_and_R_never_blank_or_reset_background) ... ok
+test_all_edges_adjacent_nibbles (test_stage7b1.StarTests.test_all_edges_adjacent_nibbles) ... ok
+test_background_binding_buffer_and_exact_colours (test_stage7b1.StarTests.test_background_binding_buffer_and_exact_colours) ... ok
+test_continuous_level_clear_press_release_and_100_wrap (test_stage7b1.StarTests.test_continuous_level_clear_press_release_and_100_wrap) ... ok
+test_disk_and_original_assets (test_stage7b1.StarTests.test_disk_and_original_assets) ... ok
+test_exact_accepted_star_parameters_and_six_global_API_labels (test_stage7b1.StarTests.test_exact_accepted_star_parameters_and_six_global_API_labels) ... ok
+test_idempotent_init_reserved_speed_API_reset_and_no_test_keys (test_stage7b1.StarTests.test_idempotent_init_reserved_speed_API_reset_and_no_test_keys) ... ok
+test_level_changes_keep_background_and_exit_restores_palette (test_stage7b1.StarTests.test_level_changes_keep_background_and_exit_restores_palette) ... ok
+test_prefix_hud_slots_and_palettes_unmodified_during_updates (test_stage7b1.StarTests.test_prefix_hud_slots_and_palettes_unmodified_during_updates) ... ok
+test_selected_F1_levels_have_no_stars_until_game_and_repeat_start (test_stage7b1.StarTests.test_selected_F1_levels_have_no_stars_until_game_and_repeat_start) ... ok
+test_transparency_clipping_all_four_edges_and_no_trails (test_stage7b1.StarTests.test_transparency_clipping_all_four_edges_and_no_trails) ... ok
+test_X_every_phase_restores_basic_palette_and_second_RUN (test_stage7b1.TransitionTests.test_X_every_phase_restores_basic_palette_and_second_RUN) ... ok
+test_actual_sprite_pixels_white_and_unchanged_hitboxes (test_stage7b1.TransitionTests.test_actual_sprite_pixels_white_and_unchanged_hitboxes) ... ok
+test_exact_50_24_24_1_frames_full_cover_HUD_palette_and_score (test_stage7b1.TransitionTests.test_exact_50_24_24_1_frames_full_cover_HUD_palette_and_score) ... ok
+test_fast_mode_modulo_rates_exact_and_same_DMA_peak (test_stage7b1.TransitionTests.test_fast_mode_modulo_rates_exact_and_same_DMA_peak) ... ok
+test_four_level_edges_and_plus_minus_bypass_animation (test_stage7b1.TransitionTests.test_four_level_edges_and_plus_minus_bypass_animation) ... ok
+test_transition_solid_tiles_are_exact_shared_colour_patterns (test_stage7b1.TransitionTests.test_transition_solid_tiles_are_exact_shared_colour_patterns) ... ok
+test_X_during_pending_start_remains_responsive (test_stage7b1.ZCombatRegression.test_X_during_pending_start_remains_responsive) ... ok
+test_all100_palettes_keep_static_banks_and_cycle_phase (test_stage7b1.ZCombatRegression.test_all100_palettes_keep_static_banks_and_cycle_phase) ... ok
+test_combat_limits_return_respawn_and_invulnerable_control (test_stage7b1.ZCombatRegression.test_combat_limits_return_respawn_and_invulnerable_control) ... ok
+test_entry_fire_pool_fixed_target_and_wait_visibility (test_stage7b1.ZCombatRegression.test_entry_fire_pool_fixed_target_and_wait_visibility) ... ok
+test_game_over_complete_explosion_R_and_X (test_stage7b1.ZCombatRegression.test_game_over_complete_explosion_R_and_X) ... ok
+test_level_clear_press_release_wrap_score_lives_and_R (test_stage7b1.ZCombatRegression.test_level_clear_press_release_wrap_score_lives_and_R) ... ok
+test_new_menu_asset_failure_paths_restore_basic (test_stage7b1.ZCombatRegression.test_new_menu_asset_failure_paths_restore_basic) ... ok
+test_player_speed_and_keyboard_repeat (test_stage7b1.ZCombatRegression.test_player_speed_and_keyboard_repeat) ... ok
+test_return_follows_drifting_formation (test_stage7b1.ZCombatRegression.test_return_follows_drifting_formation) ... ok
+test_romc_basic_mapping_and_repeat_menu_start (test_stage7b1.ZCombatRegression.test_romc_basic_mapping_and_repeat_menu_start) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 521.957s
+
+OK
+Stage7b1 actual instruction/DMA host model: {"stage": "7b1", "PRG_sha256": "6750d1fca11b811de476076df6437316707d4a2cf7b65134ffaf1223d08b1927", "measurement_kind": "actual assembled instructions, narrow 6502/45GS02 host adapter; DMA instantaneous, NOT XEMU timing", "phases": [{"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2490}, {"dma_jobs": 64, "payload_bytes": 64, "CPU_model_cycles": 8198}, {"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2490}, {"dma_jobs": 128, "payload_bytes": 128, "CPU_model_cycles": 13913}, {"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2490}, {"dma_jobs": 64, "payload_bytes": 64, "CPU_model_cycles": 8200}, {"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2490}, {"dma_jobs": 192, "payload_bytes": 192, "CPU_model_cycles": 19620}], "mean_CPU_model_cycles": 7486.375, "max_CPU_model_cycles": 19620, "mean_DMA_jobs": 56.0, "max_DMA_jobs": 192, "simultaneous_all_stars_wrap": {"CPU_model_cycles": 19722, "dma_jobs": 192}, "runtime_profiler": false, "XEMU": "NOT_RUN; user acceptance required"}
+Stage7b1 actual full-frame host cycles, transition max: 1126968

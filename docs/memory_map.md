@@ -459,6 +459,7 @@ Benutzerabnahme unter XEMU und Merge-Freigabe am 13.10.2026, keine erkennbaren
 Probleme. Referenz `stage7a1-stable`, Programmcommit `ed22f0d4e4ca0bd8f5ff6ebaa5892135ce9bdd9a`.
 Keine Code-, Speicher-, PRG- oder D81-Änderung durch die Stable-Markierung.
 
+
 ## Stage7a2 – vollständige Engine mit Sternen, nicht Stable
 
 Stage6b1-Engine plus bestätigter Stage7a1-NCM-Hintergrund im separaten Branch
@@ -480,3 +481,18 @@ keine tatsächliche Beschleunigung. Vollständige Verträge und Messnachweise:
 XEMU-Benutzerabnahme und Merge-Freigabe am 13.10.2026. Referenz
 `stage7a2-stable`, Programmcommit `1e40e3ba1278c9836cd484739f36de8afe839585`.
 Keine Code-, Speicher-, PRG- oder D81-Änderung durch die Stable-Markierung.
+
+## Stage7b1 – getakteter Levelübergang, nicht Stable
+
+Separate Quellen/Release ab Stage7a2 Stable. Neue Statebytes `$1BC0–$1BCF`,
+nach Sprite-Registersicherung und vor Kampf-RAM. Setup `$6650–$66C8`, FSM
+`$B6C0–$B74D`, Spaltenhelfer/Pool-DMA `$B760–$B7B4`; RRB-Code weiterhin ab
+`$B800`. Erweiterter Sternkern `$B480–$B657`, Schrittbyte `$CFDE`, Mode0/1.
+Vier neue64-Byte-Vollfarbkacheln `$1DE00–$1DEFF` nach unveränderter Sternfläche;
+Glyphen `$778–$77B`, unveränderte Bank1-Subpalette48–51.
+
+`$5640–$56BF` ist ausdrücklich **belegter Laufzeit-Grafik-Rücklesepuffer**,
+nicht freier Codebereich. Kein Overlayhelper dort. HUD/Screen-/Color-RAM-
+Geometrie und DOS-/Originaldaten-/privater Pixiespeicher unverändert.
+Projektilbitmaps bleiben `$8A00–$8A7F`; Form/Farbe geändert, Trefferboxen erhalten.
+Details: [Stage7b1](stage7b1_level_transition.md).
