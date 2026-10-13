@@ -656,3 +656,12 @@ Levelpaletten, Hitbox-/Kampfregression, Overlaydeckung,99 Ticks und Abbruch/RUN
 geprüft. Der Laufzeit-Grafikpuffer `$5640–$56BF` bleibt frei; Overlayhelper bei
 `$B760`, Solidglyphen `$1DE00–$1DEFF`. Vollständiges Release `releases/stage_7b1/`.
 Details und XEMU-Prüfplan: [Stage7b1](stage7b1_level_transition.md).
+
+## Stage7b1 Stable – Benutzerabnahme 13.10.2026
+
+Vom Benutzer als stabil bestätigt und zum Merge freigegeben. Referenz
+`stage7b1-stable`, Branch `stage7b1`, getesteter Programmcommit
+`23eb0bba7d7be781372b508dbf6667c3f75bdea4`. PR54 wird nach main gemergt.
+Quellen, PRG, D81 und vollständiges Release `releases/stage_7b1/` unverändert.
+Alle bisherigen Stable-Referenzen bleiben erhalten. Abnahme stammt vom Benutzer;
+keine eigenen XEMU- oder neuen Hardware-Rastermessungen behauptet.

@@ -1,7 +1,9 @@
 # Stage7b1 – Levelübergang und weiße Projektilstriche
 
 Issue [#53](https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/issues/53),
-Branch `stage7b1`, 13.10.2026. **Nicht Stable; XEMU-Abnahme ausstehend.**
+Branch `stage7b1`, 13.10.2026. **Stage7b1 Stable:** vom Benutzer als stabil
+bestätigt und zum Merge freigegeben. Referenz `stage7b1-stable`; getesteter
+Programmcommit `23eb0bba7d7be781372b508dbf6667c3f75bdea4`.
 
 ## Referenz, Build und Bedienung
 
@@ -226,7 +228,8 @@ Modellzyklen; All48-Wrap19722. Der gemessene komplette Übergangs-Framepeak
 1126968 Modellzyklen enthält den bestehenden Level-/HUD-Neuaufbau, nicht nur
 die Rechteckroutine; Details in `transition-measurements.json`. Keine Umrechnung
 in behauptete Hardware-Millisekunden. **Kein eigener XEMU-Test behauptet.** Die erfolgreiche
-Stage7a2-Abnahme stammt vom Benutzer; Stage7b1 benötigt eine neue Bestätigung.
+Stage7a2-Abnahme stammt vom Benutzer; Stage7b1 ist inzwischen vom Benutzer
+als stabil bestätigt. Keine eigenen XEMU- oder Hardware-Zeitmessungen ergänzt.
 
 ## XEMU-Abnahme
 
@@ -244,4 +247,6 @@ Stage7a2-Abnahme stammt vom Benutzer; Stage7b1 benötigt eine neue Bestätigung.
    normales BASIC/Cursor, DIRECTORY und erneutes RUN/F1. R nach GAME OVER normal.
 6. Mehrminütiger Lauf: keine Timingstörungen, Ghosts, Streifen oder HUD-Flackern.
 
-Keine Stable-Markierung oder Merge vor ausdrücklicher Benutzerbestätigung.
+Benutzerbestätigung und Merge-Freigabe am 13.10.2026 erteilt. Quellen, PRG,
+D81 und Release bleiben bytegleich. Historische Testreports im Release bleiben
+als ursprüngliche Prüfprotokolle unverändert.

@@ -496,3 +496,9 @@ nicht freier Codebereich. Kein Overlayhelper dort. HUD/Screen-/Color-RAM-
 Geometrie und DOS-/Originaldaten-/privater Pixiespeicher unverändert.
 Projektilbitmaps bleiben `$8A00–$8A7F`; Form/Farbe geändert, Trefferboxen erhalten.
 Details: [Stage7b1](stage7b1_level_transition.md).
+
+### Stage7b1 Stable – unveränderte Speicherkarte
+
+Benutzerbestätigung und Merge-Freigabe am 13.10.2026. Referenz
+`stage7b1-stable`, Programmcommit `23eb0bba7d7be781372b508dbf6667c3f75bdea4`.
+Keine Code-, Speicher-, PRG- oder D81-Änderung durch die Stable-Markierung.
