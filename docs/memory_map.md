@@ -452,3 +452,9 @@ HUD und Clippingrechteck `[0,240)×[0,200)` bleiben unverändert.
 
 Vollständige Karte, Phasenabgrenzung, DMA-/Timingnachweise und offene XEMU-Abnahme:
 [Stage7a1-Prüfbericht](stage7a1_starfield_feasibility.md).
+
+### Stage7a1 Stable – unveränderte Speicherkarte
+
+Benutzerabnahme unter XEMU und Merge-Freigabe am 13.10.2026, keine erkennbaren
+Probleme. Referenz `stage7a1-stable`, Programmcommit `ed22f0d4e4ca0bd8f5ff6ebaa5892135ce9bdd9a`.
+Keine Code-, Speicher-, PRG- oder D81-Änderung durch die Stable-Markierung.

@@ -1,16 +1,20 @@
 # Stage 7a1: dreifarbiger Sternenhintergrund – technischer Test
 
 Issue [#49](https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/issues/49),
-Branch `stage7a1-starfield-test`, Stand 13.10.2026. **Testbuild, nicht Stable.**
-Eine XEMU-Abnahme steht aus. Es erfolgt kein Merge in die stabile Spielengine.
+Branch `stage7a1-starfield-test`, Stand 13.10.2026. **Stage7a1 Stable**:
+vom Benutzer unter XEMU ohne erkennbare Probleme getestet und zum Merge
+freigegeben. Referenz `stage7a1-stable`; getesteter Programmcommit `ed22f0d`.
+Die folgenden Messungen dokumentieren den ursprünglichen Test.
+Es wurden keine eigenen XEMU-Zeitmessungen ergänzt.
 
 ## Ausgangsbasis und Start
 
 Abgeleitet vom bestätigten Tag `stage6b1-stable`, Commit
 `31ae0bd4bcdd79f3217126f902cf9978907cb48d`; der darin enthaltene, vom Benutzer
 getestete Programmstand ist `5fa82452101cf690c3fa1f5eba0b172222541764`.
-Stage6b1-Quellen, Assets, Releases und Tags bleiben bytegleich. Auch `main`
-wird nicht geändert. Der Builder prüft zusätzlich die geschützten Referenzen
+Stage6b1-Quellen, Assets, Releases und Tags bleiben bytegleich. Der freigegebene
+Merge erfolgt nach `main`, nicht in den Stable-Branch `stage6b1`.
+Der Builder prüft zusätzlich die geschützten Referenzen
 Stage5d1a und Stage6a2.
 
 Das separat startbare D81 liegt unter
@@ -271,9 +275,10 @@ DMA-Buszeit und Video-/ROM-Restauration sind in XEMU noch abzunehmen.
 
 **Go für die gewählte Hintergrundarchitektur als Integrationskandidat**:
 keine zusätzlichen RRB-Slots, klare Speicher-/Palettentrennung, unveränderte
-Originalgrafiken und nachgewiesene begrenzte Pixelupdates. **Noch kein Go
-für einen produktiven Merge oder Stable**: erst nach der XEMU-Abnahme mit
-realer Rasterzeit und Benutzerbestätigung. 7a2 kann dieselbe Technik
+Originalgrafiken und nachgewiesene begrenzte Pixelupdates. Die Benutzerabnahme
+und Merge-Freigabe vom 13.10.2026 bestätigen Stage7a1 als Stable. Konkrete
+XEMU-Rastermesswerte wurden nicht mitgeteilt; die Hostwerte bleiben Modellwerte.
+Stage7a1 bleibt ein eigenständiger Testableger. 7a2 kann dieselbe Technik
 übernehmen; eine größere Sternzahl oder andere Geometrie benötigt eine
 erneute Budget-/Speicherprüfung.
 

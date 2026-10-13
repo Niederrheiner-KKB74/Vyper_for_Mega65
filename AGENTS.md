@@ -31,3 +31,10 @@
     `src/engine/stage6b1*.asm` und `releases/stage_6b1/` unverändert schützen.
     Keine weitere Joystickkorrektur: Port1 war die fehlerhafte XEMU-Einstellung.
     Neue Entwicklung separat vom Stable-Tag ableiten.
+
+15. **Stage7a1 Stable:** Vom Benutzer am 13.10.2026 unter XEMU ohne erkennbare
+    Probleme getestet und zum Merge freigegeben. Referenz `stage7a1-stable`,
+    Branch `stage7a1-starfield-test`, getesteter Programmcommit
+    `ed22f0d4e4ca0bd8f5ff6ebaa5892135ce9bdd9a`.
+    `src/engine/stage7a1*.asm` und `releases/stage_7a1/` unverändert schützen.
+    Eigenständiger Sternentest; spätere Spielintegration separat entwickeln.

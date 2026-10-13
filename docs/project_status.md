@@ -591,3 +591,16 @@ und echte PAL-Rasterinstrumentierung getrennt dokumentiert. Kein eigener
 XEMU-Test; mehrminütige optische Abnahme und reale Rasterzeit noch erforderlich.
 Architektur als Integrationskandidat empfohlen, Stable erst nach Benutzerbestätigung.
 Details: [Machbarkeit/Messungen/Build](stage7a1_starfield_feasibility.md).
+
+## Stage7a1 Stable – Benutzerabnahme 13.10.2026
+
+Vom Benutzer unter XEMU getestet: keine erkennbaren Probleme; Build ausdrücklich
+als Stable bestätigt und zum Merge freigegeben. Getesteter Programmcommit
+`ed22f0d4e4ca0bd8f5ff6ebaa5892135ce9bdd9a`, Referenz `stage7a1-stable`.
+PRG, D81, Quellen und das vollständige Release bleiben bytegleich.
+Die Freigabe stammt vom Benutzer; keine eigenen XEMU- oder Rasterzeitmessungen
+behauptet. Historische Testreports im Release bleiben unverändert.
+
+PR50 wird nach `main` gemergt; `stage6b1` und sämtliche bisherigen Stable-Tags
+bleiben unverändert. Dies archiviert den eigenständigen Testbuild; die spätere
+Integration in eine neue Spielengine-Stage erfolgt weiterhin separat.
