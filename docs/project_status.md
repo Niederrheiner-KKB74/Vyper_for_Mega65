@@ -717,3 +717,17 @@ bestanden; nach finalem8-Sprite-BASIC-Restore vier gezielte Prüfungen bestanden
 49 finale Builddateien plus Manifest bytegleich reproduziert. Kein eigener
 XEMU-Test, kein Stable-Tag oder Merge. Quellen/PRG/D81/ZIP unter
 `releases/stage_7b3/`; [Prüfbericht](stage7b3_attack_and_shot_frequency.md).
+
+## Stage7b4 — individueller Zwei-Schuss-Test (Issue #59)
+
+Separater Branch `stage7b4` direkt vom vom Benutzer getesteten Stage7b3-Commit
+`a41e92ab8e4994a0a3288d60d63984d8593c8332`. Frühere Quellen, Releases,
+Stable-Tags und main unverändert. Je ursprünglichem Gegner maximal zwei
+aktive Projektile; global weiterhin sechs Gegner- und zwei Player-Slots.
+Besitzer-ID bleibt bei RETURN/FORMATION/Tod erhalten; aktive Slots werden
+gezählt, sodass keine persistente Freigabebuchhaltung nötig ist.
+Angriffstimer, Schussfrequenzparameter, RNG, Kurven und gesamte Darstellung
+bleiben unverändert. Bestätigte3×7-Playergrafik mit roter Spitze oben erhalten.
+Vollständiges Release `releases/stage_7b4/`; technische Prüfung und
+XEMU-Abnahmecheckliste: [Stage7b4](stage7b4_per_enemy_shot_limit.md).
+**Testbuild, nicht Stable; XEMU-Abnahme durch Benutzer ausstehend.**

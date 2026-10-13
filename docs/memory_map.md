@@ -543,3 +543,16 @@ Alle8 Spritebits, MCM/V400=$FF; fixed paletteBank2/10/13/16 unverändert.
 DATs, DOS, Privatepixies, Screen-/Color-RAM und Sternbitmap unverändert.
 Verbindliche Grenzen: Release `memory-map.txt` und
 [Stage7b3](stage7b3_attack_and_shot_frequency.md).
+
+## Stage7b4 — individuelle Schützenbegrenzung (Testbuild)
+
+Unveränderte Stage7b3-Projektilarrays `$1F00–$1F77`; Besitzerarray
+`$1F58–$1F5F`, Gegner nur Slots2–7. Neue temporäre Prüfbytes
+`$1F9A–$1F9B` hinter der Eligibility-Verwaltung. Keine persistenten
+Besitzerzähler und keine Änderung von Slot-, DMA-, Grafik- oder DOS-Puffern.
+Selection/Restore wächst auf `$9C00–$9D16`, weiterhin vor Renderer `$9D70`.
+Projektilkern mit zusätzlicher T-Prüfung bleibt vor `$85B0`.
+Alle fünf DATs und Spritegrafiken bleiben bytegleich zum getesteten Commit
+`a41e92ab8e4994a0a3288d60d63984d8593c8332`.
+Details: [Stage7b4](stage7b4_per_enemy_shot_limit.md), Release `memory-map.txt`.
+Keine Stable-Freigabe für Stage7b4.
