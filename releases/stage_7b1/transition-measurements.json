@@ -1,0 +1,20 @@
+{
+  "stage": "7b1",
+  "PRG_sha256": "6750d1fca11b811de476076df6437316707d4a2cf7b65134ffaf1223d08b1927",
+  "measurement_kind": "actual assembled instructions in6502/45GS02 host model; NOT XEMU/hardware timing",
+  "transition_main_loop_ticks": 99,
+  "max_complete_frame_CPU_model_cycles": 1126968,
+  "peak_includes_existing_level_HUD_reinitialization": true,
+  "phase_ticks": [
+    50,
+    24,
+    24,
+    1
+  ],
+  "fast_star_DMA_jobs_each_tick": 192,
+  "overlay_prefix_bytes_per_ring": [
+    50,
+    100
+  ],
+  "XEMU": "NOT_RUN"
+}

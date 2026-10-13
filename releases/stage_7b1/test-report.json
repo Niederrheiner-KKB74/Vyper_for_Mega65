@@ -1,0 +1,78 @@
+{
+  "stage": "7b1",
+  "stable": false,
+  "host_suite_tests_passed": 39,
+  "tests": [
+    "test_KERNAL_menu_SEQ_has_original_romc_and_enabled_IRQ",
+    "test_all_original_animations_and_cycle",
+    "test_full_cpu_clock_in_title_menu_game_and_basic_restore",
+    "test_full_loader_title_and_exact_menu_pixels",
+    "test_level_nav_palette_cycle_and_exit_run",
+    "test_menu_exit_restores_basic_and_engine",
+    "test_menu_wrap_keys_joystick_repeat_and_fire",
+    "test_placeholders_preserve_selection_and_level",
+    "test_release_guard_on_fire_confirm",
+    "test_selected_levels_handoff_fonts_and_static_palette",
+    "test_1600_frames_exact_rates_wrap_and_dma_bounds",
+    "test_actual_host_cost_without_runtime_profiler",
+    "test_all100_transitions_and_R_never_blank_or_reset_background",
+    "test_all_edges_adjacent_nibbles",
+    "test_background_binding_buffer_and_exact_colours",
+    "test_continuous_level_clear_press_release_and_100_wrap",
+    "test_disk_and_original_assets",
+    "test_exact_accepted_star_parameters_and_six_global_API_labels",
+    "test_idempotent_init_reserved_speed_API_reset_and_no_test_keys",
+    "test_level_changes_keep_background_and_exit_restores_palette",
+    "test_prefix_hud_slots_and_palettes_unmodified_during_updates",
+    "test_selected_F1_levels_have_no_stars_until_game_and_repeat_start",
+    "test_transparency_clipping_all_four_edges_and_no_trails",
+    "test_X_every_phase_restores_basic_palette_and_second_RUN",
+    "test_actual_sprite_pixels_white_and_unchanged_hitboxes",
+    "test_exact_50_24_24_1_frames_full_cover_HUD_palette_and_score",
+    "test_fast_mode_modulo_rates_exact_and_same_DMA_peak",
+    "test_four_level_edges_and_plus_minus_bypass_animation",
+    "test_transition_solid_tiles_are_exact_shared_colour_patterns",
+    "test_X_during_pending_start_remains_responsive",
+    "test_all100_palettes_keep_static_banks_and_cycle_phase",
+    "test_combat_limits_return_respawn_and_invulnerable_control",
+    "test_entry_fire_pool_fixed_target_and_wait_visibility",
+    "test_game_over_complete_explosion_R_and_X",
+    "test_level_clear_press_release_wrap_score_lives_and_R",
+    "test_new_menu_asset_failure_paths_restore_basic",
+    "test_player_speed_and_keyboard_repeat",
+    "test_return_follows_drifting_formation",
+    "test_romc_basic_mapping_and_repeat_menu_start"
+  ],
+  "PRG_sha256": "6750d1fca11b811de476076df6437316707d4a2cf7b65134ffaf1223d08b1927",
+  "baseline": "stage7a2-stable / tested1e40e3b",
+  "reproduced_build_files": 48,
+  "transition_frames": {
+    "acceleration": 50,
+    "colour": 24,
+    "black": 24,
+    "initialization": 1
+  },
+  "level_edges_tested": [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      99,
+      100
+    ],
+    [
+      100,
+      1
+    ]
+  ],
+  "X_tested_in_each_phase": true,
+  "sprite_channels_checked": 6,
+  "hitboxes_unchanged": true,
+  "XEMU": "NOT_RUN; user confirmation required",
+  "limits": "CPU/KERNAL/DMA/VIC narrow host models, DMA instantaneous; no hardware timing claims."
+}

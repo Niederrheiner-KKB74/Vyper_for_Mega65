@@ -1,0 +1,57 @@
+{
+  "stage": "7b1",
+  "PRG_sha256": "6750d1fca11b811de476076df6437316707d4a2cf7b65134ffaf1223d08b1927",
+  "measurement_kind": "actual assembled instructions, narrow 6502/45GS02 host adapter; DMA instantaneous, NOT XEMU timing",
+  "phases": [
+    {
+      "dma_jobs": 0,
+      "payload_bytes": 0,
+      "CPU_model_cycles": 2490
+    },
+    {
+      "dma_jobs": 64,
+      "payload_bytes": 64,
+      "CPU_model_cycles": 8198
+    },
+    {
+      "dma_jobs": 0,
+      "payload_bytes": 0,
+      "CPU_model_cycles": 2490
+    },
+    {
+      "dma_jobs": 128,
+      "payload_bytes": 128,
+      "CPU_model_cycles": 13913
+    },
+    {
+      "dma_jobs": 0,
+      "payload_bytes": 0,
+      "CPU_model_cycles": 2490
+    },
+    {
+      "dma_jobs": 64,
+      "payload_bytes": 64,
+      "CPU_model_cycles": 8200
+    },
+    {
+      "dma_jobs": 0,
+      "payload_bytes": 0,
+      "CPU_model_cycles": 2490
+    },
+    {
+      "dma_jobs": 192,
+      "payload_bytes": 192,
+      "CPU_model_cycles": 19620
+    }
+  ],
+  "mean_CPU_model_cycles": 7486.375,
+  "max_CPU_model_cycles": 19620,
+  "mean_DMA_jobs": 56.0,
+  "max_DMA_jobs": 192,
+  "simultaneous_all_stars_wrap": {
+    "CPU_model_cycles": 19722,
+    "dma_jobs": 192
+  },
+  "runtime_profiler": false,
+  "XEMU": "NOT_RUN; user acceptance required"
+}

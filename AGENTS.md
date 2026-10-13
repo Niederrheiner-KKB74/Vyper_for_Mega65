@@ -46,3 +46,9 @@
     `src/engine/stage7a2*.asm` und `releases/stage_7a2/` unverändert schützen.
     Vollständige Spielengine mit kontinuierlichem Sternenhintergrund; neue
     Entwicklungsstages separat anlegen.
+
+17. **Stage7b1 Stable:** Vom Benutzer am 13.10.2026 als stabil bestätigt und
+    zum Merge freigegeben. Referenz `stage7b1-stable`, Branch `stage7b1`,
+    getesteter Programmcommit `23eb0bba7d7be781372b508dbf6667c3f75bdea4`.
+    `src/engine/stage7b1*.asm` und `releases/stage_7b1/` unverändert schützen.
+    Weiße Projektilgrafiken und getakteter Levelübergang; neue Stages separat.
