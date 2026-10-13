@@ -474,3 +474,9 @@ Sternen den Schwarzprefix, bindet anschließend unveränderte Sternzellen.
 Level/R setzt weder Bitmap noch Phase zurück. Normalmodus-API vorhanden,
 keine tatsächliche Beschleunigung. Vollständige Verträge und Messnachweise:
 [Stage7a2](stage7a2_starfield_integration.md).
+
+### Stage7a2 Stable – unveränderte Speicherkarte
+
+XEMU-Benutzerabnahme und Merge-Freigabe am 13.10.2026. Referenz
+`stage7a2-stable`, Programmcommit `1e40e3ba1278c9836cd484739f36de8afe839585`.
+Keine Code-, Speicher-, PRG- oder D81-Änderung durch die Stable-Markierung.

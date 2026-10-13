@@ -625,3 +625,12 @@ und BASIC/RUN. 47 Dateien aus zwei Builds bytegleich. CPU-Modellmittel6792,375,
 Peak18756 (All48-Wrap19098); DMA Mittel56/Peak192 Ein-Byte-Aufträge. Keine eigene
 XEMU-Zeitmessung. PRG/D81/Quellen/Reports unter `releases/stage_7a2/`.
 Details und Benutzerprüfplan: [Stage7a2](stage7a2_starfield_integration.md).
+
+## Stage7a2 Stable – Benutzerabnahme 13.10.2026
+
+Vom Benutzer unter XEMU getestet und ausdrücklich bestätigt; Merge freigegeben.
+Referenz `stage7a2-stable`, Branch `stage7a2`, getesteter Programmcommit
+`1e40e3ba1278c9836cd484739f36de8afe839585`. Quellen, PRG, D81 und vollständiges
+Release `releases/stage_7a2/` unverändert. PR52 wird nach main gemergt.
+Alle bisherigen Stable-Referenzen bleiben erhalten. Kein eigener XEMU-Test
+oder neuer Hardware-Rastermesswert behauptet; Abnahme stammt vom Benutzer.

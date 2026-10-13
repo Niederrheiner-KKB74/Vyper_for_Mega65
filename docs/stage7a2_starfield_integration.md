@@ -1,7 +1,9 @@
 # Stage7a2 – Sternenhintergrund im vollständigen Spiel
 
 Issue [#51](https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/issues/51),
-Branch `stage7a2`, Stand 13.10.2026. **Nicht Stable; XEMU-Abnahme ausstehend.**
+Branch `stage7a2`, Stand 13.10.2026. **Stage7a2 Stable:** vom Benutzer
+unter XEMU getestet und bestätigt; Merge ausdrücklich freigegeben. Referenz
+`stage7a2-stable`, getesteter Programmcommit `1e40e3ba1278c9836cd484739f36de8afe839585`.
 
 ## Herkunft und geschützte Referenzen
 
@@ -18,7 +20,7 @@ aus Stage6b1 kopiert, nicht durch eine andere Entwicklungsengine ersetzt.
 Alle bisherigen Stable-Quellen, Assets, Tools, Releases und Tags bleiben unverändert.
 Der neue Builder prüft diese Referenzen und die historischen Speichergrenzen.
 Keine Löschung, Archivumstrukturierung oder Änderung von `main` für diesen Auftrag.
-Stage7a2 wird als eigener PR zur Benutzerprüfung geliefert, ohne Merge/Stable-Tag.
+Stage7a2 wurde als eigener PR52 geprüft und ist jetzt zum Merge nach main freigegeben.
 
 ## Bedienung und Spielablauf
 
@@ -223,8 +225,8 @@ Hostprüfungen im neuen Testmodul:
 Ergebnisse und tatsächlich ausgeführte Testanzahl stehen im Release-Testreport.
 **33 Hosttests bestanden;47 Dateien aus zwei unabhängigen Builds bytegleich.**
 Die CPU/KERNAL/DMA/VIC-Prüfungen sind schmale Hostmodelle; keine eigene XEMU-
-Ausführung wird behauptet. Die erfolgreiche Stage7a1-XEMU-Abnahme stammt vom
-Benutzer und ersetzt nicht die noch ausstehende Stage7a2-Abnahme.
+Ausführung wird behauptet. Die XEMU-Abnahmen von Stage7a1 und Stage7a2 stammen vom Benutzer. Konkrete
+XEMU-Rastermesswerte wurden nicht mitgeteilt; die Hostwerte bleiben Modellwerte.
 
 ## XEMU-Abnahme für Stage7a2
 
@@ -243,4 +245,6 @@ Benutzer und ersetzt nicht die noch ausstehende Stage7a2-Abnahme.
    weiter. B/V schalten weder Sterne noch Marker; keine Stern-Testausgaben.
 6. X: normales BASIC/Cursor, DIRECTORY, erneutes RUN und F1 ohne Artefakte.
 
-Keine Stable-Markierung und kein Merge vor ausdrücklicher Benutzerbestätigung.
+Benutzerbestätigung und Merge-Freigabe am 13.10.2026 erteilt. Quellen, PRG, D81
+und Release bleiben bytegleich. Historische Testreports im Release dokumentieren
+den ursprünglichen Prüfstand und werden durch die Stable-Markierung nicht verändert.
