@@ -1,0 +1,19 @@
+{
+  "stage": "7b2",
+  "stable": false,
+  "full_regression": {
+    "tests_passed": 39,
+    "PRG_sha256": "28c586dc4a3264a2ad679028cf7f61228ac9b662ccb1d8cd78f3417ac52d01e4",
+    "log": "host-tests.txt"
+  },
+  "final_release_PRG_sha256": "843bd5081fecf2fd6bda45e10cb13aa669ecb2d1c2e2933160e9bd34b3e3120f",
+  "final_change": "Restore original D01C from existing p_saved_registers+28; no other engine changes",
+  "final_focused_checks": {
+    "tests_passed": 8,
+    "PRG_sha256": "843bd5081fecf2fd6bda45e10cb13aa669ecb2d1c2e2933160e9bd34b3e3120f",
+    "log": "final-register-tests.txt",
+    "D01C_test_start_value": 131,
+    "D01C_exit_restored_exactly": true
+  },
+  "XEMU": "NOT_RUN; user acceptance required"
+}

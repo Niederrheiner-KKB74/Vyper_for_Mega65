@@ -502,3 +502,21 @@ Details: [Stage7b1](stage7b1_level_transition.md).
 Benutzerbestätigung und Merge-Freigabe am 13.10.2026. Referenz
 `stage7b1-stable`, Programmcommit `23eb0bba7d7be781372b508dbf6667c3f75bdea4`.
 Keine Code-, Speicher-, PRG- oder D81-Änderung durch die Stable-Markierung.
+
+## Stage7b2 — Testbuild, konzentrischer NCM-Übergang
+
+Basis Stage7b1 Stable unverändert. Das bestehende24KB-NCM-Sternbitmap
+`$18000–$1DDBF` trägt temporär die konzentrischen Ringe; kein weiterer
+Grafikpuffer und keine geänderten RRB-Screen-/Color-RAM-Glyphreferenzen.
+Bank1/52–55 sind vier isolierte Übergangsfarben, mit12-Byte-Backup
+`$1BA0–$1BAB`, Flags/D070 `$1BAC–$1BAD`. D025/D026 gesichert `$1B90–$1B91`.
+Übergangsstate weiterhin `$1BC0–$1BCF`. Gegnerkanäle2..5 Hardware-Multicolor,
+Player0..1 monochrom; Bitmaps weiterhin `$8A00–$8A7F`, Hitboxen unverändert.
+
+Neue Helfer: Setup `$6650`, Shared-Sprites `$80C0`, Palettebackup `$8180`,
+Palettemapping/RGB `$87A0`, Sternabdeckungsfilter `$B668`, Annuluspainter
+`$B6C0`, FSM `$BF10`. Endgrenzen sind assemblergeprüft; verbindliche genaue
+Bereiche siehe Release `memory-map.txt`. Laufzeitscratch `$5640–$56BF`,
+`$6800`, `$6900`, Levelmetadaten `$6Axx/$6F80`, DOS und private Pixie-Puffer
+werden nicht als freier Code benutzt. Kein zusätzlicher Solidglyph-Pool.
+Details: [Stage7b2](stage7b2_transition_and_projectiles.md).

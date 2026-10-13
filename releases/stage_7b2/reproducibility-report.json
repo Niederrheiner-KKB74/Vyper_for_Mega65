@@ -1,0 +1,7 @@
+{
+  "files_verified": 47,
+  "all_bytes_identical": true,
+  "final_PRG_sha256": "843bd5081fecf2fd6bda45e10cb13aa669ecb2d1c2e2933160e9bd34b3e3120f",
+  "second_build": "independent temporary directory",
+  "stable_protection": "all configured stable snapshots passed"
+}

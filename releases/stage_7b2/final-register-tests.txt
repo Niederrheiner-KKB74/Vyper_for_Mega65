@@ -1,0 +1,14 @@
+test_X_every_phase_restores_basic_palette_and_second_RUN (test_stage7b2.TransitionTests.test_X_every_phase_restores_basic_palette_and_second_RUN) ... ok
+test_actual_sprite_pixels_white_and_unchanged_hitboxes (test_stage7b2.TransitionTests.test_actual_sprite_pixels_white_and_unchanged_hitboxes) ... ok
+test_exact_50_39_39_1_concentric_pixels_HUD_palette_score (test_stage7b2.TransitionTests.test_exact_50_39_39_1_concentric_pixels_HUD_palette_score) ... ok
+test_fast_mode_modulo_rates_exact_and_same_DMA_peak (test_stage7b2.TransitionTests.test_fast_mode_modulo_rates_exact_and_same_DMA_peak) ... ok
+test_four_level_edges_and_plus_minus_bypass_animation (test_stage7b2.TransitionTests.test_four_level_edges_and_plus_minus_bypass_animation) ... ok
+test_transition_palette_snapshot_and_two_consecutive_transitions (test_stage7b2.TransitionTests.test_transition_palette_snapshot_and_two_consecutive_transitions) ... ok
+test_full_cpu_clock_in_title_menu_game_and_basic_restore (test_stage7b2.MenuTests.test_full_cpu_clock_in_title_menu_game_and_basic_restore) ... ok
+test_level_nav_palette_cycle_and_exit_run (test_stage7b2.MenuTests.test_level_nav_palette_cycle_and_exit_run) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 259.820s
+
+OK
+Stage7b2 transition model 996821 cycles 496 DMA jobs

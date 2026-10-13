@@ -665,3 +665,28 @@ Vom Benutzer als stabil bestätigt und zum Merge freigegeben. Referenz
 Quellen, PRG, D81 und vollständiges Release `releases/stage_7b1/` unverändert.
 Alle bisherigen Stable-Referenzen bleiben erhalten. Abnahme stammt vom Benutzer;
 keine eigenen XEMU- oder neuen Hardware-Rastermessungen behauptet.
+
+## Stage7b2 — Testbuild für Issue55, XEMU-Abnahme offen
+
+Separater Branch `stage7b2`, Basis Stage7b1 Stable. Keine Stable-Markierung.
+Das bereitgestellte Screenshot-ZIP ist ausgewertet und unverändert archiviert.
+Die ursprünglichen vertikalen Flächen sind durch konzentrische 8-Pixel-Ringe
+ersetzt: räumlich außen→innen Blau/Gelb/Rot/Dunkelblau, danach schwarze
+Zentrum→Rand-Überdeckung. Unverändert 50 Frames Sternbeschleunigung;
+39 Farb-/39 Schwarzframes, dann nächster Level. Stern-Y/Phase laufen weiter;
+Bitmaprekonstruktion am Ende entfernt alle Überdeckungsreste. HUD bleibt frei.
+
+Gegnerprojektile: Hardware-Multicolor nur Kanäle2..5, weißer3-Pixel-Schaft und
+roter1-Pixel-Fuß; Player weiterhin weiß1×4. Trefferboxen/Flugbahnen/Schusslimits
+unverändert. Original-Amiga-Kandidat3×7 mit weiß/rot/grauen Flanken in USS,
+RAM-Dump und ADF binär gefunden; aktive Spiel-Spritezuordnung nicht bewiesen.
+Die1×4-Ausgabe ist deshalb ausdrücklich eine dokumentierte Testannäherung.
+
+Vollständiges Release `releases/stage_7b2/`, reproduzierbare Builder/Analyse,
+Hostregression und XEMU-Abnahmeplan:
+[Stage7b2](stage7b2_transition_and_projectiles.md). Frühere Stable-Dateien
+werden beim Build gegen ihre Git-Referenzen geprüft und bleiben unverändert.
+
+Automatik:39 vollständige Hostregressionen bestanden; nach finaler D01C-Restore-
+Ergänzung acht gezielte Wiederprüfungen bestanden.47 finale Builddateien plus
+Manifest aus zwei unabhängigen Builds bytegleich. Keine eigene XEMU-Abnahme.
