@@ -1,8 +1,8 @@
 {
   "stage": "5a",
   "baseline": "stage4c-stable",
-  "stable": false,
-  "xemu": "NOT_RUN",
+  "stable": true,
+  "xemu": "USER_CONFIRMED",
   "passed_distinct_tests": 26,
   "failures": 0,
   "runs": [
@@ -33,5 +33,8 @@
       "14": 15
     }
   },
-  "prg_sha256": "afdb91be6d57298af92fbc8bf8adcfb3d9dfe2c8689a54c37e8d728d11bacf81"
+  "prg_sha256": "afdb91be6d57298af92fbc8bf8adcfb3d9dfe2c8689a54c37e8d728d11bacf81",
+  "stable_reference": "stage5a-stable",
+  "program_commit": "e7166a72fbe9b00bb1d75881837a74e339225351",
+  "user_confirmation": "Stage 5a ist bestätigt, Level-Wechsel funktionieren"
 }

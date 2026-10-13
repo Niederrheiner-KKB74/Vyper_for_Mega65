@@ -1,0 +1,66 @@
+{
+  "stage": "7a1",
+  "measurement_kind": "assembled instructions in 6502/45GS02 host adapter; instantaneous DMA model, NOT XEMU timings",
+  "period_frames": 8,
+  "phases": [
+    {
+      "dma_jobs": 0,
+      "payload_bytes": 0,
+      "CPU_model_cycles": 2134
+    },
+    {
+      "dma_jobs": 64,
+      "payload_bytes": 64,
+      "CPU_model_cycles": 7954
+    },
+    {
+      "dma_jobs": 0,
+      "payload_bytes": 0,
+      "CPU_model_cycles": 2134
+    },
+    {
+      "dma_jobs": 128,
+      "payload_bytes": 128,
+      "CPU_model_cycles": 13781
+    },
+    {
+      "dma_jobs": 0,
+      "payload_bytes": 0,
+      "CPU_model_cycles": 2134
+    },
+    {
+      "dma_jobs": 64,
+      "payload_bytes": 64,
+      "CPU_model_cycles": 7956
+    },
+    {
+      "dma_jobs": 0,
+      "payload_bytes": 0,
+      "CPU_model_cycles": 2134
+    },
+    {
+      "dma_jobs": 192,
+      "payload_bytes": 192,
+      "CPU_model_cycles": 19600
+    }
+  ],
+  "mean_CPU_model_cycles": 7228.375,
+  "max_CPU_model_cycles": 19600,
+  "mean_DMA_jobs": 56.0,
+  "max_DMA_jobs": 192,
+  "full_background_copy_per_frame": false,
+  "pal_raster_wrap_test": {
+    "start": 310,
+    "end": 3,
+    "expected_span": 5
+  },
+  "hardware_measurement": "NOT_RUN; V border marker and $CFF0/$CFF2 raw PAL raster-line counters available",
+  "simultaneous_all_stars_wrap": {
+    "CPU_model_cycles": 19942,
+    "dma_jobs": 192,
+    "stars": 48,
+    "from_y": 199,
+    "to_y": 0
+  },
+  "PRG_sha256": "2e7a62183b4e5e099052de5b9cfcba052565c72b466670cec8b0cb12930fc729"
+}

@@ -1,0 +1,87 @@
+test_all_edges_original_graphics_and_private_crop (test_stage5b.CombatTests.test_all_edges_original_graphics_and_private_crop) ... ok
+test_entry_fire_visibility_signed_muzzle_pool_and_fixed_target (test_stage5b.CombatTests.test_entry_fire_visibility_signed_muzzle_pool_and_fixed_target) ... ok
+test_four_enemy_shots_one_life_player_frozen (test_stage5b.CombatTests.test_four_enemy_shots_one_life_player_frozen) ... ok
+test_game_over_after_complete_explosion_R_and_X (test_stage5b.CombatTests.test_game_over_after_complete_explosion_R_and_X) ... ok
+test_hitbox_touching_and_playfield_edges (test_stage5b.CombatTests.test_hitbox_touching_and_playfield_edges) ... ok
+test_independent_frames_complete_and_guards_render (test_stage5b.CombatTests.test_independent_frames_complete_and_guards_render) ... ok
+test_points_formula_carry_saturation_and_display (test_stage5b.CombatTests.test_points_formula_carry_saturation_and_display) ... ok
+test_ram_two_explosions_no_points_and_invulnerability (test_stage5b.CombatTests.test_ram_two_explosions_no_points_and_invulnerability) ... ok
+test_renderer_frame_budget_and_maximum_row_load (test_stage5b.CombatTests.test_renderer_frame_budget_and_maximum_row_load) ... ok
+test_return_tracks_current_drifting_slot (test_stage5b.CombatTests.test_return_tracks_current_drifting_slot) ... ok
+test_simultaneous_combat_limits_return_and_respawn (test_stage5b.CombatTests.test_simultaneous_combat_limits_return_and_respawn) ... ok
+test_stable4c_entry_formation_402_updates_identical (test_stage5b.CombatTests.test_stable4c_entry_formation_402_updates_identical) ... FAIL
+test_wait_real_states_blink_exact_150_25_and_no_fire (test_stage5b.CombatTests.test_wait_real_states_blink_exact_150_25_and_no_fire) ... ok
+test_all100_transitions_and_full_clipped_explosion_frames_preserve_dos (test_stage5b_dos.DOSProtectionTests.test_all100_transitions_and_full_clipped_explosion_frames_preserve_dos) ... ok
+test_normal_levelclear_gameover_exits_and_repeated_RUN_preserve_dos (test_stage5b_dos.DOSProtectionTests.test_normal_levelclear_gameover_exits_and_repeated_RUN_preserve_dos) ... ok
+test_all259_frames_actual_rrb_odd_edges_overlap_and_guards (test_stage5d1a.GraphicsRegression.test_all259_frames_actual_rrb_odd_edges_overlap_and_guards) ... ok
+test_all259_pixels_original_pointer_masks_and_columns (test_stage5d1a.GraphicsRegression.test_all259_pixels_original_pointer_masks_and_columns) ... ok
+test_extraction_reproducible_all_artifacts (test_stage5d1a.GraphicsRegression.test_extraction_reproducible_all_artifacts) ... ok
+test_graphics_type_38_valid_39_invalid_and_end_bounds (test_stage5d1a.GraphicsRegression.test_graphics_type_38_valid_39_invalid_and_end_bounds) ... ok
+test_loader_extended_size_checksums_and_readback_faults (test_stage5d1a.GraphicsRegression.test_loader_extended_size_checksums_and_readback_faults) ... ok
+test_mapping_and_all_original_Forme_slots (test_stage5d1a.GraphicsRegression.test_mapping_and_all_original_Forme_slots) ... ok
+test_missing_game_file_restores_all_saved_video_fields (test_stage5d1a.HotregHandoffTests.test_missing_game_file_restores_all_saved_video_fields) ... ok
+test_precise_geometry_survives_pending_legacy_updates (test_stage5d1a.HotregHandoffTests.test_precise_geometry_survives_pending_legacy_updates) ... ok
+test_all_22_graphic_indices_and_frames_preserved_in_private_buffers (test_stage5b.LevelTests.test_all_22_graphic_indices_and_frames_preserved_in_private_buffers) ... ok
+test_capacity_and_original_assets (test_stage5b.LevelTests.test_capacity_and_original_assets) ... ok
+test_every_original_record_runtime_initialization (test_stage5b.LevelTests.test_every_original_record_runtime_initialization) ... ok
+test_exit_from_clear_and_second_start_restores_basic (test_stage5b.LevelTests.test_exit_from_clear_and_second_start_restores_basic) ... ok
+test_fixed_curves_for_other_levels_and_special_scheduler (test_stage5b.LevelTests.test_fixed_curves_for_other_levels_and_special_scheduler) ... ok
+test_independent_animation_counts_and_rom_mapping (test_stage5b.LevelTests.test_independent_animation_counts_and_rom_mapping) ... ok
+test_level_clear_requires_all_dead_and_button_release_then_press (test_stage5b.LevelTests.test_level_clear_requires_all_dead_and_button_release_then_press) ... ok
+test_level_clear_text_position_and_frozen_gameplay (test_stage5b.LevelTests.test_level_clear_text_position_and_frozen_gameplay) ... ok
+test_long_original_entry_curve_and_word_delays (test_stage5b.LevelTests.test_long_original_entry_curve_and_word_delays) ... FAIL
+test_nav_limits_latch_and_gameover_restart (test_stage5b.LevelTests.test_nav_limits_latch_and_gameover_restart) ... ok
+test_player_one_pixel_per_frame_and_nav_from_real_main_loop (test_stage5b.LevelTests.test_player_one_pixel_per_frame_and_nav_from_real_main_loop) ... ok
+test_preserves_values_and_resets_all_transients (test_stage5b.LevelTests.test_preserves_values_and_resets_all_transients) ... ok
+test_runtime_invalid_directory_and_index_fail_safely (test_stage5b.LevelTests.test_runtime_invalid_directory_and_index_fail_safely) ... ok
+test_actual_loader_failure_missing_truncated_corrupt_and_trailing (test_stage5d1a.PaletteRegression.test_actual_loader_failure_missing_truncated_corrupt_and_trailing) ... ok
+test_actual_loader_three_SEQs_and_dma_bounds (test_stage5d1a.PaletteRegression.test_actual_loader_three_SEQs_and_dma_bounds) ... ok
+test_all100_level_palettes_and_constant_banks (test_stage5d1a.PaletteRegression.test_all100_level_palettes_and_constant_banks) ... ok
+test_full_colour_cursor_ROM_palette_exit_and_repeat_start (test_stage5d1a.PaletteRegression.test_full_colour_cursor_ROM_palette_exit_and_repeat_start) ... ok
+test_glyph_palette_attribute_player_enemy_explosion_crop (test_stage5d1a.PaletteRegression.test_glyph_palette_attribute_player_enemy_explosion_crop) ... ok
+test_original_binary_roundtrip_and_reproducible (test_stage5d1a.PaletteRegression.test_original_binary_roundtrip_and_reproducible) ... ok
+test_palette_changes_on_buttons_nav_wrap_and_R (test_stage5d1a.PaletteRegression.test_palette_changes_on_buttons_nav_wrap_and_R) ... ok
+test_program_load_device_retained_for_all_SEQs (test_stage5d1a.PaletteRegression.test_program_load_device_retained_for_all_SEQs) ... ok
+test_runtime_schema_validation_independent_of_pinned_sum (test_stage5d1a.PaletteRegression.test_runtime_schema_validation_independent_of_pinned_sum) ... ok
+test_FCM_scene_all_original_pixels_and_geometry (test_stage5d1a.TitleIntegrationTests.test_FCM_scene_all_original_pixels_and_geometry) ... ok
+test_each_DAT_missing_truncated_checksum_and_header (test_stage5d1a.TitleIntegrationTests.test_each_DAT_missing_truncated_checksum_and_header) ... ok
+test_live_original_ROM_cursor_cannot_touch_title (test_stage5d1a.TitleIntegrationTests.test_live_original_ROM_cursor_cannot_touch_title) ... ok
+test_restored_Basic_before_engine_and_phase_code_backup (test_stage5d1a.TitleIntegrationTests.test_restored_Basic_before_engine_and_phase_code_backup) ... ok
+test_title_dma_verification_failure (test_stage5d1a.TitleIntegrationTests.test_title_dma_verification_failure) ... ok
+test_versions_and_levelrecord_error_report_correct_file (test_stage5d1a.TitleIntegrationTests.test_versions_and_levelrecord_error_report_correct_file) ... ok
+test_actual_original_entry_points_levels1_2_3 (test_stage5d1a_entry.GeometryTests.test_actual_original_entry_points_levels1_2_3) ... ok
+test_actual_rrb_pixels_follow_projected_y_and_clipping (test_stage5d1a_entry.GeometryTests.test_actual_rrb_pixels_follow_projected_y_and_clipping) ... ok
+test_entry_shot_origin_visible_target_four_limit_and_wait (test_stage5d1a_entry.GeometryTests.test_entry_shot_origin_visible_target_four_limit_and_wait) ... ok
+test_exit_and_second_RUN_each_independent_build (test_stage5d1a_entry.GeometryTests.test_exit_and_second_RUN_each_independent_build) ... ok
+test_projection_restore_states_and_explosion_hit_position (test_stage5d1a_entry.GeometryTests.test_projection_restore_states_and_explosion_hit_position) ... ok
+test_signed_transform_boundaries_and_negative_rounding (test_stage5d1a_entry.GeometryTests.test_signed_transform_boundaries_and_negative_rounding) ... ok
+test_transitions_all_enemies_levels_1_2_3 (test_stage5d1a_entry.GeometryTests.test_transitions_all_enemies_levels_1_2_3) ... ok
+test_visible_collision_boxes_and_hidden_wait (test_stage5d1a_entry.GeometryTests.test_visible_collision_boxes_and_hidden_wait) ... ok
+
+======================================================================
+FAIL: test_stable4c_entry_formation_402_updates_identical (test_stage5b.CombatTests.test_stable4c_entry_formation_402_updates_identical)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Vyper_for_Mega65/tests/test_stage5b.py", line 464, in test_stable4c_entry_formation_402_updates_identical
+    self.assertEqual(actual,expected,tick+1)
+AssertionError: Lists differ: [[2, [199 chars]0], [240, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 240, 0[732 chars], 1]] != [[2, [199 chars]0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,[724 chars], 1]]
+
+First differing element 3:
+[240, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 240, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Diff is 1580 characters long. Set self.maxDiff to None to see it. : 1
+
+======================================================================
+FAIL: test_long_original_entry_curve_and_word_delays (test_stage5b.LevelTests.test_long_original_entry_curve_and_word_delays)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Vyper_for_Mega65/tests/test_stage5b.py", line 230, in test_long_original_entry_curve_and_word_delays
+    self.assertEqual(get(m,'e_ylo',slot)+256*get(m,'e_yhi',slot),y&65535)
+AssertionError: 35 != 51
+
+----------------------------------------------------------------------
+Ran 59 tests in 934.015s
+
+FAILED (failures=2)
+Stage5a worst22-pixie renderer model cycles: 444471 full/clipped: [146415, 168371, 146503, 333107, 190811, 444471, 218509]

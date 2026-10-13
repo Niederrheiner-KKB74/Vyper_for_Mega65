@@ -1,0 +1,42 @@
+Stage6b1 ROMC/IRQ-safe menu loader correction. Host CPU/DMA/VIC/KERNAL models, NOT XEMU.
+
+test_KERNAL_menu_SEQ_has_original_romc_and_enabled_IRQ (test_stage6b1.MenuTests.test_KERNAL_menu_SEQ_has_original_romc_and_enabled_IRQ) ... ok
+test_all_original_animations_and_cycle (test_stage6b1.MenuTests.test_all_original_animations_and_cycle) ... ok
+test_full_cpu_clock_in_title_menu_game_and_basic_restore (test_stage6b1.MenuTests.test_full_cpu_clock_in_title_menu_game_and_basic_restore) ... ok
+test_full_loader_title_and_exact_menu_pixels (test_stage6b1.MenuTests.test_full_loader_title_and_exact_menu_pixels) ... ok
+test_level_nav_palette_cycle_and_exit_run (test_stage6b1.MenuTests.test_level_nav_palette_cycle_and_exit_run) ... ok
+test_menu_exit_restores_basic_and_engine (test_stage6b1.MenuTests.test_menu_exit_restores_basic_and_engine) ... ok
+test_menu_wrap_keys_joystick_repeat_and_fire (test_stage6b1.MenuTests.test_menu_wrap_keys_joystick_repeat_and_fire) ... ok
+test_placeholders_preserve_selection_and_level (test_stage6b1.MenuTests.test_placeholders_preserve_selection_and_level) ... ok
+test_release_guard_on_fire_confirm (test_stage6b1.MenuTests.test_release_guard_on_fire_confirm) ... ok
+test_selected_levels_handoff_fonts_and_static_palette (test_stage6b1.MenuTests.test_selected_levels_handoff_fonts_and_static_palette) ... ok
+test_X_during_pending_start_remains_responsive (test_stage6b1.ZCombatRegression.test_X_during_pending_start_remains_responsive) ... ok
+test_all100_palettes_keep_static_banks_and_cycle_phase (test_stage6b1.ZCombatRegression.test_all100_palettes_keep_static_banks_and_cycle_phase) ... ok
+test_combat_limits_return_respawn_and_invulnerable_control (test_stage6b1.ZCombatRegression.test_combat_limits_return_respawn_and_invulnerable_control) ... ok
+test_entry_fire_pool_fixed_target_and_wait_visibility (test_stage6b1.ZCombatRegression.test_entry_fire_pool_fixed_target_and_wait_visibility) ... ok
+test_game_over_complete_explosion_R_and_X (test_stage6b1.ZCombatRegression.test_game_over_complete_explosion_R_and_X) ... ok
+test_level_clear_press_release_wrap_score_lives_and_R (test_stage6b1.ZCombatRegression.test_level_clear_press_release_wrap_score_lives_and_R) ... ok
+test_new_menu_asset_failure_paths_restore_basic (test_stage6b1.ZCombatRegression.test_new_menu_asset_failure_paths_restore_basic) ... ok
+test_player_speed_and_keyboard_repeat (test_stage6b1.ZCombatRegression.test_player_speed_and_keyboard_repeat) ... ok
+test_return_follows_drifting_formation (test_stage6b1.ZCombatRegression.test_return_follows_drifting_formation) ... ok
+test_romc_basic_mapping_and_repeat_menu_start (test_stage6b1.ZCombatRegression.test_romc_basic_mapping_and_repeat_menu_start) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 271.427s
+
+OK
+
+Original V920413 ROM evidence:
+test_CE26_is_original_BRK_vector_ROM_code (test_stage6b1_rom.ROMAddressEvidence.test_CE26_is_original_BRK_vector_ROM_code) ... ok
+test_FA29_is_IRQ_BRK_entry_not_disk_wait (test_stage6b1_rom.ROMAddressEvidence.test_FA29_is_IRQ_BRK_entry_not_disk_wait) ... ok
+test_actual_CPU_mapping_model_distinguishes_ROMC_and_RAM_BRK (test_stage6b1_rom.ROMAddressEvidence.test_actual_CPU_mapping_model_distinguishes_ROMC_and_RAM_BRK) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.022s
+
+OK
+
+Successful KickAssembler5.25 build; all generated outputs byte-identically reproduced.
+D81 BAM/file chains/types/payloads verified. Stable sources/assets/tags unchanged.
+KERNAL menu I/O: original ROMC mapping and IRQ enabled. RAM bridge phases: IRQ masked.
+FAST/VFAST retained; XEMU acceptance pending.

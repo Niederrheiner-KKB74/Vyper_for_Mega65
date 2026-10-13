@@ -324,7 +324,7 @@ Player/ENTRY-Schüsse/Renderer/Backupbereiche und gesamte übrige Speicherkarte
 wie Stage4b-3. Quellen/Releases der Stable-Basis unverändert.
 [Details](stage4c_attack_mapping_and_drift.md).
 
-## Stage 5a – zentrale Levelverwaltung (Teststand)
+## Stage 5a – zentrale Levelverwaltung (Stable)
 
 Aktiver Record neu in physischer Bank1 `$12000–$126FF`, bounded1792 Bytes.
 Kopfkopie nur `$7600–$7607`; Kurvenparser nach `$7608–$76B1` verlegt.
@@ -334,3 +334,127 @@ Cachehelper `$3400–$3472`, optimierter Crop `$34A0–$3554`.
 Vorhandene22 Pixiepuffer `$10000–$115FF`,24 RRB-Slots, Screen/Color-/BASIC-Backups,
 Originaldaten und alle alten Stable-Releases unverändert. Kein neuer Code im ROM-Overlay.
 [Gesamtkarte und genaue Änderungen](stage5a_level_management.md).
+
+Stage 5a ist vom Benutzer mit funktionierenden Levelwechseln bestätigt
+(`stage5a-stable`). Die Stable-Dokumentation verändert keine Speicherbelegung
+oder Programm-/Release-Dateien.
+
+## Stage 5b – 38 Original-Gegnergrafiken (Stable)
+
+Von `stage5a-stable`, ohne Änderungen an dessen Dateien. Neue VYGR-Datei
+`assets/stage5b/VYGR.DAT`:33464 Bytes, `$54000–$5C2B7`,38 Typen/259 Frames.
+VYLV bleibt81793 Bytes bei `$40000–$53F80`;127 Bytes Abstand vor VYGR bleiben frei.
+Die erweiterten Grafikdaten enden vor `$60000` und überlappen keine Engine-/ROM-
+oder Levelpuffer. Verzeichnisende jetzt Dateioffset`$0138`; Loader-Summe`$5B75`.
+DOS-Exit-Korrektur: Die22 privaten Pixiepuffer sind nach `$14000–$155FF` verlegt.
+Der alte Bereich `$10000–$115FF` lag im reservierten DOS-RAM `$10000–$11FFF`
+und darf nicht für Grafikpuffer verwendet werden. Record`$12000–$126FF`,
+24 RRB-Slots und192-Byte-Screenstride bleiben erhalten. Keine Überlappung zwischen
+Record, neuer Pixiepool-Belegung und Color-RAM-Fenster`$1F800–$1FFFF`.
+Die neuen Puffer liegen wie der aktive Record im während RUN genutzten BASIC-
+Array-/Stringbereich; das reine Maschinenspracheprogramm benötigt dort keine
+BASIC-Arrays.147 PRG-Bytes gegenüber Stage5a ändern sich einschließlich
+DMA-Operandrelokationen; Palette und Spielregeln bleiben unverändert. [Mapping, Originalpointer und Tests](stage5b_graphics_mapping.md).
+Stage5b einschließlich DOS-Exit-Korrektur vom Benutzer vollständig bestätigt;
+Referenz `stage5b-stable`. Die Stable-Sicherung verändert weder Speicherlayout
+noch Quellcode oder Release-Dateien.
+
+## Stage 5c – originale Levelpaletten (Stable)
+
+Unveränderte Stable-Basis `stage5b-stable`. Neue VYCL:476 Bytes bei
+`$5C300–$5C4DB`,72 Bytes Abstand hinter unveränderter VYGR. VYLV/VYGR,
+Record`$12000–$126FF`, Pixiepool`$14000–$155FF`, DOS und ROM unverändert.
+Palettencode`$6B00–$6CFF`, validierter Spiegel`$6D00–$6EDB`,
+State`$6EF0–$6EF3`; kein Überlappen mit Angriffsdaten`$6F80–$6FFF`.
+
+Der bisherige Laufzeit-Color-RAM-Sicherungspuffer`$6B00–$6F7F` musste nach
+`$15600–$15A7F` verlegt werden, direkt hinter die privaten Pixiepuffer.
+Nur die beiden DMA-Quell-/Zieladressen ändern sich; vollständige Sicherung und
+Exit-Rückkopie bleiben erhalten. Der Bereich liegt wie Record/Pixiepool im
+während RUN verwendeten BASIC-Array-/String-RAM; keine BASIC-Arrays im ML-Spiel.
+
+Gegner: Bank1 Einträge17..24, NCM-Glyph-Farbbyte1`$10`; Explosionen: Bank1
+Einträge0..15 unverändert, auch in privaten Crops Farbbyte1`$00`.
+Player/HUD/Projektile: Bank2 unverändert; BASIC-ROM-Palette: Bank3 unangetastet.
+D070 CPU-Bank wird beim Levelwechsel kurzzeitig umgeschaltet und vollständig
+wiederhergestellt. Kein zusätzlicher Bankwechsel im 50-Hz-Animationspfad.
+[Format, Speicherprüfung und Originalbeleglage](stage5c_original_palettes.md).
+Stage5c vom Benutzer mit originalgetreuen Level-Farben, unveränderten Player-/
+HUD-/Explosionsfarben und funktionierendem BASIC-Exit bestätigt (`stage5c-stable`).
+Die Stable-Sicherung verändert weder Speicherlayout noch Quellcode oder Release-Dateien.
+
+## Stage 5d-1 – Titel-/Loader-Integration (Stable)
+
+Neue Quellen und Release separat; Stage 5c und Stage 5d-0 unverändert.
+900 verlustfrei deduplizierte FCM-Kacheln liegen während des DAT-Ladens bei
+`$12800–$13FFF`, `$15B00–$1F7FF`, `$5C500–$5F0FF`; eigener physischer Screen
+`$F300–$FD4F`, Color-RAM `$FF82000–$FF82A4F`, Sicherung `$5F100–$5FB4F`.
+VYTI-Staging `$40000–$4EBCC` wird vor VYLV vollständig in die Caches kopiert.
+Alle drei Spieldatenziele und aktiven Record-/Pixiepuffer bleiben unverändert.
+Titelbootstrap `$4000–$47FF` wird vor HUD-Fontinitialisierung nach
+`$15B00–$162FF` gesichert (Titel bereits abgeschaltet); Helfer `$3340–$33AA`
+restauriert ihn beim Exit für erneutes RUN. Keine DOS-/ROM-Überschreibung.
+[Speicherkarte, Lebensdauern und IRQ-/Palette-Restaurierung](stage5d1_title_loader_integration.md).
+
+Stage-5d-1-Nachkorrektur: HOTREG-Legacy-Neuberechnung erfolgt nun vor der
+Restaurierung präziser VIC-IV-Geometrie. Zusätzliche Instruktionen bleiben
+innerhalb des reservierten Titelbootstraps `$4000–$47FF`; keine Puffer-,
+Screen-, Color-RAM-, DMA- oder Originaldatenadressen geändert.
+
+Stage 5d-1 nach HOTREG-Korrektur vom Benutzer als Stable bestätigt
+(`stage5d1-stable`). Die Stable-Sicherung verändert keine Speicherbereiche,
+Quellen, Originaldaten oder Release-Artefakte.
+
+## Stage 5d-1a B2 integration (Issue #41)
+
+New signed ENTRY projection/cache $7700–$7889 fits below aimed shots $7951; ENTRY hooks grow its segment to $5700–$5B68, below row retirement $5B80. All title caches, screen, bootstrap backup, SEQ/DMA and game-data buffers retain Stage 5d-1 addresses/lifetimes. See [integration report](stage5d1_b2_integration.md).
+
+Stage 5d-1a vom Benutzer am 12.10.2026 als Stable bestätigt (`stage5d1a-stable`). Stable-Sicherung ausschließlich in Dokumentation; keine Änderung an Speicherlayout, Quellen oder Release-Dateien.
+
+## Stage 6b1 – Titel/Menu/Game-Phasen, noch nicht Stable
+
+Spielengine unverändert aus `stage5d1a-stable`; kein Chip-RAM oberhalb `$5FFFF`.
+Das originale Stage6a2-FCM-Menü nutzt die nach der Titelphase freien Glyphbereiche
+`$12800–$1F7FF` und `$5C500–$5FFFF`. Die eigentlichen VYLV/VYGR/VYCL-Adressen
+bleiben unverändert. `$7000–$9FFF` wird während des Menüs gesichert und durch ein
+separat assembliertes Overlay ersetzt, vor Spielstart bytegleich restauriert.
+Danach werden der gewählte Levelrecord und private Gegnergrafiken neu initialisiert.
+
+Attic-DMA-Sicherungen: Bootstrap `$08000000–$080007FF`, Engine-Overlay
+`$08001000–$08003FFF`, Titel-Color-Backup `$08004000–$08004A4F`, Menüasset
+`$08010000–$080252BF`. VIC liest ausschließlich Chip-RAM. Persistenter Cycle-Code
+bei `$3100`, ROMC-Gates bei `$7900` (identisch in beiden Phasen), originales D030
+bei `$31F0`, Integrationsbrücke bei `$CB00`. BASIC- und DOS-Bereiche bleiben
+unberührt. Exakte Grenzen, begründete Phasen-Aliase und Modus-/Palette-Restoration:
+[Stage6b1](stage6b1_menu_integration.md), `releases/stage_6b1/memory-map.txt`.
+
+### Stage6b1 Stable – unveränderte Speicherkarte
+
+Benutzerabnahme am 12.10.2026 mit XEMU/ROM V920413, Joystick Port2.
+Referenz `stage6b1-stable`, Programmcommit `5fa82452101cf690c3fa1f5eba0b172222541764`.
+Alle bestätigten Speicherphasen, ROMC-/IRQ-Gates und FAST/VFAST-Korrekturen bleiben
+unverändert; Stable-Markierung ändert ausschließlich Dokumentation und Git-Referenz.
+
+## Stage7a1 – isolierter Sternentest, nicht Stable
+
+Branch `stage7a1-starfield-test`, ab `stage6b1-stable`; historische Quellen und
+Releases bleiben unverändert. Spielphasen-Ergänzung: 24.000 NCM-Bytes bei
+`$18000–$1DDBF`, Glyphen `$600–$776`, statt der ersten 15 schwarzen Prefix-Zellen
+je RRB-Zeile. Menü-Atlas nutzt denselben Bereich nur vor F1; Sterne werden erst
+nach dem Engine-Handoff initialisiert. Keine zusätzlichen RRB- oder Sprite-Slots.
+
+Neue CPU-Bereiche: `$4E10–$4E3F` Y-State, `$4E40–$4EF7` Binder,
+`$B480–$B6FE` Kern/DMA, `$CD80–$CFD2` Adresstabellen, `$CFD8–$CFFF` State,
+Palettensicherung und Profiling. Temporär `$6800` für ein DMA-Pixelbyte.
+Bank1, Indizes48–51 sind getrennt von Gegnern/Cycling/Explosionen; zwölf RGB-
+Bytes werden vor BASIC restauriert. Screen `$E000`, Stride192, 96 Einträge,
+HUD und Clippingrechteck `[0,240)×[0,200)` bleiben unverändert.
+
+Vollständige Karte, Phasenabgrenzung, DMA-/Timingnachweise und offene XEMU-Abnahme:
+[Stage7a1-Prüfbericht](stage7a1_starfield_feasibility.md).
+
+### Stage7a1 Stable – unveränderte Speicherkarte
+
+Benutzerabnahme unter XEMU und Merge-Freigabe am 13.10.2026, keine erkennbaren
+Probleme. Referenz `stage7a1-stable`, Programmcommit `ed22f0d4e4ca0bd8f5ff6ebaa5892135ce9bdd9a`.
+Keine Code-, Speicher-, PRG- oder D81-Änderung durch die Stable-Markierung.

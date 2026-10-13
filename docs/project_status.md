@@ -356,7 +356,7 @@ Stable-Sicherung ausschließlich Dokumentation, Quellen und Release-Dateien unve
 Stage 4b-3 und `stage4b3-stable` sind inzwischen auf GitHub archiviert;
 Stage 4c mit vollständigem D81 veröffentlicht (Pull Request #21).
 
-## Stage 5a – zentrale100-Level-Verwaltung (Teststand)
+## Stage 5a – zentrale100-Level-Verwaltung (Stable)
 
 Branch `stage5a` aus `stage4c-stable`, Stable-Basis unverändert archiviert.
 Dynamische Originalrecords, vier Gruppen, WORD-Einflugcursor/-verzögerungen,
@@ -365,8 +365,242 @@ regulär100→1; +/− Testnavigation begrenzt1..100. Score/Highscore/Leben erha
 Benutzerfreigabe für gezielte Kapazitätserweiterungen und vorläufige Angriffssperre
 in25/50/99/100. Übriges Grafikmapping ausdrücklich unbestätigt.
 [Speicher, Implementierung, Tests und XEMU-Plan](stage5a_level_management.md).
-Quellen/PRG/D81 unter `releases/stage_5a/`; keine Stable-Markierung ohne Bestätigung.
+Quellen/PRG/D81 unter `releases/stage_5a/`; stabile Referenz `stage5a-stable`.
 
 Stage5a:26 unterschiedliche automatische Tests bestanden, alle100 Initialisierungen;
 402 Updates identisch zur Stage4c-Referenz. Alle18 Release-Dateien byteidentisch
-im unabhängigen Zweitbuild. Benutzer-XEMU-Abnahme ausstehend.
+im unabhängigen Zweitbuild. Benutzer-XEMU-Abnahme bestätigt.
+
+Der Benutzer bestätigt: „Stage 5a ist bestätigt, Level-Wechsel funktionieren“.
+Bestätigter Programmstand: `e7166a72fbe9b00bb1d75881837a74e339225351`.
+Die Stable-Markierung verändert ausschließlich Dokumentation; Quellen, PRG, D81
+und Originaldaten bleiben unverändert. Kein eigener XEMU-/Hardwaretest wird behauptet.
+Die freigegebenen Sonderlevel-Einschränkungen und unbestätigten Grafikzuordnungen
+bleiben bestehen.
+
+## Stage 5b – 38 Originalgrafiken und Transparenz (Stable)
+
+Issue #27, Branch `stage5b` ausschließlich aus `stage5a-stable`. Die Stable-Basis
+und Originalassets bleiben unverändert.20 fehlende Originalframes der Indizes36/37
+(Typen37/38) sind anhand aller eigenen Frame-/Maskenpointer extrahiert. Insgesamt
+259 Frames; sämtliche Plane-/Maskenbytes durch den zweiten Original-USS bestätigt.
+ADF-Forme stimmt mit allen2194 Gegnern der100 VYLV-Level überein. Zentrales explizites
+38-Einträge-Mapping`n→n+1`, stark durch Deskriptor/Frame/Forme belegt; ursprüngliche
+Amiga-Auswahlroutine weiterhin nicht unabhängig bewiesen.14→15 zusätzlich visuell bestätigt.
+
+Die historischen Konvertierungsfehler (hohes statt niedriges linkes Nibble,
+Plane-Pointer−6 plus zyklische Zeilenadressierung) sind für alle239 alten Frames
+exakt reproduziert und anhand der Originalpointer korrigiert. Masken bleiben erhalten.
+Neue VYGR33464 Bytes bei `$54000–$5C2B7`; kein Speicherüberschneidungsproblem.
+Initialer Grafikbuild:45 geänderte PRG-Bytes; anschließend DOS-Exit-Korrektur, siehe unten.
+Ein-Byte-Angriffssperren25/50/99/100 bleiben; Levelpaletten ausdrücklich außerhalb
+Stage5b. [Technischer Prüfbericht und XEMU-Plan](stage5b_graphics_mapping.md),
+[Testprotokoll](stage5b-test-results.json). Release: `releases/stage_5b/`.
+Die abschließende Benutzerbestätigung und Stable-Referenz sind unten dokumentiert.
+
+Stage5b:32/32 automatische Tests bestanden(270.006s), alle100 Level,259 Frames,
+66304 Originalpixel und2072 neue RRB-Clipping-/Überlappungsfälle.20 Release-Dateien
+im unabhängigen Zweitbuild byteidentisch. Die XEMU-Abnahme war zu diesem Zeitpunkt noch offen.
+
+Stage5b: Benutzer bestätigt korrekte Grafiken in Levels1/29/37/54, meldet jedoch
+nach X→BASIC Laufwerksausfall: DIRECTORY meldet DEVICE NOT PRESENT; RUN scheitert
+an OPEN mit Load Error01. Ursache: geerbter Pixiepool`$10000–$115FF` überschreibt
+reserviertes DOS-RAM`$10000–$11FFF`; CPU-/DMA-Nachweis zeigt5610 veränderte Testbytes
+auch nach Exit. Pool nach `$14000–$155FF` verlegt, ohne DOS-Reset oder Änderung
+an VIC-Exit, Loader, Grafiken oder Mapping. [Diagnose und Test](stage5b_dos_exit_fix.md).
+Nach der Grafikabnahme stand zunächst noch die XEMU-Abnahme des korrigierten
+Exits und erneuten Diskettenzugriffs aus.
+
+DOS-korrigierter Stage5b-Build:34/34 Tests bestanden(353.719s), vollständige
+8192-Byte-DOS-Erhaltung und null protokollierte Schreibzugriffe über alle100
+Levelwechsel und drei Exit-/Neustartfolgen.20 Release-Dateien byteidentisch
+reproduziert. Reale BASIC-Diskettenzugriffe werden durch diese CPU-Modelltests
+nicht ersetzt; die abschließende Abnahme stammt vom Benutzer.
+
+Abschließende Benutzerbestätigung: „Der Build ist jetzt stabil und funktioniert komplett“.
+Stabile Referenz: `stage5b-stable`; bestätigter Programmcommit
+`52118cee6813b833d0c1d237925ad6ecd75d1d33` einschließlich DOS-Exit-Korrektur.
+Die Stable-Sicherung verändert ausschließlich Dokumentation; Quellen, PRG, D81
+und Originaldaten bleiben bytegleich. Die XEMU-Abnahme stammt vom Benutzer;
+ein eigener XEMU-/Hardwarelauf wurde nicht durchgeführt. Die dokumentierten
+Mapping-Beweisgrenzen und Sonderlevel-Angriffssperren bleiben bestehen.
+
+## Stage 5c – originale100-Level-Paletten (Stable)
+
+Issue #31, neuer Branch `stage5c` aus `stage5b-stable` (`88e19bb`).
+Analyse/CSVs aus `analysis-color-palettes` übernommen und gegen archivierte
+Original-ADF geprüft:362 Color-Bytes sowie alle100 Levelrecord-Felder`+$4C`
+identisch. Die ursprüngliche Amiga-Code-Nutzung ist weiterhin nicht unabhängig
+bewiesen; kein eigener WinUAE-Farbvergleich behauptet.
+
+VYCL v1:476 Bytes,20×9 verlustfreie RGB4-Wörter,100 Levelindices, Header und
+Payloadsumme. SEQ-Loader mit SETBNK, Rücklese-DMA und Format-/Summenprüfung
+um dritte Datei erweitert. Ladegerät aus KERNAL`$BA` für alle Dateien bewahrt.
+VYLV/VYGR bleiben unverändert. Gegnerpalette bei jedem Levelstart vor Darstellung
+aktiviert; drei Bitplanes nutzen Originalwörter0..7, Wort8 bleibt mitgeführt.
+
+Gegner liegen in eigener16-Farben-NCM-Gruppe17..24 der Bank1. Explosionen behalten
+Bank1-Farben0..15, Player/HUD/Projektile Bank2, BASIC-ROM Bank3. Bestehende
+Color-RAM-Sicherung von`$6B00–$6F7F` durch zwei DMA-Adressänderungen nach
+`$15600–$15A7F` verlegt, um Palettencode und Spiegel konfliktfrei aufzunehmen.
+Angriffsmetadaten`$6F80–$6FFF` unverändert erhalten. Vollständige Speicherkarte
+und Prüfbericht: [Stage5c](stage5c_original_palettes.md).
+
+Quellen/PRG/D81 und alle drei DAT-Dateien: `releases/stage_5c/`.
+Automatische Testergebnisse: `docs/stage5c-test-results.json`.
+Stage5c ist nach ausdrücklicher Benutzerabnahme Stable; Referenz `stage5c-stable`.
+
+Finaler Stage5c-Build: **43/43 Tests bestanden (515.180s)**; alle100 Level-
+initialisierungen und Paletten,259 Originalframes,1813 Clipping- und259
+Überlappungsfälle. DOS8192 Bytes, Color-RAM4800 Bytes und Cursorzustand erhalten;
+Player/HUD/Explosionen isoliert. Alle23 Release-Dateien im unabhängigen Zweitbuild
+byteidentisch. Benutzer-XEMU-Abnahme und originalgetreue Level-Farben bestätigt;
+kein eigener XEMU-/WinUAE-Farbvergleich durchgeführt.
+
+## Bestätigte Stable-Referenz
+
+Der Benutzer bestätigt: „Level-Farben entsprechen exakt dem Original, Player, HUD und Explosionen sind unverändert korrekt. Basic-Exit funktioniert ebenfalls. Stage 5c ist stable.“
+Stabile Referenz: `stage5c-stable`; bestätigter Programmcommit
+`2fb8308b886980f3d0e89a1ae19faf3937c6903f`.
+Die Stable-Sicherung verändert ausschließlich Dokumentation. Quellen, PRG, D81
+und alle DAT-Dateien bleiben byteidentisch. Die XEMU-Abnahme und der visuelle
+Originalfarbvergleich stammen vom Benutzer; ein eigener XEMU-/WinUAE- oder
+Hardwarelauf wird nicht behauptet. Die offenen Amiga-Code-Beweisfragen und
+die freigegebenen Sonderlevel-Angriffssperren bleiben unverändert dokumentiert.
+
+## Übernommene Stage-5d-0-Stable-Referenz
+
+Der Benutzer bestätigt: „Stage 5d0 funktioniert und ist stable“.
+Isolierter Titeltest: Tag `stage5d0-stable`, Branch `stage5d-title-test`,
+bestätigter Programmcommit `671054337daa76dc2019660b111505d00a818cd6`.
+Die hier übernommenen Quellen, Originalassets und Release-Dateien sind gegenüber
+dieser Referenz unverändert. Die Stage-5c-Basis bleibt ebenfalls erhalten.
+
+## Stage 5d-1 – Titel während des Ladens (Stable)
+
+Issue #35, Branch `stage5d-1` aus unverändertem `stage5c-stable`.
+Der vom Benutzer bestätigte FCM-Titelrenderer aus `stage5d0-stable` wird gezielt
+übernommen. VYTI wird zuerst geladen, vollständig geprüft und sichtbar gemacht;
+danach bleiben alle Titelpixel während VYLV/VYGR/VYCL und Levelvorbereitung
+unverändert. Nach erfolgreicher Validierung wird direkt Level 1 gestartet.
+Kein Menü. Titel-Cache und aktive Enginepuffer sind getrennt; der phasenweise
+mit dem HUD-Font geteilte Bootstrap wird für erneutes RUN wiederhergestellt.
+Original-Spielmechanik und alle 100 Level bleiben die Stage-5c-Implementierung.
+Quellen, PRG, vollständiges D81 und vier DAT-Dateien: `releases/stage_5d_1/`.
+[Build, Speicherprüfung, Fehler und XEMU-Abnahme](stage5d1_title_loader_integration.md).
+Automatische Tests sind Hostmodelle; die XEMU-Abnahme nach der HOTREG-Korrektur
+wurde inzwischen vom Benutzer bestätigt.
+
+## Stage-5d-1-Nachkorrektur: Titel → Spiel
+
+Benutzer-XEMU-Befund: Titel lädt korrekt, im Level flackern die oberen etwa
+drei Zeilen und Pixieteile fehlen. Nachgewiesen wurde eine ausstehende
+HOTREG-Legacy-Neuberechnung beim abschließenden Aktivieren von HOTREG, die
+bereits restaurierte präzise Geometrie wieder überschreiben kann. Die
+Restore-Reihenfolge wurde ausschließlich im neuen Titelbootstrap korrigiert.
+Der zusätzliche Regressionstest scheitert mit dem alten PRG in beiden
+HOTREG-on-Modellen (XEMU/Core), besteht mit dem neuen in allen vier Fällen.
+Spielrenderer und sämtliche normalisierten Stage-5c-Spielkomponenten sowie
+alle Original-DAT-Dateien bleiben unverändert. Vollständige erneute Host-
+Regression und unabhängiger Zweitbuild: `docs/stage5d1-test-results.json`.
+Die visuelle XEMU-Nachprüfung wurde inzwischen vom Benutzer bestätigt.
+
+Automatische Nachprüfung: vollständiger Vorlauf 50/50 erfolgreich; endgültiger
+38-Register-Build mit sechs gezielten Prüfungen zu Geometrie, Pixeln, Ladefehler,
+ROM-Cursor, Exit und erneutem RUN bestätigt. Prüfbericht trennt die Buildstände
+und dokumentiert die Testvorgaben-Korrektur zur BASIC-Hintergrundfarbe.
+27 Artefakte im unabhängigen Zweitbuild byteidentisch, 61 Stable-Dateien geschützt.
+Nur 590 PRG-Bytes innerhalb des Titelbootstraps geändert; übriger Spielcode identisch.
+
+## Stage 5d-1: bestätigte Stable-Referenz
+
+Benutzerbestätigung: „Mit den Korrekturen funktioniert jetzt alles wieder.
+Der Build ist stable.“ Referenz: `stage5d1-stable`, Branch `stage5d-1`.
+Bestätigter Programmcommit: `7d6e77f0c2da42065941ab9a2f93f8f589ce2dda`.
+Die Sicherung verändert ausschließlich Dokumentation; vollständige Quellen,
+Originalassets, PRG, D81 und Release-ZIP bleiben byteidentisch.
+Die XEMU-Abnahme stammt vom Benutzer; kein eigener XEMU-/Hardwarelauf.
+
+## Stage 5d-1a / Issue #41: Stable (12.10.2026)
+
+Separate branch `stage5d-1-b2`, based on current Stage 5d-1 commit `e295fa8`. User-confirmed B2 ENTRY Y−16 and continuous RETURN handoff integrated in new sources only. Title/loader, ATTACK, all 100 levels and palettes preserved. Release `releases/stage_5d_1_b2/`; Stable tag `stage5d1a-stable`. See [integration report](stage5d1_b2_integration.md).
+
+Benutzerabnahme am 12.10.2026: „Der Build ist stable.“ Getesteter Programmcommit `08df921c6cca4614e540d6f50d6c853e8835ad40`. Nur Dokumentation wird zur Stable-Sicherung geändert; sämtliche Quellen und Release-Artefakte bleiben byteidentisch. Frühere Build-PRs #36/#38/#40 und der abgeschlossene Integrations-PR #42 werden geschlossen, zugehörige Issues #35/#37/#39/#41 abgeschlossen. Branches, Tags und historische Downloads bleiben erhalten; keine Integration in frühere Stable-Branches.
+
+## Stage 6b1 – Issue #47, Testbuild, noch nicht Stable
+
+Eigener Branch `stage6b1` auf unveränderter `stage5d1a-stable`-Spielengine
+(`39890c0`), mit gezielt integrierter `stage6a2-stable`-Menüreferenz (`24559e4`).
+Nach Titel/SEQ-Laden erscheint das originale animierte Menü; Auswahl per
+Joystick/Tastatur, zyklisches INITIAL LEVEL 001–100, F1-Spielstart und F2/F3-
+Platzhalter. Original-Color02-Cycling läuft im Spiel auf Bank1/Index19 weiter,
+während Player, HUD, Explosionen und übrige Levelpalettenfarben erhalten bleiben.
+HUD nutzt den rekonstruierten Menüfont. Stage 6a1 ist historische, obsolete
+Referenz; Stage 6a2 ist der vom Benutzer bestätigte Menüstand.
+
+Quellen `src/engine/stage6b1*.asm`, Builder `tools/build_stage6b1.py`, PRG/D81
+unter `releases/stage_6b1/`. Stable-Tags, deren Quellen und Releases unverändert.
+Automatische Prüfungen und XEMU-Checkliste:
+[Stage6b1-Menüintegration](stage6b1_menu_integration.md).
+Eine XEMU-Abnahme von Stage6b1 wird nicht behauptet; Stable erst nach ausdrücklicher
+Benutzerbestätigung.
+
+### Stage6b1 – Korrektur des gemeldeten 3,5-MHz-Taktabfalls
+
+Titel-/Menüinitialisierung löschte mit `$D054=$05` das VFAST-Bit. Stage6b1 setzt
+jetzt FAST und VFAST in Titel, Menü und Spiel; BASIC-Taktregister werden weiterhin
+exakt restauriert. Neuer Register-/Exit-Test für langsame und schnelle BASIC-
+Starts. Vollständiges PRG/D81 aktualisiert, Stable-Referenzen unverändert.
+Details und XEMU-Prüfschwerpunkt: `docs/stage6b1_menu_integration.md`.
+
+### Stage6b1 – ROMC-/IRQ-Korrektur für V920413
+
+KERNAL-Menüdatei-I/O wurde mit abgeschalteter ROMC-Abbildung aufgerufen.
+Low-RAM-Gates restaurieren jetzt ROMC vor SEQ-I/O; nur Parameter-/Prüfphasen
+laufen IRQ-maskiert in der Bridge. V920413-ROM belegt FA29 als IRQ/BRK-Prolog
+und CE26 als BRK-Ziel; linear000CE26 zeigt fehlende ROM-Abbildung.
+20 Laufzeittests plus drei ROM-Belegprüfungen bestanden; neuer PRG/D81-Build
+bytegleich reproduziert. XEMU-Abnahme ausstehend, nicht Stable.
+
+## Stage6b1 Stable – Benutzerabnahme 12.10.2026
+
+Vom Benutzer nach XEMU-Funktionskontrolle mit ROM V920413 ausdrücklich bestätigt.
+Joystickfehler war XEMU-Port1; mit **Port2** funktionieren Menü und Spiel.
+Kein weiterer Programmfix. Stable-Referenz `stage6b1-stable`, Branch `stage6b1`,
+getesteter Programmcommit `5fa82452101cf690c3fa1f5eba0b172222541764`.
+Quellen und vollständiges Release `releases/stage_6b1/` bytegleich erhalten.
+Die Bestätigung stammt vom Benutzer, kein eigener XEMU-Test behauptet.
+
+## Stage7a1 – separater technischer Sternentest, 13.10.2026
+
+Issue49, Branch `stage7a1-starfield-test`, **nicht Stable**, kein produktiver Merge.
+Ausgangspunkt `stage6b1-stable`, unveränderte geschützte Quellen/Assets/Releases.
+Separates PRG und vollständiges D81 unter `releases/stage_7a1/`.
+
+F1 startet den bestehenden Spielablauf mit 48 reproduzierbaren Ein-Pixel-Sternen:
+Blau +1 Y/8 Frames, Rot /4, Gelb /2. Diese RGB-/Dichte-/Geschwindigkeitswerte
+sind ausdrücklich Testparameter. Eigener 24-KB-NCM-Charset nutzt den bestehenden
+opaken Hintergrundprefix; keine zusätzlichen Hardware-Sprites oder RRB-Pixies.
+Originalgrafiken, Paletten/Cycling, HUD, Schüsse und sämtliche Level bleiben erhalten.
+B schaltet Sterne sauber aus/ein; V aktiviert Rastermarker; X/RUN bleibt erhalten.
+
+28 Hosttests des assemblierten PRG bestanden, darunter 1.600 Sternframes,
+Clipping/Transparenz, DMA-/Speichergrenzen, Paletten und bisherige Menü-/Kampf-
+Regression. Spitzenlast:192 Ein-Byte-DMA-Aufträge, Mittel56. CPU-Modellwerte
+und echte PAL-Rasterinstrumentierung getrennt dokumentiert. Kein eigener
+XEMU-Test; mehrminütige optische Abnahme und reale Rasterzeit noch erforderlich.
+Architektur als Integrationskandidat empfohlen, Stable erst nach Benutzerbestätigung.
+Details: [Machbarkeit/Messungen/Build](stage7a1_starfield_feasibility.md).
+
+## Stage7a1 Stable – Benutzerabnahme 13.10.2026
+
+Vom Benutzer unter XEMU getestet: keine erkennbaren Probleme; Build ausdrücklich
+als Stable bestätigt und zum Merge freigegeben. Getesteter Programmcommit
+`ed22f0d4e4ca0bd8f5ff6ebaa5892135ce9bdd9a`, Referenz `stage7a1-stable`.
+PRG, D81, Quellen und das vollständige Release bleiben bytegleich.
+Die Freigabe stammt vom Benutzer; keine eigenen XEMU- oder Rasterzeitmessungen
+behauptet. Historische Testreports im Release bleiben unverändert.
+
+PR50 wird nach `main` gemergt; `stage6b1` und sämtliche bisherigen Stable-Tags
+bleiben unverändert. Dies archiviert den eigenständigen Testbuild; die spätere
+Integration in eine neue Spielengine-Stage erfolgt weiterhin separat.

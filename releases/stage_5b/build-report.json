@@ -1,0 +1,834 @@
+{
+  "stage": "5a",
+  "issue": 27,
+  "stable": false,
+  "baseline": "stage5a-stable",
+  "assembler": "KickAssembler5.25",
+  "comparison": {
+    "baseline": "stage5a-stable",
+    "baseline_prg_sha256": "afdb91be6d57298af92fbc8bf8adcfb3d9dfe2c8689a54c37e8d728d11bacf81",
+    "changed_bytes": 147,
+    "patches": [
+      {
+        "address": "$3403",
+        "old": 86,
+        "new": 88
+      },
+      {
+        "address": "$3406",
+        "old": 89,
+        "new": 91
+      },
+      {
+        "address": "$3409",
+        "old": 84,
+        "new": 86
+      },
+      {
+        "address": "$340E",
+        "old": 87,
+        "new": 89
+      },
+      {
+        "address": "$3413",
+        "old": 88,
+        "new": 90
+      },
+      {
+        "address": "$3418",
+        "old": 91,
+        "new": 93
+      },
+      {
+        "address": "$341B",
+        "old": 85,
+        "new": 87
+      },
+      {
+        "address": "$341E",
+        "old": 0,
+        "new": 64
+      },
+      {
+        "address": "$3420",
+        "old": 90,
+        "new": 92
+      },
+      {
+        "address": "$3423",
+        "old": 70,
+        "new": 72
+      },
+      {
+        "address": "$3426",
+        "old": 90,
+        "new": 92
+      },
+      {
+        "address": "$3429",
+        "old": 90,
+        "new": 92
+      },
+      {
+        "address": "$342C",
+        "old": 22,
+        "new": 86
+      },
+      {
+        "address": "$3436",
+        "old": 86,
+        "new": 88
+      },
+      {
+        "address": "$343B",
+        "old": 87,
+        "new": 89
+      },
+      {
+        "address": "$344E",
+        "old": 87,
+        "new": 89
+      },
+      {
+        "address": "$3453",
+        "old": 88,
+        "new": 90
+      },
+      {
+        "address": "$3456",
+        "old": 85,
+        "new": 87
+      },
+      {
+        "address": "$345B",
+        "old": 84,
+        "new": 86
+      },
+      {
+        "address": "$3460",
+        "old": 89,
+        "new": 91
+      },
+      {
+        "address": "$3465",
+        "old": 141,
+        "new": 9
+      },
+      {
+        "address": "$3466",
+        "old": 90,
+        "new": 64
+      },
+      {
+        "address": "$3467",
+        "old": 91,
+        "new": 141
+      },
+      {
+        "address": "$3468",
+        "old": 169,
+        "new": 92
+      },
+      {
+        "address": "$3469",
+        "old": 1,
+        "new": 91
+      },
+      {
+        "address": "$346A",
+        "old": 141,
+        "new": 169
+      },
+      {
+        "address": "$346B",
+        "old": 91,
+        "new": 1
+      },
+      {
+        "address": "$346C",
+        "old": 91,
+        "new": 141
+      },
+      {
+        "address": "$346D",
+        "old": 32,
+        "new": 93
+      },
+      {
+        "address": "$346E",
+        "old": 70,
+        "new": 91
+      },
+      {
+        "address": "$346F",
+        "old": 91,
+        "new": 32
+      },
+      {
+        "address": "$3470",
+        "old": 76,
+        "new": 72
+      },
+      {
+        "address": "$3471",
+        "old": 54,
+        "new": 91
+      },
+      {
+        "address": "$3472",
+        "old": 91,
+        "new": 76
+      },
+      {
+        "address": "$3473",
+        "old": 0,
+        "new": 56
+      },
+      {
+        "address": "$3474",
+        "old": 0,
+        "new": 91
+      },
+      {
+        "address": "$34A3",
+        "old": 86,
+        "new": 88
+      },
+      {
+        "address": "$34A6",
+        "old": 89,
+        "new": 91
+      },
+      {
+        "address": "$34A9",
+        "old": 84,
+        "new": 86
+      },
+      {
+        "address": "$34AC",
+        "old": 88,
+        "new": 90
+      },
+      {
+        "address": "$34AF",
+        "old": 91,
+        "new": 93
+      },
+      {
+        "address": "$34B4",
+        "old": 87,
+        "new": 89
+      },
+      {
+        "address": "$34B9",
+        "old": 90,
+        "new": 92
+      },
+      {
+        "address": "$34BE",
+        "old": 85,
+        "new": 87
+      },
+      {
+        "address": "$34C1",
+        "old": 70,
+        "new": 72
+      },
+      {
+        "address": "$4875",
+        "old": 168,
+        "new": 184
+      },
+      {
+        "address": "$487A",
+        "old": 120,
+        "new": 130
+      },
+      {
+        "address": "$489C",
+        "old": 233,
+        "new": 117
+      },
+      {
+        "address": "$48A3",
+        "old": 31,
+        "new": 91
+      },
+      {
+        "address": "$5ACC",
+        "old": 86,
+        "new": 88
+      },
+      {
+        "address": "$5AD1",
+        "old": 87,
+        "new": 89
+      },
+      {
+        "address": "$5AE4",
+        "old": 87,
+        "new": 89
+      },
+      {
+        "address": "$5AE9",
+        "old": 84,
+        "new": 86
+      },
+      {
+        "address": "$5AEE",
+        "old": 85,
+        "new": 87
+      },
+      {
+        "address": "$5AF3",
+        "old": 89,
+        "new": 91
+      },
+      {
+        "address": "$5AF8",
+        "old": 90,
+        "new": 92
+      },
+      {
+        "address": "$5AFD",
+        "old": 91,
+        "new": 93
+      },
+      {
+        "address": "$5B00",
+        "old": 70,
+        "new": 72
+      },
+      {
+        "address": "$5B18",
+        "old": 86,
+        "new": 88
+      },
+      {
+        "address": "$5B1B",
+        "old": 89,
+        "new": 91
+      },
+      {
+        "address": "$5B1E",
+        "old": 84,
+        "new": 86
+      },
+      {
+        "address": "$5B23",
+        "old": 87,
+        "new": 89
+      },
+      {
+        "address": "$5B28",
+        "old": 85,
+        "new": 87
+      },
+      {
+        "address": "$5B2B",
+        "old": 91,
+        "new": 93
+      },
+      {
+        "address": "$5B30",
+        "old": 141,
+        "new": 9
+      },
+      {
+        "address": "$5B31",
+        "old": 90,
+        "new": 64
+      },
+      {
+        "address": "$5B32",
+        "old": 91,
+        "new": 141
+      },
+      {
+        "address": "$5B33",
+        "old": 32,
+        "new": 92
+      },
+      {
+        "address": "$5B34",
+        "old": 70,
+        "new": 91
+      },
+      {
+        "address": "$5B35",
+        "old": 91,
+        "new": 32
+      },
+      {
+        "address": "$5B36",
+        "old": 173,
+        "new": 72
+      },
+      {
+        "address": "$5B37",
+        "old": 83,
+        "new": 91
+      },
+      {
+        "address": "$5B38",
+        "old": 29,
+        "new": 173
+      },
+      {
+        "address": "$5B39",
+        "old": 10,
+        "new": 83
+      },
+      {
+        "address": "$5B3A",
+        "old": 10,
+        "new": 29
+      },
+      {
+        "address": "$5B3B",
+        "old": 24,
+        "new": 10
+      },
+      {
+        "address": "$5B3C",
+        "old": 105,
+        "new": 10
+      },
+      {
+        "address": "$5B3D",
+        "old": 1,
+        "new": 24
+      },
+      {
+        "address": "$5B3E",
+        "old": 160,
+        "new": 105
+      },
+      {
+        "address": "$5B3F",
+        "old": 4,
+        "new": 1
+      },
+      {
+        "address": "$5B40",
+        "old": 32,
+        "new": 160
+      },
+      {
+        "address": "$5B41",
+        "old": 186,
+        "new": 5
+      },
+      {
+        "address": "$5B42",
+        "old": 157,
+        "new": 32
+      },
+      {
+        "address": "$5B43",
+        "old": 76,
+        "new": 186
+      },
+      {
+        "address": "$5B44",
+        "old": 99,
+        "new": 157
+      },
+      {
+        "address": "$5B45",
+        "old": 189,
+        "new": 76
+      },
+      {
+        "address": "$5B46",
+        "old": 169,
+        "new": 99
+      },
+      {
+        "address": "$5B47",
+        "old": 91,
+        "new": 189
+      },
+      {
+        "address": "$5B48",
+        "old": 162,
+        "new": 169
+      },
+      {
+        "address": "$5B49",
+        "old": 77,
+        "new": 91
+      },
+      {
+        "address": "$5B4A",
+        "old": 76,
+        "new": 162
+      },
+      {
+        "address": "$5B4B",
+        "old": 132,
+        "new": 79
+      },
+      {
+        "address": "$5B4C",
+        "old": 61,
+        "new": 76
+      },
+      {
+        "address": "$5B4D",
+        "old": 128,
+        "new": 132
+      },
+      {
+        "address": "$5B4E",
+        "old": 0,
+        "new": 61
+      },
+      {
+        "address": "$5B4F",
+        "old": 129,
+        "new": 128
+      },
+      {
+        "address": "$5B51",
+        "old": 10,
+        "new": 129
+      },
+      {
+        "address": "$5B53",
+        "old": 0,
+        "new": 10
+      },
+      {
+        "address": "$5B54",
+        "old": 128,
+        "new": 0
+      },
+      {
+        "address": "$5B56",
+        "old": 64,
+        "new": 128
+      },
+      {
+        "address": "$5B57",
+        "old": 152,
+        "new": 0
+      },
+      {
+        "address": "$5B58",
+        "old": 0,
+        "new": 64
+      },
+      {
+        "address": "$5B59",
+        "old": 64,
+        "new": 152
+      },
+      {
+        "address": "$5B5A",
+        "old": 86,
+        "new": 0
+      },
+      {
+        "address": "$5B5B",
+        "old": 0,
+        "new": 64
+      },
+      {
+        "address": "$5B5C",
+        "old": 0,
+        "new": 86
+      },
+      {
+        "address": "$6274",
+        "old": 37,
+        "new": 39
+      },
+      {
+        "address": "$6301",
+        "old": 40,
+        "new": 56
+      },
+      {
+        "address": "$6352",
+        "old": 120,
+        "new": 130
+      },
+      {
+        "address": "$635E",
+        "old": 169,
+        "new": 185
+      },
+      {
+        "address": "$8910",
+        "old": 12,
+        "new": 1
+      },
+      {
+        "address": "$8911",
+        "old": 12,
+        "new": 2
+      },
+      {
+        "address": "$8912",
+        "old": 1,
+        "new": 3
+      },
+      {
+        "address": "$8913",
+        "old": 2,
+        "new": 4
+      },
+      {
+        "address": "$8914",
+        "old": 3,
+        "new": 5
+      },
+      {
+        "address": "$8915",
+        "old": 4,
+        "new": 6
+      },
+      {
+        "address": "$8916",
+        "old": 5,
+        "new": 7
+      },
+      {
+        "address": "$8917",
+        "old": 6,
+        "new": 8
+      },
+      {
+        "address": "$8918",
+        "old": 7,
+        "new": 9
+      },
+      {
+        "address": "$8919",
+        "old": 8,
+        "new": 10
+      },
+      {
+        "address": "$891A",
+        "old": 9,
+        "new": 11
+      },
+      {
+        "address": "$891B",
+        "old": 10,
+        "new": 12
+      },
+      {
+        "address": "$891C",
+        "old": 11,
+        "new": 13
+      },
+      {
+        "address": "$891D",
+        "old": 12,
+        "new": 14
+      },
+      {
+        "address": "$891F",
+        "old": 14,
+        "new": 16
+      },
+      {
+        "address": "$8920",
+        "old": 15,
+        "new": 17
+      },
+      {
+        "address": "$8921",
+        "old": 16,
+        "new": 18
+      },
+      {
+        "address": "$8922",
+        "old": 17,
+        "new": 19
+      },
+      {
+        "address": "$8923",
+        "old": 18,
+        "new": 20
+      },
+      {
+        "address": "$8924",
+        "old": 19,
+        "new": 21
+      },
+      {
+        "address": "$8925",
+        "old": 20,
+        "new": 22
+      },
+      {
+        "address": "$8926",
+        "old": 21,
+        "new": 23
+      },
+      {
+        "address": "$8927",
+        "old": 22,
+        "new": 24
+      },
+      {
+        "address": "$8928",
+        "old": 23,
+        "new": 25
+      },
+      {
+        "address": "$8929",
+        "old": 24,
+        "new": 26
+      },
+      {
+        "address": "$892A",
+        "old": 25,
+        "new": 27
+      },
+      {
+        "address": "$892B",
+        "old": 26,
+        "new": 28
+      },
+      {
+        "address": "$892C",
+        "old": 27,
+        "new": 29
+      },
+      {
+        "address": "$892D",
+        "old": 28,
+        "new": 30
+      },
+      {
+        "address": "$892E",
+        "old": 29,
+        "new": 31
+      },
+      {
+        "address": "$892F",
+        "old": 30,
+        "new": 32
+      },
+      {
+        "address": "$8930",
+        "old": 31,
+        "new": 33
+      },
+      {
+        "address": "$8931",
+        "old": 32,
+        "new": 34
+      },
+      {
+        "address": "$8932",
+        "old": 33,
+        "new": 35
+      },
+      {
+        "address": "$8933",
+        "old": 34,
+        "new": 36
+      },
+      {
+        "address": "$8934",
+        "old": 35,
+        "new": 37
+      },
+      {
+        "address": "$8935",
+        "old": 36,
+        "new": 38
+      }
+    ],
+    "player_speed": "1 pixel/frame",
+    "formation_speed": "1 pixel/2 frames",
+    "stable": false
+  },
+  "files": [
+    {
+      "name": "STAGE5B",
+      "bytes": 43777,
+      "blocks": 173,
+      "sha256": "3b1118f70932fa5c5c8a86414fbed04c47f476f85046b0f5f47e1c5bf7be0750"
+    },
+    {
+      "name": "VYLV.DAT",
+      "bytes": 81793,
+      "blocks": 323,
+      "sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283"
+    },
+    {
+      "name": "VYGR.DAT",
+      "bytes": 33464,
+      "blocks": 132,
+      "sha256": "974e8eff97efd0c0f67db2780cb668311b9d8731395d43641d4602c0a7c96b50"
+    }
+  ],
+  "capacity": {
+    "levels": 100,
+    "enemies": 2194,
+    "max_record_bytes": 1706,
+    "max_entry_curve_bytes": 469,
+    "max_spawn_delay": 2100,
+    "max_graphic_indices": 22,
+    "max_all_frames_bytes": 19456,
+    "max_rrb_slots": 23,
+    "short_attack_levels": [
+      25,
+      50,
+      99,
+      100
+    ],
+    "all_formations_and_drift_fit": true
+  },
+  "controls": {
+    "+": "next level, clamp100, physical release debounce",
+    "-": "previous level, clamp1",
+    "button": "new Port2 press in LEVEL_CLEAR,100->1",
+    "R": "GAME_OVER restart Level1, score0, lives3, retain highscore",
+    "X": "clean BASIC exit"
+  },
+  "restrictions": {
+    "attack_disabled_levels": [
+      25,
+      50,
+      99,
+      100
+    ],
+    "reason": "user-approved pending original one-byte special curve semantics",
+    "mapping": "explicit n->n+1 descriptor/frame/ADF evidence; original indexing routine not proven;14->15 visually confirmed"
+  },
+  "memory": {
+    "active_record": "$12000-$126FF",
+    "header": "$7600-$7607",
+    "code": "below$A000; manager$6000 replaces obsolete initial colour template",
+    "private_pixies": "$14000-$155FF (22x256, relocated outside DOS $10000-$11FFF)",
+    "blank_template": "$6700-$67FF",
+    "runtime_metadata": "$1D80-$1DB1 and $6A20-$6AD7",
+    "groups": 4,
+    "entry_cursor_bits": 16,
+    "entry_delay_bits": 16,
+    "rrb_slots": 24,
+    "screen_stride": 192
+  },
+  "runtime_xemu": "NOT_RUN; user confirmation required",
+  "dos_protection": {
+    "reserved": "$10000-$11FFF",
+    "private_pool": "$14000-$155FF",
+    "method": "avoid DOS entirely; no restore needed"
+  },
+  "graphics": {
+    "types": 38,
+    "frames": 259,
+    "size": 33464,
+    "sha256": "974e8eff97efd0c0f67db2780cb668311b9d8731395d43641d4602c0a7c96b50",
+    "sum16": 23413,
+    "ram": "$54000-$5C2B7",
+    "format_version": 1
+  }
+}

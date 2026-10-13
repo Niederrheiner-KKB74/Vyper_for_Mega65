@@ -1,0 +1,7 @@
+test_stable4c_entry_formation_402_updates_identical (test_stage5d1a.CombatRegression.test_stable4c_entry_formation_402_updates_identical) ... ok
+test_long_original_entry_curve_and_word_delays (test_stage5d1a.LevelRegression.test_long_original_entry_curve_and_word_delays) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 82.384s
+
+OK

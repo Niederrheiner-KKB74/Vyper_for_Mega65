@@ -1,9 +1,11 @@
 # Stage 5a – zentrale Levelverwaltung
 
-Issue #23. Teststand im Branch `stage5a`, ausschließlich von der lokal und auf
+Issue #23. Stable im Branch `stage5a`, ausschließlich von der lokal und auf
 GitHub gesicherten Referenz `stage4c-stable` (`fe81bf9`) abgeleitet.
 Stage4c-Quellen, Release-Dateien und alle Originalassets bleiben unverändert.
-**Keine Stable-Markierung ohne ausdrückliche Benutzer-XEMU-Bestätigung.**
+**Vom Benutzer bestätigt: „Stage 5a ist bestätigt, Level-Wechsel funktionieren“.**
+Stabile Referenz: `stage5a-stable`; bestätigter Programmstand `e7166a7`.
+Die Stable-Markierung ändert nur Dokumentation, keine Quellen oder Release-Dateien.
 
 ## Zustände und Bedienung
 
@@ -161,9 +163,9 @@ Worst-case22-Pixie-Renderer im Modell:441719 Zyklen, vorher824211; keine RRB-
 DMA-Wartezeiten/IRQs oder sonstige Hauptschleifenarbeit und ist keine50-Hz-Garantie.
 
 CPU-/DMA-Modell ist kein XEMU und keine tatsächliche Rasterzeitmessung. DMA-/IRQ-
-Wartezeiten sind damit nicht vollständig abgebildet. Die Benutzerabnahme ist offen.
+Wartezeiten sind damit nicht vollständig abgebildet. Die Benutzerabnahme ist bestätigt; ein eigener XEMU-/Hardwaretest wird nicht behauptet.
 
-## XEMU-Abnahmeplan
+## XEMU-Abnahmeplan und Benutzerbestätigung
 
 D81 einlegen, `LOAD "STAGE5A",8`, `RUN` (ROM V920395/BASIC80×25).
 

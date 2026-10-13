@@ -1,0 +1,7 @@
+Memory Map
+----------
+Default-segment:
+  $2001-$200c BASIC SYS 8448
+  $2100-$2737 Standalone title loader and video
+  $4000-$4a4f FCM zero attributes source
+  $7000-$7a4f FCM 44x30 screen

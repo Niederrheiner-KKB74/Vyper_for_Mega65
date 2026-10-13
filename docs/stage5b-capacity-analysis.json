@@ -1,0 +1,9407 @@
+{
+  "baseline": "stage5a-stable",
+  "stage": "5b",
+  "implementation_status": "CAPACITY_ANALYSIS",
+  "original_data_sha256": {
+    "VYLV.DAT": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283",
+    "VYGR.DAT": "974e8eff97efd0c0f67db2780cb668311b9d8731395d43641d4602c0a7c96b50"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "file_offset": 808,
+      "record_bytes": 849,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 16,
+      "entry_groups": [
+        {
+          "length": 158,
+          "x_range": [
+            20,
+            147
+          ],
+          "y_range": [
+            0,
+            159
+          ],
+          "last_spawn_delay": 160
+        },
+        {
+          "length": 165,
+          "x_range": [
+            93,
+            220
+          ],
+          "y_range": [
+            0,
+            159
+          ],
+          "last_spawn_delay": 160
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 14,
+          "vygr_type": 15,
+          "mapping_confirmed": true,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 768,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        183,
+        183
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 2,
+      "file_offset": 1657,
+      "record_bytes": 1037,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 8,
+      "entry_groups": [
+        {
+          "length": 166,
+          "x_range": [
+            9,
+            197
+          ],
+          "y_range": [
+            39,
+            216
+          ],
+          "last_spawn_delay": 80
+        },
+        {
+          "length": 166,
+          "x_range": [
+            30,
+            218
+          ],
+          "y_range": [
+            49,
+            216
+          ],
+          "last_spawn_delay": 80
+        }
+      ],
+      "formation_y_offset": -24,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 0,
+          "vygr_type": 1,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        163,
+        163,
+        217
+      ],
+      "attack_indices": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy"
+      ]
+    },
+    {
+      "level": 3,
+      "file_offset": 2694,
+      "record_bytes": 738,
+      "enemy_count": 20,
+      "group_count": 1,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 232,
+          "x_range": [
+            10,
+            205
+          ],
+          "y_range": [
+            62,
+            216
+          ],
+          "last_spawn_delay": 76
+        }
+      ],
+      "formation_y_offset": -22,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 21,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 9,
+          "vygr_type": 10,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5120,
+      "attack_lengths": [
+        183,
+        183
+      ],
+      "attack_indices": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "variable_enemy_count"
+      ]
+    },
+    {
+      "level": 4,
+      "file_offset": 3432,
+      "record_bytes": 1331,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 274,
+          "x_range": [
+            51,
+            210
+          ],
+          "y_range": [
+            0,
+            159
+          ],
+          "last_spawn_delay": 25
+        },
+        {
+          "length": 275,
+          "x_range": [
+            30,
+            189
+          ],
+          "y_range": [
+            0,
+            159
+          ],
+          "last_spawn_delay": 25
+        },
+        {
+          "length": 285,
+          "x_range": [
+            30,
+            188
+          ],
+          "y_range": [
+            22,
+            216
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 280,
+          "x_range": [
+            52,
+            210
+          ],
+          "y_range": [
+            22,
+            216
+          ],
+          "last_spawn_delay": 20
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 12,
+          "vygr_type": 13,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        43
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "entry_cursor_requires_word"
+      ]
+    },
+    {
+      "level": 5,
+      "file_offset": 4763,
+      "record_bytes": 685,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 243,
+          "x_range": [
+            5,
+            221
+          ],
+          "y_range": [
+            0,
+            161
+          ],
+          "last_spawn_delay": 84
+        }
+      ],
+      "formation_y_offset": -20,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 4,
+          "vygr_type": 5,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        171,
+        119
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 6,
+      "file_offset": 5448,
+      "record_bytes": 512,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 8,
+      "entry_groups": [
+        {
+          "length": 186,
+          "x_range": [
+            20,
+            220
+          ],
+          "y_range": [
+            32,
+            216
+          ],
+          "last_spawn_delay": 168
+        }
+      ],
+      "formation_y_offset": -29,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 7,
+          "vygr_type": 8,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        87,
+        87
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 7,
+      "file_offset": 5960,
+      "record_bytes": 677,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 80,
+      "entry_groups": [
+        {
+          "length": 233,
+          "x_range": [
+            20,
+            193
+          ],
+          "y_range": [
+            0,
+            145
+          ],
+          "last_spawn_delay": 800
+        },
+        {
+          "length": 242,
+          "x_range": [
+            41,
+            220
+          ],
+          "y_range": [
+            0,
+            152
+          ],
+          "last_spawn_delay": 800
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 9,
+          "vygr_type": 10,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 22,
+          "vygr_type": 23,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        44
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "spawn_delay_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 8,
+      "file_offset": 6637,
+      "record_bytes": 491,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 142,
+          "x_range": [
+            0,
+            213
+          ],
+          "y_range": [
+            27,
+            216
+          ],
+          "last_spawn_delay": 50
+        },
+        {
+          "length": 142,
+          "x_range": [
+            43,
+            213
+          ],
+          "y_range": [
+            27,
+            216
+          ],
+          "last_spawn_delay": 50
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 28,
+          "vygr_type": 29,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 768,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        49
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 9,
+      "file_offset": 7128,
+      "record_bytes": 1624,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 16,
+      "entry_groups": [
+        {
+          "length": 290,
+          "x_range": [
+            0,
+            176
+          ],
+          "y_range": [
+            0,
+            137
+          ],
+          "last_spawn_delay": 64
+        },
+        {
+          "length": 290,
+          "x_range": [
+            16,
+            192
+          ],
+          "y_range": [
+            0,
+            137
+          ],
+          "last_spawn_delay": 64
+        },
+        {
+          "length": 290,
+          "x_range": [
+            32,
+            208
+          ],
+          "y_range": [
+            0,
+            137
+          ],
+          "last_spawn_delay": 80
+        },
+        {
+          "length": 290,
+          "x_range": [
+            48,
+            224
+          ],
+          "y_range": [
+            0,
+            137
+          ],
+          "last_spawn_delay": 80
+        }
+      ],
+      "formation_y_offset": -34,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        }
+      ],
+      "all_frames_bytes": 896,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        144,
+        144
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "entry_cursor_requires_word"
+      ]
+    },
+    {
+      "level": 10,
+      "file_offset": 8752,
+      "record_bytes": 1513,
+      "enemy_count": 20,
+      "group_count": 4,
+      "entry_interval": 15,
+      "entry_groups": [
+        {
+          "length": 313,
+          "x_range": [
+            36,
+            201
+          ],
+          "y_range": [
+            16,
+            216
+          ],
+          "last_spawn_delay": 60
+        },
+        {
+          "length": 313,
+          "x_range": [
+            24,
+            193
+          ],
+          "y_range": [
+            29,
+            216
+          ],
+          "last_spawn_delay": 60
+        },
+        {
+          "length": 313,
+          "x_range": [
+            12,
+            178
+          ],
+          "y_range": [
+            40,
+            216
+          ],
+          "last_spawn_delay": 60
+        },
+        {
+          "length": 313,
+          "x_range": [
+            0,
+            170
+          ],
+          "y_range": [
+            47,
+            216
+          ],
+          "last_spawn_delay": 60
+        }
+      ],
+      "formation_y_offset": -21,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 21,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 21,
+          "vygr_type": 22,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5120,
+      "attack_lengths": [
+        99
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "variable_enemy_count",
+        "entry_cursor_requires_word"
+      ]
+    },
+    {
+      "level": 11,
+      "file_offset": 10265,
+      "record_bytes": 948,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 6,
+      "entry_groups": [
+        {
+          "length": 164,
+          "x_range": [
+            72,
+            220
+          ],
+          "y_range": [
+            13,
+            216
+          ],
+          "last_spawn_delay": 30
+        },
+        {
+          "length": 167,
+          "x_range": [
+            52,
+            200
+          ],
+          "y_range": [
+            13,
+            216
+          ],
+          "last_spawn_delay": 30
+        },
+        {
+          "length": 198,
+          "x_range": [
+            47,
+            210
+          ],
+          "y_range": [
+            0,
+            171
+          ],
+          "last_spawn_delay": 24
+        },
+        {
+          "length": 197,
+          "x_range": [
+            27,
+            194
+          ],
+          "y_range": [
+            0,
+            189
+          ],
+          "last_spawn_delay": 24
+        }
+      ],
+      "formation_y_offset": -28,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 12,
+          "vygr_type": 13,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 34,
+          "vygr_type": 35,
+          "mapping_confirmed": false,
+          "frames": 3,
+          "all_frame_bytes": 384
+        }
+      ],
+      "all_frames_bytes": 896,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        23,
+        23
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 12,
+      "file_offset": 11213,
+      "record_bytes": 645,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 167,
+          "x_range": [
+            20,
+            119
+          ],
+          "y_range": [
+            50,
+            216
+          ],
+          "last_spawn_delay": 84
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 22,
+          "vygr_type": 23,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        143,
+        183
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 13,
+      "file_offset": 11858,
+      "record_bytes": 874,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 166,
+          "x_range": [
+            20,
+            139
+          ],
+          "y_range": [
+            0,
+            105
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 166,
+          "x_range": [
+            101,
+            220
+          ],
+          "y_range": [
+            0,
+            105
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 162,
+          "x_range": [
+            100,
+            220
+          ],
+          "y_range": [
+            45,
+            216
+          ],
+          "last_spawn_delay": 25
+        },
+        {
+          "length": 162,
+          "x_range": [
+            20,
+            140
+          ],
+          "y_range": [
+            45,
+            216
+          ],
+          "last_spawn_delay": 25
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 30,
+          "vygr_type": 31,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        44
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 14,
+      "file_offset": 12732,
+      "record_bytes": 1062,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 30,
+      "entry_groups": [
+        {
+          "length": 191,
+          "x_range": [
+            0,
+            175
+          ],
+          "y_range": [
+            0,
+            163
+          ],
+          "last_spawn_delay": 150
+        },
+        {
+          "length": 191,
+          "x_range": [
+            16,
+            191
+          ],
+          "y_range": [
+            0,
+            163
+          ],
+          "last_spawn_delay": 120
+        },
+        {
+          "length": 191,
+          "x_range": [
+            32,
+            207
+          ],
+          "y_range": [
+            0,
+            163
+          ],
+          "last_spawn_delay": 120
+        },
+        {
+          "length": 191,
+          "x_range": [
+            48,
+            223
+          ],
+          "y_range": [
+            0,
+            163
+          ],
+          "last_spawn_delay": 150
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 0,
+          "vygr_type": 1,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 20,
+          "vygr_type": 21,
+          "mapping_confirmed": false,
+          "frames": 9,
+          "all_frame_bytes": 1152
+        }
+      ],
+      "all_frames_bytes": 1664,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        61,
+        61
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 15,
+      "file_offset": 13794,
+      "record_bytes": 1048,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 110,
+          "x_range": [
+            20,
+            207
+          ],
+          "y_range": [
+            0,
+            173
+          ],
+          "last_spawn_delay": 25
+        },
+        {
+          "length": 112,
+          "x_range": [
+            82,
+            185
+          ],
+          "y_range": [
+            0,
+            160
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 112,
+          "x_range": [
+            55,
+            158
+          ],
+          "y_range": [
+            0,
+            160
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 110,
+          "x_range": [
+            33,
+            220
+          ],
+          "y_range": [
+            0,
+            173
+          ],
+          "last_spawn_delay": 25
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 9,
+          "vygr_type": 10,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        214,
+        214
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 16,
+      "file_offset": 14842,
+      "record_bytes": 469,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 7,
+      "entry_groups": [
+        {
+          "length": 195,
+          "x_range": [
+            20,
+            171
+          ],
+          "y_range": [
+            0,
+            156
+          ],
+          "last_spawn_delay": 147
+        }
+      ],
+      "formation_y_offset": -35,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        },
+        {
+          "vylv_index": 12,
+          "vygr_type": 13,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 32,
+          "vygr_type": 33,
+          "mapping_confirmed": false,
+          "frames": 12,
+          "all_frame_bytes": 1536
+        }
+      ],
+      "all_frames_bytes": 2944,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        61,
+        61
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 17,
+      "file_offset": 15311,
+      "record_bytes": 384,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 177,
+          "x_range": [
+            20,
+            221
+          ],
+          "y_range": [
+            0,
+            202
+          ],
+          "last_spawn_delay": 105
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 4,
+          "vygr_type": 5,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        57
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 18,
+      "file_offset": 15695,
+      "record_bytes": 664,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 100,
+      "entry_groups": [
+        {
+          "length": 166,
+          "x_range": [
+            9,
+            197
+          ],
+          "y_range": [
+            39,
+            216
+          ],
+          "last_spawn_delay": 2100
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 29,
+          "vygr_type": 30,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        173,
+        173
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "spawn_delay_requires_word"
+      ]
+    },
+    {
+      "level": 19,
+      "file_offset": 16359,
+      "record_bytes": 1295,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 164,
+          "x_range": [
+            16,
+            205
+          ],
+          "y_range": [
+            0,
+            159
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 328,
+          "x_range": [
+            35,
+            224
+          ],
+          "y_range": [
+            0,
+            159
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 211,
+          "x_range": [
+            35,
+            224
+          ],
+          "y_range": [
+            43,
+            216
+          ],
+          "last_spawn_delay": 16
+        },
+        {
+          "length": 375,
+          "x_range": [
+            16,
+            205
+          ],
+          "y_range": [
+            43,
+            216
+          ],
+          "last_spawn_delay": 16
+        }
+      ],
+      "formation_y_offset": -27,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        },
+        {
+          "vylv_index": 5,
+          "vygr_type": 6,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 13,
+          "vygr_type": 14,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 14,
+          "vygr_type": 15,
+          "mapping_confirmed": true,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 3456,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        43
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "entry_cursor_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 20,
+      "file_offset": 17654,
+      "record_bytes": 897,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 168,
+          "x_range": [
+            20,
+            166
+          ],
+          "y_range": [
+            38,
+            216
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 144,
+          "x_range": [
+            20,
+            174
+          ],
+          "y_range": [
+            38,
+            216
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 144,
+          "x_range": [
+            20,
+            176
+          ],
+          "y_range": [
+            38,
+            216
+          ],
+          "last_spawn_delay": 25
+        },
+        {
+          "length": 168,
+          "x_range": [
+            20,
+            203
+          ],
+          "y_range": [
+            38,
+            216
+          ],
+          "last_spawn_delay": 25
+        }
+      ],
+      "formation_y_offset": -35,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 24,
+          "vygr_type": 25,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 768,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        99
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 21,
+      "file_offset": 18551,
+      "record_bytes": 954,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 224,
+          "x_range": [
+            12,
+            221
+          ],
+          "y_range": [
+            0,
+            155
+          ],
+          "last_spawn_delay": 40
+        },
+        {
+          "length": 224,
+          "x_range": [
+            26,
+            209
+          ],
+          "y_range": [
+            23,
+            216
+          ],
+          "last_spawn_delay": 40
+        }
+      ],
+      "formation_y_offset": -28,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 21,
+          "vygr_type": 22,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        173,
+        173
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy"
+      ]
+    },
+    {
+      "level": 22,
+      "file_offset": 19505,
+      "record_bytes": 863,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 100,
+      "entry_groups": [
+        {
+          "length": 205,
+          "x_range": [
+            20,
+            149
+          ],
+          "y_range": [
+            0,
+            163
+          ],
+          "last_spawn_delay": 1000
+        },
+        {
+          "length": 216,
+          "x_range": [
+            27,
+            220
+          ],
+          "y_range": [
+            0,
+            163
+          ],
+          "last_spawn_delay": 1000
+        }
+      ],
+      "formation_y_offset": -23,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 15,
+          "vygr_type": 16,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 21,
+          "vygr_type": 22,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 1280,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        141,
+        141
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "spawn_delay_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 23,
+      "file_offset": 20368,
+      "record_bytes": 947,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 80,
+      "entry_groups": [
+        {
+          "length": 248,
+          "x_range": [
+            5,
+            221
+          ],
+          "y_range": [
+            0,
+            161
+          ],
+          "last_spawn_delay": 800
+        },
+        {
+          "length": 249,
+          "x_range": [
+            5,
+            223
+          ],
+          "y_range": [
+            0,
+            179
+          ],
+          "last_spawn_delay": 800
+        }
+      ],
+      "formation_y_offset": -37,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 4,
+          "vygr_type": 5,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 12,
+          "vygr_type": 13,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        171,
+        119
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "spawn_delay_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 24,
+      "file_offset": 21315,
+      "record_bytes": 946,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 120,
+      "entry_groups": [
+        {
+          "length": 82,
+          "x_range": [
+            16,
+            141
+          ],
+          "y_range": [
+            72,
+            216
+          ],
+          "last_spawn_delay": 600
+        },
+        {
+          "length": 86,
+          "x_range": [
+            16,
+            140
+          ],
+          "y_range": [
+            71,
+            216
+          ],
+          "last_spawn_delay": 600
+        },
+        {
+          "length": 142,
+          "x_range": [
+            101,
+            224
+          ],
+          "y_range": [
+            71,
+            216
+          ],
+          "last_spawn_delay": 480
+        },
+        {
+          "length": 146,
+          "x_range": [
+            101,
+            224
+          ],
+          "y_range": [
+            71,
+            216
+          ],
+          "last_spawn_delay": 480
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 12,
+          "vygr_type": 13,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        116,
+        116,
+        80
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "spawn_delay_requires_word"
+      ]
+    },
+    {
+      "level": 25,
+      "file_offset": 22261,
+      "record_bytes": 155,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 10,
+      "entry_groups": [
+        {
+          "length": 1,
+          "x_range": [
+            120,
+            120
+          ],
+          "y_range": [
+            0,
+            1
+          ],
+          "last_spawn_delay": 210
+        }
+      ],
+      "formation_y_offset": -27,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 26,
+          "vygr_type": 27,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        1,
+        1
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [
+        1
+      ],
+      "short_attack_indices": [
+        0,
+        1
+      ],
+      "stage4c_constraints": [
+        "unverified_one_byte_attack_semantics"
+      ]
+    },
+    {
+      "level": 26,
+      "file_offset": 22416,
+      "record_bytes": 822,
+      "enemy_count": 22,
+      "group_count": 3,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 160,
+          "x_range": [
+            20,
+            173
+          ],
+          "y_range": [
+            0,
+            125
+          ],
+          "last_spawn_delay": 28
+        },
+        {
+          "length": 160,
+          "x_range": [
+            40,
+            193
+          ],
+          "y_range": [
+            0,
+            144
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 160,
+          "x_range": [
+            31,
+            210
+          ],
+          "y_range": [
+            0,
+            161
+          ],
+          "last_spawn_delay": 28
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 8,
+          "vygr_type": 9,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 13,
+          "vygr_type": 14,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 2048,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        176
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "more_than_two_entry_groups",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 27,
+      "file_offset": 23238,
+      "record_bytes": 444,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 251,
+          "x_range": [
+            20,
+            188
+          ],
+          "y_range": [
+            52,
+            216
+          ],
+          "last_spawn_delay": 105
+        }
+      ],
+      "formation_y_offset": -24,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 18,
+          "vygr_type": 19,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        43
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 28,
+      "file_offset": 23682,
+      "record_bytes": 393,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 50,
+      "entry_groups": [
+        {
+          "length": 203,
+          "x_range": [
+            20,
+            223
+          ],
+          "y_range": [
+            0,
+            175
+          ],
+          "last_spawn_delay": 1050
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 3,
+          "vygr_type": 4,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 768,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        19,
+        19
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "spawn_delay_requires_word"
+      ]
+    },
+    {
+      "level": 29,
+      "file_offset": 24075,
+      "record_bytes": 705,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 10,
+      "entry_groups": [
+        {
+          "length": 254,
+          "x_range": [
+            20,
+            216
+          ],
+          "y_range": [
+            0,
+            192
+          ],
+          "last_spawn_delay": 100
+        },
+        {
+          "length": 249,
+          "x_range": [
+            20,
+            216
+          ],
+          "y_range": [
+            9,
+            216
+          ],
+          "last_spawn_delay": 100
+        }
+      ],
+      "formation_y_offset": -31,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 28,
+          "vygr_type": 29,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 36,
+          "vygr_type": 37,
+          "mapping_confirmed": false,
+          "frames": 10,
+          "all_frame_bytes": 1280
+        }
+      ],
+      "all_frames_bytes": 2048,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        44
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 30,
+      "file_offset": 24780,
+      "record_bytes": 727,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 30,
+      "entry_groups": [
+        {
+          "length": 126,
+          "x_range": [
+            1,
+            224
+          ],
+          "y_range": [
+            0,
+            193
+          ],
+          "last_spawn_delay": 150
+        },
+        {
+          "length": 123,
+          "x_range": [
+            2,
+            224
+          ],
+          "y_range": [
+            0,
+            195
+          ],
+          "last_spawn_delay": 150
+        },
+        {
+          "length": 126,
+          "x_range": [
+            2,
+            222
+          ],
+          "y_range": [
+            0,
+            194
+          ],
+          "last_spawn_delay": 120
+        },
+        {
+          "length": 128,
+          "x_range": [
+            2,
+            222
+          ],
+          "y_range": [
+            0,
+            193
+          ],
+          "last_spawn_delay": 120
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 22,
+          "vygr_type": 23,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        24,
+        24
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 31,
+      "file_offset": 25507,
+      "record_bytes": 833,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 6,
+      "entry_groups": [
+        {
+          "length": 253,
+          "x_range": [
+            15,
+            224
+          ],
+          "y_range": [
+            27,
+            216
+          ],
+          "last_spawn_delay": 126
+        }
+      ],
+      "formation_y_offset": -42,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 13,
+          "vygr_type": 14,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 19,
+          "vygr_type": 20,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 2048,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        214,
+        214
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 32,
+      "file_offset": 26340,
+      "record_bytes": 419,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 7,
+      "entry_groups": [
+        {
+          "length": 215,
+          "x_range": [
+            12,
+            220
+          ],
+          "y_range": [
+            56,
+            216
+          ],
+          "last_spawn_delay": 147
+        }
+      ],
+      "formation_y_offset": -20,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 14,
+          "vygr_type": 15,
+          "mapping_confirmed": true,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 768,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        54
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 33,
+      "file_offset": 26759,
+      "record_bytes": 413,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 50,
+      "entry_groups": [
+        {
+          "length": 141,
+          "x_range": [
+            20,
+            212
+          ],
+          "y_range": [
+            43,
+            216
+          ],
+          "last_spawn_delay": 1050
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 2,
+          "vygr_type": 3,
+          "mapping_confirmed": false,
+          "frames": 10,
+          "all_frame_bytes": 1280
+        }
+      ],
+      "all_frames_bytes": 1280,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        60,
+        60
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "spawn_delay_requires_word"
+      ]
+    },
+    {
+      "level": 34,
+      "file_offset": 27172,
+      "record_bytes": 674,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 205,
+          "x_range": [
+            18,
+            211
+          ],
+          "y_range": [
+            31,
+            216
+          ],
+          "last_spawn_delay": 50
+        },
+        {
+          "length": 212,
+          "x_range": [
+            18,
+            224
+          ],
+          "y_range": [
+            0,
+            169
+          ],
+          "last_spawn_delay": 50
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 15,
+          "vygr_type": 16,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 28,
+          "vygr_type": 29,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 32,
+          "vygr_type": 33,
+          "mapping_confirmed": false,
+          "frames": 12,
+          "all_frame_bytes": 1536
+        }
+      ],
+      "all_frames_bytes": 3072,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        99
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 35,
+      "file_offset": 27846,
+      "record_bytes": 1260,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 164,
+          "x_range": [
+            16,
+            205
+          ],
+          "y_range": [
+            0,
+            159
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 168,
+          "x_range": [
+            35,
+            224
+          ],
+          "y_range": [
+            0,
+            159
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 211,
+          "x_range": [
+            35,
+            224
+          ],
+          "y_range": [
+            43,
+            216
+          ],
+          "last_spawn_delay": 16
+        },
+        {
+          "length": 215,
+          "x_range": [
+            16,
+            205
+          ],
+          "y_range": [
+            43,
+            216
+          ],
+          "last_spawn_delay": 16
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 15,
+          "vygr_type": 16,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 768,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        143,
+        183
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 36,
+      "file_offset": 29106,
+      "record_bytes": 674,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 198,
+          "x_range": [
+            26,
+            119
+          ],
+          "y_range": [
+            0,
+            164
+          ],
+          "last_spawn_delay": 50
+        },
+        {
+          "length": 198,
+          "x_range": [
+            121,
+            214
+          ],
+          "y_range": [
+            0,
+            165
+          ],
+          "last_spawn_delay": 50
+        }
+      ],
+      "formation_y_offset": -22,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 3,
+          "vygr_type": 4,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 24,
+          "vygr_type": 25,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        59,
+        59
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 37,
+      "file_offset": 29780,
+      "record_bytes": 715,
+      "enemy_count": 22,
+      "group_count": 3,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 125,
+          "x_range": [
+            20,
+            188
+          ],
+          "y_range": [
+            0,
+            101
+          ],
+          "last_spawn_delay": 24
+        },
+        {
+          "length": 127,
+          "x_range": [
+            50,
+            220
+          ],
+          "y_range": [
+            0,
+            133
+          ],
+          "last_spawn_delay": 24
+        },
+        {
+          "length": 147,
+          "x_range": [
+            15,
+            220
+          ],
+          "y_range": [
+            0,
+            117
+          ],
+          "last_spawn_delay": 28
+        }
+      ],
+      "formation_y_offset": -29,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 37,
+          "vygr_type": 38,
+          "mapping_confirmed": false,
+          "frames": 10,
+          "all_frame_bytes": 1280
+        }
+      ],
+      "all_frames_bytes": 1280,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        74,
+        74
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 38,
+      "file_offset": 30495,
+      "record_bytes": 710,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 253,
+          "x_range": [
+            12,
+            194
+          ],
+          "y_range": [
+            0,
+            183
+          ],
+          "last_spawn_delay": 105
+        }
+      ],
+      "formation_y_offset": -28,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 2,
+          "vygr_type": 3,
+          "mapping_confirmed": false,
+          "frames": 10,
+          "all_frame_bytes": 1280
+        }
+      ],
+      "all_frames_bytes": 1280,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        152,
+        153
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 39,
+      "file_offset": 31205,
+      "record_bytes": 880,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 414,
+          "x_range": [
+            16,
+            223
+          ],
+          "y_range": [
+            56,
+            216
+          ],
+          "last_spawn_delay": 105
+        }
+      ],
+      "formation_y_offset": -24,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 15,
+          "vygr_type": 16,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 768,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        116,
+        116,
+        80
+      ],
+      "attack_indices": [
+        0,
+        2,
+        2,
+        2,
+        1,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        0,
+        2,
+        2,
+        2,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "entry_cursor_requires_word"
+      ]
+    },
+    {
+      "level": 40,
+      "file_offset": 32085,
+      "record_bytes": 802,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 211,
+          "x_range": [
+            20,
+            217
+          ],
+          "y_range": [
+            0,
+            144
+          ],
+          "last_spawn_delay": 68
+        },
+        {
+          "length": 241,
+          "x_range": [
+            4,
+            208
+          ],
+          "y_range": [
+            64,
+            216
+          ],
+          "last_spawn_delay": 12
+        }
+      ],
+      "formation_y_offset": -30,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 24,
+          "vygr_type": 25,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 31,
+          "vygr_type": 32,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1792,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        95,
+        95
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 41,
+      "file_offset": 32887,
+      "record_bytes": 806,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 195,
+          "x_range": [
+            28,
+            220
+          ],
+          "y_range": [
+            42,
+            216
+          ],
+          "last_spawn_delay": 50
+        },
+        {
+          "length": 195,
+          "x_range": [
+            20,
+            212
+          ],
+          "y_range": [
+            42,
+            216
+          ],
+          "last_spawn_delay": 50
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        },
+        {
+          "vylv_index": 34,
+          "vygr_type": 35,
+          "mapping_confirmed": false,
+          "frames": 3,
+          "all_frame_bytes": 384
+        }
+      ],
+      "all_frames_bytes": 1280,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        128,
+        128
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 42,
+      "file_offset": 33693,
+      "record_bytes": 431,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 55,
+      "entry_groups": [
+        {
+          "length": 91,
+          "x_range": [
+            15,
+            213
+          ],
+          "y_range": [
+            52,
+            216
+          ],
+          "last_spawn_delay": 550
+        },
+        {
+          "length": 115,
+          "x_range": [
+            23,
+            221
+          ],
+          "y_range": [
+            52,
+            216
+          ],
+          "last_spawn_delay": 550
+        }
+      ],
+      "formation_y_offset": -24,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 13,
+          "vygr_type": 14,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 15,
+          "vygr_type": 16,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 1792,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        28,
+        37
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "spawn_delay_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 43,
+      "file_offset": 34124,
+      "record_bytes": 680,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 30,
+      "entry_groups": [
+        {
+          "length": 394,
+          "x_range": [
+            38,
+            220
+          ],
+          "y_range": [
+            40,
+            216
+          ],
+          "last_spawn_delay": 630
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 23,
+          "vygr_type": 24,
+          "mapping_confirmed": false,
+          "frames": 12,
+          "all_frame_bytes": 1536
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        136
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "entry_cursor_requires_word",
+        "spawn_delay_requires_word"
+      ]
+    },
+    {
+      "level": 44,
+      "file_offset": 34804,
+      "record_bytes": 756,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 275,
+          "x_range": [
+            22,
+            35
+          ],
+          "y_range": [
+            0,
+            216
+          ],
+          "last_spawn_delay": 40
+        },
+        {
+          "length": 275,
+          "x_range": [
+            194,
+            207
+          ],
+          "y_range": [
+            0,
+            216
+          ],
+          "last_spawn_delay": 40
+        }
+      ],
+      "formation_y_offset": -17,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 3,
+          "vygr_type": 4,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 768,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        48
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "entry_cursor_requires_word"
+      ]
+    },
+    {
+      "level": 45,
+      "file_offset": 35560,
+      "record_bytes": 1667,
+      "enemy_count": 20,
+      "group_count": 4,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 265,
+          "x_range": [
+            0,
+            159
+          ],
+          "y_range": [
+            22,
+            216
+          ],
+          "last_spawn_delay": 16
+        },
+        {
+          "length": 266,
+          "x_range": [
+            12,
+            172
+          ],
+          "y_range": [
+            35,
+            216
+          ],
+          "last_spawn_delay": 16
+        },
+        {
+          "length": 266,
+          "x_range": [
+            24,
+            183
+          ],
+          "y_range": [
+            46,
+            216
+          ],
+          "last_spawn_delay": 16
+        },
+        {
+          "length": 266,
+          "x_range": [
+            36,
+            195
+          ],
+          "y_range": [
+            58,
+            216
+          ],
+          "last_spawn_delay": 16
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 21,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 15,
+          "vygr_type": 16,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 768,
+      "per_enemy_private_buffer_bytes": 5120,
+      "attack_lengths": [
+        205,
+        161,
+        72
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "variable_enemy_count",
+        "entry_cursor_requires_word"
+      ]
+    },
+    {
+      "level": 46,
+      "file_offset": 37227,
+      "record_bytes": 565,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 22,
+      "entry_groups": [
+        {
+          "length": 177,
+          "x_range": [
+            20,
+            221
+          ],
+          "y_range": [
+            0,
+            202
+          ],
+          "last_spawn_delay": 220
+        },
+        {
+          "length": 188,
+          "x_range": [
+            24,
+            220
+          ],
+          "y_range": [
+            0,
+            202
+          ],
+          "last_spawn_delay": 220
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 9,
+          "vygr_type": 10,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 22,
+          "vygr_type": 23,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        20,
+        20
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 47,
+      "file_offset": 37792,
+      "record_bytes": 968,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 123,
+          "x_range": [
+            18,
+            157
+          ],
+          "y_range": [
+            0,
+            107
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 128,
+          "x_range": [
+            113,
+            188
+          ],
+          "y_range": [
+            0,
+            137
+          ],
+          "last_spawn_delay": 25
+        },
+        {
+          "length": 157,
+          "x_range": [
+            52,
+            172
+          ],
+          "y_range": [
+            80,
+            216
+          ],
+          "last_spawn_delay": 25
+        },
+        {
+          "length": 180,
+          "x_range": [
+            84,
+            223
+          ],
+          "y_range": [
+            87,
+            216
+          ],
+          "last_spawn_delay": 20
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 32,
+          "vygr_type": 33,
+          "mapping_confirmed": false,
+          "frames": 12,
+          "all_frame_bytes": 1536
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        62,
+        38,
+        38,
+        62
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 48,
+      "file_offset": 38760,
+      "record_bytes": 442,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 7,
+      "entry_groups": [
+        {
+          "length": 131,
+          "x_range": [
+            20,
+            223
+          ],
+          "y_range": [
+            0,
+            161
+          ],
+          "last_spawn_delay": 70
+        },
+        {
+          "length": 113,
+          "x_range": [
+            19,
+            205
+          ],
+          "y_range": [
+            25,
+            216
+          ],
+          "last_spawn_delay": 70
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 31,
+          "vygr_type": 32,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 33,
+          "vygr_type": 34,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        19,
+        19
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 49,
+      "file_offset": 39202,
+      "record_bytes": 1013,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 292,
+          "x_range": [
+            27,
+            96
+          ],
+          "y_range": [
+            0,
+            145
+          ],
+          "last_spawn_delay": 40
+        },
+        {
+          "length": 292,
+          "x_range": [
+            144,
+            213
+          ],
+          "y_range": [
+            0,
+            145
+          ],
+          "last_spawn_delay": 40
+        }
+      ],
+      "formation_y_offset": -17,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 30,
+          "vygr_type": 31,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        135,
+        134
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "entry_cursor_requires_word"
+      ]
+    },
+    {
+      "level": 50,
+      "file_offset": 40215,
+      "record_bytes": 182,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 40,
+      "entry_groups": [
+        {
+          "length": 1,
+          "x_range": [
+            20,
+            20
+          ],
+          "y_range": [
+            0,
+            1
+          ],
+          "last_spawn_delay": 200
+        },
+        {
+          "length": 1,
+          "x_range": [
+            85,
+            85
+          ],
+          "y_range": [
+            0,
+            1
+          ],
+          "last_spawn_delay": 200
+        },
+        {
+          "length": 1,
+          "x_range": [
+            150,
+            150
+          ],
+          "y_range": [
+            0,
+            1
+          ],
+          "last_spawn_delay": 160
+        },
+        {
+          "length": 1,
+          "x_range": [
+            215,
+            215
+          ],
+          "y_range": [
+            0,
+            1
+          ],
+          "last_spawn_delay": 160
+        }
+      ],
+      "formation_y_offset": -27,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 35,
+          "vygr_type": 36,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        1,
+        1
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [
+        1
+      ],
+      "short_attack_indices": [
+        0,
+        1
+      ],
+      "stage4c_constraints": [
+        "more_than_two_entry_groups",
+        "unverified_one_byte_attack_semantics"
+      ]
+    },
+    {
+      "level": 51,
+      "file_offset": 40397,
+      "record_bytes": 701,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 6,
+      "entry_groups": [
+        {
+          "length": 126,
+          "x_range": [
+            1,
+            224
+          ],
+          "y_range": [
+            0,
+            193
+          ],
+          "last_spawn_delay": 30
+        },
+        {
+          "length": 113,
+          "x_range": [
+            2,
+            224
+          ],
+          "y_range": [
+            0,
+            195
+          ],
+          "last_spawn_delay": 30
+        },
+        {
+          "length": 106,
+          "x_range": [
+            2,
+            222
+          ],
+          "y_range": [
+            0,
+            194
+          ],
+          "last_spawn_delay": 24
+        },
+        {
+          "length": 98,
+          "x_range": [
+            2,
+            222
+          ],
+          "y_range": [
+            0,
+            193
+          ],
+          "last_spawn_delay": 24
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 9,
+          "vygr_type": 10,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        41,
+        41
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 52,
+      "file_offset": 41098,
+      "record_bytes": 1434,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 209,
+          "x_range": [
+            16,
+            168
+          ],
+          "y_range": [
+            36,
+            216
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 209,
+          "x_range": [
+            72,
+            224
+          ],
+          "y_range": [
+            36,
+            216
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 208,
+          "x_range": [
+            16,
+            174
+          ],
+          "y_range": [
+            0,
+            181
+          ],
+          "last_spawn_delay": 25
+        },
+        {
+          "length": 208,
+          "x_range": [
+            72,
+            224
+          ],
+          "y_range": [
+            0,
+            181
+          ],
+          "last_spawn_delay": 25
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        },
+        {
+          "vylv_index": 14,
+          "vygr_type": 15,
+          "mapping_confirmed": true,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 1664,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        126,
+        126,
+        84,
+        84
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 53,
+      "file_offset": 42532,
+      "record_bytes": 1049,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 80,
+      "entry_groups": [
+        {
+          "length": 166,
+          "x_range": [
+            20,
+            139
+          ],
+          "y_range": [
+            0,
+            105
+          ],
+          "last_spawn_delay": 320
+        },
+        {
+          "length": 186,
+          "x_range": [
+            101,
+            220
+          ],
+          "y_range": [
+            0,
+            105
+          ],
+          "last_spawn_delay": 320
+        },
+        {
+          "length": 202,
+          "x_range": [
+            100,
+            220
+          ],
+          "y_range": [
+            45,
+            216
+          ],
+          "last_spawn_delay": 400
+        },
+        {
+          "length": 222,
+          "x_range": [
+            20,
+            140
+          ],
+          "y_range": [
+            45,
+            216
+          ],
+          "last_spawn_delay": 400
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 32,
+          "vygr_type": 33,
+          "mapping_confirmed": false,
+          "frames": 12,
+          "all_frame_bytes": 1536
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        99
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "spawn_delay_requires_word"
+      ]
+    },
+    {
+      "level": 54,
+      "file_offset": 43581,
+      "record_bytes": 1163,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 170,
+          "x_range": [
+            17,
+            119
+          ],
+          "y_range": [
+            0,
+            98
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 170,
+          "x_range": [
+            121,
+            223
+          ],
+          "y_range": [
+            0,
+            98
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 189,
+          "x_range": [
+            17,
+            119
+          ],
+          "y_range": [
+            56,
+            216
+          ],
+          "last_spawn_delay": 25
+        },
+        {
+          "length": 189,
+          "x_range": [
+            121,
+            223
+          ],
+          "y_range": [
+            56,
+            216
+          ],
+          "last_spawn_delay": 25
+        }
+      ],
+      "formation_y_offset": -22,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 28,
+          "vygr_type": 29,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 36,
+          "vygr_type": 37,
+          "mapping_confirmed": false,
+          "frames": 10,
+          "all_frame_bytes": 1280
+        }
+      ],
+      "all_frames_bytes": 2048,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        135,
+        134
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 55,
+      "file_offset": 44744,
+      "record_bytes": 738,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 100,
+      "entry_groups": [
+        {
+          "length": 110,
+          "x_range": [
+            20,
+            207
+          ],
+          "y_range": [
+            0,
+            173
+          ],
+          "last_spawn_delay": 500
+        },
+        {
+          "length": 112,
+          "x_range": [
+            82,
+            185
+          ],
+          "y_range": [
+            0,
+            160
+          ],
+          "last_spawn_delay": 400
+        },
+        {
+          "length": 112,
+          "x_range": [
+            55,
+            158
+          ],
+          "y_range": [
+            0,
+            160
+          ],
+          "last_spawn_delay": 400
+        },
+        {
+          "length": 110,
+          "x_range": [
+            33,
+            220
+          ],
+          "y_range": [
+            0,
+            173
+          ],
+          "last_spawn_delay": 500
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 8,
+          "vygr_type": 9,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        59,
+        59
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "more_than_two_entry_groups",
+        "spawn_delay_requires_word"
+      ]
+    },
+    {
+      "level": 56,
+      "file_offset": 45482,
+      "record_bytes": 1188,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 3,
+      "entry_groups": [
+        {
+          "length": 184,
+          "x_range": [
+            52,
+            205
+          ],
+          "y_range": [
+            32,
+            172
+          ],
+          "last_spawn_delay": 12
+        },
+        {
+          "length": 144,
+          "x_range": [
+            62,
+            188
+          ],
+          "y_range": [
+            12,
+            158
+          ],
+          "last_spawn_delay": 12
+        },
+        {
+          "length": 156,
+          "x_range": [
+            43,
+            183
+          ],
+          "y_range": [
+            27,
+            153
+          ],
+          "last_spawn_delay": 15
+        },
+        {
+          "length": 156,
+          "x_range": [
+            57,
+            197
+          ],
+          "y_range": [
+            37,
+            163
+          ],
+          "last_spawn_delay": 15
+        }
+      ],
+      "formation_y_offset": -18,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 34,
+          "vygr_type": 35,
+          "mapping_confirmed": false,
+          "frames": 3,
+          "all_frame_bytes": 384
+        }
+      ],
+      "all_frames_bytes": 384,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        157,
+        157,
+        27,
+        27
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 57,
+      "file_offset": 46670,
+      "record_bytes": 782,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 167,
+          "x_range": [
+            20,
+            119
+          ],
+          "y_range": [
+            50,
+            216
+          ],
+          "last_spawn_delay": 40
+        },
+        {
+          "length": 167,
+          "x_range": [
+            121,
+            220
+          ],
+          "y_range": [
+            50,
+            216
+          ],
+          "last_spawn_delay": 40
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 22,
+          "vygr_type": 23,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        144,
+        144
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 58,
+      "file_offset": 47452,
+      "record_bytes": 901,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 50,
+      "entry_groups": [
+        {
+          "length": 136,
+          "x_range": [
+            130,
+            220
+          ],
+          "y_range": [
+            0,
+            179
+          ],
+          "last_spawn_delay": 250
+        },
+        {
+          "length": 136,
+          "x_range": [
+            20,
+            110
+          ],
+          "y_range": [
+            0,
+            179
+          ],
+          "last_spawn_delay": 250
+        },
+        {
+          "length": 136,
+          "x_range": [
+            128,
+            220
+          ],
+          "y_range": [
+            0,
+            179
+          ],
+          "last_spawn_delay": 200
+        },
+        {
+          "length": 136,
+          "x_range": [
+            20,
+            112
+          ],
+          "y_range": [
+            0,
+            179
+          ],
+          "last_spawn_delay": 200
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        }
+      ],
+      "all_frames_bytes": 896,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        54,
+        53,
+        72
+      ],
+      "attack_indices": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 59,
+      "file_offset": 48353,
+      "record_bytes": 1013,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 30,
+      "entry_groups": [
+        {
+          "length": 292,
+          "x_range": [
+            27,
+            96
+          ],
+          "y_range": [
+            0,
+            145
+          ],
+          "last_spawn_delay": 300
+        },
+        {
+          "length": 292,
+          "x_range": [
+            144,
+            213
+          ],
+          "y_range": [
+            0,
+            145
+          ],
+          "last_spawn_delay": 300
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 32,
+          "vygr_type": 33,
+          "mapping_confirmed": false,
+          "frames": 12,
+          "all_frame_bytes": 1536
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        135,
+        134
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "entry_cursor_requires_word",
+        "spawn_delay_requires_word"
+      ]
+    },
+    {
+      "level": 60,
+      "file_offset": 49366,
+      "record_bytes": 1706,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 252,
+      "entry_groups": [
+        {
+          "length": 274,
+          "x_range": [
+            51,
+            210
+          ],
+          "y_range": [
+            0,
+            159
+          ],
+          "last_spawn_delay": 1260
+        },
+        {
+          "length": 338,
+          "x_range": [
+            30,
+            189
+          ],
+          "y_range": [
+            0,
+            159
+          ],
+          "last_spawn_delay": 1260
+        },
+        {
+          "length": 411,
+          "x_range": [
+            30,
+            188
+          ],
+          "y_range": [
+            22,
+            216
+          ],
+          "last_spawn_delay": 1008
+        },
+        {
+          "length": 469,
+          "x_range": [
+            52,
+            210
+          ],
+          "y_range": [
+            22,
+            216
+          ],
+          "last_spawn_delay": 1008
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 4,
+          "vygr_type": 5,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 5,
+          "vygr_type": 6,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 13,
+          "vygr_type": 14,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 15,
+          "vygr_type": 16,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 3584,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        19,
+        19
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "entry_cursor_requires_word",
+        "spawn_delay_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 61,
+      "file_offset": 51072,
+      "record_bytes": 563,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 32,
+      "entry_groups": [
+        {
+          "length": 253,
+          "x_range": [
+            15,
+            224
+          ],
+          "y_range": [
+            27,
+            216
+          ],
+          "last_spawn_delay": 672
+        }
+      ],
+      "formation_y_offset": -29,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 22,
+          "vygr_type": 23,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        79,
+        79
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "spawn_delay_requires_word"
+      ]
+    },
+    {
+      "level": 62,
+      "file_offset": 51635,
+      "record_bytes": 407,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 91,
+          "x_range": [
+            15,
+            213
+          ],
+          "y_range": [
+            52,
+            216
+          ],
+          "last_spawn_delay": 50
+        },
+        {
+          "length": 91,
+          "x_range": [
+            23,
+            221
+          ],
+          "y_range": [
+            52,
+            216
+          ],
+          "last_spawn_delay": 50
+        }
+      ],
+      "formation_y_offset": -35,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        },
+        {
+          "vylv_index": 22,
+          "vygr_type": 23,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 30,
+          "vygr_type": 31,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 2432,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        28,
+        37
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 63,
+      "file_offset": 52042,
+      "record_bytes": 465,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 60,
+      "entry_groups": [
+        {
+          "length": 131,
+          "x_range": [
+            30,
+            140
+          ],
+          "y_range": [
+            48,
+            216
+          ],
+          "last_spawn_delay": 600
+        },
+        {
+          "length": 136,
+          "x_range": [
+            100,
+            210
+          ],
+          "y_range": [
+            48,
+            216
+          ],
+          "last_spawn_delay": 600
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 8,
+          "vygr_type": 9,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 18,
+          "vygr_type": 19,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        19,
+        19
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "spawn_delay_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 64,
+      "file_offset": 52507,
+      "record_bytes": 662,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 6,
+      "entry_groups": [
+        {
+          "length": 169,
+          "x_range": [
+            21,
+            120
+          ],
+          "y_range": [
+            0,
+            166
+          ],
+          "last_spawn_delay": 60
+        },
+        {
+          "length": 169,
+          "x_range": [
+            120,
+            219
+          ],
+          "y_range": [
+            0,
+            166
+          ],
+          "last_spawn_delay": 60
+        }
+      ],
+      "formation_y_offset": -31,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        },
+        {
+          "vylv_index": 9,
+          "vygr_type": 10,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 1408,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        82,
+        82
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 65,
+      "file_offset": 53169,
+      "record_bytes": 1588,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 240,
+      "entry_groups": [
+        {
+          "length": 164,
+          "x_range": [
+            16,
+            205
+          ],
+          "y_range": [
+            0,
+            159
+          ],
+          "last_spawn_delay": 1200
+        },
+        {
+          "length": 276,
+          "x_range": [
+            35,
+            224
+          ],
+          "y_range": [
+            0,
+            159
+          ],
+          "last_spawn_delay": 1200
+        },
+        {
+          "length": 267,
+          "x_range": [
+            35,
+            224
+          ],
+          "y_range": [
+            43,
+            216
+          ],
+          "last_spawn_delay": 960
+        },
+        {
+          "length": 379,
+          "x_range": [
+            16,
+            205
+          ],
+          "y_range": [
+            43,
+            216
+          ],
+          "last_spawn_delay": 960
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 14,
+          "vygr_type": 15,
+          "mapping_confirmed": true,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 19,
+          "vygr_type": 20,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1792,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        143,
+        183
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "entry_cursor_requires_word",
+        "spawn_delay_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 66,
+      "file_offset": 54757,
+      "record_bytes": 738,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 3,
+      "entry_groups": [
+        {
+          "length": 148,
+          "x_range": [
+            64,
+            220
+          ],
+          "y_range": [
+            26,
+            216
+          ],
+          "last_spawn_delay": 30
+        },
+        {
+          "length": 162,
+          "x_range": [
+            21,
+            193
+          ],
+          "y_range": [
+            0,
+            149
+          ],
+          "last_spawn_delay": 30
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        },
+        {
+          "vylv_index": 22,
+          "vygr_type": 23,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 1408,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        48,
+        109,
+        109
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 67,
+      "file_offset": 55495,
+      "record_bytes": 536,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 50,
+      "entry_groups": [
+        {
+          "length": 262,
+          "x_range": [
+            10,
+            217
+          ],
+          "y_range": [
+            37,
+            216
+          ],
+          "last_spawn_delay": 1050
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 25,
+          "vygr_type": 26,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        61,
+        61
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "entry_cursor_requires_word",
+        "spawn_delay_requires_word"
+      ]
+    },
+    {
+      "level": 68,
+      "file_offset": 56031,
+      "record_bytes": 742,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 187,
+          "x_range": [
+            23,
+            168
+          ],
+          "y_range": [
+            0,
+            156
+          ],
+          "last_spawn_delay": 50
+        },
+        {
+          "length": 187,
+          "x_range": [
+            72,
+            217
+          ],
+          "y_range": [
+            0,
+            156
+          ],
+          "last_spawn_delay": 50
+        }
+      ],
+      "formation_y_offset": -31,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 14,
+          "vygr_type": 15,
+          "mapping_confirmed": true,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 768,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        104,
+        104
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 69,
+      "file_offset": 56773,
+      "record_bytes": 1334,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 8,
+      "entry_groups": [
+        {
+          "length": 278,
+          "x_range": [
+            25,
+            193
+          ],
+          "y_range": [
+            0,
+            128
+          ],
+          "last_spawn_delay": 32
+        },
+        {
+          "length": 278,
+          "x_range": [
+            26,
+            193
+          ],
+          "y_range": [
+            0,
+            128
+          ],
+          "last_spawn_delay": 32
+        },
+        {
+          "length": 278,
+          "x_range": [
+            26,
+            193
+          ],
+          "y_range": [
+            0,
+            128
+          ],
+          "last_spawn_delay": 40
+        },
+        {
+          "length": 278,
+          "x_range": [
+            26,
+            193
+          ],
+          "y_range": [
+            0,
+            128
+          ],
+          "last_spawn_delay": 40
+        }
+      ],
+      "formation_y_offset": -21,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 8,
+          "vygr_type": 9,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        48
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "entry_cursor_requires_word"
+      ]
+    },
+    {
+      "level": 70,
+      "file_offset": 58107,
+      "record_bytes": 842,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 160,
+      "entry_groups": [
+        {
+          "length": 168,
+          "x_range": [
+            20,
+            166
+          ],
+          "y_range": [
+            38,
+            216
+          ],
+          "last_spawn_delay": 640
+        },
+        {
+          "length": 144,
+          "x_range": [
+            20,
+            174
+          ],
+          "y_range": [
+            38,
+            216
+          ],
+          "last_spawn_delay": 640
+        },
+        {
+          "length": 144,
+          "x_range": [
+            20,
+            176
+          ],
+          "y_range": [
+            38,
+            216
+          ],
+          "last_spawn_delay": 800
+        },
+        {
+          "length": 168,
+          "x_range": [
+            20,
+            203
+          ],
+          "y_range": [
+            38,
+            216
+          ],
+          "last_spawn_delay": 800
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 22,
+          "vygr_type": 23,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        44
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "more_than_two_entry_groups",
+        "spawn_delay_requires_word"
+      ]
+    },
+    {
+      "level": 71,
+      "file_offset": 58949,
+      "record_bytes": 916,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 8,
+      "entry_groups": [
+        {
+          "length": 301,
+          "x_range": [
+            18,
+            222
+          ],
+          "y_range": [
+            0,
+            173
+          ],
+          "last_spawn_delay": 80
+        },
+        {
+          "length": 297,
+          "x_range": [
+            20,
+            215
+          ],
+          "y_range": [
+            39,
+            216
+          ],
+          "last_spawn_delay": 80
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 4,
+          "vygr_type": 5,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 8,
+          "vygr_type": 9,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 10,
+          "vygr_type": 11,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 12,
+          "vygr_type": 13,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 14,
+          "vygr_type": 15,
+          "mapping_confirmed": true,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 18,
+          "vygr_type": 19,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 4608,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        79,
+        79
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "entry_cursor_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 72,
+      "file_offset": 59865,
+      "record_bytes": 760,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 50,
+      "entry_groups": [
+        {
+          "length": 254,
+          "x_range": [
+            20,
+            216
+          ],
+          "y_range": [
+            0,
+            192
+          ],
+          "last_spawn_delay": 500
+        },
+        {
+          "length": 249,
+          "x_range": [
+            20,
+            216
+          ],
+          "y_range": [
+            9,
+            216
+          ],
+          "last_spawn_delay": 500
+        }
+      ],
+      "formation_y_offset": -33,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        },
+        {
+          "vylv_index": 12,
+          "vygr_type": 13,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 1408,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        99
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "spawn_delay_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 73,
+      "file_offset": 60625,
+      "record_bytes": 748,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 6,
+      "entry_groups": [
+        {
+          "length": 167,
+          "x_range": [
+            30,
+            208
+          ],
+          "y_range": [
+            0,
+            156
+          ],
+          "last_spawn_delay": 60
+        },
+        {
+          "length": 167,
+          "x_range": [
+            32,
+            210
+          ],
+          "y_range": [
+            0,
+            156
+          ],
+          "last_spawn_delay": 60
+        }
+      ],
+      "formation_y_offset": -22,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 3,
+          "vygr_type": 4,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 21,
+          "vygr_type": 22,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 1280,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        127,
+        127
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 74,
+      "file_offset": 61373,
+      "record_bytes": 574,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 70,
+      "entry_groups": [
+        {
+          "length": 232,
+          "x_range": [
+            10,
+            205
+          ],
+          "y_range": [
+            62,
+            216
+          ],
+          "last_spawn_delay": 1470
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 18,
+          "vygr_type": 19,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        95,
+        95
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "spawn_delay_requires_word"
+      ]
+    },
+    {
+      "level": 75,
+      "file_offset": 61947,
+      "record_bytes": 358,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 10,
+      "entry_groups": [
+        {
+          "length": 1,
+          "x_range": [
+            120,
+            120
+          ],
+          "y_range": [
+            0,
+            1
+          ],
+          "last_spawn_delay": 210
+        }
+      ],
+      "formation_y_offset": -27,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 26,
+          "vygr_type": 27,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 35,
+          "vygr_type": 36,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        105,
+        100
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 76,
+      "file_offset": 62305,
+      "record_bytes": 1324,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 80,
+      "entry_groups": [
+        {
+          "length": 425,
+          "x_range": [
+            16,
+            223
+          ],
+          "y_range": [
+            40,
+            216
+          ],
+          "last_spawn_delay": 800
+        },
+        {
+          "length": 425,
+          "x_range": [
+            16,
+            223
+          ],
+          "y_range": [
+            25,
+            216
+          ],
+          "last_spawn_delay": 800
+        }
+      ],
+      "formation_y_offset": -31,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 5,
+          "vygr_type": 6,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 12,
+          "vygr_type": 13,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 1280,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        116,
+        116,
+        80
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        2,
+        2
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "entry_cursor_requires_word",
+        "spawn_delay_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 77,
+      "file_offset": 63629,
+      "record_bytes": 732,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 233,
+          "x_range": [
+            22,
+            195
+          ],
+          "y_range": [
+            0,
+            145
+          ],
+          "last_spawn_delay": 50
+        },
+        {
+          "length": 242,
+          "x_range": [
+            41,
+            220
+          ],
+          "y_range": [
+            0,
+            152
+          ],
+          "last_spawn_delay": 50
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 20,
+          "vygr_type": 21,
+          "mapping_confirmed": false,
+          "frames": 9,
+          "all_frame_bytes": 1152
+        },
+        {
+          "vylv_index": 27,
+          "vygr_type": 28,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 2176,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        99
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 78,
+      "file_offset": 64361,
+      "record_bytes": 1048,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 70,
+      "entry_groups": [
+        {
+          "length": 287,
+          "x_range": [
+            57,
+            198
+          ],
+          "y_range": [
+            55,
+            216
+          ],
+          "last_spawn_delay": 700
+        },
+        {
+          "length": 287,
+          "x_range": [
+            57,
+            198
+          ],
+          "y_range": [
+            39,
+            216
+          ],
+          "last_spawn_delay": 700
+        }
+      ],
+      "formation_y_offset": -23,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 5,
+          "vygr_type": 6,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 15,
+          "vygr_type": 16,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        116,
+        116,
+        80
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "entry_cursor_requires_word",
+        "spawn_delay_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 79,
+      "file_offset": 65409,
+      "record_bytes": 678,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 59,
+          "x_range": [
+            112,
+            211
+          ],
+          "y_range": [
+            62,
+            216
+          ],
+          "last_spawn_delay": 16
+        },
+        {
+          "length": 59,
+          "x_range": [
+            13,
+            112
+          ],
+          "y_range": [
+            62,
+            216
+          ],
+          "last_spawn_delay": 16
+        },
+        {
+          "length": 58,
+          "x_range": [
+            13,
+            112
+          ],
+          "y_range": [
+            0,
+            154
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 58,
+          "x_range": [
+            112,
+            210
+          ],
+          "y_range": [
+            0,
+            154
+          ],
+          "last_spawn_delay": 20
+        }
+      ],
+      "formation_y_offset": -21,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 12,
+          "vygr_type": 13,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 31,
+          "vygr_type": 32,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        134,
+        134
+      ],
+      "attack_indices": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "more_than_two_entry_groups",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 80,
+      "file_offset": 66087,
+      "record_bytes": 1194,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 244,
+          "x_range": [
+            5,
+            194
+          ],
+          "y_range": [
+            0,
+            171
+          ],
+          "last_spawn_delay": 25
+        },
+        {
+          "length": 244,
+          "x_range": [
+            54,
+            220
+          ],
+          "y_range": [
+            0,
+            159
+          ],
+          "last_spawn_delay": 25
+        },
+        {
+          "length": 244,
+          "x_range": [
+            69,
+            221
+          ],
+          "y_range": [
+            45,
+            216
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 244,
+          "x_range": [
+            4,
+            159
+          ],
+          "y_range": [
+            57,
+            216
+          ],
+          "last_spawn_delay": 20
+        }
+      ],
+      "formation_y_offset": -18,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 21,
+          "vygr_type": 22,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        44
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 81,
+      "file_offset": 67281,
+      "record_bytes": 887,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 10,
+      "entry_groups": [
+        {
+          "length": 126,
+          "x_range": [
+            4,
+            120
+          ],
+          "y_range": [
+            0,
+            169
+          ],
+          "last_spawn_delay": 40
+        },
+        {
+          "length": 121,
+          "x_range": [
+            120,
+            216
+          ],
+          "y_range": [
+            0,
+            169
+          ],
+          "last_spawn_delay": 40
+        },
+        {
+          "length": 99,
+          "x_range": [
+            11,
+            120
+          ],
+          "y_range": [
+            0,
+            140
+          ],
+          "last_spawn_delay": 50
+        },
+        {
+          "length": 97,
+          "x_range": [
+            120,
+            209
+          ],
+          "y_range": [
+            0,
+            141
+          ],
+          "last_spawn_delay": 50
+        }
+      ],
+      "formation_y_offset": -34,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 27,
+          "vygr_type": 28,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        134,
+        134
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 82,
+      "file_offset": 68168,
+      "record_bytes": 998,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 7,
+      "entry_groups": [
+        {
+          "length": 136,
+          "x_range": [
+            130,
+            220
+          ],
+          "y_range": [
+            0,
+            179
+          ],
+          "last_spawn_delay": 35
+        },
+        {
+          "length": 136,
+          "x_range": [
+            20,
+            110
+          ],
+          "y_range": [
+            0,
+            179
+          ],
+          "last_spawn_delay": 35
+        },
+        {
+          "length": 136,
+          "x_range": [
+            128,
+            220
+          ],
+          "y_range": [
+            0,
+            179
+          ],
+          "last_spawn_delay": 28
+        },
+        {
+          "length": 136,
+          "x_range": [
+            20,
+            112
+          ],
+          "y_range": [
+            0,
+            179
+          ],
+          "last_spawn_delay": 28
+        }
+      ],
+      "formation_y_offset": -17,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        }
+      ],
+      "all_frames_bytes": 896,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        139,
+        139
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 83,
+      "file_offset": 69166,
+      "record_bytes": 830,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 20,
+      "entry_groups": [
+        {
+          "length": 167,
+          "x_range": [
+            20,
+            119
+          ],
+          "y_range": [
+            50,
+            216
+          ],
+          "last_spawn_delay": 200
+        },
+        {
+          "length": 177,
+          "x_range": [
+            121,
+            220
+          ],
+          "y_range": [
+            50,
+            216
+          ],
+          "last_spawn_delay": 200
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 17,
+          "vygr_type": 18,
+          "mapping_confirmed": false,
+          "frames": 12,
+          "all_frame_bytes": 1536
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        143,
+        183
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 84,
+      "file_offset": 69996,
+      "record_bytes": 826,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 6,
+      "entry_groups": [
+        {
+          "length": 82,
+          "x_range": [
+            16,
+            141
+          ],
+          "y_range": [
+            72,
+            216
+          ],
+          "last_spawn_delay": 30
+        },
+        {
+          "length": 86,
+          "x_range": [
+            16,
+            140
+          ],
+          "y_range": [
+            71,
+            216
+          ],
+          "last_spawn_delay": 30
+        },
+        {
+          "length": 82,
+          "x_range": [
+            101,
+            224
+          ],
+          "y_range": [
+            71,
+            216
+          ],
+          "last_spawn_delay": 24
+        },
+        {
+          "length": 86,
+          "x_range": [
+            101,
+            224
+          ],
+          "y_range": [
+            71,
+            216
+          ],
+          "last_spawn_delay": 24
+        }
+      ],
+      "formation_y_offset": -31,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 23,
+          "vygr_type": 24,
+          "mapping_confirmed": false,
+          "frames": 12,
+          "all_frame_bytes": 1536
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        116,
+        116,
+        80
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "more_than_two_entry_groups"
+      ]
+    },
+    {
+      "level": 85,
+      "file_offset": 70822,
+      "record_bytes": 930,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 80,
+      "entry_groups": [
+        {
+          "length": 110,
+          "x_range": [
+            20,
+            207
+          ],
+          "y_range": [
+            0,
+            173
+          ],
+          "last_spawn_delay": 400
+        },
+        {
+          "length": 132,
+          "x_range": [
+            82,
+            185
+          ],
+          "y_range": [
+            0,
+            160
+          ],
+          "last_spawn_delay": 320
+        },
+        {
+          "length": 152,
+          "x_range": [
+            55,
+            158
+          ],
+          "y_range": [
+            0,
+            160
+          ],
+          "last_spawn_delay": 320
+        },
+        {
+          "length": 170,
+          "x_range": [
+            33,
+            220
+          ],
+          "y_range": [
+            0,
+            173
+          ],
+          "last_spawn_delay": 400
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 30,
+          "vygr_type": 31,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        95,
+        95
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "spawn_delay_requires_word"
+      ]
+    },
+    {
+      "level": 86,
+      "file_offset": 71752,
+      "record_bytes": 413,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 3,
+      "entry_groups": [
+        {
+          "length": 141,
+          "x_range": [
+            20,
+            212
+          ],
+          "y_range": [
+            43,
+            216
+          ],
+          "last_spawn_delay": 63
+        }
+      ],
+      "formation_y_offset": -21,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 2,
+          "vygr_type": 3,
+          "mapping_confirmed": false,
+          "frames": 10,
+          "all_frame_bytes": 1280
+        },
+        {
+          "vylv_index": 22,
+          "vygr_type": 23,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 1792,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        60,
+        60
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 87,
+      "file_offset": 72165,
+      "record_bytes": 790,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 210,
+          "x_range": [
+            20,
+            215
+          ],
+          "y_range": [
+            57,
+            216
+          ],
+          "last_spawn_delay": 50
+        },
+        {
+          "length": 210,
+          "x_range": [
+            25,
+            220
+          ],
+          "y_range": [
+            57,
+            216
+          ],
+          "last_spawn_delay": 50
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 4,
+          "vygr_type": 5,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 8,
+          "vygr_type": 9,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 19,
+          "vygr_type": 20,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 3072,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        41,
+        41,
+        126
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 88,
+      "file_offset": 72955,
+      "record_bytes": 447,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 50,
+      "entry_groups": [
+        {
+          "length": 112,
+          "x_range": [
+            23,
+            168
+          ],
+          "y_range": [
+            0,
+            156
+          ],
+          "last_spawn_delay": 500
+        },
+        {
+          "length": 137,
+          "x_range": [
+            72,
+            217
+          ],
+          "y_range": [
+            0,
+            156
+          ],
+          "last_spawn_delay": 500
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 7,
+          "vygr_type": 8,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 20,
+          "vygr_type": 21,
+          "mapping_confirmed": false,
+          "frames": 9,
+          "all_frame_bytes": 1152
+        }
+      ],
+      "all_frames_bytes": 1664,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        19,
+        19
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "spawn_delay_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 89,
+      "file_offset": 73402,
+      "record_bytes": 622,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 12,
+      "entry_groups": [
+        {
+          "length": 169,
+          "x_range": [
+            21,
+            120
+          ],
+          "y_range": [
+            0,
+            166
+          ],
+          "last_spawn_delay": 120
+        },
+        {
+          "length": 175,
+          "x_range": [
+            120,
+            219
+          ],
+          "y_range": [
+            0,
+            166
+          ],
+          "last_spawn_delay": 120
+        }
+      ],
+      "formation_y_offset": -22,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 8,
+          "vygr_type": 9,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1024,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        59,
+        59
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 90,
+      "file_offset": 74024,
+      "record_bytes": 542,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 12,
+      "entry_groups": [
+        {
+          "length": 101,
+          "x_range": [
+            20,
+            208
+          ],
+          "y_range": [
+            47,
+            216
+          ],
+          "last_spawn_delay": 120
+        },
+        {
+          "length": 107,
+          "x_range": [
+            20,
+            208
+          ],
+          "y_range": [
+            0,
+            123
+          ],
+          "last_spawn_delay": 120
+        }
+      ],
+      "formation_y_offset": -32,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 3,
+          "vygr_type": 4,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 29,
+          "vygr_type": 30,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1792,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        87,
+        87
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 91,
+      "file_offset": 74566,
+      "record_bytes": 668,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 394,
+          "x_range": [
+            38,
+            220
+          ],
+          "y_range": [
+            40,
+            216
+          ],
+          "last_spawn_delay": 105
+        }
+      ],
+      "formation_y_offset": -28,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 23,
+          "vygr_type": 24,
+          "mapping_confirmed": false,
+          "frames": 12,
+          "all_frame_bytes": 1536
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        61,
+        61
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "entry_cursor_requires_word"
+      ]
+    },
+    {
+      "level": 92,
+      "file_offset": 75234,
+      "record_bytes": 916,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 80,
+      "entry_groups": [
+        {
+          "length": 301,
+          "x_range": [
+            18,
+            222
+          ],
+          "y_range": [
+            0,
+            173
+          ],
+          "last_spawn_delay": 800
+        },
+        {
+          "length": 297,
+          "x_range": [
+            20,
+            215
+          ],
+          "y_range": [
+            39,
+            216
+          ],
+          "last_spawn_delay": 800
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 0,
+          "vygr_type": 1,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 10,
+          "vygr_type": 11,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 1280,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        79,
+        79
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "entry_cursor_requires_word",
+        "spawn_delay_requires_word",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 93,
+      "file_offset": 76150,
+      "record_bytes": 312,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 122,
+          "x_range": [
+            20,
+            223
+          ],
+          "y_range": [
+            0,
+            175
+          ],
+          "last_spawn_delay": 105
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 33,
+          "vygr_type": 34,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        }
+      ],
+      "all_frames_bytes": 512,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        19,
+        19
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": []
+    },
+    {
+      "level": 94,
+      "file_offset": 76462,
+      "record_bytes": 1008,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 10,
+      "entry_groups": [
+        {
+          "length": 241,
+          "x_range": [
+            10,
+            205
+          ],
+          "y_range": [
+            47,
+            216
+          ],
+          "last_spawn_delay": 100
+        },
+        {
+          "length": 241,
+          "x_range": [
+            10,
+            205
+          ],
+          "y_range": [
+            15,
+            216
+          ],
+          "last_spawn_delay": 100
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 31,
+          "vygr_type": 32,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 32,
+          "vygr_type": 33,
+          "mapping_confirmed": false,
+          "frames": 12,
+          "all_frame_bytes": 1536
+        }
+      ],
+      "all_frames_bytes": 2560,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        183,
+        183
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 95,
+      "file_offset": 77470,
+      "record_bytes": 456,
+      "enemy_count": 22,
+      "group_count": 1,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 262,
+          "x_range": [
+            10,
+            217
+          ],
+          "y_range": [
+            37,
+            216
+          ],
+          "last_spawn_delay": 105
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 10,
+          "vygr_type": 11,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 768,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        44
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "entry_cursor_requires_word"
+      ]
+    },
+    {
+      "level": 96,
+      "file_offset": 77926,
+      "record_bytes": 770,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 171,
+          "x_range": [
+            20,
+            217
+          ],
+          "y_range": [
+            39,
+            216
+          ],
+          "last_spawn_delay": 50
+        },
+        {
+          "length": 171,
+          "x_range": [
+            23,
+            220
+          ],
+          "y_range": [
+            39,
+            216
+          ],
+          "last_spawn_delay": 50
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 8,
+          "vygr_type": 9,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 18,
+          "vygr_type": 19,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 30,
+          "vygr_type": 31,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 2560,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        134,
+        134
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 97,
+      "file_offset": 78696,
+      "record_bytes": 1164,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 25,
+      "entry_groups": [
+        {
+          "length": 121,
+          "x_range": [
+            16,
+            168
+          ],
+          "y_range": [
+            36,
+            216
+          ],
+          "last_spawn_delay": 100
+        },
+        {
+          "length": 121,
+          "x_range": [
+            72,
+            224
+          ],
+          "y_range": [
+            36,
+            216
+          ],
+          "last_spawn_delay": 100
+        },
+        {
+          "length": 161,
+          "x_range": [
+            16,
+            168
+          ],
+          "y_range": [
+            0,
+            181
+          ],
+          "last_spawn_delay": 125
+        },
+        {
+          "length": 161,
+          "x_range": [
+            72,
+            224
+          ],
+          "y_range": [
+            0,
+            181
+          ],
+          "last_spawn_delay": 125
+        }
+      ],
+      "formation_y_offset": -25,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        },
+        {
+          "vylv_index": 14,
+          "vygr_type": 15,
+          "mapping_confirmed": true,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 1664,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        126,
+        126,
+        84,
+        84
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "record_exceeds_old_849_byte_copy",
+        "more_than_two_entry_groups",
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 98,
+      "file_offset": 79860,
+      "record_bytes": 630,
+      "enemy_count": 22,
+      "group_count": 2,
+      "entry_interval": 4,
+      "entry_groups": [
+        {
+          "length": 140,
+          "x_range": [
+            2,
+            113
+          ],
+          "y_range": [
+            0,
+            163
+          ],
+          "last_spawn_delay": 40
+        },
+        {
+          "length": 140,
+          "x_range": [
+            111,
+            222
+          ],
+          "y_range": [
+            0,
+            161
+          ],
+          "last_spawn_delay": 40
+        }
+      ],
+      "formation_y_offset": -23,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 22,
+          "vygr_type": 23,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 25,
+          "vygr_type": 26,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        }
+      ],
+      "all_frames_bytes": 1536,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        192
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [],
+      "stage4c_constraints": [
+        "per_enemy_graphic_source_required"
+      ]
+    },
+    {
+      "level": 99,
+      "file_offset": 80490,
+      "record_bytes": 728,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 7,
+      "entry_groups": [
+        {
+          "length": 136,
+          "x_range": [
+            0,
+            120
+          ],
+          "y_range": [
+            0,
+            175
+          ],
+          "last_spawn_delay": 35
+        },
+        {
+          "length": 136,
+          "x_range": [
+            0,
+            120
+          ],
+          "y_range": [
+            0,
+            175
+          ],
+          "last_spawn_delay": 28
+        },
+        {
+          "length": 136,
+          "x_range": [
+            96,
+            216
+          ],
+          "y_range": [
+            0,
+            175
+          ],
+          "last_spawn_delay": 35
+        },
+        {
+          "length": 136,
+          "x_range": [
+            96,
+            216
+          ],
+          "y_range": [
+            0,
+            175
+          ],
+          "last_spawn_delay": 28
+        }
+      ],
+      "formation_y_offset": -23,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        },
+        {
+          "vylv_index": 14,
+          "vygr_type": 15,
+          "mapping_confirmed": true,
+          "frames": 6,
+          "all_frame_bytes": 768
+        }
+      ],
+      "all_frames_bytes": 1664,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "stage4c_constraints": [
+        "more_than_two_entry_groups",
+        "per_enemy_graphic_source_required",
+        "unverified_one_byte_attack_semantics"
+      ]
+    },
+    {
+      "level": 100,
+      "file_offset": 81218,
+      "record_bytes": 575,
+      "enemy_count": 22,
+      "group_count": 4,
+      "entry_interval": 5,
+      "entry_groups": [
+        {
+          "length": 100,
+          "x_range": [
+            20,
+            120
+          ],
+          "y_range": [
+            37,
+            216
+          ],
+          "last_spawn_delay": 25
+        },
+        {
+          "length": 100,
+          "x_range": [
+            20,
+            120
+          ],
+          "y_range": [
+            37,
+            216
+          ],
+          "last_spawn_delay": 25
+        },
+        {
+          "length": 100,
+          "x_range": [
+            20,
+            188
+          ],
+          "y_range": [
+            37,
+            216
+          ],
+          "last_spawn_delay": 20
+        },
+        {
+          "length": 100,
+          "x_range": [
+            20,
+            188
+          ],
+          "y_range": [
+            36,
+            216
+          ],
+          "last_spawn_delay": 20
+        }
+      ],
+      "formation_y_offset": -26,
+      "formation_drift_fits": true,
+      "rrb_peak_bound": 23,
+      "rrb_limit": 24,
+      "graphics": [
+        {
+          "vylv_index": 0,
+          "vygr_type": 1,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 1,
+          "vygr_type": 2,
+          "mapping_confirmed": false,
+          "frames": 7,
+          "all_frame_bytes": 896
+        },
+        {
+          "vylv_index": 2,
+          "vygr_type": 3,
+          "mapping_confirmed": false,
+          "frames": 10,
+          "all_frame_bytes": 1280
+        },
+        {
+          "vylv_index": 3,
+          "vygr_type": 4,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 4,
+          "vygr_type": 5,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 5,
+          "vygr_type": 6,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 7,
+          "vygr_type": 8,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 8,
+          "vygr_type": 9,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 9,
+          "vygr_type": 10,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 10,
+          "vygr_type": 11,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 12,
+          "vygr_type": 13,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 13,
+          "vygr_type": 14,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 14,
+          "vygr_type": 15,
+          "mapping_confirmed": true,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 15,
+          "vygr_type": 16,
+          "mapping_confirmed": false,
+          "frames": 6,
+          "all_frame_bytes": 768
+        },
+        {
+          "vylv_index": 16,
+          "vygr_type": 17,
+          "mapping_confirmed": false,
+          "frames": 12,
+          "all_frame_bytes": 1536
+        },
+        {
+          "vylv_index": 17,
+          "vygr_type": 18,
+          "mapping_confirmed": false,
+          "frames": 12,
+          "all_frame_bytes": 1536
+        },
+        {
+          "vylv_index": 18,
+          "vygr_type": 19,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 19,
+          "vygr_type": 20,
+          "mapping_confirmed": false,
+          "frames": 8,
+          "all_frame_bytes": 1024
+        },
+        {
+          "vylv_index": 20,
+          "vygr_type": 21,
+          "mapping_confirmed": false,
+          "frames": 9,
+          "all_frame_bytes": 1152
+        },
+        {
+          "vylv_index": 21,
+          "vygr_type": 22,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 22,
+          "vygr_type": 23,
+          "mapping_confirmed": false,
+          "frames": 4,
+          "all_frame_bytes": 512
+        },
+        {
+          "vylv_index": 23,
+          "vygr_type": 24,
+          "mapping_confirmed": false,
+          "frames": 12,
+          "all_frame_bytes": 1536
+        }
+      ],
+      "all_frames_bytes": 19456,
+      "per_enemy_private_buffer_bytes": 5632,
+      "attack_lengths": [
+        1
+      ],
+      "attack_indices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unused_attack_indices": [],
+      "short_attack_indices": [
+        0
+      ],
+      "stage4c_constraints": [
+        "more_than_two_entry_groups",
+        "per_enemy_graphic_source_required",
+        "unverified_one_byte_attack_semantics"
+      ]
+    }
+  ],
+  "summary": {
+    "levels": 100,
+    "enemies": 2194,
+    "max_record_bytes": 1706,
+    "max_entry_curve_bytes": 469,
+    "max_spawn_delay": 2100,
+    "max_graphic_indices": 22,
+    "max_all_frames_bytes": 19456,
+    "max_rrb_slots": 23,
+    "short_attack_levels": [
+      25,
+      50,
+      99,
+      100
+    ],
+    "all_formations_and_drift_fit": true
+  }
+}

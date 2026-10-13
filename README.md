@@ -61,9 +61,35 @@ begrenzte Deskriptoren. Player weiterhin1 Pixel/Frame, übrige Mechanik erhalten
 [Build, Datenprüfung und XEMU-Abnahme](docs/stage4c_attack_mapping_and_drift.md).
 Quellen/PRG/D81: `releases/stage_4c/`; vom Benutzer in XEMU bestätigt; Referenz `stage4c-stable`.
 
-## Stage 5a (Teststand)
+## Stage 5a (Stable)
 
 Zentrale Verwaltung aller100 Originallevel, Level Clear/Joystick-Fortsetzung und
 +/− Testnavigation; aus `stage4c-stable`. [D81](releases/stage_5a/VYPER_STAGE5A.d81),
 [Build, freigegebene Sonderlevel-Einschränkungen und Testplan](docs/stage5a_level_management.md).
-Start: `LOAD "STAGE5A",8`, `RUN`. XEMU-Abnahme ausstehend.
+Start: `LOAD "STAGE5A",8`, `RUN`. Vom Benutzer bestätigt: Levelwechsel funktionieren. Stabile Referenz: `stage5a-stable`.
+
+## Stage 5b (Stable)
+
+38 Original-Gegnertypen/259 Frames, rekonstruierte Mapping-Tabelle und korrigierte
+NCM-Konvertierung aus den originalen Amiga-Deskriptoren. Stage5a Stable unverändert.
+[D81](releases/stage_5b/VYPER_STAGE5B.d81),
+[Extraktion, Mapping-Beleglage, Build und XEMU-Testplan](docs/stage5b_graphics_mapping.md).
+Start: `LOAD "STAGE5B",8`, `RUN`. Vom Benutzer vollständig bestätigt; stabile Referenz: `stage5b-stable`. Original-Levelpaletten folgen separat.
+
+## Stage 5c (Stable)
+
+Originale Levelpaletten aus Amiga-Color/Level, verlustfreie `VYCL.DAT` und
+getrennte NCM-Farben für Gegner; Player, HUD und Explosionen behalten ihre Farben.
+[D81](releases/stage_5c/VYPER_STAGE5C.d81),
+[Format, Originalnachweis, Build und XEMU-Testplan](docs/stage5c_original_palettes.md).
+Start: `LOAD "STAGE5C",8`, `RUN`. Basis `stage5b-stable` bleibt unverändert.
+Vom Benutzer unter XEMU bestätigt; stabile Referenz: `stage5c-stable`.
+
+## Stage 5d-1 – Titel während des Ladens (Stable)
+
+Branch `stage5d-1`, Ausgangsbasis `stage5c-stable`, Titelrenderer aus
+`stage5d0-stable`. Titel vor VYLV/VYGR/VYCL; danach automatisch Level 1.
+[D81 im Branch herunterladen](https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/blob/stage5d-1/releases/stage_5d_1/VYPER_STAGE5D1.d81)
+(bei privatem Repository bei GitHub anmelden und **Download raw file** verwenden).
+[Technik, Build und XEMU-Test](docs/stage5d1_title_loader_integration.md).
+Vom Benutzer nach der HOTREG-Korrektur in XEMU bestätigt; Referenz `stage5d1-stable`.

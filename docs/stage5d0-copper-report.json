@@ -1,0 +1,1463 @@
+{
+  "source_sha256": {
+    "Vyper_Startscreen.uss": "d836cbf88f0ac35b6ed3776df2add39f699113c1aeb9d02cdfe4651c82793916",
+    "Vyper_Memory_Dump.dat": "d74aea88fb4232e36caab80e51abc51f73d470a5b55a54f5cb010f1d910ddf8c"
+  },
+  "CHIP_bytes": 360,
+  "CHIP_flags": "0x103",
+  "saved_registers": {
+    "COP1LC": "0x420",
+    "COP2LC": "0x184ae",
+    "DIWSTRT": "0x581",
+    "DIWSTOP": "0x40c1",
+    "DDFSTRT": "0x38",
+    "DDFSTOP": "0xd0",
+    "DMACON": "0x3f0",
+    "BPLCON0": "0x200"
+  },
+  "lists": [
+    {
+      "start": "0x420",
+      "instructions": [
+        {
+          "address": "0x420",
+          "register": "0x180",
+          "value": "0xf00"
+        },
+        {
+          "address": "0x424",
+          "register": "0xe2",
+          "value": "0x0"
+        },
+        {
+          "address": "0x428",
+          "register": "0x120",
+          "value": "0x0"
+        },
+        {
+          "address": "0x42c",
+          "register": "0x122",
+          "value": "0xc80"
+        },
+        {
+          "address": "0x430",
+          "register": "0x124",
+          "value": "0x0"
+        },
+        {
+          "address": "0x434",
+          "register": "0x126",
+          "value": "0x478"
+        },
+        {
+          "address": "0x438",
+          "register": "0x128",
+          "value": "0x0"
+        },
+        {
+          "address": "0x43c",
+          "register": "0x12a",
+          "value": "0x478"
+        },
+        {
+          "address": "0x440",
+          "register": "0x12c",
+          "value": "0x0"
+        },
+        {
+          "address": "0x444",
+          "register": "0x12e",
+          "value": "0x478"
+        },
+        {
+          "address": "0x448",
+          "register": "0x130",
+          "value": "0x0"
+        },
+        {
+          "address": "0x44c",
+          "register": "0x132",
+          "value": "0x478"
+        },
+        {
+          "address": "0x450",
+          "register": "0x134",
+          "value": "0x0"
+        },
+        {
+          "address": "0x454",
+          "register": "0x136",
+          "value": "0x478"
+        },
+        {
+          "address": "0x458",
+          "register": "0x138",
+          "value": "0x0"
+        },
+        {
+          "address": "0x45c",
+          "register": "0x13a",
+          "value": "0x478"
+        },
+        {
+          "address": "0x460",
+          "register": "0x13c",
+          "value": "0x0"
+        },
+        {
+          "address": "0x464",
+          "register": "0x13e",
+          "value": "0x478"
+        },
+        {
+          "address": "0x468",
+          "wait_or_skip": {
+            "line8": 12,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x46c",
+          "register": "0x8a",
+          "value": "0x0"
+        },
+        {
+          "address": "0x470",
+          "register": "0x1fe",
+          "value": "0xffff"
+        },
+        {
+          "address": "0x474",
+          "end": true
+        }
+      ],
+      "display_moves": [
+        {
+          "address": "0x46c",
+          "register": "0x8a",
+          "value": "0x0",
+          "name": "COPJMP2",
+          "after_wait": {
+            "line8": 12,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        }
+      ],
+      "execution": "STATIC_ONLY",
+      "source": "savestate CRAM"
+    },
+    {
+      "start": "0x184ae",
+      "instructions": [
+        {
+          "address": "0x184ae",
+          "register": "0x180",
+          "value": "0x0"
+        },
+        {
+          "address": "0x184b2",
+          "register": "0x182",
+          "value": "0xfff"
+        },
+        {
+          "address": "0x184b6",
+          "register": "0x19e",
+          "value": "0xf00"
+        },
+        {
+          "address": "0x184ba",
+          "register": "0x19e",
+          "value": "0xff0"
+        },
+        {
+          "address": "0x184be",
+          "register": "0x188",
+          "value": "0x899"
+        },
+        {
+          "address": "0x184c2",
+          "register": "0x18a",
+          "value": "0x344"
+        },
+        {
+          "address": "0x184c6",
+          "register": "0x18c",
+          "value": "0x566"
+        },
+        {
+          "address": "0x184ca",
+          "register": "0x18e",
+          "value": "0xabb"
+        },
+        {
+          "address": "0x184ce",
+          "register": "0x190",
+          "value": "0xf00"
+        },
+        {
+          "address": "0x184d2",
+          "register": "0x192",
+          "value": "0xfff"
+        },
+        {
+          "address": "0x184d6",
+          "register": "0x194",
+          "value": "0xfff"
+        },
+        {
+          "address": "0x184da",
+          "register": "0x196",
+          "value": "0xfff"
+        },
+        {
+          "address": "0x184de",
+          "register": "0x198",
+          "value": "0xfff"
+        },
+        {
+          "address": "0x184e2",
+          "register": "0x19a",
+          "value": "0xfff"
+        },
+        {
+          "address": "0x184e6",
+          "register": "0x19c",
+          "value": "0xfff"
+        },
+        {
+          "address": "0x184ea",
+          "register": "0x19e",
+          "value": "0xfff"
+        },
+        {
+          "address": "0x184ee",
+          "register": "0x1a0",
+          "value": "0x0"
+        },
+        {
+          "address": "0x184f2",
+          "register": "0x1a2",
+          "value": "0x0"
+        },
+        {
+          "address": "0x184f6",
+          "register": "0x1a4",
+          "value": "0x566"
+        },
+        {
+          "address": "0x184fa",
+          "register": "0x1a6",
+          "value": "0xabb"
+        },
+        {
+          "address": "0x184fe",
+          "register": "0x1a8",
+          "value": "0x899"
+        },
+        {
+          "address": "0x18502",
+          "register": "0x1aa",
+          "value": "0xfff"
+        },
+        {
+          "address": "0x18506",
+          "register": "0x1ac",
+          "value": "0xe00"
+        },
+        {
+          "address": "0x1850a",
+          "register": "0x1ae",
+          "value": "0x344"
+        },
+        {
+          "address": "0x1850e",
+          "register": "0x1b0",
+          "value": "0x0"
+        },
+        {
+          "address": "0x18512",
+          "register": "0x1b2",
+          "value": "0xfff"
+        },
+        {
+          "address": "0x18516",
+          "register": "0x1b4",
+          "value": "0xe00"
+        },
+        {
+          "address": "0x1851a",
+          "register": "0x1b6",
+          "value": "0x344"
+        },
+        {
+          "address": "0x1851e",
+          "register": "0x1b8",
+          "value": "0x0"
+        },
+        {
+          "address": "0x18522",
+          "register": "0x1ba",
+          "value": "0xfff"
+        },
+        {
+          "address": "0x18526",
+          "register": "0x1bc",
+          "value": "0xe00"
+        },
+        {
+          "address": "0x1852a",
+          "register": "0x1be",
+          "value": "0x344"
+        },
+        {
+          "address": "0x1852e",
+          "register": "0x120",
+          "value": "0x2"
+        },
+        {
+          "address": "0x18532",
+          "register": "0x122",
+          "value": "0x19fe"
+        },
+        {
+          "address": "0x18536",
+          "register": "0x124",
+          "value": "0x2"
+        },
+        {
+          "address": "0x1853a",
+          "register": "0x126",
+          "value": "0x1a46"
+        },
+        {
+          "address": "0x1853e",
+          "register": "0x128",
+          "value": "0x2"
+        },
+        {
+          "address": "0x18542",
+          "register": "0x12a",
+          "value": "0x1a8e"
+        },
+        {
+          "address": "0x18546",
+          "register": "0x12c",
+          "value": "0x2"
+        },
+        {
+          "address": "0x1854a",
+          "register": "0x12e",
+          "value": "0x1ad6"
+        },
+        {
+          "address": "0x1854e",
+          "register": "0x130",
+          "value": "0x2"
+        },
+        {
+          "address": "0x18552",
+          "register": "0x132",
+          "value": "0x1b1e"
+        },
+        {
+          "address": "0x18556",
+          "register": "0x134",
+          "value": "0x2"
+        },
+        {
+          "address": "0x1855a",
+          "register": "0x136",
+          "value": "0x1b66"
+        },
+        {
+          "address": "0x1855e",
+          "register": "0x138",
+          "value": "0x2"
+        },
+        {
+          "address": "0x18562",
+          "register": "0x13a",
+          "value": "0x1bae"
+        },
+        {
+          "address": "0x18566",
+          "register": "0x13c",
+          "value": "0x2"
+        },
+        {
+          "address": "0x1856a",
+          "register": "0x13e",
+          "value": "0x1bf6"
+        },
+        {
+          "address": "0x1856e",
+          "wait_or_skip": {
+            "line8": 1,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x18572",
+          "register": "0x9c",
+          "value": "0x8010"
+        },
+        {
+          "address": "0x18576",
+          "wait_or_skip": {
+            "line8": 43,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x1857a",
+          "register": "0x8e",
+          "value": "0x581"
+        },
+        {
+          "address": "0x1857e",
+          "register": "0x100",
+          "value": "0x200"
+        },
+        {
+          "address": "0x18582",
+          "register": "0x104",
+          "value": "0x34"
+        },
+        {
+          "address": "0x18586",
+          "register": "0x90",
+          "value": "0x40c1"
+        },
+        {
+          "address": "0x1858a",
+          "register": "0x92",
+          "value": "0x38"
+        },
+        {
+          "address": "0x1858e",
+          "register": "0x94",
+          "value": "0xd0"
+        },
+        {
+          "address": "0x18592",
+          "register": "0x102",
+          "value": "0x0"
+        },
+        {
+          "address": "0x18596",
+          "register": "0x108",
+          "value": "0x0"
+        },
+        {
+          "address": "0x1859a",
+          "register": "0x10a",
+          "value": "0x0"
+        },
+        {
+          "address": "0x1859e",
+          "register": "0xe0",
+          "value": "0x2"
+        },
+        {
+          "address": "0x185a2",
+          "register": "0xe2",
+          "value": "0x7770"
+        },
+        {
+          "address": "0x185a6",
+          "register": "0xe4",
+          "value": "0x2"
+        },
+        {
+          "address": "0x185aa",
+          "register": "0xe6",
+          "value": "0x9bb0"
+        },
+        {
+          "address": "0x185ae",
+          "register": "0xe8",
+          "value": "0x2"
+        },
+        {
+          "address": "0x185b2",
+          "register": "0xea",
+          "value": "0xbff0"
+        },
+        {
+          "address": "0x185b6",
+          "register": "0xec",
+          "value": "0x2"
+        },
+        {
+          "address": "0x185ba",
+          "register": "0xee",
+          "value": "0xe430"
+        },
+        {
+          "address": "0x185be",
+          "wait_or_skip": {
+            "line8": 44,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x185c2",
+          "register": "0x100",
+          "value": "0x4200"
+        },
+        {
+          "address": "0x185c6",
+          "wait_or_skip": {
+            "line8": 244,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x185ca",
+          "register": "0x100",
+          "value": "0x200"
+        },
+        {
+          "address": "0x185ce",
+          "end": true
+        }
+      ],
+      "display_moves": [
+        {
+          "address": "0x1857a",
+          "register": "0x8e",
+          "value": "0x581",
+          "name": "DIWSTRT",
+          "after_wait": {
+            "line8": 43,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x1857e",
+          "register": "0x100",
+          "value": "0x200",
+          "name": "BPLCON0",
+          "after_wait": {
+            "line8": 43,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x18582",
+          "register": "0x104",
+          "value": "0x34",
+          "name": "BPLCON2",
+          "after_wait": {
+            "line8": 43,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x18586",
+          "register": "0x90",
+          "value": "0x40c1",
+          "name": "DIWSTOP",
+          "after_wait": {
+            "line8": 43,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x1858a",
+          "register": "0x92",
+          "value": "0x38",
+          "name": "DDFSTRT",
+          "after_wait": {
+            "line8": 43,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x1858e",
+          "register": "0x94",
+          "value": "0xd0",
+          "name": "DDFSTOP",
+          "after_wait": {
+            "line8": 43,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x18592",
+          "register": "0x102",
+          "value": "0x0",
+          "name": "BPLCON1",
+          "after_wait": {
+            "line8": 43,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x185c2",
+          "register": "0x100",
+          "value": "0x4200",
+          "name": "BPLCON0",
+          "after_wait": {
+            "line8": 44,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x185ca",
+          "register": "0x100",
+          "value": "0x200",
+          "name": "BPLCON0",
+          "after_wait": {
+            "line8": 244,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        }
+      ],
+      "execution": "STATIC_ONLY",
+      "source": "savestate CRAM"
+    },
+    {
+      "start": "0x1b5b4",
+      "instructions": [
+        {
+          "address": "0x1b5b4",
+          "register": "0x8e",
+          "value": "0x581"
+        },
+        {
+          "address": "0x1b5b8",
+          "register": "0x100",
+          "value": "0x200"
+        },
+        {
+          "address": "0x1b5bc",
+          "register": "0x104",
+          "value": "0x24"
+        },
+        {
+          "address": "0x1b5c0",
+          "register": "0x90",
+          "value": "0x40c1"
+        },
+        {
+          "address": "0x1b5c4",
+          "register": "0x92",
+          "value": "0x38"
+        },
+        {
+          "address": "0x1b5c8",
+          "register": "0x94",
+          "value": "0xd0"
+        },
+        {
+          "address": "0x1b5cc",
+          "register": "0x102",
+          "value": "0x0"
+        },
+        {
+          "address": "0x1b5d0",
+          "register": "0x108",
+          "value": "0x0"
+        },
+        {
+          "address": "0x1b5d4",
+          "register": "0x10a",
+          "value": "0x0"
+        },
+        {
+          "address": "0x1b5d8",
+          "register": "0xe0",
+          "value": "0x1"
+        },
+        {
+          "address": "0x1b5dc",
+          "register": "0xe2",
+          "value": "0x4788"
+        },
+        {
+          "address": "0x1b5e0",
+          "register": "0xe4",
+          "value": "0x1"
+        },
+        {
+          "address": "0x1b5e4",
+          "register": "0xe6",
+          "value": "0x6bc8"
+        },
+        {
+          "address": "0x1b5e8",
+          "register": "0xe8",
+          "value": "0x1"
+        },
+        {
+          "address": "0x1b5ec",
+          "register": "0xea",
+          "value": "0x9008"
+        },
+        {
+          "address": "0x1b5f0",
+          "register": "0xec",
+          "value": "0x3"
+        },
+        {
+          "address": "0x1b5f4",
+          "register": "0xee",
+          "value": "0xa300"
+        },
+        {
+          "address": "0x1b5f8",
+          "wait_or_skip": {
+            "line8": 44,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x1b5fc",
+          "register": "0x100",
+          "value": "0x4200"
+        },
+        {
+          "address": "0x1b600",
+          "wait_or_skip": {
+            "line8": 255,
+            "horizontal": 222,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x1b604",
+          "wait_or_skip": {
+            "line8": 20,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x1b608",
+          "register": "0x100",
+          "value": "0x200"
+        },
+        {
+          "address": "0x1b60c",
+          "end": true
+        }
+      ],
+      "display_moves": [
+        {
+          "address": "0x1b5b4",
+          "register": "0x8e",
+          "value": "0x581",
+          "name": "DIWSTRT",
+          "after_wait": null
+        },
+        {
+          "address": "0x1b5b8",
+          "register": "0x100",
+          "value": "0x200",
+          "name": "BPLCON0",
+          "after_wait": null
+        },
+        {
+          "address": "0x1b5bc",
+          "register": "0x104",
+          "value": "0x24",
+          "name": "BPLCON2",
+          "after_wait": null
+        },
+        {
+          "address": "0x1b5c0",
+          "register": "0x90",
+          "value": "0x40c1",
+          "name": "DIWSTOP",
+          "after_wait": null
+        },
+        {
+          "address": "0x1b5c4",
+          "register": "0x92",
+          "value": "0x38",
+          "name": "DDFSTRT",
+          "after_wait": null
+        },
+        {
+          "address": "0x1b5c8",
+          "register": "0x94",
+          "value": "0xd0",
+          "name": "DDFSTOP",
+          "after_wait": null
+        },
+        {
+          "address": "0x1b5cc",
+          "register": "0x102",
+          "value": "0x0",
+          "name": "BPLCON1",
+          "after_wait": null
+        },
+        {
+          "address": "0x1b5fc",
+          "register": "0x100",
+          "value": "0x4200",
+          "name": "BPLCON0",
+          "after_wait": {
+            "line8": 44,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x1b608",
+          "register": "0x100",
+          "value": "0x200",
+          "name": "BPLCON0",
+          "after_wait": {
+            "line8": 20,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        }
+      ],
+      "execution": "STATIC_ONLY",
+      "source": "separate memory dump"
+    },
+    {
+      "start": "0x1c4ec",
+      "instructions": [
+        {
+          "address": "0x1c4ec",
+          "register": "0x8e",
+          "value": "0x57d"
+        },
+        {
+          "address": "0x1c4f0",
+          "register": "0x100",
+          "value": "0x200"
+        },
+        {
+          "address": "0x1c4f4",
+          "register": "0x104",
+          "value": "0x24"
+        },
+        {
+          "address": "0x1c4f8",
+          "register": "0x90",
+          "value": "0x40bd"
+        },
+        {
+          "address": "0x1c4fc",
+          "register": "0x92",
+          "value": "0x38"
+        },
+        {
+          "address": "0x1c500",
+          "register": "0x94",
+          "value": "0xcc"
+        },
+        {
+          "address": "0x1c504",
+          "register": "0x102",
+          "value": "0x44"
+        },
+        {
+          "address": "0x1c508",
+          "register": "0x108",
+          "value": "0x0"
+        },
+        {
+          "address": "0x1c50c",
+          "register": "0x10a",
+          "value": "0x0"
+        },
+        {
+          "address": "0x1c510",
+          "register": "0xe0",
+          "value": "0x1"
+        },
+        {
+          "address": "0x1c514",
+          "register": "0xe2",
+          "value": "0x21b8"
+        },
+        {
+          "address": "0x1c518",
+          "register": "0xe4",
+          "value": "0x1"
+        },
+        {
+          "address": "0x1c51c",
+          "register": "0xe6",
+          "value": "0x71b8"
+        },
+        {
+          "address": "0x1c520",
+          "wait_or_skip": {
+            "line8": 45,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x1c524",
+          "register": "0x100",
+          "value": "0xa200"
+        },
+        {
+          "address": "0x1c528",
+          "wait_or_skip": {
+            "line8": 255,
+            "horizontal": 222,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x1c52c",
+          "wait_or_skip": {
+            "line8": 45,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x1c530",
+          "register": "0x100",
+          "value": "0x200"
+        },
+        {
+          "address": "0x1c534",
+          "end": true
+        }
+      ],
+      "display_moves": [
+        {
+          "address": "0x1c4ec",
+          "register": "0x8e",
+          "value": "0x57d",
+          "name": "DIWSTRT",
+          "after_wait": null
+        },
+        {
+          "address": "0x1c4f0",
+          "register": "0x100",
+          "value": "0x200",
+          "name": "BPLCON0",
+          "after_wait": null
+        },
+        {
+          "address": "0x1c4f4",
+          "register": "0x104",
+          "value": "0x24",
+          "name": "BPLCON2",
+          "after_wait": null
+        },
+        {
+          "address": "0x1c4f8",
+          "register": "0x90",
+          "value": "0x40bd",
+          "name": "DIWSTOP",
+          "after_wait": null
+        },
+        {
+          "address": "0x1c4fc",
+          "register": "0x92",
+          "value": "0x38",
+          "name": "DDFSTRT",
+          "after_wait": null
+        },
+        {
+          "address": "0x1c500",
+          "register": "0x94",
+          "value": "0xcc",
+          "name": "DDFSTOP",
+          "after_wait": null
+        },
+        {
+          "address": "0x1c504",
+          "register": "0x102",
+          "value": "0x44",
+          "name": "BPLCON1",
+          "after_wait": null
+        },
+        {
+          "address": "0x1c524",
+          "register": "0x100",
+          "value": "0xa200",
+          "name": "BPLCON0",
+          "after_wait": {
+            "line8": 45,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x1c530",
+          "register": "0x100",
+          "value": "0x200",
+          "name": "BPLCON0",
+          "after_wait": {
+            "line8": 45,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        }
+      ],
+      "execution": "STATIC_ONLY",
+      "source": "separate memory dump"
+    },
+    {
+      "start": "0x2b38a",
+      "instructions": [
+        {
+          "address": "0x2b38a",
+          "register": "0x8e",
+          "value": "0x581"
+        },
+        {
+          "address": "0x2b38e",
+          "register": "0x100",
+          "value": "0x200"
+        },
+        {
+          "address": "0x2b392",
+          "register": "0x104",
+          "value": "0x34"
+        },
+        {
+          "address": "0x2b396",
+          "register": "0x90",
+          "value": "0x40c1"
+        },
+        {
+          "address": "0x2b39a",
+          "register": "0x92",
+          "value": "0x38"
+        },
+        {
+          "address": "0x2b39e",
+          "register": "0x94",
+          "value": "0xd0"
+        },
+        {
+          "address": "0x2b3a2",
+          "register": "0x102",
+          "value": "0x0"
+        },
+        {
+          "address": "0x2b3a6",
+          "register": "0x108",
+          "value": "0x0"
+        },
+        {
+          "address": "0x2b3aa",
+          "register": "0x10a",
+          "value": "0x0"
+        },
+        {
+          "address": "0x2b3ae",
+          "register": "0xe0",
+          "value": "0x1"
+        },
+        {
+          "address": "0x2b3b2",
+          "register": "0xe2",
+          "value": "0x4a08"
+        },
+        {
+          "address": "0x2b3b6",
+          "register": "0xe4",
+          "value": "0x1"
+        },
+        {
+          "address": "0x2b3ba",
+          "register": "0xe6",
+          "value": "0x6e48"
+        },
+        {
+          "address": "0x2b3be",
+          "register": "0xe8",
+          "value": "0x1"
+        },
+        {
+          "address": "0x2b3c2",
+          "register": "0xea",
+          "value": "0x9288"
+        },
+        {
+          "address": "0x2b3c6",
+          "register": "0xec",
+          "value": "0x3"
+        },
+        {
+          "address": "0x2b3ca",
+          "register": "0xee",
+          "value": "0xa580"
+        },
+        {
+          "address": "0x2b3ce",
+          "wait_or_skip": {
+            "line8": 44,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x2b3d2",
+          "register": "0x100",
+          "value": "0x4200"
+        },
+        {
+          "address": "0x2b3d6",
+          "wait_or_skip": {
+            "line8": 244,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x2b3da",
+          "register": "0x100",
+          "value": "0x200"
+        },
+        {
+          "address": "0x2b3de",
+          "end": true
+        }
+      ],
+      "display_moves": [
+        {
+          "address": "0x2b38a",
+          "register": "0x8e",
+          "value": "0x581",
+          "name": "DIWSTRT",
+          "after_wait": null
+        },
+        {
+          "address": "0x2b38e",
+          "register": "0x100",
+          "value": "0x200",
+          "name": "BPLCON0",
+          "after_wait": null
+        },
+        {
+          "address": "0x2b392",
+          "register": "0x104",
+          "value": "0x34",
+          "name": "BPLCON2",
+          "after_wait": null
+        },
+        {
+          "address": "0x2b396",
+          "register": "0x90",
+          "value": "0x40c1",
+          "name": "DIWSTOP",
+          "after_wait": null
+        },
+        {
+          "address": "0x2b39a",
+          "register": "0x92",
+          "value": "0x38",
+          "name": "DDFSTRT",
+          "after_wait": null
+        },
+        {
+          "address": "0x2b39e",
+          "register": "0x94",
+          "value": "0xd0",
+          "name": "DDFSTOP",
+          "after_wait": null
+        },
+        {
+          "address": "0x2b3a2",
+          "register": "0x102",
+          "value": "0x0",
+          "name": "BPLCON1",
+          "after_wait": null
+        },
+        {
+          "address": "0x2b3d2",
+          "register": "0x100",
+          "value": "0x4200",
+          "name": "BPLCON0",
+          "after_wait": {
+            "line8": 44,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x2b3da",
+          "register": "0x100",
+          "value": "0x200",
+          "name": "BPLCON0",
+          "after_wait": {
+            "line8": 244,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        }
+      ],
+      "execution": "STATIC_ONLY",
+      "source": "separate memory dump"
+    },
+    {
+      "start": "0x35496",
+      "instructions": [
+        {
+          "address": "0x35496",
+          "register": "0x8e",
+          "value": "0x581"
+        },
+        {
+          "address": "0x3549a",
+          "register": "0x100",
+          "value": "0x200"
+        },
+        {
+          "address": "0x3549e",
+          "register": "0x104",
+          "value": "0x34"
+        },
+        {
+          "address": "0x354a2",
+          "register": "0x90",
+          "value": "0x40c1"
+        },
+        {
+          "address": "0x354a6",
+          "register": "0x92",
+          "value": "0x38"
+        },
+        {
+          "address": "0x354aa",
+          "register": "0x94",
+          "value": "0xd0"
+        },
+        {
+          "address": "0x354ae",
+          "register": "0x102",
+          "value": "0x0"
+        },
+        {
+          "address": "0x354b2",
+          "register": "0x108",
+          "value": "0x0"
+        },
+        {
+          "address": "0x354b6",
+          "register": "0x10a",
+          "value": "0x0"
+        },
+        {
+          "address": "0x354ba",
+          "register": "0xe0",
+          "value": "0x3"
+        },
+        {
+          "address": "0x354be",
+          "register": "0xe2",
+          "value": "0xc9c0"
+        },
+        {
+          "address": "0x354c2",
+          "register": "0xe4",
+          "value": "0x3"
+        },
+        {
+          "address": "0x354c6",
+          "register": "0xe6",
+          "value": "0xee00"
+        },
+        {
+          "address": "0x354ca",
+          "register": "0xe8",
+          "value": "0x4"
+        },
+        {
+          "address": "0x354ce",
+          "register": "0xea",
+          "value": "0x1240"
+        },
+        {
+          "address": "0x354d2",
+          "register": "0xec",
+          "value": "0x4"
+        },
+        {
+          "address": "0x354d6",
+          "register": "0xee",
+          "value": "0x3680"
+        },
+        {
+          "address": "0x354da",
+          "wait_or_skip": {
+            "line8": 44,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x354de",
+          "register": "0x100",
+          "value": "0x4200"
+        },
+        {
+          "address": "0x354e2",
+          "wait_or_skip": {
+            "line8": 244,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x354e6",
+          "register": "0x100",
+          "value": "0x200"
+        },
+        {
+          "address": "0x354ea",
+          "end": true
+        }
+      ],
+      "display_moves": [
+        {
+          "address": "0x35496",
+          "register": "0x8e",
+          "value": "0x581",
+          "name": "DIWSTRT",
+          "after_wait": null
+        },
+        {
+          "address": "0x3549a",
+          "register": "0x100",
+          "value": "0x200",
+          "name": "BPLCON0",
+          "after_wait": null
+        },
+        {
+          "address": "0x3549e",
+          "register": "0x104",
+          "value": "0x34",
+          "name": "BPLCON2",
+          "after_wait": null
+        },
+        {
+          "address": "0x354a2",
+          "register": "0x90",
+          "value": "0x40c1",
+          "name": "DIWSTOP",
+          "after_wait": null
+        },
+        {
+          "address": "0x354a6",
+          "register": "0x92",
+          "value": "0x38",
+          "name": "DDFSTRT",
+          "after_wait": null
+        },
+        {
+          "address": "0x354aa",
+          "register": "0x94",
+          "value": "0xd0",
+          "name": "DDFSTOP",
+          "after_wait": null
+        },
+        {
+          "address": "0x354ae",
+          "register": "0x102",
+          "value": "0x0",
+          "name": "BPLCON1",
+          "after_wait": null
+        },
+        {
+          "address": "0x354de",
+          "register": "0x100",
+          "value": "0x4200",
+          "name": "BPLCON0",
+          "after_wait": {
+            "line8": 44,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        },
+        {
+          "address": "0x354e6",
+          "register": "0x100",
+          "value": "0x200",
+          "name": "BPLCON0",
+          "after_wait": {
+            "line8": 244,
+            "horizontal": 0,
+            "mask": "0xfffe",
+            "skip": false
+          }
+        }
+      ],
+      "execution": "STATIC_ONLY",
+      "source": "separate memory dump"
+    }
+  ],
+  "conditional_classic_OCS_ECS_interpretation": {
+    "referenced_COP2_DDF_lowres_pixels": 320,
+    "DIW_horizontal_lowres_pixels": 320,
+    "enabled_bitplane_raster_phase": [
+      44,
+      244
+    ],
+    "enabled_raster_rows": 200,
+    "BPLCON0_4200": "lowres,4 bitplanes",
+    "BPLCON0_A200": "hires,2 bitplanes; not5 bitplanes",
+    "DIW_vertical_window_rows": 315
+  },
+  "limitations": [
+    "No executed Copper trace or WinUAE/hardware runtime.",
+    "Snapshot BPLCON0=$0200 has zero planes; mode varies within list.",
+    "Active title352x240 and Overscan are not established by these saved registers/lists.",
+    "Other list addresses are memory finds, not evidence of activation."
+  ]
+}
