@@ -604,3 +604,24 @@ behauptet. Historische Testreports im Release bleiben unverändert.
 PR50 wird nach `main` gemergt; `stage6b1` und sämtliche bisherigen Stable-Tags
 bleiben unverändert. Dies archiviert den eigenständigen Testbuild; die spätere
 Integration in eine neue Spielengine-Stage erfolgt weiterhin separat.
+
+## Stage7a2 – Sternenhintergrund in der vollständigen Engine, 13.10.2026
+
+Issue51, Branch `stage7a2`, **nicht Stable; XEMU-Abnahme ausstehend**.
+Enginequellen ab `stage6b1-stable`, Sternrenderer/Parameter aus dem getesteten
+Stage7a1-Programmcommit `ed22f0d`. Der freigegebene Stage7a1-Merge nach main
+ist verifiziert; alle bisherigen Stable-Stände bleiben unverändert.
+
+Sterne nur im Playfield nach F1; Farben/Verteilung und Teiler8/4/2 unverändert.
+Kein B/V-Schalter, kein Rastermarker und keine Stern-Laufzeitdiagnostik.
+Ein Tick pro Hauptschleifenframe, auch bei LEVEL CLEAR und GAME OVER.
+Levelwechsel und R bewahren Positionen/Bitmap/Phase; HUD-Neuaufbau lässt aktive
+Sternzellen kontinuierlich stehen. Kleine dokumentierte API vorbereitet;
+beschleunigte Modi derzeit abgewiesen, kein Übergangseffekt implementiert.
+
+33 Hosttests bestanden, einschließlich 160 LEVEL-CLEAR-Frames, 100 Übergängen
+ohne vorübergehende Prefixänderung, Sprite-/Pixie-/Paletten-/Kampfregression
+und BASIC/RUN. 47 Dateien aus zwei Builds bytegleich. CPU-Modellmittel6792,375,
+Peak18756 (All48-Wrap19098); DMA Mittel56/Peak192 Ein-Byte-Aufträge. Keine eigene
+XEMU-Zeitmessung. PRG/D81/Quellen/Reports unter `releases/stage_7a2/`.
+Details und Benutzerprüfplan: [Stage7a2](stage7a2_starfield_integration.md).
