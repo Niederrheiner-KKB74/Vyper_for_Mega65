@@ -996,6 +996,7 @@ service:
  lda $d720,x
  and #8
  beq !alive+
+service_complete:
  jsr stop_source
  inc completed
  rts
@@ -1036,6 +1037,13 @@ service:
  lda $d72b,x
  cmp pointer_hi
  bne !snapshot-
+ // DMA may finish AFTER the first CTRL read. Its exclusive end pointer is
+ // deliberately outside the ring when the final block was in half1.
+ lda $d720,x
+ and #8
+ beq !pointer_live+
+ jmp service_complete
+!pointer_live:
  lda $d72c,x
  bne pointer_error
  lda pointer_hi
@@ -1062,6 +1070,12 @@ service:
 !done:
  rts
 pointer_error:
+ // Also close the smaller race during validation, before declaring corruption.
+ lda $d720,x
+ and #8
+ beq !invalid+
+ jmp service_complete
+!invalid:
  lda #5
  sta error
  jsr stop_source

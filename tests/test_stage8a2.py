@@ -12,8 +12,12 @@ with tempfile.TemporaryDirectory() as t:
 
 class Memory:
  def __init__(self):
-  self.data=bytearray(65536);self.attic=bytearray(0x30000);self.mixer=bytearray((i*13+7)&255 for i in range(256));self.key=[];self.joy=255;self.frame=0;self.fetch=[bytearray(),bytearray()];self.dma_jobs=[];self.bad_attic=False;self.bad_mix=False;self.bad_rate=False;self.alias_attic=False
+  self.data=bytearray(65536);self.attic=bytearray(0x30000);self.mixer=bytearray((i*13+7)&255 for i in range(256));self.key=[];self.joy=255;self.frame=0;self.fetch=[bytearray(),bytearray()];self.dma_jobs=[];self.bad_attic=False;self.bad_mix=False;self.bad_rate=False;self.alias_attic=False;self.finish_on_ctrl_read=None
  def __getitem__(self,a):
+  if self.finish_on_ctrl_read is not None and a==0xd720+self.finish_on_ctrl_read*32:
+   source=self.finish_on_ctrl_read;self.finish_on_ctrl_read=None
+   previous=self.data[a];self.advance(source,1)
+   return previous # DMA completes immediately AFTER the CPU's first status read
   if a==0xd6f5:return self.mixer[self.data[0xd6f4]]
   if a==0xd610:return self.key[0] if self.key else 0
   if a==0xdc00:return self.joy
@@ -204,6 +208,20 @@ class Tests(unittest.TestCase):
   m=Machine();m.m.alias_attic=True;m.boot();self.assertEqual(m.cpu.pc,0x200);self.assertEqual(m.m.data[N['error']],3);self.assertEqual(m.m.data[N['configured']],0)
  def test_hardware_end_watchdog(self):
   m=Machine().fastboot();m.start(0,13);m.m.frame=200;m.m.data[N['service_frame']]=199;m.call('service_all');self.assertEqual(m.m.data[N['error']],7);self.assertFalse(m.m.data[N['active']])
+ def test_DMA_completion_between_status_read_and_pointer_snapshot(self):
+  for source in (0,1):
+   for index in (1,13): # final half0 and final half1 respectively
+    with self.subTest(source=source,id=SAMPLES[index]['id']):
+     m=Machine().fastboot();m.start(source,index);sample=SAMPLES[index]
+     left=sample['length']-1
+     while left:
+      n=min(left,97);m.m.advance(source,n);m.call('service_all');left-=n
+     self.assertEqual(m.m.data[0xd720+32*source]&0x88,0x80)
+     m.m.finish_on_ctrl_read=source;m.call('service_all')
+     self.assertEqual(m.m.data[N['error']],0)
+     self.assertEqual(m.m.data[N['active']+source],0)
+     self.assertEqual(m.m.data[N['completed']],1)
+     m.call('service_all');self.assertEqual(m.m.data[N['completed']],1)
  def test_archive_bounds_rates_disk_and_extraction(self):
   self.assertEqual([s['id'] for s in SAMPLES],[1,2,3,5,6,7,8,9,10,11,12,15,16,17,18,19,20,21,22,24]);self.assertEqual(len(ARCHIVE),154304)
   for s in SAMPLES:

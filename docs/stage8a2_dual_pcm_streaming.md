@@ -251,3 +251,27 @@ XEMU/Hardware-Abnahmeplan:
 
 Kein XEMU-Hörtest und kein realer MEGA65-Lauf wurden in dieser Cloud ausgeführt.
 Stage8a2 bleibt bis zur ausdrücklichen Benutzerbestätigung ein Testbuild.
+
+## Korrektur: sporadischer Abbruch mit Fehler5 nach Sampleende
+
+Der Benutzer meldete Fehler5 nach einer ansonsten korrekten Wiedergabe. Ein neuer
+Instruktions-/Register-Interleaving-Test reproduziert ihn im bisherigen Build
+`bcf36a0`: DMA beendet das letzte Byte unmittelbar nach der ersten CTRL/STP-Abfrage.
+Beim anschließenden Pointer-Snapshot steht der Cursor bereits am exklusiven Ende.
+Liegt der letzte Block in Hälfte1, ist das `$5000` bzw.`$6000`, also außerhalb des
+jeweiligen Rings. Der alte Service meldete deshalb fälschlich Pointerfehler5.
+XEMU `audio65.c` bestätigt beide beteiligten Eigenschaften: STP wird beim Erreichen
+des exklusiven Endes gesetzt und die weitergezählte Adresse zurückgeschrieben.
+SEI verhindert diese Race Condition nicht, weil Audio-DMA unabhängig vom CPU-IRQ läuft.
+
+Korrektur ausschließlich im Service: STP nach dem Pointer-Snapshot erneut prüfen
+und vor dem Melden eines Pointerfehlers nochmals prüfen. Ein inzwischen abgeschlossener
+Stream nimmt denselben normalen Abschlussweg wie bei der ersten Statusabfrage.
+Die Bereichsprüfung für tatsächlich laufende, ungültige Pointer bleibt aktiv.
+Sampledaten, Panning, PER, Pufferlayout und Busy-Regeln bleiben unverändert.
+
+Der Regressionstest injiziert das letzte DMA-Byte gezielt zwischen Status- und
+Pointerabfrage, für beide Quellen und beide möglichen Endhälften. Er schlug vor
+der Korrektur fehl (Fehler5 bei Hälfte1) und besteht danach; ein zweiter Serviceaufruf
+zählt den Abschluss nicht doppelt. Vorhandene Tests für echte Pointerfehler bleiben
+Bestandteil des Gesamtlaufs. Die erneute XEMU-Abnahme dieses Fixes steht aus.

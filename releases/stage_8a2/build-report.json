@@ -258,9 +258,9 @@
   "files": [
     {
       "name": "STAGE8A2",
-      "bytes": 4752,
+      "bytes": 4772,
       "blocks": 19,
-      "sha256": "9d0e43426243ee516de89ae6eac214b82b539c197f80f753b26b4b27b785d7ab"
+      "sha256": "75aefc5ed7850cae2fa3ec87b23b71f38729a06e7a26272353b185e34c457c41"
     },
     {
       "name": "VYAU.DAT",

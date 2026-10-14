@@ -1,8 +1,8 @@
-Stage8a2 / Issue71 / 2026-10-14
-Host: Python3.12, py65==1.2.0, Java, pinned KickAssembler5.25
-Assembled6502 controller with explicit KERNAL/DMAgic/audio/mixer model.
-XEMU: NOT RUN; real MEGA65/audio hearing: NOT RUN.
+Stage8a2 ERROR5 fix / 2026-10-14
+Host: assembled6502 under py651.2.0, explicit DMA/KERNAL/audio model; NOT XEMU.
+Regression reproduced on bcf36a0 before fix: error5 with final half1 on both sources.
 
+test_DMA_completion_between_status_read_and_pointer_snapshot (test_stage8a2.Tests.test_DMA_completion_between_status_read_and_pointer_snapshot) ... ok
 test_all_twenty_samples_exact_bytes_tail_and_restart (test_stage8a2.Tests.test_all_twenty_samples_exact_bytes_tail_and_restart) ... ok
 test_archive_bounds_rates_disk_and_extraction (test_stage8a2.Tests.test_archive_bounds_rates_disk_and_extraction) ... ok
 test_attic_capacity_alias_detected_after_whole_archive_load (test_stage8a2.Tests.test_attic_capacity_alias_detected_after_whole_archive_load) ... ok
@@ -18,12 +18,12 @@ test_raster_snapshot_and_screen_status (test_stage8a2.Tests.test_raster_snapshot
 test_single_pending_id_last_admitted_writer_and_busy_rejection (test_stage8a2.Tests.test_single_pending_id_last_admitted_writer_and_busy_rejection) ... ok
 
 ----------------------------------------------------------------------
-Ran 13 tests in 49.345s
+Ran 14 tests in 50.122s
 
 OK
-Measured assembled service max6502 cycles: 2447 DMA jobs: 3079
-Fastest pair max service/load-iteration6502 cycles: 1872 92930
+Measured assembled service max6502 cycles: 2466 DMA jobs: 3079
+Fastest pair max service/load-iteration6502 cycles: 1892 93267
 
-Reproducibility: all11 release artifacts identical in second clean build.
-Protection: all existing src/assets/tools/releases files identical to b56ae48.
-D81:819200 bytes, exact PRG and SEQ archive chains verified.
+Reproducibility: all11 release artifacts byte-identical in clean repeat build.
+Protected Stage8a1/Stage7b5b source/assets/releases/tools unchanged.
+XEMU hearing/acceptance of fix: PENDING.

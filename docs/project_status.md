@@ -782,3 +782,8 @@ positionsabhängiges Panning, alle20 Samples im geprüften Attic-Archiv und unab
 Last, Rasterzeit-/Fehleranzeige, BASIC-Exit. PRG und vollständiges D81 unter
 `releases/stage_8a2/`. [Bericht und Abnahmeplan](stage8a2_dual_pcm_streaming.md).
 Hosttests sind keine XEMU-/Hardware-Hörabnahme. **Kein Stable-Tag, kein Merge ohne Freigabe.**
+
+Stage8a2-Fehlerkorrektur: sporadischer ERROR5 nach Sampleende als Race zwischen
+CTRL/STP und exklusivem DMA-Endpointer reproduziert. Zweite Statusprüfung im
+Service und erneute Prüfung vor Pointerfehler; gezielter Regressionstest für beide
+Quellen/Endhälften. Erneute XEMU-Abnahme offen; keine Stable-Markierung.

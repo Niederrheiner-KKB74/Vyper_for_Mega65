@@ -2,4 +2,4 @@ Memory Map
 ----------
 Default-segment:
   $2001-$200c Unnamed
-  $2100-$328e Stage8a2 dual PCM controller
+  $2100-$32a2 Stage8a2 dual PCM controller
