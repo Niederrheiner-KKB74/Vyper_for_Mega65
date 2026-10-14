@@ -41,7 +41,7 @@ def convert(out):
     payload=b''.join(records)
     header=struct.pack('<4sBBBBHHHH',b'VYSH',1,100,4,11,16+len(payload),sum(payload)&65535,16,0)
     data=header+payload;out=Path(out);out.mkdir(parents=True,exist_ok=True);(out/'VYSH.DAT').write_bytes(data)
-    (out/'fire_constants.inc').write_text(f'.const F_BYTES={len(data)}\n.const F_SUM={sum(data)&65535}\n')
+    (out/'fire_constants.inc').write_text(f'.const F_BASE=$b000\n.const F_BYTES={len(data)}\n.const F_SUM={sum(data)&65535}\n')
     inc=''
     inc+='f_record_lo: .byte '+','.join(str(x&255) for x in offsets)+'\n'
     inc+='f_record_hi: .byte '+','.join(str(x>>8) for x in offsets)+'\n'
@@ -50,7 +50,7 @@ def convert(out):
     inc+='f_crc_lo: .byte '+','.join(str(c&255) for c in crcs)+'\n'
     inc+='f_crc_hi: .byte '+','.join(str(c>>8) for c in crcs)+'\n'
     (out/'fire_layout.inc').write_text(inc)
-    report={'format':'VYSH v1','bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'header':header.hex(),'DY_applied':False,'runtime_integrity':'pinned full sum16, exact header/fixed layout, CRC-16/CCITT-FALSE for each of100 records','runtime_bitmap':'Not stored in DAT. Reconstructed from loaded VYLV: bit t = original expanded Debut Y[t] <=148, before B2 projection; negative Y is eligible','levels':audit}
+    report={'format':'VYSH v1','physical_resident_address':0xb000,'physical_chip_RAM_end':0x5ffff,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'header':header.hex(),'DY_applied':False,'runtime_integrity':'pinned full sum16, exact header/fixed layout, CRC-16/CCITT-FALSE for each of100 records','runtime_bitmap':'Not stored in DAT. Reconstructed from loaded VYLV: bit t = original expanded Debut Y[t] <=148, before B2 projection; negative Y is eligible','levels':audit}
     (out/'fire-parameters.json').write_text(json.dumps(report,indent=2)+'\n');return report
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True);a=p.parse_args();convert(a.output)

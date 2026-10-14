@@ -1,43 +1,51 @@
 {
   "stage": "7b5a",
-  "issue": 63,
   "stable": false,
-  "base": "bd63682fa37df2853338b499f1210ec9dd2f56dc",
-  "PRG_sha256": "bf7e6a75265f813348ffec07d8ffcd35d5ba213baf1e89dda60e21bcac5b7acc",
-  "D81_sha256": "69e567c32ef5af48ece096eaa4500b3132e7d26866494febd5dec5b8cd163200",
-  "tests": {
-    "command": "PYTHONPATH=tests:tools:<py65> python -m unittest test_stage7b5a -v",
-    "passed": 59,
-    "duration_seconds": 948.905,
+  "fix": "LOAD ERROR04 after title: VYSH destination outside implemented384KB RAM",
+  "previous_PRG": "bf7e6a75265f813348ffec07d8ffcd35d5ba213baf1e89dda60e21bcac5b7acc",
+  "previous_failure_reproduced": {
+    "error": 4,
+    "file": "VYSH.DAT",
+    "bytes_read": 256,
+    "physical_address": "$70000",
+    "read_value": 255,
+    "writes": "ignored"
+  },
+  "fixed_location": "$B000-$B45B",
+  "code_end": "$AF07",
+  "unchanged_starfield_start": "$B480",
+  "new_PRG_sha256": "4926e91309f8c4361d24a60c1443ce2c1f29892d8ca91e163c70d9e9fdd56996",
+  "new_D81_sha256": "2c48d6cf653541c7066a5458521be6d55e7a4e41bea9639ae8818fc7aef0f273",
+  "current_validation": {
+    "targeted_tests_passed": 8,
+    "seconds": 359.163,
     "failures": 0,
-    "errors": 0
+    "errors": 0,
+    "model": "384KB actual chipRAM,60000-FFFFF dummy readsFF/writes ignored",
+    "full_61_test_suite_rerun": false,
+    "coverage": [
+      "all six assets load with original title/menu",
+      "DMA never accesses unimplemented fast memory",
+      "resident DAT survives menu/game/level switches",
+      "font/palette handoff",
+      "all100 parameter records and248 original Y masks",
+      "seven loader fault subcases",
+      "BASIC exit, ROM mapping and repeat RUN"
+    ]
   },
-  "additional_checks": {
-    "independent_Y_command": "python -m unittest test_stage7b5a.OriginalEventTests.test_all100_plans_nth_across_groups_originalY_and_mode test_stage7b5a.OriginalEventTests.test_attack_threshold_formula_and_guard_uses_original_coordinate_basis -v",
-    "independent_Y_tests": 2,
-    "groups_compared": 248,
-    "level46_start_guards": "four actual a_start calls; ATTACK starts, both events zero",
-    "build_reproducibility": "two independent assemblies,56 identical build files",
-    "old_DAT_files_byte_identical": 5,
-    "D81_bytes": 819200,
-    "D81_chains_verified": 7,
-    "reference_analysis_files_unchanged": 9,
-    "source_release_ASM_identical": true
+  "reproducibility": {
+    "identical_build_files": 56,
+    "disk_bytes": 819200,
+    "all_seven_disk_file_chains_verified": true,
+    "all_six_DATs_byte_identical_to_previous_build": true,
+    "all_four_1200_update_event_measurements_identical": true
   },
-  "coverage": [
-    "all100 parameter records, original ENTRY masks and lower bounds",
-    "Mode1/2, everyNth1/2/3/4 across groups, WORD counters and offbyone",
-    "WAIT_ENTRY, ENTRY projection, once-only/simultaneous ATTACK thresholds,168-Y guard",
-    "full six-slot pool, single free slot, no owner quota, no retry, dead/hidden/return/relaunch",
-    "unchanged attack scheduler and projectile math byte comparison",
-    "original palettes, HUD/font, menu, clock and ROM mapping",
-    "starfield, clipping, transparency, LEVEL_CLEAR, colour/black transition",
-    "collisions, explosions, respawn/invulnerability, GAME_OVER/R, BASIC exit and repeat RUN"
-  ],
-  "model_limits": [
-    "actual assembled instructions in narrow CPU/DMA/VIC host models",
-    "DMA modeled instantaneously; no claim of real40MHz/50Hz timing",
-    "No XEMU or WinUAE executed; user acceptance outstanding"
-  ],
-  "XEMU": "NOT_RUN; test levels1/3/29/54, six-shot cap, original trajectories, BASIC/DIRECTORY/RUN"
+  "historical_validation": "Prior59-test run used incorrectly extended RAM model; not evidence of real384KB loading. Historical report remains in commit5d6d71d.",
+  "hardware_sources": {
+    "xemu_commit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+    "xemu_file": "targets/mega65/memory_mapper.c",
+    "guide_commit": "cefce48d72e5c98d732c0589461d62b205b5165f",
+    "guide_file": "appendix-memorymap.tex"
+  },
+  "XEMU": "NOT_RUN; user validation of corrected D81 pending"
 }

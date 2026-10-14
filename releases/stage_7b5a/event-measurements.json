@@ -1,7 +1,7 @@
 {
   "stage": "7b5a",
   "kind": "assembled CPU/DMA host model, not XEMU/Amiga timing",
-  "PRG_sha256": "bf7e6a75265f813348ffec07d8ffcd35d5ba213baf1e89dda60e21bcac5b7acc",
+  "PRG_sha256": "4926e91309f8c4361d24a60c1443ce2c1f29892d8ca91e163c70d9e9fdd56996",
   "scenario": "All original enemies survive; actual ENTRY, attack scheduler, curves, return, motion and six-shot expiry. No renderer, player shots/hits or HUD; one update per model frame. Shooter IDs fixed, target unchanged. Attack RNG keeps the normal per-tick step.",
   "rows": [
     {

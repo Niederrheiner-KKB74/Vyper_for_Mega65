@@ -2,6 +2,8 @@
   "stage": "7b5a",
   "fire_events": {
     "format": "VYSH v1",
+    "physical_resident_address": 45056,
+    "physical_chip_RAM_end": 393215,
     "bytes": 1116,
     "sha256": "1ccbcca72031e286f6c7197dcf8e1c5d4c4e8cf212c6b4b28534a164520aedf5",
     "header": "565953480164040b5c047c1d10000000",
@@ -2683,7 +2685,7 @@
       "name": "STAGE7B5A",
       "bytes": 45057,
       "blocks": 178,
-      "sha256": "bf7e6a75265f813348ffec07d8ffcd35d5ba213baf1e89dda60e21bcac5b7acc"
+      "sha256": "4926e91309f8c4361d24a60c1443ce2c1f29892d8ca91e163c70d9e9fdd56996"
     },
     {
       "name": "VYLV.DAT",

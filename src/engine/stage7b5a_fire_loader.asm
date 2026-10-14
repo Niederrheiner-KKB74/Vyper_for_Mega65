@@ -9,8 +9,9 @@ load:
     sta s3b.total_crc
     sta s3b.total_crc+1
     sta s3b.remain+2
+    lda #>F_BASE // resident physical RAM B000..B45B, below starfield B480
     sta s3b.target_hi
-    lda #7 // physical 70000; outside title, DOS, game and all five existing DATs
+    lda #0
     sta s3b.target_bank
     lda #<F_BYTES
     sta s3b.remain
@@ -36,12 +37,12 @@ load:
     bne bad
     lda #0
     sta s3b.dma_src_lo
-    sta s3b.dma_src_hi
     sta s3b.dma_dst_lo
     sta s3b.dma_dst_bank
     sta s3b.dma_len_hi
-    lda #7
-    sta s3b.dma_src_bank
+    sta s3b.dma_src_bank // A=0: physical bank0, also while ROMA is mapped
+    lda #>F_BASE
+    sta s3b.dma_src_hi
     lda #$69
     sta s3b.dma_dst_hi
     lda #16

@@ -212,13 +212,13 @@ Kurvenauswahl.
 
 | Bereich | Verwendung |
 |---|---|
-| `$70000–$7045B` | VYSH,1116 Bytes; außerhalb DOS/ROM/Titel/aller alten DATs |
+| `$B000–$B45B` | VYSH,1116 Bytes im tatsächlich vorhandenen physischen Chip-RAM |
 | `$A600–$A6FF` | aktueller11-Byte-Record plus private Y-Zulässigkeitsbitmaps |
 | `$A700…` | zwei WORD-Ereignisse je Actor,22 Pending-Bytes, eigener RNG/Scratch |
 | `$A800…` | Ereigniscode, Validator, buildgebundene Offsets/Record-CRCs |
 | `$895C…`, `$9D30…` | normaler Fire-Dispatch und ROM-sicherer Loader/Gate |
 
-Exakte Grenzen: Zustand `$A700–$A78E`, Code/Tabellen `$A800–$AF04`;
+Exakte Grenzen: Zustand `$A700–$A78E`, Code/Tabellen `$A800–$AF07`;
 zusätzlich Release `memory-map.txt` und `STAGE7B5A.sym`.
 Die neue Belegung nutzt ausschließlich frühere **unbenutzte residente**
 Type3–6-Kopien zwischen `$A580` und `$B47F`. Deren originale VYGR-Daten
@@ -272,16 +272,15 @@ Zwei unabhängige Builds liefern **56 bytegleiche Builddateien**, darunter
 PRG, vollständiges819200-Byte-D81, alle sechs DATs, Sources und Symbole.
 Die fünf alten DATs werden im Builder gegen Stage7b4 byteweise geprüft.
 
-**59 automatische Regressionstests bestanden**, keine Fehler oder
-Fehlschläge. Zusätzlich zwei gezielte Prüfungen der unabhängigen
-Original-Y-Dekodierung für alle100 Level/248 Gruppen und der erweiterten
-ATTACK-Grenzfälle bestanden. Protokolle: `test-report.json`,
-`test-output.txt`, `independent-Y-test-output.txt` im Release.
-Geprüft sind unter anderem Titel/Loader-Fehlerpfade, Mode/N-Auswahl,
-WORD-Counter/Off-by-one, WAIT_ENTRY, gleichzeitige/verfallene Ereignisse,
-Tod/RETURN/Neustarts, bytegleicher Angriffsplaner/Projektilkern, alle100
-Paletten und Levelwechsel, Clipping/Transparenz, Sterne/Übergang, Menü,
-Kollisionen/Explosionen/Respawn/GAME OVER und BASIC/erneutes RUN.
+Nach der XEMU-Fehlermeldung wurde das Speichermodell korrigiert; siehe
+Loaderkorrektur unten. **Acht gezielte Tests des korrigierten Builds bestanden**:
+vollständiger Loader/Titel/Menü, gültige DMA-Ziele und persistente DAT-Datei,
+Grafik-/Font-Handoff, alle100 Parameter und248 Original-Y-Masken,
+Loaderfehlerpfade, ROM-Abbildung und BASIC/erneutes RUN.
+Die vollständige61-Test-Suite wurde nach dieser adressbezogenen Korrektur
+nicht wiederholt. Der frühere59-Test-Lauf betraf ein unzutreffend auf512KB
+erweitertes RAM-Modell. Historisches Protokoll bleibt in Commit `5d6d71d`.
+Aktuelle Protokolle: `loader-fix-test-report.json` und `test-output.txt`.
 Hostmodelle sind keine reale VIC-IV-/XEMU-Abnahme.
 
 ## Noch vom Benutzer in XEMU zu testen
@@ -298,3 +297,53 @@ Explosionen und X→BASIC→DIRECTORY→RUN prüfen.
 Originalmündung und Original-X-Neigungsbegrenzung. Ebenso bleiben
 Original-Angriffstimer/Batches und die bisherigen Ein-Byte-Angriffskurven-
 Sperren in25/50/99/100 außerhalb dieser Stage.
+
+
+## Loaderkorrektur nach XEMU-Meldung `$04` (14.10.2026)
+
+Der erste veröffentlichte Build (`5d6d71d`, PRG-SHA256
+`bf7e6a75265f813348ffec07d8ffcd35d5ba213baf1e89dda60e21bcac5b7acc`)
+legte VYSH irrtümlich bei `$70000` ab. Dieser Bereich ist **kein RAM**
+im gegenwärtigen384-KB-MEGA65-Speicherplan. XEMU ignoriert dort Schreibzugriffe
+und liefert `$FF` beim Lesen. Folglich scheitert bereits der erste
+256-Byte-Rücklesevergleich mit Loaderfehler `$04`.
+
+Nachweisbare Quellen:
+
+- MEGA65 User Guide, `appendix-memorymap.tex`, Commit
+  `cefce48d72e5c98d732c0589461d62b205b5165f`: Chip-RAM bis `$5FFFF`,
+  gegenwärtige384-KB-Modelle; größere RAM-Ausführungen sind zukünftige Varianten.
+- XEMU `targets/mega65/memory_mapper.c`, Commit
+  `40dfef0d1d5f56be2469492715c12bdb32c75b67`, Zeilen277–282/349–350:
+  `$60000–$FFFFF` ist `MEM_SLOT_TYPE_DUMMY`; Reads `$FF`, Writes ignoriert.
+
+Der bisherige Hosttest hatte seinen linearen RAM-Puffer auf512KB erweitert
+und dadurch den Hardwarefehler verdeckt. Das wurde entfernt. Das korrigierte
+Modell bildet den nicht vorhandenen Bereich ausdrücklich wie XEMU ab.
+Mit diesem Modell reproduziert das **unveränderte alte PRG** nach256 gelesenen
+VYSH-Bytes exakt Fehler4. Siehe `loader-error04-reproduction.txt` im Release.
+Die vorherige59-Test-Freigabe war hinsichtlich dieses Speicherbereichs nicht
+aussagekräftig; sie ist kein Nachweis eines erfolgreichen XEMU-Laufs.
+
+Korrektur: persistente SEQ-Datei jetzt `$B000–$B45B`, physische Bank0.
+Der Ereigniscode endet bei `$AF07`; zwischen Code und DAT bleiben248 Bytes,
+zwischen DAT und unverändertem Sternencode `$B480` bleiben36 Bytes.
+Dieser Bereich gehörte ausschließlich zu den bereits stillgelegten
+residenten Altgrafik-Kopien. Menü-Swap `$7000–$9FFF`, Titel-FCM,
+BASIC-/DOS-Puffer und bestehende DATs überlappen ihn nicht.
+
+ROMA darf CPU-Lesezugriffe überlagern, nicht die physischen DMA-Kopien.
+Deshalb bleibt auch beim Laden die bestehende KERNAL-ROM-Abbildung erhalten.
+Header und alle100 Records werden weiterhin per physischem DMA geprüft;
+der unveränderte ROMA-Gate schützt die CPU-Ausführung des Validators.
+Assemblerguards verlangen Page-Alignment, Codeende vor `$B000` und DAT-Ende
+vor `$B480`. `F_BASE` steht in den generierten Buildkonstanten.
+
+Unverändert sind Dateiformat, alle sechs DAT-Inhalte, Originalregeln,
+Schuss-/Angriffstimer, Projektilbewegung, Grafik und übrige Spielmechanik.
+Nur Speicheradresse, zugehörige DMA-Quell-/Zielwerte und das fehlerhafte
+Host-Speichermodell wurden korrigiert. Die gezielte erneute Prüfung umfasst
+vollständiges Laden unter384KB, Grafik-/Font-Handoff, alle100 Parameter-
+und Y-Masken, Loaderfehlerpfade, ROM-Abbildung sowie BASIC/erneutes RUN.
+Aktuelle Ergebnisse stehen in `loader-fix-test-report.json`.
+XEMU-Abnahme des korrigierten D81 bleibt beim Benutzer; keine Stable-Markierung.

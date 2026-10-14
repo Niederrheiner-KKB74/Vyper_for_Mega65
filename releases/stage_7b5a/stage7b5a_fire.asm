@@ -332,10 +332,12 @@ fetch_record:
     lda f_record_lo,x
     sta s3b.dma_src_lo
     lda f_record_hi,x
+    clc
+    adc #>F_BASE
     sta s3b.dma_src_hi
     lda f_record_size,x
     sta s3b.dma_len_lo
-    lda #7
+    lda #0
     sta s3b.dma_src_bank
     lda #0
     sta s3b.dma_dst_bank
@@ -623,5 +625,9 @@ attempt:
     jmp attack.a_fire_start // target, origin,8.8 direction and DY1 unchanged
 bit_table: .byte 1,2,4,8,16,32,64,128
 .import source "fire_layout.inc"
-.if (*>$b480) { .error "Event engine overlaps unchanged starfield code" }
+.if (*>F_BASE) { .error "Event engine overlaps resident VYSH file" }
+.if ((F_BASE & $ff)!=0) { .error "SEQ destination must be page-aligned" }
+*=F_BASE "Stage7b5a resident VYSH DAT in mapped physical chip RAM"
+.fill F_BYTES,0
+.if (*>$b480) { .error "Resident VYSH file overlaps unchanged starfield code" }
 }

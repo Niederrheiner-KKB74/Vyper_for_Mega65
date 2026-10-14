@@ -402,7 +402,7 @@
 .label cc_phase=$31c0
 .label saved_d05d=$2f2e
 .label v013_bottommask=$ba61
-.label f_crc_lo=$ae3d
+.label f_crc_lo=$ae40
 .label enemy_palette_g=$2ed5
 .label saved_d05e=$2f31
 .label v012a_top_lo=$ba6f
@@ -429,7 +429,7 @@
 .label v013d_copy_top=$b9f8
 .label s2ja_source_top=$bc53
 .label uxe_next=$2984
-.label f_record_size=$add9
+.label f_record_size=$addc
 .label v014_diag_before=$bb6c
 .label cc_tick=$311a
 .label saved_d06a=$2f3a
@@ -735,7 +735,7 @@
 .label enemy_vy_hi=$2e12
 .label s2i_y=$becb
 .label v012a_not_left=$b90e
-.label f_crc_hi=$aea1
+.label f_crc_hi=$aea4
 .label enemy_x=$2dc2
 .label s2i_submit=$bceb
 .label enemy_y=$2dd2
@@ -755,7 +755,7 @@
 .label saved_d031=$2f2c
 .label v014_submit_pixie=$bd63
 .label enemy_attack_phase=$2e32
-.label f_record_lo=$ad11
+.label f_record_lo=$ad14
 .label v013_up_step=$b932
 .label v014_glyph_lo=$bee7
 .label install_reference_pixies=$2379
@@ -1057,10 +1057,10 @@
 .namespace fireload {
   .label filename=$9d30
   .label load=$895f
-  .label bad=$89e4
+  .label bad=$89e6
   .label expected=$9d3d
   .label verify_all=$9d4d
-  .label done=$89e3
+  .label done=$89e5
 }
 .label atlas_high=$cd2a
 .label v011b_not_o=$226d
@@ -1073,7 +1073,7 @@
 .label v012b_copy_row6=$b835
 .label v010_t5_toplo=$2780
 .label v013d_glyph_hi=$ba4b
-.label f_record_hi=$ad75
+.label f_record_hi=$ad78
 .label player_x=$2da5
 .label v014_orbit_y=$7400
 .label v014_orbit_x=$7300
@@ -1208,26 +1208,26 @@
 .label v010_frame_4=$27be
 .namespace fireevents {
   .label curve_delta=$a78d
-  .label tick_done=$ab87
+  .label tick_done=$ab8a
   .label seed=$a778
   .label curve_y=$a78a
-  .label random_range=$aae3
+  .label random_range=$aae6
   .label pending=$a758
   .label fetch_record=$aab5
   .label scan=$a787
   .label first_hi=$a716
   .label range=$a77a
   .label first_lo=$a700
-  .label origin_ok=$acbe
+  .label origin_ok=$acc1
   .label curve_byte=$a78c
-  .label attempt=$acf9
+  .label attempt=$acfc
   .label validate_all=$aa53
   .label mode=$a772
-  .label entry_tick=$ab3e
-  .label bit_table=$ad09
-  .label attack_plan=$ab9e
-  .label flush=$ac56
-  .label get_original_y=$ab8b
+  .label entry_tick=$ab41
+  .label bit_table=$ad0c
+  .label attack_plan=$aba1
+  .label flush=$ac59
+  .label get_original_y=$ab8e
   .label record=$a600
   .label dividend=$a780
   .label value=$a77e
@@ -1237,7 +1237,7 @@
   .label init=$a800
   .label nth=$a771
   .label lower=$a77c
-  .label attack_tick=$abfa
+  .label attack_tick=$abfd
   .label second_hi=$a742
   .label second_lo=$a72c
   .label actor=$a76e

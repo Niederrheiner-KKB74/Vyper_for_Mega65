@@ -1,4 +1,4 @@
-# Stage7b5a — Issue #63 — TESTBUILD, nicht Stable
+# Stage7b5a — Issue #63 — Loaderkorrektur14.10.2026, nicht Stable
 
 Vollständiges Diskettenimage: **VYPER_STAGE7B5A.d81** (819200 Bytes).
 Enthält STAGE7B5A als PRG und alle sechs SEQ-Dateien: VYTI, VYMN, VYLV,
@@ -36,3 +36,15 @@ python tools/build_stage7b5a.py --kickass /path/to/KickAss.jar
 
 `SHA256SUMS.txt`: deterministische Builddateien.
 `DELIVERY_SHA256SUMS.txt`: zusätzlich Messungen, Testprotokoll und ZIP.
+
+## Korrigierter Loader
+
+VYSH liegt nun bei `$B000–$B45B` im vorhandenen384-KB-Chip-RAM.
+Die vorherige Adresse `$70000` war nicht als RAM verfügbar und verursachte
+beim ersten DMA-Rücklesevergleich `LOAD ERROR $04`.
+Der Fehler des alten PRGs ist mit dem korrigierten Speichermodell reproduziert.
+Alle sechs DAT-Dateien, Schussereignisse und Spielmechaniken bleiben gleich.
+Aktuelle gezielte Prüfung: `loader-fix-test-report.json` und `test-output.txt`.
+Ältere59-Test-Angaben betreffen den vorherigen Build mit zu großem RAM-Modell.
+Bitte das neue PRG von diesem D81 laden; ein RUN des alten geladenen PRGs
+würde weiterhin den alten Fehler zeigen. Keine Stable-Freigabe erfolgt.

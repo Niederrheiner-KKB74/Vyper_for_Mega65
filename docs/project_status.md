@@ -748,3 +748,15 @@ werden ausdrücklich getrennt behandelt.
 Quellen/Build/PRG/D81 unter `releases/stage_7b5a/`;
 [technische Dokumentation](stage7b5a_original_fire_events.md).
 **Testbuild, nicht Stable. XEMU-Abnahme durch Benutzer ausstehend.**
+
+
+### Stage7b5a: Loaderfehler `$04` korrigiert
+
+Benutzer meldete nach dem Titelbild `$04` bei VYSH. Ursache war die
+irrtümliche Allokation bei `$70000`, außerhalb des gegenwärtigen384-KB-
+Chip-RAMs. Der erste DMA-Rücklesevergleich scheitert nach256 Bytes.
+Im korrigierten Testbuild liegt VYSH bei `$B000–$B45B`; Regeln, Daten und
+Spielmechanik bleiben unverändert. Hostmodell auf den tatsächlichen
+MEGA65/XEMU-Speicherplan korrigiert; alter Fehler damit reproduziert.
+Aktuelle gezielte Tests und Rebuildnachweis im Release-Protokoll.
+Weiterhin nicht Stable; XEMU-Abnahme des korrigierten Images ausstehend.

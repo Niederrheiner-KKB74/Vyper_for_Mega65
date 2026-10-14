@@ -34,17 +34,18 @@ MN=OLD.OLD.T.BUILD.symbols((ART/'MENU_OVERLAY.sym').read_text())
 OLD.N=N;OLD.OLD.N=N;OLD.OLD.T.N=N;OLD.OLD.T.PREV.N=N
 class MenuMemory(OLD.TitleMemory):
     def __getitem__(self,a):
+        if 0x60000<=a<0x100000:return 0xff # XEMU MEM_SLOT_TYPE_DUMMY
         if 0x08000000<=a<0x08040000:return self.attic[a-0x08000000]
         if a in (0xd610,0xd619):return (1 if self.key else 0) if a==0xd610 else self.key
         return super().__getitem__(a)
     def __setitem__(self,a,v):
+        if 0x60000<=a<0x100000:return # XEMU ignores writes; no physical RAM
         if 0x08000000<=a<0x08040000:self.attic[a-0x08000000]=v;return
         if a in (0xd610,0xd619):self.key=0;return
         super().__setitem__(a,v)
 class Machine(OLD.Machine):
     def __init__(self):
         super().__init__();p=(ART/'STAGE7B5A.PRG').read_bytes();self.memory.data[0x2001:0x2001+len(p)-2]=p[2:]
-        self.memory.data.extend(bytes(max(0,0x80000-len(self.memory.data))))
         self.memory.__class__=MenuMemory;self.memory.attic=bytearray(0x40000);self.memory.key=0
         self.files['VYSH.DAT']=(ART/'VYSH.DAT').read_bytes();self.files['VYMN.DAT']=(ART/'VYMN.DAT').read_bytes();self.cpu.pc=N['p_startup']
         self.memory.data[0xdc00]=255;self.memory.data[FX['state']]=3;self.memory.data[FX['palette_ready']]=255;self.memory.data[0xd01c]=0x83
@@ -123,7 +124,7 @@ class MenuTests(unittest.TestCase):
         self.assertEqual(m.closed,6);self.assertFalse(m.opened or m.active)
         self.assertEqual(raster(m),(ART/'original_menu_indices.bin').read_bytes())
         self.assertEqual((get(m,'initial_level'),get(m,'selection')),(1,0))
-        for n,a in [('VYLV.DAT',0x40000),('VYGR.DAT',0x54000),('VYCL.DAT',0x5c300),('VYSH.DAT',0x70000)]:self.assertEqual(m.memory.data[a:a+len(m.files[n])],m.files[n])
+        for n,a in [('VYLV.DAT',0x40000),('VYGR.DAT',0x54000),('VYCL.DAT',0x5c300),('VYSH.DAT',0xb000)]:self.assertEqual(m.memory.data[a:a+len(m.files[n])],m.files[n])
         self.assertEqual(m.memory.data[0x10000:0x12000],m.before[0x10000:0x12000])
     def test_menu_wrap_keys_joystick_repeat_and_fire(self):
         m=self.machine();m.input(0x9d);self.assertEqual(get(m,'initial_level'),100)
@@ -895,6 +896,27 @@ class OriginalEventTests(unittest.TestCase):
             fset(m,'pending',3,21);m.call('transition',number);self.assertEqual(m.error,0);self.assertEqual(sum(m.memory.data[FE['pending']:FE['pending']+22]),0)
             self.assertEqual(fget(m,'mode'),json.loads((ART/'fire-parameters.json').read_text())['levels'][number-1]['mode'])
         m.memory.data[N['c_ps']]=4;m.frame(0x52);self.assertEqual(get(m,'number'),1);self.assertEqual(fget(m,'mode'),2)
+
+class ChipRAMMapTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        if not hasattr(MenuTests,'snapshot'):MenuTests.setUpClass()
+    def test_unmapped_384KB_boundary_drops_writes_reads_FF(self):
+        m=MenuTests().machine()
+        self.assertEqual(len(m.memory.data),0x60000)
+        for a in (0x60000,0x70000,0x7045b,0xfffff):
+            m.memory[a]=0x42;self.assertEqual(m.memory[a],0xff)
+    def test_live_DMA_never_uses_unmapped_fast_memory_and_file_survives_menu_game(self):
+        m=MenuTests.boot
+        for src,dst,n in m.memory.base.transfers:
+            for address in (src,dst):
+                self.assertFalse(address<0x100000 and address+n>0x60000,(hex(src),hex(dst),n))
+        raw=(ART/'VYSH.DAT').read_bytes()
+        self.assertEqual(bytes(m.memory.data[0xb000:0xb000+len(raw)]),raw)
+        game=MenuTests().machine().game(54)
+        for level in (100,1,46):
+            game.call('transition',level);self.assertEqual(game.error,0)
+            self.assertEqual(bytes(game.memory.data[0xb000:0xb000+len(raw)]),raw)
 
 class FireLoaderTests(unittest.TestCase):
     def test_missing_short_extra_bad_sum_header_and_record_CRC_fail_cleanly(self):

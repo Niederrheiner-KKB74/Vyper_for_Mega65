@@ -1,7 +1,0 @@
-test_all100_plans_nth_across_groups_originalY_and_mode (test_stage7b5a.OriginalEventTests.test_all100_plans_nth_across_groups_originalY_and_mode) ... ok
-test_attack_threshold_formula_and_guard_uses_original_coordinate_basis (test_stage7b5a.OriginalEventTests.test_attack_threshold_formula_and_guard_uses_original_coordinate_basis) ... ok
-
-----------------------------------------------------------------------
-Ran 2 tests in 98.057s
-
-OK

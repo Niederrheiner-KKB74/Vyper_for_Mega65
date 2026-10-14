@@ -561,7 +561,7 @@ Keine Stable-Freigabe für Stage7b4.
 ## Stage7b5a — Ereignisplaner und VYSH (Issue #63, Testbuild)
 
 Basis bleibt Stage7b4 `bd63682fa37df2853338b499f1210ec9dd2f56dc`.
-`VYSH.DAT` (1116 Bytes) belegt `$70000–$7045B`. Alle fünf bisherigen DATs
+`VYSH.DAT` (1116 Bytes) belegt nach der Loaderkorrektur `$B000–$B45B`. Alle fünf bisherigen DATs
 und ihre Adressen bleiben bytegleich. Kein Zugriff auf ROM/DOS-Puffer.
 
 Die ungenutzten residenten Altgrafik-Kopien für Typ3–6 werden ausschließlich
@@ -569,7 +569,7 @@ in der neuen Stage ersetzt; Original-VYGR und private Bank1-Frames bleiben
 unverändert. Type1/2 bis `$A57F` bleiben für Altinitialisierung/Orbit erhalten.
 `$A600–$A6FF`: aktueller11-Byte-Parameterrecord und aus Original-VYLV
 rekonstruierte Y-Zulässigkeitsbitmaps. `$A700–$A78E`: zwei WORD-Ereignisse
-je22 Actors, Pending-Masken und eigener LFSR/Scratch. `$A800–$AF04`:
+je22 Actors, Pending-Masken und eigener LFSR/Scratch. `$A800–$AF07`:
 Ereigniscode, Loader-Validator und generierte Offset-/CRC-Tabellen.
 Sternencode ab `$B480` und sämtliche Bank1-RRB-Puffer bleiben unverändert.
 
@@ -580,3 +580,14 @@ ENTRY-Hook passt bis `$5B74`, ATTACK-Hook bis `$9FED`; bestehende
 Segmentgrenzen werden vom Assembler geprüft. Kein Umbau des RRB-Screens.
 Details: [Stage7b5a](stage7b5a_original_fire_events.md),
 Release `memory-map.txt` und `STAGE7B5A.sym`. Keine Stable-Markierung.
+
+
+Stage7b5a-Loaderkorrektur14.10.2026: `$60000–$FFFFF` ist bei aktuellen
+MEGA65/XEMU-Modellen nicht RAM (384KB-Grenze). Der alte VYSH-Zielbereich
+`$70000` war fehlerhaft und führte nach dem ersten256-Byte-Chunk zu `$04`.
+VYSH bleibt jetzt als physische Bank0-Datei bei `$B000–$B45B` resident,
+vor Sternencode `$B480`, außerhalb des Menüs-Swaps und hinter Ereigniscode
+`$AF07`. Neuer Codeguard vor `$B000`, DAT-Guard vor `$B480`.
+DMA bleibt auch bei CPU-ROMA-Overlay physisch auf RAM gerichtet.
+Das Hostmodell ignoriert Zugriffe auf den nicht vorhandenen Speicher wie
+XEMU (Writes ignoriert, Reads `$FF`), statt diesen Bereich als RAM anzulegen.

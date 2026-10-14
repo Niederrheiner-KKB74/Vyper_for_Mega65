@@ -55,7 +55,7 @@ Default-segment:
   $8800-$883f Unnamed
   $8840-$8878 Stage 3b-5c initial path phases and extra thin letters
   $8900-$895b Projectile pointers and mapping
-  $895c-$89e9 Stage 6b1 enemy fire selection
+  $895c-$89eb Stage 6b1 enemy fire selection
   $8a00-$8a7f Original3x7 projectile graphics; player red tip above
   $8b00-$8e0d Stage 3b-5c software collisions
   $8e40-$8faf Stage 4a signed clip and NCM crop
@@ -71,7 +71,8 @@ Default-segment:
   $a000-$a57f Unnamed
   $a600-$a6ff Stage7b5a current VYSH record (retired unused legacy frames)
   $a700-$a78e Stage7b5a per-actor events and independent planning state
-  $a800-$af04 Stage7b5a original ENTRY/ATTACK shot events
+  $a800-$af07 Stage7b5a original ENTRY/ATTACK shot events
+  $b000-$b45b Stage7b5a resident VYSH DAT in mapped physical chip RAM
   $b480-$b65d Stage7a2 sparse NCM starfield core
   $b668-$b6af Stage7b5a covered-star write filter
   $b6c0-$b7ae Stage7b5a bounded NCM annulus painter
