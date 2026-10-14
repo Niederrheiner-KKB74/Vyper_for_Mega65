@@ -1,0 +1,607 @@
+
+;attack_buffer_allocation: verified relocated ADF CODE against BOTH runtime copies
+00C0A198 dump:023558 CODE+1A38 Shot+1A60 USSfile+08AFA4 426dfffe                 clr.w     -$2(a5)
+00C0A19C dump:02355C CODE+1A3C Shot+1A64 USSfile+08AFA8 48780001                 pea.l     $1.w
+00C0A1A0 dump:023560 CODE+1A40 Shot+1A68 USSfile+08AFAC 48780578                 pea.l     $578.w
+00C0A1A4 dump:023564 CODE+1A44 Shot+1A6C USSfile+08AFB0 4eac802c                 jsr       -$7fd4(a4)
+00C0A1A8 dump:023568 CODE+1A48 Shot+1A70 USSfile+08AFB4 504f                     addq.w    #$8, a7
+00C0A1AA dump:02356A CODE+1A4A Shot+1A72 USSfile+08AFB6 322dfffe                 move.w    -$2(a5), d1
+00C0A1AE dump:02356E CODE+1A4E Shot+1A76 USSfile+08AFBA c3fc0092                 muls.w    #$92, d1
+00C0A1B2 dump:023572 CODE+1A52 Shot+1A7A USSfile+08AFBE 41ec3f7c                 lea.l     $3f7c(a4), a0
+00C0A1B6 dump:023576 CODE+1A56 Shot+1A7E USSfile+08AFC2 21801800                 move.l    d0, (a0, d1.l)
+00C0A1BA dump:02357A CODE+1A5A Shot+1A82 USSfile+08AFC6 526dfffe                 addq.w    #$1, -$2(a5)
+00C0A1BE dump:02357E CODE+1A5E Shot+1A86 USSfile+08AFCA 0c6d0016fffe             cmpi.w    #$16, -$2(a5)
+00C0A1C4 dump:023584 CODE+1A64 Shot+1A8C USSfile+08AFD0 6dd6                     blt.b     $c0a19c
+
+;attack_file_offsets_to_pointers: verified relocated ADF CODE against BOTH runtime copies
+00C0CB42 dump:025F02 CODE+43E2 Shot+440A USSfile+08D94E 426dfffa                 clr.w     -$6(a5)
+00C0CB46 dump:025F06 CODE+43E6 Shot+440E USSfile+08D952 426dfffe                 clr.w     -$2(a5)
+00C0CB4A dump:025F0A CODE+43EA Shot+4412 USSfile+08D956 60000110                 bra.w     $c0cc5c
+00C0CB4E dump:025F0E CODE+43EE Shot+4416 USSfile+08D95A 426dfffc                 clr.w     -$4(a5)
+00C0CB52 dump:025F12 CODE+43F2 Shot+441A USSfile+08D95E 600000be                 bra.w     $c0cc12
+00C0CB56 dump:025F16 CODE+43F6 Shot+441E USSfile+08D962 4267                     clr.w     -(a7)
+00C0CB58 dump:025F18 CODE+43F8 Shot+4420 USSfile+08D964 302dfffe                 move.w    -$2(a5), d0
+00C0CB5C dump:025F1C CODE+43FC Shot+4424 USSfile+08D968 c1fc0072                 muls.w    #$72, d0
+00C0CB60 dump:025F20 CODE+4400 Shot+4428 USSfile+08D96C 2040                     movea.l   d0, a0
+00C0CB62 dump:025F22 CODE+4402 Shot+442A USSfile+08D96E 302dfffc                 move.w    -$4(a5), d0
+00C0CB66 dump:025F26 CODE+4406 Shot+442E USSfile+08D972 48c0                     ext.l     d0
+00C0CB68 dump:025F28 CODE+4408 Shot+4430 USSfile+08D974 e580                     asl.l     #$2, d0
+00C0CB6A dump:025F2A CODE+440A Shot+4432 USSfile+08D976 d1c0                     adda.l    d0, a0
+00C0CB6C dump:025F2C CODE+440C Shot+4434 USSfile+08D978 d1ec2c8e                 adda.l    $2c8e(a4), a0
+00C0CB70 dump:025F30 CODE+4410 Shot+4438 USSfile+08D97C 2f28004e                 move.l    $4e(a0), -(a7)
+00C0CB74 dump:025F34 CODE+4414 Shot+443C USSfile+08D980 2f2c2c7e                 move.l    $2c7e(a4), -(a7)
+00C0CB78 dump:025F38 CODE+4418 Shot+4440 USSfile+08D984 4eba3552                 jsr       $c100cc(pc)
+00C0CB7C dump:025F3C CODE+441C Shot+4444 USSfile+08D988 4fef000a                 lea.l     $a(a7), a7
+00C0CB80 dump:025F40 CODE+4420 Shot+4448 USSfile+08D98C 302dfffe                 move.w    -$2(a5), d0
+00C0CB84 dump:025F44 CODE+4424 Shot+444C USSfile+08D990 c1fc0072                 muls.w    #$72, d0
+00C0CB88 dump:025F48 CODE+4428 Shot+4450 USSfile+08D994 2040                     movea.l   d0, a0
+00C0CB8A dump:025F4A CODE+442A Shot+4452 USSfile+08D996 302dfffc                 move.w    -$4(a5), d0
+00C0CB8E dump:025F4E CODE+442E Shot+4456 USSfile+08D99A 48c0                     ext.l     d0
+00C0CB90 dump:025F50 CODE+4430 Shot+4458 USSfile+08D99C e580                     asl.l     #$2, d0
+00C0CB92 dump:025F52 CODE+4432 Shot+445A USSfile+08D99E d1c0                     adda.l    d0, a0
+00C0CB94 dump:025F54 CODE+4434 Shot+445C USSfile+08D9A0 d1ec2c8e                 adda.l    $2c8e(a4), a0
+00C0CB98 dump:025F58 CODE+4438 Shot+4460 USSfile+08D9A4 7200                     moveq     #$0, d1
+00C0CB9A dump:025F5A CODE+443A Shot+4462 USSfile+08D9A6 322dfffa                 move.w    -$6(a5), d1
+00C0CB9E dump:025F5E CODE+443E Shot+4466 USSfile+08D9AA d2ac2c8a                 add.l     $2c8a(a4), d1
+00C0CBA2 dump:025F62 CODE+4442 Shot+446A USSfile+08D9AE 2141004e                 move.l    d1, $4e(a0)
+00C0CBA6 dump:025F66 CODE+4446 Shot+446E USSfile+08D9B2 2f2c2c7e                 move.l    $2c7e(a4), -(a7)
+00C0CBAA dump:025F6A CODE+444A Shot+4472 USSfile+08D9B6 302dfffe                 move.w    -$2(a5), d0
+00C0CBAE dump:025F6E CODE+444E Shot+4476 USSfile+08D9BA c1fc0072                 muls.w    #$72, d0
+00C0CBB2 dump:025F72 CODE+4452 Shot+447A USSfile+08D9BE 2040                     movea.l   d0, a0
+00C0CBB4 dump:025F74 CODE+4454 Shot+447C USSfile+08D9C0 302dfffc                 move.w    -$4(a5), d0
+00C0CBB8 dump:025F78 CODE+4458 Shot+4480 USSfile+08D9C4 48c0                     ext.l     d0
+00C0CBBA dump:025F7A CODE+445A Shot+4482 USSfile+08D9C6 e380                     asl.l     #$1, d0
+00C0CBBC dump:025F7C CODE+445C Shot+4484 USSfile+08D9C8 d1c0                     adda.l    d0, a0
+00C0CBBE dump:025F7E CODE+445E Shot+4486 USSfile+08D9CA d1ec2c8e                 adda.l    $2c8e(a4), a0
+00C0CBC2 dump:025F82 CODE+4462 Shot+448A USSfile+08D9CE 3f28005e                 move.w    $5e(a0), -(a7)
+00C0CBC6 dump:025F86 CODE+4466 Shot+448E USSfile+08D9D2 3f3c0001                 move.w    #$1, -(a7)
+00C0CBCA dump:025F8A CODE+446A Shot+4492 USSfile+08D9D6 322dfffe                 move.w    -$2(a5), d1
+00C0CBCE dump:025F8E CODE+446E Shot+4496 USSfile+08D9DA c3fc0072                 muls.w    #$72, d1
+00C0CBD2 dump:025F92 CODE+4472 Shot+449A USSfile+08D9DE 2241                     movea.l   d1, a1
+00C0CBD4 dump:025F94 CODE+4474 Shot+449C USSfile+08D9E0 322dfffc                 move.w    -$4(a5), d1
+00C0CBD8 dump:025F98 CODE+4478 Shot+44A0 USSfile+08D9E4 48c1                     ext.l     d1
+00C0CBDA dump:025F9A CODE+447A Shot+44A2 USSfile+08D9E6 e581                     asl.l     #$2, d1
+00C0CBDC dump:025F9C CODE+447C Shot+44A4 USSfile+08D9E8 d3c1                     adda.l    d1, a1
+00C0CBDE dump:025F9E CODE+447E Shot+44A6 USSfile+08D9EA d3ec2c8e                 adda.l    $2c8e(a4), a1
+00C0CBE2 dump:025FA2 CODE+4482 Shot+44AA USSfile+08D9EE 2f29004e                 move.l    $4e(a1), -(a7)
+00C0CBE6 dump:025FA6 CODE+4486 Shot+44AE USSfile+08D9F2 4eba348c                 jsr       $c10074(pc)
+00C0CBEA dump:025FAA CODE+448A Shot+44B2 USSfile+08D9F6 4fef000c                 lea.l     $c(a7), a7
+00C0CBEE dump:025FAE CODE+448E Shot+44B6 USSfile+08D9FA 302dfffe                 move.w    -$2(a5), d0
+00C0CBF2 dump:025FB2 CODE+4492 Shot+44BA USSfile+08D9FE c1fc0072                 muls.w    #$72, d0
+00C0CBF6 dump:025FB6 CODE+4496 Shot+44BE USSfile+08DA02 2040                     movea.l   d0, a0
+00C0CBF8 dump:025FB8 CODE+4498 Shot+44C0 USSfile+08DA04 302dfffc                 move.w    -$4(a5), d0
+00C0CBFC dump:025FBC CODE+449C Shot+44C4 USSfile+08DA08 48c0                     ext.l     d0
+00C0CBFE dump:025FBE CODE+449E Shot+44C6 USSfile+08DA0A e380                     asl.l     #$1, d0
+00C0CC00 dump:025FC0 CODE+44A0 Shot+44C8 USSfile+08DA0C d1c0                     adda.l    d0, a0
+00C0CC02 dump:025FC2 CODE+44A2 Shot+44CA USSfile+08DA0E d1ec2c8e                 adda.l    $2c8e(a4), a0
+00C0CC06 dump:025FC6 CODE+44A6 Shot+44CE USSfile+08DA12 3228005e                 move.w    $5e(a0), d1
+00C0CC0A dump:025FCA CODE+44AA Shot+44D2 USSfile+08DA16 d36dfffa                 add.w     d1, -$6(a5)
+00C0CC0E dump:025FCE CODE+44AE Shot+44D6 USSfile+08DA1A 526dfffc                 addq.w    #$1, -$4(a5)
+00C0CC12 dump:025FD2 CODE+44B2 Shot+44DA USSfile+08DA1E 302dfffe                 move.w    -$2(a5), d0
+00C0CC16 dump:025FD6 CODE+44B6 Shot+44DE USSfile+08DA22 c1fc0072                 muls.w    #$72, d0
+00C0CC1A dump:025FDA CODE+44BA Shot+44E2 USSfile+08DA26 2040                     movea.l   d0, a0
+00C0CC1C dump:025FDC CODE+44BC Shot+44E4 USSfile+08DA28 d1ec2c8e                 adda.l    $2c8e(a4), a0
+00C0CC20 dump:025FE0 CODE+44C0 Shot+44E8 USSfile+08DA2C 302dfffc                 move.w    -$4(a5), d0
+00C0CC24 dump:025FE4 CODE+44C4 Shot+44EC USSfile+08DA30 b0680066                 cmp.w     $66(a0), d0
+00C0CC28 dump:025FE8 CODE+44C8 Shot+44F0 USSfile+08DA34 6d00ff2c                 blt.w     $c0cb56
+00C0CC2C dump:025FEC CODE+44CC Shot+44F4 USSfile+08DA38 7000                     moveq     #$0, d0
+00C0CC2E dump:025FEE CODE+44CE Shot+44F6 USSfile+08DA3A 302dfffa                 move.w    -$6(a5), d0
+00C0CC32 dump:025FF2 CODE+44D2 Shot+44FA USSfile+08DA3E 322c2c00                 move.w    $2c00(a4), d1
+00C0CC36 dump:025FF6 CODE+44D6 Shot+44FE USSfile+08DA42 c3fc0258                 muls.w    #$258, d1
+00C0CC3A dump:025FFA CODE+44DA Shot+4502 USSfile+08DA46 b081                     cmp.l     d1, d0
+00C0CC3C dump:025FFC CODE+44DC Shot+4504 USSfile+08DA48 631a                     bls.b     $c0cc58
+00C0CC3E dump:025FFE CODE+44DE Shot+4506 USSfile+08DA4A 4ebaf7ce                 jsr       $c0c40e(pc)
+00C0CC42 dump:026002 CODE+44E2 Shot+450A USSfile+08DA4E 3f2dfffe                 move.w    -$2(a5), -(a7)
+00C0CC46 dump:026006 CODE+44E6 Shot+450E USSfile+08DA52 3f2dfffa                 move.w    -$6(a5), -(a7)
+00C0CC4A dump:02600A CODE+44EA Shot+4512 USSfile+08DA56 487a0032                 pea.l     $c0cc7e(pc)
+00C0CC4E dump:02600E CODE+44EE Shot+4516 USSfile+08DA5A 4eba3f86                 jsr       $c10bd6(pc)
+00C0CC52 dump:026012 CODE+44F2 Shot+451A USSfile+08DA5E 504f                     addq.w    #$8, a7
+00C0CC54 dump:026014 CODE+44F4 Shot+451C USSfile+08DA60 4eac8014                 jsr       -$7fec(a4)
+00C0CC58 dump:026018 CODE+44F8 Shot+4520 USSfile+08DA64 526dfffe                 addq.w    #$1, -$2(a5)
+00C0CC5C dump:02601C CODE+44FC Shot+4524 USSfile+08DA68 302c2c04                 move.w    $2c04(a4), d0
+00C0CC60 dump:026020 CODE+4500 Shot+4528 USSfile+08DA6C 906c2c02                 sub.w     $2c02(a4), d0
+00C0CC64 dump:026024 CODE+4504 Shot+452C USSfile+08DA70 322dfffe                 move.w    -$2(a5), d1
+00C0CC68 dump:026028 CODE+4508 Shot+4530 USSfile+08DA74 b240                     cmp.w     d0, d1
+00C0CC6A dump:02602A CODE+450A Shot+4532 USSfile+08DA76 6d00fee2                 blt.w     $c0cb4e
+
+;attack_buffer_free: verified relocated ADF CODE against BOTH runtime copies
+00C0C4CC dump:02588C CODE+3D6C Shot+3D94 USSfile+08D2D8 426dfffe                 clr.w     -$2(a5)
+00C0C4D0 dump:025890 CODE+3D70 Shot+3D98 USSfile+08D2DC 48780578                 pea.l     $578.w
+00C0C4D4 dump:025894 CODE+3D74 Shot+3D9C USSfile+08D2E0 302dfffe                 move.w    -$2(a5), d0
+00C0C4D8 dump:025898 CODE+3D78 Shot+3DA0 USSfile+08D2E4 c1fc0092                 muls.w    #$92, d0
+00C0C4DC dump:02589C CODE+3D7C Shot+3DA4 USSfile+08D2E8 41ec3f7c                 lea.l     $3f7c(a4), a0
+00C0C4E0 dump:0258A0 CODE+3D80 Shot+3DA8 USSfile+08D2EC 2f300800                 move.l    (a0, d0.l), -(a7)
+00C0C4E4 dump:0258A4 CODE+3D84 Shot+3DAC USSfile+08D2F0 4eac8038                 jsr       -$7fc8(a4)
+00C0C4E8 dump:0258A8 CODE+3D88 Shot+3DB0 USSfile+08D2F4 504f                     addq.w    #$8, a7
+00C0C4EA dump:0258AA CODE+3D8A Shot+3DB2 USSfile+08D2F6 526dfffe                 addq.w    #$1, -$2(a5)
+00C0C4EE dump:0258AE CODE+3D8E Shot+3DB6 USSfile+08D2FA 0c6d0016fffe             cmpi.w    #$16, -$2(a5)
+00C0C4F4 dump:0258B4 CODE+3D94 Shot+3DBC USSfile+08D300 6dda                     blt.b     $c0c4d0
+
+;level_pointer: verified relocated ADF CODE against BOTH runtime copies
+00C0A2EA dump:0236AA CODE+1B8A Shot+1BB2 USSfile+08B0F6 4e55ffe6                 link.w    a5, #$ffe6
+00C0A2EE dump:0236AE CODE+1B8E Shot+1BB6 USSfile+08B0FA 48e70c20                 movem.l   d4-d5/a2, -(a7)
+00C0A2F2 dump:0236B2 CODE+1B92 Shot+1BBA USSfile+08B0FE 302c2c10                 move.w    $2c10(a4), d0
+00C0A2F6 dump:0236B6 CODE+1B96 Shot+1BBE USSfile+08B102 c1fc0072                 muls.w    #$72, d0
+00C0A2FA dump:0236BA CODE+1B9A Shot+1BC2 USSfile+08B106 2440                     movea.l   d0, a2
+00C0A2FC dump:0236BC CODE+1B9C Shot+1BC4 USSfile+08B108 d5ec2c8e                 adda.l    $2c8e(a4), a2
+
+;actor_formation_y_and_types: verified relocated ADF CODE against BOTH runtime copies
+00C0ACD2 dump:024092 CODE+2572 Shot+259A USSfile+08BADE 2b6a0044ffea             move.l    $44(a2), -$16(a5)
+00C0ACD8 dump:024098 CODE+2578 Shot+25A0 USSfile+08BAE4 7800                     moveq     #$0, d4
+00C0ACDA dump:02409A CODE+257A Shot+25A2 USSfile+08BAE6 6050                     bra.b     $c0ad2c
+00C0ACDC dump:02409C CODE+257C Shot+25A4 USSfile+08BAE8 3004                     move.w    d4, d0
+00C0ACDE dump:02409E CODE+257E Shot+25A6 USSfile+08BAEA e340                     asl.w     #$1, d0
+00C0ACE0 dump:0240A0 CODE+2580 Shot+25A8 USSfile+08BAEC 206dffea                 movea.l   -$16(a5), a0
+00C0ACE4 dump:0240A4 CODE+2584 Shot+25AC USSfile+08BAF0 7200                     moveq     #$0, d1
+00C0ACE6 dump:0240A6 CODE+2586 Shot+25AE USSfile+08BAF2 12300000                 move.b    (a0, d0.w), d1
+00C0ACEA dump:0240AA CODE+258A Shot+25B2 USSfile+08BAF6 3404                     move.w    d4, d2
+00C0ACEC dump:0240AC CODE+258C Shot+25B4 USSfile+08BAF8 c5fc0092                 muls.w    #$92, d2
+00C0ACF0 dump:0240B0 CODE+2590 Shot+25B8 USSfile+08BAFC 43ec3f72                 lea.l     $3f72(a4), a1
+00C0ACF4 dump:0240B4 CODE+2594 Shot+25BC USSfile+08BB00 33812800                 move.w    d1, (a1, d2.l)
+00C0ACF8 dump:0240B8 CODE+2598 Shot+25C0 USSfile+08BB04 3004                     move.w    d4, d0
+00C0ACFA dump:0240BA CODE+259A Shot+25C2 USSfile+08BB06 c1fc0092                 muls.w    #$92, d0
+00C0ACFE dump:0240BE CODE+259E Shot+25C6 USSfile+08BB0A 41ec3f74                 lea.l     $3f74(a4), a0
+00C0AD02 dump:0240C2 CODE+25A2 Shot+25CA USSfile+08BB0E 3204                     move.w    d4, d1
+00C0AD04 dump:0240C4 CODE+25A4 Shot+25CC USSfile+08BB10 e341                     asl.w     #$1, d1
+00C0AD06 dump:0240C6 CODE+25A6 Shot+25CE USSfile+08BB12 5241                     addq.w    #$1, d1
+00C0AD08 dump:0240C8 CODE+25A8 Shot+25D0 USSfile+08BB14 226dffea                 movea.l   -$16(a5), a1
+00C0AD0C dump:0240CC CODE+25AC Shot+25D4 USSfile+08BB18 7400                     moveq     #$0, d2
+00C0AD0E dump:0240CE CODE+25AE Shot+25D6 USSfile+08BB1A 14311000                 move.b    (a1, d1.w), d2
+00C0AD12 dump:0240D2 CODE+25B2 Shot+25DA USSfile+08BB1E d47c0010                 add.w     #$10, d2
+00C0AD16 dump:0240D6 CODE+25B6 Shot+25DE USSfile+08BB22 31820800                 move.w    d2, (a0, d0.l)
+00C0AD1A dump:0240DA CODE+25BA Shot+25E2 USSfile+08BB26 3004                     move.w    d4, d0
+00C0AD1C dump:0240DC CODE+25BC Shot+25E4 USSfile+08BB28 c1fc0092                 muls.w    #$92, d0
+00C0AD20 dump:0240E0 CODE+25C0 Shot+25E8 USSfile+08BB2C 41ec3f7a                 lea.l     $3f7a(a4), a0
+00C0AD24 dump:0240E4 CODE+25C4 Shot+25EC USSfile+08BB30 31bc00010800             move.w    #$1, (a0, d0.l)
+00C0AD2A dump:0240EA CODE+25CA Shot+25F2 USSfile+08BB36 5244                     addq.w    #$1, d4
+00C0AD2C dump:0240EC CODE+25CC Shot+25F4 USSfile+08BB38 b86c2c18                 cmp.w     $2c18(a4), d4
+00C0AD30 dump:0240F0 CODE+25D0 Shot+25F8 USSfile+08BB3C 6daa                     blt.b     $c0acdc
+
+;attack_expansion: verified relocated ADF CODE against BOTH runtime copies
+00C0AFA6 dump:024366 CODE+2846 Shot+286E USSfile+08BDB2 7800                     moveq     #$0, d4
+00C0AFA8 dump:024368 CODE+2848 Shot+2870 USSfile+08BDB4 60000202                 bra.w     $c0b1ac
+00C0AFAC dump:02436C CODE+284C Shot+2874 USSfile+08BDB8 206a0068                 movea.l   $68(a2), a0
+00C0AFB0 dump:024370 CODE+2850 Shot+2878 USSfile+08BDBC 7000                     moveq     #$0, d0
+00C0AFB2 dump:024372 CODE+2852 Shot+287A USSfile+08BDBE 10304000                 move.b    (a0, d4.w), d0
+00C0AFB6 dump:024376 CODE+2856 Shot+287E USSfile+08BDC2 3b40fff0                 move.w    d0, -$10(a5)
+00C0AFBA dump:02437A CODE+285A Shot+2882 USSfile+08BDC6 302dfff0                 move.w    -$10(a5), d0
+00C0AFBE dump:02437E CODE+285E Shot+2886 USSfile+08BDCA b06a0066                 cmp.w     $66(a2), d0
+00C0AFC2 dump:024382 CODE+2862 Shot+288A USSfile+08BDCE 6f20                     ble.b     $c0afe4
+00C0AFC4 dump:024384 CODE+2864 Shot+288C USSfile+08BDD0 4eba1448                 jsr       $c0c40e(pc)
+00C0AFC8 dump:024388 CODE+2868 Shot+2890 USSfile+08BDD4 3f2a0066                 move.w    $66(a2), -(a7)
+00C0AFCC dump:02438C CODE+286C Shot+2894 USSfile+08BDD8 3f2dfff0                 move.w    -$10(a5), -(a7)
+00C0AFD0 dump:024390 CODE+2870 Shot+2898 USSfile+08BDDC 3f2c2c10                 move.w    $2c10(a4), -(a7)
+00C0AFD4 dump:024394 CODE+2874 Shot+289C USSfile+08BDE0 487a037d                 pea.l     $c0b353(pc)
+00C0AFD8 dump:024398 CODE+2878 Shot+28A0 USSfile+08BDE4 4eba5bfc                 jsr       $c10bd6(pc)
+00C0AFDC dump:02439C CODE+287C Shot+28A4 USSfile+08BDE8 4fef000a                 lea.l     $a(a7), a7
+00C0AFE0 dump:0243A0 CODE+2880 Shot+28A8 USSfile+08BDEC 4eac8014                 jsr       -$7fec(a4)
+00C0AFE4 dump:0243A4 CODE+2884 Shot+28AC USSfile+08BDF0 3004                     move.w    d4, d0
+00C0AFE6 dump:0243A6 CODE+2886 Shot+28AE USSfile+08BDF2 c1fc0092                 muls.w    #$92, d0
+00C0AFEA dump:0243AA CODE+288A Shot+28B2 USSfile+08BDF6 41ec3f94                 lea.l     $3f94(a4), a0
+00C0AFEE dump:0243AE CODE+288E Shot+28B6 USSfile+08BDFA 31adfff00800             move.w    -$10(a5), (a0, d0.l)
+00C0AFF4 dump:0243B4 CODE+2894 Shot+28BC USSfile+08BE00 3b7cfffefff4             move.w    #$fffe, -$c(a5)
+00C0AFFA dump:0243BA CODE+289A Shot+28C2 USSfile+08BE06 3b7cfffffff6             move.w    #$ffff, -$a(a5)
+00C0B000 dump:0243C0 CODE+28A0 Shot+28C8 USSfile+08BE0C 302dfff0                 move.w    -$10(a5), d0
+00C0B004 dump:0243C4 CODE+28A4 Shot+28CC USSfile+08BE10 48c0                     ext.l     d0
+00C0B006 dump:0243C6 CODE+28A6 Shot+28CE USSfile+08BE12 e580                     asl.l     #$2, d0
+00C0B008 dump:0243C8 CODE+28A8 Shot+28D0 USSfile+08BE14 2040                     movea.l   d0, a0
+00C0B00A dump:0243CA CODE+28AA Shot+28D2 USSfile+08BE16 d1ca                     adda.l    a2, a0
+00C0B00C dump:0243CC CODE+28AC Shot+28D4 USSfile+08BE18 2b68004effe6             move.l    $4e(a0), -$1a(a5)
+00C0B012 dump:0243D2 CODE+28B2 Shot+28DA USSfile+08BE1E 0c6d02bcfff4             cmpi.w    #$2bc, -$c(a5)
+00C0B018 dump:0243D8 CODE+28B8 Shot+28E0 USSfile+08BE24 6624                     bne.b     $c0b03e
+00C0B01A dump:0243DA CODE+28BA Shot+28E2 USSfile+08BE26 4eba13f2                 jsr       $c0c40e(pc)
+00C0B01E dump:0243DE CODE+28BE Shot+28E6 USSfile+08BE2A 487802bc                 pea.l     $2bc.w
+00C0B022 dump:0243E2 CODE+28C2 Shot+28EA USSfile+08BE2E 3f2c2c0e                 move.w    $2c0e(a4), -(a7)
+00C0B026 dump:0243E6 CODE+28C6 Shot+28EE USSfile+08BE32 3f2dfff4                 move.w    -$c(a5), -(a7)
+00C0B02A dump:0243EA CODE+28CA Shot+28F2 USSfile+08BE36 3f2dfff0                 move.w    -$10(a5), -(a7)
+00C0B02E dump:0243EE CODE+28CE Shot+28F6 USSfile+08BE3A 487a034a                 pea.l     $c0b37a(pc)
+00C0B032 dump:0243F2 CODE+28D2 Shot+28FA USSfile+08BE3E 4eba5ba2                 jsr       $c10bd6(pc)
+00C0B036 dump:0243F6 CODE+28D6 Shot+28FE USSfile+08BE42 4fef000e                 lea.l     $e(a7), a7
+00C0B03A dump:0243FA CODE+28DA Shot+2902 USSfile+08BE46 4eac8014                 jsr       -$7fec(a4)
+00C0B03E dump:0243FE CODE+28DE Shot+2906 USSfile+08BE4A 546dfff4                 addq.w    #$2, -$c(a5)
+00C0B042 dump:024402 CODE+28E2 Shot+290A USSfile+08BE4E 526dfff6                 addq.w    #$1, -$a(a5)
+00C0B046 dump:024406 CODE+28E6 Shot+290E USSfile+08BE52 302dfff0                 move.w    -$10(a5), d0
+00C0B04A dump:02440A CODE+28EA Shot+2912 USSfile+08BE56 48c0                     ext.l     d0
+00C0B04C dump:02440C CODE+28EC Shot+2914 USSfile+08BE58 e380                     asl.l     #$1, d0
+00C0B04E dump:02440E CODE+28EE Shot+2916 USSfile+08BE5A 2040                     movea.l   d0, a0
+00C0B050 dump:024410 CODE+28F0 Shot+2918 USSfile+08BE5C d1ca                     adda.l    a2, a0
+00C0B052 dump:024412 CODE+28F2 Shot+291A USSfile+08BE5E 3028005e                 move.w    $5e(a0), d0
+00C0B056 dump:024416 CODE+28F6 Shot+291E USSfile+08BE62 b06dfff6                 cmp.w     -$a(a5), d0
+00C0B05A dump:02441A CODE+28FA Shot+2922 USSfile+08BE66 6604                     bne.b     $c0b060
+00C0B05C dump:02441C CODE+28FC Shot+2924 USSfile+08BE68 426dfff6                 clr.w     -$a(a5)
+00C0B060 dump:024420 CODE+2900 Shot+2928 USSfile+08BE6C 4a6dfff4                 tst.w     -$c(a5)
+00C0B064 dump:024424 CODE+2904 Shot+292C USSfile+08BE70 6604                     bne.b     $c0b06a
+00C0B066 dump:024426 CODE+2906 Shot+292E USSfile+08BE72 7000                     moveq     #$0, d0
+00C0B068 dump:024428 CODE+2908 Shot+2930 USSfile+08BE74 601e                     bra.b     $c0b088
+00C0B06A dump:02442A CODE+290A Shot+2932 USSfile+08BE76 3204                     move.w    d4, d1
+00C0B06C dump:02442C CODE+290C Shot+2934 USSfile+08BE78 c3fc0092                 muls.w    #$92, d1
+00C0B070 dump:024430 CODE+2910 Shot+2938 USSfile+08BE7C 41ec3f7c                 lea.l     $3f7c(a4), a0
+00C0B074 dump:024434 CODE+2914 Shot+293C USSfile+08BE80 24301800                 move.l    (a0, d1.l), d2
+00C0B078 dump:024438 CODE+2918 Shot+2940 USSfile+08BE84 362dfff4                 move.w    -$c(a5), d3
+00C0B07C dump:02443C CODE+291C Shot+2944 USSfile+08BE88 5543                     subq.w    #$2, d3
+00C0B07E dump:02443E CODE+291E Shot+2946 USSfile+08BE8A 48c3                     ext.l     d3
+00C0B080 dump:024440 CODE+2920 Shot+2948 USSfile+08BE8C e383                     asl.l     #$1, d3
+00C0B082 dump:024442 CODE+2922 Shot+294A USSfile+08BE8E 2243                     movea.l   d3, a1
+00C0B084 dump:024444 CODE+2924 Shot+294C USSfile+08BE90 30312800                 move.w    (a1, d2.l), d0
+00C0B088 dump:024448 CODE+2928 Shot+2950 USSfile+08BE94 3604                     move.w    d4, d3
+00C0B08A dump:02444A CODE+292A Shot+2952 USSfile+08BE96 c7fc0092                 muls.w    #$92, d3
+00C0B08E dump:02444E CODE+292E Shot+2956 USSfile+08BE9A 4dec3f7c                 lea.l     $3f7c(a4), a6
+00C0B092 dump:024452 CODE+2932 Shot+295A USSfile+08BE9E 24363800                 move.l    (a6, d3.l), d2
+00C0B096 dump:024456 CODE+2936 Shot+295E USSfile+08BEA2 362dfff4                 move.w    -$c(a5), d3
+00C0B09A dump:02445A CODE+293A Shot+2962 USSfile+08BEA6 48c3                     ext.l     d3
+00C0B09C dump:02445C CODE+293C Shot+2964 USSfile+08BEA8 e383                     asl.l     #$1, d3
+00C0B09E dump:02445E CODE+293E Shot+2966 USSfile+08BEAA 2c43                     movea.l   d3, a6
+00C0B0A0 dump:024460 CODE+2940 Shot+2968 USSfile+08BEAC 3d802800                 move.w    d0, (a6, d2.l)
+00C0B0A4 dump:024464 CODE+2944 Shot+296C USSfile+08BEB0 4a6dfff4                 tst.w     -$c(a5)
+00C0B0A8 dump:024468 CODE+2948 Shot+2970 USSfile+08BEB4 6612                     bne.b     $c0b0bc
+00C0B0AA dump:02446A CODE+294A Shot+2972 USSfile+08BEB6 3004                     move.w    d4, d0
+00C0B0AC dump:02446C CODE+294C Shot+2974 USSfile+08BEB8 c1fc0092                 muls.w    #$92, d0
+00C0B0B0 dump:024470 CODE+2950 Shot+2978 USSfile+08BEBC 41ec3f74                 lea.l     $3f74(a4), a0
+00C0B0B4 dump:024474 CODE+2954 Shot+297C USSfile+08BEC0 2200                     move.l    d0, d1
+00C0B0B6 dump:024476 CODE+2956 Shot+297E USSfile+08BEC2 30301800                 move.w    (a0, d1.l), d0
+00C0B0BA dump:02447A CODE+295A Shot+2982 USSfile+08BEC6 601e                     bra.b     $c0b0da
+00C0B0BC dump:02447C CODE+295C Shot+2984 USSfile+08BEC8 3404                     move.w    d4, d2
+00C0B0BE dump:02447E CODE+295E Shot+2986 USSfile+08BECA c5fc0092                 muls.w    #$92, d2
+00C0B0C2 dump:024482 CODE+2962 Shot+298A USSfile+08BECE 43ec3f7c                 lea.l     $3f7c(a4), a1
+00C0B0C6 dump:024486 CODE+2966 Shot+298E USSfile+08BED2 26312800                 move.l    (a1, d2.l), d3
+00C0B0CA dump:02448A CODE+296A Shot+2992 USSfile+08BED6 342dfff4                 move.w    -$c(a5), d2
+00C0B0CE dump:02448E CODE+296E Shot+2996 USSfile+08BEDA 5342                     subq.w    #$1, d2
+00C0B0D0 dump:024490 CODE+2970 Shot+2998 USSfile+08BEDC 48c2                     ext.l     d2
+00C0B0D2 dump:024492 CODE+2972 Shot+299A USSfile+08BEDE e382                     asl.l     #$1, d2
+00C0B0D4 dump:024494 CODE+2974 Shot+299C USSfile+08BEE0 2c42                     movea.l   d2, a6
+00C0B0D6 dump:024496 CODE+2976 Shot+299E USSfile+08BEE2 30363800                 move.w    (a6, d3.l), d0
+00C0B0DA dump:02449A CODE+297A Shot+29A2 USSfile+08BEE6 3404                     move.w    d4, d2
+00C0B0DC dump:02449C CODE+297C Shot+29A4 USSfile+08BEE8 c5fc0092                 muls.w    #$92, d2
+00C0B0E0 dump:0244A0 CODE+2980 Shot+29A8 USSfile+08BEEC 4dec3f7c                 lea.l     $3f7c(a4), a6
+00C0B0E4 dump:0244A4 CODE+2984 Shot+29AC USSfile+08BEF0 26362800                 move.l    (a6, d2.l), d3
+00C0B0E8 dump:0244A8 CODE+2988 Shot+29B0 USSfile+08BEF4 342dfff4                 move.w    -$c(a5), d2
+00C0B0EC dump:0244AC CODE+298C Shot+29B4 USSfile+08BEF8 5242                     addq.w    #$1, d2
+00C0B0EE dump:0244AE CODE+298E Shot+29B6 USSfile+08BEFA 48c2                     ext.l     d2
+00C0B0F0 dump:0244B0 CODE+2990 Shot+29B8 USSfile+08BEFC e382                     asl.l     #$1, d2
+00C0B0F2 dump:0244B2 CODE+2992 Shot+29BA USSfile+08BEFE 2c42                     movea.l   d2, a6
+00C0B0F4 dump:0244B4 CODE+2994 Shot+29BC USSfile+08BF00 3d803800                 move.w    d0, (a6, d3.l)
+00C0B0F8 dump:0244B8 CODE+2998 Shot+29C0 USSfile+08BF04 3004                     move.w    d4, d0
+00C0B0FA dump:0244BA CODE+299A Shot+29C2 USSfile+08BF06 c1fc0092                 muls.w    #$92, d0
+00C0B0FE dump:0244BE CODE+299E Shot+29C6 USSfile+08BF0A 41ec3f7c                 lea.l     $3f7c(a4), a0
+00C0B102 dump:0244C2 CODE+29A2 Shot+29CA USSfile+08BF0E 22300800                 move.l    (a0, d0.l), d1
+00C0B106 dump:0244C6 CODE+29A6 Shot+29CE USSfile+08BF12 342dfff4                 move.w    -$c(a5), d2
+00C0B10A dump:0244CA CODE+29AA Shot+29D2 USSfile+08BF16 48c2                     ext.l     d2
+00C0B10C dump:0244CC CODE+29AC Shot+29D4 USSfile+08BF18 e382                     asl.l     #$1, d2
+00C0B10E dump:0244CE CODE+29AE Shot+29D6 USSfile+08BF1A 2242                     movea.l   d2, a1
+00C0B110 dump:0244D0 CODE+29B0 Shot+29D8 USSfile+08BF1C d3c1                     adda.l    d1, a1
+00C0B112 dump:0244D2 CODE+29B2 Shot+29DA USSfile+08BF1E 2f09                     move.l    a1, -(a7)
+00C0B114 dump:0244D4 CODE+29B4 Shot+29DC USSfile+08BF20 342dfff6                 move.w    -$a(a5), d2
+00C0B118 dump:0244D8 CODE+29B8 Shot+29E0 USSfile+08BF24 226dffe6                 movea.l   -$1a(a5), a1
+00C0B11C dump:0244DC CODE+29BC Shot+29E4 USSfile+08BF28 7600                     moveq     #$0, d3
+00C0B11E dump:0244DE CODE+29BE Shot+29E6 USSfile+08BF2A 16312000                 move.b    (a1, d2.w), d3
+00C0B122 dump:0244E2 CODE+29C2 Shot+29EA USSfile+08BF2E 3f03                     move.w    d3, -(a7)
+00C0B124 dump:0244E4 CODE+29C4 Shot+29EC USSfile+08BF30 4eba1296                 jsr       $c0c3bc(pc)
+00C0B128 dump:0244E8 CODE+29C8 Shot+29F0 USSfile+08BF34 544f                     addq.w    #$2, a7
+00C0B12A dump:0244EA CODE+29CA Shot+29F2 USSfile+08BF36 205f                     movea.l   (a7)+, a0
+00C0B12C dump:0244EC CODE+29CC Shot+29F4 USSfile+08BF38 d150                     add.w     d0, (a0)
+00C0B12E dump:0244EE CODE+29CE Shot+29F6 USSfile+08BF3A 3004                     move.w    d4, d0
+00C0B130 dump:0244F0 CODE+29D0 Shot+29F8 USSfile+08BF3C c1fc0092                 muls.w    #$92, d0
+00C0B134 dump:0244F4 CODE+29D4 Shot+29FC USSfile+08BF40 41ec3f7c                 lea.l     $3f7c(a4), a0
+00C0B138 dump:0244F8 CODE+29D8 Shot+2A00 USSfile+08BF44 22300800                 move.l    (a0, d0.l), d1
+00C0B13C dump:0244FC CODE+29DC Shot+2A04 USSfile+08BF48 342dfff4                 move.w    -$c(a5), d2
+00C0B140 dump:024500 CODE+29E0 Shot+2A08 USSfile+08BF4C 5242                     addq.w    #$1, d2
+00C0B142 dump:024502 CODE+29E2 Shot+2A0A USSfile+08BF4E 48c2                     ext.l     d2
+00C0B144 dump:024504 CODE+29E4 Shot+2A0C USSfile+08BF50 e382                     asl.l     #$1, d2
+00C0B146 dump:024506 CODE+29E6 Shot+2A0E USSfile+08BF52 2242                     movea.l   d2, a1
+00C0B148 dump:024508 CODE+29E8 Shot+2A10 USSfile+08BF54 d3c1                     adda.l    d1, a1
+00C0B14A dump:02450A CODE+29EA Shot+2A12 USSfile+08BF56 2f09                     move.l    a1, -(a7)
+00C0B14C dump:02450C CODE+29EC Shot+2A14 USSfile+08BF58 342dfff6                 move.w    -$a(a5), d2
+00C0B150 dump:024510 CODE+29F0 Shot+2A18 USSfile+08BF5C 226dffe6                 movea.l   -$1a(a5), a1
+00C0B154 dump:024514 CODE+29F4 Shot+2A1C USSfile+08BF60 7600                     moveq     #$0, d3
+00C0B156 dump:024516 CODE+29F6 Shot+2A1E USSfile+08BF62 16312000                 move.b    (a1, d2.w), d3
+00C0B15A dump:02451A CODE+29FA Shot+2A22 USSfile+08BF66 3f03                     move.w    d3, -(a7)
+00C0B15C dump:02451C CODE+29FC Shot+2A24 USSfile+08BF68 4eba1288                 jsr       $c0c3e6(pc)
+00C0B160 dump:024520 CODE+2A00 Shot+2A28 USSfile+08BF6C 544f                     addq.w    #$2, a7
+00C0B162 dump:024522 CODE+2A02 Shot+2A2A USSfile+08BF6E 205f                     movea.l   (a7)+, a0
+00C0B164 dump:024524 CODE+2A04 Shot+2A2C USSfile+08BF70 d150                     add.w     d0, (a0)
+00C0B166 dump:024526 CODE+2A06 Shot+2A2E USSfile+08BF72 3004                     move.w    d4, d0
+00C0B168 dump:024528 CODE+2A08 Shot+2A30 USSfile+08BF74 c1fc0092                 muls.w    #$92, d0
+00C0B16C dump:02452C CODE+2A0C Shot+2A34 USSfile+08BF78 41ec3f7c                 lea.l     $3f7c(a4), a0
+00C0B170 dump:024530 CODE+2A10 Shot+2A38 USSfile+08BF7C 22300800                 move.l    (a0, d0.l), d1
+00C0B174 dump:024534 CODE+2A14 Shot+2A3C USSfile+08BF80 342dfff4                 move.w    -$c(a5), d2
+00C0B178 dump:024538 CODE+2A18 Shot+2A40 USSfile+08BF84 5242                     addq.w    #$1, d2
+00C0B17A dump:02453A CODE+2A1A Shot+2A42 USSfile+08BF86 48c2                     ext.l     d2
+00C0B17C dump:02453C CODE+2A1C Shot+2A44 USSfile+08BF88 e382                     asl.l     #$1, d2
+00C0B17E dump:02453E CODE+2A1E Shot+2A46 USSfile+08BF8A 2242                     movea.l   d2, a1
+00C0B180 dump:024540 CODE+2A20 Shot+2A48 USSfile+08BF8C 0c7100d81800             cmpi.w    #$d8, (a1, d1.l)
+00C0B186 dump:024546 CODE+2A26 Shot+2A4E USSfile+08BF92 6d00fe8a                 blt.w     $c0b012
+00C0B18A dump:02454A CODE+2A2A Shot+2A52 USSfile+08BF96 3004                     move.w    d4, d0
+00C0B18C dump:02454C CODE+2A2C Shot+2A54 USSfile+08BF98 c1fc0092                 muls.w    #$92, d0
+00C0B190 dump:024550 CODE+2A30 Shot+2A58 USSfile+08BF9C 41ec3f7c                 lea.l     $3f7c(a4), a0
+00C0B194 dump:024554 CODE+2A34 Shot+2A5C USSfile+08BFA0 22300800                 move.l    (a0, d0.l), d1
+00C0B198 dump:024558 CODE+2A38 Shot+2A60 USSfile+08BFA4 342dfff4                 move.w    -$c(a5), d2
+00C0B19C dump:02455C CODE+2A3C Shot+2A64 USSfile+08BFA8 5242                     addq.w    #$1, d2
+00C0B19E dump:02455E CODE+2A3E Shot+2A66 USSfile+08BFAA 48c2                     ext.l     d2
+00C0B1A0 dump:024560 CODE+2A40 Shot+2A68 USSfile+08BFAC e382                     asl.l     #$1, d2
+00C0B1A2 dump:024562 CODE+2A42 Shot+2A6A USSfile+08BFAE 2242                     movea.l   d2, a1
+00C0B1A4 dump:024564 CODE+2A44 Shot+2A6C USSfile+08BFB0 33bcffff1800             move.w    #$ffff, (a1, d1.l)
+00C0B1AA dump:02456A CODE+2A4A Shot+2A72 USSfile+08BFB6 5244                     addq.w    #$1, d4
+00C0B1AC dump:02456C CODE+2A4C Shot+2A74 USSfile+08BFB8 b86c2c18                 cmp.w     $2c18(a4), d4
+00C0B1B0 dump:024570 CODE+2A50 Shot+2A78 USSfile+08BFBC 6d00fdfa                 blt.w     $c0afac
+
+;nibble_decoder: verified relocated ADF CODE against BOTH runtime copies
+00C0C3BC dump:02577C CODE+3C5C Shot+3C84 USSfile+08D1C8 4e55fffe                 link.w    a5, #$fffe
+00C0C3C0 dump:025780 CODE+3C60 Shot+3C88 USSfile+08D1CC 302d0008                 move.w    $8(a5), d0
+00C0C3C4 dump:025784 CODE+3C64 Shot+3C8C USSfile+08D1D0 c07c0070                 and.w     #$70, d0
+00C0C3C8 dump:025788 CODE+3C68 Shot+3C90 USSfile+08D1D4 e840                     asr.w     #$4, d0
+00C0C3CA dump:02578A CODE+3C6A Shot+3C92 USSfile+08D1D6 3b40fffe                 move.w    d0, -$2(a5)
+00C0C3CE dump:02578E CODE+3C6E Shot+3C96 USSfile+08D1DA 082d00070009             btst.b    #$7, $9(a5)
+00C0C3D4 dump:025794 CODE+3C74 Shot+3C9C USSfile+08D1E0 670a                     beq.b     $c0c3e0
+00C0C3D6 dump:025796 CODE+3C76 Shot+3C9E USSfile+08D1E2 302dfffe                 move.w    -$2(a5), d0
+00C0C3DA dump:02579A CODE+3C7A Shot+3CA2 USSfile+08D1E6 4440                     neg.w     d0
+00C0C3DC dump:02579C CODE+3C7C Shot+3CA4 USSfile+08D1E8 4e5d                     unlk      a5
+00C0C3DE dump:02579E CODE+3C7E Shot+3CA6 USSfile+08D1EA 4e75                     rts
+00C0C3E0 dump:0257A0 CODE+3C80 Shot+3CA8 USSfile+08D1EC 302dfffe                 move.w    -$2(a5), d0
+00C0C3E4 dump:0257A4 CODE+3C84 Shot+3CAC USSfile+08D1F0 60f6                     bra.b     $c0c3dc
+00C0C3E6 dump:0257A6 CODE+3C86 Shot+3CAE USSfile+08D1F2 4e55fffe                 link.w    a5, #$fffe
+00C0C3EA dump:0257AA CODE+3C8A Shot+3CB2 USSfile+08D1F6 302d0008                 move.w    $8(a5), d0
+00C0C3EE dump:0257AE CODE+3C8E Shot+3CB6 USSfile+08D1FA c07c0007                 and.w     #$7, d0
+00C0C3F2 dump:0257B2 CODE+3C92 Shot+3CBA USSfile+08D1FE 3b40fffe                 move.w    d0, -$2(a5)
+00C0C3F6 dump:0257B6 CODE+3C96 Shot+3CBE USSfile+08D202 082d00030009             btst.b    #$3, $9(a5)
+00C0C3FC dump:0257BC CODE+3C9C Shot+3CC4 USSfile+08D208 670a                     beq.b     $c0c408
+00C0C3FE dump:0257BE CODE+3C9E Shot+3CC6 USSfile+08D20A 302dfffe                 move.w    -$2(a5), d0
+00C0C402 dump:0257C2 CODE+3CA2 Shot+3CCA USSfile+08D20E 4440                     neg.w     d0
+00C0C404 dump:0257C4 CODE+3CA4 Shot+3CCC USSfile+08D210 4e5d                     unlk      a5
+00C0C406 dump:0257C6 CODE+3CA6 Shot+3CCE USSfile+08D212 4e75                     rts
+00C0C408 dump:0257C8 CODE+3CA8 Shot+3CD0 USSfile+08D214 302dfffe                 move.w    -$2(a5), d0
+00C0C40C dump:0257CC CODE+3CAC Shot+3CD4 USSfile+08D218 60f6                     bra.b     $c0c404
+
+;attack_launch: verified relocated ADF CODE against BOTH runtime copies
+00C0D174 dump:026534 CODE+4A14 Shot+4A3C USSfile+08DF80 082c00002c1b             btst.b    #$0, $2c1b(a4)
+00C0D17A dump:02653A CODE+4A1A Shot+4A42 USSfile+08DF86 67000102                 beq.w     $c0d27e
+00C0D17E dump:02653E CODE+4A1E Shot+4A46 USSfile+08DF8A 4a6c2c4e                 tst.w     $2c4e(a4)
+00C0D182 dump:026542 CODE+4A22 Shot+4A4A USSfile+08DF8E 660000fa                 bne.w     $c0d27e
+00C0D186 dump:026546 CODE+4A26 Shot+4A4E USSfile+08DF92 536c2c1e                 subq.w    #$1, $2c1e(a4)
+00C0D18A dump:02654A CODE+4A2A Shot+4A52 USSfile+08DF96 660000f2                 bne.w     $c0d27e
+00C0D18E dump:02654E CODE+4A2E Shot+4A56 USSfile+08DF9A 397cffff2c60             move.w    #$ffff, $2c60(a4)
+00C0D194 dump:026554 CODE+4A34 Shot+4A5C USSfile+08DFA0 382c2c18                 move.w    $2c18(a4), d4
+00C0D198 dump:026558 CODE+4A38 Shot+4A60 USSfile+08DFA4 4eba05ca                 jsr       $c0d764(pc)
+00C0D19C dump:02655C CODE+4A3C Shot+4A64 USSfile+08DFA8 3802                     move.w    d2, d4
+00C0D19E dump:02655E CODE+4A3E Shot+4A66 USSfile+08DFAA 41ec3f0c                 lea.l     $3f0c(a4), a0
+00C0D1A2 dump:026562 CODE+4A42 Shot+4A6A USSfile+08DFAE c4fc0092                 mulu.w    #$92, d2
+00C0D1A6 dump:026566 CODE+4A46 Shot+4A6E USSfile+08DFB2 d1c2                     adda.l    d2, a0
+00C0D1A8 dump:026568 CODE+4A48 Shot+4A70 USSfile+08DFB4 302c2c18                 move.w    $2c18(a4), d0
+00C0D1AC dump:02656C CODE+4A4C Shot+4A74 USSfile+08DFB8 323c0002                 move.w    #$2, d1
+00C0D1B0 dump:026570 CODE+4A50 Shot+4A78 USSfile+08DFBC b268006e                 cmp.w     $6e(a0), d1
+00C0D1B4 dump:026574 CODE+4A54 Shot+4A7C USSfile+08DFC0 6630                     bne.b     $c0d1e6
+00C0D1B6 dump:026576 CODE+4A56 Shot+4A7E USSfile+08DFC2 34280012                 move.w    $12(a0), d2
+00C0D1BA dump:02657A CODE+4A5A Shot+4A82 USSfile+08DFC6 b4680068                 cmp.w     $68(a0), d2
+00C0D1BE dump:02657E CODE+4A5E Shot+4A86 USSfile+08DFCA 6626                     bne.b     $c0d1e6
+00C0D1C0 dump:026580 CODE+4A60 Shot+4A88 USSfile+08DFCC 34280066                 move.w    $66(a0), d2
+00C0D1C4 dump:026584 CODE+4A64 Shot+4A8C USSfile+08DFD0 d46c2c12                 add.w     $2c12(a4), d2
+00C0D1C8 dump:026588 CODE+4A68 Shot+4A90 USSfile+08DFD4 b4680010                 cmp.w     $10(a0), d2
+00C0D1CC dump:02658C CODE+4A6C Shot+4A94 USSfile+08DFD8 6618                     bne.b     $c0d1e6
+00C0D1CE dump:02658E CODE+4A6E Shot+4A96 USSfile+08DFDA 4a6c2c60                 tst.w     $2c60(a4)
+00C0D1D2 dump:026592 CODE+4A72 Shot+4A9A USSfile+08DFDE 6a08                     bpl.b     $c0d1dc
+00C0D1D4 dump:026594 CODE+4A74 Shot+4A9C USSfile+08DFE0 396800882c60             move.w    $88(a0), $2c60(a4)
+00C0D1DA dump:02659A CODE+4A7A Shot+4AA2 USSfile+08DFE6 6024                     bra.b     $c0d200
+00C0D1DC dump:02659C CODE+4A7C Shot+4AA4 USSfile+08DFE8 34280088                 move.w    $88(a0), d2
+00C0D1E0 dump:0265A0 CODE+4A80 Shot+4AA8 USSfile+08DFEC b46c2c60                 cmp.w     $2c60(a4), d2
+00C0D1E4 dump:0265A4 CODE+4A84 Shot+4AAC USSfile+08DFF0 671a                     beq.b     $c0d200
+00C0D1E6 dump:0265A6 CODE+4A86 Shot+4AAE USSfile+08DFF2 5340                     subq.w    #$1, d0
+00C0D1E8 dump:0265A8 CODE+4A88 Shot+4AB0 USSfile+08DFF4 67000090                 beq.w     $c0d27a
+00C0D1EC dump:0265AC CODE+4A8C Shot+4AB4 USSfile+08DFF8 d1fc00000092             adda.l    #$92, a0
+00C0D1F2 dump:0265B2 CODE+4A92 Shot+4ABA USSfile+08DFFE 5244                     addq.w    #$1, d4
+00C0D1F4 dump:0265B4 CODE+4A94 Shot+4ABC USSfile+08E000 b86c2c18                 cmp.w     $2c18(a4), d4
+00C0D1F8 dump:0265B8 CODE+4A98 Shot+4AC0 USSfile+08E004 66b6                     bne.b     $c0d1b0
+00C0D1FA dump:0265BA CODE+4A9A Shot+4AC2 USSfile+08E006 41ec3f0c                 lea.l     $3f0c(a4), a0
+00C0D1FE dump:0265BE CODE+4A9E Shot+4AC6 USSfile+08E00A 60b0                     bra.b     $c0d1b0
+00C0D200 dump:0265C0 CODE+4AA0 Shot+4AC8 USSfile+08E00C 4a6c2d4e                 tst.w     $2d4e(a4)
+00C0D204 dump:0265C4 CODE+4AA4 Shot+4ACC USSfile+08E010 6626                     bne.b     $c0d22c
+00C0D206 dump:0265C6 CODE+4AA6 Shot+4ACE USSfile+08E012 33fc000100dff0a6         move.w    #$1, $dff0a6.l
+00C0D20E dump:0265CE CODE+4AAE Shot+4AD6 USSfile+08E01A 33fc000100dff0b6         move.w    #$1, $dff0b6.l
+00C0D216 dump:0265D6 CODE+4AB6 Shot+4ADE USSfile+08E022 33fc000300dff096         move.w    #$3, $dff096.l
+00C0D21E dump:0265DE CODE+4ABE Shot+4AE6 USSfile+08E02A 396800902d50             move.w    $90(a0), $2d50(a4)
+00C0D224 dump:0265E4 CODE+4AC4 Shot+4AEC USSfile+08E030 47e80010                 lea.l     $10(a0), a3
+00C0D228 dump:0265E8 CODE+4AC8 Shot+4AF0 USSfile+08E034 294b2d56                 move.l    a3, $2d56(a4)
+00C0D22C dump:0265EC CODE+4ACC Shot+4AF4 USSfile+08E038 317c0003006e             move.w    #$3, $6e(a0)
+00C0D232 dump:0265F2 CODE+4AD2 Shot+4AFA USSfile+08E03E 216800700074             move.l    $70(a0), $74(a0)
+00C0D238 dump:0265F8 CODE+4AD8 Shot+4B00 USSfile+08E044 316800100078             move.w    $10(a0), $78(a0)
+00C0D23E dump:0265FE CODE+4ADE Shot+4B06 USSfile+08E04A 383c00a8                 move.w    #$a8, d4
+00C0D242 dump:026602 CODE+4AE2 Shot+4B0A USSfile+08E04E 98680012                 sub.w     $12(a0), d4
+00C0D246 dump:026606 CODE+4AE6 Shot+4B0E USSfile+08E052 4eba051c                 jsr       $c0d764(pc)
+00C0D24A dump:02660A CODE+4AEA Shot+4B12 USSfile+08E056 d4680012                 add.w     $12(a0), d2
+00C0D24E dump:02660E CODE+4AEE Shot+4B16 USSfile+08E05A 3142007a                 move.w    d2, $7a(a0)
+00C0D252 dump:026612 CODE+4AF2 Shot+4B1A USSfile+08E05E 0c6c00022c16             cmpi.w    #$2, $2c16(a4)
+00C0D258 dump:026618 CODE+4AF8 Shot+4B20 USSfile+08E064 6706                     beq.b     $c0d260
+00C0D25A dump:02661A CODE+4AFA Shot+4B22 USSfile+08E066 4268007c                 clr.w     $7c(a0)
+00C0D25E dump:02661E CODE+4AFE Shot+4B26 USSfile+08E06A 6012                     bra.b     $c0d272
+00C0D260 dump:026620 CODE+4B00 Shot+4B28 USSfile+08E06C d47c0014                 add.w     #$14, d2
+00C0D264 dump:026624 CODE+4B04 Shot+4B2C USSfile+08E070 b47c00a8                 cmp.w     #$a8, d2
+00C0D268 dump:026628 CODE+4B08 Shot+4B30 USSfile+08E074 6f04                     ble.b     $c0d26e
+00C0D26A dump:02662A CODE+4B0A Shot+4B32 USSfile+08E076 947c0020                 sub.w     #$20, d2
+00C0D26E dump:02662E CODE+4B0E Shot+4B36 USSfile+08E07A 3142007c                 move.w    d2, $7c(a0)
+00C0D272 dump:026632 CODE+4B12 Shot+4B3A USSfile+08E07E 536c2c20                 subq.w    #$1, $2c20(a4)
+00C0D276 dump:026636 CODE+4B16 Shot+4B3E USSfile+08E082 6600ff1c                 bne.w     $c0d194
+00C0D27A dump:02663A CODE+4B1A Shot+4B42 USSfile+08E086 4eba05ca                 jsr       $c0d846(pc)
+
+;animation_hit_entry_return_attack_death: verified relocated ADF CODE against BOTH runtime copies
+00C0D2A8 dump:026668 CODE+4B48 Shot+4B70 USSfile+08E0B4 3a3c0000                 move.w    #$0, d5
+00C0D2AC dump:02666C CODE+4B4C Shot+4B74 USSfile+08E0B8 41ec3f0c                 lea.l     $3f0c(a4), a0
+00C0D2B0 dump:026670 CODE+4B50 Shot+4B78 USSfile+08E0BC 4a68005c                 tst.w     $5c(a0)
+00C0D2B4 dump:026674 CODE+4B54 Shot+4B7C USSfile+08E0C0 6728                     beq.b     $c0d2de
+00C0D2B6 dump:026676 CODE+4B56 Shot+4B7E USSfile+08E0C2 53680058                 subq.w    #$1, $58(a0)
+00C0D2BA dump:02667A CODE+4B5A Shot+4B82 USSfile+08E0C6 6622                     bne.b     $c0d2de
+00C0D2BC dump:02667C CODE+4B5C Shot+4B84 USSfile+08E0C8 3168005a0058             move.w    $5a(a0), $58(a0)
+00C0D2C2 dump:026682 CODE+4B62 Shot+4B8A USSfile+08E0CE 53680060                 subq.w    #$1, $60(a0)
+00C0D2C6 dump:026686 CODE+4B66 Shot+4B8E USSfile+08E0D2 660e                     bne.b     $c0d2d6
+00C0D2C8 dump:026688 CODE+4B68 Shot+4B90 USSfile+08E0D4 3168005e0060             move.w    $5e(a0), $60(a0)
+00C0D2CE dump:02668E CODE+4B6E Shot+4B96 USSfile+08E0DA 216800540014             move.l    $54(a0), $14(a0)
+00C0D2D4 dump:026694 CODE+4B74 Shot+4B9C USSfile+08E0E0 6008                     bra.b     $c0d2de
+00C0D2D6 dump:026696 CODE+4B76 Shot+4B9E USSfile+08E0E2 06a8000000200014         addi.l    #$20, $14(a0)
+00C0D2DE dump:02669E CODE+4B7E Shot+4BA6 USSfile+08E0EA 226c2ca2                 movea.l   $2ca2(a4), a1
+00C0D2E2 dump:0266A2 CODE+4B82 Shot+4BAA USSfile+08E0EE 246c2ca6                 movea.l   $2ca6(a4), a2
+00C0D2E6 dump:0266A6 CODE+4B86 Shot+4BAE USSfile+08E0F2 4a92                     tst.l     (a2)
+00C0D2E8 dump:0266A8 CODE+4B88 Shot+4BB0 USSfile+08E0F4 6776                     beq.b     $c0d360
+00C0D2EA dump:0266AA CODE+4B8A Shot+4BB2 USSfile+08E0F6 34290010                 move.w    $10(a1), d2
+00C0D2EE dump:0266AE CODE+4B8E Shot+4BB6 USSfile+08E0FA 36290012                 move.w    $12(a1), d3
+00C0D2F2 dump:0266B2 CODE+4B92 Shot+4BBA USSfile+08E0FE 4eba03e2                 jsr       $c0d6d6(pc)
+00C0D2F6 dump:0266B6 CODE+4B96 Shot+4BBE USSfile+08E102 4a40                     tst.w     d0
+00C0D2F8 dump:0266B8 CODE+4B98 Shot+4BC0 USSfile+08E104 6766                     beq.b     $c0d360
+00C0D2FA dump:0266BA CODE+4B9A Shot+4BC2 USSfile+08E106 202c2caa                 move.l    $2caa(a4), d0
+00C0D2FE dump:0266BE CODE+4B9E Shot+4BC6 USSfile+08E10A d1ac2cb6                 add.l     d0, $2cb6(a4)
+00C0D302 dump:0266C2 CODE+4BA2 Shot+4BCA USSfile+08E10E 3028006e                 move.w    $6e(a0), d0
+00C0D306 dump:0266C6 CODE+4BA6 Shot+4BCE USSfile+08E112 b07c0002                 cmp.w     #$2, d0
+00C0D30A dump:0266CA CODE+4BAA Shot+4BD2 USSfile+08E116 6708                     beq.b     $c0d314
+00C0D30C dump:0266CC CODE+4BAC Shot+4BD4 USSfile+08E118 202c2cae                 move.l    $2cae(a4), d0
+00C0D310 dump:0266D0 CODE+4BB0 Shot+4BD8 USSfile+08E11C d1ac2cb6                 add.l     d0, $2cb6(a4)
+00C0D314 dump:0266D4 CODE+4BB4 Shot+4BDC USSfile+08E120 4a6c2d5a                 tst.w     $2d5a(a4)
+00C0D318 dump:0266D8 CODE+4BB8 Shot+4BE0 USSfile+08E124 6626                     bne.b     $c0d340
+00C0D31A dump:0266DA CODE+4BBA Shot+4BE2 USSfile+08E126 33fc000100dff0c6         move.w    #$1, $dff0c6.l
+00C0D322 dump:0266E2 CODE+4BC2 Shot+4BEA USSfile+08E12E 33fc000100dff0d6         move.w    #$1, $dff0d6.l
+00C0D32A dump:0266EA CODE+4BCA Shot+4BF2 USSfile+08E136 33fc000c00dff096         move.w    #$c, $dff096.l
+00C0D332 dump:0266F2 CODE+4BD2 Shot+4BFA USSfile+08E13E 3968008a2d5c             move.w    $8a(a0), $2d5c(a4)
+00C0D338 dump:0266F8 CODE+4BD8 Shot+4C00 USSfile+08E144 47e80010                 lea.l     $10(a0), a3
+00C0D33C dump:0266FC CODE+4BDC Shot+4C04 USSfile+08E148 294b2d62                 move.l    a3, $2d62(a4)
+00C0D340 dump:026700 CODE+4BE0 Shot+4C08 USSfile+08E14C 4268005c                 clr.w     $5c(a0)
+00C0D344 dump:026704 CODE+4BE4 Shot+4C0C USSfile+08E150 317c0004006e             move.w    #$4, $6e(a0)
+00C0D34A dump:02670A CODE+4BEA Shot+4C12 USSfile+08E156 2168007e0014             move.l    $7e(a0), $14(a0)
+00C0D350 dump:026710 CODE+4BF0 Shot+4C18 USSfile+08E15C 266c2c96                 movea.l   $2c96(a4), a3
+00C0D354 dump:026714 CODE+4BF4 Shot+4C1C USSfile+08E160 26c9                     move.l    a1, (a3)+
+00C0D356 dump:026716 CODE+4BF6 Shot+4C1E USSfile+08E162 294b2c96                 move.l    a3, $2c96(a4)
+00C0D35A dump:02671A CODE+4BFA Shot+4C22 USSfile+08E166 4292                     clr.l     (a2)
+00C0D35C dump:02671C CODE+4BFC Shot+4C24 USSfile+08E168 536c2c3a                 subq.w    #$1, $2c3a(a4)
+00C0D360 dump:026720 CODE+4C00 Shot+4C28 USSfile+08E16C d3fc00000092             adda.l    #$92, a1
+00C0D366 dump:026726 CODE+4C06 Shot+4C2E USSfile+08E172 588a                     addq.l    #$4, a2
+00C0D368 dump:026728 CODE+4C08 Shot+4C30 USSfile+08E174 4a92                     tst.l     (a2)
+00C0D36A dump:02672A CODE+4C0A Shot+4C32 USSfile+08E176 6776                     beq.b     $c0d3e2
+00C0D36C dump:02672C CODE+4C0C Shot+4C34 USSfile+08E178 34290010                 move.w    $10(a1), d2
+00C0D370 dump:026730 CODE+4C10 Shot+4C38 USSfile+08E17C 36290012                 move.w    $12(a1), d3
+00C0D374 dump:026734 CODE+4C14 Shot+4C3C USSfile+08E180 4eba0360                 jsr       $c0d6d6(pc)
+00C0D378 dump:026738 CODE+4C18 Shot+4C40 USSfile+08E184 4a40                     tst.w     d0
+00C0D37A dump:02673A CODE+4C1A Shot+4C42 USSfile+08E186 6766                     beq.b     $c0d3e2
+00C0D37C dump:02673C CODE+4C1C Shot+4C44 USSfile+08E188 202c2caa                 move.l    $2caa(a4), d0
+00C0D380 dump:026740 CODE+4C20 Shot+4C48 USSfile+08E18C d1ac2cb6                 add.l     d0, $2cb6(a4)
+00C0D384 dump:026744 CODE+4C24 Shot+4C4C USSfile+08E190 3028006e                 move.w    $6e(a0), d0
+00C0D388 dump:026748 CODE+4C28 Shot+4C50 USSfile+08E194 b07c0002                 cmp.w     #$2, d0
+00C0D38C dump:02674C CODE+4C2C Shot+4C54 USSfile+08E198 6708                     beq.b     $c0d396
+00C0D38E dump:02674E CODE+4C2E Shot+4C56 USSfile+08E19A 202c2cae                 move.l    $2cae(a4), d0
+00C0D392 dump:026752 CODE+4C32 Shot+4C5A USSfile+08E19E d1ac2cb6                 add.l     d0, $2cb6(a4)
+00C0D396 dump:026756 CODE+4C36 Shot+4C5E USSfile+08E1A2 4a6c2d5a                 tst.w     $2d5a(a4)
+00C0D39A dump:02675A CODE+4C3A Shot+4C62 USSfile+08E1A6 6626                     bne.b     $c0d3c2
+00C0D39C dump:02675C CODE+4C3C Shot+4C64 USSfile+08E1A8 33fc000100dff0c6         move.w    #$1, $dff0c6.l
+00C0D3A4 dump:026764 CODE+4C44 Shot+4C6C USSfile+08E1B0 33fc000100dff0d6         move.w    #$1, $dff0d6.l
+00C0D3AC dump:02676C CODE+4C4C Shot+4C74 USSfile+08E1B8 33fc000c00dff096         move.w    #$c, $dff096.l
+00C0D3B4 dump:026774 CODE+4C54 Shot+4C7C USSfile+08E1C0 3968008a2d5c             move.w    $8a(a0), $2d5c(a4)
+00C0D3BA dump:02677A CODE+4C5A Shot+4C82 USSfile+08E1C6 47e80010                 lea.l     $10(a0), a3
+00C0D3BE dump:02677E CODE+4C5E Shot+4C86 USSfile+08E1CA 294b2d62                 move.l    a3, $2d62(a4)
+00C0D3C2 dump:026782 CODE+4C62 Shot+4C8A USSfile+08E1CE 4268005c                 clr.w     $5c(a0)
+00C0D3C6 dump:026786 CODE+4C66 Shot+4C8E USSfile+08E1D2 317c0004006e             move.w    #$4, $6e(a0)
+00C0D3CC dump:02678C CODE+4C6C Shot+4C94 USSfile+08E1D8 2168007e0014             move.l    $7e(a0), $14(a0)
+00C0D3D2 dump:026792 CODE+4C72 Shot+4C9A USSfile+08E1DE 266c2c96                 movea.l   $2c96(a4), a3
+00C0D3D6 dump:026796 CODE+4C76 Shot+4C9E USSfile+08E1E2 26c9                     move.l    a1, (a3)+
+00C0D3D8 dump:026798 CODE+4C78 Shot+4CA0 USSfile+08E1E4 294b2c96                 move.l    a3, $2c96(a4)
+00C0D3DC dump:02679C CODE+4C7C Shot+4CA4 USSfile+08E1E8 4292                     clr.l     (a2)
+00C0D3DE dump:02679E CODE+4C7E Shot+4CA6 USSfile+08E1EA 536c2c3a                 subq.w    #$1, $2c3a(a4)
+00C0D3E2 dump:0267A2 CODE+4C82 Shot+4CAA USSfile+08E1EE 3028006e                 move.w    $6e(a0), d0
+00C0D3E6 dump:0267A6 CODE+4C86 Shot+4CAE USSfile+08E1F2 b07c0001                 cmp.w     #$1, d0
+00C0D3EA dump:0267AA CODE+4C8A Shot+4CB2 USSfile+08E1F6 66000082                 bne.w     $c0d46e
+00C0D3EE dump:0267AE CODE+4C8E Shot+4CB6 USSfile+08E1FA 4a68006c                 tst.w     $6c(a0)
+00C0D3F2 dump:0267B2 CODE+4C92 Shot+4CBA USSfile+08E1FE 6736                     beq.b     $c0d42a
+00C0D3F4 dump:0267B4 CODE+4C94 Shot+4CBC USSfile+08E200 5368006c                 subq.w    #$1, $6c(a0)
+00C0D3F8 dump:0267B8 CODE+4C98 Shot+4CC0 USSfile+08E204 6600015e                 bne.w     $c0d558
+00C0D3FC dump:0267BC CODE+4C9C Shot+4CC4 USSfile+08E208 4a6c2d4e                 tst.w     $2d4e(a4)
+00C0D400 dump:0267C0 CODE+4CA0 Shot+4CC8 USSfile+08E20C 66000156                 bne.w     $c0d558
+00C0D404 dump:0267C4 CODE+4CA4 Shot+4CCC USSfile+08E210 33fc000100dff0a6         move.w    #$1, $dff0a6.l
+00C0D40C dump:0267CC CODE+4CAC Shot+4CD4 USSfile+08E218 33fc000100dff0b6         move.w    #$1, $dff0b6.l
+00C0D414 dump:0267D4 CODE+4CB4 Shot+4CDC USSfile+08E220 33fc000300dff096         move.w    #$3, $dff096.l
+00C0D41C dump:0267DC CODE+4CBC Shot+4CE4 USSfile+08E228 3968008e2d50             move.w    $8e(a0), $2d50(a4)
+00C0D422 dump:0267E2 CODE+4CC2 Shot+4CEA USSfile+08E22E 47e80010                 lea.l     $10(a0), a3
+00C0D426 dump:0267E6 CODE+4CC6 Shot+4CEE USSfile+08E232 294b2d56                 move.l    a3, $2d56(a4)
+00C0D42A dump:0267EA CODE+4CCA Shot+4CF2 USSfile+08E236 22680062                 movea.l   $62(a0), a1
+00C0D42E dump:0267EE CODE+4CCE Shot+4CF6 USSfile+08E23A 31590010                 move.w    (a1)+, $10(a0)
+00C0D432 dump:0267F2 CODE+4CD2 Shot+4CFA USSfile+08E23E 31590012                 move.w    (a1)+, $12(a0)
+00C0D436 dump:0267F6 CODE+4CD6 Shot+4CFE USSfile+08E242 21490062                 move.l    a1, $62(a0)
+00C0D43A dump:0267FA CODE+4CDA Shot+4D02 USSfile+08E246 5368006a                 subq.w    #$1, $6a(a0)
+00C0D43E dump:0267FE CODE+4CDE Shot+4D06 USSfile+08E24A 6606                     bne.b     $c0d446
+00C0D440 dump:026800 CODE+4CE0 Shot+4D08 USSfile+08E24C 317c0002006e             move.w    #$2, $6e(a0)
+00C0D446 dump:026806 CODE+4CE6 Shot+4D0E USSfile+08E252 4a68007a                 tst.w     $7a(a0)
+00C0D44A dump:02680A CODE+4CEA Shot+4D12 USSfile+08E256 670a                     beq.b     $c0d456
+00C0D44C dump:02680C CODE+4CEC Shot+4D14 USSfile+08E258 5368007a                 subq.w    #$1, $7a(a0)
+00C0D450 dump:026810 CODE+4CF0 Shot+4D18 USSfile+08E25C 6604                     bne.b     $c0d456
+00C0D452 dump:026812 CODE+4CF2 Shot+4D1A USSfile+08E25E 4eba01be                 jsr       $c0d612(pc)
+00C0D456 dump:026816 CODE+4CF6 Shot+4D1E USSfile+08E262 4a68007c                 tst.w     $7c(a0)
+00C0D45A dump:02681A CODE+4CFA Shot+4D22 USSfile+08E266 670000fc                 beq.w     $c0d558
+00C0D45E dump:02681E CODE+4CFE Shot+4D26 USSfile+08E26A 5368007c                 subq.w    #$1, $7c(a0)
+00C0D462 dump:026822 CODE+4D02 Shot+4D2A USSfile+08E26E 660000f4                 bne.w     $c0d558
+00C0D466 dump:026826 CODE+4D06 Shot+4D2E USSfile+08E272 4eba01aa                 jsr       $c0d612(pc)
+00C0D46A dump:02682A CODE+4D0A Shot+4D32 USSfile+08E276 600000ec                 bra.w     $c0d558
+00C0D46E dump:02682E CODE+4D0E Shot+4D36 USSfile+08E27A b07c0002                 cmp.w     #$2, d0
+00C0D472 dump:026832 CODE+4D12 Shot+4D3A USSfile+08E27E 6638                     bne.b     $c0d4ac
+00C0D474 dump:026834 CODE+4D14 Shot+4D3C USSfile+08E280 30280066                 move.w    $66(a0), d0
+00C0D478 dump:026838 CODE+4D18 Shot+4D40 USSfile+08E284 d06c2c12                 add.w     $2c12(a4), d0
+00C0D47C dump:02683C CODE+4D1C Shot+4D44 USSfile+08E288 b0680010                 cmp.w     $10(a0), d0
+00C0D480 dump:026840 CODE+4D20 Shot+4D48 USSfile+08E28C 670c                     beq.b     $c0d48e
+00C0D482 dump:026842 CODE+4D22 Shot+4D4A USSfile+08E28E 6e06                     bgt.b     $c0d48a
+00C0D484 dump:026844 CODE+4D24 Shot+4D4C USSfile+08E290 53680010                 subq.w    #$1, $10(a0)
+00C0D488 dump:026848 CODE+4D28 Shot+4D50 USSfile+08E294 6004                     bra.b     $c0d48e
+00C0D48A dump:02684A CODE+4D2A Shot+4D52 USSfile+08E296 52680010                 addq.w    #$1, $10(a0)
+00C0D48E dump:02684E CODE+4D2E Shot+4D56 USSfile+08E29A 30280068                 move.w    $68(a0), d0
+00C0D492 dump:026852 CODE+4D32 Shot+4D5A USSfile+08E29E b0680012                 cmp.w     $12(a0), d0
+00C0D496 dump:026856 CODE+4D36 Shot+4D5E USSfile+08E2A2 670000c0                 beq.w     $c0d558
+00C0D49A dump:02685A CODE+4D3A Shot+4D62 USSfile+08E2A6 6e08                     bgt.b     $c0d4a4
+00C0D49C dump:02685C CODE+4D3C Shot+4D64 USSfile+08E2A8 53680012                 subq.w    #$1, $12(a0)
+00C0D4A0 dump:026860 CODE+4D40 Shot+4D68 USSfile+08E2AC 600000b6                 bra.w     $c0d558
+00C0D4A4 dump:026864 CODE+4D44 Shot+4D6C USSfile+08E2B0 52680012                 addq.w    #$1, $12(a0)
+00C0D4A8 dump:026868 CODE+4D48 Shot+4D70 USSfile+08E2B4 600000ae                 bra.w     $c0d558
+00C0D4AC dump:02686C CODE+4D4C Shot+4D74 USSfile+08E2B8 b07c0003                 cmp.w     #$3, d0
+00C0D4B0 dump:026870 CODE+4D50 Shot+4D78 USSfile+08E2BC 6664                     bne.b     $c0d516
+00C0D4B2 dump:026872 CODE+4D52 Shot+4D7A USSfile+08E2BE 22680074                 movea.l   $74(a0), a1
+00C0D4B6 dump:026876 CODE+4D56 Shot+4D7E USSfile+08E2C2 3019                     move.w    (a1)+, d0
+00C0D4B8 dump:026878 CODE+4D58 Shot+4D80 USSfile+08E2C4 d0680078                 add.w     $78(a0), d0
+00C0D4BC dump:02687C CODE+4D5C Shot+4D84 USSfile+08E2C8 6b0c                     bmi.b     $c0d4ca
+00C0D4BE dump:02687E CODE+4D5E Shot+4D86 USSfile+08E2CA b07c00e0                 cmp.w     #$e0, d0
+00C0D4C2 dump:026882 CODE+4D62 Shot+4D8A USSfile+08E2CE 6e0c                     bgt.b     $c0d4d0
+00C0D4C4 dump:026884 CODE+4D64 Shot+4D8C USSfile+08E2D0 31400010                 move.w    d0, $10(a0)
+00C0D4C8 dump:026888 CODE+4D68 Shot+4D90 USSfile+08E2D4 600c                     bra.b     $c0d4d6
+00C0D4CA dump:02688A CODE+4D6A Shot+4D92 USSfile+08E2D6 42680010                 clr.w     $10(a0)
+00C0D4CE dump:02688E CODE+4D6E Shot+4D96 USSfile+08E2DA 6006                     bra.b     $c0d4d6
+00C0D4D0 dump:026890 CODE+4D70 Shot+4D98 USSfile+08E2DC 317c00df0010             move.w    #$df, $10(a0)
+00C0D4D6 dump:026896 CODE+4D76 Shot+4D9E USSfile+08E2E2 31590012                 move.w    (a1)+, $12(a0)
+00C0D4DA dump:02689A CODE+4D7A Shot+4DA2 USSfile+08E2E6 6a0c                     bpl.b     $c0d4e8
+00C0D4DC dump:02689C CODE+4D7C Shot+4DA4 USSfile+08E2E8 317c0002006e             move.w    #$2, $6e(a0)
+00C0D4E2 dump:0268A2 CODE+4D82 Shot+4DAA USSfile+08E2EE 42680012                 clr.w     $12(a0)
+00C0D4E6 dump:0268A6 CODE+4D86 Shot+4DAE USSfile+08E2F2 6070                     bra.b     $c0d558
+00C0D4E8 dump:0268A8 CODE+4D88 Shot+4DB0 USSfile+08E2F4 21490074                 move.l    a1, $74(a0)
+00C0D4EC dump:0268AC CODE+4D8C Shot+4DB4 USSfile+08E2F8 3028007a                 move.w    $7a(a0), d0
+00C0D4F0 dump:0268B0 CODE+4D90 Shot+4DB8 USSfile+08E2FC 670e                     beq.b     $c0d500
+00C0D4F2 dump:0268B2 CODE+4D92 Shot+4DBA USSfile+08E2FE b0680012                 cmp.w     $12(a0), d0
+00C0D4F6 dump:0268B6 CODE+4D96 Shot+4DBE USSfile+08E302 6e08                     bgt.b     $c0d500
+00C0D4F8 dump:0268B8 CODE+4D98 Shot+4DC0 USSfile+08E304 4268007a                 clr.w     $7a(a0)
+00C0D4FC dump:0268BC CODE+4D9C Shot+4DC4 USSfile+08E308 4eba0114                 jsr       $c0d612(pc)
+00C0D500 dump:0268C0 CODE+4DA0 Shot+4DC8 USSfile+08E30C 3028007c                 move.w    $7c(a0), d0
+00C0D504 dump:0268C4 CODE+4DA4 Shot+4DCC USSfile+08E310 6752                     beq.b     $c0d558
+00C0D506 dump:0268C6 CODE+4DA6 Shot+4DCE USSfile+08E312 b0680012                 cmp.w     $12(a0), d0
+00C0D50A dump:0268CA CODE+4DAA Shot+4DD2 USSfile+08E316 6e4c                     bgt.b     $c0d558
+00C0D50C dump:0268CC CODE+4DAC Shot+4DD4 USSfile+08E318 4268007c                 clr.w     $7c(a0)
+00C0D510 dump:0268D0 CODE+4DB0 Shot+4DD8 USSfile+08E31C 4eba0100                 jsr       $c0d612(pc)
+00C0D514 dump:0268D4 CODE+4DB4 Shot+4DDC USSfile+08E320 6042                     bra.b     $c0d558
+00C0D516 dump:0268D6 CODE+4DB6 Shot+4DDE USSfile+08E322 b07c0004                 cmp.w     #$4, d0
+00C0D51A dump:0268DA CODE+4DBA Shot+4DE2 USSfile+08E326 663c                     bne.b     $c0d558
+00C0D51C dump:0268DC CODE+4DBC Shot+4DE4 USSfile+08E328 53680086                 subq.w    #$1, $86(a0)
+00C0D520 dump:0268E0 CODE+4DC0 Shot+4DE8 USSfile+08E32C 6636                     bne.b     $c0d558
+00C0D522 dump:0268E2 CODE+4DC2 Shot+4DEA USSfile+08E32E 53680084                 subq.w    #$1, $84(a0)
+00C0D526 dump:0268E6 CODE+4DC6 Shot+4DEE USSfile+08E332 6710                     beq.b     $c0d538
+00C0D528 dump:0268E8 CODE+4DC8 Shot+4DF0 USSfile+08E334 316800820086             move.w    $82(a0), $86(a0)
+00C0D52E dump:0268EE CODE+4DCE Shot+4DF6 USSfile+08E33A 06a8000000200014         addi.l    #$20, $14(a0)
+00C0D536 dump:0268F6 CODE+4DD6 Shot+4DFE USSfile+08E342 6020                     bra.b     $c0d558
+00C0D538 dump:0268F8 CODE+4DD8 Shot+4E00 USSfile+08E344 266c2c96                 movea.l   $2c96(a4), a3
+00C0D53C dump:0268FC CODE+4DDC Shot+4E04 USSfile+08E348 26c8                     move.l    a0, (a3)+
+00C0D53E dump:0268FE CODE+4DDE Shot+4E06 USSfile+08E34A 294b2c96                 move.l    a3, $2c96(a4)
+00C0D542 dump:026902 CODE+4DE2 Shot+4E0A USSfile+08E34E 536c2c3c                 subq.w    #$1, $2c3c(a4)
+00C0D546 dump:026906 CODE+4DE6 Shot+4E0E USSfile+08E352 317c0000006e             move.w    #$0, $6e(a0)
+00C0D54C dump:02690C CODE+4DEC Shot+4E14 USSfile+08E358 43ec3122                 lea.l     $3122(a4), a1
+00C0D550 dump:026910 CODE+4DF0 Shot+4E18 USSfile+08E35C 3005                     move.w    d5, d0
+00C0D552 dump:026912 CODE+4DF2 Shot+4E1A USSfile+08E35E e540                     asl.w     #$2, d0
+00C0D554 dump:026914 CODE+4DF4 Shot+4E1C USSfile+08E360 42b10000                 clr.l     (a1, d0.w)
+00C0D558 dump:026918 CODE+4DF8 Shot+4E20 USSfile+08E364 d1fc00000092             adda.l    #$92, a0
+00C0D55E dump:02691E CODE+4DFE Shot+4E26 USSfile+08E36A 5245                     addq.w    #$1, d5
+00C0D560 dump:026920 CODE+4E00 Shot+4E28 USSfile+08E36C ba6c2c18                 cmp.w     $2c18(a4), d5
+00C0D564 dump:026924 CODE+4E04 Shot+4E2C USSfile+08E370 6600fd4a                 bne.w     $c0d2b0
+00C0D568 dump:026928 CODE+4E08 Shot+4E30 USSfile+08E374 4cdf0c3c                 movem.l   (a7)+, d2-d5/a2-a3
+00C0D56C dump:02692C CODE+4E0C Shot+4E34 USSfile+08E378 4e75                     rts

@@ -795,3 +795,10 @@ Explosionstimer vor neuen Kollisionen; unveränderte Transition/Sounds24→22 oh
 LEVEL-CLEAR-Text/Bestätigung. Bonus alle drei tatsächlichen Siege, maximal8 Leben,
 getrennte reservierte P1/P2-Zähler; +/− erhalten Fortschritt ohne Bonus, F1/R setzen
 diesen zurück. [Technik/Abnahme](stage9a_auto_level_and_bonus_lives.md). Kein Stable/Merge.
+
+## Stage9b1 – Issue79, zur XEMU-Abnahme
+Separater Branch `stage9b1` auf Stage9a Stable (`9bbe02e`). Zyklische gepackte
+ATTACK-Deltas bis Port-Y≥200, kein senkrechter Ersatzflug. Einmalige Sound-/
+Schussplanung und bestehende RETURN-/Bonus-/Audiofunktionen erhalten. Keine
+Stable-Markierung oder Merge vor Benutzerfreigabe.
+[Technik und Testanleitung](stage9b1_cyclic_attack_curves.md).

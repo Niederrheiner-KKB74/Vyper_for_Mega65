@@ -1,0 +1,86 @@
+Stage9b1 host validation — 14.10.2026 UTC
+======================================
+Base: Stage9a Stable, main9bbe02ed9d284575c14c23954659a781d6889ee9.
+29 tests PASSED in a complete fresh cold-start run (723.150 seconds).
+No XEMU run performed. No Stable tag or merge.
+KickAssembler5.25 / OpenJDK21 / Python3.12 / py65==1.2.0.
+
+Build: PASS. PRG45057 bytes; full D81 819200 bytes; eight disk entries
+(PRG and seven SEQ assets), file types/contents/chains verified.
+Two independent builds: all70 release files byte-identical.
+All seven DATs and AUDIO_CORE.PRG byte-identical to Stage9a.
+All1728 existing src/assets/tools/releases files byte-identical to9bbe02e.
+D81 SHA256: 1c81c5d8c167b9c88549c2d7a89f051a72815655d55d19976d7679c3940139ce
+PRG SHA256: aeba693c805839b2c82f9cdd576cdfdf468da3f5dcb9ad0a276b59113f80c66c
+
+Reference trajectories:2194 actors/100levels; maximum300 points until portY>=200.
+Level4 point counts by formation slot:143..227; all22 slots checked against
+actual assembled motion/RETURN instructions. Point43(42,65), point44(44,67).
+The one-byte-level ban25/50/99/100 remains enabled in gameplay. Decoder-only
+host fixtures bypass the scheduler explicitly, without changing this ban.
+
+The model executes actual assembled routines with constrained45GS02/DMA/PCM
+emulation; it does not model every VIC-IV detail or real hardware timing.
+DMA latency4 modeled cycles/byte is an assumption, not a hardware measurement.
+User XEMU acceptance checklist: docs/stage9b1_cyclic_attack_curves.md.
+
+Commands:
+python tools/build_stage9b1.py --kickass /workspace/stage3b-inspection/KickAss.jar
+python tools/build_stage9b1.py --kickass /workspace/stage3b-inspection/KickAss.jar --output /tmp/stage9b1-repeat
+python tools/analyze_stage9b1_trajectories.py
+PYTHONPATH=tests:tools:/workspace/stage3b-inspection/test-deps python -m unittest test_stage9b1 -v
+
+Targeted five-test run (before complete regression):
+test_cyclic_Level4_all22_slots_exact_signed_points_and_bottom_RETURN (test_stage9b1.Integration.test_cyclic_Level4_all22_slots_exact_signed_points_and_bottom_RETURN) ... Level4 wrap trace: [(43, 42, 65, 0), (44, 44, 67, 1)]
+ok
+test_cyclic_other_levels_both_indices_and_preserved_special_ban (test_stage9b1.Integration.test_cyclic_other_levels_both_indices_and_preserved_special_ban) ... Cyclic (level,index,length,points to bottom): [(1, 0, 183, 190), (1, 1, 183, 190), (2, 0, 163, 193), (2, 2, 217, 255), (2, 1, 163, 193), (3, 0, 183, 199), (3, 1, 183, 199), (5, 0, 171, 213), (5, 1, 119, 160), (25, 0, 1, 200), (47, 0, 62, 127), (47, 1, 38, 123), (47, 2, 38, 123), (47, 3, 62, 121), (50, 0, 1, 200), (56, 0, 157, 281), (56, 1, 157, 281), (56, 2, 27, 40), (56, 3, 27, 41), (99, 0, 1, 26), (99, 1, 1, 29), (99, 2, 1, 32), (99, 3, 1, 25), (100, 0, 1, 28)]
+ok
+test_wrap_never_replans_audio_or_consumed_shot_events_even_full_pool (test_stage9b1.Integration.test_wrap_never_replans_audio_or_consumed_shot_events_even_full_pool) ... ok
+test_destroyed_actors_cannot_resume_on_either_side_of_wrap (test_stage9b1.Integration.test_destroyed_actors_cannot_resume_on_either_side_of_wrap) ... ok
+test_curve_bounds_reject_invalid_cursor_without_reading_or_moving (test_stage9b1.Integration.test_curve_bounds_reject_invalid_cursor_without_reading_or_moving) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 190.286s
+
+OK
+
+Complete regression run:
+test_F1_level100_navigation_GAMEOVER_and_R_preserve_rules (test_stage9b1.Integration.test_F1_level100_navigation_GAMEOVER_and_R_preserve_rules) ... ok
+test_ROM_trampoline_never_unmasks_IRQ_in_bootstrap_mapping (test_stage9b1.Integration.test_ROM_trampoline_never_unmasks_IRQ_in_bootstrap_mapping) ... ok
+test_all100_original_attack_records_terminate_and_unchanged_components (test_stage9b1.Integration.test_all100_original_attack_records_terminate_and_unchanged_components) ... All100 original records: 2194 actors; maximum cyclic points to port bottom: 300
+ok
+test_all_20_samples_chip_banks_exact_end_and_restart (test_stage9b1.Integration.test_all_20_samples_chip_banks_exact_end_and_restart) ... ok
+test_all_38_four_field_original_event_mappings (test_stage9b1.Integration.test_all_38_four_field_original_event_mappings) ... ok
+test_automatic_completion_waits_all_states_and_last_explosion (test_stage9b1.Integration.test_automatic_completion_waits_all_states_and_last_explosion) ... ok
+test_automatic_sound_transition_and_X_in_every_phase (test_stage9b1.Integration.test_automatic_sound_transition_and_X_in_every_phase) ... ok
+test_bad_audio_pointer_stops_owned_voices_without_exiting_game (test_stage9b1.Integration.test_bad_audio_pointer_stops_owned_voices_without_exiting_game) ... ok
+test_banked_gate_preserves_AXYZ_B_flags_and_native_SYS_mapping (test_stage9b1.Integration.test_banked_gate_preserves_AXYZ_B_flags_and_native_SYS_mapping) ... ok
+test_bonus_3_6_9_start_levels_wrap_cap_and_test_navigation (test_stage9b1.Integration.test_bonus_3_6_9_start_levels_wrap_cap_and_test_navigation) ... ok
+test_curve_bounds_reject_invalid_cursor_without_reading_or_moving (test_stage9b1.Integration.test_curve_bounds_reject_invalid_cursor_without_reading_or_moving) ... ok
+test_cyclic_Level4_all22_slots_exact_signed_points_and_bottom_RETURN (test_stage9b1.Integration.test_cyclic_Level4_all22_slots_exact_signed_points_and_bottom_RETURN) ... Level4 wrap trace: [(43, 42, 65, 0), (44, 44, 67, 1)]
+ok
+test_cyclic_other_levels_both_indices_and_preserved_special_ban (test_stage9b1.Integration.test_cyclic_other_levels_both_indices_and_preserved_special_ban) ... Cyclic (level,index,length,points to bottom): [(1, 0, 183, 190), (1, 1, 183, 190), (2, 0, 163, 193), (2, 2, 217, 255), (2, 1, 163, 193), (3, 0, 183, 199), (3, 1, 183, 199), (5, 0, 171, 213), (5, 1, 119, 160), (25, 0, 1, 200), (47, 0, 62, 127), (47, 1, 38, 123), (47, 2, 38, 123), (47, 3, 62, 121), (50, 0, 1, 200), (56, 0, 157, 281), (56, 1, 157, 281), (56, 2, 27, 40), (56, 3, 27, 41), (99, 0, 1, 26), (99, 1, 1, 29), (99, 2, 1, 32), (99, 3, 1, 25), (100, 0, 1, 28)]
+ok
+test_destroyed_actors_cannot_resume_on_either_side_of_wrap (test_stage9b1.Integration.test_destroyed_actors_cannot_resume_on_either_side_of_wrap) ... ok
+test_exit_restore_and_second_RUN_with_audio (test_stage9b1.Integration.test_exit_restore_and_second_RUN_with_audio) ... ok
+test_full_animated_transition_24_to22_and_next_level_no_underrun (test_stage9b1.Integration.test_full_animated_transition_24_to22_and_next_level_no_underrun) ... ok
+test_full_title_SEVEN_SEQ_loads_menu_and_first_game (test_stage9b1.Integration.test_full_title_SEVEN_SEQ_loads_menu_and_first_game) ... ok
+test_level_initialization_1_3_29_54_100_preserves_sound_archive (test_stage9b1.Integration.test_level_initialization_1_3_29_54_100_preserves_sound_archive) ... ok
+test_missing_short_invalid_VYSO_clean_BASIC_failure (test_stage9b1.Integration.test_missing_short_invalid_VYSO_clean_BASIC_failure) ... ok
+test_native_projectile_player_collision_and_event_regressions (test_stage9b1.Integration.test_native_projectile_player_collision_and_event_regressions) ... ok
+test_no_award_during_player_loss_and_game_over (test_stage9b1.Integration.test_no_award_during_player_loss_and_game_over) ... ok
+test_packet_integrity_original_assets_and_complete_D81 (test_stage9b1.Integration.test_packet_integrity_original_assets_and_complete_D81) ... ok
+test_panning_per_preserved_and_no_gameplay_RNG_consumed (test_stage9b1.Integration.test_panning_per_preserved_and_no_gameplay_RNG_consumed) ... ok
+test_real_game_transition_samples_under_simultaneous_long_voice_load (test_stage9b1.Integration.test_real_game_transition_samples_under_simultaneous_long_voice_load) ... ok
+test_three_simultaneous_attack_cursors_are_independent_and_cap_preserved (test_stage9b1.Integration.test_three_simultaneous_attack_cursors_are_independent_and_cap_preserved) ... ok
+test_transition_24_then22_busy_freezes_but_streaming_continues (test_stage9b1.Integration.test_transition_24_then22_busy_freezes_but_streaming_continues) ... ok
+test_two_sources_pending_busy_preemption_and_projectile_pan_pointer (test_stage9b1.Integration.test_two_sources_pending_busy_preemption_and_projectile_pan_pointer) ... ok
+test_unowned_audio_failure_still_waits_for50Hz_frame (test_stage9b1.Integration.test_unowned_audio_failure_still_waits_for50Hz_frame) ... ok
+test_wrap_never_replans_audio_or_consumed_shot_events_even_full_pool (test_stage9b1.Integration.test_wrap_never_replans_audio_or_consumed_shot_events_even_full_pool) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 723.150s
+
+OK
+Transition170frames max modeled6502 cycles: 1941108 Astarts: [(19, 213, 0), (18, 7, 8044)] underruns: 0
+Stress130frames max modeled6502 CPU cycles: 802049 DMAjobs/frame: 322 underruns: 0

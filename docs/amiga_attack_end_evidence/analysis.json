@@ -1,0 +1,1688 @@
+{
+  "issue": 77,
+  "analysis_only": true,
+  "stable_base": "9bbe02ed9d284575c14c23954659a781d6889ee9",
+  "source_sha256": {
+    "Vyper_Memory_Dump.dat": "d74aea88fb4232e36caab80e51abc51f73d470a5b55a54f5cb010f1d910ddf8c",
+    "Vyper_Startscreen.uss": "d836cbf88f0ac35b6ed3776df2add39f699113c1aeb9d02cdfe4651c82793916",
+    "VYPER.ADF": "b28cab911431aaf3e48fd3e9979159de7154f98538eeba191f52ac47ef9665e5"
+  },
+  "VYLV_sha256": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283",
+  "Stage9a_attack_sha256": "3956b33a40cfdd949594ef1636a4d94e8022f0b03db72b6df7463fce601ba7a9",
+  "files": {
+    "Shot": {
+      "bytes": 81432,
+      "sha256": "d640f751f867ddea9a864ace56032a281d9c0199dd835e40b305a826aa664b58"
+    },
+    "Level": {
+      "bytes": 11400,
+      "sha256": "6349b34fc36469cb3072a0735b881002b47b37ff3af4456ea8c55403f553647f"
+    },
+    "Attack": {
+      "bytes": 18223,
+      "sha256": "9de20a5255395244a78d174d55b4e58a700ec6d77428402313f56702329caadf"
+    },
+    "Forme": {
+      "bytes": 8776,
+      "sha256": "dec57c4ee4a90996642ccdd2249fbdff6fb653642959b3aaae613723a1654c00"
+    },
+    "Debut": {
+      "bytes": 46422,
+      "sha256": "72ecb2caecd2c8a6785e0fc5bd779f6338ff9e0d06b211049c0b94fd88ec5bda"
+    }
+  },
+  "code_sources": {
+    "USS": {
+      "base": 12617568,
+      "hunk_bases": {
+        "0": 12617568,
+        "1": 98624
+      },
+      "whole_CODE_difference_bytes": 1033
+    },
+    "dump": {
+      "base": 138016,
+      "hunk_bases": {
+        "0": 138016,
+        "1": 175952
+      },
+      "whole_CODE_difference_bytes": 1035
+    }
+  },
+  "verified_spans": [
+    {
+      "name": "attack_buffer_allocation",
+      "USS_start": 12624280,
+      "USS_end_exclusive": 12624326,
+      "CODE_start": 6712,
+      "both_runtime_copies_match_relocated_ADF": true
+    },
+    {
+      "name": "attack_file_offsets_to_pointers",
+      "USS_start": 12634946,
+      "USS_end_exclusive": 12635246,
+      "CODE_start": 17378,
+      "both_runtime_copies_match_relocated_ADF": true
+    },
+    {
+      "name": "attack_buffer_free",
+      "USS_start": 12633292,
+      "USS_end_exclusive": 12633334,
+      "CODE_start": 15724,
+      "both_runtime_copies_match_relocated_ADF": true
+    },
+    {
+      "name": "level_pointer",
+      "USS_start": 12624618,
+      "USS_end_exclusive": 12624640,
+      "CODE_start": 7050,
+      "both_runtime_copies_match_relocated_ADF": true
+    },
+    {
+      "name": "actor_formation_y_and_types",
+      "USS_start": 12627154,
+      "USS_end_exclusive": 12627250,
+      "CODE_start": 9586,
+      "both_runtime_copies_match_relocated_ADF": true
+    },
+    {
+      "name": "attack_expansion",
+      "USS_start": 12627878,
+      "USS_end_exclusive": 12628404,
+      "CODE_start": 10310,
+      "both_runtime_copies_match_relocated_ADF": true
+    },
+    {
+      "name": "nibble_decoder",
+      "USS_start": 12633020,
+      "USS_end_exclusive": 12633102,
+      "CODE_start": 15452,
+      "both_runtime_copies_match_relocated_ADF": true
+    },
+    {
+      "name": "attack_launch",
+      "USS_start": 12636532,
+      "USS_end_exclusive": 12636798,
+      "CODE_start": 18964,
+      "both_runtime_copies_match_relocated_ADF": true
+    },
+    {
+      "name": "animation_hit_entry_return_attack_death",
+      "USS_start": 12636840,
+      "USS_end_exclusive": 12637550,
+      "CODE_start": 19272,
+      "both_runtime_copies_match_relocated_ADF": true
+    }
+  ],
+  "level4_packed_hex": "2222221200000000000000a2a2a2000000000000003333333300000000000000a3b3b3b300000000000000",
+  "level4": [
+    {
+      "level": 4,
+      "slot": 0,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 40,
+      "original_y": 53,
+      "port_start_y": 27,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 185,
+      "full_passes_before_terminal": 4,
+      "terminal_raw_x": 11,
+      "terminal_raw_y": 217,
+      "last_nonnegative_runtime_y": 215,
+      "runtime_exit_update": 185,
+      "port_after_first_x": 42,
+      "port_after_first_y": 65,
+      "port_return_update": 112
+    },
+    {
+      "level": 4,
+      "slot": 1,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 40,
+      "original_y": 98,
+      "port_start_y": 72,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 131,
+      "full_passes_before_terminal": 3,
+      "terminal_raw_x": 10,
+      "terminal_raw_y": 216,
+      "last_nonnegative_runtime_y": 214,
+      "runtime_exit_update": 131,
+      "port_after_first_x": 42,
+      "port_after_first_y": 110,
+      "port_return_update": 89
+    },
+    {
+      "level": 4,
+      "slot": 2,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 58,
+      "original_y": 44,
+      "port_start_y": 18,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 195,
+      "full_passes_before_terminal": 4,
+      "terminal_raw_x": 15,
+      "terminal_raw_y": 216,
+      "last_nonnegative_runtime_y": 213,
+      "runtime_exit_update": 195,
+      "port_after_first_x": 60,
+      "port_after_first_y": 56,
+      "port_return_update": 116
+    },
+    {
+      "level": 4,
+      "slot": 3,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 58,
+      "original_y": 89,
+      "port_start_y": 63,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 143,
+      "full_passes_before_terminal": 3,
+      "terminal_raw_x": 7,
+      "terminal_raw_y": 217,
+      "last_nonnegative_runtime_y": 215,
+      "runtime_exit_update": 143,
+      "port_after_first_x": 60,
+      "port_after_first_y": 101,
+      "port_return_update": 94
+    },
+    {
+      "level": 4,
+      "slot": 4,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 67,
+      "original_y": 26,
+      "port_start_y": 0,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 208,
+      "full_passes_before_terminal": 4,
+      "terminal_raw_x": 10,
+      "terminal_raw_y": 216,
+      "last_nonnegative_runtime_y": 213,
+      "runtime_exit_update": 208,
+      "port_after_first_x": 69,
+      "port_after_first_y": 38,
+      "port_return_update": 125
+    },
+    {
+      "level": 4,
+      "slot": 5,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 67,
+      "original_y": 71,
+      "port_start_y": 45,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 163,
+      "full_passes_before_terminal": 3,
+      "terminal_raw_x": 14,
+      "terminal_raw_y": 217,
+      "last_nonnegative_runtime_y": 214,
+      "runtime_exit_update": 163,
+      "port_after_first_x": 69,
+      "port_after_first_y": 83,
+      "port_return_update": 103
+    },
+    {
+      "level": 4,
+      "slot": 6,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 85,
+      "original_y": 26,
+      "port_start_y": 0,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 208,
+      "full_passes_before_terminal": 4,
+      "terminal_raw_x": 10,
+      "terminal_raw_y": 216,
+      "last_nonnegative_runtime_y": 213,
+      "runtime_exit_update": 208,
+      "port_after_first_x": 87,
+      "port_after_first_y": 38,
+      "port_return_update": 125
+    },
+    {
+      "level": 4,
+      "slot": 7,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 85,
+      "original_y": 71,
+      "port_start_y": 45,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 163,
+      "full_passes_before_terminal": 3,
+      "terminal_raw_x": 14,
+      "terminal_raw_y": 217,
+      "last_nonnegative_runtime_y": 214,
+      "runtime_exit_update": 163,
+      "port_after_first_x": 87,
+      "port_after_first_y": 83,
+      "port_return_update": 103
+    },
+    {
+      "level": 4,
+      "slot": 8,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 94,
+      "original_y": 44,
+      "port_start_y": 18,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 195,
+      "full_passes_before_terminal": 4,
+      "terminal_raw_x": 15,
+      "terminal_raw_y": 216,
+      "last_nonnegative_runtime_y": 213,
+      "runtime_exit_update": 195,
+      "port_after_first_x": 96,
+      "port_after_first_y": 56,
+      "port_return_update": 116
+    },
+    {
+      "level": 4,
+      "slot": 9,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 94,
+      "original_y": 89,
+      "port_start_y": 63,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 143,
+      "full_passes_before_terminal": 3,
+      "terminal_raw_x": 7,
+      "terminal_raw_y": 217,
+      "last_nonnegative_runtime_y": 215,
+      "runtime_exit_update": 143,
+      "port_after_first_x": 96,
+      "port_after_first_y": 101,
+      "port_return_update": 94
+    },
+    {
+      "level": 4,
+      "slot": 10,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 112,
+      "original_y": 53,
+      "port_start_y": 27,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 185,
+      "full_passes_before_terminal": 4,
+      "terminal_raw_x": 11,
+      "terminal_raw_y": 217,
+      "last_nonnegative_runtime_y": 215,
+      "runtime_exit_update": 185,
+      "port_after_first_x": 114,
+      "port_after_first_y": 65,
+      "port_return_update": 112
+    },
+    {
+      "level": 4,
+      "slot": 11,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 112,
+      "original_y": 98,
+      "port_start_y": 72,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 131,
+      "full_passes_before_terminal": 3,
+      "terminal_raw_x": 10,
+      "terminal_raw_y": 216,
+      "last_nonnegative_runtime_y": 214,
+      "runtime_exit_update": 131,
+      "port_after_first_x": 114,
+      "port_after_first_y": 110,
+      "port_return_update": 89
+    },
+    {
+      "level": 4,
+      "slot": 12,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 130,
+      "original_y": 44,
+      "port_start_y": 18,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 195,
+      "full_passes_before_terminal": 4,
+      "terminal_raw_x": 15,
+      "terminal_raw_y": 216,
+      "last_nonnegative_runtime_y": 213,
+      "runtime_exit_update": 195,
+      "port_after_first_x": 132,
+      "port_after_first_y": 56,
+      "port_return_update": 116
+    },
+    {
+      "level": 4,
+      "slot": 13,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 130,
+      "original_y": 89,
+      "port_start_y": 63,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 143,
+      "full_passes_before_terminal": 3,
+      "terminal_raw_x": 7,
+      "terminal_raw_y": 217,
+      "last_nonnegative_runtime_y": 215,
+      "runtime_exit_update": 143,
+      "port_after_first_x": 132,
+      "port_after_first_y": 101,
+      "port_return_update": 94
+    },
+    {
+      "level": 4,
+      "slot": 14,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 139,
+      "original_y": 26,
+      "port_start_y": 0,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 208,
+      "full_passes_before_terminal": 4,
+      "terminal_raw_x": 10,
+      "terminal_raw_y": 216,
+      "last_nonnegative_runtime_y": 213,
+      "runtime_exit_update": 208,
+      "port_after_first_x": 141,
+      "port_after_first_y": 38,
+      "port_return_update": 125
+    },
+    {
+      "level": 4,
+      "slot": 15,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 139,
+      "original_y": 71,
+      "port_start_y": 45,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 163,
+      "full_passes_before_terminal": 3,
+      "terminal_raw_x": 14,
+      "terminal_raw_y": 217,
+      "last_nonnegative_runtime_y": 214,
+      "runtime_exit_update": 163,
+      "port_after_first_x": 141,
+      "port_after_first_y": 83,
+      "port_return_update": 103
+    },
+    {
+      "level": 4,
+      "slot": 16,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 157,
+      "original_y": 26,
+      "port_start_y": 0,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 208,
+      "full_passes_before_terminal": 4,
+      "terminal_raw_x": 10,
+      "terminal_raw_y": 216,
+      "last_nonnegative_runtime_y": 213,
+      "runtime_exit_update": 208,
+      "port_after_first_x": 159,
+      "port_after_first_y": 38,
+      "port_return_update": 125
+    },
+    {
+      "level": 4,
+      "slot": 17,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 157,
+      "original_y": 71,
+      "port_start_y": 45,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 163,
+      "full_passes_before_terminal": 3,
+      "terminal_raw_x": 14,
+      "terminal_raw_y": 217,
+      "last_nonnegative_runtime_y": 214,
+      "runtime_exit_update": 163,
+      "port_after_first_x": 159,
+      "port_after_first_y": 83,
+      "port_return_update": 103
+    },
+    {
+      "level": 4,
+      "slot": 18,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 166,
+      "original_y": 44,
+      "port_start_y": 18,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 195,
+      "full_passes_before_terminal": 4,
+      "terminal_raw_x": 15,
+      "terminal_raw_y": 216,
+      "last_nonnegative_runtime_y": 213,
+      "runtime_exit_update": 195,
+      "port_after_first_x": 168,
+      "port_after_first_y": 56,
+      "port_return_update": 116
+    },
+    {
+      "level": 4,
+      "slot": 19,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 166,
+      "original_y": 89,
+      "port_start_y": 63,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 143,
+      "full_passes_before_terminal": 3,
+      "terminal_raw_x": 7,
+      "terminal_raw_y": 217,
+      "last_nonnegative_runtime_y": 215,
+      "runtime_exit_update": 143,
+      "port_after_first_x": 168,
+      "port_after_first_y": 101,
+      "port_return_update": 94
+    },
+    {
+      "level": 4,
+      "slot": 20,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 184,
+      "original_y": 53,
+      "port_start_y": 27,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 185,
+      "full_passes_before_terminal": 4,
+      "terminal_raw_x": 11,
+      "terminal_raw_y": 217,
+      "last_nonnegative_runtime_y": 215,
+      "runtime_exit_update": 185,
+      "port_after_first_x": 186,
+      "port_after_first_y": 65,
+      "port_return_update": 112
+    },
+    {
+      "level": 4,
+      "slot": 21,
+      "curve": 0,
+      "Attack_file_offset": 1275,
+      "packed_bytes": 43,
+      "formation_x": 184,
+      "original_y": 98,
+      "port_start_y": 72,
+      "net_dx": 2,
+      "net_dy": 38,
+      "original_generated_points": 131,
+      "full_passes_before_terminal": 3,
+      "terminal_raw_x": 10,
+      "terminal_raw_y": 216,
+      "last_nonnegative_runtime_y": 214,
+      "runtime_exit_update": 131,
+      "port_after_first_x": 186,
+      "port_after_first_y": 110,
+      "port_return_update": 89
+    }
+  ],
+  "all_100_levels": [
+    {
+      "level": 1,
+      "curve_lengths": [
+        183,
+        183
+      ],
+      "actors": 22,
+      "min_points": 158,
+      "max_points": 195,
+      "actors_extending_past_first_pass": 8
+    },
+    {
+      "level": 2,
+      "curve_lengths": [
+        163,
+        163,
+        217
+      ],
+      "actors": 22,
+      "min_points": 171,
+      "max_points": 251,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 3,
+      "curve_lengths": [
+        183,
+        183
+      ],
+      "actors": 20,
+      "min_points": 177,
+      "max_points": 196,
+      "actors_extending_past_first_pass": 10
+    },
+    {
+      "level": 4,
+      "curve_lengths": [
+        43
+      ],
+      "actors": 22,
+      "min_points": 131,
+      "max_points": 208,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 5,
+      "curve_lengths": [
+        171,
+        119
+      ],
+      "actors": 22,
+      "min_points": 158,
+      "max_points": 298,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 6,
+      "curve_lengths": [
+        87,
+        87
+      ],
+      "actors": 22,
+      "min_points": 87,
+      "max_points": 137,
+      "actors_extending_past_first_pass": 18
+    },
+    {
+      "level": 7,
+      "curve_lengths": [
+        44
+      ],
+      "actors": 22,
+      "min_points": 85,
+      "max_points": 129,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 8,
+      "curve_lengths": [
+        49
+      ],
+      "actors": 22,
+      "min_points": 106,
+      "max_points": 159,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 9,
+      "curve_lengths": [
+        144,
+        144
+      ],
+      "actors": 22,
+      "min_points": 45,
+      "max_points": 144,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 10,
+      "curve_lengths": [
+        99
+      ],
+      "actors": 20,
+      "min_points": 83,
+      "max_points": 107,
+      "actors_extending_past_first_pass": 4
+    },
+    {
+      "level": 11,
+      "curve_lengths": [
+        23,
+        23
+      ],
+      "actors": 22,
+      "min_points": 51,
+      "max_points": 80,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 12,
+      "curve_lengths": [
+        143,
+        183
+      ],
+      "actors": 22,
+      "min_points": 158,
+      "max_points": 195,
+      "actors_extending_past_first_pass": 17
+    },
+    {
+      "level": 13,
+      "curve_lengths": [
+        44
+      ],
+      "actors": 22,
+      "min_points": 83,
+      "max_points": 129,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 14,
+      "curve_lengths": [
+        61,
+        61
+      ],
+      "actors": 22,
+      "min_points": 65,
+      "max_points": 87,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 15,
+      "curve_lengths": [
+        214,
+        214
+      ],
+      "actors": 22,
+      "min_points": 156,
+      "max_points": 193,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 16,
+      "curve_lengths": [
+        61,
+        61
+      ],
+      "actors": 22,
+      "min_points": 55,
+      "max_points": 82,
+      "actors_extending_past_first_pass": 17
+    },
+    {
+      "level": 17,
+      "curve_lengths": [
+        57
+      ],
+      "actors": 22,
+      "min_points": 132,
+      "max_points": 213,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 18,
+      "curve_lengths": [
+        173,
+        173
+      ],
+      "actors": 22,
+      "min_points": 118,
+      "max_points": 211,
+      "actors_extending_past_first_pass": 13
+    },
+    {
+      "level": 19,
+      "curve_lengths": [
+        43
+      ],
+      "actors": 22,
+      "min_points": 121,
+      "max_points": 208,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 20,
+      "curve_lengths": [
+        99
+      ],
+      "actors": 22,
+      "min_points": 74,
+      "max_points": 96,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 21,
+      "curve_lengths": [
+        173,
+        173
+      ],
+      "actors": 22,
+      "min_points": 162,
+      "max_points": 209,
+      "actors_extending_past_first_pass": 12
+    },
+    {
+      "level": 22,
+      "curve_lengths": [
+        141,
+        141
+      ],
+      "actors": 22,
+      "min_points": 113,
+      "max_points": 131,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 23,
+      "curve_lengths": [
+        171,
+        119
+      ],
+      "actors": 22,
+      "min_points": 160,
+      "max_points": 264,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 24,
+      "curve_lengths": [
+        116,
+        116,
+        80
+      ],
+      "actors": 22,
+      "min_points": 75,
+      "max_points": 147,
+      "actors_extending_past_first_pass": 21
+    },
+    {
+      "level": 25,
+      "curve_lengths": [
+        1,
+        1
+      ],
+      "actors": 22,
+      "min_points": 168,
+      "max_points": 189,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 26,
+      "curve_lengths": [
+        176
+      ],
+      "actors": 22,
+      "min_points": 36,
+      "max_points": 151,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 27,
+      "curve_lengths": [
+        43
+      ],
+      "actors": 22,
+      "min_points": 132,
+      "max_points": 216,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 28,
+      "curve_lengths": [
+        19,
+        19
+      ],
+      "actors": 22,
+      "min_points": 63,
+      "max_points": 118,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 29,
+      "curve_lengths": [
+        44
+      ],
+      "actors": 22,
+      "min_points": 83,
+      "max_points": 127,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 30,
+      "curve_lengths": [
+        24,
+        24
+      ],
+      "actors": 22,
+      "min_points": 60,
+      "max_points": 87,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 31,
+      "curve_lengths": [
+        214,
+        214
+      ],
+      "actors": 22,
+      "min_points": 166,
+      "max_points": 187,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 32,
+      "curve_lengths": [
+        54
+      ],
+      "actors": 22,
+      "min_points": 88,
+      "max_points": 216,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 33,
+      "curve_lengths": [
+        60,
+        60
+      ],
+      "actors": 22,
+      "min_points": 116,
+      "max_points": 165,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 34,
+      "curve_lengths": [
+        99
+      ],
+      "actors": 22,
+      "min_points": 77,
+      "max_points": 105,
+      "actors_extending_past_first_pass": 5
+    },
+    {
+      "level": 35,
+      "curve_lengths": [
+        143,
+        183
+      ],
+      "actors": 22,
+      "min_points": 139,
+      "max_points": 194,
+      "actors_extending_past_first_pass": 13
+    },
+    {
+      "level": 36,
+      "curve_lengths": [
+        59,
+        59
+      ],
+      "actors": 22,
+      "min_points": 66,
+      "max_points": 135,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 37,
+      "curve_lengths": [
+        74,
+        74
+      ],
+      "actors": 22,
+      "min_points": 78,
+      "max_points": 107,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 38,
+      "curve_lengths": [
+        152,
+        153
+      ],
+      "actors": 22,
+      "min_points": 149,
+      "max_points": 189,
+      "actors_extending_past_first_pass": 15
+    },
+    {
+      "level": 39,
+      "curve_lengths": [
+        116,
+        116,
+        80
+      ],
+      "actors": 22,
+      "min_points": 86,
+      "max_points": 147,
+      "actors_extending_past_first_pass": 20
+    },
+    {
+      "level": 40,
+      "curve_lengths": [
+        95,
+        95
+      ],
+      "actors": 22,
+      "min_points": 74,
+      "max_points": 87,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 41,
+      "curve_lengths": [
+        128,
+        128
+      ],
+      "actors": 22,
+      "min_points": 107,
+      "max_points": 130,
+      "actors_extending_past_first_pass": 6
+    },
+    {
+      "level": 42,
+      "curve_lengths": [
+        28,
+        37
+      ],
+      "actors": 22,
+      "min_points": 71,
+      "max_points": 138,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 43,
+      "curve_lengths": [
+        136
+      ],
+      "actors": 22,
+      "min_points": 79,
+      "max_points": 96,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 44,
+      "curve_lengths": [
+        48
+      ],
+      "actors": 22,
+      "min_points": 39,
+      "max_points": 48,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 45,
+      "curve_lengths": [
+        205,
+        161,
+        72
+      ],
+      "actors": 20,
+      "min_points": 52,
+      "max_points": 194,
+      "actors_extending_past_first_pass": 4
+    },
+    {
+      "level": 46,
+      "curve_lengths": [
+        20,
+        20
+      ],
+      "actors": 22,
+      "min_points": 11,
+      "max_points": 131,
+      "actors_extending_past_first_pass": 20
+    },
+    {
+      "level": 47,
+      "curve_lengths": [
+        62,
+        38,
+        38,
+        62
+      ],
+      "actors": 22,
+      "min_points": 90,
+      "max_points": 122,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 48,
+      "curve_lengths": [
+        19,
+        19
+      ],
+      "actors": 22,
+      "min_points": 77,
+      "max_points": 118,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 49,
+      "curve_lengths": [
+        135,
+        134
+      ],
+      "actors": 22,
+      "min_points": 134,
+      "max_points": 260,
+      "actors_extending_past_first_pass": 20
+    },
+    {
+      "level": 50,
+      "curve_lengths": [
+        1,
+        1
+      ],
+      "actors": 22,
+      "min_points": 168,
+      "max_points": 189,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 51,
+      "curve_lengths": [
+        41,
+        41
+      ],
+      "actors": 22,
+      "min_points": 118,
+      "max_points": 159,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 52,
+      "curve_lengths": [
+        126,
+        126,
+        84,
+        84
+      ],
+      "actors": 22,
+      "min_points": 62,
+      "max_points": 176,
+      "actors_extending_past_first_pass": 14
+    },
+    {
+      "level": 53,
+      "curve_lengths": [
+        99
+      ],
+      "actors": 22,
+      "min_points": 69,
+      "max_points": 105,
+      "actors_extending_past_first_pass": 4
+    },
+    {
+      "level": 54,
+      "curve_lengths": [
+        135,
+        134
+      ],
+      "actors": 22,
+      "min_points": 159,
+      "max_points": 258,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 55,
+      "curve_lengths": [
+        59,
+        59
+      ],
+      "actors": 22,
+      "min_points": 96,
+      "max_points": 125,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 56,
+      "curve_lengths": [
+        157,
+        157,
+        27,
+        27
+      ],
+      "actors": 22,
+      "min_points": 30,
+      "max_points": 280,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 57,
+      "curve_lengths": [
+        144,
+        144
+      ],
+      "actors": 22,
+      "min_points": 36,
+      "max_points": 147,
+      "actors_extending_past_first_pass": 5
+    },
+    {
+      "level": 58,
+      "curve_lengths": [
+        54,
+        53,
+        72
+      ],
+      "actors": 22,
+      "min_points": 72,
+      "max_points": 90,
+      "actors_extending_past_first_pass": 15
+    },
+    {
+      "level": 59,
+      "curve_lengths": [
+        135,
+        134
+      ],
+      "actors": 22,
+      "min_points": 133,
+      "max_points": 256,
+      "actors_extending_past_first_pass": 21
+    },
+    {
+      "level": 60,
+      "curve_lengths": [
+        19,
+        19
+      ],
+      "actors": 22,
+      "min_points": 48,
+      "max_points": 118,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 61,
+      "curve_lengths": [
+        79,
+        79
+      ],
+      "actors": 22,
+      "min_points": 59,
+      "max_points": 102,
+      "actors_extending_past_first_pass": 6
+    },
+    {
+      "level": 62,
+      "curve_lengths": [
+        28,
+        37
+      ],
+      "actors": 22,
+      "min_points": 68,
+      "max_points": 129,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 63,
+      "curve_lengths": [
+        19,
+        19
+      ],
+      "actors": 22,
+      "min_points": 67,
+      "max_points": 118,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 64,
+      "curve_lengths": [
+        82,
+        82
+      ],
+      "actors": 22,
+      "min_points": 69,
+      "max_points": 87,
+      "actors_extending_past_first_pass": 4
+    },
+    {
+      "level": 65,
+      "curve_lengths": [
+        143,
+        183
+      ],
+      "actors": 22,
+      "min_points": 139,
+      "max_points": 194,
+      "actors_extending_past_first_pass": 14
+    },
+    {
+      "level": 66,
+      "curve_lengths": [
+        48,
+        109,
+        109
+      ],
+      "actors": 22,
+      "min_points": 40,
+      "max_points": 100,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 67,
+      "curve_lengths": [
+        61,
+        61
+      ],
+      "actors": 22,
+      "min_points": 56,
+      "max_points": 87,
+      "actors_extending_past_first_pass": 19
+    },
+    {
+      "level": 68,
+      "curve_lengths": [
+        104,
+        104
+      ],
+      "actors": 22,
+      "min_points": 59,
+      "max_points": 113,
+      "actors_extending_past_first_pass": 8
+    },
+    {
+      "level": 69,
+      "curve_lengths": [
+        48
+      ],
+      "actors": 22,
+      "min_points": 38,
+      "max_points": 47,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 70,
+      "curve_lengths": [
+        44
+      ],
+      "actors": 22,
+      "min_points": 83,
+      "max_points": 129,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 71,
+      "curve_lengths": [
+        79,
+        79
+      ],
+      "actors": 22,
+      "min_points": 67,
+      "max_points": 104,
+      "actors_extending_past_first_pass": 12
+    },
+    {
+      "level": 72,
+      "curve_lengths": [
+        99
+      ],
+      "actors": 22,
+      "min_points": 67,
+      "max_points": 97,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 73,
+      "curve_lengths": [
+        127,
+        127
+      ],
+      "actors": 22,
+      "min_points": 125,
+      "max_points": 222,
+      "actors_extending_past_first_pass": 20
+    },
+    {
+      "level": 74,
+      "curve_lengths": [
+        95,
+        95
+      ],
+      "actors": 22,
+      "min_points": 67,
+      "max_points": 89,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 75,
+      "curve_lengths": [
+        105,
+        100
+      ],
+      "actors": 22,
+      "min_points": 95,
+      "max_points": 104,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 76,
+      "curve_lengths": [
+        116,
+        116,
+        80
+      ],
+      "actors": 22,
+      "min_points": 86,
+      "max_points": 139,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 77,
+      "curve_lengths": [
+        99
+      ],
+      "actors": 22,
+      "min_points": 63,
+      "max_points": 105,
+      "actors_extending_past_first_pass": 3
+    },
+    {
+      "level": 78,
+      "curve_lengths": [
+        116,
+        116,
+        80
+      ],
+      "actors": 22,
+      "min_points": 97,
+      "max_points": 148,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 79,
+      "curve_lengths": [
+        134,
+        134
+      ],
+      "actors": 22,
+      "min_points": 62,
+      "max_points": 117,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 80,
+      "curve_lengths": [
+        44
+      ],
+      "actors": 22,
+      "min_points": 84,
+      "max_points": 131,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 81,
+      "curve_lengths": [
+        134,
+        134
+      ],
+      "actors": 22,
+      "min_points": 82,
+      "max_points": 111,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 82,
+      "curve_lengths": [
+        139,
+        139
+      ],
+      "actors": 22,
+      "min_points": 60,
+      "max_points": 132,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 83,
+      "curve_lengths": [
+        143,
+        183
+      ],
+      "actors": 22,
+      "min_points": 150,
+      "max_points": 195,
+      "actors_extending_past_first_pass": 16
+    },
+    {
+      "level": 84,
+      "curve_lengths": [
+        116,
+        116,
+        80
+      ],
+      "actors": 22,
+      "min_points": 103,
+      "max_points": 139,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 85,
+      "curve_lengths": [
+        95,
+        95
+      ],
+      "actors": 22,
+      "min_points": 70,
+      "max_points": 88,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 86,
+      "curve_lengths": [
+        60,
+        60
+      ],
+      "actors": 22,
+      "min_points": 99,
+      "max_points": 168,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 87,
+      "curve_lengths": [
+        41,
+        41,
+        126
+      ],
+      "actors": 22,
+      "min_points": 121,
+      "max_points": 215,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 88,
+      "curve_lengths": [
+        19,
+        19
+      ],
+      "actors": 22,
+      "min_points": 77,
+      "max_points": 118,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 89,
+      "curve_lengths": [
+        59,
+        59
+      ],
+      "actors": 22,
+      "min_points": 70,
+      "max_points": 127,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 90,
+      "curve_lengths": [
+        87,
+        87
+      ],
+      "actors": 22,
+      "min_points": 92,
+      "max_points": 134,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 91,
+      "curve_lengths": [
+        61,
+        61
+      ],
+      "actors": 22,
+      "min_points": 64,
+      "max_points": 84,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 92,
+      "curve_lengths": [
+        79,
+        79
+      ],
+      "actors": 22,
+      "min_points": 67,
+      "max_points": 104,
+      "actors_extending_past_first_pass": 10
+    },
+    {
+      "level": 93,
+      "curve_lengths": [
+        19,
+        19
+      ],
+      "actors": 22,
+      "min_points": 82,
+      "max_points": 118,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 94,
+      "curve_lengths": [
+        183,
+        183
+      ],
+      "actors": 22,
+      "min_points": 167,
+      "max_points": 194,
+      "actors_extending_past_first_pass": 9
+    },
+    {
+      "level": 95,
+      "curve_lengths": [
+        44
+      ],
+      "actors": 22,
+      "min_points": 85,
+      "max_points": 129,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 96,
+      "curve_lengths": [
+        134,
+        134
+      ],
+      "actors": 22,
+      "min_points": 61,
+      "max_points": 115,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 97,
+      "curve_lengths": [
+        126,
+        126,
+        84,
+        84
+      ],
+      "actors": 22,
+      "min_points": 62,
+      "max_points": 176,
+      "actors_extending_past_first_pass": 14
+    },
+    {
+      "level": 98,
+      "curve_lengths": [
+        192
+      ],
+      "actors": 22,
+      "min_points": 129,
+      "max_points": 185,
+      "actors_extending_past_first_pass": 0
+    },
+    {
+      "level": 99,
+      "curve_lengths": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "actors": 22,
+      "min_points": 22,
+      "max_points": 33,
+      "actors_extending_past_first_pass": 22
+    },
+    {
+      "level": 100,
+      "curve_lengths": [
+        1
+      ],
+      "actors": 22,
+      "min_points": 18,
+      "max_points": 28,
+      "actors_extending_past_first_pass": 22
+    }
+  ],
+  "premature_negative_Y_cases": [],
+  "max_points": 298,
+  "protected_existing_files": 1728,
+  "limitations": [
+    "Static disassembly and arithmetic simulation, not WinUAE execution or measured50Hz frames.",
+    "Original terminal216 and port200 are different coordinate conventions.",
+    "Supplied start-screen USS plus separate ChipRAM only; no newly recorded level4 active trace."
+  ]
+}
