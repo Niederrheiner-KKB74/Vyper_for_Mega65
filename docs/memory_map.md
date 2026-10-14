@@ -556,3 +556,27 @@ Alle fünf DATs und Spritegrafiken bleiben bytegleich zum getesteten Commit
 `a41e92ab8e4994a0a3288d60d63984d8593c8332`.
 Details: [Stage7b4](stage7b4_per_enemy_shot_limit.md), Release `memory-map.txt`.
 Keine Stable-Freigabe für Stage7b4.
+
+
+## Stage7b5a — Ereignisplaner und VYSH (Issue #63, Testbuild)
+
+Basis bleibt Stage7b4 `bd63682fa37df2853338b499f1210ec9dd2f56dc`.
+`VYSH.DAT` (1116 Bytes) belegt `$70000–$7045B`. Alle fünf bisherigen DATs
+und ihre Adressen bleiben bytegleich. Kein Zugriff auf ROM/DOS-Puffer.
+
+Die ungenutzten residenten Altgrafik-Kopien für Typ3–6 werden ausschließlich
+in der neuen Stage ersetzt; Original-VYGR und private Bank1-Frames bleiben
+unverändert. Type1/2 bis `$A57F` bleiben für Altinitialisierung/Orbit erhalten.
+`$A600–$A6FF`: aktueller11-Byte-Parameterrecord und aus Original-VYLV
+rekonstruierte Y-Zulässigkeitsbitmaps. `$A700–$A78E`: zwei WORD-Ereignisse
+je22 Actors, Pending-Masken und eigener LFSR/Scratch. `$A800–$AF04`:
+Ereigniscode, Loader-Validator und generierte Offset-/CRC-Tabellen.
+Sternencode ab `$B480` und sämtliche Bank1-RRB-Puffer bleiben unverändert.
+
+Normaler Fire-Dispatch/SEQ-Loader `$895C–$89E9`; Name/Header/ROMA-Gate
+`$9D30–$9D60`. Das Gate schaltet ROMA nur bei geschlossenen Kanälen und
+maskiertem IRQ für die CRC-Prüfung aus und restauriert D030/IRQ exakt.
+ENTRY-Hook passt bis `$5B74`, ATTACK-Hook bis `$9FED`; bestehende
+Segmentgrenzen werden vom Assembler geprüft. Kein Umbau des RRB-Screens.
+Details: [Stage7b5a](stage7b5a_original_fire_events.md),
+Release `memory-map.txt` und `STAGE7B5A.sym`. Keine Stable-Markierung.

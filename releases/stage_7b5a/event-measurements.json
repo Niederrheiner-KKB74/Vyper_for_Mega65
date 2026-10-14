@@ -1,0 +1,102 @@
+{
+  "stage": "7b5a",
+  "kind": "assembled CPU/DMA host model, not XEMU/Amiga timing",
+  "PRG_sha256": "bf7e6a75265f813348ffec07d8ffcd35d5ba213baf1e89dda60e21bcac5b7acc",
+  "scenario": "All original enemies survive; actual ENTRY, attack scheduler, curves, return, motion and six-shot expiry. No renderer, player shots/hits or HUD; one update per model frame. Shooter IDs fixed, target unchanged. Attack RNG keeps the normal per-tick step.",
+  "rows": [
+    {
+      "level": 1,
+      "frames": 1200,
+      "mode": 2,
+      "every_nth": 1,
+      "initial_ENTRY_events_nonzero": 44,
+      "ENTRY_due_events": 44,
+      "ATTACK_due_events": 24,
+      "spawn_attempts_valid_origin": 66,
+      "spawned_projectiles": 39,
+      "full_pool_losses": 27,
+      "origin_state_losses": 2,
+      "peak_enemy_projectiles": 6,
+      "attack_starts": 12,
+      "max_ATTACK": 3
+    },
+    {
+      "level": 3,
+      "frames": 1200,
+      "mode": 2,
+      "every_nth": 1,
+      "initial_ENTRY_events_nonzero": 40,
+      "ENTRY_due_events": 40,
+      "ATTACK_due_events": 24,
+      "spawn_attempts_valid_origin": 62,
+      "spawned_projectiles": 40,
+      "full_pool_losses": 22,
+      "origin_state_losses": 2,
+      "peak_enemy_projectiles": 6,
+      "attack_starts": 12,
+      "max_ATTACK": 3
+    },
+    {
+      "level": 29,
+      "frames": 1200,
+      "mode": 1,
+      "every_nth": 1,
+      "initial_ENTRY_events_nonzero": 22,
+      "ENTRY_due_events": 22,
+      "ATTACK_due_events": 16,
+      "spawn_attempts_valid_origin": 38,
+      "spawned_projectiles": 30,
+      "full_pool_losses": 8,
+      "origin_state_losses": 0,
+      "peak_enemy_projectiles": 6,
+      "attack_starts": 20,
+      "max_ATTACK": 3
+    },
+    {
+      "level": 54,
+      "frames": 1200,
+      "mode": 2,
+      "every_nth": 2,
+      "initial_ENTRY_events_nonzero": 22,
+      "ENTRY_due_events": 22,
+      "ATTACK_due_events": 23,
+      "spawn_attempts_valid_origin": 43,
+      "spawned_projectiles": 31,
+      "full_pool_losses": 12,
+      "origin_state_losses": 2,
+      "peak_enemy_projectiles": 6,
+      "attack_starts": 15,
+      "max_ATTACK": 3
+    }
+  ],
+  "high_Y_start_guards": [
+    {
+      "level": 46,
+      "actor_zero_based": 9,
+      "original_Y": 178,
+      "ATTACK_starts": true,
+      "shot_events": 0
+    },
+    {
+      "level": 46,
+      "actor_zero_based": 10,
+      "original_Y": 195,
+      "ATTACK_starts": true,
+      "shot_events": 0
+    },
+    {
+      "level": 46,
+      "actor_zero_based": 20,
+      "original_Y": 178,
+      "ATTACK_starts": true,
+      "shot_events": 0
+    },
+    {
+      "level": 46,
+      "actor_zero_based": 21,
+      "original_Y": 195,
+      "ATTACK_starts": true,
+      "shot_events": 0
+    }
+  ]
+}

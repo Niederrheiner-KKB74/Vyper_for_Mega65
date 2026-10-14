@@ -731,3 +731,20 @@ bleiben unverändert. Bestätigte3×7-Playergrafik mit roter Spitze oben erhalte
 Vollständiges Release `releases/stage_7b4/`; technische Prüfung und
 XEMU-Abnahmecheckliste: [Stage7b4](stage7b4_per_enemy_shot_limit.md).
 **Testbuild, nicht Stable; XEMU-Abnahme durch Benutzer ausstehend.**
+
+
+## Stage7b5a — Originale Schussereignisse (Issue #63)
+
+Separater Branch `stage7b5a`, unveränderte getestete Basis
+`bd63682fa37df2853338b499f1210ec9dd2f56dc` (Stage7b4).
+Die neun Originalanalyse-Dateien aus PR #62 wurden gezielt übernommen.
+ENTRY verwendet individuelle WORD-Countdowns und globale N-te-Auswahl,
+ATTACK einmalige Original-Y-Schwellen. Ereignisse verfallen bei vollem
+Sechserpool ohne Wiederholung; die zusätzliche Schützenquote entfällt.
+`VYSH.DAT` liefert die Originalparameter aller100 Level (1116 Bytes);
+Original-DY wird nur gespeichert. Projektilbewegung/-grafik, Angriffsplaner
+und alle fünf vorhandenen DATs bleiben erhalten. Original-Y und B2-Y
+werden ausdrücklich getrennt behandelt.
+Quellen/Build/PRG/D81 unter `releases/stage_7b5a/`;
+[technische Dokumentation](stage7b5a_original_fire_events.md).
+**Testbuild, nicht Stable. XEMU-Abnahme durch Benutzer ausstehend.**

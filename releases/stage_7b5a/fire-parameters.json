@@ -1,0 +1,1707 @@
+{
+  "format": "VYSH v1",
+  "bytes": 1116,
+  "sha256": "1ccbcca72031e286f6c7197dcf8e1c5d4c4e8cf212c6b4b28534a164520aedf5",
+  "header": "565953480164040b5c047c1d10000000",
+  "DY_applied": false,
+  "runtime_integrity": "pinned full sum16, exact header/fixed layout, CRC-16/CCITT-FALSE for each of100 records",
+  "runtime_bitmap": "Not stored in DAT. Reconstructed from loaded VYLV: bit t = original expanded Debut Y[t] <=148, before B2 projection; negative Y is eligible",
+  "levels": [
+    {
+      "level": 1,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        158,
+        165
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 53
+    },
+    {
+      "level": 2,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        0,
+        0
+      ],
+      "curve_lengths": [
+        166,
+        166
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 54
+    },
+    {
+      "level": 3,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        0
+      ],
+      "curve_lengths": [
+        232
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 41
+    },
+    {
+      "level": 4,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        274,
+        275,
+        285,
+        280
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 153
+    },
+    {
+      "level": 5,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        0
+      ],
+      "curve_lengths": [
+        243
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 43
+    },
+    {
+      "level": 6,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60
+      ],
+      "curve_lengths": [
+        186
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 36
+    },
+    {
+      "level": 7,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        233,
+        242
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 73
+    },
+    {
+      "level": 8,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        30
+      ],
+      "curve_lengths": [
+        142,
+        142
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 48
+    },
+    {
+      "level": 9,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        290,
+        290,
+        290,
+        290
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 160
+    },
+    {
+      "level": 10,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        313,
+        313,
+        313,
+        313
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 172
+    },
+    {
+      "level": 11,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        164,
+        167,
+        198,
+        197
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 104
+    },
+    {
+      "level": 12,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        1
+      ],
+      "curve_lengths": [
+        167
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 33
+    },
+    {
+      "level": 13,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        166,
+        166,
+        162,
+        162
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 96
+    },
+    {
+      "level": 14,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        191,
+        191,
+        191,
+        191
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 108
+    },
+    {
+      "level": 15,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        110,
+        112,
+        112,
+        110
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 68
+    },
+    {
+      "level": 16,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60
+      ],
+      "curve_lengths": [
+        195
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 37
+    },
+    {
+      "level": 17,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60
+      ],
+      "curve_lengths": [
+        177
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 35
+    },
+    {
+      "level": 18,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        0
+      ],
+      "curve_lengths": [
+        166
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 33
+    },
+    {
+      "level": 19,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        164,
+        328,
+        211,
+        375
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 148
+    },
+    {
+      "level": 20,
+      "DY_stored_only": 1,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        168,
+        144,
+        144,
+        168
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 90
+    },
+    {
+      "level": 21,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        20,
+        20
+      ],
+      "curve_lengths": [
+        224,
+        224
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 68
+    },
+    {
+      "level": 22,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        10,
+        10
+      ],
+      "curve_lengths": [
+        205,
+        216
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 65
+    },
+    {
+      "level": 23,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        0,
+        0
+      ],
+      "curve_lengths": [
+        248,
+        249
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 75
+    },
+    {
+      "level": 24,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        0,
+        0,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        82,
+        86,
+        142,
+        146
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 71
+    },
+    {
+      "level": 25,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        0
+      ],
+      "curve_lengths": [
+        1
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 13
+    },
+    {
+      "level": 26,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        20,
+        20,
+        30
+      ],
+      "curve_lengths": [
+        160,
+        160,
+        160
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 72
+    },
+    {
+      "level": 27,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        60
+      ],
+      "curve_lengths": [
+        251
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 44
+    },
+    {
+      "level": 28,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        30
+      ],
+      "curve_lengths": [
+        203
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 38
+    },
+    {
+      "level": 29,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        254,
+        249
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 76
+    },
+    {
+      "level": 30,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 4,
+      "lower_bounds": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        126,
+        123,
+        126,
+        128
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 76
+    },
+    {
+      "level": 31,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        60
+      ],
+      "curve_lengths": [
+        253
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 44
+    },
+    {
+      "level": 32,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 2,
+      "lower_bounds": [
+        0
+      ],
+      "curve_lengths": [
+        215
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 39
+    },
+    {
+      "level": 33,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        30
+      ],
+      "curve_lengths": [
+        141
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 30
+    },
+    {
+      "level": 34,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        205,
+        212
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 65
+    },
+    {
+      "level": 35,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        164,
+        168,
+        211,
+        215
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 108
+    },
+    {
+      "level": 36,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0
+      ],
+      "curve_lengths": [
+        198,
+        198
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 62
+    },
+    {
+      "level": 37,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        125,
+        127,
+        147
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 63
+    },
+    {
+      "level": 38,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        30
+      ],
+      "curve_lengths": [
+        253
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 44
+    },
+    {
+      "level": 39,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        0
+      ],
+      "curve_lengths": [
+        414
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 64
+    },
+    {
+      "level": 40,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        211,
+        241
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 70
+    },
+    {
+      "level": 41,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0
+      ],
+      "curve_lengths": [
+        195,
+        195
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 62
+    },
+    {
+      "level": 42,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        0,
+        0
+      ],
+      "curve_lengths": [
+        91,
+        115
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 39
+    },
+    {
+      "level": 43,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        60
+      ],
+      "curve_lengths": [
+        394
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 62
+    },
+    {
+      "level": 44,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0
+      ],
+      "curve_lengths": [
+        275,
+        275
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 82
+    },
+    {
+      "level": 45,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 2,
+      "lower_bounds": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        265,
+        266,
+        266,
+        266
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 148
+    },
+    {
+      "level": 46,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 3,
+      "lower_bounds": [
+        30,
+        30
+      ],
+      "curve_lengths": [
+        177,
+        188
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 59
+    },
+    {
+      "level": 47,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        123,
+        128,
+        157,
+        180
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 87
+    },
+    {
+      "level": 48,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        131,
+        113
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 44
+    },
+    {
+      "level": 49,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0
+      ],
+      "curve_lengths": [
+        292,
+        292
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 86
+    },
+    {
+      "level": 50,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "curve_lengths": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 16
+    },
+    {
+      "level": 51,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 4,
+      "lower_bounds": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        126,
+        113,
+        106,
+        98
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 70
+    },
+    {
+      "level": 52,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "curve_lengths": [
+        209,
+        209,
+        208,
+        208
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 118
+    },
+    {
+      "level": 53,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        166,
+        186,
+        202,
+        222
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 111
+    },
+    {
+      "level": 54,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 2,
+      "lower_bounds": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        170,
+        170,
+        189,
+        189
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 104
+    },
+    {
+      "level": 55,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        110,
+        112,
+        112,
+        110
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 68
+    },
+    {
+      "level": 56,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "curve_lengths": [
+        184,
+        144,
+        156,
+        156
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 93
+    },
+    {
+      "level": 57,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        167,
+        167
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 54
+    },
+    {
+      "level": 58,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        136,
+        136,
+        136,
+        136
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 80
+    },
+    {
+      "level": 59,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0
+      ],
+      "curve_lengths": [
+        292,
+        292
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 86
+    },
+    {
+      "level": 60,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        274,
+        338,
+        411,
+        469
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 201
+    },
+    {
+      "level": 61,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60
+      ],
+      "curve_lengths": [
+        253
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 44
+    },
+    {
+      "level": 62,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        0,
+        0
+      ],
+      "curve_lengths": [
+        91,
+        91
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 36
+    },
+    {
+      "level": 63,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        131,
+        136
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 46
+    },
+    {
+      "level": 64,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        169,
+        169
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 56
+    },
+    {
+      "level": 65,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        164,
+        276,
+        267,
+        379
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 150
+    },
+    {
+      "level": 66,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0
+      ],
+      "curve_lengths": [
+        148,
+        162
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 52
+    },
+    {
+      "level": 67,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        60
+      ],
+      "curve_lengths": [
+        262
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 45
+    },
+    {
+      "level": 68,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        60
+      ],
+      "curve_lengths": [
+        187,
+        187
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 60
+    },
+    {
+      "level": 69,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "curve_lengths": [
+        278,
+        278,
+        278,
+        278
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 152
+    },
+    {
+      "level": 70,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        168,
+        144,
+        144,
+        168
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 90
+    },
+    {
+      "level": 71,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        301,
+        297
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 88
+    },
+    {
+      "level": 72,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        254,
+        249
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 76
+    },
+    {
+      "level": 73,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0
+      ],
+      "curve_lengths": [
+        167,
+        167
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 54
+    },
+    {
+      "level": 74,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        20
+      ],
+      "curve_lengths": [
+        232
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 41
+    },
+    {
+      "level": 75,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        0
+      ],
+      "curve_lengths": [
+        1
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 13
+    },
+    {
+      "level": 76,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        20,
+        20
+      ],
+      "curve_lengths": [
+        425,
+        425
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 120
+    },
+    {
+      "level": 77,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        233,
+        242
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 73
+    },
+    {
+      "level": 78,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        287,
+        287
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 84
+    },
+    {
+      "level": 79,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "curve_lengths": [
+        59,
+        59,
+        58,
+        58
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 44
+    },
+    {
+      "level": 80,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        244,
+        244,
+        244,
+        244
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 136
+    },
+    {
+      "level": 81,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        126,
+        121,
+        99,
+        97
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 70
+    },
+    {
+      "level": 82,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        136,
+        136,
+        136,
+        136
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 80
+    },
+    {
+      "level": 83,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        1,
+        1
+      ],
+      "curve_lengths": [
+        167,
+        177
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 56
+    },
+    {
+      "level": 84,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        0,
+        0,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        82,
+        86,
+        82,
+        86
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 56
+    },
+    {
+      "level": 85,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        110,
+        132,
+        152,
+        170
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 84
+    },
+    {
+      "level": 86,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30
+      ],
+      "curve_lengths": [
+        141
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 30
+    },
+    {
+      "level": 87,
+      "DY_stored_only": 2,
+      "mode": 1,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        30
+      ],
+      "curve_lengths": [
+        210,
+        210
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 66
+    },
+    {
+      "level": 88,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        60
+      ],
+      "curve_lengths": [
+        112,
+        137
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 44
+    },
+    {
+      "level": 89,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        169,
+        175
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 56
+    },
+    {
+      "level": 90,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        101,
+        107
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 39
+    },
+    {
+      "level": 91,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60
+      ],
+      "curve_lengths": [
+        394
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 62
+    },
+    {
+      "level": 92,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60,
+        60
+      ],
+      "curve_lengths": [
+        301,
+        297
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 88
+    },
+    {
+      "level": 93,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30
+      ],
+      "curve_lengths": [
+        122
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 28
+    },
+    {
+      "level": 94,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        20,
+        20
+      ],
+      "curve_lengths": [
+        241,
+        241
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 74
+    },
+    {
+      "level": 95,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        60
+      ],
+      "curve_lengths": [
+        262
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 45
+    },
+    {
+      "level": 96,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        30
+      ],
+      "curve_lengths": [
+        171,
+        171
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 56
+    },
+    {
+      "level": 97,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "curve_lengths": [
+        121,
+        121,
+        161,
+        161
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 86
+    },
+    {
+      "level": 98,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 2,
+      "lower_bounds": [
+        0,
+        0
+      ],
+      "curve_lengths": [
+        140,
+        140
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 48
+    },
+    {
+      "level": 99,
+      "DY_stored_only": 2,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "curve_lengths": [
+        136,
+        136,
+        136,
+        136
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 80
+    },
+    {
+      "level": 100,
+      "DY_stored_only": 3,
+      "mode": 2,
+      "every_nth": 1,
+      "lower_bounds": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "curve_lengths": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "record_bytes": 11,
+      "bitmap_work_bytes": 64
+    }
+  ]
+}

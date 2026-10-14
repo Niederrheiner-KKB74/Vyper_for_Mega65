@@ -1,0 +1,66 @@
+test_assigned_curves_preserved_for_multiple_levels (test_stage7b5a.ExitAndCurveTests.test_assigned_curves_preserved_for_multiple_levels) ... ok
+test_eight_sprite_snapshot_restored_and_IRQ_enabled_on_BASIC_exit (test_stage7b5a.ExitAndCurveTests.test_eight_sprite_snapshot_restored_and_IRQ_enabled_on_BASIC_exit) ... ok
+test_missing_short_extra_bad_sum_header_and_record_CRC_fail_cleanly (test_stage7b5a.FireLoaderTests.test_missing_short_extra_bad_sum_header_and_record_CRC_fail_cleanly) ... ok
+test_KERNAL_menu_SEQ_has_original_romc_and_enabled_IRQ (test_stage7b5a.MenuTests.test_KERNAL_menu_SEQ_has_original_romc_and_enabled_IRQ) ... ok
+test_all_original_animations_and_cycle (test_stage7b5a.MenuTests.test_all_original_animations_and_cycle) ... ok
+test_full_cpu_clock_in_title_menu_game_and_basic_restore (test_stage7b5a.MenuTests.test_full_cpu_clock_in_title_menu_game_and_basic_restore) ... ok
+test_full_loader_title_and_exact_menu_pixels (test_stage7b5a.MenuTests.test_full_loader_title_and_exact_menu_pixels) ... ok
+test_level_nav_palette_cycle_and_exit_run (test_stage7b5a.MenuTests.test_level_nav_palette_cycle_and_exit_run) ... ok
+test_menu_exit_restores_basic_and_engine (test_stage7b5a.MenuTests.test_menu_exit_restores_basic_and_engine) ... ok
+test_menu_wrap_keys_joystick_repeat_and_fire (test_stage7b5a.MenuTests.test_menu_wrap_keys_joystick_repeat_and_fire) ... ok
+test_placeholders_preserve_selection_and_level (test_stage7b5a.MenuTests.test_placeholders_preserve_selection_and_level) ... ok
+test_release_guard_on_fire_confirm (test_stage7b5a.MenuTests.test_release_guard_on_fire_confirm) ... ok
+test_selected_levels_handoff_fonts_and_static_palette (test_stage7b5a.MenuTests.test_selected_levels_handoff_fonts_and_static_palette) ... ok
+test_actual_ENTRY_curve_hook_wait_and_B2_offbyone (test_stage7b5a.OriginalEventTests.test_actual_ENTRY_curve_hook_wait_and_B2_offbyone) ... ok
+test_all100_plans_nth_across_groups_originalY_and_mode (test_stage7b5a.OriginalEventTests.test_all100_plans_nth_across_groups_originalY_and_mode) ... ok
+test_attack_scheduler_and_projectile_math_byte_identical_to_tested_base (test_stage7b5a.OriginalEventTests.test_attack_scheduler_and_projectile_math_byte_identical_to_tested_base) ... ok
+test_attack_threshold_formula_and_guard_uses_original_coordinate_basis (test_stage7b5a.OriginalEventTests.test_attack_threshold_formula_and_guard_uses_original_coordinate_basis) ... ok
+test_attack_thresholds_once_including_second_before_first_and_same_frame (test_stage7b5a.OriginalEventTests.test_attack_thresholds_once_including_second_before_first_and_same_frame) ... ok
+test_countdown_word_zero_independent_and_no_retry (test_stage7b5a.OriginalEventTests.test_countdown_word_zero_independent_and_no_retry) ... ok
+test_event_planning_and_flushing_do_not_consume_attack_RNG (test_stage7b5a.OriginalEventTests.test_event_planning_and_flushing_do_not_consume_attack_RNG) ... ok
+test_formation_return_do_not_generate_events_and_relaunch_replaces_stale (test_stage7b5a.OriginalEventTests.test_formation_return_do_not_generate_events_and_relaunch_replaces_stale) ... ok
+test_full_pool_consumes_both_events_and_does_not_retry_after_release (test_stage7b5a.OriginalEventTests.test_full_pool_consumes_both_events_and_does_not_retry_after_release) ... ok
+test_level_transition_R_and_menu_F1_reinitialize_events (test_stage7b5a.OriginalEventTests.test_level_transition_R_and_menu_F1_reinitialize_events) ... ok
+test_one_slot_two_events_first_spawns_second_expires (test_stage7b5a.OriginalEventTests.test_one_slot_two_events_first_spawns_second_expires) ... ok
+test_six_global_no_owner_cap_and_original_saved_target_speed (test_stage7b5a.OriginalEventTests.test_six_global_no_owner_cap_and_original_saved_target_speed) ... ok
+test_wait_dead_exploding_hidden_invalid_origins_discard_pending (test_stage7b5a.OriginalEventTests.test_wait_dead_exploding_hidden_invalid_origins_discard_pending) ... ok
+test_due_single_survivor_selection_statuses_and_cap (test_stage7b5a.ProjectileCapacityTests.test_due_single_survivor_selection_statuses_and_cap) ... ok
+test_eight_channel_X_Y_MSB_and_bit9_masks (test_stage7b5a.ProjectileCapacityTests.test_eight_channel_X_Y_MSB_and_bit9_masks) ... ok
+test_last_two_slots_move_expire_and_collide_independently (test_stage7b5a.ProjectileCapacityTests.test_last_two_slots_move_expire_and_collide_independently) ... ok
+test_six_enemy_slots_targeting_and_full_pool (test_stage7b5a.ProjectileCapacityTests.test_six_enemy_slots_targeting_and_full_pool) ... ok
+test_1600_frames_exact_rates_wrap_and_dma_bounds (test_stage7b5a.StarTests.test_1600_frames_exact_rates_wrap_and_dma_bounds) ... ok
+test_actual_host_cost_without_runtime_profiler (test_stage7b5a.StarTests.test_actual_host_cost_without_runtime_profiler) ... ok
+test_all100_transitions_and_R_never_blank_or_reset_background (test_stage7b5a.StarTests.test_all100_transitions_and_R_never_blank_or_reset_background) ... ok
+test_all_edges_adjacent_nibbles (test_stage7b5a.StarTests.test_all_edges_adjacent_nibbles) ... ok
+test_background_binding_buffer_and_exact_colours (test_stage7b5a.StarTests.test_background_binding_buffer_and_exact_colours) ... ok
+test_continuous_level_clear_press_release_and_100_wrap (test_stage7b5a.StarTests.test_continuous_level_clear_press_release_and_100_wrap) ... ok
+test_disk_and_original_assets (test_stage7b5a.StarTests.test_disk_and_original_assets) ... ok
+test_exact_accepted_star_parameters_and_six_global_API_labels (test_stage7b5a.StarTests.test_exact_accepted_star_parameters_and_six_global_API_labels) ... ok
+test_idempotent_init_reserved_speed_API_reset_and_no_test_keys (test_stage7b5a.StarTests.test_idempotent_init_reserved_speed_API_reset_and_no_test_keys) ... ok
+test_level_changes_keep_background_and_exit_restores_palette (test_stage7b5a.StarTests.test_level_changes_keep_background_and_exit_restores_palette) ... ok
+test_prefix_hud_slots_and_palettes_unmodified_during_updates (test_stage7b5a.StarTests.test_prefix_hud_slots_and_palettes_unmodified_during_updates) ... ok
+test_selected_F1_levels_have_no_stars_until_game_and_repeat_start (test_stage7b5a.StarTests.test_selected_F1_levels_have_no_stars_until_game_and_repeat_start) ... ok
+test_transparency_clipping_all_four_edges_and_no_trails (test_stage7b5a.StarTests.test_transparency_clipping_all_four_edges_and_no_trails) ... ok
+test_X_every_phase_restores_basic_palette_and_second_RUN (test_stage7b5a.TransitionTests.test_X_every_phase_restores_basic_palette_and_second_RUN) ... ok
+test_actual_sprite_pixels_white_and_unchanged_hitboxes (test_stage7b5a.TransitionTests.test_actual_sprite_pixels_white_and_unchanged_hitboxes) ... ok
+test_exact_50_39_39_1_concentric_pixels_HUD_palette_score (test_stage7b5a.TransitionTests.test_exact_50_39_39_1_concentric_pixels_HUD_palette_score) ... ok
+test_fast_mode_modulo_rates_exact_and_same_DMA_peak (test_stage7b5a.TransitionTests.test_fast_mode_modulo_rates_exact_and_same_DMA_peak) ... ok
+test_four_level_edges_and_plus_minus_bypass_animation (test_stage7b5a.TransitionTests.test_four_level_edges_and_plus_minus_bypass_animation) ... ok
+test_transition_palette_snapshot_and_two_consecutive_transitions (test_stage7b5a.TransitionTests.test_transition_palette_snapshot_and_two_consecutive_transitions) ... ok
+test_X_during_pending_start_remains_responsive (test_stage7b5a.ZCombatRegression.test_X_during_pending_start_remains_responsive) ... ok
+test_all100_palettes_keep_static_banks_and_cycle_phase (test_stage7b5a.ZCombatRegression.test_all100_palettes_keep_static_banks_and_cycle_phase) ... ok
+test_combat_limits_return_respawn_and_invulnerable_control (test_stage7b5a.ZCombatRegression.test_combat_limits_return_respawn_and_invulnerable_control) ... ok
+test_entry_fire_pool_fixed_target_and_wait_visibility (test_stage7b5a.ZCombatRegression.test_entry_fire_pool_fixed_target_and_wait_visibility) ... ok
+test_game_over_complete_explosion_R_and_X (test_stage7b5a.ZCombatRegression.test_game_over_complete_explosion_R_and_X) ... ok
+test_level_clear_press_release_wrap_score_lives_and_R (test_stage7b5a.ZCombatRegression.test_level_clear_press_release_wrap_score_lives_and_R) ... ok
+test_new_menu_asset_failure_paths_restore_basic (test_stage7b5a.ZCombatRegression.test_new_menu_asset_failure_paths_restore_basic) ... ok
+test_player_speed_and_keyboard_repeat (test_stage7b5a.ZCombatRegression.test_player_speed_and_keyboard_repeat) ... ok
+test_return_follows_drifting_formation (test_stage7b5a.ZCombatRegression.test_return_follows_drifting_formation) ... ok
+test_romc_basic_mapping_and_repeat_menu_start (test_stage7b5a.ZCombatRegression.test_romc_basic_mapping_and_repeat_menu_start) ... ok
+
+----------------------------------------------------------------------
+Ran 59 tests in 948.905s
+
+OK
+Stage7b5a actual instruction/DMA host model: {"stage": "7b5a", "PRG_sha256": "bf7e6a75265f813348ffec07d8ffcd35d5ba213baf1e89dda60e21bcac5b7acc", "measurement_kind": "actual assembled instructions, narrow 6502/45GS02 host adapter; DMA instantaneous, NOT XEMU timing", "phases": [{"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2490}, {"dma_jobs": 64, "payload_bytes": 64, "CPU_model_cycles": 8998}, {"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2490}, {"dma_jobs": 128, "payload_bytes": 128, "CPU_model_cycles": 15513}, {"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2490}, {"dma_jobs": 64, "payload_bytes": 64, "CPU_model_cycles": 9000}, {"dma_jobs": 0, "payload_bytes": 0, "CPU_model_cycles": 2490}, {"dma_jobs": 192, "payload_bytes": 192, "CPU_model_cycles": 22020}], "mean_CPU_model_cycles": 8186.375, "max_CPU_model_cycles": 22020, "mean_DMA_jobs": 56.0, "max_DMA_jobs": 192, "simultaneous_all_stars_wrap": {"CPU_model_cycles": 22122, "dma_jobs": 192}, "runtime_profiler": false, "XEMU": "NOT_RUN; user acceptance required"}
+Stage7b5a transition model 1130673 cycles 829 DMA jobs
