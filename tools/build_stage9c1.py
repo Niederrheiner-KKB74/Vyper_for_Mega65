@@ -41,7 +41,7 @@ def assets():
                 e=entries[page*20+col*10+row]
                 text=f"{e['rank']:02d}: {e['name']} {e['score']:7d}"
                 assert len(text)==WIDTH
-                put(screen,x,y,text,3+(row//4)%3)
+                put(screen,x,y,text,3+row%3)
         pages.append(bytes(screen))
     # Six thin frame tiles in a runtime copy of the real MEGA65 character WOM.
     frame=bytes([0,0,0,255,0,0,0,0]+[16]*8+
@@ -69,7 +69,7 @@ def build(jar,output):
         prg=(w/'STAGE9C1.PRG').read_bytes();disk=bytearray(DISK.build_disk([('STAGE9C1',prg,0x82)]))
         disk[39*40*256+4:39*40*256+20]=b'VYPER STAGE9C1'.ljust(16,b'\xa0');disk=bytes(disk)
         files=DISK.verify_disk(disk,[('STAGE9C1',prg,0x82)])
-        report={'stage':'9c1','issue':81,'stable':False,'base':BASE,'protected_files':count,'mode':'mono80x25,640x200,8x8 font from runtime WOM','title':TITLE,'footer':FOOTER,'columns':COLS,'entry_rows':list(ROWS),'entry_width':WIDTH,'frame':[4,1,75,23],'cycle':'unchanged Stage9b1 cc routine / Stage6a2 constants','bands':{'colours_rgb4':['00F','FF0','F00'],'direction':'up','rows_per_band':4,'frames_per_row_step':8},'pages':4,'entries':80,'test_data_only':True,'disk_files':files,'screenshot_comparison':'PENDING: no screenshot attached to Issue81/current request','xemu':'NOT_RUN; user acceptance required'}
+        report={'stage':'9c1','issue':81,'stable':False,'base':BASE,'protected_files':count,'mode':'mono80x25,640x200,8x8 font from runtime WOM','title':TITLE,'footer':FOOTER,'columns':COLS,'entry_rows':list(ROWS),'entry_width':WIDTH,'frame':[4,1,75,23],'cycle':'unchanged Stage9b1 cc routine / Stage6a2 constants','bands':{'colours_rgb4':['00F','FF0','F00'],'direction':'up','rows_per_band':1,'frames_per_row_step':8},'pages':4,'entries':80,'test_data_only':True,'disk_files':files,'screenshot_comparison':'PENDING: no screenshot attached to Issue81/current request','xemu':'NOT_RUN; user acceptance required'}
         out={'STAGE9C1.PRG':prg,'STAGE9C1.sym':(w/'stage9c1.sym').read_bytes(),'VYPER_STAGE9C1.d81':disk,'test-entries.json':(json.dumps(entries,indent=2)+'\n').encode(),'build-report.json':(json.dumps(report,indent=2)+'\n').encode(),'memory-map.txt':(run.stdout[run.stdout.index('Memory Map'):].split('Writing Symbol file')[0].rstrip()+'\n').encode()}
         for n in ('stage9c1.asm','stage9c1_video.asm','stage9c1_cycling.asm','color_cycle.inc','pages.bin','colours.bin','frame.bin'):out[n]=(w/n).read_bytes()
         out['SHA256SUMS.txt']=''.join(f'{DISK.sha(b)}  {n}\n' for n,b in sorted(out.items())).encode()

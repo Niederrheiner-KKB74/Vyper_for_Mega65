@@ -38,7 +38,7 @@
       "F00"
     ],
     "direction": "up",
-    "rows_per_band": 4,
+    "rows_per_band": 1,
     "frames_per_row_step": 8
   },
   "pages": 4,
@@ -49,7 +49,7 @@
       "name": "STAGE9C1",
       "bytes": 18433,
       "blocks": 73,
-      "sha256": "6db7e3f74101da3d44f148a3c73f8b313dd2144128312d48a4875aa832a49fc7"
+      "sha256": "a54dea3af50427324980b2851fa08bb890f9d3a54e8bade84cd43f52f434a26b"
     }
   ],
   "screenshot_comparison": "PENDING: no screenshot attached to Issue81/current request",

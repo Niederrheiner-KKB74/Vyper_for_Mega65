@@ -129,15 +129,24 @@ class Highscores(unittest.TestCase):
   for index in (80+4,3*80+27,21*80+18):self.assertEqual(m.memory.colour[0x2000+index],2)
  def test_blue_yellow_red_bands_move_up_in_both_columns_without_reset(self):
   m=Machine();d=m.memory.data;initial=bytes(m.memory.colour)
-  for tick in range(1,193):
-   if tick in (27,71,121):m.frame(29,right=True)
+  for tick in range(1,385):
+   if tick in (64,128,192):m.frame(29,right=True)
+   elif tick in (256,320,384):m.frame(157,left=True)
    else:m.frame()
-   phase=(tick//8)%12;self.assertEqual(d[N['band_phase']],phase)
+   phase=(tick//8)%3;self.assertEqual(d[N['band_phase']],phase)
+   expected_plane=bytearray(initial)
+   previous=None
    for row,y in enumerate(BUILD.ROWS):
-    expected=3+(((row+phase)%12)//4)
-    for x in BUILD.COLS:self.assertEqual(bytes(m.memory.colour[0x2000+80*y+x:0x2000+80*y+x+15]),bytes([expected]*15))
-   for y in (1,3,21,23):self.assertEqual(bytes(m.memory.colour[0x2000+80*y:0x2000+80*(y+1)]),initial[0x2000+80*y:0x2000+80*(y+1)])
-  self.assertEqual(d[N['page']],3)
+    expected=3+(row+phase)%3
+    if previous is not None:self.assertNotEqual(expected,previous)
+    previous=expected
+    for x in BUILD.COLS:
+     offset=0x2000+80*y+x
+     self.assertEqual(bytes(m.memory.colour[offset:offset+15]),bytes([expected]*15))
+     expected_plane[offset:offset+15]=bytes([expected]*15)
+   # Everything outside the ten table rows/columns remains byte-identical.
+   self.assertEqual(bytes(m.memory.colour),bytes(expected_plane))
+  self.assertEqual(d[N['page']],0)
  def test_any_other_key_return_X_and_held_fire_entry_clean_exit_twice(self):
   for key in (13,88,120,65,32,17,255):
    for irq,mode,compare,decimal in ((False,0xc0,0,False),(True,0x40,1,True)):

@@ -811,3 +811,9 @@ zeilenweise Blau/Gelb/Rot-Bänder. Keine Engine-, Daten-, Speicherungs- oder
 Menüintegration. Elf Hosttests bestanden, reproduzierbares PRG/D81 unter
 `releases/stage_9c1/`. XEMU-/Original-Screenshot-Abgleich offen; kein Stable/Merge.
 [Technik und Abnahme](stage9c1_highscore_display.md).
+
+Stage9c1-Nachbesserung in PR82: statt vierzeiliger Farbblöcke bekommt jede
+Tabellenzeile abwechselnd Blau/Gelb/Rot; Phase modulo3 bei unverändert acht
+Frames pro Zeilenschritt. Elf Hosttests bestanden,384 Frames über alle vier
+Seiten samt Rückwärtsblättern geprüft. Separate Menü-Farbrotation unverändert.
+Neue XEMU-Abnahme offen; weiterhin kein Stable/Merge.

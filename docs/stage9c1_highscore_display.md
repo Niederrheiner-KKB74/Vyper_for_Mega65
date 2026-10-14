@@ -82,16 +82,22 @@ Palettefarbe2 und ändern sich dadurch synchron. Blättern startet den Zyklus
 nicht neu.
 
 Die Tabellenbänder sind die in Issue81 akzeptierte **zeilenweise Annäherung**:
-vier Zeilen Blau, vier Gelb, vier Rot in einer zyklischen12-Zeilen-Folge.
+**Jede einzelne Tabellenzeile** hat genau eine Farbe: Blau, Gelb, Rot, Blau,
+Gelb, Rot usw. Direkt benachbarte Zeilen haben stets unterschiedliche Farben.
 Alle acht Frames (160ms bei50Hz) wird die Phase um eine Zeile erhöht:
-`Farbe(Zeile,t)=Band[(Zeile+Phase(t)) mod12]`. Damit erscheint die bisherige
+`Farbe(Zeile,t)=Band[(Zeile+Phase(t)) mod3]`. Damit erscheint die bisherige
 Zeile1 an Zeile0: Bewegung **von unten nach oben**. Beide Spalten verwenden
-identische Zeilenfarben. Die gesamte Periode dauert96 Frames (1,92s).
+identische Zeilenfarben. Die gesamte Periode dauert24 Frames (0,48s).
 Nur300 Vordergrundwerte im privaten Farbpuffer werden verändert; anschließend
 kopiert ein2.000-Byte-DMA die vollständige private Color-Ebene. Text und Glyphen
 bleiben stabil. Es gibt keinen Pixel-Rastereffekt, Raster-IRQ oder Farbwechsel
 innerhalb eines Zeichens. Die Originalwortlaute werden nicht für die Animation
 umgebaut.
+
+Die Korrektur aus PR82 ersetzt ausschließlich die früheren vierzeiligen
+Farbblöcke durch diese Einzelzeilenfolge. Die Phasengeschwindigkeit bleibt
+bei einem Schritt alle acht Frames. Leerzeilen, Rahmen, Titel, Fußzeile und
+Seitenanzeige bleiben außerhalb der Tabellenanimation.
 
 ## Bedienung und Framezustand
 
@@ -168,13 +174,15 @@ byteidentisch. Der Builder schützt alle1.828 bestehenden src/assets/tools/relea
 Dateien gegen den bestätigten Main-Commit. Die Tests führen tatsächlich
 assemblierte Befehle aus und prüfen Seiteninhalte/Überschriften/Fußzeile,
 Port2/Cursor/Grenzen/Entprellung, komplette Farbzyklen, Bewegungsrichtung der
-Bänder, Seitenwechsel ohne Phasenreset, RAM-/DMA-Grenzen, Exit und wiederholtes
+Einzelzeilenfarben über384 Frames und alle vier Seiten (vorwärts/rückwärts),
+stets verschiedene Nachbarfarben, unveränderten Color-RAM außerhalb der
+300 Tabellenpositionen, Seitenwechsel ohne Phasenreset, RAM-/DMA-Grenzen, Exit und wiederholtes
 RUN einschließlich ursprünglichem40-/80-Spalten-Modus, I/D-Status und Raster-
 Vergleichsbit. Der separate X-Test belegt Reaktion ohne fälligen Animationsframe.
 [Vollständiges Protokoll](stage9c1_test_results.txt).
 
 Modellmessung der aktiven Arbeit, **ohne Rasterwartezeit und DMA-Latenz**:
-maximal3.727 modellierte6502-Zyklen pro Bandschritt,2.000 DMA-Bytes. Beim
+maximal3.721 modellierte6502-Zyklen pro Bandschritt,2.000 DMA-Bytes. Beim
 Seitenwechsel gleichzeitig mit Bandschritt werden4.000 DMA-Bytes übertragen.
 Dies sind weder echte45GS02-Timings noch ein XEMU-/Hardware-Messergebnis.
 Das Modell bildet nicht jedes VIC-IV-Detail ab; Aliasregeln/Geometrie wurden

@@ -79,7 +79,7 @@ frame_tick:
     sta band_clock
     inc band_phase
     lda band_phase
-    cmp #12
+    cmp #3
     bne !publish+
     lda #0
     sta band_phase
@@ -329,7 +329,7 @@ band_row: .byte 0
 frame_pending: .byte 0
 page_dirty: .byte 0
 colour_dirty: .byte 0
-band_colours: .byte 3,3,3,3,4,4,4,4,5,5,5,5
+band_colours: .byte 3,4,5,3,4,5,3,4,5,3,4,5
 page_lo: .byte <pages,<(pages+2000),<(pages+4000),<(pages+6000)
 page_hi: .byte >pages,>(pages+2000),>(pages+4000),>(pages+6000)
 band_left_lo: .fill 10,<(band_buffer+80*(7+i)+16)
