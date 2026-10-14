@@ -629,3 +629,10 @@ Koordinator85B0–85FB bleibt gleich groß durch JMP-Gate in den Manager nach de
 Explosionstimern; ursprüngliche Bewegungs-/Audio-/DMA-Adressen bleiben unverändert.
 F1-Reset erweitert Brücke aufCB00–CD54; Sterntabellen abCD80 bleiben getrennt.
 [Details](stage9a_auto_level_and_bonus_lives.md).
+
+## Stage9b1 (Issue79, Entwicklungsstand)
+Keine neuen Datenbereiche. ATTACK-Hauptcode9F10–9FE5, Cursor-/Bottom-Abschluss
+und unveränderte Top-RETURN-Funktion36B0–36F5 (Anfang RETURN nun36D2).
+Kurvenindex, signedXY, Cursor, Anker und Bottom-Latch bleiben an bisherigen
+Adressen. Alle Audio-/Loader-/RRB-/DMA-Puffer unverändert.
+[Details](stage9b1_cyclic_attack_curves.md).
