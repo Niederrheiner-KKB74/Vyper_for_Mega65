@@ -760,3 +760,15 @@ Spielmechanik bleiben unverändert. Hostmodell auf den tatsächlichen
 MEGA65/XEMU-Speicherplan korrigiert; alter Fehler damit reproduziert.
 Aktuelle gezielte Tests und Rebuildnachweis im Release-Protokoll.
 Weiterhin nicht Stable; XEMU-Abnahme des korrigierten Images ausstehend.
+
+## Stage7b5b / Issue65 – Testbuild, nicht Stable
+
+Branch `stage7b5b`, unveränderte getestete Basis Stage7b5a `2954dc5`.
+Originale Gegnerprojektil-Rechnung16.16 mit DY1/2/3, Zielstreuung0..19 und
+45°-Grenze. Originale Schussereignisse und Angriffsauswahl bleiben bytegleich.
+Player-Originalschritt2px/Aufruf nachgewiesen; native Updatefrequenz weiterhin
+offen. Separater Testparameter2px pro MEGA65-Spielupdate, nicht als bewiesene
+Originalgeschwindigkeit ausgeben. Quellen, Build, PRG/D81 unter
+`releases/stage_7b5b/`; Analyse/Tests und XEMU-Checkliste in
+`docs/stage7b5b_player_and_projectile_motion.md`. Benutzerabnahme steht aus;
+keinen Stable-Tag setzen und keinen früheren Release überschreiben.

@@ -1,0 +1,9 @@
+{
+  "scope": "actual assembled instructions in host CPU model; NOT hardware cycle/raster timing",
+  "player_frames": 100,
+  "movement_calls": 100,
+  "player_x_at_frame50": 100,
+  "player_x_at_frame100": 200,
+  "one_fractional_spawn_instructions": 427,
+  "six_projectile_update_instructions": 264
+}

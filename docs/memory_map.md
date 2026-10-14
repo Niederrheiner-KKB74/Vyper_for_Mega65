@@ -591,3 +591,12 @@ vor Sternencode `$B480`, außerhalb des Menüs-Swaps und hinter Ereigniscode
 DMA bleibt auch bei CPU-ROMA-Overlay physisch auf RAM gerichtet.
 Das Hostmodell ignoriert Zugriffe auf den nicht vorhandenen Speicher wie
 XEMU (Writes ignoriert, Reads `$FF`), statt diesen Bereich als RAM anzulegen.
+
+## Stage7b5b – Entwicklungsstand, XEMU-Abnahme offen
+
+Basis Stage7b5a `2954dc5` unverändert. Neue Projektil-Highbytes/Richtungen
+`$1F9A–$1FB9`, eigener RNG/Scratch `$1FBA–$1FC4`, Format je Slot `$1FC5–$1FCC`.
+Zusatzcode in freien Lücken unter `$A000`, ausschließlich normale CPU-RAM-Bereiche.
+VYSH bleibt `$B000–$B45B`; keine neue High-RAM-/DMA-Allokation.
+Exakte Assembly-Map: `releases/stage_7b5b/memory-map.txt`.
+Begründung und Feldbelegung: `docs/stage7b5b_player_and_projectile_motion.md`.
