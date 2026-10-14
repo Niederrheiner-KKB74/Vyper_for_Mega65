@@ -1,0 +1,28 @@
+{
+  "base_commit": "a41e92ab8e4994a0a3288d60d63984d8593c8332",
+  "unchanged_bytes": {
+    "VYTI.DAT": "47d0dc4e250259ee68f6468413e4920fcb9e2fc0d766a981548052fefc7d00fe",
+    "VYMN.DAT": "b81a832b594bcbfb9b745933a4cea1d3b0489a29d2bddc6bcfbe0e7664b4f57a",
+    "VYLV.DAT": "c99bc1262a10babc84f0ae7eb6ff019faccdeb0382711f99ffe6c23023d7d283",
+    "VYGR.DAT": "974e8eff97efd0c0f67db2780cb668311b9d8731395d43641d4602c0a7c96b50",
+    "VYCL.DAT": "061e0e20aa77195b79ae80daf469387ed61e680f3f3841d8d5ed65ee8eeb491d",
+    "projectile_sprites.bin": "3c88a1a8469a223b4ba0fe3152f64d13c44a6c4c1c758cb699a928225ac82f50",
+    "color_cycle.inc": "2b2e560e0dd15170c1b65cd09770fb0c460ea89f42529fba1c1c4d1c08495f00",
+    "menu_font.bin": "4c020e39e2f1297b46362e5980b6acbb1ce3526ed1fa2b567ea5e47afaaac6b6",
+    "MENU_OVERLAY.PRG": "f1f30cdaf8b88fe120935e8bd62bec9d88b5680bc7786d9913b09f0df4a8fb66",
+    "title_fcm_unique.bin": "1ac56cb9e5676e4adfc1865a8307e6d5079ea4998e49eaa3498fd368c40af09f",
+    "stars_layout.inc": "39d12e15e32d278713dad32268810a28ae03bbc126e1e869c8cca65e17b56c87"
+  },
+  "normalization": "stage name7b3->7b4 and7B3->7B4 only",
+  "PRG_sha256": "970d535ec941cdff2cb584f3979bf9cbcd9b1572a6d669847d3a3ade7625e098",
+  "stage_header_metadata_change": "main source header updated to Issue59 and tested Stage7b3; no emitted bytes",
+  "functional_source_changes": [
+    "stage7b4_selection.asm",
+    "stage7b4_shots.asm"
+  ],
+  "normalized_source_changes": [
+    "stage7b4_selection.asm",
+    "stage7b4_shots.asm",
+    "stage7b4.asm"
+  ]
+}

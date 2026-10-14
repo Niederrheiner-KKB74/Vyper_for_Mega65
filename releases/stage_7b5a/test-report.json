@@ -1,0 +1,51 @@
+{
+  "stage": "7b5a",
+  "stable": false,
+  "fix": "LOAD ERROR04 after title: VYSH destination outside implemented384KB RAM",
+  "previous_PRG": "bf7e6a75265f813348ffec07d8ffcd35d5ba213baf1e89dda60e21bcac5b7acc",
+  "previous_failure_reproduced": {
+    "error": 4,
+    "file": "VYSH.DAT",
+    "bytes_read": 256,
+    "physical_address": "$70000",
+    "read_value": 255,
+    "writes": "ignored"
+  },
+  "fixed_location": "$B000-$B45B",
+  "code_end": "$AF07",
+  "unchanged_starfield_start": "$B480",
+  "new_PRG_sha256": "4926e91309f8c4361d24a60c1443ce2c1f29892d8ca91e163c70d9e9fdd56996",
+  "new_D81_sha256": "2c48d6cf653541c7066a5458521be6d55e7a4e41bea9639ae8818fc7aef0f273",
+  "current_validation": {
+    "targeted_tests_passed": 8,
+    "seconds": 359.163,
+    "failures": 0,
+    "errors": 0,
+    "model": "384KB actual chipRAM,60000-FFFFF dummy readsFF/writes ignored",
+    "full_61_test_suite_rerun": false,
+    "coverage": [
+      "all six assets load with original title/menu",
+      "DMA never accesses unimplemented fast memory",
+      "resident DAT survives menu/game/level switches",
+      "font/palette handoff",
+      "all100 parameter records and248 original Y masks",
+      "seven loader fault subcases",
+      "BASIC exit, ROM mapping and repeat RUN"
+    ]
+  },
+  "reproducibility": {
+    "identical_build_files": 56,
+    "disk_bytes": 819200,
+    "all_seven_disk_file_chains_verified": true,
+    "all_six_DATs_byte_identical_to_previous_build": true,
+    "all_four_1200_update_event_measurements_identical": true
+  },
+  "historical_validation": "Prior59-test run used incorrectly extended RAM model; not evidence of real384KB loading. Historical report remains in commit5d6d71d.",
+  "hardware_sources": {
+    "xemu_commit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+    "xemu_file": "targets/mega65/memory_mapper.c",
+    "guide_commit": "cefce48d72e5c98d732c0589461d62b205b5165f",
+    "guide_file": "appendix-memorymap.tex"
+  },
+  "XEMU": "NOT_RUN; user validation of corrected D81 pending"
+}

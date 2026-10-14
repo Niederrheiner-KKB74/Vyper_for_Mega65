@@ -1,0 +1,3 @@
+Exact previous PRG: bf7e6a75265f813348ffec07d8ffcd35d5ba213baf1e89dda60e21bcac5b7acc
+384KB/XEMU dummy-memory reproduction: error 4 file VYSH.DAT bytes read 256
+Target RAM bank: 7

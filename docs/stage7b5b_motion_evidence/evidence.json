@@ -1,0 +1,1666 @@
+{
+  "issue": 65,
+  "source_sha256": {
+    "Vyper_Memory_Dump.dat": "d74aea88fb4232e36caab80e51abc51f73d470a5b55a54f5cb010f1d910ddf8c",
+    "Vyper_Startscreen.uss": "d836cbf88f0ac35b6ed3776df2add39f699113c1aeb9d02cdfe4651c82793916",
+    "VYPER.ADF": "b28cab911431aaf3e48fd3e9979159de7154f98538eeba191f52ac47ef9665e5"
+  },
+  "disassembler": "Capstone5.0.7",
+  "library_stubs": [
+    {
+      "source": "USS",
+      "address": 98714,
+      "DATA_offset": 90,
+      "bytes": "4ef900c119e8"
+    },
+    {
+      "source": "dump",
+      "address": 176042,
+      "DATA_offset": 90,
+      "bytes": "4ef90002ada8"
+    }
+  ],
+  "player_calls": [
+    12621606,
+    12621644
+  ],
+  "spans": [
+    {
+      "name": "player_controls",
+      "start": 12637992,
+      "end_exclusive": 12638052,
+      "instructions": [
+        {
+          "USS": 12637992,
+          "dump": 158440,
+          "CODE_offset": 20424,
+          "Shot_offset": 20464,
+          "bytes": "0839000100dff00d",
+          "mnemonic": "btst.b",
+          "operands": "#$1, $dff00d.l"
+        },
+        {
+          "USS": 12638000,
+          "dump": 158448,
+          "CODE_offset": 20432,
+          "Shot_offset": 20472,
+          "bytes": "6716",
+          "mnemonic": "beq.b",
+          "operands": "$c0d748"
+        },
+        {
+          "USS": 12638002,
+          "dump": 158450,
+          "CODE_offset": 20434,
+          "Shot_offset": 20474,
+          "bytes": "41ec31ae",
+          "mnemonic": "lea.l",
+          "operands": "$31ae(a4), a0"
+        },
+        {
+          "USS": 12638006,
+          "dump": 158454,
+          "CODE_offset": 20438,
+          "Shot_offset": 20478,
+          "bytes": "3010",
+          "mnemonic": "move.w",
+          "operands": "(a0), d0"
+        },
+        {
+          "USS": 12638008,
+          "dump": 158456,
+          "CODE_offset": 20440,
+          "Shot_offset": 20480,
+          "bytes": "b07c00e2",
+          "mnemonic": "cmp.w",
+          "operands": "#$e2, d0"
+        },
+        {
+          "USS": 12638012,
+          "dump": 158460,
+          "CODE_offset": 20444,
+          "Shot_offset": 20484,
+          "bytes": "6724",
+          "mnemonic": "beq.b",
+          "operands": "$c0d762"
+        },
+        {
+          "USS": 12638014,
+          "dump": 158462,
+          "CODE_offset": 20446,
+          "Shot_offset": 20486,
+          "bytes": "5440",
+          "mnemonic": "addq.w",
+          "operands": "#$2, d0"
+        },
+        {
+          "USS": 12638016,
+          "dump": 158464,
+          "CODE_offset": 20448,
+          "Shot_offset": 20488,
+          "bytes": "3080",
+          "mnemonic": "move.w",
+          "operands": "d0, (a0)"
+        },
+        {
+          "USS": 12638018,
+          "dump": 158466,
+          "CODE_offset": 20450,
+          "Shot_offset": 20490,
+          "bytes": "31400016",
+          "mnemonic": "move.w",
+          "operands": "d0, $16(a0)"
+        },
+        {
+          "USS": 12638022,
+          "dump": 158470,
+          "CODE_offset": 20454,
+          "Shot_offset": 20494,
+          "bytes": "4e75",
+          "mnemonic": "rts",
+          "operands": ""
+        },
+        {
+          "USS": 12638024,
+          "dump": 158472,
+          "CODE_offset": 20456,
+          "Shot_offset": 20496,
+          "bytes": "0839000100dff00c",
+          "mnemonic": "btst.b",
+          "operands": "#$1, $dff00c.l"
+        },
+        {
+          "USS": 12638032,
+          "dump": 158480,
+          "CODE_offset": 20464,
+          "Shot_offset": 20504,
+          "bytes": "6710",
+          "mnemonic": "beq.b",
+          "operands": "$c0d762"
+        },
+        {
+          "USS": 12638034,
+          "dump": 158482,
+          "CODE_offset": 20466,
+          "Shot_offset": 20506,
+          "bytes": "41ec31ae",
+          "mnemonic": "lea.l",
+          "operands": "$31ae(a4), a0"
+        },
+        {
+          "USS": 12638038,
+          "dump": 158486,
+          "CODE_offset": 20470,
+          "Shot_offset": 20510,
+          "bytes": "3010",
+          "mnemonic": "move.w",
+          "operands": "(a0), d0"
+        },
+        {
+          "USS": 12638040,
+          "dump": 158488,
+          "CODE_offset": 20472,
+          "Shot_offset": 20512,
+          "bytes": "6708",
+          "mnemonic": "beq.b",
+          "operands": "$c0d762"
+        },
+        {
+          "USS": 12638042,
+          "dump": 158490,
+          "CODE_offset": 20474,
+          "Shot_offset": 20514,
+          "bytes": "5540",
+          "mnemonic": "subq.w",
+          "operands": "#$2, d0"
+        },
+        {
+          "USS": 12638044,
+          "dump": 158492,
+          "CODE_offset": 20476,
+          "Shot_offset": 20516,
+          "bytes": "3080",
+          "mnemonic": "move.w",
+          "operands": "d0, (a0)"
+        },
+        {
+          "USS": 12638046,
+          "dump": 158494,
+          "CODE_offset": 20478,
+          "Shot_offset": 20518,
+          "bytes": "31400016",
+          "mnemonic": "move.w",
+          "operands": "d0, $16(a0)"
+        },
+        {
+          "USS": 12638050,
+          "dump": 158498,
+          "CODE_offset": 20482,
+          "Shot_offset": 20522,
+          "bytes": "4e75",
+          "mnemonic": "rts",
+          "operands": ""
+        }
+      ],
+      "both_runtime_copies_match_ADF": true
+    },
+    {
+      "name": "player_initialization",
+      "start": 12629456,
+      "end_exclusive": 12629480,
+      "instructions": [
+        {
+          "USS": 12629456,
+          "dump": 149904,
+          "CODE_offset": 11888,
+          "Shot_offset": 11928,
+          "bytes": "397c007831c4",
+          "mnemonic": "move.w",
+          "operands": "#$78, $31c4(a4)"
+        },
+        {
+          "USS": 12629462,
+          "dump": 149910,
+          "CODE_offset": 11894,
+          "Shot_offset": 11934,
+          "bytes": "397c00b831c6",
+          "mnemonic": "move.w",
+          "operands": "#$b8, $31c6(a4)"
+        },
+        {
+          "USS": 12629468,
+          "dump": 149916,
+          "CODE_offset": 11900,
+          "Shot_offset": 11940,
+          "bytes": "397c007831ae",
+          "mnemonic": "move.w",
+          "operands": "#$78, $31ae(a4)"
+        },
+        {
+          "USS": 12629474,
+          "dump": 149922,
+          "CODE_offset": 11906,
+          "Shot_offset": 11946,
+          "bytes": "397c00b831b0",
+          "mnemonic": "move.w",
+          "operands": "#$b8, $31b0(a4)"
+        }
+      ],
+      "both_runtime_copies_match_ADF": true
+    },
+    {
+      "name": "sprite_coordinate_encoding",
+      "start": 12637550,
+      "end_exclusive": 12637640,
+      "instructions": [
+        {
+          "USS": 12637550,
+          "dump": 157998,
+          "CODE_offset": 19982,
+          "Shot_offset": 20022,
+          "bytes": "2f2c8c3e",
+          "mnemonic": "move.l",
+          "operands": "-$73c2(a4), -(a7)"
+        },
+        {
+          "USS": 12637554,
+          "dump": 158002,
+          "CODE_offset": 19986,
+          "Shot_offset": 20026,
+          "bytes": "4245",
+          "mnemonic": "clr.w",
+          "operands": "d5"
+        },
+        {
+          "USS": 12637556,
+          "dump": 158004,
+          "CODE_offset": 19988,
+          "Shot_offset": 20028,
+          "bytes": "41ec31ae",
+          "mnemonic": "lea.l",
+          "operands": "$31ae(a4), a0"
+        },
+        {
+          "USS": 12637560,
+          "dump": 158008,
+          "CODE_offset": 19992,
+          "Shot_offset": 20032,
+          "bytes": "22680006",
+          "mnemonic": "movea.l",
+          "operands": "$6(a0), a1"
+        },
+        {
+          "USS": 12637564,
+          "dump": 158012,
+          "CODE_offset": 19996,
+          "Shot_offset": 20036,
+          "bytes": "4a680004",
+          "mnemonic": "tst.w",
+          "operands": "$4(a0)"
+        },
+        {
+          "USS": 12637568,
+          "dump": 158016,
+          "CODE_offset": 20000,
+          "Shot_offset": 20040,
+          "bytes": "6606",
+          "mnemonic": "bne.b",
+          "operands": "$c0d588"
+        },
+        {
+          "USS": 12637570,
+          "dump": 158018,
+          "CODE_offset": 20002,
+          "Shot_offset": 20042,
+          "bytes": "4259",
+          "mnemonic": "clr.w",
+          "operands": "(a1)+"
+        },
+        {
+          "USS": 12637572,
+          "dump": 158020,
+          "CODE_offset": 20004,
+          "Shot_offset": 20044,
+          "bytes": "4251",
+          "mnemonic": "clr.w",
+          "operands": "(a1)"
+        },
+        {
+          "USS": 12637574,
+          "dump": 158022,
+          "CODE_offset": 20006,
+          "Shot_offset": 20046,
+          "bytes": "602c",
+          "mnemonic": "bra.b",
+          "operands": "$c0d5b4"
+        },
+        {
+          "USS": 12637576,
+          "dump": 158024,
+          "CODE_offset": 20008,
+          "Shot_offset": 20048,
+          "bytes": "34280002",
+          "mnemonic": "move.w",
+          "operands": "$2(a0), d2"
+        },
+        {
+          "USS": 12637580,
+          "dump": 158028,
+          "CODE_offset": 20012,
+          "Shot_offset": 20052,
+          "bytes": "d47c002c",
+          "mnemonic": "add.w",
+          "operands": "#$2c, d2"
+        },
+        {
+          "USS": 12637584,
+          "dump": 158032,
+          "CODE_offset": 20016,
+          "Shot_offset": 20056,
+          "bytes": "12c2",
+          "mnemonic": "move.b",
+          "operands": "d2, (a1)+"
+        },
+        {
+          "USS": 12637586,
+          "dump": 158034,
+          "CODE_offset": 20018,
+          "Shot_offset": 20058,
+          "bytes": "3010",
+          "mnemonic": "move.w",
+          "operands": "(a0), d0"
+        },
+        {
+          "USS": 12637588,
+          "dump": 158036,
+          "CODE_offset": 20020,
+          "Shot_offset": 20060,
+          "bytes": "d07c0080",
+          "mnemonic": "add.w",
+          "operands": "#$80, d0"
+        },
+        {
+          "USS": 12637592,
+          "dump": 158040,
+          "CODE_offset": 20024,
+          "Shot_offset": 20064,
+          "bytes": "3200",
+          "mnemonic": "move.w",
+          "operands": "d0, d1"
+        },
+        {
+          "USS": 12637594,
+          "dump": 158042,
+          "CODE_offset": 20026,
+          "Shot_offset": 20066,
+          "bytes": "c27c0001",
+          "mnemonic": "and.w",
+          "operands": "#$1, d1"
+        },
+        {
+          "USS": 12637598,
+          "dump": 158046,
+          "CODE_offset": 20030,
+          "Shot_offset": 20070,
+          "bytes": "e248",
+          "mnemonic": "lsr.w",
+          "operands": "#$1, d0"
+        },
+        {
+          "USS": 12637600,
+          "dump": 158048,
+          "CODE_offset": 20032,
+          "Shot_offset": 20072,
+          "bytes": "12c0",
+          "mnemonic": "move.b",
+          "operands": "d0, (a1)+"
+        },
+        {
+          "USS": 12637602,
+          "dump": 158050,
+          "CODE_offset": 20034,
+          "Shot_offset": 20074,
+          "bytes": "d468000a",
+          "mnemonic": "add.w",
+          "operands": "$a(a0), d2"
+        },
+        {
+          "USS": 12637606,
+          "dump": 158054,
+          "CODE_offset": 20038,
+          "Shot_offset": 20078,
+          "bytes": "12c2",
+          "mnemonic": "move.b",
+          "operands": "d2, (a1)+"
+        },
+        {
+          "USS": 12637608,
+          "dump": 158056,
+          "CODE_offset": 20040,
+          "Shot_offset": 20080,
+          "bytes": "ba7c0001",
+          "mnemonic": "cmp.w",
+          "operands": "#$1, d5"
+        },
+        {
+          "USS": 12637612,
+          "dump": 158060,
+          "CODE_offset": 20044,
+          "Shot_offset": 20084,
+          "bytes": "6604",
+          "mnemonic": "bne.b",
+          "operands": "$c0d5b2"
+        },
+        {
+          "USS": 12637614,
+          "dump": 158062,
+          "CODE_offset": 20046,
+          "Shot_offset": 20086,
+          "bytes": "827c0080",
+          "mnemonic": "or.w",
+          "operands": "#$80, d1"
+        },
+        {
+          "USS": 12637618,
+          "dump": 158066,
+          "CODE_offset": 20050,
+          "Shot_offset": 20090,
+          "bytes": "1281",
+          "mnemonic": "move.b",
+          "operands": "d1, (a1)"
+        },
+        {
+          "USS": 12637620,
+          "dump": 158068,
+          "CODE_offset": 20052,
+          "Shot_offset": 20092,
+          "bytes": "d1fc00000016",
+          "mnemonic": "adda.l",
+          "operands": "#$16, a0"
+        },
+        {
+          "USS": 12637626,
+          "dump": 158074,
+          "CODE_offset": 20058,
+          "Shot_offset": 20098,
+          "bytes": "5245",
+          "mnemonic": "addq.w",
+          "operands": "#$1, d5"
+        },
+        {
+          "USS": 12637628,
+          "dump": 158076,
+          "CODE_offset": 20060,
+          "Shot_offset": 20100,
+          "bytes": "ba7c0008",
+          "mnemonic": "cmp.w",
+          "operands": "#$8, d5"
+        },
+        {
+          "USS": 12637632,
+          "dump": 158080,
+          "CODE_offset": 20064,
+          "Shot_offset": 20104,
+          "bytes": "66b6",
+          "mnemonic": "bne.b",
+          "operands": "$c0d578"
+        },
+        {
+          "USS": 12637634,
+          "dump": 158082,
+          "CODE_offset": 20066,
+          "Shot_offset": 20106,
+          "bytes": "295f8c3e",
+          "mnemonic": "move.l",
+          "operands": "(a7)+, -$73c2(a4)"
+        },
+        {
+          "USS": 12637638,
+          "dump": 158086,
+          "CODE_offset": 20070,
+          "Shot_offset": 20110,
+          "bytes": "4e75",
+          "mnemonic": "rts",
+          "operands": ""
+        }
+      ],
+      "both_runtime_copies_match_ADF": true
+    },
+    {
+      "name": "projectile_update",
+      "start": 12637640,
+      "end_exclusive": 12637714,
+      "instructions": [
+        {
+          "USS": 12637640,
+          "dump": 158088,
+          "CODE_offset": 20072,
+          "Shot_offset": 20112,
+          "bytes": "41ec31da",
+          "mnemonic": "lea.l",
+          "operands": "$31da(a4), a0"
+        },
+        {
+          "USS": 12637644,
+          "dump": 158092,
+          "CODE_offset": 20076,
+          "Shot_offset": 20116,
+          "bytes": "303c0006",
+          "mnemonic": "move.w",
+          "operands": "#$6, d0"
+        },
+        {
+          "USS": 12637648,
+          "dump": 158096,
+          "CODE_offset": 20080,
+          "Shot_offset": 20120,
+          "bytes": "4a680004",
+          "mnemonic": "tst.w",
+          "operands": "$4(a0)"
+        },
+        {
+          "USS": 12637652,
+          "dump": 158100,
+          "CODE_offset": 20084,
+          "Shot_offset": 20124,
+          "bytes": "6730",
+          "mnemonic": "beq.b",
+          "operands": "$c0d606"
+        },
+        {
+          "USS": 12637654,
+          "dump": 158102,
+          "CODE_offset": 20086,
+          "Shot_offset": 20126,
+          "bytes": "32280012",
+          "mnemonic": "move.w",
+          "operands": "$12(a0), d1"
+        },
+        {
+          "USS": 12637658,
+          "dump": 158106,
+          "CODE_offset": 20090,
+          "Shot_offset": 20130,
+          "bytes": "d3680002",
+          "mnemonic": "add.w",
+          "operands": "d1, $2(a0)"
+        },
+        {
+          "USS": 12637662,
+          "dump": 158110,
+          "CODE_offset": 20094,
+          "Shot_offset": 20134,
+          "bytes": "0c6800c80002",
+          "mnemonic": "cmpi.w",
+          "operands": "#$c8, $2(a0)"
+        },
+        {
+          "USS": 12637668,
+          "dump": 158116,
+          "CODE_offset": 20100,
+          "Shot_offset": 20140,
+          "bytes": "6d0a",
+          "mnemonic": "blt.b",
+          "operands": "$c0d5f0"
+        },
+        {
+          "USS": 12637670,
+          "dump": 158118,
+          "CODE_offset": 20102,
+          "Shot_offset": 20142,
+          "bytes": "42680004",
+          "mnemonic": "clr.w",
+          "operands": "$4(a0)"
+        },
+        {
+          "USS": 12637674,
+          "dump": 158122,
+          "CODE_offset": 20106,
+          "Shot_offset": 20146,
+          "bytes": "536c2c1c",
+          "mnemonic": "subq.w",
+          "operands": "#$1, $2c1c(a4)"
+        },
+        {
+          "USS": 12637678,
+          "dump": 158126,
+          "CODE_offset": 20110,
+          "Shot_offset": 20150,
+          "bytes": "6016",
+          "mnemonic": "bra.b",
+          "operands": "$c0d606"
+        },
+        {
+          "USS": 12637680,
+          "dump": 158128,
+          "CODE_offset": 20112,
+          "Shot_offset": 20152,
+          "bytes": "4281",
+          "mnemonic": "clr.l",
+          "operands": "d1"
+        },
+        {
+          "USS": 12637682,
+          "dump": 158130,
+          "CODE_offset": 20114,
+          "Shot_offset": 20154,
+          "bytes": "32280010",
+          "mnemonic": "move.w",
+          "operands": "$10(a0), d1"
+        },
+        {
+          "USS": 12637686,
+          "dump": 158134,
+          "CODE_offset": 20118,
+          "Shot_offset": 20158,
+          "bytes": "d2a8000c",
+          "mnemonic": "add.l",
+          "operands": "$c(a0), d1"
+        },
+        {
+          "USS": 12637690,
+          "dump": 158138,
+          "CODE_offset": 20122,
+          "Shot_offset": 20162,
+          "bytes": "31410010",
+          "mnemonic": "move.w",
+          "operands": "d1, $10(a0)"
+        },
+        {
+          "USS": 12637694,
+          "dump": 158142,
+          "CODE_offset": 20126,
+          "Shot_offset": 20166,
+          "bytes": "4841",
+          "mnemonic": "swap",
+          "operands": "d1"
+        },
+        {
+          "USS": 12637696,
+          "dump": 158144,
+          "CODE_offset": 20128,
+          "Shot_offset": 20168,
+          "bytes": "c3e80014",
+          "mnemonic": "muls.w",
+          "operands": "$14(a0), d1"
+        },
+        {
+          "USS": 12637700,
+          "dump": 158148,
+          "CODE_offset": 20132,
+          "Shot_offset": 20172,
+          "bytes": "d350",
+          "mnemonic": "add.w",
+          "operands": "d1, (a0)"
+        },
+        {
+          "USS": 12637702,
+          "dump": 158150,
+          "CODE_offset": 20134,
+          "Shot_offset": 20174,
+          "bytes": "d1fc00000016",
+          "mnemonic": "adda.l",
+          "operands": "#$16, a0"
+        },
+        {
+          "USS": 12637708,
+          "dump": 158156,
+          "CODE_offset": 20140,
+          "Shot_offset": 20180,
+          "bytes": "5340",
+          "mnemonic": "subq.w",
+          "operands": "#$1, d0"
+        },
+        {
+          "USS": 12637710,
+          "dump": 158158,
+          "CODE_offset": 20142,
+          "Shot_offset": 20182,
+          "bytes": "66c0",
+          "mnemonic": "bne.b",
+          "operands": "$c0d5d0"
+        },
+        {
+          "USS": 12637712,
+          "dump": 158160,
+          "CODE_offset": 20144,
+          "Shot_offset": 20184,
+          "bytes": "4e75",
+          "mnemonic": "rts",
+          "operands": ""
+        }
+      ],
+      "both_runtime_copies_match_ADF": true
+    },
+    {
+      "name": "projectile_spawn",
+      "start": 12637714,
+      "end_exclusive": 12637910,
+      "instructions": [
+        {
+          "USS": 12637714,
+          "dump": 158162,
+          "CODE_offset": 20146,
+          "Shot_offset": 20186,
+          "bytes": "2f0a",
+          "mnemonic": "move.l",
+          "operands": "a2, -(a7)"
+        },
+        {
+          "USS": 12637716,
+          "dump": 158164,
+          "CODE_offset": 20148,
+          "Shot_offset": 20188,
+          "bytes": "0c6c00062c1c",
+          "mnemonic": "cmpi.w",
+          "operands": "#$6, $2c1c(a4)"
+        },
+        {
+          "USS": 12637722,
+          "dump": 158170,
+          "CODE_offset": 20154,
+          "Shot_offset": 20194,
+          "bytes": "670000b6",
+          "mnemonic": "beq.w",
+          "operands": "$c0d6d2"
+        },
+        {
+          "USS": 12637726,
+          "dump": 158174,
+          "CODE_offset": 20158,
+          "Shot_offset": 20198,
+          "bytes": "4a6c2d5a",
+          "mnemonic": "tst.w",
+          "operands": "$2d5a(a4)"
+        },
+        {
+          "USS": 12637730,
+          "dump": 158178,
+          "CODE_offset": 20162,
+          "Shot_offset": 20202,
+          "bytes": "661e",
+          "mnemonic": "bne.b",
+          "operands": "$c0d642"
+        },
+        {
+          "USS": 12637732,
+          "dump": 158180,
+          "CODE_offset": 20164,
+          "Shot_offset": 20204,
+          "bytes": "33fc000100dff0c6",
+          "mnemonic": "move.w",
+          "operands": "#$1, $dff0c6.l"
+        },
+        {
+          "USS": 12637740,
+          "dump": 158188,
+          "CODE_offset": 20172,
+          "Shot_offset": 20212,
+          "bytes": "33fc000100dff0d6",
+          "mnemonic": "move.w",
+          "operands": "#$1, $dff0d6.l"
+        },
+        {
+          "USS": 12637748,
+          "dump": 158196,
+          "CODE_offset": 20180,
+          "Shot_offset": 20220,
+          "bytes": "33fc000c00dff096",
+          "mnemonic": "move.w",
+          "operands": "#$c, $dff096.l"
+        },
+        {
+          "USS": 12637756,
+          "dump": 158204,
+          "CODE_offset": 20188,
+          "Shot_offset": 20228,
+          "bytes": "3968008c2d5c",
+          "mnemonic": "move.w",
+          "operands": "$8c(a0), $2d5c(a4)"
+        },
+        {
+          "USS": 12637762,
+          "dump": 158210,
+          "CODE_offset": 20194,
+          "Shot_offset": 20234,
+          "bytes": "526c2c1c",
+          "mnemonic": "addq.w",
+          "operands": "#$1, $2c1c(a4)"
+        },
+        {
+          "USS": 12637766,
+          "dump": 158214,
+          "CODE_offset": 20198,
+          "Shot_offset": 20238,
+          "bytes": "45ec31ae",
+          "mnemonic": "lea.l",
+          "operands": "$31ae(a4), a2"
+        },
+        {
+          "USS": 12637770,
+          "dump": 158218,
+          "CODE_offset": 20202,
+          "Shot_offset": 20242,
+          "bytes": "43ec31da",
+          "mnemonic": "lea.l",
+          "operands": "$31da(a4), a1"
+        },
+        {
+          "USS": 12637774,
+          "dump": 158222,
+          "CODE_offset": 20206,
+          "Shot_offset": 20246,
+          "bytes": "4a690004",
+          "mnemonic": "tst.w",
+          "operands": "$4(a1)"
+        },
+        {
+          "USS": 12637778,
+          "dump": 158226,
+          "CODE_offset": 20210,
+          "Shot_offset": 20250,
+          "bytes": "6708",
+          "mnemonic": "beq.b",
+          "operands": "$c0d65c"
+        },
+        {
+          "USS": 12637780,
+          "dump": 158228,
+          "CODE_offset": 20212,
+          "Shot_offset": 20252,
+          "bytes": "d3fc00000016",
+          "mnemonic": "adda.l",
+          "operands": "#$16, a1"
+        },
+        {
+          "USS": 12637786,
+          "dump": 158234,
+          "CODE_offset": 20218,
+          "Shot_offset": 20258,
+          "bytes": "60f2",
+          "mnemonic": "bra.b",
+          "operands": "$c0d64e"
+        },
+        {
+          "USS": 12637788,
+          "dump": 158236,
+          "CODE_offset": 20220,
+          "Shot_offset": 20260,
+          "bytes": "47d1",
+          "mnemonic": "lea.l",
+          "operands": "(a1), a3"
+        },
+        {
+          "USS": 12637790,
+          "dump": 158238,
+          "CODE_offset": 20222,
+          "Shot_offset": 20262,
+          "bytes": "294b2d62",
+          "mnemonic": "move.l",
+          "operands": "a3, $2d62(a4)"
+        },
+        {
+          "USS": 12637794,
+          "dump": 158242,
+          "CODE_offset": 20226,
+          "Shot_offset": 20266,
+          "bytes": "337c00010004",
+          "mnemonic": "move.w",
+          "operands": "#$1, $4(a1)"
+        },
+        {
+          "USS": 12637800,
+          "dump": 158248,
+          "CODE_offset": 20232,
+          "Shot_offset": 20272,
+          "bytes": "30280010",
+          "mnemonic": "move.w",
+          "operands": "$10(a0), d0"
+        },
+        {
+          "USS": 12637804,
+          "dump": 158252,
+          "CODE_offset": 20236,
+          "Shot_offset": 20276,
+          "bytes": "5e40",
+          "mnemonic": "addq.w",
+          "operands": "#$7, d0"
+        },
+        {
+          "USS": 12637806,
+          "dump": 158254,
+          "CODE_offset": 20238,
+          "Shot_offset": 20278,
+          "bytes": "3280",
+          "mnemonic": "move.w",
+          "operands": "d0, (a1)"
+        },
+        {
+          "USS": 12637808,
+          "dump": 158256,
+          "CODE_offset": 20240,
+          "Shot_offset": 20280,
+          "bytes": "30280012",
+          "mnemonic": "move.w",
+          "operands": "$12(a0), d0"
+        },
+        {
+          "USS": 12637812,
+          "dump": 158260,
+          "CODE_offset": 20244,
+          "Shot_offset": 20284,
+          "bytes": "d07cfff9",
+          "mnemonic": "add.w",
+          "operands": "#$fff9, d0"
+        },
+        {
+          "USS": 12637816,
+          "dump": 158264,
+          "CODE_offset": 20248,
+          "Shot_offset": 20288,
+          "bytes": "33400002",
+          "mnemonic": "move.w",
+          "operands": "d0, $2(a1)"
+        },
+        {
+          "USS": 12637820,
+          "dump": 158268,
+          "CODE_offset": 20252,
+          "Shot_offset": 20292,
+          "bytes": "302a0002",
+          "mnemonic": "move.w",
+          "operands": "$2(a2), d0"
+        },
+        {
+          "USS": 12637824,
+          "dump": 158272,
+          "CODE_offset": 20256,
+          "Shot_offset": 20296,
+          "bytes": "90690002",
+          "mnemonic": "sub.w",
+          "operands": "$2(a1), d0"
+        },
+        {
+          "USS": 12637828,
+          "dump": 158276,
+          "CODE_offset": 20260,
+          "Shot_offset": 20300,
+          "bytes": "4281",
+          "mnemonic": "clr.l",
+          "operands": "d1"
+        },
+        {
+          "USS": 12637830,
+          "dump": 158278,
+          "CODE_offset": 20262,
+          "Shot_offset": 20302,
+          "bytes": "3212",
+          "mnemonic": "move.w",
+          "operands": "(a2), d1"
+        },
+        {
+          "USS": 12637832,
+          "dump": 158280,
+          "CODE_offset": 20264,
+          "Shot_offset": 20304,
+          "bytes": "383c0014",
+          "mnemonic": "move.w",
+          "operands": "#$14, d4"
+        },
+        {
+          "USS": 12637836,
+          "dump": 158284,
+          "CODE_offset": 20268,
+          "Shot_offset": 20308,
+          "bytes": "4eba00d6",
+          "mnemonic": "jsr",
+          "operands": "$c0d764(pc)"
+        },
+        {
+          "USS": 12637840,
+          "dump": 158288,
+          "CODE_offset": 20272,
+          "Shot_offset": 20312,
+          "bytes": "082c00002c1b",
+          "mnemonic": "btst.b",
+          "operands": "#$0, $2c1b(a4)"
+        },
+        {
+          "USS": 12637846,
+          "dump": 158294,
+          "CODE_offset": 20278,
+          "Shot_offset": 20318,
+          "bytes": "6704",
+          "mnemonic": "beq.b",
+          "operands": "$c0d69c"
+        },
+        {
+          "USS": 12637848,
+          "dump": 158296,
+          "CODE_offset": 20280,
+          "Shot_offset": 20320,
+          "bytes": "d242",
+          "mnemonic": "add.w",
+          "operands": "d2, d1"
+        },
+        {
+          "USS": 12637850,
+          "dump": 158298,
+          "CODE_offset": 20282,
+          "Shot_offset": 20322,
+          "bytes": "6002",
+          "mnemonic": "bra.b",
+          "operands": "$c0d69e"
+        },
+        {
+          "USS": 12637852,
+          "dump": 158300,
+          "CODE_offset": 20284,
+          "Shot_offset": 20324,
+          "bytes": "9242",
+          "mnemonic": "sub.w",
+          "operands": "d2, d1"
+        },
+        {
+          "USS": 12637854,
+          "dump": 158302,
+          "CODE_offset": 20286,
+          "Shot_offset": 20326,
+          "bytes": "9251",
+          "mnemonic": "sub.w",
+          "operands": "(a1), d1"
+        },
+        {
+          "USS": 12637856,
+          "dump": 158304,
+          "CODE_offset": 20288,
+          "Shot_offset": 20328,
+          "bytes": "6a0a",
+          "mnemonic": "bpl.b",
+          "operands": "$c0d6ac"
+        },
+        {
+          "USS": 12637858,
+          "dump": 158306,
+          "CODE_offset": 20290,
+          "Shot_offset": 20330,
+          "bytes": "337cffff0014",
+          "mnemonic": "move.w",
+          "operands": "#$ffff, $14(a1)"
+        },
+        {
+          "USS": 12637864,
+          "dump": 158312,
+          "CODE_offset": 20296,
+          "Shot_offset": 20336,
+          "bytes": "4441",
+          "mnemonic": "neg.w",
+          "operands": "d1"
+        },
+        {
+          "USS": 12637866,
+          "dump": 158314,
+          "CODE_offset": 20298,
+          "Shot_offset": 20338,
+          "bytes": "6006",
+          "mnemonic": "bra.b",
+          "operands": "$c0d6b2"
+        },
+        {
+          "USS": 12637868,
+          "dump": 158316,
+          "CODE_offset": 20300,
+          "Shot_offset": 20340,
+          "bytes": "337c00010014",
+          "mnemonic": "move.w",
+          "operands": "#$1, $14(a1)"
+        },
+        {
+          "USS": 12637874,
+          "dump": 158322,
+          "CODE_offset": 20306,
+          "Shot_offset": 20346,
+          "bytes": "b041",
+          "mnemonic": "cmp.w",
+          "operands": "d1, d0"
+        },
+        {
+          "USS": 12637876,
+          "dump": 158324,
+          "CODE_offset": 20308,
+          "Shot_offset": 20348,
+          "bytes": "6e0c",
+          "mnemonic": "bgt.b",
+          "operands": "$c0d6c2"
+        },
+        {
+          "USS": 12637878,
+          "dump": 158326,
+          "CODE_offset": 20310,
+          "Shot_offset": 20350,
+          "bytes": "32290012",
+          "mnemonic": "move.w",
+          "operands": "$12(a1), d1"
+        },
+        {
+          "USS": 12637882,
+          "dump": 158330,
+          "CODE_offset": 20314,
+          "Shot_offset": 20354,
+          "bytes": "4841",
+          "mnemonic": "swap",
+          "operands": "d1"
+        },
+        {
+          "USS": 12637884,
+          "dump": 158332,
+          "CODE_offset": 20316,
+          "Shot_offset": 20356,
+          "bytes": "2341000c",
+          "mnemonic": "move.l",
+          "operands": "d1, $c(a1)"
+        },
+        {
+          "USS": 12637888,
+          "dump": 158336,
+          "CODE_offset": 20320,
+          "Shot_offset": 20360,
+          "bytes": "6010",
+          "mnemonic": "bra.b",
+          "operands": "$c0d6d2"
+        },
+        {
+          "USS": 12637890,
+          "dump": 158338,
+          "CODE_offset": 20322,
+          "Shot_offset": 20362,
+          "bytes": "4841",
+          "mnemonic": "swap",
+          "operands": "d1"
+        },
+        {
+          "USS": 12637892,
+          "dump": 158340,
+          "CODE_offset": 20324,
+          "Shot_offset": 20364,
+          "bytes": "82c0",
+          "mnemonic": "divu.w",
+          "operands": "d0, d1"
+        },
+        {
+          "USS": 12637894,
+          "dump": 158342,
+          "CODE_offset": 20326,
+          "Shot_offset": 20366,
+          "bytes": "c2e90012",
+          "mnemonic": "mulu.w",
+          "operands": "$12(a1), d1"
+        },
+        {
+          "USS": 12637898,
+          "dump": 158346,
+          "CODE_offset": 20330,
+          "Shot_offset": 20370,
+          "bytes": "2341000c",
+          "mnemonic": "move.l",
+          "operands": "d1, $c(a1)"
+        },
+        {
+          "USS": 12637902,
+          "dump": 158350,
+          "CODE_offset": 20334,
+          "Shot_offset": 20374,
+          "bytes": "42690010",
+          "mnemonic": "clr.w",
+          "operands": "$10(a1)"
+        },
+        {
+          "USS": 12637906,
+          "dump": 158354,
+          "CODE_offset": 20338,
+          "Shot_offset": 20378,
+          "bytes": "245f",
+          "mnemonic": "movea.l",
+          "operands": "(a7)+, a2"
+        },
+        {
+          "USS": 12637908,
+          "dump": 158356,
+          "CODE_offset": 20340,
+          "Shot_offset": 20380,
+          "bytes": "4e75",
+          "mnemonic": "rts",
+          "operands": ""
+        }
+      ],
+      "both_runtime_copies_match_ADF": true
+    },
+    {
+      "name": "active_and_alternate_player_calls",
+      "start": 12621576,
+      "end_exclusive": 12621656,
+      "instructions": [
+        {
+          "USS": 12621576,
+          "dump": 142024,
+          "CODE_offset": 4008,
+          "Shot_offset": 4048,
+          "bytes": "302c2c0c",
+          "mnemonic": "move.w",
+          "operands": "$2c0c(a4), d0"
+        },
+        {
+          "USS": 12621580,
+          "dump": 142028,
+          "CODE_offset": 4012,
+          "Shot_offset": 4052,
+          "bytes": "c1fc000c",
+          "mnemonic": "muls.w",
+          "operands": "#$c, d0"
+        },
+        {
+          "USS": 12621584,
+          "dump": 142032,
+          "CODE_offset": 4016,
+          "Shot_offset": 4056,
+          "bytes": "41ec2d36",
+          "mnemonic": "lea.l",
+          "operands": "$2d36(a4), a0"
+        },
+        {
+          "USS": 12621588,
+          "dump": 142036,
+          "CODE_offset": 4020,
+          "Shot_offset": 4060,
+          "bytes": "d088",
+          "mnemonic": "add.l",
+          "operands": "a0, d0"
+        },
+        {
+          "USS": 12621590,
+          "dump": 142038,
+          "CODE_offset": 4022,
+          "Shot_offset": 4062,
+          "bytes": "2f00",
+          "mnemonic": "move.l",
+          "operands": "d0, -(a7)"
+        },
+        {
+          "USS": 12621592,
+          "dump": 142040,
+          "CODE_offset": 4024,
+          "Shot_offset": 4064,
+          "bytes": "4eba5b30",
+          "mnemonic": "jsr",
+          "operands": "$c0f24a(pc)"
+        },
+        {
+          "USS": 12621596,
+          "dump": 142044,
+          "CODE_offset": 4028,
+          "Shot_offset": 4068,
+          "bytes": "584f",
+          "mnemonic": "addq.w",
+          "operands": "#$4, a7"
+        },
+        {
+          "USS": 12621598,
+          "dump": 142046,
+          "CODE_offset": 4030,
+          "Shot_offset": 4070,
+          "bytes": "4eba396c",
+          "mnemonic": "jsr",
+          "operands": "$c0d08c(pc)"
+        },
+        {
+          "USS": 12621602,
+          "dump": 142050,
+          "CODE_offset": 4034,
+          "Shot_offset": 4074,
+          "bytes": "4eba3ea4",
+          "mnemonic": "jsr",
+          "operands": "$c0d5c8(pc)"
+        },
+        {
+          "USS": 12621606,
+          "dump": 142054,
+          "CODE_offset": 4038,
+          "Shot_offset": 4078,
+          "bytes": "4eba4000",
+          "mnemonic": "jsr",
+          "operands": "$c0d728(pc)"
+        },
+        {
+          "USS": 12621610,
+          "dump": 142058,
+          "CODE_offset": 4042,
+          "Shot_offset": 4082,
+          "bytes": "486c311e",
+          "mnemonic": "pea.l",
+          "operands": "$311e(a4)"
+        },
+        {
+          "USS": 12621614,
+          "dump": 142062,
+          "CODE_offset": 4046,
+          "Shot_offset": 4086,
+          "bytes": "4eba4a98",
+          "mnemonic": "jsr",
+          "operands": "$c0e1c8(pc)"
+        },
+        {
+          "USS": 12621618,
+          "dump": 142066,
+          "CODE_offset": 4050,
+          "Shot_offset": 4090,
+          "bytes": "584f",
+          "mnemonic": "addq.w",
+          "operands": "#$4, a7"
+        },
+        {
+          "USS": 12621620,
+          "dump": 142068,
+          "CODE_offset": 4052,
+          "Shot_offset": 4092,
+          "bytes": "604e",
+          "mnemonic": "bra.b",
+          "operands": "$c09784"
+        },
+        {
+          "USS": 12621622,
+          "dump": 142070,
+          "CODE_offset": 4054,
+          "Shot_offset": 4094,
+          "bytes": "302c2c0c",
+          "mnemonic": "move.w",
+          "operands": "$2c0c(a4), d0"
+        },
+        {
+          "USS": 12621626,
+          "dump": 142074,
+          "CODE_offset": 4058,
+          "Shot_offset": 4098,
+          "bytes": "c1fc000c",
+          "mnemonic": "muls.w",
+          "operands": "#$c, d0"
+        },
+        {
+          "USS": 12621630,
+          "dump": 142078,
+          "CODE_offset": 4062,
+          "Shot_offset": 4102,
+          "bytes": "41ec2d36",
+          "mnemonic": "lea.l",
+          "operands": "$2d36(a4), a0"
+        },
+        {
+          "USS": 12621634,
+          "dump": 142082,
+          "CODE_offset": 4066,
+          "Shot_offset": 4106,
+          "bytes": "d088",
+          "mnemonic": "add.l",
+          "operands": "a0, d0"
+        },
+        {
+          "USS": 12621636,
+          "dump": 142084,
+          "CODE_offset": 4068,
+          "Shot_offset": 4108,
+          "bytes": "2f00",
+          "mnemonic": "move.l",
+          "operands": "d0, -(a7)"
+        },
+        {
+          "USS": 12621638,
+          "dump": 142086,
+          "CODE_offset": 4070,
+          "Shot_offset": 4110,
+          "bytes": "4eba5b02",
+          "mnemonic": "jsr",
+          "operands": "$c0f24a(pc)"
+        },
+        {
+          "USS": 12621642,
+          "dump": 142090,
+          "CODE_offset": 4074,
+          "Shot_offset": 4114,
+          "bytes": "584f",
+          "mnemonic": "addq.w",
+          "operands": "#$4, a7"
+        },
+        {
+          "USS": 12621644,
+          "dump": 142092,
+          "CODE_offset": 4076,
+          "Shot_offset": 4116,
+          "bytes": "4eba3fda",
+          "mnemonic": "jsr",
+          "operands": "$c0d728(pc)"
+        },
+        {
+          "USS": 12621648,
+          "dump": 142096,
+          "CODE_offset": 4080,
+          "Shot_offset": 4120,
+          "bytes": "0c6d0001ffe6",
+          "mnemonic": "cmpi.w",
+          "operands": "#$1, -$1a(a5)"
+        },
+        {
+          "USS": 12621654,
+          "dump": 142102,
+          "CODE_offset": 4086,
+          "Shot_offset": 4126,
+          "bytes": "6610",
+          "mnemonic": "bne.b",
+          "operands": "$c09768"
+        }
+      ],
+      "both_runtime_copies_match_ADF": true
+    },
+    {
+      "name": "pre_sync_LoadView_and_raster_wait",
+      "start": 12620874,
+      "end_exclusive": 12620898,
+      "instructions": [
+        {
+          "USS": 12620874,
+          "dump": 141322,
+          "CODE_offset": 3306,
+          "Shot_offset": 3346,
+          "bytes": "486c25c0",
+          "mnemonic": "pea.l",
+          "operands": "$25c0(a4)"
+        },
+        {
+          "USS": 12620878,
+          "dump": 141326,
+          "CODE_offset": 3310,
+          "Shot_offset": 3350,
+          "bytes": "4eac805c",
+          "mnemonic": "jsr",
+          "operands": "-$7fa4(a4)"
+        },
+        {
+          "USS": 12620882,
+          "dump": 141330,
+          "CODE_offset": 3314,
+          "Shot_offset": 3354,
+          "bytes": "584f",
+          "mnemonic": "addq.w",
+          "operands": "#$4, a7"
+        },
+        {
+          "USS": 12620884,
+          "dump": 141332,
+          "CODE_offset": 3316,
+          "Shot_offset": 3356,
+          "bytes": "4a3900dff006",
+          "mnemonic": "tst.b",
+          "operands": "$dff006.l"
+        },
+        {
+          "USS": 12620890,
+          "dump": 141338,
+          "CODE_offset": 3322,
+          "Shot_offset": 3362,
+          "bytes": "6702",
+          "mnemonic": "beq.b",
+          "operands": "$c0945e"
+        },
+        {
+          "USS": 12620892,
+          "dump": 141340,
+          "CODE_offset": 3324,
+          "Shot_offset": 3364,
+          "bytes": "60f6",
+          "mnemonic": "bra.b",
+          "operands": "$c09454"
+        },
+        {
+          "USS": 12620894,
+          "dump": 141342,
+          "CODE_offset": 3326,
+          "Shot_offset": 3366,
+          "bytes": "4eba410e",
+          "mnemonic": "jsr",
+          "operands": "$c0d56e(pc)"
+        }
+      ],
+      "both_runtime_copies_match_ADF": true
+    },
+    {
+      "name": "loop_back",
+      "start": 12622132,
+      "end_exclusive": 12622136,
+      "instructions": [
+        {
+          "USS": 12622132,
+          "dump": 142580,
+          "CODE_offset": 4564,
+          "Shot_offset": 4604,
+          "bytes": "6000f9f4",
+          "mnemonic": "bra.w",
+          "operands": "$c0932a"
+        }
+      ],
+      "both_runtime_copies_match_ADF": true
+    },
+    {
+      "name": "library_stub_target",
+      "start": 12655080,
+      "end_exclusive": 12655094,
+      "instructions": [
+        {
+          "USS": 12655080,
+          "dump": 175528,
+          "CODE_offset": 37512,
+          "Shot_offset": 37552,
+          "bytes": "226f0004",
+          "mnemonic": "movea.l",
+          "operands": "$4(a7), a1"
+        },
+        {
+          "USS": 12655084,
+          "dump": 175532,
+          "CODE_offset": 37516,
+          "Shot_offset": 37556,
+          "bytes": "2c7900022db4",
+          "mnemonic": "movea.l",
+          "operands": "$22db4.l, a6"
+        },
+        {
+          "USS": 12655090,
+          "dump": 175538,
+          "CODE_offset": 37522,
+          "Shot_offset": 37562,
+          "bytes": "4eeeff22",
+          "mnemonic": "jmp",
+          "operands": "-$de(a6)"
+        }
+      ],
+      "both_runtime_copies_match_ADF": true
+    },
+    {
+      "name": "update_counter",
+      "start": 12636300,
+      "end_exclusive": 12636330,
+      "instructions": [
+        {
+          "USS": 12636300,
+          "dump": 156748,
+          "CODE_offset": 18732,
+          "Shot_offset": 18772,
+          "bytes": "48e73c30",
+          "mnemonic": "movem.l",
+          "operands": "d2-d5/a2-a3, -(a7)"
+        },
+        {
+          "USS": 12636304,
+          "dump": 156752,
+          "CODE_offset": 18736,
+          "Shot_offset": 18776,
+          "bytes": "526c2c1a",
+          "mnemonic": "addq.w",
+          "operands": "#$1, $2c1a(a4)"
+        },
+        {
+          "USS": 12636308,
+          "dump": 156756,
+          "CODE_offset": 18740,
+          "Shot_offset": 18780,
+          "bytes": "4eba06e8",
+          "mnemonic": "jsr",
+          "operands": "$c0d77e(pc)"
+        },
+        {
+          "USS": 12636312,
+          "dump": 156760,
+          "CODE_offset": 18744,
+          "Shot_offset": 18784,
+          "bytes": "082c00002c1b",
+          "mnemonic": "btst.b",
+          "operands": "#$0, $2c1b(a4)"
+        },
+        {
+          "USS": 12636318,
+          "dump": 156766,
+          "CODE_offset": 18750,
+          "Shot_offset": 18790,
+          "bytes": "67000090",
+          "mnemonic": "beq.w",
+          "operands": "$c0d130"
+        },
+        {
+          "USS": 12636322,
+          "dump": 156770,
+          "CODE_offset": 18754,
+          "Shot_offset": 18794,
+          "bytes": "4a6c2c4e",
+          "mnemonic": "tst.w",
+          "operands": "$2c4e(a4)"
+        },
+        {
+          "USS": 12636326,
+          "dump": 156774,
+          "CODE_offset": 18758,
+          "Shot_offset": 18798,
+          "bytes": "66000088",
+          "mnemonic": "bne.w",
+          "operands": "$c0d130"
+        }
+      ],
+      "both_runtime_copies_match_ADF": true
+    }
+  ],
+  "player_step_per_call": 2,
+  "player_coordinate_format": "direct WORD low-resolution pixels; HPOS LSB retained",
+  "native_calls_per_PAL_frame": null,
+  "limitations": [
+    "No active gameplay trace; menu USS is not timing evidence.",
+    "Eight-bit VHPOSR gate accepts PAL lines0 and256.",
+    "Pre-gate library trampoline uses LVO -222 (graphics LoadView), not WaitTOF -270.",
+    "2px/50Hz engine frame is an adjustable test default, not a proven original effective speed."
+  ]
+}

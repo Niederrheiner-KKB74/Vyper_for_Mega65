@@ -502,3 +502,101 @@ Details: [Stage7b1](stage7b1_level_transition.md).
 Benutzerbestätigung und Merge-Freigabe am 13.10.2026. Referenz
 `stage7b1-stable`, Programmcommit `23eb0bba7d7be781372b508dbf6667c3f75bdea4`.
 Keine Code-, Speicher-, PRG- oder D81-Änderung durch die Stable-Markierung.
+
+## Stage7b2 — Testbuild, konzentrischer NCM-Übergang
+
+Basis Stage7b1 Stable unverändert. Das bestehende24KB-NCM-Sternbitmap
+`$18000–$1DDBF` trägt temporär die konzentrischen Ringe; kein weiterer
+Grafikpuffer und keine geänderten RRB-Screen-/Color-RAM-Glyphreferenzen.
+Bank1/52–55 sind vier isolierte Übergangsfarben, mit12-Byte-Backup
+`$1BA0–$1BAB`, Flags/D070 `$1BAC–$1BAD`. D025/D026 gesichert `$1B90–$1B91`.
+Übergangsstate weiterhin `$1BC0–$1BCF`. Gegnerkanäle2..5 Hardware-Multicolor,
+Player0..1 monochrom; Bitmaps weiterhin `$8A00–$8A7F`, Hitboxen unverändert.
+
+Neue Helfer: Setup `$6650`, Shared-Sprites `$80C0`, Palettebackup `$8180`,
+Palettemapping/RGB `$87A0`, Sternabdeckungsfilter `$B668`, Annuluspainter
+`$B6C0`, FSM `$BF10`. Endgrenzen sind assemblergeprüft; verbindliche genaue
+Bereiche siehe Release `memory-map.txt`. Laufzeitscratch `$5640–$56BF`,
+`$6800`, `$6900`, Levelmetadaten `$6Axx/$6F80`, DOS und private Pixie-Puffer
+werden nicht als freier Code benutzt. Kein zusätzlicher Solidglyph-Pool.
+Details: [Stage7b2](stage7b2_transition_and_projectiles.md).
+
+### Stage7b2 — Original3×7-Projektile
+
+Neue3-Byte-Sicherung Bank2/16 bei `$1B92–$1B94`; alle sechs Hardware-Sprites
+MCM, Spritemapping/Helfer weiterhin `$80C0–$80FF`. Zusätzliche Spritepaletten-
+Save/Restore-/Initialisierung `$BF96–$BFF2`, nach unverändertem Übergangs-FSM
+und vor `$C000`. Die beiden64-Byte-Bitmaps bleiben `$8A00–$8A7F`.
+
+## Stage7b3 — acht Projektilslots und verfügbare Gegnerliste
+
+Neue120-Byte-Projektilverwaltung `$1F00–$1F77`, zwölf8-Byte-Arrays plus24
+Skalarbytes. Eligibility-Liste22 Einträge `$1F80–$1F95`, Count/Mask/Scan/Kind
+`$1F96–$1F99`, hinter Entry bis `$1EF3` in der bisherigen Engine-Reserve und
+vor BASIC/Programm `$2001`. Assemblerguard trennt State und Liste.
+Registersicherung43 Bytes `$1B60–$1B8A` enthält nun auch D02D/D02E.
+Tabellenbasierte Snapshot-/Restore-Routine ab `$9B70` schafft freien Raum;
+Eligibility/Sampling und IRQ-geschützter8-Sprite-Exit bei `$9C00`, Endguard
+`$9D70` schützt den vorhandenen RRB-Renderer. Spritepointer weiterhin
+`$8900–$890F`, unveränderte128 Grafikbytes `$8A00–$8A7F`.
+Alle8 Spritebits, MCM/V400=$FF; fixed paletteBank2/10/13/16 unverändert.
+DATs, DOS, Privatepixies, Screen-/Color-RAM und Sternbitmap unverändert.
+Verbindliche Grenzen: Release `memory-map.txt` und
+[Stage7b3](stage7b3_attack_and_shot_frequency.md).
+
+## Stage7b4 — individuelle Schützenbegrenzung (Testbuild)
+
+Unveränderte Stage7b3-Projektilarrays `$1F00–$1F77`; Besitzerarray
+`$1F58–$1F5F`, Gegner nur Slots2–7. Neue temporäre Prüfbytes
+`$1F9A–$1F9B` hinter der Eligibility-Verwaltung. Keine persistenten
+Besitzerzähler und keine Änderung von Slot-, DMA-, Grafik- oder DOS-Puffern.
+Selection/Restore wächst auf `$9C00–$9D16`, weiterhin vor Renderer `$9D70`.
+Projektilkern mit zusätzlicher T-Prüfung bleibt vor `$85B0`.
+Alle fünf DATs und Spritegrafiken bleiben bytegleich zum getesteten Commit
+`a41e92ab8e4994a0a3288d60d63984d8593c8332`.
+Details: [Stage7b4](stage7b4_per_enemy_shot_limit.md), Release `memory-map.txt`.
+Keine Stable-Freigabe für Stage7b4.
+
+
+## Stage7b5a — Ereignisplaner und VYSH (Issue #63, Testbuild)
+
+Basis bleibt Stage7b4 `bd63682fa37df2853338b499f1210ec9dd2f56dc`.
+`VYSH.DAT` (1116 Bytes) belegt nach der Loaderkorrektur `$B000–$B45B`. Alle fünf bisherigen DATs
+und ihre Adressen bleiben bytegleich. Kein Zugriff auf ROM/DOS-Puffer.
+
+Die ungenutzten residenten Altgrafik-Kopien für Typ3–6 werden ausschließlich
+in der neuen Stage ersetzt; Original-VYGR und private Bank1-Frames bleiben
+unverändert. Type1/2 bis `$A57F` bleiben für Altinitialisierung/Orbit erhalten.
+`$A600–$A6FF`: aktueller11-Byte-Parameterrecord und aus Original-VYLV
+rekonstruierte Y-Zulässigkeitsbitmaps. `$A700–$A78E`: zwei WORD-Ereignisse
+je22 Actors, Pending-Masken und eigener LFSR/Scratch. `$A800–$AF07`:
+Ereigniscode, Loader-Validator und generierte Offset-/CRC-Tabellen.
+Sternencode ab `$B480` und sämtliche Bank1-RRB-Puffer bleiben unverändert.
+
+Normaler Fire-Dispatch/SEQ-Loader `$895C–$89E9`; Name/Header/ROMA-Gate
+`$9D30–$9D60`. Das Gate schaltet ROMA nur bei geschlossenen Kanälen und
+maskiertem IRQ für die CRC-Prüfung aus und restauriert D030/IRQ exakt.
+ENTRY-Hook passt bis `$5B74`, ATTACK-Hook bis `$9FED`; bestehende
+Segmentgrenzen werden vom Assembler geprüft. Kein Umbau des RRB-Screens.
+Details: [Stage7b5a](stage7b5a_original_fire_events.md),
+Release `memory-map.txt` und `STAGE7B5A.sym`. Keine Stable-Markierung.
+
+
+Stage7b5a-Loaderkorrektur14.10.2026: `$60000–$FFFFF` ist bei aktuellen
+MEGA65/XEMU-Modellen nicht RAM (384KB-Grenze). Der alte VYSH-Zielbereich
+`$70000` war fehlerhaft und führte nach dem ersten256-Byte-Chunk zu `$04`.
+VYSH bleibt jetzt als physische Bank0-Datei bei `$B000–$B45B` resident,
+vor Sternencode `$B480`, außerhalb des Menüs-Swaps und hinter Ereigniscode
+`$AF07`. Neuer Codeguard vor `$B000`, DAT-Guard vor `$B480`.
+DMA bleibt auch bei CPU-ROMA-Overlay physisch auf RAM gerichtet.
+Das Hostmodell ignoriert Zugriffe auf den nicht vorhandenen Speicher wie
+XEMU (Writes ignoriert, Reads `$FF`), statt diesen Bereich als RAM anzulegen.
+
+## Stage7b5b – Entwicklungsstand, XEMU-Abnahme offen
+
+Basis Stage7b5a `2954dc5` unverändert. Neue Projektil-Highbytes/Richtungen
+`$1F9A–$1FB9`, eigener RNG/Scratch `$1FBA–$1FC4`, Format je Slot `$1FC5–$1FCC`.
+Zusatzcode in freien Lücken unter `$A000`, ausschließlich normale CPU-RAM-Bereiche.
+VYSH bleibt `$B000–$B45B`; keine neue High-RAM-/DMA-Allokation.
+Exakte Assembly-Map: `releases/stage_7b5b/memory-map.txt`.
+Begründung und Feldbelegung: `docs/stage7b5b_player_and_projectile_motion.md`.

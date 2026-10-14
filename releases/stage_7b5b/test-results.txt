@@ -1,0 +1,19 @@
+test_BASIC_exit_second_RUN (test_stage7b5b.MotionTests.test_BASIC_exit_second_RUN) ... ok
+test_actual_mainloop_one_move_per_frame_and_instruction_budget (test_stage7b5b.MotionTests.test_actual_mainloop_one_move_per_frame_and_instruction_budget) ... ok
+test_all100_level_DY_reset_and_representative_frames (test_stage7b5b.MotionTests.test_all100_level_DY_reset_and_representative_frames) ... ok
+test_byte_identity_events_attack_selection_loader_and_art (test_stage7b5b.MotionTests.test_byte_identity_events_attack_selection_loader_and_art) ... ok
+test_event_schedule_unchanged (test_stage7b5b.MotionTests.test_event_schedule_unchanged) ... ok
+test_hit_explosion_respawn_keeps_X_and_blink_move (test_stage7b5b.MotionTests.test_hit_explosion_respawn_keeps_X_and_blink_move) ... ok
+test_isolated_legacy_T_keeps_old_8_8_update (test_stage7b5b.MotionTests.test_isolated_legacy_T_keeps_old_8_8_update) ... ok
+test_levelclear_100_wrap_R_and_event_reset_F1 (test_stage7b5b.MotionTests.test_levelclear_100_wrap_R_and_event_reset_F1) ... ok
+test_loader_menu_six_DATs_and_base_assets (test_stage7b5b.MotionTests.test_loader_menu_six_DATs_and_base_assets) ... ok
+test_native_fraction_floor_before_DY_45degree_and_sign (test_stage7b5b.MotionTests.test_native_fraction_floor_before_DY_45degree_and_sign) ... ok
+test_player_step_clamps_50_100_frames_muzzle_respawn (test_stage7b5b.MotionTests.test_player_step_clamps_50_100_frames_muzzle_respawn) ... ok
+test_signed_offscreen_no_wrap_collision_or_early_X_death (test_stage7b5b.MotionTests.test_signed_offscreen_no_wrap_collision_or_early_X_death) ... ok
+test_six_pool_event_consumption_owner_death_and_player_independence (test_stage7b5b.MotionTests.test_six_pool_event_consumption_owner_death_and_player_independence) ... ok
+test_spread_full_range_parity_projected_muzzle_and_rng_isolation (test_stage7b5b.MotionTests.test_spread_full_range_parity_projected_muzzle_and_rng_isolation) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 202.420s
+
+OK

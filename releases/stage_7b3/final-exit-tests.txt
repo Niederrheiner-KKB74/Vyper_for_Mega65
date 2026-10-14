@@ -1,0 +1,9 @@
+test_assigned_curves_preserved_for_multiple_levels (test_stage7b3.ExitAndCurveTests.test_assigned_curves_preserved_for_multiple_levels) ... ok
+test_eight_sprite_snapshot_restored_and_IRQ_enabled_on_BASIC_exit (test_stage7b3.ExitAndCurveTests.test_eight_sprite_snapshot_restored_and_IRQ_enabled_on_BASIC_exit) ... ok
+test_X_every_phase_restores_basic_palette_and_second_RUN (test_stage7b3.TransitionTests.test_X_every_phase_restores_basic_palette_and_second_RUN) ... ok
+test_full_cpu_clock_in_title_menu_game_and_basic_restore (test_stage7b3.MenuTests.test_full_cpu_clock_in_title_menu_game_and_basic_restore) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 156.419s
+
+OK

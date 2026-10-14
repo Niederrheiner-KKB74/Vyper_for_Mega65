@@ -1,0 +1,13 @@
+{
+  "kind": "host assembled-instruction/DMA/VIC model; not XEMU",
+  "tests": 14,
+  "result": "PASS",
+  "seconds": 202.42,
+  "reproducible_build": "two isolated builds: identical SHA256SUMS.txt for every builder output",
+  "original_evidence": "10 instruction spans,172 instructions crossmatched to relocated ADF and both runtime copies",
+  "engine_base": "2954dc57418f3898b8f958a9d15d79a57b2dd6bb",
+  "PRG_sha256": "1d1fc55abf196fc8bc57cf2cfa461faafcbdfb78bb39468f30056c0681d1a840",
+  "D81_sha256": "17e001e4d7639850a1c034f5d2d6c002a3a32131576ff8541cf41095a9ae667b",
+  "XEMU": "PENDING_USER",
+  "stable": false
+}

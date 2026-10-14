@@ -1,0 +1,54 @@
+{
+  "stage": "7b4",
+  "issue": 59,
+  "stable": false,
+  "base_commit": "a41e92ab8e4994a0a3288d60d63984d8593c8332",
+  "PRG_sha256": "970d535ec941cdff2cb584f3979bf9cbcd9b1572a6d669847d3a3ade7625e098",
+  "D81_sha256": "f0dcb4e559c85b04f17918752fcc7bc4fadd83d03f4ac656b787345062c11789",
+  "host_tests": {
+    "run": 50,
+    "passed": 50,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 628.021,
+    "log": "host-tests.txt",
+    "command": "PYTHONPATH=tests:tools:<py65-path> python -m unittest test_stage7b4 -v",
+    "model": "actual assembled instructions; narrow CPU/DMA/VIC model, not XEMU"
+  },
+  "frequency_measurements": {
+    "frames_per_scenario": 3000,
+    "remaining": [
+      22,
+      10,
+      5,
+      2,
+      1
+    ],
+    "shooters": [
+      1,
+      2,
+      3
+    ],
+    "owner_peaks": [
+      2,
+      2,
+      2
+    ],
+    "global_peaks": [
+      2,
+      4,
+      6
+    ],
+    "attack_counts_equal": true,
+    "paired_harness": "tools/measure_stage7b4_frequency.py, corrected22-entry arrays in both versions",
+    "reports": [
+      "7b3-frequency-measurements.json",
+      "7b4-frequency-measurements.json",
+      "frequency-comparison.json"
+    ]
+  },
+  "reproducible_build": "50 final build files byte equal; reproducibility-report.json",
+  "original_assets": "all5 DATs and graphics byte identical; base-comparison.json",
+  "XEMU": "NOT_RUN; user confirmation required; no Stable tag"
+}

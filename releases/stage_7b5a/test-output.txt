@@ -1,0 +1,13 @@
+test_live_DMA_never_uses_unmapped_fast_memory_and_file_survives_menu_game (test_stage7b5a.ChipRAMMapTests.test_live_DMA_never_uses_unmapped_fast_memory_and_file_survives_menu_game) ... ok
+test_unmapped_384KB_boundary_drops_writes_reads_FF (test_stage7b5a.ChipRAMMapTests.test_unmapped_384KB_boundary_drops_writes_reads_FF) ... ok
+test_full_loader_title_and_exact_menu_pixels (test_stage7b5a.MenuTests.test_full_loader_title_and_exact_menu_pixels) ... ok
+test_selected_levels_handoff_fonts_and_static_palette (test_stage7b5a.MenuTests.test_selected_levels_handoff_fonts_and_static_palette) ... ok
+test_eight_sprite_snapshot_restored_and_IRQ_enabled_on_BASIC_exit (test_stage7b5a.ExitAndCurveTests.test_eight_sprite_snapshot_restored_and_IRQ_enabled_on_BASIC_exit) ... ok
+test_missing_short_extra_bad_sum_header_and_record_CRC_fail_cleanly (test_stage7b5a.FireLoaderTests.test_missing_short_extra_bad_sum_header_and_record_CRC_fail_cleanly) ... ok
+test_all100_plans_nth_across_groups_originalY_and_mode (test_stage7b5a.OriginalEventTests.test_all100_plans_nth_across_groups_originalY_and_mode) ... ok
+test_romc_basic_mapping_and_repeat_menu_start (test_stage7b5a.ZCombatRegression.test_romc_basic_mapping_and_repeat_menu_start) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 359.163s
+
+OK

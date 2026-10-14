@@ -665,3 +665,110 @@ Vom Benutzer als stabil bestätigt und zum Merge freigegeben. Referenz
 Quellen, PRG, D81 und vollständiges Release `releases/stage_7b1/` unverändert.
 Alle bisherigen Stable-Referenzen bleiben erhalten. Abnahme stammt vom Benutzer;
 keine eigenen XEMU- oder neuen Hardware-Rastermessungen behauptet.
+
+## Stage7b2 — Testbuild für Issue55, XEMU-Abnahme offen
+
+Separater Branch `stage7b2`, Basis Stage7b1 Stable. Keine Stable-Markierung.
+Das bereitgestellte Screenshot-ZIP ist ausgewertet und unverändert archiviert.
+Die ursprünglichen vertikalen Flächen sind durch konzentrische 8-Pixel-Ringe
+ersetzt: räumlich außen→innen Blau/Gelb/Rot/Dunkelblau, danach schwarze
+Zentrum→Rand-Überdeckung. Unverändert 50 Frames Sternbeschleunigung;
+39 Farb-/39 Schwarzframes, dann nächster Level. Stern-Y/Phase laufen weiter;
+Bitmaprekonstruktion am Ende entfernt alle Überdeckungsreste. HUD bleibt frei.
+
+Gegnerprojektile: Hardware-Multicolor nur Kanäle2..5, weißer3-Pixel-Schaft und
+roter1-Pixel-Fuß; Player weiterhin weiß1×4. Trefferboxen/Flugbahnen/Schusslimits
+unverändert. Original-Amiga-Kandidat3×7 mit weiß/rot/grauen Flanken in USS,
+RAM-Dump und ADF binär gefunden; aktive Spiel-Spritezuordnung nicht bewiesen.
+Die1×4-Ausgabe ist deshalb ausdrücklich eine dokumentierte Testannäherung.
+
+Vollständiges Release `releases/stage_7b2/`, reproduzierbare Builder/Analyse,
+Hostregression und XEMU-Abnahmeplan:
+[Stage7b2](stage7b2_transition_and_projectiles.md). Frühere Stable-Dateien
+werden beim Build gegen ihre Git-Referenzen geprüft und bleiben unverändert.
+
+Automatik:39 vollständige Hostregressionen bestanden; nach finaler D01C-Restore-
+Ergänzung acht gezielte Wiederprüfungen bestanden.47 finale Builddateien plus
+Manifest aus zwei unabhängigen Builds bytegleich. Keine eigene XEMU-Abnahme.
+
+### Stage7b2 — Projektilrevision nach XEMU-Rückmeldung
+
+Benutzer bestätigt den konzentrischen Levelübergang als perfekt. Grafikgröße
+auf Original3×7 erweitert: Gegner Spitze unten, Player an horizontaler Achse
+gespiegelt (Spitze oben), inklusive Originalgrau. Alle sechs Kanäle MCM, feste
+Bank2-Einträge10/13/16. Grau16 zusätzlich gesichert/restauriert. Trefferboxen,
+Geschwindigkeiten und bestätigter Übergang erhalten. Noch kein Stable-Tag.
+
+## Stage7b3 — Testbuild für Issue57
+
+Branch `stage7b3`, feste unveränderte Referenz Stage7b2 `ec7a512`.
+Bestätigter Codebefund: einzelne zufällige Auswahl aus0..31 und Timerreset bei
+nicht verfügbarem Slot erzeugten den Restgegner-Abfall. Neue kompakte Liste
+lebender FORMATION-Gegner, power-of-two-Rang mit Rejection ohne neue Pause;
+Angriffsintervall30 Frames, maximal3 ATTACK. Schüsse aus berechtigter ENTRY/
+ATTACK-Liste, Cooldown6 und Wahrscheinlichkeit1/2; sechs Gegner- plus zwei
+Player-Schüsse auf allen acht Hardware-Sprites. Ursprüngliche3×7-Grafiken
+bleiben gemäß expliziter Benutzerklärung erhalten (Player rote Spitze oben).
+
+Messvergleich:3.000 Hostticks, SeedC3A5, verbleibend22/10/5/2/1. Bei stets
+verfügbarer Formation alt35/15/10/4/3, neu99/98/98/100/100 Angriffe. Echte
+Kurven/Rückkehr und Schussereignisse separat dokumentiert.42 Regressionen
+bestanden; nach finalem8-Sprite-BASIC-Restore vier gezielte Prüfungen bestanden.
+49 finale Builddateien plus Manifest bytegleich reproduziert. Kein eigener
+XEMU-Test, kein Stable-Tag oder Merge. Quellen/PRG/D81/ZIP unter
+`releases/stage_7b3/`; [Prüfbericht](stage7b3_attack_and_shot_frequency.md).
+
+## Stage7b4 — individueller Zwei-Schuss-Test (Issue #59)
+
+Separater Branch `stage7b4` direkt vom vom Benutzer getesteten Stage7b3-Commit
+`a41e92ab8e4994a0a3288d60d63984d8593c8332`. Frühere Quellen, Releases,
+Stable-Tags und main unverändert. Je ursprünglichem Gegner maximal zwei
+aktive Projektile; global weiterhin sechs Gegner- und zwei Player-Slots.
+Besitzer-ID bleibt bei RETURN/FORMATION/Tod erhalten; aktive Slots werden
+gezählt, sodass keine persistente Freigabebuchhaltung nötig ist.
+Angriffstimer, Schussfrequenzparameter, RNG, Kurven und gesamte Darstellung
+bleiben unverändert. Bestätigte3×7-Playergrafik mit roter Spitze oben erhalten.
+Vollständiges Release `releases/stage_7b4/`; technische Prüfung und
+XEMU-Abnahmecheckliste: [Stage7b4](stage7b4_per_enemy_shot_limit.md).
+**Testbuild, nicht Stable; XEMU-Abnahme durch Benutzer ausstehend.**
+
+
+## Stage7b5a — Originale Schussereignisse (Issue #63)
+
+Separater Branch `stage7b5a`, unveränderte getestete Basis
+`bd63682fa37df2853338b499f1210ec9dd2f56dc` (Stage7b4).
+Die neun Originalanalyse-Dateien aus PR #62 wurden gezielt übernommen.
+ENTRY verwendet individuelle WORD-Countdowns und globale N-te-Auswahl,
+ATTACK einmalige Original-Y-Schwellen. Ereignisse verfallen bei vollem
+Sechserpool ohne Wiederholung; die zusätzliche Schützenquote entfällt.
+`VYSH.DAT` liefert die Originalparameter aller100 Level (1116 Bytes);
+Original-DY wird nur gespeichert. Projektilbewegung/-grafik, Angriffsplaner
+und alle fünf vorhandenen DATs bleiben erhalten. Original-Y und B2-Y
+werden ausdrücklich getrennt behandelt.
+Quellen/Build/PRG/D81 unter `releases/stage_7b5a/`;
+[technische Dokumentation](stage7b5a_original_fire_events.md).
+**Testbuild, nicht Stable. XEMU-Abnahme durch Benutzer ausstehend.**
+
+
+### Stage7b5a: Loaderfehler `$04` korrigiert
+
+Benutzer meldete nach dem Titelbild `$04` bei VYSH. Ursache war die
+irrtümliche Allokation bei `$70000`, außerhalb des gegenwärtigen384-KB-
+Chip-RAMs. Der erste DMA-Rücklesevergleich scheitert nach256 Bytes.
+Im korrigierten Testbuild liegt VYSH bei `$B000–$B45B`; Regeln, Daten und
+Spielmechanik bleiben unverändert. Hostmodell auf den tatsächlichen
+MEGA65/XEMU-Speicherplan korrigiert; alter Fehler damit reproduziert.
+Aktuelle gezielte Tests und Rebuildnachweis im Release-Protokoll.
+Weiterhin nicht Stable; XEMU-Abnahme des korrigierten Images ausstehend.
+
+## Stage7b5b / Issue65 – Testbuild, nicht Stable
+
+Branch `stage7b5b`, unveränderte getestete Basis Stage7b5a `2954dc5`.
+Originale Gegnerprojektil-Rechnung16.16 mit DY1/2/3, Zielstreuung0..19 und
+45°-Grenze. Originale Schussereignisse und Angriffsauswahl bleiben bytegleich.
+Player-Originalschritt2px/Aufruf nachgewiesen; native Updatefrequenz weiterhin
+offen. Separater Testparameter2px pro MEGA65-Spielupdate, nicht als bewiesene
+Originalgeschwindigkeit ausgeben. Quellen, Build, PRG/D81 unter
+`releases/stage_7b5b/`; Analyse/Tests und XEMU-Checkliste in
+`docs/stage7b5b_player_and_projectile_motion.md`. Benutzerabnahme steht aus;
+keinen Stable-Tag setzen und keinen früheren Release überschreiben.

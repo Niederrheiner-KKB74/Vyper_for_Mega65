@@ -1,0 +1,30 @@
+{
+  "issue": 61,
+  "analysis_only": true,
+  "base_commit": "bd63682fa37df2853338b499f1210ec9dd2f56dc",
+  "original_CODE_cross_check": {
+    "verified_spans": 25,
+    "instructions": 821,
+    "ADF_vs_ChipRAM_dump_and_USS_BRAM": "all selected bytes equal after original RELOC32; every aligned direct spawn caller cross-checked"
+  },
+  "CSV_records": 100,
+  "entry_groups_checked": 248,
+  "valid_entry_lower_bounds_and_nonempty_eligible_points": true,
+  "reproduction": "three analysis outputs byte equal from independent directory; published assets CSV equals generated CSV",
+  "files": {
+    "evidence.json": "12f3e709e9b0b5ee95c26d858c79199cee847f87f238398b60140592f6a73b56",
+    "68000-excerpts.txt": "d1b29de9c640e1e4882b4cd9580cbccc3dcce1dacf38cdd01ef9b39dc2a6b3df",
+    "level_parameters.csv": "18fc42fe510f582f654eea14963073c1d88871d5440dc2529c5caaa30013df9b"
+  },
+  "execution": "static analysis and parser/disassembler checks; NOT WinUAE execution",
+  "engine_build": "NOT_RUN; prohibited by analysis-only scope",
+  "engine_changes": false,
+  "DAT_changes": false,
+  "unchanged_existing_base_files_checked": 1345,
+  "protected_directories": [
+    "src",
+    "assets",
+    "releases",
+    "tools"
+  ]
+}

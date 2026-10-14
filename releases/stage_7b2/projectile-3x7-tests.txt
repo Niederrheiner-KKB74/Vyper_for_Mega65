@@ -1,0 +1,22 @@
+test_X_every_phase_restores_basic_palette_and_second_RUN (test_stage7b2.TransitionTests.test_X_every_phase_restores_basic_palette_and_second_RUN) ... ok
+test_actual_sprite_pixels_white_and_unchanged_hitboxes (test_stage7b2.TransitionTests.test_actual_sprite_pixels_white_and_unchanged_hitboxes) ... ok
+test_exact_50_39_39_1_concentric_pixels_HUD_palette_score (test_stage7b2.TransitionTests.test_exact_50_39_39_1_concentric_pixels_HUD_palette_score) ... ok
+test_fast_mode_modulo_rates_exact_and_same_DMA_peak (test_stage7b2.TransitionTests.test_fast_mode_modulo_rates_exact_and_same_DMA_peak) ... ok
+test_four_level_edges_and_plus_minus_bypass_animation (test_stage7b2.TransitionTests.test_four_level_edges_and_plus_minus_bypass_animation) ... ok
+test_transition_palette_snapshot_and_two_consecutive_transitions (test_stage7b2.TransitionTests.test_transition_palette_snapshot_and_two_consecutive_transitions) ... ok
+test_X_during_pending_start_remains_responsive (test_stage7b2.ZCombatRegression.test_X_during_pending_start_remains_responsive) ... ok
+test_all100_palettes_keep_static_banks_and_cycle_phase (test_stage7b2.ZCombatRegression.test_all100_palettes_keep_static_banks_and_cycle_phase) ... ok
+test_combat_limits_return_respawn_and_invulnerable_control (test_stage7b2.ZCombatRegression.test_combat_limits_return_respawn_and_invulnerable_control) ... ok
+test_entry_fire_pool_fixed_target_and_wait_visibility (test_stage7b2.ZCombatRegression.test_entry_fire_pool_fixed_target_and_wait_visibility) ... ok
+test_game_over_complete_explosion_R_and_X (test_stage7b2.ZCombatRegression.test_game_over_complete_explosion_R_and_X) ... ok
+test_level_clear_press_release_wrap_score_lives_and_R (test_stage7b2.ZCombatRegression.test_level_clear_press_release_wrap_score_lives_and_R) ... ok
+test_new_menu_asset_failure_paths_restore_basic (test_stage7b2.ZCombatRegression.test_new_menu_asset_failure_paths_restore_basic) ... ok
+test_player_speed_and_keyboard_repeat (test_stage7b2.ZCombatRegression.test_player_speed_and_keyboard_repeat) ... ok
+test_return_follows_drifting_formation (test_stage7b2.ZCombatRegression.test_return_follows_drifting_formation) ... ok
+test_romc_basic_mapping_and_repeat_menu_start (test_stage7b2.ZCombatRegression.test_romc_basic_mapping_and_repeat_menu_start) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 339.588s
+
+OK
+Stage7b2 transition model 996885 cycles 496 DMA jobs

@@ -1,0 +1,2 @@
+# Disassembler only; no engine/build dependency changes.
+capstone==5.0.7
