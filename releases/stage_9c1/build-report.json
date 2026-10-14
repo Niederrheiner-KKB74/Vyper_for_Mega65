@@ -1,0 +1,57 @@
+{
+  "stage": "9c1",
+  "issue": 81,
+  "stable": false,
+  "base": "6052f677a8b84a841549561e874cd2f3290b2129",
+  "protected_files": 1828,
+  "mode": "mono80x25,640x200,8x8 font from runtime WOM",
+  "title": "- VYPER HIGH SCORE TABLE -",
+  "footer": "- PRESS A KEY OR JOYSTICK BUTTON TO CONTINUE -",
+  "columns": [
+    16,
+    49
+  ],
+  "entry_rows": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "entry_width": 15,
+  "frame": [
+    4,
+    1,
+    75,
+    23
+  ],
+  "cycle": "unchanged Stage9b1 cc routine / Stage6a2 constants",
+  "bands": {
+    "colours_rgb4": [
+      "00F",
+      "FF0",
+      "F00"
+    ],
+    "direction": "up",
+    "rows_per_band": 1,
+    "frames_per_row_step": 8
+  },
+  "pages": 4,
+  "entries": 80,
+  "test_data_only": true,
+  "disk_files": [
+    {
+      "name": "STAGE9C1",
+      "bytes": 18433,
+      "blocks": 73,
+      "sha256": "a54dea3af50427324980b2851fa08bb890f9d3a54e8bade84cd43f52f434a26b"
+    }
+  ],
+  "screenshot_comparison": "PENDING: no screenshot attached to Issue81/current request",
+  "xemu": "NOT_RUN; user acceptance required"
+}

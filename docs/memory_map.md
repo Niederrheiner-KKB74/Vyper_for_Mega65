@@ -636,3 +636,10 @@ und unveränderte Top-RETURN-Funktion36B0–36F5 (Anfang RETURN nun36D2).
 Kurvenindex, signedXY, Cursor, Anker und Bottom-Latch bleiben an bisherigen
 Adressen. Alle Audio-/Loader-/RRB-/DMA-Puffer unverändert.
 [Details](stage9b1_cyclic_attack_curves.md).
+
+## Stage9c1 (Issue81, eigenständiger Test)
+Kein Eingriff in die Stage9b1-Spielengine. Privater80×25-Monotext: Screen7000–77CF,
+Font8000–87FF (keine WOM-Aliasadresse), Color-FensterFF82000–FF827CF, Sicherung
+15000–157CF. Code2100–25A3, Originalzyklus3100–31C3, Zustand3200–3357, vier
+Seiten4000–5F3F, Farbplane6000–67CF, Rahmenglyphen67D0–67FF. Keine DOS-/ROM-/
+Attic-Belegung. [Sicherung und Restore](stage9c1_highscore_display.md).

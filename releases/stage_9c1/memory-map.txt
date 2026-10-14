@@ -1,0 +1,9 @@
+Memory Map
+----------
+Default-segment:
+  $2001-$200c BASIC SYS8448
+  $2100-$25a3 Standalone highscore controller
+  $3100-$31c3 Original COLOR02 cycle and private state
+  $3200-$3357 Private registers, palette and animation state
+  $4000-$5f3f Four deterministic highscore pages
+  $6000-$67ff Colour plane and private frame tiles

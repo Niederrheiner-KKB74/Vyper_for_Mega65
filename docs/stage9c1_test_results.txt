@@ -1,0 +1,57 @@
+Stage9c1 host validation — 14.10.2026 Europe/Berlin
+================================================
+11 tests PASSED. No XEMU run, no Stable tag, no merge.
+Base: confirmed Stage9b1, main6052f677a8b84a841549561e874cd2f3290b2129.
+Original Highscore screenshot not supplied in current request/Issue/comments;
+layout/wording implemented from Issue81; screenshot comparison remains open.
+
+Build: OpenJDK21, KickAssembler5.25 (pinned SHA256), Python3.12.
+Tests: py65==1.2.0, Pillow, constrained assembled CPU/VIC/DMA model.
+Two independent clean builds: all14 release files byte-identical.
+PRG18433 bytes; D81 819200 bytes, single PRG entry; contents/chains verified.
+All1828 existing src/assets/tools/releases files match the Stable main commit.
+D81 SHA256: 6153e35b3e0602aa38fed274eafbd9a53fe745259b75b7bdf7109d4b771465b6
+PRG SHA256: a54dea3af50427324980b2851fa08bb890f9d3a54e8bade84cd43f52f434a26b
+
+PR82 correction: one blue/yellow/red row each, phase0..2, one upward row
+step every8frames,24frame period. Original frame/title/footer cycle, pages,
+font frame glyphs and test records remain byte-identical.
+
+All80 records/pages/ranks/exact title and footer verified. Cursor typematic,
+short taps, Port2 neutral edges and page1/4 limits; blue/yellow/red upward bands
+in both columns: each adjacent row differs, palette[(row+phase)%3],384frames
+across all four pages and reverse paging, all non-table Color-RAM preserved,
+unchanged phases on paging,126 exact original palette ticks;
+full register/palette/Color-RAM/keyboard-column/CIA-DDRA restore, 40/80col
+entry, I/D flag variants and two RUNs per exit fixture; no frame due X exit;
+bounded DMA addresses, no DOS/ROM writes, no engine loader or VYHI.DAT.
+
+Model active work, excluding DMA and raster idle time:
+- band-update frame: maximum3721 modeled6502 cycles,2000 DMA bytes.
+- simultaneous page+band update:3843 modeled6502 cycles,4000 DMA bytes.
+These are NOT measured45GS02 cycles or hardware/XEMU raster timings.
+VIC private-font base8000 avoids legacy1000/1800/9000/9800 WOM aliases.
+
+Commands:
+python tools/build_stage9c1.py --kickass /workspace/stage3b-inspection/KickAss.jar
+python tools/build_stage9c1.py --kickass /workspace/stage3b-inspection/KickAss.jar --output /tmp/stage9c1-repeat
+PYTHONPATH=tests:tools:/workspace/stage3b-inspection/test-deps python -m unittest test_stage9c1 -v
+
+Final complete run after PR82 single-row colour correction:
+test_X_exits_even_when_no_animation_frame_is_due (test_stage9c1.Highscores.test_X_exits_even_when_no_animation_frame_is_due) ... ok
+test_all80_test_records_and_single_file_disk (test_stage9c1.Highscores.test_all80_test_records_and_single_file_disk) ... ok
+test_all_DMA_ranges_memory_boundaries_and_no_engine_assets (test_stage9c1.Highscores.test_all_DMA_ranges_memory_boundaries_and_no_engine_assets) ... ok
+test_any_other_key_return_X_and_held_fire_entry_clean_exit_twice (test_stage9c1.Highscores.test_any_other_key_return_X_and_held_fire_entry_clean_exit_twice) ... ok
+test_blue_yellow_red_bands_move_up_in_both_columns_without_reset (test_stage9c1.Highscores.test_blue_yellow_red_bands_move_up_in_both_columns_without_reset) ... ok
+test_four_pages_rank_positions_exact_words_no_residue (test_stage9c1.Highscores.test_four_pages_rank_positions_exact_words_no_residue) ... ok
+test_frame_title_footer_cycle_exact_existing_algorithm (test_stage9c1.Highscores.test_frame_title_footer_cycle_exact_existing_algorithm) ... ok
+test_full_entry_private_font_and_80_column_mode (test_stage9c1.Highscores.test_full_entry_private_font_and_80_column_mode) ... ok
+test_joystick_port2_neutral_edges_bounds_and_fire (test_stage9c1.Highscores.test_joystick_port2_neutral_edges_bounds_and_fire) ... ok
+test_keyboard_typematic_held_latch_and_fast_taps (test_stage9c1.Highscores.test_keyboard_typematic_held_latch_and_fast_taps) ... ok
+test_waits_once_for_raster_edge_and_bounded_work (test_stage9c1.Highscores.test_waits_once_for_raster_edge_and_bounded_work) ... Host instruction-model max cycles/frame (DMA latency excluded): 3721 max DMA bytes/frame: 2000
+ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.852s
+
+OK
