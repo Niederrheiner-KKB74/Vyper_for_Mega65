@@ -1,0 +1,34 @@
+Stage9c2 / Issue83 — Host verification, 2026-10-14
+
+test_all_pages_uint32_display_and_individual_row_colours (test_stage9c2.Management.test_all_pages_uint32_display_and_individual_row_colours) ... ok
+test_crc_validation_mutations_and_unused_slots (test_stage9c2.Management.test_crc_validation_mutations_and_unused_slots) ... ok
+test_empty_boot_and_exact_packet (test_stage9c2.Management.test_empty_boot_and_exact_packet) ... ok
+test_initial_disk_and_immutable_cycle_and_staged_page_budget (test_stage9c2.Management.test_initial_disk_and_immutable_cycle_and_staged_page_budget) ... Prepared-page model cycles (DMA latency excluded): 0 25520
+Prepared-page model cycles (DMA latency excluded): 80 28246
+ok
+test_insert_all_boundaries_ties_zeros_and_uint32 (test_stage9c2.Management.test_insert_all_boundaries_ties_zeros_and_uint32) ... ok
+test_missing_corrupt_version_and_backup_recovery_never_overwrite (test_stage9c2.Management.test_missing_corrupt_version_and_backup_recovery_never_overwrite) ... ok
+test_native_open_chkin_timeout_and_device_failures_close_channels (test_stage9c2.Management.test_native_open_chkin_timeout_and_device_failures_close_channels) ... ok
+test_no_qualification_and_single_name_commit_on_equal_last_place (test_stage9c2.Management.test_no_qualification_and_single_name_commit_on_equal_last_place) ... ok
+test_original_palette_sequence_survives_edit_and_disk_save (test_stage9c2.Management.test_original_palette_sequence_survives_edit_and_disk_save) ... ok
+test_pending_temp_is_preserved_and_last_resort_recovery_is_readonly (test_stage9c2.Management.test_pending_temp_is_preserved_and_last_resort_recovery_is_readonly) ... ok
+test_powerloss_after_backup_keeps_old_and_verified_new (test_stage9c2.Management.test_powerloss_after_backup_keeps_old_and_verified_new) ... ok
+test_real_save_readback_restart_and_return_debounce (test_stage9c2.Management.test_real_save_readback_restart_and_return_debounce) ... ok
+test_ui_decimal_overflow_name_backspace_abort_and_no_unconfirmed_disk (test_stage9c2.Management.test_ui_decimal_overflow_name_backspace_abort_and_no_unconfirmed_disk) ... ok
+test_writeprotect_diskfull_partial_corrupt_and_failed_rename (test_stage9c2.Management.test_writeprotect_diskfull_partial_corrupt_and_failed_rename) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 13.557s
+
+OK
+
+Reproducibility: all 18 output files byte-identical in two independent output directories.
+Protected baseline: 4acc8a2ed958f933dc3af9d9220c250b005a813c; 1846 existing files unchanged.
+
+STAGE9C2.PRG: 29406 bytes; SHA256 1d6efafd4281b022c55abbb0fffc34d2f416815da520cbd1acd15569d99bdd70
+VYPER_STAGE9C2.d81: 819200 bytes; SHA256 9de70ad1ec58ef177374d5a73e38385e9ddfe9845fcd3e6bda134f7a54759525
+VYHI.DAT: 592 bytes; SHA256 bd13995965462ed3a54a0971d5d51004497b7f458fc0dafd896fe9801e4dca20
+
+Scope: assembled 6502-subset code executed through py65 with modeled native KERNAL and persistent logical DOS files. Includes strict CLOSE Carry protocol, error injection, recovery, ties, input, page rendering and register restoration. This does not emulate physical D81-sector writes or prove real ROM timing.
+
+XEMU: NOT RUN. Writable-image persistence across emulator restart, disk error behavior, full visual animation and clean BASIC exit/DIRECTORY/RUN require user acceptance. No Stable marking.

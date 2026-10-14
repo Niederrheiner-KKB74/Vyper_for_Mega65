@@ -643,3 +643,15 @@ Font8000–87FF (keine WOM-Aliasadresse), Color-FensterFF82000–FF827CF, Sicher
 15000–157CF. Code2100–25A3, Originalzyklus3100–31C3, Zustand3200–3357, vier
 Seiten4000–5F3F, Farbplane6000–67CF, Rahmenglyphen67D0–67FF. Keine DOS-/ROM-/
 Attic-Belegung. [Sicherung und Restore](stage9c1_highscore_display.md).
+
+## Stage9c2 (Issue83, eigenständiger Test)
+Stage9c1 Stable bleibt unverändert; keine Spielengine-Integration.
+Controller2100–25D0, unveränderter Farbzyklus3100–31C3,
+Videozustand3200–3357, Highscorezustand3600–3AE9. Hintergrund4000–47CF,
+VYHI-Livetabelle4800–4A4F, Transaktionssnapshot4B00–4D4F,
+Leseprüfung4E00–504F. Native SEQ-/DOS-Verwaltung5100–5462,
+Dezimalcache5500–581F. Highscorecode8800–92DC.
+Farbplane6000–67CF, Rahmenglyphen67D0–67FF, Seitenpuffer6800–6FCF,
+Screen7000–77CF, Font8000–87FF und Color-Sicherung15000–157CF.
+Keine Puffer im DOS-RAM10000–11FFF oder ROM20000–3FFFF.
+[Format, Sicherung und Restore](stage9c2_highscore_management.md).
