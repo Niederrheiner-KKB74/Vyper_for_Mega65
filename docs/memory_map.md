@@ -621,3 +621,11 @@ Stage8b-IRQ-Fix: keine Speicheränderung. ROM-Trampolin66B0 behält sein Layout;
 bei66C6/66C7 steht nun SEI/PHP statt PHP/SEI. Rückgabestatus wird mit I=1 gesichert,
 bevor die native SYS-Abbildung verlassen wird. PLP bei66D8 öffnet kein IRQ-Fenster
 im A000→E000-Loader mehr. Alle DAT-/Ring-/Attic-Adressen unverändert.
+
+## Stage9a (Issue75, Entwicklungsstand)
+Zusätzlich `$1FD9/$1FDA`: Bonusfortschritt P1/P2 (P2 inaktiv), hinter Audiomailbox
+bis1FD8. Manager6000–65E4 enthält Abschluss-/Bonuslogik statt Hinweistext/Feuerwartephase.
+Koordinator85B0–85FB bleibt gleich groß durch JMP-Gate in den Manager nach den
+Explosionstimern; ursprüngliche Bewegungs-/Audio-/DMA-Adressen bleiben unverändert.
+F1-Reset erweitert Brücke aufCB00–CD54; Sterntabellen abCD80 bleiben getrennt.
+[Details](stage9a_auto_level_and_bonus_lives.md).

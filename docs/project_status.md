@@ -788,3 +788,10 @@ Stage8b-XEMU-Rückmeldung: Erstbuild50edf577 bricht unmittelbar nach Titel ab.
 IRQ-Fenster im neuen ROM-Trampolin nachgewiesen (PLP mit I=0 unter Loader-MAP).
 SEI/PHP vertauscht; nur zwei PRG-Bytes geändert. Instruktionsweise IRQ-Invariante
 und vollständige Wiederholungsprüfung; XEMU-Neuabnahme bleibt erforderlich.
+
+## Stage9a — automatischer Abschluss und Bonusleben (Issue75)
+Basis main/Stage8b Stable e932974; separater Branch stage9a. Abschluss nach letztem
+Explosionstimer vor neuen Kollisionen; unveränderte Transition/Sounds24→22 ohne
+LEVEL-CLEAR-Text/Bestätigung. Bonus alle drei tatsächlichen Siege, maximal8 Leben,
+getrennte reservierte P1/P2-Zähler; +/− erhalten Fortschritt ohne Bonus, F1/R setzen
+diesen zurück. [Technik/Abnahme](stage9a_auto_level_and_bonus_lives.md). Kein Stable/Merge.
