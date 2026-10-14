@@ -1,0 +1,10 @@
+test_CRC_busy_init_and_timeout_errors_restore (test_stage8a1.PCMTests.test_CRC_busy_init_and_timeout_errors_restore) ... ok
+test_joystick_release_and_no_queue_mid_sample (test_stage8a1.PCMTests.test_joystick_release_and_no_queue_mid_sample) ... ok
+test_mixer_fixed_mono_and_all_modes_EXIT_RUN (test_stage8a1.PCMTests.test_mixer_fixed_mono_and_all_modes_EXIT_RUN) ... ok
+test_one_shot_signed8_full_length_and_held_space (test_stage8a1.PCMTests.test_one_shot_signed8_full_length_and_held_space) ... ok
+test_source_extraction_rate_and_PRG_disk_bytes (test_stage8a1.PCMTests.test_source_extraction_rate_and_PRG_disk_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 4.451s
+
+OK

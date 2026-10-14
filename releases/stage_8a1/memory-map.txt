@@ -1,0 +1,6 @@
+Memory Map
+----------
+Default-segment:
+  $2001-$200c BASIC SYS8448
+  $2100-$2663 Stage8a1 PCM controller
+  $4000-$5a3f Original sound17: Signed8 PCM,6720 unchanged bytes

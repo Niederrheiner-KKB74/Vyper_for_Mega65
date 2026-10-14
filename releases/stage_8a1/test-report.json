@@ -1,0 +1,15 @@
+{
+  "stage": "8a1",
+  "kind": "assembled CPU instructions and narrow hardware register/sample-fetch model; NOT XEMU/hearing",
+  "tests": 5,
+  "result": "PASS",
+  "build_reproducible": "two independent temporary builds, SHA256SUMS identical",
+  "sample_hash_matches_original_and_both_RAM_dumps": true,
+  "one_shot_bytes_fetched": 6720,
+  "xemu": "NOT_RUN",
+  "hardware": "PENDING_USER",
+  "stable": false,
+  "mixer_readback_failure_tested": true,
+  "PRG_SHA256": "642a77f45c0262bc67b9a34ffc6e980f79932c3e1b2a593da1e271823ca52c8f",
+  "D81_SHA256": "668d349bd3f922b7b08720d014364111a084d6fcbde86a140b4b2d6d9c7e6e43"
+}

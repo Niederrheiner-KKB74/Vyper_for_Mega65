@@ -1,0 +1,45 @@
+{
+  "stage": "8a1",
+  "issue": 69,
+  "stable": false,
+  "standalone": true,
+  "protected_game_commit": "8e81363d13ff0e22578db36d7bd7446ffdd5a127",
+  "sample": {
+    "sound_id": 17,
+    "original": "/Vyper/sonquasar",
+    "original_file_offset": 76106,
+    "bytes": 6720,
+    "Paula_LEN_words": 3360,
+    "Paula_PER": 356,
+    "signedness": "signed8, unchanged bytes; NO XOR",
+    "sha256": "392d6aa00a7097e5539722a4cbb0cb4b0f909815ed751c3b96b0a92020f573e9",
+    "CRC16_CCITT_FALSE": 32623,
+    "Paula_clock_assumed_PAL": 3546895,
+    "counter_clock_assumed": 40500000,
+    "nominal_rate_Hz": 9963.188202247191,
+    "rate_increment": 4127,
+    "rate_increment_hex": "$00101F",
+    "actual_nominal_MEGA65_rate_Hz": 9962.528944015503,
+    "expected_seconds": 0.6744828927836882,
+    "sources_sha256": {
+      "Vyper_Memory_Dump.dat": "d74aea88fb4232e36caab80e51abc51f73d470a5b55a54f5cb010f1d910ddf8c",
+      "Vyper_Startscreen.uss": "d836cbf88f0ac35b6ed3776df2add39f699113c1aeb9d02cdfe4651c82793916",
+      "VYPER.ADF": "b28cab911431aaf3e48fd3e9979159de7154f98538eeba191f52ac47ef9665e5"
+    },
+    "analysis_commit": "d135b754beec10d608ac4bf6b91a2357247b62f3"
+  },
+  "sample_start": 16384,
+  "sample_end_exclusive": 23104,
+  "format": "CTRL82 Signed8, NO LOOP, NO XOR; channel0 only",
+  "routing": "fixed mono L/R, no dynamic panning,25% channel volume",
+  "files": [
+    {
+      "name": "STAGE8A1",
+      "bytes": 14913,
+      "blocks": 59,
+      "sha256": "642a77f45c0262bc67b9a34ffc6e980f79932c3e1b2a593da1e271823ca52c8f"
+    }
+  ],
+  "xemu": "NOT_RUN; no configured SDL XEMU runtime",
+  "real_hardware": "USER_ACCEPTANCE_PENDING"
+}
