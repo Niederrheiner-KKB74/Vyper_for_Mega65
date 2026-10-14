@@ -1,0 +1,29 @@
+Stage8a2 / Issue71 / 2026-10-14
+Host: Python3.12, py65==1.2.0, Java, pinned KickAssembler5.25
+Assembled6502 controller with explicit KERNAL/DMAgic/audio/mixer model.
+XEMU: NOT RUN; real MEGA65/audio hearing: NOT RUN.
+
+test_all_twenty_samples_exact_bytes_tail_and_restart (test_stage8a2.Tests.test_all_twenty_samples_exact_bytes_tail_and_restart) ... ok
+test_archive_bounds_rates_disk_and_extraction (test_stage8a2.Tests.test_archive_bounds_rates_disk_and_extraction) ... ok
+test_attic_capacity_alias_detected_after_whole_archive_load (test_stage8a2.Tests.test_attic_capacity_alias_detected_after_whole_archive_load) ... ok
+test_dual_long_sample_stream_and_bounded_DMA_load (test_stage8a2.Tests.test_dual_long_sample_stream_and_bounded_DMA_load) ... ok
+test_failure_restore_foreign_DMA_mixer_rate_and_KERNAL_status (test_stage8a2.Tests.test_failure_restore_foreign_DMA_mixer_rate_and_KERNAL_status) ... ok
+test_fastest_pair_live_pan_pause_stop_and_load_budget (test_stage8a2.Tests.test_fastest_pair_live_pan_pause_stop_and_load_budget) ... ok
+test_full_SEQ_loader_attic_roundtrip_crc (test_stage8a2.Tests.test_full_SEQ_loader_attic_roundtrip_crc) ... ok
+test_hardware_end_watchdog (test_stage8a2.Tests.test_hardware_end_watchdog) ... ok
+test_inputs_busy_pending_preemption_and_repeated_RUN (test_stage8a2.Tests.test_inputs_busy_pending_preemption_and_repeated_RUN) ... ok
+test_invalid_id_pointer_and_attic_failure (test_stage8a2.Tests.test_invalid_id_pointer_and_attic_failure) ... ok
+test_panning_all_original_divisors_and_stereo_isolation (test_stage8a2.Tests.test_panning_all_original_divisors_and_stereo_isolation) ... ok
+test_raster_snapshot_and_screen_status (test_stage8a2.Tests.test_raster_snapshot_and_screen_status) ... ok
+test_single_pending_id_last_admitted_writer_and_busy_rejection (test_stage8a2.Tests.test_single_pending_id_last_admitted_writer_and_busy_rejection) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 49.345s
+
+OK
+Measured assembled service max6502 cycles: 2447 DMA jobs: 3079
+Fastest pair max service/load-iteration6502 cycles: 1872 92930
+
+Reproducibility: all11 release artifacts identical in second clean build.
+Protection: all existing src/assets/tools/releases files identical to b56ae48.
+D81:819200 bytes, exact PRG and SEQ archive chains verified.

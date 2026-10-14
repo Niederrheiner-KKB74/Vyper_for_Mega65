@@ -1,0 +1,2 @@
+.const ARCHIVE_BYTES=154304
+.const ARCHIVE_CRC=$aa4e

@@ -600,3 +600,13 @@ Zusatzcode in freien Lücken unter `$A000`, ausschließlich normale CPU-RAM-Bere
 VYSH bleibt `$B000–$B45B`; keine neue High-RAM-/DMA-Allokation.
 Exakte Assembly-Map: `releases/stage_7b5b/memory-map.txt`.
 Begründung und Feldbelegung: `docs/stage7b5b_player_and_projectile_motion.md`.
+
+## Stage8a2 – eigenständiger PCM-Streamingtest, noch nicht Stable
+
+Basis Stage8a1 `b56ae48`, keine Änderungen an Spiel-/Stable-Dateien.
+Controller ab `$2100`, exaktes Ende in `releases/stage_8a2/memory-map.txt`.
+Zwei DMA-Ringe `$4000–$4FFF`/`$5000–$5FFF`, Staging/Check `$6000–$61FF`,
+Lastpuffer `$7000–$71FF`, Attic-Archiv `$08000000–$08025ABF` (154304 Bytes).
+Keine Allokation in ROM `$20000–$3FFFF` oder Haupt-RAM ab `$60000`.
+Attic wird vollständig mit DMA-Rücklesen und CRC geprüft. IRQ-/Audio-/Mixer-/I/O-
+Restore; DMA liest nur die ChipRAM-Ringe. Details: [Stage8a2](stage8a2_dual_pcm_streaming.md).

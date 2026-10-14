@@ -772,3 +772,13 @@ Originalgeschwindigkeit ausgeben. Quellen, Build, PRG/D81 unter
 `releases/stage_7b5b/`; Analyse/Tests und XEMU-Checkliste in
 `docs/stage7b5b_player_and_projectile_motion.md`. Benutzerabnahme steht aus;
 keinen Stable-Tag setzen und keinen früheren Release überschreiben.
+
+## Stage8a2 – Issue71, separater Entwicklungs-/Testbranch
+
+Technische Basis: vom Benutzer bestätigte Stage8a1 `b56ae48`; Quellen/Releases der
+Stage8a1 und Stage7b5b unverändert. Zwei logische PCM-Quellen, originales
+positionsabhängiges Panning, alle20 Samples im geprüften Attic-Archiv und unabhängige
+4KiB-ChipRAM-Ringe. Original-PER, manueller Busy-/Preemption-Test, begrenzte CPU-/DMA-
+Last, Rasterzeit-/Fehleranzeige, BASIC-Exit. PRG und vollständiges D81 unter
+`releases/stage_8a2/`. [Bericht und Abnahmeplan](stage8a2_dual_pcm_streaming.md).
+Hosttests sind keine XEMU-/Hardware-Hörabnahme. **Kein Stable-Tag, kein Merge ohne Freigabe.**
