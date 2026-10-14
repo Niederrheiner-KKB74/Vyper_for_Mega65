@@ -1,0 +1,15 @@
+{
+  "issue": 67,
+  "analysis_only": true,
+  "base": "f7350d621d2830dfcd80c4524e0d1665c63efa4b",
+  "protected_source_asset_release_files_verified": 1456,
+  "analysis_tests": 6,
+  "result": "PASS",
+  "no_engine_assembly": true,
+  "no_PRG_D81_DAT_generated": true,
+  "runtime_audio": "NOT_RUN",
+  "metadata_reproducibility": "five generated evidence files byte-identical across two runs in test",
+  "raw_samples_extracted_locally": 24,
+  "loaded_samples_match_both_RAM_images": 20,
+  "WAV_previews": "local only; PAL3546895/PER, unsigned8 mono, source XOR80, no mix/filter"
+}

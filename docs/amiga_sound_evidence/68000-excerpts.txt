@@ -1,0 +1,1166 @@
+Addresses: USS / dump / CODE offset / extracted Shot file offset.
+
+; transition_cues_and_rectangle_phase: CODE+$0794; Shot file+$07BC; both saved copies match relocated ADF
+00C08EF4 / 0222B4 / CODE+0794 / FILE+07BC  3b7c0002fffe           move.w    #$2, -$2(a5)
+00C08EFA / 0222BA / CODE+079A / FILE+07C2  302dfffe               move.w    -$2(a5), d0
+00C08EFE / 0222BE / CODE+079E / FILE+07C6  c1fc0016               muls.w    #$16, d0
+00C08F02 / 0222C2 / CODE+07A2 / FILE+07CA  41ec31b2               lea.l     $31b2(a4), a0
+00C08F06 / 0222C6 / CODE+07A6 / FILE+07CE  42700800               clr.w     (a0, d0.l)
+00C08F0A / 0222CA / CODE+07AA / FILE+07D2  526dfffe               addq.w    #$1, -$2(a5)
+00C08F0E / 0222CE / CODE+07AE / FILE+07D6  0c6d0008fffe           cmpi.w    #$8, -$2(a5)
+00C08F14 / 0222D4 / CODE+07B4 / FILE+07DC  6de4                   blt.b     $c08efa
+00C08F16 / 0222D6 / CODE+07B6 / FILE+07DE  4eba4656               jsr       $c0d56e(pc)
+00C08F1A / 0222DA / CODE+07BA / FILE+07E2  4eba136a               jsr       $c0a286(pc)
+00C08F1E / 0222DE / CODE+07BE / FILE+07E6  3b7c0078ffcc           move.w    #$78, -$34(a5)
+00C08F24 / 0222E4 / CODE+07C4 / FILE+07EC  397c00012c0a           move.w    #$1, $2c0a(a4)
+00C08F2A / 0222EA / CODE+07CA / FILE+07F2  33fc000100dff0a6       move.w    #$1, $dff0a6.l
+00C08F32 / 0222F2 / CODE+07D2 / FILE+07FA  33fc000100dff0b6       move.w    #$1, $dff0b6.l
+00C08F3A / 0222FA / CODE+07DA / FILE+0802  33fc000300dff096       move.w    #$3, $dff096.l
+00C08F42 / 022302 / CODE+07E2 / FILE+080A  426dfffe               clr.w     -$2(a5)
+00C08F46 / 022306 / CODE+07E6 / FILE+080E  526dfffe               addq.w    #$1, -$2(a5)
+00C08F4A / 02230A / CODE+07EA / FILE+0812  0c6d018ffffe           cmpi.w    #$18f, -$2(a5)
+00C08F50 / 022310 / CODE+07F0 / FILE+0818  6df4                   blt.b     $c08f46
+00C08F52 / 022312 / CODE+07F2 / FILE+081A  397c00182d50           move.w    #$18, $2d50(a4)
+00C08F58 / 022318 / CODE+07F8 / FILE+0820  41edffcc               lea.l     -$34(a5), a0
+00C08F5C / 02231C / CODE+07FC / FILE+0824  29482d56               move.l    a0, $2d56(a4)
+00C08F60 / 022320 / CODE+0800 / FILE+0828  4eba25f4               jsr       $c0b556(pc)
+00C08F64 / 022324 / CODE+0804 / FILE+082C  4eba1384               jsr       $c0a2ea(pc)
+00C08F68 / 022328 / CODE+0808 / FILE+0830  426dfffe               clr.w     -$2(a5)
+00C08F6C / 02232C / CODE+080C / FILE+0834  426dfffa               clr.w     -$6(a5)
+00C08F70 / 022330 / CODE+0810 / FILE+0838  6000008e               bra.w     $c09000
+00C08F74 / 022334 / CODE+0814 / FILE+083C  302dfffe               move.w    -$2(a5), d0
+00C08F78 / 022338 / CODE+0818 / FILE+0840  48c0                   ext.l     d0
+00C08F7A / 02233A / CODE+081A / FILE+0842  e580                   asl.l     #$2, d0
+00C08F7C / 02233C / CODE+081C / FILE+0844  41ec2cd6               lea.l     $2cd6(a4), a0
+00C08F80 / 022340 / CODE+0820 / FILE+0848  22300800               move.l    (a0, d0.l), d1
+00C08F84 / 022344 / CODE+0824 / FILE+084C  342dfffa               move.w    -$6(a5), d2
+00C08F88 / 022348 / CODE+0828 / FILE+0850  e342                   asl.w     #$1, d2
+00C08F8A / 02234A / CODE+082A / FILE+0852  48c2                   ext.l     d2
+00C08F8C / 02234C / CODE+082C / FILE+0854  e382                   asl.l     #$1, d2
+00C08F8E / 02234E / CODE+082E / FILE+0856  2242                   movea.l   d2, a1
+00C08F90 / 022350 / CODE+0830 / FILE+0858  3b711800fff6           move.w    (a1, d1.l), -$a(a5)
+00C08F96 / 022356 / CODE+0836 / FILE+085E  302dfffe               move.w    -$2(a5), d0
+00C08F9A / 02235A / CODE+083A / FILE+0862  48c0                   ext.l     d0
+00C08F9C / 02235C / CODE+083C / FILE+0864  e580                   asl.l     #$2, d0
+00C08F9E / 02235E / CODE+083E / FILE+0866  41ec2cd6               lea.l     $2cd6(a4), a0
+00C08FA2 / 022362 / CODE+0842 / FILE+086A  22700800               movea.l   (a0, d0.l), a1
+00C08FA6 / 022366 / CODE+0846 / FILE+086E  322dfffa               move.w    -$6(a5), d1
+00C08FAA / 02236A / CODE+084A / FILE+0872  e341                   asl.w     #$1, d1
+00C08FAC / 02236C / CODE+084C / FILE+0874  48c1                   ext.l     d1
+00C08FAE / 02236E / CODE+084E / FILE+0876  e381                   asl.l     #$1, d1
+00C08FB0 / 022370 / CODE+0850 / FILE+0878  d3c1                   adda.l    d1, a1
+00C08FB2 / 022372 / CODE+0852 / FILE+087A  3b690002fff4           move.w    $2(a1), -$c(a5)
+00C08FB8 / 022378 / CODE+0858 / FILE+0880  4a6dfff6               tst.w     -$a(a5)
+00C08FBC / 02237C / CODE+085C / FILE+0884  6d16                   blt.b     $c08fd4
+00C08FBE / 02237E / CODE+085E / FILE+0886  0c6d00f0fff6           cmpi.w    #$f0, -$a(a5)
+00C08FC4 / 022384 / CODE+0864 / FILE+088C  6e0e                   bgt.b     $c08fd4
+00C08FC6 / 022386 / CODE+0866 / FILE+088E  4a6dfff4               tst.w     -$c(a5)
+00C08FCA / 02238A / CODE+086A / FILE+0892  6d08                   blt.b     $c08fd4
+00C08FCC / 02238C / CODE+086C / FILE+0894  0c6d00d8fff4           cmpi.w    #$d8, -$c(a5)
+00C08FD2 / 022392 / CODE+0872 / FILE+089A  6f28                   ble.b     $c08ffc
+00C08FD4 / 022394 / CODE+0874 / FILE+089C  4eba3438               jsr       $c0c40e(pc)
+00C08FD8 / 022398 / CODE+0878 / FILE+08A0  3f2dfff4               move.w    -$c(a5), -(a7)
+00C08FDC / 02239C / CODE+087C / FILE+08A4  3f2dfff6               move.w    -$a(a5), -(a7)
+00C08FE0 / 0223A0 / CODE+0880 / FILE+08A8  3f2dfffa               move.w    -$6(a5), -(a7)
+00C08FE4 / 0223A4 / CODE+0884 / FILE+08AC  3f2dfffe               move.w    -$2(a5), -(a7)
+00C08FE8 / 0223A8 / CODE+0888 / FILE+08B0  3f2c2c0e               move.w    $2c0e(a4), -(a7)
+00C08FEC / 0223AC / CODE+088C / FILE+08B4  487a0952               pea.l     $c09940(pc)
+00C08FF0 / 0223B0 / CODE+0890 / FILE+08B8  4eba7be4               jsr       $c10bd6(pc)
+00C08FF4 / 0223B4 / CODE+0894 / FILE+08BC  4fef000e               lea.l     $e(a7), a7
+00C08FF8 / 0223B8 / CODE+0898 / FILE+08C0  4eac8014               jsr       -$7fec(a4)
+00C08FFC / 0223BC / CODE+089C / FILE+08C4  526dfffa               addq.w    #$1, -$6(a5)
+00C09000 / 0223C0 / CODE+08A0 / FILE+08C8  302c2c10               move.w    $2c10(a4), d0
+00C09004 / 0223C4 / CODE+08A4 / FILE+08CC  c1fc0072               muls.w    #$72, d0
+00C09008 / 0223C8 / CODE+08A8 / FILE+08D0  2040                   movea.l   d0, a0
+00C0900A / 0223CA / CODE+08AA / FILE+08D2  302dfffe               move.w    -$2(a5), d0
+00C0900E / 0223CE / CODE+08AE / FILE+08D6  48c0                   ext.l     d0
+00C09010 / 0223D0 / CODE+08B0 / FILE+08D8  e380                   asl.l     #$1, d0
+00C09012 / 0223D2 / CODE+08B2 / FILE+08DA  d1c0                   adda.l    d0, a0
+00C09014 / 0223D4 / CODE+08B4 / FILE+08DC  d1ec2c8e               adda.l    $2c8e(a4), a0
+00C09018 / 0223D8 / CODE+08B8 / FILE+08E0  322dfffa               move.w    -$6(a5), d1
+00C0901C / 0223DC / CODE+08BC / FILE+08E4  b2680010               cmp.w     $10(a0), d1
+00C09020 / 0223E0 / CODE+08C0 / FILE+08E8  6d00ff52               blt.w     $c08f74
+00C09024 / 0223E4 / CODE+08C4 / FILE+08EC  526dfffe               addq.w    #$1, -$2(a5)
+00C09028 / 0223E8 / CODE+08C8 / FILE+08F0  0c6d0004fffe           cmpi.w    #$4, -$2(a5)
+00C0902E / 0223EE / CODE+08CE / FILE+08F6  6d00ff3c               blt.w     $c08f6c
+00C09032 / 0223F2 / CODE+08D2 / FILE+08FA  3b7c0078ffcc           move.w    #$78, -$34(a5)
+00C09038 / 0223F8 / CODE+08D8 / FILE+0900  33fc000100dff0a6       move.w    #$1, $dff0a6.l
+00C09040 / 022400 / CODE+08E0 / FILE+0908  33fc000100dff0b6       move.w    #$1, $dff0b6.l
+00C09048 / 022408 / CODE+08E8 / FILE+0910  33fc000300dff096       move.w    #$3, $dff096.l
+00C09050 / 022410 / CODE+08F0 / FILE+0918  426dfffe               clr.w     -$2(a5)
+00C09054 / 022414 / CODE+08F4 / FILE+091C  526dfffe               addq.w    #$1, -$2(a5)
+00C09058 / 022418 / CODE+08F8 / FILE+0920  0c6d018ffffe           cmpi.w    #$18f, -$2(a5)
+00C0905E / 02241E / CODE+08FE / FILE+0926  6df4                   blt.b     $c09054
+00C09060 / 022420 / CODE+0900 / FILE+0928  397c00162d50           move.w    #$16, $2d50(a4)
+00C09066 / 022426 / CODE+0906 / FILE+092E  41edffcc               lea.l     -$34(a5), a0
+00C0906A / 02242A / CODE+090A / FILE+0932  29482d56               move.l    a0, $2d56(a4)
+00C0906E / 02242E / CODE+090E / FILE+0936  397c00012c0a           move.w    #$1, $2c0a(a4)
+00C09074 / 022434 / CODE+0914 / FILE+093C  4eac8086               jsr       -$7f7a(a4)
+00C09078 / 022438 / CODE+0918 / FILE+0940  4eac8086               jsr       -$7f7a(a4)
+00C0907C / 02243C / CODE+091C / FILE+0944  4eac8086               jsr       -$7f7a(a4)
+00C09080 / 022440 / CODE+0920 / FILE+0948  426c2c0a               clr.w     $2c0a(a4)
+00C09084 / 022444 / CODE+0924 / FILE+094C  397c00048446           move.w    #$4, -$7bba(a4)
+00C0908A / 02244A / CODE+092A / FILE+0952  397c00042552           move.w    #$4, $2552(a4)
+00C09090 / 022450 / CODE+0930 / FILE+0958  4eac8050               jsr       -$7fb0(a4)
+00C09094 / 022454 / CODE+0934 / FILE+095C  302c2c0c               move.w    $2c0c(a4), d0
+00C09098 / 022458 / CODE+0938 / FILE+0960  08400000               bchg.b    #$0, d0
+00C0909C / 02245C / CODE+093C / FILE+0964  c1fc0028               muls.w    #$28, d0
+00C090A0 / 022460 / CODE+0940 / FILE+0968  41ec260a               lea.l     $260a(a4), a0
+00C090A4 / 022464 / CODE+0944 / FILE+096C  d088                   add.l     a0, d0
+00C090A6 / 022466 / CODE+0946 / FILE+096E  2940265e               move.l    d0, $265e(a4)
+00C090AA / 02246A / CODE+094A / FILE+0972  3b7c0008ffe0           move.w    #$8, -$20(a5)
+00C090B0 / 022470 / CODE+0950 / FILE+0978  426dffde               clr.w     -$22(a5)
+00C090B4 / 022474 / CODE+0954 / FILE+097C  302dffde               move.w    -$22(a5), d0
+00C090B8 / 022478 / CODE+0958 / FILE+0980  48c0                   ext.l     d0
+00C090BA / 02247A / CODE+095A / FILE+0982  e380                   asl.l     #$1, d0
+00C090BC / 02247C / CODE+095C / FILE+0984  41ec8132               lea.l     -$7ece(a4), a0
+00C090C0 / 022480 / CODE+0960 / FILE+0988  32300800               move.w    (a0, d0.l), d1
+00C090C4 / 022484 / CODE+0964 / FILE+098C  48c1                   ext.l     d1
+00C090C6 / 022486 / CODE+0966 / FILE+098E  2f01                   move.l    d1, -(a7)
+00C090C8 / 022488 / CODE+0968 / FILE+0990  486c265a               pea.l     $265a(a4)
+00C090CC / 02248C / CODE+096C / FILE+0994  4eac8074               jsr       -$7f8c(a4)
+00C090D0 / 022490 / CODE+0970 / FILE+0998  504f                   addq.w    #$8, a7
+00C090D2 / 022492 / CODE+0972 / FILE+099A  2b7c00000063ffda       move.l    #$63, -$26(a5)
+00C090DA / 02249A / CODE+097A / FILE+09A2  2b7c00000073ffd2       move.l    #$73, -$2e(a5)
+00C090E2 / 0224A2 / CODE+0982 / FILE+09AA  2b7c0000008cffd6       move.l    #$8c, -$2a(a5)
+00C090EA / 0224AA / CODE+098A / FILE+09B2  2b7c00000074ffce       move.l    #$74, -$32(a5)
+00C090F2 / 0224B2 / CODE+0992 / FILE+09BA  3f3c000d               move.w    #$d, -(a7)
+00C090F6 / 0224B6 / CODE+0996 / FILE+09BE  4eba5c80               jsr       $c0ed78(pc)
+00C090FA / 0224BA / CODE+099A / FILE+09C2  544f                   addq.w    #$2, a7
+00C090FC / 0224BC / CODE+099C / FILE+09C4  3b40ffca               move.w    d0, -$36(a5)
+00C09100 / 0224C0 / CODE+09A0 / FILE+09C8  302c2c5c               move.w    $2c5c(a4), d0
+00C09104 / 0224C4 / CODE+09A4 / FILE+09CC  c1fc0012               muls.w    #$12, d0
+00C09108 / 0224C8 / CODE+09A8 / FILE+09D0  41ec338c               lea.l     $338c(a4), a0
+00C0910C / 0224CC / CODE+09AC / FILE+09D4  3b700800ffc8           move.w    (a0, d0.l), -$38(a5)
+00C09112 / 0224D2 / CODE+09B2 / FILE+09DA  4aadffda               tst.l     -$26(a5)
+00C09116 / 0224D6 / CODE+09B6 / FILE+09DE  6d000152               blt.w     $c0926a
+00C0911A / 0224DA / CODE+09BA / FILE+09E2  426dfffe               clr.w     -$2(a5)
+00C0911E / 0224DE / CODE+09BE / FILE+09E6  526dfffe               addq.w    #$1, -$2(a5)
+00C09122 / 0224E2 / CODE+09C2 / FILE+09EA  0c6d0082fffe           cmpi.w    #$82, -$2(a5)
+00C09128 / 0224E8 / CODE+09C8 / FILE+09F0  6df4                   blt.b     $c0911e
+00C0912A / 0224EA / CODE+09CA / FILE+09F2  7208                   moveq     #$8, d1
+00C0912C / 0224EC / CODE+09CC / FILE+09F4  202dffd6               move.l    -$2a(a5), d0
+00C09130 / 0224F0 / CODE+09D0 / FILE+09F8  4eac8008               jsr       -$7ff8(a4)
+00C09134 / 0224F4 / CODE+09D4 / FILE+09FC  660000b6               bne.w     $c091ec
+00C09138 / 0224F8 / CODE+09D8 / FILE+0A00  302dffca               move.w    -$36(a5), d0
+00C0913C / 0224FC / CODE+09DC / FILE+0A04  c07c000f               and.w     #$f, d0
+00C09140 / 022500 / CODE+09E0 / FILE+0A08  3b40fffe               move.w    d0, -$2(a5)
+00C09144 / 022504 / CODE+09E4 / FILE+0A0C  302dffc8               move.w    -$38(a5), d0
+00C09148 / 022508 / CODE+09E8 / FILE+0A10  c07c000f               and.w     #$f, d0
+00C0914C / 02250C / CODE+09EC / FILE+0A14  322dfffe               move.w    -$2(a5), d1
+00C09150 / 022510 / CODE+09F0 / FILE+0A18  b240                   cmp.w     d0, d1
+00C09152 / 022512 / CODE+09F2 / FILE+0A1A  6c04                   bge.b     $c09158
+00C09154 / 022514 / CODE+09F4 / FILE+0A1C  526dffca               addq.w    #$1, -$36(a5)
+00C09158 / 022518 / CODE+09F8 / FILE+0A20  302dffc8               move.w    -$38(a5), d0
+00C0915C / 02251C / CODE+09FC / FILE+0A24  c07c000f               and.w     #$f, d0
+00C09160 / 022520 / CODE+0A00 / FILE+0A28  322dfffe               move.w    -$2(a5), d1
+00C09164 / 022524 / CODE+0A04 / FILE+0A2C  b240                   cmp.w     d0, d1
+00C09166 / 022526 / CODE+0A06 / FILE+0A2E  6f04                   ble.b     $c0916c
+00C09168 / 022528 / CODE+0A08 / FILE+0A30  536dffca               subq.w    #$1, -$36(a5)
+00C0916C / 02252C / CODE+0A0C / FILE+0A34  302dffca               move.w    -$36(a5), d0
+00C09170 / 022530 / CODE+0A10 / FILE+0A38  c07c00f0               and.w     #$f0, d0
+00C09174 / 022534 / CODE+0A14 / FILE+0A3C  3b40fffe               move.w    d0, -$2(a5)
+00C09178 / 022538 / CODE+0A18 / FILE+0A40  302dffc8               move.w    -$38(a5), d0
+00C0917C / 02253C / CODE+0A1C / FILE+0A44  c07c00f0               and.w     #$f0, d0
+00C09180 / 022540 / CODE+0A20 / FILE+0A48  322dfffe               move.w    -$2(a5), d1
+00C09184 / 022544 / CODE+0A24 / FILE+0A4C  b240                   cmp.w     d0, d1
+00C09186 / 022546 / CODE+0A26 / FILE+0A4E  6c06                   bge.b     $c0918e
+00C09188 / 022548 / CODE+0A28 / FILE+0A50  066d0010ffca           addi.w    #$10, -$36(a5)
+00C0918E / 02254E / CODE+0A2E / FILE+0A56  302dffc8               move.w    -$38(a5), d0
+00C09192 / 022552 / CODE+0A32 / FILE+0A5A  c07c00f0               and.w     #$f0, d0
+00C09196 / 022556 / CODE+0A36 / FILE+0A5E  322dfffe               move.w    -$2(a5), d1
+00C0919A / 02255A / CODE+0A3A / FILE+0A62  b240                   cmp.w     d0, d1
+00C0919C / 02255C / CODE+0A3C / FILE+0A64  6f06                   ble.b     $c091a4
+00C0919E / 02255E / CODE+0A3E / FILE+0A66  046d0010ffca           subi.w    #$10, -$36(a5)
+00C091A4 / 022564 / CODE+0A44 / FILE+0A6C  302dffca               move.w    -$36(a5), d0
+00C091A8 / 022568 / CODE+0A48 / FILE+0A70  c07c0f00               and.w     #$f00, d0
+00C091AC / 02256C / CODE+0A4C / FILE+0A74  3b40fffe               move.w    d0, -$2(a5)
+00C091B0 / 022570 / CODE+0A50 / FILE+0A78  302dffc8               move.w    -$38(a5), d0
+00C091B4 / 022574 / CODE+0A54 / FILE+0A7C  c07c0f00               and.w     #$f00, d0
+00C091B8 / 022578 / CODE+0A58 / FILE+0A80  322dfffe               move.w    -$2(a5), d1
+00C091BC / 02257C / CODE+0A5C / FILE+0A84  b240                   cmp.w     d0, d1
+00C091BE / 02257E / CODE+0A5E / FILE+0A86  6c06                   bge.b     $c091c6
+00C091C0 / 022580 / CODE+0A60 / FILE+0A88  066d0100ffca           addi.w    #$100, -$36(a5)
+00C091C6 / 022586 / CODE+0A66 / FILE+0A8E  302dffc8               move.w    -$38(a5), d0
+00C091CA / 02258A / CODE+0A6A / FILE+0A92  c07c0f00               and.w     #$f00, d0
+00C091CE / 02258E / CODE+0A6E / FILE+0A96  322dfffe               move.w    -$2(a5), d1
+00C091D2 / 022592 / CODE+0A72 / FILE+0A9A  b240                   cmp.w     d0, d1
+00C091D4 / 022594 / CODE+0A74 / FILE+0A9C  6f06                   ble.b     $c091dc
+00C091D6 / 022596 / CODE+0A76 / FILE+0A9E  046d0100ffca           subi.w    #$100, -$36(a5)
+00C091DC / 02259C / CODE+0A7C / FILE+0AA4  3f2dffca               move.w    -$36(a5), -(a7)
+00C091E0 / 0225A0 / CODE+0A80 / FILE+0AA8  3f3c000d               move.w    #$d, -(a7)
+00C091E4 / 0225A4 / CODE+0A84 / FILE+0AAC  4eba5bac               jsr       $c0ed92(pc)
+00C091E8 / 0225A8 / CODE+0A88 / FILE+0AB0  584f                   addq.w    #$4, a7
+00C091EA / 0225AA / CODE+0A8A / FILE+0AB2  6010                   bra.b     $c091fc
+00C091EC / 0225AC / CODE+0A8C / FILE+0AB4  426dfffe               clr.w     -$2(a5)
+00C091F0 / 0225B0 / CODE+0A90 / FILE+0AB8  526dfffe               addq.w    #$1, -$2(a5)
+00C091F4 / 0225B4 / CODE+0A94 / FILE+0ABC  0c6d0032fffe           cmpi.w    #$32, -$2(a5)
+00C091FA / 0225BA / CODE+0A9A / FILE+0AC2  6df4                   blt.b     $c091f0
+00C091FC / 0225BC / CODE+0A9C / FILE+0AC4  2f2dffce               move.l    -$32(a5), -(a7)
+00C09200 / 0225C0 / CODE+0AA0 / FILE+0AC8  2f2dffd6               move.l    -$2a(a5), -(a7)
+00C09204 / 0225C4 / CODE+0AA4 / FILE+0ACC  2f2dffd2               move.l    -$2e(a5), -(a7)
+00C09208 / 0225C8 / CODE+0AA8 / FILE+0AD0  2f2dffda               move.l    -$26(a5), -(a7)
+00C0920C / 0225CC / CODE+0AAC / FILE+0AD4  486c265a               pea.l     $265a(a4)
+00C09210 / 0225D0 / CODE+0AB0 / FILE+0AD8  4eba3a90               jsr       $c0cca2(pc)
+00C09214 / 0225D4 / CODE+0AB4 / FILE+0ADC  4fef0014               lea.l     $14(a7), a7
+00C09218 / 0225D8 / CODE+0AB8 / FILE+0AE0  536dffe0               subq.w    #$1, -$20(a5)
+00C0921C / 0225DC / CODE+0ABC / FILE+0AE4  4a6dffe0               tst.w     -$20(a5)
+00C09220 / 0225E0 / CODE+0AC0 / FILE+0AE8  6634                   bne.b     $c09256
+00C09222 / 0225E2 / CODE+0AC2 / FILE+0AEA  3b7c0008ffe0           move.w    #$8, -$20(a5)
+00C09228 / 0225E8 / CODE+0AC8 / FILE+0AF0  526dffde               addq.w    #$1, -$22(a5)
+00C0922C / 0225EC / CODE+0ACC / FILE+0AF4  0c6d0004ffde           cmpi.w    #$4, -$22(a5)
+00C09232 / 0225F2 / CODE+0AD2 / FILE+0AFA  6604                   bne.b     $c09238
+00C09234 / 0225F4 / CODE+0AD4 / FILE+0AFC  426dffde               clr.w     -$22(a5)
+00C09238 / 0225F8 / CODE+0AD8 / FILE+0B00  302dffde               move.w    -$22(a5), d0
+00C0923C / 0225FC / CODE+0ADC / FILE+0B04  48c0                   ext.l     d0
+00C0923E / 0225FE / CODE+0ADE / FILE+0B06  e380                   asl.l     #$1, d0
+00C09240 / 022600 / CODE+0AE0 / FILE+0B08  41ec8132               lea.l     -$7ece(a4), a0
+00C09244 / 022604 / CODE+0AE4 / FILE+0B0C  32300800               move.w    (a0, d0.l), d1
+00C09248 / 022608 / CODE+0AE8 / FILE+0B10  48c1                   ext.l     d1
+00C0924A / 02260A / CODE+0AEA / FILE+0B12  2f01                   move.l    d1, -(a7)
+00C0924C / 02260C / CODE+0AEC / FILE+0B14  486c265a               pea.l     $265a(a4)
+00C09250 / 022610 / CODE+0AF0 / FILE+0B18  4eac8074               jsr       -$7f8c(a4)
+00C09254 / 022614 / CODE+0AF4 / FILE+0B1C  504f                   addq.w    #$8, a7
+00C09256 / 022616 / CODE+0AF6 / FILE+0B1E  53adffda               subq.l    #$1, -$26(a5)
+00C0925A / 02261A / CODE+0AFA / FILE+0B22  53adffd2               subq.l    #$1, -$2e(a5)
+00C0925E / 02261E / CODE+0AFE / FILE+0B26  52adffd6               addq.l    #$1, -$2a(a5)
+00C09262 / 022622 / CODE+0B02 / FILE+0B2A  52adffce               addq.l    #$1, -$32(a5)
+00C09266 / 022626 / CODE+0B06 / FILE+0B2E  6000feaa               bra.w     $c09112
+00C0926A / 02262A / CODE+0B0A / FILE+0B32  42a7                   clr.l     -(a7)
+00C0926C / 02262C / CODE+0B0C / FILE+0B34  486c265a               pea.l     $265a(a4)
+00C09270 / 022630 / CODE+0B10 / FILE+0B38  4eac8074               jsr       -$7f8c(a4)
+00C09274 / 022634 / CODE+0B14 / FILE+0B3C  504f                   addq.w    #$8, a7
+00C09276 / 022636 / CODE+0B16 / FILE+0B3E  2b7c00000063ffda       move.l    #$63, -$26(a5)
+00C0927E / 02263E / CODE+0B1E / FILE+0B46  2b7c00000073ffd2       move.l    #$73, -$2e(a5)
+00C09286 / 022646 / CODE+0B26 / FILE+0B4E  2b7c0000008cffd6       move.l    #$8c, -$2a(a5)
+00C0928E / 02264E / CODE+0B2E / FILE+0B56  2b7c00000074ffce       move.l    #$74, -$32(a5)
+00C09296 / 022656 / CODE+0B36 / FILE+0B5E  4aadffda               tst.l     -$26(a5)
+00C0929A / 02265A / CODE+0B3A / FILE+0B62  6d3e                   blt.b     $c092da
+00C0929C / 02265C / CODE+0B3C / FILE+0B64  426dfffe               clr.w     -$2(a5)
+00C092A0 / 022660 / CODE+0B40 / FILE+0B68  526dfffe               addq.w    #$1, -$2(a5)
+00C092A4 / 022664 / CODE+0B44 / FILE+0B6C  0c6d0096fffe           cmpi.w    #$96, -$2(a5)
+00C092AA / 02266A / CODE+0B4A / FILE+0B72  6df4                   blt.b     $c092a0
+00C092AC / 02266C / CODE+0B4C / FILE+0B74  2f2dffce               move.l    -$32(a5), -(a7)
+00C092B0 / 022670 / CODE+0B50 / FILE+0B78  2f2dffd6               move.l    -$2a(a5), -(a7)
+00C092B4 / 022674 / CODE+0B54 / FILE+0B7C  2f2dffd2               move.l    -$2e(a5), -(a7)
+00C092B8 / 022678 / CODE+0B58 / FILE+0B80  2f2dffda               move.l    -$26(a5), -(a7)
+00C092BC / 02267C / CODE+0B5C / FILE+0B84  486c265a               pea.l     $265a(a4)
+00C092C0 / 022680 / CODE+0B60 / FILE+0B88  4eba39e0               jsr       $c0cca2(pc)
+00C092C4 / 022684 / CODE+0B64 / FILE+0B8C  4fef0014               lea.l     $14(a7), a7
+00C092C8 / 022688 / CODE+0B68 / FILE+0B90  53adffda               subq.l    #$1, -$26(a5)
+00C092CC / 02268C / CODE+0B6C / FILE+0B94  53adffd2               subq.l    #$1, -$2e(a5)
+00C092D0 / 022690 / CODE+0B70 / FILE+0B98  52adffd6               addq.l    #$1, -$2a(a5)
+00C092D4 / 022694 / CODE+0B74 / FILE+0B9C  52adffce               addq.l    #$1, -$32(a5)
+00C092D8 / 022698 / CODE+0B78 / FILE+0BA0  60bc                   bra.b     $c09296
+00C092DA / 02269A / CODE+0B7A / FILE+0BA2  397c00348446           move.w    #$34, -$7bba(a4)
+00C092E0 / 0226A0 / CODE+0B80 / FILE+0BA8  397c00342552           move.w    #$34, $2552(a4)
+00C092E6 / 0226A6 / CODE+0B86 / FILE+0BAE  4eac8080               jsr       -$7f80(a4)
+00C092EA / 0226AA / CODE+0B8A / FILE+0BB2  4eac8068               jsr       -$7f98(a4)
+00C092EE / 0226AE / CODE+0B8E / FILE+0BB6  42ac311e               clr.l     $311e(a4)
+00C092F2 / 0226B2 / CODE+0B92 / FILE+0BBA  486c311e               pea.l     $311e(a4)
+00C092F6 / 0226B6 / CODE+0B96 / FILE+0BBE  4eba4ed0               jsr       $c0e1c8(pc)
+00C092FA / 0226BA / CODE+0B9A / FILE+0BC2  584f                   addq.w    #$4, a7
+00C092FC / 0226BC / CODE+0B9C / FILE+0BC4  297c00000001311e       move.l    #$1, $311e(a4)
+00C09304 / 0226C4 / CODE+0BA4 / FILE+0BCC  486c311e               pea.l     $311e(a4)
+00C09308 / 0226C8 / CODE+0BA8 / FILE+0BD0  4eba4ebe               jsr       $c0e1c8(pc)
+00C0930C / 0226CC / CODE+0BAC / FILE+0BD4  584f                   addq.w    #$4, a7
+00C0930E / 0226CE / CODE+0BAE / FILE+0BD6  426c2c0c               clr.w     $2c0c(a4)
+00C09312 / 0226D2 / CODE+0BB2 / FILE+0BDA  426dffe6               clr.w     -$1a(a5)
+00C09316 / 0226D6 / CODE+0BB6 / FILE+0BDE  426dffe2               clr.w     -$1e(a5)
+00C0931A / 0226DA / CODE+0BBA / FILE+0BE2  41ec2f22               lea.l     $2f22(a4), a0
+00C0931E / 0226DE / CODE+0BBE / FILE+0BE6  29482c96               move.l    a0, $2c96(a4)
+00C09322 / 0226E2 / CODE+0BC2 / FILE+0BEA  3b7900dff00efffe       move.w    $dff00e.l, -$2(a5)
+
+; mute_and_pause: CODE+$0C0C; Shot file+$0C34; both saved copies match relocated ADF
+00C0936C / 02272C / CODE+0C0C / FILE+0C34  082c00002bfc           btst.b    #$0, $2bfc(a4)
+00C09372 / 022732 / CODE+0C12 / FILE+0C3A  670000b0               beq.w     $c09424
+00C09376 / 022736 / CODE+0C16 / FILE+0C3E  0c2c00752bfc           cmpi.b    #$75, $2bfc(a4)
+00C0937C / 02273C / CODE+0C1C / FILE+0C44  6700faea               beq.w     $c08e68
+00C09380 / 022740 / CODE+0C20 / FILE+0C48  7000                   moveq     #$0, d0
+00C09382 / 022742 / CODE+0C22 / FILE+0C4A  102c2bfc               move.b    $2bfc(a4), d0
+00C09386 / 022746 / CODE+0C26 / FILE+0C4E  b07c00bd               cmp.w     #$bd, d0
+00C0938A / 02274A / CODE+0C2A / FILE+0C52  6638                   bne.b     $c093c4
+00C0938C / 02274C / CODE+0C2C / FILE+0C54  086c00002c5b           bchg.b    #$0, $2c5b(a4)
+00C09392 / 022752 / CODE+0C32 / FILE+0C5A  4a6c2c5a               tst.w     $2c5a(a4)
+00C09396 / 022756 / CODE+0C36 / FILE+0C5E  6622                   bne.b     $c093ba
+00C09398 / 022758 / CODE+0C38 / FILE+0C60  426dfffe               clr.w     -$2(a5)
+00C0939C / 02275C / CODE+0C3C / FILE+0C64  302dfffe               move.w    -$2(a5), d0
+00C093A0 / 022760 / CODE+0C40 / FILE+0C68  e940                   asl.w     #$4, d0
+00C093A2 / 022762 / CODE+0C42 / FILE+0C6A  48c0                   ext.l     d0
+00C093A4 / 022764 / CODE+0C44 / FILE+0C6C  2040                   movea.l   d0, a0
+00C093A6 / 022766 / CODE+0C46 / FILE+0C6E  d1fc00dff0a8           adda.l    #$dff0a8, a0
+00C093AC / 02276C / CODE+0C4C / FILE+0C74  4250                   clr.w     (a0)
+00C093AE / 02276E / CODE+0C4E / FILE+0C76  526dfffe               addq.w    #$1, -$2(a5)
+00C093B2 / 022772 / CODE+0C52 / FILE+0C7A  0c6d0004fffe           cmpi.w    #$4, -$2(a5)
+00C093B8 / 022778 / CODE+0C58 / FILE+0C80  6de2                   blt.b     $c0939c
+00C093BA / 02277A / CODE+0C5A / FILE+0C82  082c00002bfc           btst.b    #$0, $2bfc(a4)
+00C093C0 / 022780 / CODE+0C60 / FILE+0C88  6702                   beq.b     $c093c4
+00C093C2 / 022782 / CODE+0C62 / FILE+0C8A  60f6                   bra.b     $c093ba
+00C093C4 / 022784 / CODE+0C64 / FILE+0C8C  7000                   moveq     #$0, d0
+00C093C6 / 022786 / CODE+0C66 / FILE+0C8E  102c2bfc               move.b    $2bfc(a4), d0
+00C093CA / 02278A / CODE+0C6A / FILE+0C92  b07c00cd               cmp.w     #$cd, d0
+00C093CE / 02278E / CODE+0C6E / FILE+0C96  6654                   bne.b     $c09424
+00C093D0 / 022790 / CODE+0C70 / FILE+0C98  4eac8050               jsr       -$7fb0(a4)
+00C093D4 / 022794 / CODE+0C74 / FILE+0C9C  426dfffe               clr.w     -$2(a5)
+00C093D8 / 022798 / CODE+0C78 / FILE+0CA0  302dfffe               move.w    -$2(a5), d0
+00C093DC / 02279C / CODE+0C7C / FILE+0CA4  e940                   asl.w     #$4, d0
+00C093DE / 02279E / CODE+0C7E / FILE+0CA6  48c0                   ext.l     d0
+00C093E0 / 0227A0 / CODE+0C80 / FILE+0CA8  2040                   movea.l   d0, a0
+00C093E2 / 0227A2 / CODE+0C82 / FILE+0CAA  d1fc00dff0a8           adda.l    #$dff0a8, a0
+00C093E8 / 0227A8 / CODE+0C88 / FILE+0CB0  4250                   clr.w     (a0)
+00C093EA / 0227AA / CODE+0C8A / FILE+0CB2  526dfffe               addq.w    #$1, -$2(a5)
+00C093EE / 0227AE / CODE+0C8E / FILE+0CB6  0c6d0004fffe           cmpi.w    #$4, -$2(a5)
+00C093F4 / 0227B4 / CODE+0C94 / FILE+0CBC  6de2                   blt.b     $c093d8
+00C093F6 / 0227B6 / CODE+0C96 / FILE+0CBE  082c00002bfc           btst.b    #$0, $2bfc(a4)
+00C093FC / 0227BC / CODE+0C9C / FILE+0CC4  6702                   beq.b     $c09400
+00C093FE / 0227BE / CODE+0C9E / FILE+0CC6  60f6                   bra.b     $c093f6
+00C09400 / 0227C0 / CODE+0CA0 / FILE+0CC8  7000                   moveq     #$0, d0
+00C09402 / 0227C2 / CODE+0CA2 / FILE+0CCA  102c2bfc               move.b    $2bfc(a4), d0
+00C09406 / 0227C6 / CODE+0CA6 / FILE+0CCE  b07c00cd               cmp.w     #$cd, d0
+00C0940A / 0227CA / CODE+0CAA / FILE+0CD2  6706                   beq.b     $c09412
+00C0940C / 0227CC / CODE+0CAC / FILE+0CD4  4eac8086               jsr       -$7f7a(a4)
+00C09410 / 0227D0 / CODE+0CB0 / FILE+0CD8  60ee                   bra.b     $c09400
+00C09412 / 0227D2 / CODE+0CB2 / FILE+0CDA  082c00002bfc           btst.b    #$0, $2bfc(a4)
+00C09418 / 0227D8 / CODE+0CB8 / FILE+0CE0  6702                   beq.b     $c0941c
+00C0941A / 0227DA / CODE+0CBA / FILE+0CE2  60f6                   bra.b     $c09412
+00C0941C / 0227DC / CODE+0CBC / FILE+0CE4  4eac8080               jsr       -$7f80(a4)
+00C09420 / 0227E0 / CODE+0CC0 / FILE+0CE8  4eac8068               jsr       -$7f98(a4)
+
+; player_destruction: CODE+$0D02; Shot file+$0D2A; both saved copies match relocated ADF
+00C09462 / 022822 / CODE+0D02 / FILE+0D2A  303900dff00e           move.w    $dff00e.l, d0
+00C09468 / 022828 / CODE+0D08 / FILE+0D30  c06c2c32               and.w     $2c32(a4), d0
+00C0946C / 02282C / CODE+0D0C / FILE+0D34  39402c30               move.w    d0, $2c30(a4)
+00C09470 / 022830 / CODE+0D10 / FILE+0D38  302c2c30               move.w    $2c30(a4), d0
+00C09474 / 022834 / CODE+0D14 / FILE+0D3C  c07c0022               and.w     #$22, d0
+00C09478 / 022838 / CODE+0D18 / FILE+0D40  b07c0022               cmp.w     #$22, d0
+00C0947C / 02283C / CODE+0D1C / FILE+0D44  660000f2               bne.w     $c09570
+00C09480 / 022840 / CODE+0D20 / FILE+0D48  33fc000100dff0a6       move.w    #$1, $dff0a6.l
+00C09488 / 022848 / CODE+0D28 / FILE+0D50  33fc000100dff0b6       move.w    #$1, $dff0b6.l
+00C09490 / 022850 / CODE+0D30 / FILE+0D58  33fc000300dff096       move.w    #$3, $dff096.l
+00C09498 / 022858 / CODE+0D38 / FILE+0D60  397c00132d50           move.w    #$13, $2d50(a4)
+00C0949E / 02285E / CODE+0D3E / FILE+0D66  41ec31ae               lea.l     $31ae(a4), a0
+00C094A2 / 022862 / CODE+0D42 / FILE+0D6A  29482d56               move.l    a0, $2d56(a4)
+00C094A6 / 022866 / CODE+0D46 / FILE+0D6E  426c2c30               clr.w     $2c30(a4)
+00C094AA / 02286A / CODE+0D4A / FILE+0D72  426c2c32               clr.w     $2c32(a4)
+00C094AE / 02286E / CODE+0D4E / FILE+0D76  397c01142c4e           move.w    #$114, $2c4e(a4)
+00C094B4 / 022874 / CODE+0D54 / FILE+0D7C  397c00012c56           move.w    #$1, $2c56(a4)
+00C094BA / 02287A / CODE+0D5A / FILE+0D82  397cffff2c58           move.w    #$ffff, $2c58(a4)
+00C094C0 / 022880 / CODE+0D60 / FILE+0D88  426dfffe               clr.w     -$2(a5)
+00C094C4 / 022884 / CODE+0D64 / FILE+0D8C  302dfffe               move.w    -$2(a5), d0
+00C094C8 / 022888 / CODE+0D68 / FILE+0D90  e340                   asl.w     #$1, d0
+00C094CA / 02288A / CODE+0D6A / FILE+0D92  5040                   addq.w    #$8, d0
+00C094CC / 02288C / CODE+0D6C / FILE+0D94  c1fc0048               muls.w    #$48, d0
+00C094D0 / 022890 / CODE+0D70 / FILE+0D98  41ec18c0               lea.l     $18c0(a4), a0
+00C094D4 / 022894 / CODE+0D74 / FILE+0D9C  31ac18c00800           move.w    $18c0(a4), (a0, d0.l)
+00C094DA / 02289A / CODE+0D7A / FILE+0DA2  302dfffe               move.w    -$2(a5), d0
+00C094DE / 02289E / CODE+0D7E / FILE+0DA6  e340                   asl.w     #$1, d0
+00C094E0 / 0228A0 / CODE+0D80 / FILE+0DA8  5040                   addq.w    #$8, d0
+00C094E2 / 0228A2 / CODE+0D82 / FILE+0DAA  c1fc0048               muls.w    #$48, d0
+00C094E6 / 0228A6 / CODE+0D86 / FILE+0DAE  41ec18c2               lea.l     $18c2(a4), a0
+00C094EA / 0228AA / CODE+0D8A / FILE+0DB2  31ac18c20800           move.w    $18c2(a4), (a0, d0.l)
+00C094F0 / 0228B0 / CODE+0D90 / FILE+0DB8  302dfffe               move.w    -$2(a5), d0
+00C094F4 / 0228B4 / CODE+0D94 / FILE+0DBC  e340                   asl.w     #$1, d0
+00C094F6 / 0228B6 / CODE+0D96 / FILE+0DBE  5040                   addq.w    #$8, d0
+00C094F8 / 0228B8 / CODE+0D98 / FILE+0DC0  c1fc0048               muls.w    #$48, d0
+00C094FC / 0228BC / CODE+0D9C / FILE+0DC4  41ec1904               lea.l     $1904(a4), a0
+00C09500 / 0228C0 / CODE+0DA0 / FILE+0DC8  31ac19040800           move.w    $1904(a4), (a0, d0.l)
+00C09506 / 0228C6 / CODE+0DA6 / FILE+0DCE  302dfffe               move.w    -$2(a5), d0
+00C0950A / 0228CA / CODE+0DAA / FILE+0DD2  e340                   asl.w     #$1, d0
+00C0950C / 0228CC / CODE+0DAC / FILE+0DD4  5040                   addq.w    #$8, d0
+00C0950E / 0228CE / CODE+0DAE / FILE+0DD6  c1fc0048               muls.w    #$48, d0
+00C09512 / 0228D2 / CODE+0DB2 / FILE+0DDA  41ec1906               lea.l     $1906(a4), a0
+00C09516 / 0228D6 / CODE+0DB6 / FILE+0DDE  31ac19060800           move.w    $1906(a4), (a0, d0.l)
+00C0951C / 0228DC / CODE+0DBC / FILE+0DE4  526dfffe               addq.w    #$1, -$2(a5)
+00C09520 / 0228E0 / CODE+0DC0 / FILE+0DE8  0c6d000afffe           cmpi.w    #$a, -$2(a5)
+00C09526 / 0228E6 / CODE+0DC6 / FILE+0DEE  6d9c                   blt.b     $c094c4
+00C09528 / 0228E8 / CODE+0DC8 / FILE+0DF0  536c2c5e               subq.w    #$1, $2c5e(a4)
+00C0952C / 0228EC / CODE+0DCC / FILE+0DF4  3f2c2c5e               move.w    $2c5e(a4), -(a7)
+00C09530 / 0228F0 / CODE+0DD0 / FILE+0DF8  3f2c2c3e               move.w    $2c3e(a4), -(a7)
+00C09534 / 0228F4 / CODE+0DD4 / FILE+0DFC  4eba1e78               jsr       $c0b3ae(pc)
+00C09538 / 0228F8 / CODE+0DD8 / FILE+0E00  584f                   addq.w    #$4, a7
+00C0953A / 0228FA / CODE+0DDA / FILE+0E02  4a6c2c5e               tst.w     $2c5e(a4)
+00C0953E / 0228FE / CODE+0DDE / FILE+0E06  6620                   bne.b     $c09560
+00C09540 / 022900 / CODE+0DE0 / FILE+0E08  3f3c0001               move.w    #$1, -(a7)
+00C09544 / 022904 / CODE+0DE4 / FILE+0E0C  3f3c0001               move.w    #$1, -(a7)
+00C09548 / 022908 / CODE+0DE8 / FILE+0E10  3f2c2c3e               move.w    $2c3e(a4), -(a7)
+00C0954C / 02290C / CODE+0DEC / FILE+0E14  4eba3150               jsr       $c0c69e(pc)
+00C09550 / 022910 / CODE+0DF0 / FILE+0E18  5c4f                   addq.w    #$6, a7
+00C09552 / 022912 / CODE+0DF2 / FILE+0E1A  3b7c0002ffe2           move.w    #$2, -$1e(a5)
+00C09558 / 022918 / CODE+0DF8 / FILE+0E20  397c012c2c50           move.w    #$12c, $2c50(a4)
+00C0955E / 02291E / CODE+0DFE / FILE+0E26  6010                   bra.b     $c09570
+00C09560 / 022920 / CODE+0E00 / FILE+0E28  4267                   clr.w     -(a7)
+00C09562 / 022922 / CODE+0E02 / FILE+0E2A  3f3c0001               move.w    #$1, -(a7)
+00C09566 / 022926 / CODE+0E06 / FILE+0E2E  3f2c2c3e               move.w    $2c3e(a4), -(a7)
+00C0956A / 02292A / CODE+0E0A / FILE+0E32  4eba3132               jsr       $c0c69e(pc)
+00C0956E / 02292E / CODE+0E0E / FILE+0E36  5c4f                   addq.w    #$6, a7
+
+; sound_initialization_caller: CODE+$1396; Shot file+$13BE; both saved copies match relocated ADF
+00C09AF6 / 022EB6 / CODE+1396 / FILE+13BE  2f2c2c7e               move.l    $2c7e(a4), -(a7)
+00C09AFA / 022EBA / CODE+139A / FILE+13C2  4eac800e               jsr       -$7ff2(a4)
+00C09AFE / 022EBE / CODE+139E / FILE+13C6  584f                   addq.w    #$4, a7
+00C09B00 / 022EC0 / CODE+13A0 / FILE+13C8  4eba4d1e               jsr       $c0e820(pc)
+00C09B04 / 022EC4 / CODE+13A4 / FILE+13CC  397c00012c5a           move.w    #$1, $2c5a(a4)
+
+; copper_server_registration: CODE+$1592; Shot file+$15BA; both saved copies match relocated ADF
+00C09CF2 / 0230B2 / CODE+1592 / FILE+15BA  426c2c0a               clr.w     $2c0a(a4)
+00C09CF6 / 0230B6 / CODE+1596 / FILE+15BE  197c00022d28           move.b    #$2, $2d28(a4)
+00C09CFC / 0230BC / CODE+159C / FILE+15C4  422c2d29               clr.b     $2d29(a4)
+00C09D00 / 0230C0 / CODE+15A0 / FILE+15C8  41fa0580               lea.l     $c0a282(pc), a0
+00C09D04 / 0230C4 / CODE+15A4 / FILE+15CC  29482d2a               move.l    a0, $2d2a(a4)
+00C09D08 / 0230C8 / CODE+15A8 / FILE+15D0  41ec2c92               lea.l     $2c92(a4), a0
+00C09D0C / 0230CC / CODE+15AC / FILE+15D4  29482d2e               move.l    a0, $2d2e(a4)
+00C09D10 / 0230D0 / CODE+15B0 / FILE+15D8  41fa32e0               lea.l     $c0cff2(pc), a0
+00C09D14 / 0230D4 / CODE+15B4 / FILE+15DC  29482d32               move.l    a0, $2d32(a4)
+00C09D18 / 0230D8 / CODE+15B8 / FILE+15E0  486c2d20               pea.l     $2d20(a4)
+00C09D1C / 0230DC / CODE+15BC / FILE+15E4  48780004               pea.l     $4.w
+00C09D20 / 0230E0 / CODE+15C0 / FILE+15E8  4eac8020               jsr       -$7fe0(a4)
+00C09D24 / 0230E4 / CODE+15C4 / FILE+15EC  504f                   addq.w    #$8, a7
+
+; logical_pair_reset: CODE+$1B26; Shot file+$1B4E; both saved copies match relocated ADF
+00C0A286 / 023646 / CODE+1B26 / FILE+1B4E  4e55fffe               link.w    a5, #$fffe
+00C0A28A / 02364A / CODE+1B2A / FILE+1B52  426dfffe               clr.w     -$2(a5)
+00C0A28E / 02364E / CODE+1B2E / FILE+1B56  302dfffe               move.w    -$2(a5), d0
+00C0A292 / 023652 / CODE+1B32 / FILE+1B5A  c1fc000c               muls.w    #$c, d0
+00C0A296 / 023656 / CODE+1B36 / FILE+1B5E  41ec2d4e               lea.l     $2d4e(a4), a0
+00C0A29A / 02365A / CODE+1B3A / FILE+1B62  42700800               clr.w     (a0, d0.l)
+00C0A29E / 02365E / CODE+1B3E / FILE+1B66  302dfffe               move.w    -$2(a5), d0
+00C0A2A2 / 023662 / CODE+1B42 / FILE+1B6A  c1fc000c               muls.w    #$c, d0
+00C0A2A6 / 023666 / CODE+1B46 / FILE+1B6E  41ec2d50               lea.l     $2d50(a4), a0
+00C0A2AA / 02366A / CODE+1B4A / FILE+1B72  42700800               clr.w     (a0, d0.l)
+00C0A2AE / 02366E / CODE+1B4E / FILE+1B76  302dfffe               move.w    -$2(a5), d0
+00C0A2B2 / 023672 / CODE+1B52 / FILE+1B7A  c1fc000c               muls.w    #$c, d0
+00C0A2B6 / 023676 / CODE+1B56 / FILE+1B7E  41ec2d52               lea.l     $2d52(a4), a0
+00C0A2BA / 02367A / CODE+1B5A / FILE+1B82  31bc00020800           move.w    #$2, (a0, d0.l)
+00C0A2C0 / 023680 / CODE+1B60 / FILE+1B88  302dfffe               move.w    -$2(a5), d0
+00C0A2C4 / 023684 / CODE+1B64 / FILE+1B8C  c1fc000c               muls.w    #$c, d0
+00C0A2C8 / 023688 / CODE+1B68 / FILE+1B90  41ec2d54               lea.l     $2d54(a4), a0
+00C0A2CC / 02368C / CODE+1B6C / FILE+1B94  31bc00090800           move.w    #$9, (a0, d0.l)
+00C0A2D2 / 023692 / CODE+1B72 / FILE+1B9A  526dfffe               addq.w    #$1, -$2(a5)
+00C0A2D6 / 023696 / CODE+1B76 / FILE+1B9E  0c6d0002fffe           cmpi.w    #$2, -$2(a5)
+00C0A2DC / 02369C / CODE+1B7C / FILE+1BA4  6db0                   blt.b     $c0a28e
+00C0A2DE / 02369E / CODE+1B7E / FILE+1BA6  33fc000f00dff096       move.w    #$f, $dff096.l
+00C0A2E6 / 0236A6 / CODE+1B86 / FILE+1BAE  4e5d                   unlk      a5
+00C0A2E8 / 0236A8 / CODE+1B88 / FILE+1BB0  4e75                   rts
+
+; enemy_type_sound_fields_and_graphics: CODE+$2252; Shot file+$227A; both saved copies match relocated ADF
+00C0A9B2 / 023D72 / CODE+2252 / FILE+227A  206a0048               movea.l   $48(a2), a0
+00C0A9B6 / 023D76 / CODE+2256 / FILE+227E  7000                   moveq     #$0, d0
+00C0A9B8 / 023D78 / CODE+2258 / FILE+2280  10304000               move.b    (a0, d4.w), d0
+00C0A9BC / 023D7C / CODE+225C / FILE+2284  3b40fff8               move.w    d0, -$8(a5)
+00C0A9C0 / 023D80 / CODE+2260 / FILE+2288  3004                   move.w    d4, d0
+00C0A9C2 / 023D82 / CODE+2262 / FILE+228A  c1fc0092               muls.w    #$92, d0
+00C0A9C6 / 023D86 / CODE+2266 / FILE+228E  41ec3f0c               lea.l     $3f0c(a4), a0
+00C0A9CA / 023D8A / CODE+226A / FILE+2292  d088                   add.l     a0, d0
+00C0A9CC / 023D8C / CODE+226C / FILE+2294  3204                   move.w    d4, d1
+00C0A9CE / 023D8E / CODE+226E / FILE+2296  5241                   addq.w    #$1, d1
+00C0A9D0 / 023D90 / CODE+2270 / FILE+2298  48c1                   ext.l     d1
+00C0A9D2 / 023D92 / CODE+2272 / FILE+229A  e581                   asl.l     #$2, d1
+00C0A9D4 / 023D94 / CODE+2274 / FILE+229C  43ec311e               lea.l     $311e(a4), a1
+00C0A9D8 / 023D98 / CODE+2278 / FILE+22A0  23801800               move.l    d0, (a1, d1.l)
+00C0A9DC / 023D9C / CODE+227C / FILE+22A4  3004                   move.w    d4, d0
+00C0A9DE / 023D9E / CODE+227E / FILE+22A6  c1fc0092               muls.w    #$92, d0
+00C0A9E2 / 023DA2 / CODE+2282 / FILE+22AA  41ec3f18               lea.l     $3f18(a4), a0
+00C0A9E6 / 023DA6 / CODE+2286 / FILE+22AE  31bc00100800           move.w    #$10, (a0, d0.l)
+00C0A9EC / 023DAC / CODE+228C / FILE+22B4  302dfff8               move.w    -$8(a5), d0
+00C0A9F0 / 023DB0 / CODE+2290 / FILE+22B8  c1fc0012               muls.w    #$12, d0
+00C0A9F4 / 023DB4 / CODE+2294 / FILE+22BC  41ecabb4               lea.l     -$544c(a4), a0
+00C0A9F8 / 023DB8 / CODE+2298 / FILE+22C0  3204                   move.w    d4, d1
+00C0A9FA / 023DBA / CODE+229A / FILE+22C2  c3fc0092               muls.w    #$92, d1
+00C0A9FE / 023DBE / CODE+229E / FILE+22C6  43ec3f1a               lea.l     $3f1a(a4), a1
+00C0AA02 / 023DC2 / CODE+22A2 / FILE+22CA  33b008001800           move.w    (a0, d0.l), (a1, d1.l)
+00C0AA08 / 023DC8 / CODE+22A8 / FILE+22D0  3004                   move.w    d4, d0
+00C0AA0A / 023DCA / CODE+22AA / FILE+22D2  c1fc0092               muls.w    #$92, d0
+00C0AA0E / 023DCE / CODE+22AE / FILE+22D6  41ec3f0c               lea.l     $3f0c(a4), a0
+00C0AA12 / 023DD2 / CODE+22B2 / FILE+22DA  d088                   add.l     a0, d0
+00C0AA14 / 023DD4 / CODE+22B4 / FILE+22DC  2f00                   move.l    d0, -(a7)
+00C0AA16 / 023DD6 / CODE+22B6 / FILE+22DE  4eba363e               jsr       $c0e056(pc)
+00C0AA1A / 023DDA / CODE+22BA / FILE+22E2  584f                   addq.w    #$4, a7
+00C0AA1C / 023DDC / CODE+22BC / FILE+22E4  302dfff8               move.w    -$8(a5), d0
+00C0AA20 / 023DE0 / CODE+22C0 / FILE+22E8  c1fc0012               muls.w    #$12, d0
+00C0AA24 / 023DE4 / CODE+22C4 / FILE+22EC  41ecabb6               lea.l     -$544a(a4), a0
+00C0AA28 / 023DE8 / CODE+22C8 / FILE+22F0  3204                   move.w    d4, d1
+00C0AA2A / 023DEA / CODE+22CA / FILE+22F2  c3fc0092               muls.w    #$92, d1
+00C0AA2E / 023DEE / CODE+22CE / FILE+22F6  43ec3f96               lea.l     $3f96(a4), a1
+00C0AA32 / 023DF2 / CODE+22D2 / FILE+22FA  33b008001800           move.w    (a0, d0.l), (a1, d1.l)
+00C0AA38 / 023DF8 / CODE+22D8 / FILE+2300  302dfff8               move.w    -$8(a5), d0
+00C0AA3C / 023DFC / CODE+22DC / FILE+2304  c1fc0012               muls.w    #$12, d0
+00C0AA40 / 023E00 / CODE+22E0 / FILE+2308  41ecabb8               lea.l     -$5448(a4), a0
+00C0AA44 / 023E04 / CODE+22E4 / FILE+230C  3204                   move.w    d4, d1
+00C0AA46 / 023E06 / CODE+22E6 / FILE+230E  c3fc0092               muls.w    #$92, d1
+00C0AA4A / 023E0A / CODE+22EA / FILE+2312  43ec3f98               lea.l     $3f98(a4), a1
+00C0AA4E / 023E0E / CODE+22EE / FILE+2316  33b008001800           move.w    (a0, d0.l), (a1, d1.l)
+00C0AA54 / 023E14 / CODE+22F4 / FILE+231C  302dfff8               move.w    -$8(a5), d0
+00C0AA58 / 023E18 / CODE+22F8 / FILE+2320  c1fc0012               muls.w    #$12, d0
+00C0AA5C / 023E1C / CODE+22FC / FILE+2324  41ecabba               lea.l     -$5446(a4), a0
+00C0AA60 / 023E20 / CODE+2300 / FILE+2328  3204                   move.w    d4, d1
+00C0AA62 / 023E22 / CODE+2302 / FILE+232A  c3fc0092               muls.w    #$92, d1
+00C0AA66 / 023E26 / CODE+2306 / FILE+232E  43ec3f9a               lea.l     $3f9a(a4), a1
+00C0AA6A / 023E2A / CODE+230A / FILE+2332  33b008001800           move.w    (a0, d0.l), (a1, d1.l)
+00C0AA70 / 023E30 / CODE+2310 / FILE+2338  302dfff8               move.w    -$8(a5), d0
+00C0AA74 / 023E34 / CODE+2314 / FILE+233C  c1fc0012               muls.w    #$12, d0
+00C0AA78 / 023E38 / CODE+2318 / FILE+2340  41ecabbc               lea.l     -$5444(a4), a0
+00C0AA7C / 023E3C / CODE+231C / FILE+2344  3204                   move.w    d4, d1
+00C0AA7E / 023E3E / CODE+231E / FILE+2346  c3fc0092               muls.w    #$92, d1
+00C0AA82 / 023E42 / CODE+2322 / FILE+234A  43ec3f9c               lea.l     $3f9c(a4), a1
+00C0AA86 / 023E46 / CODE+2326 / FILE+234E  33b008001800           move.w    (a0, d0.l), (a1, d1.l)
+00C0AA8C / 023E4C / CODE+232C / FILE+2354  3004                   move.w    d4, d0
+00C0AA8E / 023E4E / CODE+232E / FILE+2356  c1fc0092               muls.w    #$92, d0
+00C0AA92 / 023E52 / CODE+2332 / FILE+235A  41ec3f8e               lea.l     $3f8e(a4), a0
+00C0AA96 / 023E56 / CODE+2336 / FILE+235E  31bc00040800           move.w    #$4, (a0, d0.l)
+00C0AA9C / 023E5C / CODE+233C / FILE+2364  3004                   move.w    d4, d0
+00C0AA9E / 023E5E / CODE+233E / FILE+2366  c1fc0092               muls.w    #$92, d0
+00C0AAA2 / 023E62 / CODE+2342 / FILE+236A  41ec3f92               lea.l     $3f92(a4), a0
+00C0AAA6 / 023E66 / CODE+2346 / FILE+236E  31bc00040800           move.w    #$4, (a0, d0.l)
+00C0AAAC / 023E6C / CODE+234C / FILE+2374  3004                   move.w    d4, d0
+00C0AAAE / 023E6E / CODE+234E / FILE+2376  c1fc0092               muls.w    #$92, d0
+00C0AAB2 / 023E72 / CODE+2352 / FILE+237A  41ec3f90               lea.l     $3f90(a4), a0
+00C0AAB6 / 023E76 / CODE+2356 / FILE+237E  31bc000e0800           move.w    #$e, (a0, d0.l)
+00C0AABC / 023E7C / CODE+235C / FILE+2384  41ec516c               lea.l     $516c(a4), a0
+00C0AAC0 / 023E80 / CODE+2360 / FILE+2388  3004                   move.w    d4, d0
+00C0AAC2 / 023E82 / CODE+2362 / FILE+238A  c1fc0092               muls.w    #$92, d0
+00C0AAC6 / 023E86 / CODE+2366 / FILE+238E  43ec3f8a               lea.l     $3f8a(a4), a1
+00C0AACA / 023E8A / CODE+236A / FILE+2392  23880800               move.l    a0, (a1, d0.l)
+00C0AACE / 023E8E / CODE+236E / FILE+2396  302dfff8               move.w    -$8(a5), d0
+00C0AAD2 / 023E92 / CODE+2372 / FILE+239A  c1fc0012               muls.w    #$12, d0
+00C0AAD6 / 023E96 / CODE+2376 / FILE+239E  41ecabb2               lea.l     -$544e(a4), a0
+00C0AADA / 023E9A / CODE+237A / FILE+23A2  3204                   move.w    d4, d1
+00C0AADC / 023E9C / CODE+237C / FILE+23A4  c3fc0092               muls.w    #$92, d1
+00C0AAE0 / 023EA0 / CODE+2380 / FILE+23A8  43ec3f66               lea.l     $3f66(a4), a1
+00C0AAE4 / 023EA4 / CODE+2384 / FILE+23AC  33b008001800           move.w    (a0, d0.l), (a1, d1.l)
+00C0AAEA / 023EAA / CODE+238A / FILE+23B2  3004                   move.w    d4, d0
+00C0AAEC / 023EAC / CODE+238C / FILE+23B4  c1fc0092               muls.w    #$92, d0
+00C0AAF0 / 023EB0 / CODE+2390 / FILE+23B8  41ec3f64               lea.l     $3f64(a4), a0
+00C0AAF4 / 023EB4 / CODE+2394 / FILE+23BC  2f00                   move.l    d0, -(a7)
+00C0AAF6 / 023EB6 / CODE+2396 / FILE+23BE  2f08                   move.l    a0, -(a7)
+00C0AAF8 / 023EB8 / CODE+2398 / FILE+23C0  302dfff8               move.w    -$8(a5), d0
+00C0AAFC / 023EBC / CODE+239C / FILE+23C4  c1fc0012               muls.w    #$12, d0
+00C0AB00 / 023EC0 / CODE+23A0 / FILE+23C8  41ecabb2               lea.l     -$544e(a4), a0
+00C0AB04 / 023EC4 / CODE+23A4 / FILE+23CC  3f300800               move.w    (a0, d0.l), -(a7)
+00C0AB08 / 023EC8 / CODE+23A8 / FILE+23D0  4eba42ee               jsr       $c0edf8(pc)
+00C0AB0C / 023ECC / CODE+23AC / FILE+23D4  544f                   addq.w    #$2, a7
+00C0AB0E / 023ECE / CODE+23AE / FILE+23D6  205f                   movea.l   (a7)+, a0
+00C0AB10 / 023ED0 / CODE+23B0 / FILE+23D8  221f                   move.l    (a7)+, d1
+00C0AB12 / 023ED2 / CODE+23B2 / FILE+23DA  5240                   addq.w    #$1, d0
+00C0AB14 / 023ED4 / CODE+23B4 / FILE+23DC  31801800               move.w    d0, (a0, d1.l)
+00C0AB18 / 023ED8 / CODE+23B8 / FILE+23E0  3004                   move.w    d4, d0
+00C0AB1A / 023EDA / CODE+23BA / FILE+23E2  c1fc0092               muls.w    #$92, d0
+00C0AB1E / 023EDE / CODE+23BE / FILE+23E6  41ec3f68               lea.l     $3f68(a4), a0
+00C0AB22 / 023EE2 / CODE+23C2 / FILE+23EA  31bc00010800           move.w    #$1, (a0, d0.l)
+00C0AB28 / 023EE8 / CODE+23C8 / FILE+23F0  302dfff8               move.w    -$8(a5), d0
+00C0AB2C / 023EEC / CODE+23CC / FILE+23F4  c1fc0012               muls.w    #$12, d0
+00C0AB30 / 023EF0 / CODE+23D0 / FILE+23F8  41ecabb0               lea.l     -$5450(a4), a0
+00C0AB34 / 023EF4 / CODE+23D4 / FILE+23FC  3204                   move.w    d4, d1
+00C0AB36 / 023EF6 / CODE+23D6 / FILE+23FE  c3fc0092               muls.w    #$92, d1
+00C0AB3A / 023EFA / CODE+23DA / FILE+2402  43ec3f6a               lea.l     $3f6a(a4), a1
+00C0AB3E / 023EFE / CODE+23DE / FILE+2406  33b008001800           move.w    (a0, d0.l), (a1, d1.l)
+00C0AB44 / 023F04 / CODE+23E4 / FILE+240C  3004                   move.w    d4, d0
+00C0AB46 / 023F06 / CODE+23E6 / FILE+240E  c1fc0092               muls.w    #$92, d0
+00C0AB4A / 023F0A / CODE+23EA / FILE+2412  41ec3f6c               lea.l     $3f6c(a4), a0
+00C0AB4E / 023F0E / CODE+23EE / FILE+2416  2f00                   move.l    d0, -(a7)
+00C0AB50 / 023F10 / CODE+23F0 / FILE+2418  2f08                   move.l    a0, -(a7)
+00C0AB52 / 023F12 / CODE+23F2 / FILE+241A  302dfff8               move.w    -$8(a5), d0
+00C0AB56 / 023F16 / CODE+23F6 / FILE+241E  c1fc0012               muls.w    #$12, d0
+00C0AB5A / 023F1A / CODE+23FA / FILE+2422  41ecabb0               lea.l     -$5450(a4), a0
+00C0AB5E / 023F1E / CODE+23FE / FILE+2426  3f300800               move.w    (a0, d0.l), -(a7)
+00C0AB62 / 023F22 / CODE+2402 / FILE+242A  4eba4294               jsr       $c0edf8(pc)
+00C0AB66 / 023F26 / CODE+2406 / FILE+242E  544f                   addq.w    #$2, a7
+00C0AB68 / 023F28 / CODE+2408 / FILE+2430  205f                   movea.l   (a7)+, a0
+00C0AB6A / 023F2A / CODE+240A / FILE+2432  221f                   move.l    (a7)+, d1
+00C0AB6C / 023F2C / CODE+240C / FILE+2434  5240                   addq.w    #$1, d0
+00C0AB6E / 023F2E / CODE+240E / FILE+2436  31801800               move.w    d0, (a0, d1.l)
+00C0AB72 / 023F32 / CODE+2412 / FILE+243A  302dfff8               move.w    -$8(a5), d0
+00C0AB76 / 023F36 / CODE+2416 / FILE+243E  c1fc0012               muls.w    #$12, d0
+00C0AB7A / 023F3A / CODE+241A / FILE+2442  41ecabac               lea.l     -$5454(a4), a0
+00C0AB7E / 023F3E / CODE+241E / FILE+2446  3204                   move.w    d4, d1
+00C0AB80 / 023F40 / CODE+2420 / FILE+2448  c3fc0092               muls.w    #$92, d1
+00C0AB84 / 023F44 / CODE+2424 / FILE+244C  43ec3f60               lea.l     $3f60(a4), a1
+00C0AB88 / 023F48 / CODE+2428 / FILE+2450  23b008001800           move.l    (a0, d0.l), (a1, d1.l)
+00C0AB8E / 023F4E / CODE+242E / FILE+2456  3004                   move.w    d4, d0
+00C0AB90 / 023F50 / CODE+2430 / FILE+2458  c1fc0092               muls.w    #$92, d0
+00C0AB94 / 023F54 / CODE+2434 / FILE+245C  41ec3f20               lea.l     $3f20(a4), a0
+00C0AB98 / 023F58 / CODE+2438 / FILE+2460  3204                   move.w    d4, d1
+00C0AB9A / 023F5A / CODE+243A / FILE+2462  c3fc0092               muls.w    #$92, d1
+00C0AB9E / 023F5E / CODE+243E / FILE+2466  43ec3f60               lea.l     $3f60(a4), a1
+00C0ABA2 / 023F62 / CODE+2442 / FILE+246A  342dfff8               move.w    -$8(a5), d2
+00C0ABA6 / 023F66 / CODE+2446 / FILE+246E  c5fc0012               muls.w    #$12, d2
+00C0ABAA / 023F6A / CODE+244A / FILE+2472  4decabb0               lea.l     -$5450(a4), a6
+00C0ABAE / 023F6E / CODE+244E / FILE+2476  36362800               move.w    (a6, d2.l), d3
+00C0ABB2 / 023F72 / CODE+2452 / FILE+247A  3404                   move.w    d4, d2
+00C0ABB4 / 023F74 / CODE+2454 / FILE+247C  c5fc0092               muls.w    #$92, d2
+00C0ABB8 / 023F78 / CODE+2458 / FILE+2480  4dec3f6c               lea.l     $3f6c(a4), a6
+00C0ABBC / 023F7C / CODE+245C / FILE+2484  96762800               sub.w     (a6, d2.l), d3
+00C0ABC0 / 023F80 / CODE+2460 / FILE+2488  48c3                   ext.l     d3
+00C0ABC2 / 023F82 / CODE+2462 / FILE+248A  eb83                   asl.l     #$5, d3
+00C0ABC4 / 023F84 / CODE+2464 / FILE+248C  24311800               move.l    (a1, d1.l), d2
+00C0ABC8 / 023F88 / CODE+2468 / FILE+2490  d483                   add.l     d3, d2
+00C0ABCA / 023F8A / CODE+246A / FILE+2492  21820800               move.l    d2, (a0, d0.l)
+00C0ABCE / 023F8E / CODE+246E / FILE+2496  5244                   addq.w    #$1, d4
+00C0ABD0 / 023F90 / CODE+2470 / FILE+2498  b86c2c18               cmp.w     $2c18(a4), d4
+00C0ABD4 / 023F94 / CODE+2474 / FILE+249C  6d00fddc               blt.w     $c0a9b2
+
+; cleanup_caller: CODE+$3CAE; Shot file+$3CD6; both saved copies match relocated ADF
+00C0C40E / 0257CE / CODE+3CAE / FILE+3CD6  4e55fffe               link.w    a5, #$fffe
+00C0C412 / 0257D2 / CODE+3CB2 / FILE+3CDA  42a7                   clr.l     -(a7)
+00C0C414 / 0257D4 / CODE+3CB4 / FILE+3CDC  2f2c2c9a               move.l    $2c9a(a4), -(a7)
+00C0C418 / 0257D8 / CODE+3CB8 / FILE+3CE0  4eac804a               jsr       -$7fb6(a4)
+00C0C41C / 0257DC / CODE+3CBC / FILE+3CE4  504f                   addq.w    #$8, a7
+00C0C41E / 0257DE / CODE+3CBE / FILE+3CE6  4eac8050               jsr       -$7fb0(a4)
+00C0C422 / 0257E2 / CODE+3CC2 / FILE+3CEA  2f2c2c7a               move.l    $2c7a(a4), -(a7)
+00C0C426 / 0257E6 / CODE+3CC6 / FILE+3CEE  4eac805c               jsr       -$7fa4(a4)
+00C0C42A / 0257EA / CODE+3CCA / FILE+3CF2  584f                   addq.w    #$4, a7
+00C0C42C / 0257EC / CODE+3CCC / FILE+3CF4  4eac8086               jsr       -$7f7a(a4)
+00C0C430 / 0257F0 / CODE+3CD0 / FILE+3CF8  4eba2634               jsr       $c0ea66(pc)
+00C0C434 / 0257F4 / CODE+3CD4 / FILE+3CFC  426dfffe               clr.w     -$2(a5)
+
+; conditional_copper_sound_tick: CODE+$4892; Shot file+$48BA; both saved copies match relocated ADF
+00C0CFF2 / 0263B2 / CODE+4892 / FILE+48BA  48e72438               movem.l   d2/d5/a2-a4, -(a7)
+00C0CFF6 / 0263B6 / CODE+4896 / FILE+48BE  2851                   movea.l   (a1), a4
+00C0CFF8 / 0263B8 / CODE+4898 / FILE+48C0  4a6c2c0a               tst.w     $2c0a(a4)
+00C0CFFC / 0263BC / CODE+489C / FILE+48C4  6720                   beq.b     $c0d01e
+00C0CFFE / 0263BE / CODE+489E / FILE+48C6  4a6c2c0c               tst.w     $2c0c(a4)
+00C0D002 / 0263C2 / CODE+48A2 / FILE+48CA  6706                   beq.b     $c0d00a
+00C0D004 / 0263C4 / CODE+48A4 / FILE+48CC  41ec2d36               lea.l     $2d36(a4), a0
+00C0D008 / 0263C8 / CODE+48A8 / FILE+48D0  6004                   bra.b     $c0d00e
+00C0D00A / 0263CA / CODE+48AA / FILE+48D2  41ec2d42               lea.l     $2d42(a4), a0
+00C0D00E / 0263CE / CODE+48AE / FILE+48D6  2f08                   move.l    a0, -(a7)
+00C0D010 / 0263D0 / CODE+48B0 / FILE+48D8  4eba2238               jsr       $c0f24a(pc)
+00C0D014 / 0263D4 / CODE+48B4 / FILE+48DC  4eba2234               jsr       $c0f24a(pc)
+00C0D018 / 0263D8 / CODE+48B8 / FILE+48E0  584f                   addq.w    #$4, a7
+00C0D01A / 0263DA / CODE+48BA / FILE+48E2  4eba0762               jsr       $c0d77e(pc)
+00C0D01E / 0263DE / CODE+48BE / FILE+48E6  4a6c2c42               tst.w     $2c42(a4)
+00C0D022 / 0263E2 / CODE+48C2 / FILE+48EA  6752                   beq.b     $c0d076
+00C0D024 / 0263E4 / CODE+48C4 / FILE+48EC  536c2c44               subq.w    #$1, $2c44(a4)
+00C0D028 / 0263E8 / CODE+48C8 / FILE+48F0  6618                   bne.b     $c0d042
+00C0D02A / 0263EA / CODE+48CA / FILE+48F2  397c00142c44           move.w    #$14, $2c44(a4)
+00C0D030 / 0263F0 / CODE+48D0 / FILE+48F8  302c2c46               move.w    $2c46(a4), d0
+00C0D034 / 0263F4 / CODE+48D4 / FILE+48FC  0a400dd0               eori.w    #$dd0, d0
+00C0D038 / 0263F8 / CODE+48D8 / FILE+4900  39402c46               move.w    d0, $2c46(a4)
+00C0D03C / 0263FC / CODE+48DC / FILE+4904  33c000dff186           move.w    d0, $dff186.l
+00C0D042 / 026402 / CODE+48E2 / FILE+490A  302c2c48               move.w    $2c48(a4), d0
+00C0D046 / 026406 / CODE+48E6 / FILE+490E  41ec80d6               lea.l     -$7f2a(a4), a0
+00C0D04A / 02640A / CODE+48EA / FILE+4912  322c2c4c               move.w    $2c4c(a4), d1
+00C0D04E / 02640E / CODE+48EE / FILE+4916  d0701000               add.w     (a0, d1.w), d0
+00C0D052 / 026412 / CODE+48F2 / FILE+491A  39402c48               move.w    d0, $2c48(a4)
+00C0D056 / 026416 / CODE+48F6 / FILE+491E  33c000dff184           move.w    d0, $dff184.l
+00C0D05C / 02641C / CODE+48FC / FILE+4924  536c2c4a               subq.w    #$1, $2c4a(a4)
+00C0D060 / 026420 / CODE+4900 / FILE+4928  6614                   bne.b     $c0d076
+00C0D062 / 026422 / CODE+4902 / FILE+492A  397c00072c4a           move.w    #$7, $2c4a(a4)
+00C0D068 / 026428 / CODE+4908 / FILE+4930  5441                   addq.w    #$2, d1
+00C0D06A / 02642A / CODE+490A / FILE+4932  b27c000c               cmp.w     #$c, d1
+00C0D06E / 02642E / CODE+490E / FILE+4936  6602                   bne.b     $c0d072
+00C0D070 / 026430 / CODE+4910 / FILE+4938  4241                   clr.w     d1
+00C0D072 / 026432 / CODE+4912 / FILE+493A  39412c4c               move.w    d1, $2c4c(a4)
+00C0D076 / 026436 / CODE+4916 / FILE+493E  4cdf1c24               movem.l   (a7)+, d2/d5/a2-a4
+00C0D07A / 02643A / CODE+491A / FILE+4942  7000                   moveq     #$0, d0
+00C0D07C / 02643C / CODE+491C / FILE+4944  4e75                   rts
+
+; gameplay_tick_and_player_fire: CODE+$492C; Shot file+$4954; both saved copies match relocated ADF
+00C0D08C / 02644C / CODE+492C / FILE+4954  48e73c30               movem.l   d2-d5/a2-a3, -(a7)
+00C0D090 / 026450 / CODE+4930 / FILE+4958  526c2c1a               addq.w    #$1, $2c1a(a4)
+00C0D094 / 026454 / CODE+4934 / FILE+495C  4eba06e8               jsr       $c0d77e(pc)
+00C0D098 / 026458 / CODE+4938 / FILE+4960  082c00002c1b           btst.b    #$0, $2c1b(a4)
+00C0D09E / 02645E / CODE+493E / FILE+4966  67000090               beq.w     $c0d130
+00C0D0A2 / 026462 / CODE+4942 / FILE+496A  4a6c2c4e               tst.w     $2c4e(a4)
+00C0D0A6 / 026466 / CODE+4946 / FILE+496E  66000088               bne.w     $c0d130
+00C0D0AA / 02646A / CODE+494A / FILE+4972  0839000700bfe001       btst.b    #$7, $bfe001.l
+00C0D0B2 / 026472 / CODE+4952 / FILE+497A  6678                   bne.b     $c0d12c
+00C0D0B4 / 026474 / CODE+4954 / FILE+497C  4a6c2c38               tst.w     $2c38(a4)
+00C0D0B8 / 026478 / CODE+4958 / FILE+4980  6676                   bne.b     $c0d130
+00C0D0BA / 02647A / CODE+495A / FILE+4982  397c00012c38           move.w    #$1, $2c38(a4)
+00C0D0C0 / 026480 / CODE+4960 / FILE+4988  303c0002               move.w    #$2, d0
+00C0D0C4 / 026484 / CODE+4964 / FILE+498C  b06c2c3a               cmp.w     $2c3a(a4), d0
+00C0D0C8 / 026488 / CODE+4968 / FILE+4990  6766                   beq.b     $c0d130
+00C0D0CA / 02648A / CODE+496A / FILE+4992  526c2c3a               addq.w    #$1, $2c3a(a4)
+00C0D0CE / 02648E / CODE+496E / FILE+4996  41ec31ae               lea.l     $31ae(a4), a0
+00C0D0D2 / 026492 / CODE+4972 / FILE+499A  3410                   move.w    (a0), d2
+00C0D0D4 / 026494 / CODE+4974 / FILE+499C  5042                   addq.w    #$8, d2
+00C0D0D6 / 026496 / CODE+4976 / FILE+499E  36280002               move.w    $2(a0), d3
+00C0D0DA / 02649A / CODE+497A / FILE+49A2  d67c0009               add.w     #$9, d3
+00C0D0DE / 02649E / CODE+497E / FILE+49A6  206c2ca2               movea.l   $2ca2(a4), a0
+00C0D0E2 / 0264A2 / CODE+4982 / FILE+49AA  226c2ca6               movea.l   $2ca6(a4), a1
+00C0D0E6 / 0264A6 / CODE+4986 / FILE+49AE  4a91                   tst.l     (a1)
+00C0D0E8 / 0264A8 / CODE+4988 / FILE+49B0  6708                   beq.b     $c0d0f2
+00C0D0EA / 0264AA / CODE+498A / FILE+49B2  d1fc00000092           adda.l    #$92, a0
+00C0D0F0 / 0264B0 / CODE+4990 / FILE+49B8  5889                   addq.l    #$4, a1
+00C0D0F2 / 0264B2 / CODE+4992 / FILE+49BA  33fc000100dff0a6       move.w    #$1, $dff0a6.l
+00C0D0FA / 0264BA / CODE+499A / FILE+49C2  33fc000100dff0b6       move.w    #$1, $dff0b6.l
+00C0D102 / 0264C2 / CODE+49A2 / FILE+49CA  33fc000300dff096       move.w    #$3, $dff096.l
+00C0D10A / 0264CA / CODE+49AA / FILE+49D2  397c00112d50           move.w    #$11, $2d50(a4)
+00C0D110 / 0264D0 / CODE+49B0 / FILE+49D8  47e80010               lea.l     $10(a0), a3
+00C0D114 / 0264D4 / CODE+49B4 / FILE+49DC  294b2d56               move.l    a3, $2d56(a4)
+00C0D118 / 0264D8 / CODE+49B8 / FILE+49E0  2288                   move.l    a0, (a1)
+00C0D11A / 0264DA / CODE+49BA / FILE+49E2  31420010               move.w    d2, $10(a0)
+00C0D11E / 0264DE / CODE+49BE / FILE+49E6  31430012               move.w    d3, $12(a0)
+00C0D122 / 0264E2 / CODE+49C2 / FILE+49EA  217cffffffff0044       move.l    #$ffffffff, $44(a0)
+00C0D12A / 0264EA / CODE+49CA / FILE+49F2  6004                   bra.b     $c0d130
+00C0D12C / 0264EC / CODE+49CC / FILE+49F4  426c2c38               clr.w     $2c38(a4)
+00C0D130 / 0264F0 / CODE+49D0 / FILE+49F8  206c2ca2               movea.l   $2ca2(a4), a0
+00C0D134 / 0264F4 / CODE+49D4 / FILE+49FC  226c2ca6               movea.l   $2ca6(a4), a1
+00C0D138 / 0264F8 / CODE+49D8 / FILE+4A00  4a91                   tst.l     (a1)
+00C0D13A / 0264FA / CODE+49DA / FILE+4A02  6716                   beq.b     $c0d152
+00C0D13C / 0264FC / CODE+49DC / FILE+4A04  59680012               subq.w    #$4, $12(a0)
+00C0D140 / 026500 / CODE+49E0 / FILE+4A08  6a10                   bpl.b     $c0d152
+00C0D142 / 026502 / CODE+49E2 / FILE+4A0A  266c2c96               movea.l   $2c96(a4), a3
+00C0D146 / 026506 / CODE+49E6 / FILE+4A0E  26c8                   move.l    a0, (a3)+
+00C0D148 / 026508 / CODE+49E8 / FILE+4A10  294b2c96               move.l    a3, $2c96(a4)
+00C0D14C / 02650C / CODE+49EC / FILE+4A14  4291                   clr.l     (a1)
+00C0D14E / 02650E / CODE+49EE / FILE+4A16  536c2c3a               subq.w    #$1, $2c3a(a4)
+00C0D152 / 026512 / CODE+49F2 / FILE+4A1A  d1fc00000092           adda.l    #$92, a0
+00C0D158 / 026518 / CODE+49F8 / FILE+4A20  5889                   addq.l    #$4, a1
+00C0D15A / 02651A / CODE+49FA / FILE+4A22  4a91                   tst.l     (a1)
+00C0D15C / 02651C / CODE+49FC / FILE+4A24  6716                   beq.b     $c0d174
+00C0D15E / 02651E / CODE+49FE / FILE+4A26  59680012               subq.w    #$4, $12(a0)
+00C0D162 / 026522 / CODE+4A02 / FILE+4A2A  6a10                   bpl.b     $c0d174
+00C0D164 / 026524 / CODE+4A04 / FILE+4A2C  266c2c96               movea.l   $2c96(a4), a3
+00C0D168 / 026528 / CODE+4A08 / FILE+4A30  26c8                   move.l    a0, (a3)+
+00C0D16A / 02652A / CODE+4A0A / FILE+4A32  294b2c96               move.l    a3, $2c96(a4)
+00C0D16E / 02652E / CODE+4A0E / FILE+4A36  4291                   clr.l     (a1)
+00C0D170 / 026530 / CODE+4A10 / FILE+4A38  536c2c3a               subq.w    #$1, $2c3a(a4)
+
+; attack_selection_sound: CODE+$4A14; Shot file+$4A3C; both saved copies match relocated ADF
+00C0D174 / 026534 / CODE+4A14 / FILE+4A3C  082c00002c1b           btst.b    #$0, $2c1b(a4)
+00C0D17A / 02653A / CODE+4A1A / FILE+4A42  67000102               beq.w     $c0d27e
+00C0D17E / 02653E / CODE+4A1E / FILE+4A46  4a6c2c4e               tst.w     $2c4e(a4)
+00C0D182 / 026542 / CODE+4A22 / FILE+4A4A  660000fa               bne.w     $c0d27e
+00C0D186 / 026546 / CODE+4A26 / FILE+4A4E  536c2c1e               subq.w    #$1, $2c1e(a4)
+00C0D18A / 02654A / CODE+4A2A / FILE+4A52  660000f2               bne.w     $c0d27e
+00C0D18E / 02654E / CODE+4A2E / FILE+4A56  397cffff2c60           move.w    #$ffff, $2c60(a4)
+00C0D194 / 026554 / CODE+4A34 / FILE+4A5C  382c2c18               move.w    $2c18(a4), d4
+00C0D198 / 026558 / CODE+4A38 / FILE+4A60  4eba05ca               jsr       $c0d764(pc)
+00C0D19C / 02655C / CODE+4A3C / FILE+4A64  3802                   move.w    d2, d4
+00C0D19E / 02655E / CODE+4A3E / FILE+4A66  41ec3f0c               lea.l     $3f0c(a4), a0
+00C0D1A2 / 026562 / CODE+4A42 / FILE+4A6A  c4fc0092               mulu.w    #$92, d2
+00C0D1A6 / 026566 / CODE+4A46 / FILE+4A6E  d1c2                   adda.l    d2, a0
+00C0D1A8 / 026568 / CODE+4A48 / FILE+4A70  302c2c18               move.w    $2c18(a4), d0
+00C0D1AC / 02656C / CODE+4A4C / FILE+4A74  323c0002               move.w    #$2, d1
+00C0D1B0 / 026570 / CODE+4A50 / FILE+4A78  b268006e               cmp.w     $6e(a0), d1
+00C0D1B4 / 026574 / CODE+4A54 / FILE+4A7C  6630                   bne.b     $c0d1e6
+00C0D1B6 / 026576 / CODE+4A56 / FILE+4A7E  34280012               move.w    $12(a0), d2
+00C0D1BA / 02657A / CODE+4A5A / FILE+4A82  b4680068               cmp.w     $68(a0), d2
+00C0D1BE / 02657E / CODE+4A5E / FILE+4A86  6626                   bne.b     $c0d1e6
+00C0D1C0 / 026580 / CODE+4A60 / FILE+4A88  34280066               move.w    $66(a0), d2
+00C0D1C4 / 026584 / CODE+4A64 / FILE+4A8C  d46c2c12               add.w     $2c12(a4), d2
+00C0D1C8 / 026588 / CODE+4A68 / FILE+4A90  b4680010               cmp.w     $10(a0), d2
+00C0D1CC / 02658C / CODE+4A6C / FILE+4A94  6618                   bne.b     $c0d1e6
+00C0D1CE / 02658E / CODE+4A6E / FILE+4A96  4a6c2c60               tst.w     $2c60(a4)
+00C0D1D2 / 026592 / CODE+4A72 / FILE+4A9A  6a08                   bpl.b     $c0d1dc
+00C0D1D4 / 026594 / CODE+4A74 / FILE+4A9C  396800882c60           move.w    $88(a0), $2c60(a4)
+00C0D1DA / 02659A / CODE+4A7A / FILE+4AA2  6024                   bra.b     $c0d200
+00C0D1DC / 02659C / CODE+4A7C / FILE+4AA4  34280088               move.w    $88(a0), d2
+00C0D1E0 / 0265A0 / CODE+4A80 / FILE+4AA8  b46c2c60               cmp.w     $2c60(a4), d2
+00C0D1E4 / 0265A4 / CODE+4A84 / FILE+4AAC  671a                   beq.b     $c0d200
+00C0D1E6 / 0265A6 / CODE+4A86 / FILE+4AAE  5340                   subq.w    #$1, d0
+00C0D1E8 / 0265A8 / CODE+4A88 / FILE+4AB0  67000090               beq.w     $c0d27a
+00C0D1EC / 0265AC / CODE+4A8C / FILE+4AB4  d1fc00000092           adda.l    #$92, a0
+00C0D1F2 / 0265B2 / CODE+4A92 / FILE+4ABA  5244                   addq.w    #$1, d4
+00C0D1F4 / 0265B4 / CODE+4A94 / FILE+4ABC  b86c2c18               cmp.w     $2c18(a4), d4
+00C0D1F8 / 0265B8 / CODE+4A98 / FILE+4AC0  66b6                   bne.b     $c0d1b0
+00C0D1FA / 0265BA / CODE+4A9A / FILE+4AC2  41ec3f0c               lea.l     $3f0c(a4), a0
+00C0D1FE / 0265BE / CODE+4A9E / FILE+4AC6  60b0                   bra.b     $c0d1b0
+00C0D200 / 0265C0 / CODE+4AA0 / FILE+4AC8  4a6c2d4e               tst.w     $2d4e(a4)
+00C0D204 / 0265C4 / CODE+4AA4 / FILE+4ACC  6626                   bne.b     $c0d22c
+00C0D206 / 0265C6 / CODE+4AA6 / FILE+4ACE  33fc000100dff0a6       move.w    #$1, $dff0a6.l
+00C0D20E / 0265CE / CODE+4AAE / FILE+4AD6  33fc000100dff0b6       move.w    #$1, $dff0b6.l
+00C0D216 / 0265D6 / CODE+4AB6 / FILE+4ADE  33fc000300dff096       move.w    #$3, $dff096.l
+00C0D21E / 0265DE / CODE+4ABE / FILE+4AE6  396800902d50           move.w    $90(a0), $2d50(a4)
+00C0D224 / 0265E4 / CODE+4AC4 / FILE+4AEC  47e80010               lea.l     $10(a0), a3
+00C0D228 / 0265E8 / CODE+4AC8 / FILE+4AF0  294b2d56               move.l    a3, $2d56(a4)
+00C0D22C / 0265EC / CODE+4ACC / FILE+4AF4  317c0003006e           move.w    #$3, $6e(a0)
+00C0D232 / 0265F2 / CODE+4AD2 / FILE+4AFA  216800700074           move.l    $70(a0), $74(a0)
+00C0D238 / 0265F8 / CODE+4AD8 / FILE+4B00  316800100078           move.w    $10(a0), $78(a0)
+00C0D23E / 0265FE / CODE+4ADE / FILE+4B06  383c00a8               move.w    #$a8, d4
+00C0D242 / 026602 / CODE+4AE2 / FILE+4B0A  98680012               sub.w     $12(a0), d4
+00C0D246 / 026606 / CODE+4AE6 / FILE+4B0E  4eba051c               jsr       $c0d764(pc)
+00C0D24A / 02660A / CODE+4AEA / FILE+4B12  d4680012               add.w     $12(a0), d2
+00C0D24E / 02660E / CODE+4AEE / FILE+4B16  3142007a               move.w    d2, $7a(a0)
+00C0D252 / 026612 / CODE+4AF2 / FILE+4B1A  0c6c00022c16           cmpi.w    #$2, $2c16(a4)
+00C0D258 / 026618 / CODE+4AF8 / FILE+4B20  6706                   beq.b     $c0d260
+00C0D25A / 02661A / CODE+4AFA / FILE+4B22  4268007c               clr.w     $7c(a0)
+00C0D25E / 02661E / CODE+4AFE / FILE+4B26  6012                   bra.b     $c0d272
+00C0D260 / 026620 / CODE+4B00 / FILE+4B28  d47c0014               add.w     #$14, d2
+00C0D264 / 026624 / CODE+4B04 / FILE+4B2C  b47c00a8               cmp.w     #$a8, d2
+00C0D268 / 026628 / CODE+4B08 / FILE+4B30  6f04                   ble.b     $c0d26e
+00C0D26A / 02662A / CODE+4B0A / FILE+4B32  947c0020               sub.w     #$20, d2
+00C0D26E / 02662E / CODE+4B0E / FILE+4B36  3142007c               move.w    d2, $7c(a0)
+00C0D272 / 026632 / CODE+4B12 / FILE+4B3A  536c2c20               subq.w    #$1, $2c20(a4)
+00C0D276 / 026636 / CODE+4B16 / FILE+4B3E  6600ff1c               bne.w     $c0d194
+00C0D27A / 02663A / CODE+4B1A / FILE+4B42  4eba05ca               jsr       $c0d846(pc)
+
+; both_enemy_hit_sound_sites: CODE+$4B7E; Shot file+$4BA6; both saved copies match relocated ADF
+00C0D2DE / 02669E / CODE+4B7E / FILE+4BA6  226c2ca2               movea.l   $2ca2(a4), a1
+00C0D2E2 / 0266A2 / CODE+4B82 / FILE+4BAA  246c2ca6               movea.l   $2ca6(a4), a2
+00C0D2E6 / 0266A6 / CODE+4B86 / FILE+4BAE  4a92                   tst.l     (a2)
+00C0D2E8 / 0266A8 / CODE+4B88 / FILE+4BB0  6776                   beq.b     $c0d360
+00C0D2EA / 0266AA / CODE+4B8A / FILE+4BB2  34290010               move.w    $10(a1), d2
+00C0D2EE / 0266AE / CODE+4B8E / FILE+4BB6  36290012               move.w    $12(a1), d3
+00C0D2F2 / 0266B2 / CODE+4B92 / FILE+4BBA  4eba03e2               jsr       $c0d6d6(pc)
+00C0D2F6 / 0266B6 / CODE+4B96 / FILE+4BBE  4a40                   tst.w     d0
+00C0D2F8 / 0266B8 / CODE+4B98 / FILE+4BC0  6766                   beq.b     $c0d360
+00C0D2FA / 0266BA / CODE+4B9A / FILE+4BC2  202c2caa               move.l    $2caa(a4), d0
+00C0D2FE / 0266BE / CODE+4B9E / FILE+4BC6  d1ac2cb6               add.l     d0, $2cb6(a4)
+00C0D302 / 0266C2 / CODE+4BA2 / FILE+4BCA  3028006e               move.w    $6e(a0), d0
+00C0D306 / 0266C6 / CODE+4BA6 / FILE+4BCE  b07c0002               cmp.w     #$2, d0
+00C0D30A / 0266CA / CODE+4BAA / FILE+4BD2  6708                   beq.b     $c0d314
+00C0D30C / 0266CC / CODE+4BAC / FILE+4BD4  202c2cae               move.l    $2cae(a4), d0
+00C0D310 / 0266D0 / CODE+4BB0 / FILE+4BD8  d1ac2cb6               add.l     d0, $2cb6(a4)
+00C0D314 / 0266D4 / CODE+4BB4 / FILE+4BDC  4a6c2d5a               tst.w     $2d5a(a4)
+00C0D318 / 0266D8 / CODE+4BB8 / FILE+4BE0  6626                   bne.b     $c0d340
+00C0D31A / 0266DA / CODE+4BBA / FILE+4BE2  33fc000100dff0c6       move.w    #$1, $dff0c6.l
+00C0D322 / 0266E2 / CODE+4BC2 / FILE+4BEA  33fc000100dff0d6       move.w    #$1, $dff0d6.l
+00C0D32A / 0266EA / CODE+4BCA / FILE+4BF2  33fc000c00dff096       move.w    #$c, $dff096.l
+00C0D332 / 0266F2 / CODE+4BD2 / FILE+4BFA  3968008a2d5c           move.w    $8a(a0), $2d5c(a4)
+00C0D338 / 0266F8 / CODE+4BD8 / FILE+4C00  47e80010               lea.l     $10(a0), a3
+00C0D33C / 0266FC / CODE+4BDC / FILE+4C04  294b2d62               move.l    a3, $2d62(a4)
+00C0D340 / 026700 / CODE+4BE0 / FILE+4C08  4268005c               clr.w     $5c(a0)
+00C0D344 / 026704 / CODE+4BE4 / FILE+4C0C  317c0004006e           move.w    #$4, $6e(a0)
+00C0D34A / 02670A / CODE+4BEA / FILE+4C12  2168007e0014           move.l    $7e(a0), $14(a0)
+00C0D350 / 026710 / CODE+4BF0 / FILE+4C18  266c2c96               movea.l   $2c96(a4), a3
+00C0D354 / 026714 / CODE+4BF4 / FILE+4C1C  26c9                   move.l    a1, (a3)+
+00C0D356 / 026716 / CODE+4BF6 / FILE+4C1E  294b2c96               move.l    a3, $2c96(a4)
+00C0D35A / 02671A / CODE+4BFA / FILE+4C22  4292                   clr.l     (a2)
+00C0D35C / 02671C / CODE+4BFC / FILE+4C24  536c2c3a               subq.w    #$1, $2c3a(a4)
+00C0D360 / 026720 / CODE+4C00 / FILE+4C28  d3fc00000092           adda.l    #$92, a1
+00C0D366 / 026726 / CODE+4C06 / FILE+4C2E  588a                   addq.l    #$4, a2
+00C0D368 / 026728 / CODE+4C08 / FILE+4C30  4a92                   tst.l     (a2)
+00C0D36A / 02672A / CODE+4C0A / FILE+4C32  6776                   beq.b     $c0d3e2
+00C0D36C / 02672C / CODE+4C0C / FILE+4C34  34290010               move.w    $10(a1), d2
+00C0D370 / 026730 / CODE+4C10 / FILE+4C38  36290012               move.w    $12(a1), d3
+00C0D374 / 026734 / CODE+4C14 / FILE+4C3C  4eba0360               jsr       $c0d6d6(pc)
+00C0D378 / 026738 / CODE+4C18 / FILE+4C40  4a40                   tst.w     d0
+00C0D37A / 02673A / CODE+4C1A / FILE+4C42  6766                   beq.b     $c0d3e2
+00C0D37C / 02673C / CODE+4C1C / FILE+4C44  202c2caa               move.l    $2caa(a4), d0
+00C0D380 / 026740 / CODE+4C20 / FILE+4C48  d1ac2cb6               add.l     d0, $2cb6(a4)
+00C0D384 / 026744 / CODE+4C24 / FILE+4C4C  3028006e               move.w    $6e(a0), d0
+00C0D388 / 026748 / CODE+4C28 / FILE+4C50  b07c0002               cmp.w     #$2, d0
+00C0D38C / 02674C / CODE+4C2C / FILE+4C54  6708                   beq.b     $c0d396
+00C0D38E / 02674E / CODE+4C2E / FILE+4C56  202c2cae               move.l    $2cae(a4), d0
+00C0D392 / 026752 / CODE+4C32 / FILE+4C5A  d1ac2cb6               add.l     d0, $2cb6(a4)
+00C0D396 / 026756 / CODE+4C36 / FILE+4C5E  4a6c2d5a               tst.w     $2d5a(a4)
+00C0D39A / 02675A / CODE+4C3A / FILE+4C62  6626                   bne.b     $c0d3c2
+00C0D39C / 02675C / CODE+4C3C / FILE+4C64  33fc000100dff0c6       move.w    #$1, $dff0c6.l
+00C0D3A4 / 026764 / CODE+4C44 / FILE+4C6C  33fc000100dff0d6       move.w    #$1, $dff0d6.l
+00C0D3AC / 02676C / CODE+4C4C / FILE+4C74  33fc000c00dff096       move.w    #$c, $dff096.l
+00C0D3B4 / 026774 / CODE+4C54 / FILE+4C7C  3968008a2d5c           move.w    $8a(a0), $2d5c(a4)
+00C0D3BA / 02677A / CODE+4C5A / FILE+4C82  47e80010               lea.l     $10(a0), a3
+00C0D3BE / 02677E / CODE+4C5E / FILE+4C86  294b2d62               move.l    a3, $2d62(a4)
+00C0D3C2 / 026782 / CODE+4C62 / FILE+4C8A  4268005c               clr.w     $5c(a0)
+00C0D3C6 / 026786 / CODE+4C66 / FILE+4C8E  317c0004006e           move.w    #$4, $6e(a0)
+00C0D3CC / 02678C / CODE+4C6C / FILE+4C94  2168007e0014           move.l    $7e(a0), $14(a0)
+00C0D3D2 / 026792 / CODE+4C72 / FILE+4C9A  266c2c96               movea.l   $2c96(a4), a3
+00C0D3D6 / 026796 / CODE+4C76 / FILE+4C9E  26c9                   move.l    a1, (a3)+
+00C0D3D8 / 026798 / CODE+4C78 / FILE+4CA0  294b2c96               move.l    a3, $2c96(a4)
+00C0D3DC / 02679C / CODE+4C7C / FILE+4CA4  4292                   clr.l     (a2)
+00C0D3DE / 02679E / CODE+4C7E / FILE+4CA6  536c2c3a               subq.w    #$1, $2c3a(a4)
+
+; entry_sound: CODE+$4C82; Shot file+$4CAA; both saved copies match relocated ADF
+00C0D3E2 / 0267A2 / CODE+4C82 / FILE+4CAA  3028006e               move.w    $6e(a0), d0
+00C0D3E6 / 0267A6 / CODE+4C86 / FILE+4CAE  b07c0001               cmp.w     #$1, d0
+00C0D3EA / 0267AA / CODE+4C8A / FILE+4CB2  66000082               bne.w     $c0d46e
+00C0D3EE / 0267AE / CODE+4C8E / FILE+4CB6  4a68006c               tst.w     $6c(a0)
+00C0D3F2 / 0267B2 / CODE+4C92 / FILE+4CBA  6736                   beq.b     $c0d42a
+00C0D3F4 / 0267B4 / CODE+4C94 / FILE+4CBC  5368006c               subq.w    #$1, $6c(a0)
+00C0D3F8 / 0267B8 / CODE+4C98 / FILE+4CC0  6600015e               bne.w     $c0d558
+00C0D3FC / 0267BC / CODE+4C9C / FILE+4CC4  4a6c2d4e               tst.w     $2d4e(a4)
+00C0D400 / 0267C0 / CODE+4CA0 / FILE+4CC8  66000156               bne.w     $c0d558
+00C0D404 / 0267C4 / CODE+4CA4 / FILE+4CCC  33fc000100dff0a6       move.w    #$1, $dff0a6.l
+00C0D40C / 0267CC / CODE+4CAC / FILE+4CD4  33fc000100dff0b6       move.w    #$1, $dff0b6.l
+00C0D414 / 0267D4 / CODE+4CB4 / FILE+4CDC  33fc000300dff096       move.w    #$3, $dff096.l
+00C0D41C / 0267DC / CODE+4CBC / FILE+4CE4  3968008e2d50           move.w    $8e(a0), $2d50(a4)
+00C0D422 / 0267E2 / CODE+4CC2 / FILE+4CEA  47e80010               lea.l     $10(a0), a3
+00C0D426 / 0267E6 / CODE+4CC6 / FILE+4CEE  294b2d56               move.l    a3, $2d56(a4)
+
+; enemy_projectile_sound_and_position_pointer: CODE+$4EB2; Shot file+$4EDA; both saved copies match relocated ADF
+00C0D612 / 0269D2 / CODE+4EB2 / FILE+4EDA  2f0a                   move.l    a2, -(a7)
+00C0D614 / 0269D4 / CODE+4EB4 / FILE+4EDC  0c6c00062c1c           cmpi.w    #$6, $2c1c(a4)
+00C0D61A / 0269DA / CODE+4EBA / FILE+4EE2  670000b6               beq.w     $c0d6d2
+00C0D61E / 0269DE / CODE+4EBE / FILE+4EE6  4a6c2d5a               tst.w     $2d5a(a4)
+00C0D622 / 0269E2 / CODE+4EC2 / FILE+4EEA  661e                   bne.b     $c0d642
+00C0D624 / 0269E4 / CODE+4EC4 / FILE+4EEC  33fc000100dff0c6       move.w    #$1, $dff0c6.l
+00C0D62C / 0269EC / CODE+4ECC / FILE+4EF4  33fc000100dff0d6       move.w    #$1, $dff0d6.l
+00C0D634 / 0269F4 / CODE+4ED4 / FILE+4EFC  33fc000c00dff096       move.w    #$c, $dff096.l
+00C0D63C / 0269FC / CODE+4EDC / FILE+4F04  3968008c2d5c           move.w    $8c(a0), $2d5c(a4)
+00C0D642 / 026A02 / CODE+4EE2 / FILE+4F0A  526c2c1c               addq.w    #$1, $2c1c(a4)
+00C0D646 / 026A06 / CODE+4EE6 / FILE+4F0E  45ec31ae               lea.l     $31ae(a4), a2
+00C0D64A / 026A0A / CODE+4EEA / FILE+4F12  43ec31da               lea.l     $31da(a4), a1
+00C0D64E / 026A0E / CODE+4EEE / FILE+4F16  4a690004               tst.w     $4(a1)
+00C0D652 / 026A12 / CODE+4EF2 / FILE+4F1A  6708                   beq.b     $c0d65c
+00C0D654 / 026A14 / CODE+4EF4 / FILE+4F1C  d3fc00000016           adda.l    #$16, a1
+00C0D65A / 026A1A / CODE+4EFA / FILE+4F22  60f2                   bra.b     $c0d64e
+00C0D65C / 026A1C / CODE+4EFC / FILE+4F24  47d1                   lea.l     (a1), a3
+00C0D65E / 026A1E / CODE+4EFE / FILE+4F26  294b2d62               move.l    a3, $2d62(a4)
+00C0D662 / 026A22 / CODE+4F02 / FILE+4F2A  337c00010004           move.w    #$1, $4(a1)
+00C0D668 / 026A28 / CODE+4F08 / FILE+4F30  30280010               move.w    $10(a0), d0
+
+; sound_tick: CODE+$501E; Shot file+$5046; both saved copies match relocated ADF
+00C0D77E / 026B3E / CODE+501E / FILE+5046  4a6c2c5a               tst.w     $2c5a(a4)
+00C0D782 / 026B42 / CODE+5022 / FILE+504A  6602                   bne.b     $c0d786
+00C0D784 / 026B44 / CODE+5024 / FILE+504C  4e75                   rts
+00C0D786 / 026B46 / CODE+5026 / FILE+504E  45f900dff0a0           lea.l     $dff0a0.l, a2
+00C0D78C / 026B4C / CODE+502C / FILE+5054  41ec2d4e               lea.l     $2d4e(a4), a0
+00C0D790 / 026B50 / CODE+5030 / FILE+5058  4245                   clr.w     d5
+00C0D792 / 026B52 / CODE+5032 / FILE+505A  4a50                   tst.w     (a0)
+00C0D794 / 026B54 / CODE+5034 / FILE+505C  6702                   beq.b     $c0d798
+00C0D796 / 026B56 / CODE+5036 / FILE+505E  5350                   subq.w    #$1, (a0)
+00C0D798 / 026B58 / CODE+5038 / FILE+5060  30280002               move.w    $2(a0), d0
+00C0D79C / 026B5C / CODE+503C / FILE+5064  6748                   beq.b     $c0d7e6
+00C0D79E / 026B5E / CODE+503E / FILE+5066  5340                   subq.w    #$1, d0
+00C0D7A0 / 026B60 / CODE+5040 / FILE+5068  c0fc000c               mulu.w    #$c, d0
+00C0D7A4 / 026B64 / CODE+5044 / FILE+506C  43ec820c               lea.l     -$7df4(a4), a1
+00C0D7A8 / 026B68 / CODE+5048 / FILE+5070  d3c0                   adda.l    d0, a1
+00C0D7AA / 026B6A / CODE+504A / FILE+5072  42680002               clr.w     $2(a0)
+00C0D7AE / 026B6E / CODE+504E / FILE+5076  42680004               clr.w     $4(a0)
+00C0D7B2 / 026B72 / CODE+5052 / FILE+507A  30a90006               move.w    $6(a1), (a0)
+00C0D7B6 / 026B76 / CODE+5056 / FILE+507E  316900020006           move.w    $2(a1), $6(a0)
+00C0D7BC / 026B7C / CODE+505C / FILE+5084  356900040004           move.w    $4(a1), $4(a2)
+00C0D7C2 / 026B82 / CODE+5062 / FILE+508A  356900040014           move.w    $4(a1), $14(a2)
+00C0D7C8 / 026B88 / CODE+5068 / FILE+5090  24a90008               move.l    $8(a1), (a2)
+00C0D7CC / 026B8C / CODE+506C / FILE+5094  256900080010           move.l    $8(a1), $10(a2)
+00C0D7D2 / 026B92 / CODE+5072 / FILE+509A  35510006               move.w    (a1), $6(a2)
+00C0D7D6 / 026B96 / CODE+5076 / FILE+509E  35510016               move.w    (a1), $16(a2)
+00C0D7DA / 026B9A / CODE+507A / FILE+50A2  43faf8a2               lea.l     $c0d07e(pc), a1
+00C0D7DE / 026B9E / CODE+507E / FILE+50A6  33f1500000dff096       move.w    (a1, d5.w), $dff096.l
+00C0D7E6 / 026BA6 / CODE+5086 / FILE+50AE  303c0002               move.w    #$2, d0
+00C0D7EA / 026BAA / CODE+508A / FILE+50B2  b0680004               cmp.w     $4(a0), d0
+00C0D7EE / 026BAE / CODE+508E / FILE+50B6  673e                   beq.b     $c0d82e
+00C0D7F0 / 026BB0 / CODE+5090 / FILE+50B8  22680008               movea.l   $8(a0), a1
+00C0D7F4 / 026BB4 / CODE+5094 / FILE+50BC  3011                   move.w    (a1), d0
+00C0D7F6 / 026BB6 / CODE+5096 / FILE+50BE  6a02                   bpl.b     $c0d7fa
+00C0D7F8 / 026BB8 / CODE+5098 / FILE+50C0  4240                   clr.w     d0
+00C0D7FA / 026BBA / CODE+509A / FILE+50C2  b07c00f0               cmp.w     #$f0, d0
+00C0D7FE / 026BBE / CODE+509E / FILE+50C6  6d04                   blt.b     $c0d804
+00C0D800 / 026BC0 / CODE+50A0 / FILE+50C8  303c00f0               move.w    #$f0, d0
+00C0D804 / 026BC4 / CODE+50A4 / FILE+50CC  34280006               move.w    $6(a0), d2
+00C0D808 / 026BC8 / CODE+50A8 / FILE+50D0  48c0                   ext.l     d0
+00C0D80A / 026BCA / CODE+50AA / FILE+50D2  80c2                   divu.w    d2, d0
+00C0D80C / 026BCC / CODE+50AC / FILE+50D4  47faf874               lea.l     $c0d082(pc), a3
+00C0D810 / 026BD0 / CODE+50B0 / FILE+50D8  12332000               move.b    (a3, d2.w), d1
+00C0D814 / 026BD4 / CODE+50B4 / FILE+50DC  4881                   ext.w     d1
+00C0D816 / 026BD6 / CODE+50B6 / FILE+50DE  9240                   sub.w     d0, d1
+00C0D818 / 026BD8 / CODE+50B8 / FILE+50E0  4a45                   tst.w     d5
+00C0D81A / 026BDA / CODE+50BA / FILE+50E2  660a                   bne.b     $c0d826
+00C0D81C / 026BDC / CODE+50BC / FILE+50E4  35410008               move.w    d1, $8(a2)
+00C0D820 / 026BE0 / CODE+50C0 / FILE+50E8  35400018               move.w    d0, $18(a2)
+00C0D824 / 026BE4 / CODE+50C4 / FILE+50EC  6008                   bra.b     $c0d82e
+00C0D826 / 026BE6 / CODE+50C6 / FILE+50EE  35400008               move.w    d0, $8(a2)
+00C0D82A / 026BEA / CODE+50CA / FILE+50F2  35410018               move.w    d1, $18(a2)
+00C0D82E / 026BEE / CODE+50CE / FILE+50F6  d5fc00000020           adda.l    #$20, a2
+00C0D834 / 026BF4 / CODE+50D4 / FILE+50FC  d1fc0000000c           adda.l    #$c, a0
+00C0D83A / 026BFA / CODE+50DA / FILE+5102  5445                   addq.w    #$2, d5
+00C0D83C / 026BFC / CODE+50DC / FILE+5104  ba7c0004               cmp.w     #$4, d5
+00C0D840 / 026C00 / CODE+50E0 / FILE+5108  6600ff50               bne.w     $c0d792
+00C0D844 / 026C04 / CODE+50E4 / FILE+510C  4e75                   rts
+
+; sample_loader_and_irq_initialization: CODE+$60C0; Shot file+$60E8; both saved copies match relocated ADF
+00C0E820 / 027BE0 / CODE+60C0 / FILE+60E8  4e55fff6               link.w    a5, #$fff6
+00C0E824 / 027BE4 / CODE+60C4 / FILE+60EC  33fc000f00dff096       move.w    #$f, $dff096.l
+00C0E82C / 027BEC / CODE+60CC / FILE+60F4  426dfff8               clr.w     -$8(a5)
+00C0E830 / 027BF0 / CODE+60D0 / FILE+60F8  302dfff8               move.w    -$8(a5), d0
+00C0E834 / 027BF4 / CODE+60D4 / FILE+60FC  c1fc0016               muls.w    #$16, d0
+00C0E838 / 027BF8 / CODE+60D8 / FILE+6100  41ec2dae               lea.l     $2dae(a4), a0
+00C0E83C / 027BFC / CODE+60DC / FILE+6104  11bc00020800           move.b    #$2, (a0, d0.l)
+00C0E842 / 027C02 / CODE+60E2 / FILE+610A  302dfff8               move.w    -$8(a5), d0
+00C0E846 / 027C06 / CODE+60E6 / FILE+610E  c1fc0016               muls.w    #$16, d0
+00C0E84A / 027C0A / CODE+60EA / FILE+6112  41ec2daf               lea.l     $2daf(a4), a0
+00C0E84E / 027C0E / CODE+60EE / FILE+6116  42300800               clr.b     (a0, d0.l)
+00C0E852 / 027C12 / CODE+60F2 / FILE+611A  302dfff8               move.w    -$8(a5), d0
+00C0E856 / 027C16 / CODE+60F6 / FILE+611E  c1fc0016               muls.w    #$16, d0
+00C0E85A / 027C1A / CODE+60FA / FILE+6122  41ec2db0               lea.l     $2db0(a4), a0
+00C0E85E / 027C1E / CODE+60FE / FILE+6126  42b00800               clr.l     (a0, d0.l)
+00C0E862 / 027C22 / CODE+6102 / FILE+612A  302dfff8               move.w    -$8(a5), d0
+00C0E866 / 027C26 / CODE+6106 / FILE+612E  c1fc0016               muls.w    #$16, d0
+00C0E86A / 027C2A / CODE+610A / FILE+6132  41ec2db4               lea.l     $2db4(a4), a0
+00C0E86E / 027C2E / CODE+610E / FILE+6136  322dfff8               move.w    -$8(a5), d1
+00C0E872 / 027C32 / CODE+6112 / FILE+613A  c3fc000c               muls.w    #$c, d1
+00C0E876 / 027C36 / CODE+6116 / FILE+613E  43ec2d52               lea.l     $2d52(a4), a1
+00C0E87A / 027C3A / CODE+611A / FILE+6142  d289                   add.l     a1, d1
+00C0E87C / 027C3C / CODE+611C / FILE+6144  21810800               move.l    d1, (a0, d0.l)
+00C0E880 / 027C40 / CODE+6120 / FILE+6148  526dfff8               addq.w    #$1, -$8(a5)
+00C0E884 / 027C44 / CODE+6124 / FILE+614C  0c6d0002fff8           cmpi.w    #$2, -$8(a5)
+00C0E88A / 027C4A / CODE+612A / FILE+6152  6da4                   blt.b     $c0e830
+00C0E88C / 027C4C / CODE+612C / FILE+6154  41fa025a               lea.l     $c0eae8(pc), a0
+00C0E890 / 027C50 / CODE+6130 / FILE+6158  29482db8               move.l    a0, $2db8(a4)
+00C0E894 / 027C54 / CODE+6134 / FILE+615C  41fa0280               lea.l     $c0eb16(pc), a0
+00C0E898 / 027C58 / CODE+6138 / FILE+6160  29482dce               move.l    a0, $2dce(a4)
+00C0E89C / 027C5C / CODE+613C / FILE+6164  33fc078000dff09a       move.w    #$780, $dff09a.l
+00C0E8A4 / 027C64 / CODE+6144 / FILE+616C  486c2da6               pea.l     $2da6(a4)
+00C0E8A8 / 027C68 / CODE+6148 / FILE+6170  48780007               pea.l     $7.w
+00C0E8AC / 027C6C / CODE+614C / FILE+6174  4eba302e               jsr       $c118dc(pc)
+00C0E8B0 / 027C70 / CODE+6150 / FILE+6178  504f                   addq.w    #$8, a7
+00C0E8B2 / 027C72 / CODE+6152 / FILE+617A  29402cc6               move.l    d0, $2cc6(a4)
+00C0E8B6 / 027C76 / CODE+6156 / FILE+617E  486c2dbc               pea.l     $2dbc(a4)
+00C0E8BA / 027C7A / CODE+615A / FILE+6182  48780009               pea.l     $9.w
+00C0E8BE / 027C7E / CODE+615E / FILE+6186  4eba301c               jsr       $c118dc(pc)
+00C0E8C2 / 027C82 / CODE+6162 / FILE+618A  504f                   addq.w    #$8, a7
+00C0E8C4 / 027C84 / CODE+6164 / FILE+618C  29402cca               move.l    d0, $2cca(a4)
+00C0E8C8 / 027C88 / CODE+6168 / FILE+6190  33fc828000dff09a       move.w    #$8280, $dff09a.l
+00C0E8D0 / 027C90 / CODE+6170 / FILE+6198  487a0156               pea.l     $c0ea28(pc)
+00C0E8D4 / 027C94 / CODE+6174 / FILE+619C  487a0142               pea.l     $c0ea18(pc)
+00C0E8D8 / 027C98 / CODE+6178 / FILE+61A0  4eba1a00               jsr       $c102da(pc)
+00C0E8DC / 027C9C / CODE+617C / FILE+61A4  504f                   addq.w    #$8, a7
+00C0E8DE / 027C9E / CODE+617E / FILE+61A6  2b40fffc               move.l    d0, -$4(a5)
+00C0E8E2 / 027CA2 / CODE+6182 / FILE+61AA  4aadfffc               tst.l     -$4(a5)
+00C0E8E6 / 027CA6 / CODE+6186 / FILE+61AE  660e                   bne.b     $c0e8f6
+00C0E8E8 / 027CA8 / CODE+6188 / FILE+61B0  487a0140               pea.l     $c0ea2a(pc)
+00C0E8EC / 027CAC / CODE+618C / FILE+61B4  4eba22e8               jsr       $c10bd6(pc)
+00C0E8F0 / 027CB0 / CODE+6190 / FILE+61B8  584f                   addq.w    #$4, a7
+00C0E8F2 / 027CB2 / CODE+6192 / FILE+61BA  4eac8014               jsr       -$7fec(a4)
+00C0E8F6 / 027CB6 / CODE+6196 / FILE+61BE  426dfff8               clr.w     -$8(a5)
+00C0E8FA / 027CBA / CODE+619A / FILE+61C2  0c6d0003fff8           cmpi.w    #$3, -$8(a5)
+00C0E900 / 027CC0 / CODE+61A0 / FILE+61C8  6718                   beq.b     $c0e91a
+00C0E902 / 027CC2 / CODE+61A2 / FILE+61CA  0c6d000cfff8           cmpi.w    #$c, -$8(a5)
+00C0E908 / 027CC8 / CODE+61A8 / FILE+61D0  6710                   beq.b     $c0e91a
+00C0E90A / 027CCA / CODE+61AA / FILE+61D2  0c6d000dfff8           cmpi.w    #$d, -$8(a5)
+00C0E910 / 027CD0 / CODE+61B0 / FILE+61D8  6708                   beq.b     $c0e91a
+00C0E912 / 027CD2 / CODE+61B2 / FILE+61DA  0c6d0016fff8           cmpi.w    #$16, -$8(a5)
+00C0E918 / 027CD8 / CODE+61B8 / FILE+61E0  663a                   bne.b     $c0e954
+00C0E91A / 027CDA / CODE+61BA / FILE+61E2  302dfff8               move.w    -$8(a5), d0
+00C0E91E / 027CDE / CODE+61BE / FILE+61E6  c1fc000c               muls.w    #$c, d0
+00C0E922 / 027CE2 / CODE+61C2 / FILE+61EA  41ec8214               lea.l     -$7dec(a4), a0
+00C0E926 / 027CE6 / CODE+61C6 / FILE+61EE  42b00800               clr.l     (a0, d0.l)
+00C0E92A / 027CEA / CODE+61CA / FILE+61F2  3f3c0001               move.w    #$1, -(a7)
+00C0E92E / 027CEE / CODE+61CE / FILE+61F6  302dfff8               move.w    -$8(a5), d0
+00C0E932 / 027CF2 / CODE+61D2 / FILE+61FA  c1fc000c               muls.w    #$c, d0
+00C0E936 / 027CF6 / CODE+61D6 / FILE+61FE  41ec8210               lea.l     -$7df0(a4), a0
+00C0E93A / 027CFA / CODE+61DA / FILE+6202  32300800               move.w    (a0, d0.l), d1
+00C0E93E / 027CFE / CODE+61DE / FILE+6206  48c1                   ext.l     d1
+00C0E940 / 027D00 / CODE+61E0 / FILE+6208  e381                   asl.l     #$1, d1
+00C0E942 / 027D02 / CODE+61E2 / FILE+620A  2f01                   move.l    d1, -(a7)
+00C0E944 / 027D04 / CODE+61E4 / FILE+620C  2f2dfffc               move.l    -$4(a5), -(a7)
+00C0E948 / 027D08 / CODE+61E8 / FILE+6210  4eba1782               jsr       $c100cc(pc)
+00C0E94C / 027D0C / CODE+61EC / FILE+6214  4fef000a               lea.l     $a(a7), a7
+00C0E950 / 027D10 / CODE+61F0 / FILE+6218  600000aa               bra.w     $c0e9fc
+00C0E954 / 027D14 / CODE+61F4 / FILE+621C  48780002               pea.l     $2.w
+00C0E958 / 027D18 / CODE+61F8 / FILE+6220  302dfff8               move.w    -$8(a5), d0
+00C0E95C / 027D1C / CODE+61FC / FILE+6224  c1fc000c               muls.w    #$c, d0
+00C0E960 / 027D20 / CODE+6200 / FILE+6228  41ec8210               lea.l     -$7df0(a4), a0
+00C0E964 / 027D24 / CODE+6204 / FILE+622C  32300800               move.w    (a0, d0.l), d1
+00C0E968 / 027D28 / CODE+6208 / FILE+6230  48c1                   ext.l     d1
+00C0E96A / 027D2A / CODE+620A / FILE+6232  e381                   asl.l     #$1, d1
+00C0E96C / 027D2C / CODE+620C / FILE+6234  2f01                   move.l    d1, -(a7)
+00C0E96E / 027D2E / CODE+620E / FILE+6236  4eac802c               jsr       -$7fd4(a4)
+00C0E972 / 027D32 / CODE+6212 / FILE+623A  504f                   addq.w    #$8, a7
+00C0E974 / 027D34 / CODE+6214 / FILE+623C  322dfff8               move.w    -$8(a5), d1
+00C0E978 / 027D38 / CODE+6218 / FILE+6240  c3fc000c               muls.w    #$c, d1
+00C0E97C / 027D3C / CODE+621C / FILE+6244  41ec8214               lea.l     -$7dec(a4), a0
+00C0E980 / 027D40 / CODE+6220 / FILE+6248  21801800               move.l    d0, (a0, d1.l)
+00C0E984 / 027D44 / CODE+6224 / FILE+624C  302dfff8               move.w    -$8(a5), d0
+00C0E988 / 027D48 / CODE+6228 / FILE+6250  c1fc000c               muls.w    #$c, d0
+00C0E98C / 027D4C / CODE+622C / FILE+6254  41ec8214               lea.l     -$7dec(a4), a0
+00C0E990 / 027D50 / CODE+6230 / FILE+6258  4ab00800               tst.l     (a0, d0.l)
+00C0E994 / 027D54 / CODE+6234 / FILE+625C  660e                   bne.b     $c0e9a4
+00C0E996 / 027D56 / CODE+6236 / FILE+625E  487a00a6               pea.l     $c0ea3e(pc)
+00C0E99A / 027D5A / CODE+623A / FILE+6262  4eba223a               jsr       $c10bd6(pc)
+00C0E99E / 027D5E / CODE+623E / FILE+6266  584f                   addq.w    #$4, a7
+00C0E9A0 / 027D60 / CODE+6240 / FILE+6268  4eac8014               jsr       -$7fec(a4)
+00C0E9A4 / 027D64 / CODE+6244 / FILE+626C  2f2dfffc               move.l    -$4(a5), -(a7)
+00C0E9A8 / 027D68 / CODE+6248 / FILE+6270  302dfff8               move.w    -$8(a5), d0
+00C0E9AC / 027D6C / CODE+624C / FILE+6274  c1fc000c               muls.w    #$c, d0
+00C0E9B0 / 027D70 / CODE+6250 / FILE+6278  41ec8210               lea.l     -$7df0(a4), a0
+00C0E9B4 / 027D74 / CODE+6254 / FILE+627C  3f300800               move.w    (a0, d0.l), -(a7)
+00C0E9B8 / 027D78 / CODE+6258 / FILE+6280  3f3c0002               move.w    #$2, -(a7)
+00C0E9BC / 027D7C / CODE+625C / FILE+6284  322dfff8               move.w    -$8(a5), d1
+00C0E9C0 / 027D80 / CODE+6260 / FILE+6288  c3fc000c               muls.w    #$c, d1
+00C0E9C4 / 027D84 / CODE+6264 / FILE+628C  43ec8214               lea.l     -$7dec(a4), a1
+00C0E9C8 / 027D88 / CODE+6268 / FILE+6290  2f311800               move.l    (a1, d1.l), -(a7)
+00C0E9CC / 027D8C / CODE+626C / FILE+6294  4eba16a6               jsr       $c10074(pc)
+00C0E9D0 / 027D90 / CODE+6270 / FILE+6298  4fef000c               lea.l     $c(a7), a7
+00C0E9D4 / 027D94 / CODE+6274 / FILE+629C  3b40fff6               move.w    d0, -$a(a5)
+00C0E9D8 / 027D98 / CODE+6278 / FILE+62A0  302dfff8               move.w    -$8(a5), d0
+00C0E9DC / 027D9C / CODE+627C / FILE+62A4  c1fc000c               muls.w    #$c, d0
+00C0E9E0 / 027DA0 / CODE+6280 / FILE+62A8  41ec8210               lea.l     -$7df0(a4), a0
+00C0E9E4 / 027DA4 / CODE+6284 / FILE+62AC  32300800               move.w    (a0, d0.l), d1
+00C0E9E8 / 027DA8 / CODE+6288 / FILE+62B0  b26dfff6               cmp.w     -$a(a5), d1
+00C0E9EC / 027DAC / CODE+628C / FILE+62B4  670e                   beq.b     $c0e9fc
+00C0E9EE / 027DAE / CODE+628E / FILE+62B6  3f2dfff8               move.w    -$8(a5), -(a7)
+00C0E9F2 / 027DB2 / CODE+6292 / FILE+62BA  487a0066               pea.l     $c0ea5a(pc)
+00C0E9F6 / 027DB6 / CODE+6296 / FILE+62BE  4eba21de               jsr       $c10bd6(pc)
+00C0E9FA / 027DBA / CODE+629A / FILE+62C2  5c4f                   addq.w    #$6, a7
+00C0E9FC / 027DBC / CODE+629C / FILE+62C4  526dfff8               addq.w    #$1, -$8(a5)
+00C0EA00 / 027DC0 / CODE+62A0 / FILE+62C8  0c6d0018fff8           cmpi.w    #$18, -$8(a5)
+00C0EA06 / 027DC6 / CODE+62A6 / FILE+62CE  6d00fef2               blt.w     $c0e8fa
+00C0EA0A / 027DCA / CODE+62AA / FILE+62D2  2f2dfffc               move.l    -$4(a5), -(a7)
+00C0EA0E / 027DCE / CODE+62AE / FILE+62D6  4eac800e               jsr       -$7ff2(a4)
+00C0EA12 / 027DD2 / CODE+62B2 / FILE+62DA  584f                   addq.w    #$4, a7
+00C0EA14 / 027DD4 / CODE+62B4 / FILE+62DC  4e5d                   unlk      a5
+00C0EA16 / 027DD6 / CODE+62B6 / FILE+62DE  4e75                   rts
+
+; sound_teardown: CODE+$6306; Shot file+$632E; both saved copies match relocated ADF
+00C0EA66 / 027E26 / CODE+6306 / FILE+632E  4e55fffe               link.w    a5, #$fffe
+00C0EA6A / 027E2A / CODE+630A / FILE+6332  33fc038000dff09a       move.w    #$380, $dff09a.l
+00C0EA72 / 027E32 / CODE+6312 / FILE+633A  33fc000f00dff096       move.w    #$f, $dff096.l
+00C0EA7A / 027E3A / CODE+631A / FILE+6342  2f2c2cc6               move.l    $2cc6(a4), -(a7)
+00C0EA7E / 027E3E / CODE+631E / FILE+6346  48780080               pea.l     $80.w
+00C0EA82 / 027E42 / CODE+6322 / FILE+634A  4eba2e58               jsr       $c118dc(pc)
+00C0EA86 / 027E46 / CODE+6326 / FILE+634E  504f                   addq.w    #$8, a7
+00C0EA88 / 027E48 / CODE+6328 / FILE+6350  2f2c2cca               move.l    $2cca(a4), -(a7)
+00C0EA8C / 027E4C / CODE+632C / FILE+6354  48780200               pea.l     $200.w
+00C0EA90 / 027E50 / CODE+6330 / FILE+6358  4eba2e4a               jsr       $c118dc(pc)
+00C0EA94 / 027E54 / CODE+6334 / FILE+635C  504f                   addq.w    #$8, a7
+00C0EA96 / 027E56 / CODE+6336 / FILE+635E  426dfffe               clr.w     -$2(a5)
+00C0EA9A / 027E5A / CODE+633A / FILE+6362  302dfffe               move.w    -$2(a5), d0
+00C0EA9E / 027E5E / CODE+633E / FILE+6366  c1fc000c               muls.w    #$c, d0
+00C0EAA2 / 027E62 / CODE+6342 / FILE+636A  41ec8214               lea.l     -$7dec(a4), a0
+00C0EAA6 / 027E66 / CODE+6346 / FILE+636E  4ab00800               tst.l     (a0, d0.l)
+00C0EAAA / 027E6A / CODE+634A / FILE+6372  672c                   beq.b     $c0ead8
+00C0EAAC / 027E6C / CODE+634C / FILE+6374  302dfffe               move.w    -$2(a5), d0
+00C0EAB0 / 027E70 / CODE+6350 / FILE+6378  c1fc000c               muls.w    #$c, d0
+00C0EAB4 / 027E74 / CODE+6354 / FILE+637C  41ec8210               lea.l     -$7df0(a4), a0
+00C0EAB8 / 027E78 / CODE+6358 / FILE+6380  32300800               move.w    (a0, d0.l), d1
+00C0EABC / 027E7C / CODE+635C / FILE+6384  48c1                   ext.l     d1
+00C0EABE / 027E7E / CODE+635E / FILE+6386  e381                   asl.l     #$1, d1
+00C0EAC0 / 027E80 / CODE+6360 / FILE+6388  2f01                   move.l    d1, -(a7)
+00C0EAC2 / 027E82 / CODE+6362 / FILE+638A  342dfffe               move.w    -$2(a5), d2
+00C0EAC6 / 027E86 / CODE+6366 / FILE+638E  c5fc000c               muls.w    #$c, d2
+00C0EACA / 027E8A / CODE+636A / FILE+6392  43ec8214               lea.l     -$7dec(a4), a1
+00C0EACE / 027E8E / CODE+636E / FILE+6396  2f312800               move.l    (a1, d2.l), -(a7)
+00C0EAD2 / 027E92 / CODE+6372 / FILE+639A  4eac8038               jsr       -$7fc8(a4)
+00C0EAD6 / 027E96 / CODE+6376 / FILE+639E  504f                   addq.w    #$8, a7
+00C0EAD8 / 027E98 / CODE+6378 / FILE+63A0  526dfffe               addq.w    #$1, -$2(a5)
+00C0EADC / 027E9C / CODE+637C / FILE+63A4  0c6d0018fffe           cmpi.w    #$18, -$2(a5)
+00C0EAE2 / 027EA2 / CODE+6382 / FILE+63AA  6db6                   blt.b     $c0ea9a
+00C0EAE4 / 027EA4 / CODE+6384 / FILE+63AC  4e5d                   unlk      a5
+00C0EAE6 / 027EA6 / CODE+6386 / FILE+63AE  4e75                   rts
+
+; two_audio_interrupt_callbacks: CODE+$6388; Shot file+$63B0; both saved copies match relocated ADF
+00C0EAE8 / 027EA8 / CODE+6388 / FILE+63B0  4a51                   tst.w     (a1)
+00C0EAEA / 027EAA / CODE+638A / FILE+63B2  671e                   beq.b     $c0eb0a
+00C0EAEC / 027EAC / CODE+638C / FILE+63B4  317c000100a6           move.w    #$1, $a6(a0)
+00C0EAF2 / 027EB2 / CODE+6392 / FILE+63BA  317c000100b6           move.w    #$1, $b6(a0)
+00C0EAF8 / 027EB8 / CODE+6398 / FILE+63C0  317c00030096           move.w    #$3, $96(a0)
+00C0EAFE / 027EBE / CODE+639E / FILE+63C6  32bc0002               move.w    #$2, (a1)
+00C0EB02 / 027EC2 / CODE+63A2 / FILE+63CA  317c0080009c           move.w    #$80, $9c(a0)
+00C0EB08 / 027EC8 / CODE+63A8 / FILE+63D0  4e75                   rts
+00C0EB0A / 027ECA / CODE+63AA / FILE+63D2  32bc0001               move.w    #$1, (a1)
+00C0EB0E / 027ECE / CODE+63AE / FILE+63D6  317c0080009c           move.w    #$80, $9c(a0)
+00C0EB14 / 027ED4 / CODE+63B4 / FILE+63DC  4e75                   rts
+00C0EB16 / 027ED6 / CODE+63B6 / FILE+63DE  4a51                   tst.w     (a1)
+00C0EB18 / 027ED8 / CODE+63B8 / FILE+63E0  671e                   beq.b     $c0eb38
+00C0EB1A / 027EDA / CODE+63BA / FILE+63E2  317c000100c6           move.w    #$1, $c6(a0)
+00C0EB20 / 027EE0 / CODE+63C0 / FILE+63E8  317c000100d6           move.w    #$1, $d6(a0)
+00C0EB26 / 027EE6 / CODE+63C6 / FILE+63EE  317c000c0096           move.w    #$c, $96(a0)
+00C0EB2C / 027EEC / CODE+63CC / FILE+63F4  32bc0002               move.w    #$2, (a1)
+00C0EB30 / 027EF0 / CODE+63D0 / FILE+63F8  317c0200009c           move.w    #$200, $9c(a0)
+00C0EB36 / 027EF6 / CODE+63D6 / FILE+63FE  4e75                   rts
+00C0EB38 / 027EF8 / CODE+63D8 / FILE+6400  32bc0001               move.w    #$1, (a1)
+00C0EB3C / 027EFC / CODE+63DC / FILE+6404  317c0200009c           move.w    #$200, $9c(a0)
+00C0EB42 / 027F02 / CODE+63E2 / FILE+640A  4e75                   rts
+
+; AddIntServer_bridge: CODE+$90AE; Shot file+$90D6; both saved copies match relocated ADF
+00C1180E / 02ABCE / CODE+90AE / FILE+90D6  4cef02010004           movem.l   $4(a7), d0/a1
+00C11814 / 02ABD4 / CODE+90B4 / FILE+90DC  2c7900022d04           movea.l   $22d04.l, a6
+00C1181A / 02ABDA / CODE+90BA / FILE+90E2  4eeeff58               jmp       -$a8(a6)
+
+; AllocMem_bridge: CODE+$90EC; Shot file+$9114; both saved copies match relocated ADF
+00C1184C / 02AC0C / CODE+90EC / FILE+9114  4ef900c11852           jmp       $c11852.l
+00C11852 / 02AC12 / CODE+90F2 / FILE+911A  4cef00030004           movem.l   $4(a7), d0-d1
+00C11858 / 02AC18 / CODE+90F8 / FILE+9120  2c7900022d04           movea.l   $22d04.l, a6
+00C1185E / 02AC1E / CODE+90FE / FILE+9126  4eeeff3a               jmp       -$c6(a6)
+
+; SetIntVector_bridge: CODE+$917C; Shot file+$91A4; both saved copies match relocated ADF
+00C118DC / 02AC9C / CODE+917C / FILE+91A4  4cef02010004           movem.l   $4(a7), d0/a1
+00C118E2 / 02ACA2 / CODE+9182 / FILE+91AA  2c7900022d04           movea.l   $22d04.l, a6
+00C118E8 / 02ACA8 / CODE+9188 / FILE+91B0  4eeeff5e               jmp       -$a2(a6)
+
+; WaitTOF_bridge: CODE+$9314; Shot file+$933C; both saved copies match relocated ADF
+00C11A74 / 02AE34 / CODE+9314 / FILE+933C  2c7900022db4           movea.l   $22db4.l, a6
+00C11A7A / 02AE3A / CODE+931A / FILE+9342  4eeefef2               jmp       -$10e(a6)
