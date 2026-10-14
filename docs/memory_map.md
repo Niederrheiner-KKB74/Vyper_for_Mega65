@@ -600,3 +600,24 @@ Zusatzcode in freien Lücken unter `$A000`, ausschließlich normale CPU-RAM-Bere
 VYSH bleibt `$B000–$B45B`; keine neue High-RAM-/DMA-Allokation.
 Exakte Assembly-Map: `releases/stage_7b5b/memory-map.txt`.
 Begründung und Feldbelegung: `docs/stage7b5b_player_and_projectile_motion.md`.
+
+## Stage8b – Audiointegration, XEMU-Abnahme offen
+
+Basis `main`/Stage7b5b `f7350d6`, historische Quellen/Assets/Releases unverändert.
+Phasengeteilter Loader bei physisch`$5000`, vor Wiederverwendung als BASIC-Color-
+Backup nach`$E000` kopiert und in Attic`$0802C000–$0802CFFF` gesichert.
+Audiocode`$1E000–$1F7FF` (CPU-Abbildung`$A000–$B7FF`), Ringe`$16400–$173FF`
+und`$5C500–$5D4FF`, jeweils4096 Bytes. Erst nach Menüende aktiviert; keine Belegung
+von DOS`$10000–$11FFF`, Color-Fenster`$1F800–$1FFFF`, ROM`$20000–$3FFFF`
+oder nicht vorhandenem Haupt-RAM ab`$60000`.
+VYSO-Archiv`$08030000–$080574BF`, darin Code ab`$08030200`, PCM ab`$08031A00`.
+Aliasing-Proben bei`$0802B000/$0806B000`, jeweils32 Bytes. Bisherige Attic-Menü- und
+Engine-Sicherungen bis`$080252BF` bleiben getrennt. Low-Mailbox`$1FD0–$1FD8`.
+Register-/IRQ-erhaltende Gates nutzen freie bank0-Lücken; vollständige Assembler-
+Map unter`releases/stage_8b/`. [Details](stage8b_sound_integration.md).
+Kein Stable-Tag ohne Benutzerfreigabe.
+
+Stage8b-IRQ-Fix: keine Speicheränderung. ROM-Trampolin66B0 behält sein Layout;
+bei66C6/66C7 steht nun SEI/PHP statt PHP/SEI. Rückgabestatus wird mit I=1 gesichert,
+bevor die native SYS-Abbildung verlassen wird. PLP bei66D8 öffnet kein IRQ-Fenster
+im A000→E000-Loader mehr. Alle DAT-/Ring-/Attic-Adressen unverändert.
