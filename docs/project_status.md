@@ -802,3 +802,12 @@ ATTACK-Deltas bis Port-Y≥200, kein senkrechter Ersatzflug. Einmalige Sound-/
 Schussplanung und bestehende RETURN-/Bonus-/Audiofunktionen erhalten. Keine
 Stable-Markierung oder Merge vor Benutzerfreigabe.
 [Technik und Testanleitung](stage9b1_cyclic_attack_curves.md).
+
+## Stage9c1 – eigenständiger Highscore-Test (Issue81)
+Basis ist die bestätigte Stage9b1 Stable, Main-Merge6052f67. Separater Branch
+`stage9c1`:80 deterministische Testrecords auf vier Seiten, zwei Spalten à10,
+normaler80×25-Textmodus, unveränderter Menü-Farbzyklus und aufwärts wandernde
+zeilenweise Blau/Gelb/Rot-Bänder. Keine Engine-, Daten-, Speicherungs- oder
+Menüintegration. Elf Hosttests bestanden, reproduzierbares PRG/D81 unter
+`releases/stage_9c1/`. XEMU-/Original-Screenshot-Abgleich offen; kein Stable/Merge.
+[Technik und Abnahme](stage9c1_highscore_display.md).
