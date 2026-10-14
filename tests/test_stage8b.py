@@ -87,6 +87,8 @@ class AudioCPU(B.Machine().cpu.__class__):
  def step(self):
   before=self.processorCycles;result=self.execute_step()
   self.memory.elapse(self.processorCycles-before)
+  if self.memory.map_mask&32:
+   assert self.p&4, ("IRQ enabled with banked audio/bootstrap mapping",hex(self.pc),hex(self.memory.map_mask))
   return result
  def execute_step(self):
   op=self.memory[self.pc]
@@ -127,6 +129,15 @@ class Integration(unittest.TestCase):
  def machine(self,level=1):
   import copy
   return copy.deepcopy(self.boot).game(level)
+ def test_ROM_trampoline_never_unmasks_IRQ_in_bootstrap_mapping(self):
+  m=Machine();d=m.memory.data
+  d[0xe000:0xf000]=d[0x5000:0x6000]
+  m.memory.map_mask=32;m.memory.map_offset=0x4000
+  m.cpu.p|=4;m.cpu.a=2;m.cpu.x=8;m.cpu.y=2
+  d[G['rom_jsr']+1]=0xba
+  m.call_at(G['rom_call'])
+  self.assertTrue(m.cpu.p&4)
+  self.assertEqual((m.memory.map_mask,m.memory.map_offset),(32,0x4000))
  def test_full_title_SEVEN_SEQ_loads_menu_and_first_game(self):
   m=self.boot;self.assertEqual(m.error,0);self.assertEqual(m.opened_names,['VYTI.DAT','VYSO.DAT','VYMN.DAT','VYLV.DAT','VYGR.DAT','VYCL.DAT','VYSH.DAT'])
   self.assertEqual(m.memory.attic[0x30000:0x30000+len(m.files['VYSO.DAT'])],m.files['VYSO.DAT'])

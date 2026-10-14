@@ -616,3 +616,8 @@ Engine-Sicherungen bis`$080252BF` bleiben getrennt. Low-Mailbox`$1FD0–$1FD8`.
 Register-/IRQ-erhaltende Gates nutzen freie bank0-Lücken; vollständige Assembler-
 Map unter`releases/stage_8b/`. [Details](stage8b_sound_integration.md).
 Kein Stable-Tag ohne Benutzerfreigabe.
+
+Stage8b-IRQ-Fix: keine Speicheränderung. ROM-Trampolin66B0 behält sein Layout;
+bei66C6/66C7 steht nun SEI/PHP statt PHP/SEI. Rückgabestatus wird mit I=1 gesichert,
+bevor die native SYS-Abbildung verlassen wird. PLP bei66D8 öffnet kein IRQ-Fenster
+im A000→E000-Loader mehr. Alle DAT-/Ring-/Attic-Adressen unverändert.

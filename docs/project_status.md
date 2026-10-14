@@ -783,3 +783,8 @@ Titel/Menü sowie sechs bisherige DATs und Spielparameter bleiben unverändert;
 siebte DAT`VYSO.DAT`, neue Quellen/PRG/D81 unter`releases/stage_8b/`.
 [Architektur, Speicherkarte, Prüfungen und Abnahmeplan](stage8b_sound_integration.md).
 XEMU-/Hardware-Hörprüfung offen. **Stage8b nicht als Stable markieren oder mergen.**
+
+Stage8b-XEMU-Rückmeldung: Erstbuild50edf577 bricht unmittelbar nach Titel ab.
+IRQ-Fenster im neuen ROM-Trampolin nachgewiesen (PLP mit I=0 unter Loader-MAP).
+SEI/PHP vertauscht; nur zwei PRG-Bytes geändert. Instruktionsweise IRQ-Invariante
+und vollständige Wiederholungsprüfung; XEMU-Neuabnahme bleibt erforderlich.

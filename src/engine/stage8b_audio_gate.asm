@@ -108,8 +108,10 @@ rom_call:
  cli
 rom_jsr:
  jsr $ffff
- php
+ // Capture return flags only AFTER masking IRQs, while native SYS ROM is mapped.
+ // PLP below must never expose I=0 with the bootstrap mapped at A000.
  sei
+ php
  pha
  .byte $da,$5a
  lda #0

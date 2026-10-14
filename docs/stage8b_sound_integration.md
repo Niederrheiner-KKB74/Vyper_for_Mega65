@@ -13,6 +13,49 @@ die im bisherigen Builder geschützten Stable-Referenzen werden vor dem Build ge
 Git geprüft. Neue Enginequellen heißen `src/engine/stage8b*.asm`; alte Stages
 bleiben bytegleich. Die vorhandenen sechs DAT-Dateien sind ebenfalls bytegleich.
 
+## Korrektur nach XEMU-Abbruch unmittelbar nach dem Titel
+
+Der Erstbuild `50edf577` ist durch die Benutzerabnahme **als fehlerhaft erkannt**:
+Titelteile beschädigt, anschließend PC/linear PC0000 unter ROM V920413.
+Die damaligen Hostprüfungen waren kein Nachweis der IRQ-Sicherheit zwischen
+KERNAL-Traps; diese konkrete Prüflücke wird durch die folgende Regression abgedeckt.
+
+Nachgewiesener Fehler im Trampolin `audio8.rom_call`:
+
+```asm
+; ALT nach JSR $FFFF (KERNAL läuft mit IRQs):
+php                 ; sichert normalerweise I=0
+sei
+; ... Rückgaberegister sichern, MAP A000->E000, Register restaurieren ...
+plp                 ; I=0 wird bei bereits bankbarem Loader wieder freigegeben!
+sei                 ; erst die nächste Instruktion sperrt wieder
+rts
+```
+
+Die sichtbare native SYS-Abbildung E000→3E000 wird für die Loader-Abbildung
+aufgegeben. Ein IRQ nach dem PLP läuft somit nicht mehr im vorgesehenen
+KERNAL-Kontext. SEI danach macht die bereits eröffnete Unterbrechungsmöglichkeit
+nicht sicher. Die genauen Folgeschritte bis zum vom Benutzer beobachteten PC0000
+wurden hier nicht in XEMU nachverfolgt; der unsichere Zustand selbst ist anhand
+des assemblierten Codes reproduziert. ROM V920413 hat unterschiedliche Vektoren
+in Bank2/Bank3 (IRQ FF48/FA23); diese Kontexte sind nicht austauschbar.
+
+Korrektur: **SEI vor PHP**, solange noch der normale KERNAL-Kontext aktiv ist.
+SEI erhält Carry und die übrigen Ergebnisflags. Der Rückgabestatus enthält jetzt
+I=1; das spätere PLP kann im bankbaren Loader keine IRQs mehr freigeben. Der
+äußere Gate stellt den vorherigen IRQ-Zustand erst nach Wiederherstellung des
+nativen SYS-Kontexts her. Kein neues Grafik-, Timing- oder Gameplayverhalten.
+
+Im PRG ändern sich ausschließlich zwei Bytes:
+`$66C6:08→78`, `$66C7:78→08` (PHP/SEI→SEI/PHP). Länge und alle Adressen bleiben
+gleich. VYSO und sämtliche sieben DAT-Dateien bleiben bytegleich.
+Die neue CPU-Testinvariante prüft **nach jeder ausgeführten Instruktion**, dass
+bei MAP für Loader/Audiocode IRQs maskiert bleiben. Der alte Build reproduziert
+`IRQ enabled ... PC66D9, mask20`; der neue besteht dieselbe gezielte Prüfung.
+Zusätzlich werden Kaltstart, alle Dateiladevorgänge und die bisherigen Audio-/
+Spiel-/Exit-Tests mit dieser strengeren Invariante erneut ausgeführt.
+**Erneute XEMU-Abnahme erforderlich; keine Stable-Freigabe daraus ableiten.**
+
 ## Ausführen und Abnahme
 
 D81 in XEMU einlegen, übliche PAL-Konfiguration mit MEGA65-ROM und Joystick

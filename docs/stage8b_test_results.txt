@@ -1,3 +1,43 @@
+Stage8b IRQ-window correction — 14.10.2026 (Europe/Berlin)
+========================================================
+Latest validation: all 18 tests passed in one complete fresh cold-start run.
+New per-instruction invariant: IRQs masked whenever audio/bootstrap is mapped.
+Old50edf577 binary reproduces violation after PLP at PC66D9/mask20.
+Corrected binary: only66C6/66C7 PHP/SEI swapped to SEI/PHP; unchanged PRG length,
+all seven DATs byte-identical, unchanged layout/audio/gameplay parameters.
+Two independent clean builds: all70 release files byte-identical.
+D81 SHA256: eaacec73d51206aa7ad937e2c3b9de40b0c0939f0352aff821b2087ab5acf496
+No XEMU/hearing/real-hardware run claimed. User must repeat XEMU acceptance.
+
+test_F1_level100_navigation_GAMEOVER_and_R_preserve_rules (test_stage8b.Integration.test_F1_level100_navigation_GAMEOVER_and_R_preserve_rules) ... ok
+test_ROM_trampoline_never_unmasks_IRQ_in_bootstrap_mapping (test_stage8b.Integration.test_ROM_trampoline_never_unmasks_IRQ_in_bootstrap_mapping) ... ok
+test_all_20_samples_chip_banks_exact_end_and_restart (test_stage8b.Integration.test_all_20_samples_chip_banks_exact_end_and_restart) ... ok
+test_all_38_four_field_original_event_mappings (test_stage8b.Integration.test_all_38_four_field_original_event_mappings) ... ok
+test_bad_audio_pointer_stops_owned_voices_without_exiting_game (test_stage8b.Integration.test_bad_audio_pointer_stops_owned_voices_without_exiting_game) ... ok
+test_banked_gate_preserves_AXYZ_B_flags_and_native_SYS_mapping (test_stage8b.Integration.test_banked_gate_preserves_AXYZ_B_flags_and_native_SYS_mapping) ... ok
+test_exit_restore_and_second_RUN_with_audio (test_stage8b.Integration.test_exit_restore_and_second_RUN_with_audio) ... ok
+test_full_animated_transition_24_to22_and_next_level_no_underrun (test_stage8b.Integration.test_full_animated_transition_24_to22_and_next_level_no_underrun) ... ok
+test_full_title_SEVEN_SEQ_loads_menu_and_first_game (test_stage8b.Integration.test_full_title_SEVEN_SEQ_loads_menu_and_first_game) ... ok
+test_level_initialization_1_3_29_54_100_preserves_sound_archive (test_stage8b.Integration.test_level_initialization_1_3_29_54_100_preserves_sound_archive) ... ok
+test_missing_short_invalid_VYSO_clean_BASIC_failure (test_stage8b.Integration.test_missing_short_invalid_VYSO_clean_BASIC_failure) ... ok
+test_native_projectile_player_collision_and_event_regressions (test_stage8b.Integration.test_native_projectile_player_collision_and_event_regressions) ... ok
+test_packet_integrity_original_assets_and_complete_D81 (test_stage8b.Integration.test_packet_integrity_original_assets_and_complete_D81) ... ok
+test_panning_per_preserved_and_no_gameplay_RNG_consumed (test_stage8b.Integration.test_panning_per_preserved_and_no_gameplay_RNG_consumed) ... ok
+test_real_game_transition_samples_under_simultaneous_long_voice_load (test_stage8b.Integration.test_real_game_transition_samples_under_simultaneous_long_voice_load) ... ok
+test_transition_24_then22_busy_freezes_but_streaming_continues (test_stage8b.Integration.test_transition_24_then22_busy_freezes_but_streaming_continues) ... ok
+test_two_sources_pending_busy_preemption_and_projectile_pan_pointer (test_stage8b.Integration.test_two_sources_pending_busy_preemption_and_projectile_pan_pointer) ... ok
+test_unowned_audio_failure_still_waits_for50Hz_frame (test_stage8b.Integration.test_unowned_audio_failure_still_waits_for50Hz_frame) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 572.896s
+
+OK
+Transition170frames max modeled6502 cycles: 1941108 Astarts: [(19, 213, 0), (18, 7, 8044)] underruns: 0
+Stress130frames max modeled6502 CPU cycles: 802037 DMAjobs/frame: 322 underruns: 0
+
+
+HISTORICAL FIRST DELIVERY VALIDATION (superseded by IRQ correction above)
+=====================================================================
 Stage8b host validation — 14.10.2026 (Europe/Berlin)
 ==================================================
 NOT an XEMU/hearing or real MEGA65 test.
