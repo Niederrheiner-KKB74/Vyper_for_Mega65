@@ -1,0 +1,45 @@
+test_100_level_types_original_Forme_and_bounded_Copper (test_amiga_sound_analysis.OriginalSoundAnalysisTests.test_100_level_types_original_Forme_and_bounded_Copper) ... ok
+test_38_sound_mappings_correct_record_origin_and_player_distinction (test_amiga_sound_analysis.OriginalSoundAnalysisTests.test_38_sound_mappings_correct_record_origin_and_player_distinction) ... ok
+test_code_proof_and_call_graph (test_amiga_sound_analysis.OriginalSoundAnalysisTests.test_code_proof_and_call_graph) ... ok
+test_exports_guard_and_metadata_reproducible (test_amiga_sound_analysis.OriginalSoundAnalysisTests.test_exports_guard_and_metadata_reproducible) ... ok
+test_original_hash_gate_and_OFS_checksum_gate (test_amiga_sound_analysis.OriginalSoundAnalysisTests.test_original_hash_gate_and_OFS_checksum_gate) ... ok
+test_sound_file_boundaries_runtime_identity_and_signed_wav (test_amiga_sound_analysis.OriginalSoundAnalysisTests.test_sound_file_boundaries_runtime_identity_and_signed_wav) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.235s
+
+OK
+{
+  "verified_spans": 22,
+  "instructions": 1121,
+  "samples": 24,
+  "loaded": 20,
+  "types": 38,
+  "destruction_IDs": [
+    1,
+    3,
+    8,
+    9,
+    18,
+    20
+  ],
+  "levels": 100,
+  "extracted_raw_samples": "/tmp/vyper-sound-proof-rszhod6_/samples"
+}
+{
+  "verified_spans": 22,
+  "instructions": 1121,
+  "samples": 24,
+  "loaded": 20,
+  "types": 38,
+  "destruction_IDs": [
+    1,
+    3,
+    8,
+    9,
+    18,
+    20
+  ],
+  "levels": 100,
+  "extracted_raw_samples": null
+}

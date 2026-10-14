@@ -772,3 +772,14 @@ Originalgeschwindigkeit ausgeben. Quellen, Build, PRG/D81 unter
 `releases/stage_7b5b/`; Analyse/Tests und XEMU-Checkliste in
 `docs/stage7b5b_player_and_projectile_motion.md`. Benutzerabnahme steht aus;
 keinen Stable-Tag setzen und keinen früheren Release überschreiben.
+
+## Stage8b – Issue73, Audiointegration zur Benutzerabnahme
+
+Neuer Branch von aktuellem`main`/Stage7b5b `f7350d6`; bestätigte8a2-Technik
+`ee66f6d` und Originalanalyse PR68 gezielt übernommen, keine Testbranch-Merges.
+20 Originalsamples,38×4 Ereigniszuordnung, Player17/19, Transition24→22,
+zwei logische Stereoquellen mit Attic-Streaming und nativen Busy-/Pending-Regeln.
+Titel/Menü sowie sechs bisherige DATs und Spielparameter bleiben unverändert;
+siebte DAT`VYSO.DAT`, neue Quellen/PRG/D81 unter`releases/stage_8b/`.
+[Architektur, Speicherkarte, Prüfungen und Abnahmeplan](stage8b_sound_integration.md).
+XEMU-/Hardware-Hörprüfung offen. **Stage8b nicht als Stable markieren oder mergen.**

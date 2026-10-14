@@ -1,0 +1,113 @@
+Memory Map
+----------
+Default-segment:
+  $2001-$200d Unnamed
+  $2100-$2f41 Unnamed
+  $2f50-$2fcd Stage7b5b native shot origin and spread
+  $3000-$30a8 Unnamed
+  $30c0-$30ff Unnamed
+  $3100-$31c3 Original COLOR02 cycle and private state
+  $31f1-$31fe Unnamed
+  $3200-$3339 Stage5a record validation and byte reader
+  $3340-$33ba Stage5d1 bootstrap backup and repeated RUN restoration
+  $33c0-$33fd Stage8b register/IRQ preserving bank gate
+  $3400-$3474 Stage5a private graphics cache helpers
+  $34a0-$3554 Stage5a byte-pair crop (same pixels, no RRB architecture change)
+  $3558-$35d3 Stage7b5b signed native aim delta
+  $35d4-$35f7 Unnamed
+  $3600-$36af Stage 3b-3 approved player source
+  $36b0-$36f2 Stage 6b1 bottom exit and top reentry
+  $3700-$3760 Stage 3b-3 player integration
+  $3768-$37cc Stage7b5b native16.16 quotient
+  $37d0-$37ff Unnamed
+  $3800-$3e64 Stage 3b-4a HUD code
+  $3e80-$3eb6 HUD defaults
+  $3ed0-$3eff Unnamed
+  $3f00-$3fd1 HUD attributes rows 20-24
+  $4000-$47ff Stage5d1 title bootstrap (then private HUD charset)
+  $4800-$4b58 Stage 3b-2 preload
+  $4b60-$4c39 Stage 4a mode and RRB hook
+  $4c40-$4e07 Stage 3b-5c states and restart
+  $4e10-$4e3f Stage7a2 star Y state
+  $4e40-$4ef7 Star background prefix binding, no additional RRB pixie slots
+  $4f00-$4fb1 Stage 6b1 formation and selection
+  $4fb2-$4fd1 Stage7b5b independent spread RNG
+  $4fd8-$4ffb Unnamed
+  $5000-$5446 Stage8b phase-shared loader image, then BASIC colour backup
+  $5700-$5b77 Stage 4b Level-1 parser and motion
+  $5b80-$5c10 Stage 4b fast valid RRB row retirement
+  $5c20-$5c4e Stage 4b-1 entry visibility
+  $5c50-$5c71 Unnamed
+  $5c80-$5c8f Unnamed
+  $5c90-$5fd7 HUD attributes rows 0-19
+  $6000-$662b Stage5a central levels and transitions (retired colour template)
+  $662c-$664b Unnamed
+  $6650-$66ad Stage7b5b transition setup
+  $66b0-$66da Unnamed
+  $66e0-$66f6 Unnamed
+  $6700-$67ff Stage5a immutable blank guarded cache template
+  $6b00-$6cf9 Stage5c VYCL loader, validation and level palette
+  $6d00-$6edb Stage5c validated VYCL low-RAM mirror
+  $6ef0-$6ef3 Stage5c palette state
+  $7000-$74ff Unnamed
+  $7500-$75a9 Stage 4b formation return and colour backup extension
+  $7608-$76b4 Stage 6b1 bounded attack parser
+  $76b5-$76d2 Stage7b5b independent motion reset
+  $7700-$7889 Isolated Debut Y projection and private state
+  $788a-$78e4 Stage7b5b native projectile update
+  $7900-$7950 Stage6b1 ROMC-safe phase gates
+  $7951-$7953 Stage 6b1 aimed shot initialization
+  $7954-$798b Stage7b5b isolated historical-T8.8 update
+  $79dd-$79f1 Unnamed
+  $7a00-$7ee1 HUD static screen and row lookup
+  $7ee2-$7f71 Stage 4b signed collision boxes
+  $8000-$80bf Unnamed
+  $80c0-$80fd Stage7b5b shared multicolour sprite register helpers
+  $8100-$817f Unnamed
+  $8180-$81e1 Stage7b5b isolated transition palette
+  $8200-$85a7 Stage 3b-5b projectile core
+  $85b0-$85fb Stage 3b-5c motion and frame coordinator
+  $85fc-$8610 Stage7b5b signed negative projectile step
+  $8660-$874a Stage 4a isolated movement
+  $874b-$8796 Stage 4b optional legacy attack demo
+  $87a0-$87c0 Stage7b5b palette mapping and screenshot RGB approximation
+  $87d0-$87ff Unnamed
+  $8800-$883f Unnamed
+  $8840-$8878 Stage 3b-5c initial path phases and extra thin letters
+  $8900-$895b Projectile pointers and mapping
+  $895c-$89eb Stage 6b1 enemy fire selection
+  $8a00-$8a7f Original3x7 projectile graphics; player red tip above
+  $8b00-$8e13 Stage 3b-5c software collisions
+  $8e14-$8e3a Unnamed
+  $8e40-$8faf Stage 4a signed clip and NCM crop
+  $9000-$97ff Unnamed
+  $9800-$98ff Stage 3b-2 loaded path-pixie glyphs
+  $9900-$9a55 Thin HUD font
+  $9a56-$9afa Stage 6b1 attack start and visibility
+  $9b00-$9bd9 Stage 3b-5b direction and BASIC sprite restoration
+  $9c00-$9ced Stage7b5b eligible actor collection and uniform rank selection
+  $9cee-$9d19 Stage7b5b signed sprite and collision gate
+  $9d1a-$9d2b Unnamed
+  $9d30-$9d60 Stage7b5b VYSH filename and pinned header
+  $9d61-$9d6d Unnamed
+  $9d70-$9f0b Stage 3b-5c conditional RRB renderer and game-over overlay
+  $9f10-$9fed Stage 6b1 original attack motion
+  $a000-$a57f Unnamed
+  $a600-$a6ff Stage7b5b current VYSH record (retired unused legacy frames)
+  $a700-$a78e Stage7b5b per-actor events and independent planning state
+  $a800-$af07 Stage7b5b original ENTRY/ATTACK shot events
+  $b000-$b45b Stage7b5b resident VYSH DAT in mapped physical chip RAM
+  $b480-$b65d Stage7a2 sparse NCM starfield core
+  $b668-$b6af Stage7b5b covered-star write filter
+  $b6c0-$b7ae Stage7b5b bounded NCM annulus painter
+  $b800-$bf07 Unnamed
+  $bf10-$bf95 Stage7b5b concentric transition FSM
+  $bf96-$bff2 Stage7b5b Original projectile palette and multicolour mode
+  $c000-$c0bf Unnamed
+  $c100-$c7ff Original explosion frames 0-6, with transparent guards
+  $c800-$c8ff Unnamed
+  $c900-$c9ff Unnamed
+  $ca00-$caff Stage 4a private guarded NCM crop
+  $cb00-$cd51 Stage6b1 phase bridge
+  $cd80-$cfd2 Starfield address tables, separate from engine bridge
+  $cfd8-$cfff Starfield state, initialized even before menu/game handoff
