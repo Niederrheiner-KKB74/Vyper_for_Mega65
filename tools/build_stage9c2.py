@@ -60,7 +60,9 @@ def build(jar,output):
     if output.is_relative_to(ROOT/'releases') and not output.is_relative_to(ROOT/'releases/stage_9c2'):raise ValueError('Protected release destination')
     count=protect();pages,colours,frame,entries=assets()
     import highscore_format as FORMAT
-    blank=bytearray(pages[0]);blank[7*80:17*80]=bytes([32])*800
+    blank=bytearray(pages[0])
+    # Clear only the interior: whole-row clearing erased both frame columns.
+    for y in ROWS:blank[y*80+5:y*80+75]=bytes([32])*70
     for y in (17,18,19):blank[y*80:(y+1)*80]=bytes([32])*80;blank[y*80+4]=129;blank[y*80+75]=129
     for x in COLS:
         header='RANK NAME    SCORE'

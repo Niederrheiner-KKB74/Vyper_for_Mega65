@@ -298,3 +298,9 @@ Bankabbildung ist **keine** bereits implementierte Stage9c3-Integration.
 
 **Stage9c2 nicht als Stable markieren und nicht mergen, bevor der Benutzer die
 neuen Datei- und Bedienungsfunktionen unter XEMU bestätigt hat.**
+
+Stage9c2-Rahmenkorrektur (15.10.2026): Die Hintergrundkonvertierung leert
+nur den Tabelleninnenraum statt kompletter Zeilen; dadurch bleiben die beiden
+seitlichen Rahmenzeichen erhalten. Alle 14 Hosttests bestanden, einschließlich
+Rahmenzeichen und Cycling-Farbindex auf allen vier Seiten. PRG/D81 neu erstellt;
+XEMU-Neuabnahme offen, weiterhin kein Stable.

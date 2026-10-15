@@ -253,6 +253,10 @@ class Management(unittest.TestCase):
    for _ in range(32):m.frame()
    d=m.memory.data
    self.assertEqual(d[N['page']],page)
+   for y in range(2,23):
+    for x in (4,75):
+     self.assertEqual(d[0x7000+y*80+x],129,(page,y,x))
+     self.assertEqual(m.memory.colour[0x2000+y*80+x],2,(page,y,x))
    for row in range(10):
     expected=3+(row+d[N['band_phase']])%3
     for col,x in enumerate((16,49)):

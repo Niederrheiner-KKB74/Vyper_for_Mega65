@@ -1,4 +1,4 @@
-Stage9c2 / Issue83 — Host verification, 2026-10-14
+Stage9c2 / Issue83 — Host verification, 2026-10-15
 
 test_all_pages_uint32_display_and_individual_row_colours (test_stage9c2.Management.test_all_pages_uint32_display_and_individual_row_colours) ... ok
 test_crc_validation_mutations_and_unused_slots (test_stage9c2.Management.test_crc_validation_mutations_and_unused_slots) ... ok
@@ -18,17 +18,19 @@ test_ui_decimal_overflow_name_backspace_abort_and_no_unconfirmed_disk (test_stag
 test_writeprotect_diskfull_partial_corrupt_and_failed_rename (test_stage9c2.Management.test_writeprotect_diskfull_partial_corrupt_and_failed_rename) ... ok
 
 ----------------------------------------------------------------------
-Ran 14 tests in 13.557s
+Ran 14 tests in 12.382s
 
 OK
 
 Reproducibility: all 18 output files byte-identical in two independent output directories.
 Protected baseline: 4acc8a2ed958f933dc3af9d9220c250b005a813c; 1846 existing files unchanged.
 
-STAGE9C2.PRG: 29406 bytes; SHA256 1d6efafd4281b022c55abbb0fffc34d2f416815da520cbd1acd15569d99bdd70
-VYPER_STAGE9C2.d81: 819200 bytes; SHA256 9de70ad1ec58ef177374d5a73e38385e9ddfe9845fcd3e6bda134f7a54759525
+STAGE9C2.PRG: 29406 bytes; SHA256 b42ea29673ed7b1cd63ef2d8ade4d3bfc3790a8c1ca03126968d3639cab77d43
+VYPER_STAGE9C2.d81: 819200 bytes; SHA256 e7819e69dc7ae34796b0ea0d1ba31e2d126a36bb6988432242accb41de0d74be
 VYHI.DAT: 592 bytes; SHA256 bd13995965462ed3a54a0971d5d51004497b7f458fc0dafd896fe9801e4dca20
 
 Scope: assembled 6502-subset code executed through py65 with modeled native KERNAL and persistent logical DOS files. Includes strict CLOSE Carry protocol, error injection, recovery, ties, input, page rendering and register restoration. This does not emulate physical D81-sector writes or prove real ROM timing.
 
 XEMU: NOT RUN. Writable-image persistence across emulator restart, disk error behavior, full visual animation and clean BASIC exit/DIRECTORY/RUN require user acceptance. No Stable marking.
+
+Frame correction: background conversion clears only columns5..74 in rows7..16. The previous whole-row fill erased frame columns4 and75. Regression asserts both glyph129 and cycling index2 at both edges, rows2..22, on all four rendered pages. 14 tests pass; all18 repeated output files identical.

@@ -830,3 +830,9 @@ Original-Farbzyklen erhalten. 14 Hosttests bestanden; zwei Builds mit allen
 XEMU-Speicher-/Neustartprüfung offen. **Kein Stable und kein Merge.**
 [Technik und Abnahme](stage9c2_highscore_management.md),
 [Prüfprotokoll](stage9c2_test_results.txt).
+
+Stage9c2-Rahmenkorrektur (15.10.2026): Die Hintergrundkonvertierung leert
+nur den Tabelleninnenraum statt kompletter Zeilen; dadurch bleiben die beiden
+seitlichen Rahmenzeichen erhalten. Alle 14 Hosttests bestanden, einschließlich
+Rahmenzeichen und Cycling-Farbindex auf allen vier Seiten. PRG/D81 neu erstellt;
+XEMU-Neuabnahme offen, weiterhin kein Stable.
