@@ -802,3 +802,37 @@ ATTACK-Deltas bis Port-Y≥200, kein senkrechter Ersatzflug. Einmalige Sound-/
 Schussplanung und bestehende RETURN-/Bonus-/Audiofunktionen erhalten. Keine
 Stable-Markierung oder Merge vor Benutzerfreigabe.
 [Technik und Testanleitung](stage9b1_cyclic_attack_curves.md).
+
+## Stage9c1 – eigenständiger Highscore-Test (Issue81)
+Basis ist die bestätigte Stage9b1 Stable, Main-Merge6052f67. Separater Branch
+`stage9c1`:80 deterministische Testrecords auf vier Seiten, zwei Spalten à10,
+normaler80×25-Textmodus, unveränderter Menü-Farbzyklus und aufwärts wandernde
+zeilenweise Blau/Gelb/Rot-Bänder. Keine Engine-, Daten-, Speicherungs- oder
+Menüintegration. Elf Hosttests bestanden, reproduzierbares PRG/D81 unter
+`releases/stage_9c1/`. XEMU-/Original-Screenshot-Abgleich offen; kein Stable/Merge.
+[Technik und Abnahme](stage9c1_highscore_display.md).
+
+Stage9c1-Nachbesserung in PR82: statt vierzeiliger Farbblöcke bekommt jede
+Tabellenzeile abwechselnd Blau/Gelb/Rot; Phase modulo3 bei unverändert acht
+Frames pro Zeilenschritt. Elf Hosttests bestanden,384 Frames über alle vier
+Seiten samt Rückwärtsblättern geprüft. Separate Menü-Farbrotation unverändert.
+Neue XEMU-Abnahme offen; weiterhin kein Stable/Merge.
+
+## Stage9c2 – eigenständige Highscore-Verwaltung (Issue83)
+Basis ist die benutzerbestätigte Stage9c1 Stable `4acc8a2`; separater Branch
+`stage9c2`. 80 Einträge mit expliziter Belegung, vollen 32-Bit-Scores und exakt
+3 Namenszeichen; neue Gleichstände werden vor vorhandenen eingeordnet, auch
+auf Rang80. Simulierte Ergebnisse über S, noch keine Spielintegration.
+VYHI.DAT v1 mit CRC16, geprüfter temporärer Datei, Backup und Rename;
+unklare Wiederherstellungen bleiben schreibgeschützt. Vierseitige Anzeige und
+Original-Farbzyklen erhalten. 14 Hosttests bestanden; zwei Builds mit allen
+18 Ausgabedateien byteidentisch, 1846 bestehende Dateien geschützt.
+XEMU-Speicher-/Neustartprüfung offen. **Kein Stable und kein Merge.**
+[Technik und Abnahme](stage9c2_highscore_management.md),
+[Prüfprotokoll](stage9c2_test_results.txt).
+
+Stage9c2-Rahmenkorrektur (15.10.2026): Die Hintergrundkonvertierung leert
+nur den Tabelleninnenraum statt kompletter Zeilen; dadurch bleiben die beiden
+seitlichen Rahmenzeichen erhalten. Alle 14 Hosttests bestanden, einschließlich
+Rahmenzeichen und Cycling-Farbindex auf allen vier Seiten. PRG/D81 neu erstellt;
+XEMU-Neuabnahme offen, weiterhin kein Stable.
