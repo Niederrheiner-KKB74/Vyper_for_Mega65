@@ -367,3 +367,12 @@ festlegen. Stage10a1 bleibt unangetastet.
 Die Fehlerfallprüfung injiziert nur im Emulator eine andere OPEN-Gerätenummer;
 sie beweist keine Prüfung mit physisch schreibgeschützter oder voller Diskette.
 Das finale ausgelieferte Programm verwendet unverändert Laufwerk8.
+
+## Nachgereichte Benutzer-Messungen
+
+Die vom Benutzer gelieferten MEGA65-/XEMU-D81 und vier Bilder wurden
+anschließend ausgewertet: [Hardwarebefunde](stage10b1_user_hardware_findings.md).
+Das PRG ist identisch, sämtliche gefundenen Dumps sind gültig. Im ProfilS
+stimmt die Grundgeometrie überein; NORRDEL unterscheidet sich bereits vor der
+Initialisierung. Der Hardwaredump für ProfilE fehlt noch. Keine produktive
+Korrektur und kein Kausalitätsnachweis allein aus der Registerabweichung.
