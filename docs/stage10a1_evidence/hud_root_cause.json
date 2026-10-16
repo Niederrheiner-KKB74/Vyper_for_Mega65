@@ -1,0 +1,28 @@
+{
+  "baseline_program_commit": "914aaff8377cedd255e13cd6037b4510745bb68b",
+  "method": "actual assembled F1/F2 starts in constrained CPU/VIC/DOS host model, stop at first main loop; no preceding synthetic HUD render",
+  "observations": [
+    {
+      "mode": "F1",
+      "p1_lives": 3,
+      "p1_shadow": 3,
+      "initial_life_glyphs": 0,
+      "glyphs_after_only_shadow_invalidation_and_render": 9
+    },
+    {
+      "mode": "F2",
+      "p1_lives": 3,
+      "p1_shadow": 3,
+      "initial_life_glyphs": 0,
+      "glyphs_after_only_shadow_invalidation_and_render": 9
+    }
+  ],
+  "glyphs_per_life": 3,
+  "cause": "start_ready static redraw erases the earlier hud_init life rendering while leaving its shadow valid",
+  "additional_stale_template_field": {
+    "field": "F1 Att.",
+    "template": 115,
+    "unchanged_actual_reward": 175,
+    "first_frame_after_general_refresh": 175
+  }
+}

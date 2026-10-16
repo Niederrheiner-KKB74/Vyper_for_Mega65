@@ -36,6 +36,34 @@ class TwoPlayer(unittest.TestCase):
   m.hi_frame()
   for c in name:m.hi_frame(c)
   m.hi_frame(13,matrix=253);m.hi_frame();m.hi_frame(13)
+ def assert_lives(self,m,player,lives):
+  d=m.memory.data;rows=range(7,12) if player==0 else range(16,21)
+  count=sum(int.from_bytes(d[0xe000+y*192+42+x:0xe000+y*192+44+x],'little') in (0x321,0x322,0x323) for y in rows for x in range(0,40,2))
+  self.assertEqual(count,min(lives,8)*3,(player,lives,count))
+ def test_first_visible_frame_lives_f1_f2_selected_level_and_static_redraw(self):
+  for mode in (1,2):
+   for level in (1,29,100):
+    m=self.game(level) if mode==2 else self.fixture()
+    if mode==1:m.game(level)
+    self.assertEqual(m.cpu.pc,N['main_loop'])
+    # No synthetic render or life loss before this first-frame assertion.
+    self.assert_lives(m,0,3)
+    if mode==2:self.assert_lives(m,1,3)
+    for lives in (1,2,8,9,29,30):
+     m.memory.data[0x1a0a:0x1a0c]=lives.to_bytes(2,'little')
+     m.call_at(TP['render']);self.assert_lives(m,0,lives)
+     m.call_at(N['hud_draw_static']);m.call_at(TP['render'])
+     self.assert_lives(m,0,lives)
+     if mode==2:self.assert_lives(m,1,3)
+ def test_first_visible_lives_after_f3_gameover_and_r_restart(self):
+  from test_stage10a1_engine import EngineIntegration
+  helper=EngineIntegration();m=self.fixture()
+  helper.open_f3(m);m.hi_frame(13);m.game(29);self.assert_lives(m,0,3)
+  d=m.memory.data;d[N['c_ps']]=4;d[N['c_armed']]=1;d[H['over_clock']]=100
+  m.game_frame(ord('R'));self.assert_lives(m,0,3)
+  d[0x1a04:0x1a08]=bytes(4);m.files['VYHI.DAT']=F.encode([(b'OLD',100)]*80)
+  d[N['c_ps']]=4;d[H['over_clock']]=149;m.game_frame()
+  self.assertEqual(m.cpu.pc,MN['menu_loop']);m.game(1);self.assert_lives(m,0,3)
  def test_f2_initial_level_independent_state_and_p1_starts(self):
   m=self.game(29);d=m.memory.data
   self.assertEqual(d[TP['active']],0);self.assertEqual(d[TP['records']+4],29);self.assertEqual(d[TP['records']+12],29)
@@ -173,9 +201,10 @@ class TwoPlayer(unittest.TestCase):
  def test_two_player_layout_separator_colours_bottom_margin_and_f1_unchanged(self):
   m=self.game();d=m.memory.data
   # The final dynamic representation retains the original 192-byte row stride.
-  for row in (21,24):
+  for row in (24,):
    self.assertEqual(bytes(d[0xe000+row*192+46:0xe000+row*192+66:2]),b' '*9+b'\x80')
-  self.assertEqual(bytes(d[0xe000+12*192+46:0xe000+12*192+66:2]),bytes([0x81])*9+b'\x80')
+  for row in (12,21):
+   self.assertEqual(bytes(d[0xe000+row*192+46:0xe000+row*192+66:2]),bytes([0x81])*9+b'\x80')
   self.assertEqual(bytes(d[0xe000+23*192+46:0xe000+23*192+58:2]),b'  \x01tt.')
   d[TP['active']]=1;m.call_at(TP['render'])
   self.assertEqual(d[0x1b1a],1)
@@ -193,6 +222,14 @@ class TwoPlayer(unittest.TestCase):
   prefix=b''.join(bytes(sd[0xe000+y*192+42:0xe000+y*192+84]) for y in range(25))
   colour=b''.join(bytes(single.memory[0xff80000+y*192+42+x] for x in range(42)) for y in range(25))
   image=prefix+colour+bytes(sd[0x4000:0x4800])
-  self.assertEqual(hashlib.sha256(image).hexdigest(),'a522e9778e31c4b5a32f274249855bec513d8ddede0d41242092f88867dc719a')
+  # Previously stale shadows hid lives and left template Att.115 instead of
+  # the unchanged live reward175. Verify that refresh, normalize that one digit
+  # back to the old image, and compare every other non-life byte and the font.
+  image=bytearray(image)
+  self.assertEqual(self.word(single,0x1a17),175)
+  self.assertEqual(image[24*42+18],ord('7'))
+  image[24*42+18]=ord('1')
+  for base in (0,1050):image[base+7*42:base+12*42]=bytes(5*42)
+  self.assertEqual(hashlib.sha256(image).hexdigest(),'266916e006e09e5c40de837a7bb59601e406cf01f9b54688ef11446c8fa6fd08')
 
 if __name__=='__main__':unittest.main()

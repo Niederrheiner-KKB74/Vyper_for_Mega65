@@ -65,11 +65,23 @@ def run(args):
   r=m.wait(is_game)
   assert m.read(0x1b10,1)==bytes([expected_mode]),r
   return r
+ def check_initial_hud(mode):
+  counts=[]
+  for player in range(mode):
+   rows=range(7,12) if player==0 else range(16,21)
+   words=[int.from_bytes(m.read(0xe000+192*row+42,40)[i:i+2],'little') for row in rows for i in range(0,40,2)]
+   count=sum(w in (0x321,0x322,0x323) for w in words)
+   assert count==9,('initial HUD lives',mode,player,count)
+   counts.append(count)
+  if mode==2:
+   for row in (12,21):
+    assert m.read(0xe000+row*192+46,20)[::2]==bytes([0x81])*9+b'\x80',('separator',row)
+  report.setdefault('initial_HUD',[]).append({'mode':mode,'life_glyph_counts':counts,'before_first_game_frame':True,'separator_rows':[12,21] if mode==2 else []})
  menu_ready()
  for switches in (0,1,2):
   m.cmd(f'b {main:x}')
   m.write(menu['selection'],b'\x02');m.write(menu['start_pending'],b'\x01')
-  start=game_paused();steps=[]
+  start=game_paused();check_initial_hud(2);steps=[]
   for i in range(switches):
    m.write(0x1a0a,b'\x02\x00');m.write(n['c_ps'],b'\x02')
    m.write(0xffd3720,b'\x02');m.cmd('t0');r=game_paused()
@@ -98,7 +110,7 @@ def run(args):
   m.cmd(f'b {main:x}' if player==0 else 'b 0');m.cmd('t0')
   if player==0:game_paused()
   else:menu_ready()
- m.cmd(f'b {main:x}');m.write(menu['selection'],b'\x01');m.write(menu['start_pending'],b'\x01');game_paused(1)
+ m.cmd(f'b {main:x}');m.write(menu['selection'],b'\x01');m.write(menu['start_pending'],b'\x01');game_paused(1);check_initial_hud(1)
  title=m.read(0x08000000,0x800);loader=m.read(0x080a0000,0x640)
  m.cmd('b 0');m.basic_key(b'X');m.cmd('t0')
  m.wait(lambda r:r['pc']>=0xe000 and m.read(0xffd3060,4)==b'\x00\x08\x00\x00')

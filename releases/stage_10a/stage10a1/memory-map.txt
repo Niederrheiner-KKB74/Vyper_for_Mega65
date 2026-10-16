@@ -20,7 +20,7 @@ Default-segment:
   $3700-$3760 Stage 3b-3 player integration
   $3768-$37cc Stage7b5b native16.16 quotient
   $37d0-$37ff Unnamed
-  $3800-$3e78 Stage 3b-4a HUD code
+  $3800-$3e7d Stage 3b-4a HUD code
   $3e80-$3eb6 HUD defaults
   $3ed0-$3eff Unnamed
   $3f00-$3fd1 HUD attributes rows 20-24
@@ -86,7 +86,7 @@ Default-segment:
   $9000-$97ff Unnamed
   $9800-$98ff Stage 3b-2 loaded path-pixie glyphs
   $9900-$99b2 Stage10a1 native ROMA gate (retired unused thin-font data)
-  $99b9-$9a27 Stage10a1 native identity labels
+  $99b9-$9a29 Stage10a1 native identity labels
   $9a56-$9afa Stage 6b1 attack start and visibility
   $9b00-$9bd9 Stage 3b-5b direction and BASIC sprite restoration
   $9c00-$9ced Stage7b5b eligible actor collection and uniform rank selection

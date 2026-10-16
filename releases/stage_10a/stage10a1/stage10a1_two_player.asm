@@ -379,8 +379,8 @@ draw_labels:
     ldx #>level_label
     jsr short_label
     // All F2 control/inactive hints disappear. Bottom row is a margin.
-    lda #21
-    jsr blank_label
+    ldx #21
+    jsr hud.twop_separator
     lda #24
     jsr blank_label
     lda #23
@@ -388,6 +388,7 @@ draw_labels:
     lda #<attack_label
     ldx #>attack_label
     jsr label
+    ldx #12
     jsr hud.twop_separator
     jsr hud.twop_colours
     lda #$ff

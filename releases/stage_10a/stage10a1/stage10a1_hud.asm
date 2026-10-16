@@ -129,7 +129,7 @@ hud_copy_font:
     jmp integration.hud_font
 // The old font-copy body was unreachable since Stage6b1. Reuse its budget.
 twop_separator:
-    ldx #12
+    // X selects the destination row; reuse the established upper bar.
     jsr set_prefix
     ldy #0
 !copy:
@@ -191,6 +191,9 @@ hud_draw_static:
     sta VIC_D030
     ldx #0
 hud_static_row:
+    // Static redraw overwrites dynamic fields: force all 25 shadow bytes dirty.
+    lda #$ff
+    sta shadow,x
     stx draw_row
     jsr set_prefix
     lda stars.ready

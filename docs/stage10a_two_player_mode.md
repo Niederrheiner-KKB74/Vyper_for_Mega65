@@ -4,6 +4,48 @@ Entwicklungsstand im bestehenden Branch `stage10a`; Ausgangspunkt
 `dd11d2a50fd777162946479098796c55c61fcd53`. Stage 9c3a/`main` und die bisherigen
 Stage-10a-Dateien bleiben unverändert. Kein Stable-Tag und kein Merge.
 
+## HUD-Nachbesserung nach Funktionsbestätigung (PR88, 16.10.2026)
+
+Der Benutzer bestätigt die bisherigen Stage10a1-Funktionen. Zwei zusätzliche
+HUD-Korrekturen bleiben bis zur erneuten XEMU-Abnahme Entwicklungsstand:
+
+- F2 erhält einen zweiten Balken in Zeile21, unmittelbar nach den P2-Lebenszeilen
+  16–20. Der bestehende Balken12 bleibt. Beide kopieren dieselben 42 Screen- und
+  Color-Präfixbytes der Vorlage6. Form./Att. bleiben22/23, Rand24 bleibt frei.
+- Bei jedem statischen HUD-Neuaufbau werden alle25 Shadowbytes `$1A20–$1A38`
+  invalidiert. Die vorhandene dynamische Ausgabe zeichnet anschließend Werte
+  und Lebenssymbole neu, bevor die Hauptschleife und ENTRY sichtbar werden.
+
+**Nachgewiesene Ursache:** `hud_init` zeichnete bereits drei P1-Leben und setzte
+`shadow+10=3`. Danach löschte `integration.start_ready` mit `hud_draw_static` die
+Lebenszellen erneut. `hud_render` sah unveränderte Leben und übersprang die
+Ausgabe. Am ersten Hauptschleifenaufruf des unveränderten Vorgängers wurden in
+F1 **und** F2 Leben=3, Shadow=3, aber null Lebensglyphen gemessen. Allein das
+Invalidieren dieses Shadows und erneutes Rendern brachte neun Glyphen zurück
+(drei Symbole mit je drei RRB-Zeilen). Keine Änderung an Lebenswerten erforderlich.
+P2 erschien, weil dessen Life-Shadow beim ersten F2-Render noch ungültig war.
+
+Der Fix hängt die Invalidierung an die bestehende25-Zeilen-Schleife des statischen
+Aufbaus. Er benötigt weder zusätzliche Zustandsbytes noch Framearbeit. HUD-Code
+endet nun exklusiv bei `$3E7E`, vor den Defaults `$3E80`; native Identitätslabels enden bei `$9A29`
+(vor `$9A56`). Controller/Audio-ABI,
+Screenstride192, RRB-Suffix, Pixie-Puffer, Charset und sämtliche Originaldaten
+bleiben unverändert. Die neue Zeile21 wird nur im Zweispielermodus überschrieben.
+
+Die frühere Aussage „F1-HUD bytegleich“ bezog sich auf den fehlerhaften Start ohne
+Symbole. Nun werden das P1-Lebensfeld und der tatsächliche Angriffspunktwert beim Start
+korrekt gezeichnet: Die statische Vorlage zeigte115, der unveränderte dynamische
+Wert ist175. Der Fix ändert diesen Spielparameter nicht, sondern zeigt ihn sofort
+an. Alle übrigen F1-Präfixe, Farben und der komplette Font bleiben bytegleich.
+Aktuelle Prüfergebnisse stehen am Anfang von `stage10a1_test_results.txt`.
+
+XEMU-Abnahme: F1/F2 zunächst in Level001 und einem anderen Startlevel starten.
+Vor dem ersten Treffer müssen je drei Lebenssymbole vorhanden sein. F2 zeigt
+Balken12 und21 ohne Überlappungen. Danach Lebensverlust, Wechsel, Bonus, normalen
+und Test-Levelwechsel, R-Neustart, GameOver/Highscore→Menü→Neustart sowie
+F3→Menü→F1/F2 prüfen. Werte1/2/8/9/29/30 dürfen maximalacht Symbole zeigen.
+X→BASIC und erneutes RUN prüfen. Keine erneute Stable-/Mergefreigabe vorweggenommen.
+
 ## Menü: Nutzerkorrektur übernommen
 
 Der Nutzer hat den F2-Menüstart als funktionierend bestätigt: Die gegenteilige
@@ -77,7 +119,7 @@ Das Vorher-Bild liegt unverändert unter
 | Horizontaler Trennbalken | 12 |
 | PLAYER 2 / Score / Level | 13/14/15 |
 | P2-Leben | 16–20, dieselbe 4×2-Anordnung, Y=130/147 |
-| Freiraum | 21 |
+| Zweiter horizontaler Trennbalken | 21 |
 | Form. / Att. | 22/23, direkt untereinander |
 | Unterer Abstand | 24 |
 
@@ -125,7 +167,8 @@ Release: `releases/stage_10a/stage10a1/STAGE10A1.PRG` und
 `releases/stage_10a/stage10a1/VYPER_STAGE10A1.d81`, neun SEQ-Dateien einschließlich
 VYHI, sämtliche ASM-/Include-/Daten-Dateien, Symbole, Speicherkarte und SHA256.
 
-Es gibt echte lokale **headless XEMU/ROM-V920413-Tests** mit unverändertem
+Für den vorherigen Programmcommit914aaff gibt es echte lokale
+**headless XEMU/ROM-V920413-Tests** mit unverändertem
 UART-Monitorprotokoll: null, ein und zwei kontrollierte Spielerwechsel, X über
 den ROM-GETIN-Puffer, bytegenauer Restore beider Codebereiche, Audio aus,
 anschließend echtes BASIC-RUN bis zum Menü und DIRECTORY. Zusätzlich beide

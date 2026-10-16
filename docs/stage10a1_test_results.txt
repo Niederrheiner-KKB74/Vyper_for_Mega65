@@ -1,3 +1,66 @@
+AKTUELLE HUD-NACHBESSERUNG / PR88 / 16.10.2026
+Branch stage10a, weiterhin kein Stable-Tag und kein Merge.
+Der Benutzer bestätigt die vorherigen Stage10a1-Funktionen; neue Sichtabnahme
+für initiale Lebenssymbole und zweiten Trennbalken steht noch aus.
+
+URSACHE UND FIX
+Unveränderter Programmcommit914aaff: tatsächlicher F1- und F2-Start im Hostmodell,
+Stop vor erstem Spielframe: P1 lives=3, shadow=3, null Lebensglyphen. Nur den
+Life-Shadow invalidieren und rendern ergibt9Glyphen=3Symbole, ohne Lebensänderung.
+Der statische HUD-Aufbau in start_ready löschte nach hud_init die Lebenszellen,
+behielt aber deren gültige Shadows. hud_draw_static invalidiert nun alle25Bytes
+1A20..1A38; bestehende Renderer veröffentlichen dynamische Felder vor Gameplay.
+Dadurch zeigt F1 auch sofort den unveränderten Live-Attackwert175 statt der
+statischen Vorlage115. Keine Punkte-/Spielparameteränderung.
+Zweiter F2-Balken in Zeile21 kopiert den vorhandenen Balkenstil aus Vorlage6;
+Balken12, P2-Leben16..20, Form./Att.22/23 und Rand24 bleiben bestehen.
+Beleg: stage10a1_evidence/hud_root_cause.json.
+
+AKTUELLER BUILD
+python tools/build_stage10a1.py --kickass /workspace/stage3b-inspection/KickAss.jar
+Zweiter Build --output /tmp/stage10a1-hud-repro:96Dateien bytegleich.
+PRG SHA256 10cceffaf7fa3098222f45487937bf11596b10f77f07560151b7b0b41a0bdff8
+D81 SHA256 5b576a02cea918a0dbef9865cadf3b6bb9aee1b1fc102eb99a62aaae53526bb0
+819200Bytes; PRG+9SEQ-Dateien, BAM/Dateiketten/Signaturen geprüft.
+Alle neun DAT-Dateien, Menü und Audio-Core gegenüber Vorgänger unverändert.
+Keine neue Speicherallokation; HUD-Code endet exklusiv3E7E vor Defaults3E80.
+Beleg: stage10a1_evidence/hud_build_validation.json.
+
+AKTUELLES ECHTES HEADLESS-XEMU / ROM V920413
+PASS erste Hauptschleifenpause F2 dreimal:9Glyphen je Spieler=je3Leben,
+     Trennbalken12und21 im Screen-RAM vollständig.
+PASS erster F1-Frame nach beiden GameOvers/Highscore-Overlays->Menü:3Symbole.
+PASS X nach0/1/2Wechseln, beide Codebereiche restauriert, Audio aus,
+     tatsächliches BASIC RUN bis Menü, anschließend DIRECTORY erfolgreich.
+UART-Monitor-Diagnosezustände wie unten beschrieben; keine visuelle/hörbare
+Abnahme und keine physische Joystick-/natürliche Kollisionsprüfung behauptet.
+python tools/check_stage10a1_xemu.py --socket /tmp/vyper-xemu.sock --output <json>
+Belege: stage10a1_evidence/xemu_hud_regression.json und xemu_hud_output.txt.
+
+AKTUELLE HOSTREGRESSION
+PASS14Tests in332.943s im begrenzten CPU/VIC/DOS/PCM-Modell, kein XEMU.
+Frischer vollständiger Boot dieses PRG erzeugte den bytegeprüften Menü-Snapshot;
+Tests stoppen/prüfen den ersten Spielframe ohne vorgeschalteten künstlichen Refresh.
+F1/F2-Level1/29/100, statische Redraws, Leben1/2/8/9/29/30, beide Lebensfelder,
+Farben/Rahmen/Punkte, F3->Menü->Start, GameOver->Menü->Start, R-Neustart,
+Bonus, Levelwechsel, beide Ausscheidereihenfolgen/Highscore-Gleichstände,
+Respawn/Original-PCM, Menübestätigung und X-Vorrang bestanden.
+F1-Bildvergleich: nur korrigiertes Lebensfeld und Vorlagendigit115->175 anders;
+alle übrigen Screen-/Color-Präfixbytes sowie2048Fontbytes identisch.
+Alle15TwoPlayer-Tests sind mit python -m unittest test_stage10a1_two_player -v
+reproduzierbar. Hier14ausgeführt; der aufwendige Host-X/RUN-Test ist ausgelassen,
+weil0/1/2Wechsel und tatsächliches ROM-RUN im echten XEMU bereits bestanden sind.
+Beleg: stage10a1_evidence/host_hud_regression.txt.
+
+BENUTZERABNAHME
+F1/F2 in001 und anderem INITIAL LEVEL: Symbole sofort vor dem ersten Treffer.
+F2: beide Balken, kein Überdecken der Lebensfelder/Punktezeilen/Playfield.
+Lebensverlust/Respawn, Bonus, Wechsel, Levelwechsel, F3->Menü->Start,
+GameOver->Menü->Start, R-Neustart und X/RUN erneut prüfen.
+Layout und ausführliche Schritte: stage10a_two_player_mode.md.
+
+--- HISTORISCH: vorheriger Stage10a1-Build914aaff, NICHT aktuelles PRG/D81 ---
+
 Stage10a1 / PR88 / Issue87 + Nutzerfeedback16.10.2026
 Entwicklungsbranch stage10a. Kein Stable, kein Merge.
 

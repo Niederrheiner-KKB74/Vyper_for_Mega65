@@ -882,3 +882,13 @@ Main/Stage9c3a und bisheriger Stage10a-Stand unverändert.
 [Technik und Abnahme](stage10a_two_player_mode.md),
 [Prüfprotokoll](stage10a1_test_results.txt).
 **Kein Stable, kein Merge ohne erneute ausdrückliche Nutzerfreigabe.**
+
+### Stage10a1 – zusätzliche HUD-Korrektur in PR88
+
+Nach Nutzer-Funktionsbestätigung: zweiter F2-Trennbalken in Zeile21, zwischen
+P2-Leben16–20 und Form./Att.22/23. Fehlende initiale P1-Leben in F1/F2 auf
+statisches Neuzeichnen bei bereits gültigem Life-Shadow zurückgeführt;
+`hud_draw_static` invalidiert jetzt alle25 Shadowbytes vor dynamischer Ausgabe.
+Alle bisherigen Stable-Dateien unverändert; neue PRG/D81 am bestehenden
+Releasepfad. Neue XEMU-Sichtprüfung dieser beiden Korrekturen steht aus.
+Kein Stable-Tag, kein Merge.

@@ -710,10 +710,20 @@ im DOS-RAM, ROM-Bereich oder über5FFFF-ChipRAM.
 1B1A/1B1B nutzen zwei bislang private Reservebytes für F2-HUD-Stil/Zeile.
 38BE..<3963 ersetzt ausschließlich den unerreichbaren alten Fontkopierkörper
 mit Stil-/Trennlinienhelfern; Originalmenüfont bleibt unverändert.
-9900..99B2 und99B9..9A27 enthalten Gate-/Resume-/F2-Ausgabe, weiterhin vor9A56.
+9900..99B2 und99B9..9A29 enthalten Gate-/Resume-/F2-Ausgabe, weiterhin vor9A56.
 Der normale Wechsel erfolgt per JMP aus der Hauptschleife, ohne Rücksprungframes
 zu verwerfen; bestehende Audio-ABI und alle Typ2-FramesA200..A57F unverändert.
 F2-Zeilen: P2Label/Score/Level13/14/15, Leben16..20, Trennbalken12,
 Form./Att.22/23, Rand24. F1-Bilddaten bytegleich geprüft; RRB192Bytes,
 PlayfieldX<240 und Y0..199 unverändert.
 Vollkarte: `releases/stage_10a/stage10a1/memory-map.txt`.
+
+### Stage10a1 – HUD-Nachbesserung in PR88
+
+Keine zusätzliche Speicherallokation: statischer Aufbau invalidiert die bereits
+vorhandenen25 Shadowbytes1A20..1A38. HUD-Code3800..3E7D (exklusiv3E7E),
+Defaults weiterhin3E80. Zweiter F2-Balken nutzt den bestehenden Präfix von Zeile21
+(Screen E000+21*192+42,42Bytes; entsprechende Color-RAM-Bytes), ohne RRB-Suffix,
+Playfield oder Lebenszellen anzutasten. Oberer Balken12 und Punkte22/23 bleiben.
+F1-Refresh korrigiert initiales P1-Lebensfeld und stale Vorlage Att.115 auf den
+unveränderten dynamischen Wert175. Keine Charset-/Spielparameteränderung.
