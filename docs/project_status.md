@@ -802,3 +802,21 @@ ATTACK-Deltas bis Port-Y≥200, kein senkrechter Ersatzflug. Einmalige Sound-/
 Schussplanung und bestehende RETURN-/Bonus-/Audiofunktionen erhalten. Keine
 Stable-Markierung oder Merge vor Benutzerfreigabe.
 [Technik und Testanleitung](stage9b1_cyclic_attack_curves.md).
+
+## Stage9c3 – integrierte Highscore-Verwaltung (Issue85)
+Entwicklungsbranch `stage9c3` von bestätigter Stage9b1 Stable/main6052f67.
+Die benutzerbestätigten Stage9c1/9c2-Referenzen bleiben unverändert; gezielt
+übernommene Highscore-Komponenten ersetzen F3 und ergänzen den Game-Over-Abschluss.
+80 Einträge, vier Seiten, originales zeilenweises Cycling, drei Namenszeichen,
+32-Bit-Scores und neue Gleichstände vor alten einschließlich Rang80.
+VYHI-v1/CRC16, geprüfte temporäre Datei, Backup/Rename und konservativer
+Fehlerschutz unverändert. Keine Simulator-Taste im Hauptspiel.
+Nach vollständiger Player-Explosion folgt ein150-Frame-Game-Over-Fenster mit
+weiterlaufendem Originalaudio; anschließend einmalige Qualifikationsprüfung.
+Tabelle/Eingabe führen ins Originalmenü zurück, Initial Level/Auswahl bleiben erhalten.
+Residente Gates1920/6F00, separates Attic-Overlay und native I/O-Phasen verhindern
+Konflikte mit Engine, RRB und Audio. D81 mit10 Dateien und zwei Verzeichnissektoren.
+Fünf vollständige Integrationstests mit Kaltstart und erneutem RUN bestanden;
+Tabellen-/Persistenzprotokoll und XEMU-Abnahme siehe
+[Technik](stage9c3_highscore_integration.md) und [Prüfbericht](stage9c3_test_results.txt).
+**Keine Stable-Markierung, kein Merge vor ausdrücklicher Benutzerbestätigung.**

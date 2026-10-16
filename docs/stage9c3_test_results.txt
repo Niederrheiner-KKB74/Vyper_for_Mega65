@@ -1,0 +1,60 @@
+Stage9c3 / Issue85 — Host verification, 2026-10-16
+
+Base: main/Stage9b1 6052f677a8b84a841549561e874cd2f3290b2129
+Highscore: Stage9c2 bbf996531f31920f2baa1111f74722d075fceba0
+
+21 table/reference tests + 5 full engine integration tests = 26 passed.
+The engine suite booted from scratch, no saved fixture enabled.
+
+test_all_pages_uint32_display_and_individual_row_colours (test_stage9c2.Management.test_all_pages_uint32_display_and_individual_row_colours) ... ok
+test_crc_validation_mutations_and_unused_slots (test_stage9c2.Management.test_crc_validation_mutations_and_unused_slots) ... ok
+test_empty_boot_and_exact_packet (test_stage9c2.Management.test_empty_boot_and_exact_packet) ... ok
+test_initial_disk_and_immutable_cycle_and_staged_page_budget (test_stage9c2.Management.test_initial_disk_and_immutable_cycle_and_staged_page_budget) ... Prepared-page model cycles (DMA latency excluded): 0 25520
+Prepared-page model cycles (DMA latency excluded): 80 28246
+ok
+test_insert_all_boundaries_ties_zeros_and_uint32 (test_stage9c2.Management.test_insert_all_boundaries_ties_zeros_and_uint32) ... ok
+test_missing_corrupt_version_and_backup_recovery_never_overwrite (test_stage9c2.Management.test_missing_corrupt_version_and_backup_recovery_never_overwrite) ... ok
+test_native_open_chkin_timeout_and_device_failures_close_channels (test_stage9c2.Management.test_native_open_chkin_timeout_and_device_failures_close_channels) ... ok
+test_no_qualification_and_single_name_commit_on_equal_last_place (test_stage9c2.Management.test_no_qualification_and_single_name_commit_on_equal_last_place) ... ok
+test_original_palette_sequence_survives_edit_and_disk_save (test_stage9c2.Management.test_original_palette_sequence_survives_edit_and_disk_save) ... ok
+test_pending_temp_is_preserved_and_last_resort_recovery_is_readonly (test_stage9c2.Management.test_pending_temp_is_preserved_and_last_resort_recovery_is_readonly) ... ok
+test_powerloss_after_backup_keeps_old_and_verified_new (test_stage9c2.Management.test_powerloss_after_backup_keeps_old_and_verified_new) ... ok
+test_real_save_readback_restart_and_return_debounce (test_stage9c2.Management.test_real_save_readback_restart_and_return_debounce) ... ok
+test_ui_decimal_overflow_name_backspace_abort_and_no_unconfirmed_disk (test_stage9c2.Management.test_ui_decimal_overflow_name_backspace_abort_and_no_unconfirmed_disk) ... ok
+test_writeprotect_diskfull_partial_corrupt_and_failed_rename (test_stage9c2.Management.test_writeprotect_diskfull_partial_corrupt_and_failed_rename) ... ok
+test_boot_validates_without_showing_or_writing (test_stage9c3.TableIntegration.test_boot_validates_without_showing_or_writing) ... ok
+test_d81_nine_assets_chains_bam_and_original_audio (test_stage9c3.TableIntegration.test_d81_nine_assets_chains_bam_and_original_audio) ... ok
+test_four_pages_frames_colours_and_separate_resident_gates (test_stage9c3.TableIntegration.test_four_pages_frames_colours_and_separate_resident_gates) ... ok
+test_game_score_equal_first_equal_last_and_unsigned_boundaries (test_stage9c3.TableIntegration.test_game_score_equal_first_equal_last_and_unsigned_boundaries) ... ok
+test_input_edit_error_feedback_and_protected_recovery (test_stage9c3.TableIntegration.test_input_edit_error_feedback_and_protected_recovery) ... ok
+test_nonqualification_and_cancel_never_write (test_stage9c3.TableIntegration.test_nonqualification_and_cancel_never_write) ... ok
+test_table_any_key_exits_to_menu_and_x_requests_basic_no_simulator (test_stage9c3.TableIntegration.test_table_any_key_exits_to_menu_and_x_requests_basic_no_simulator) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 18.605s
+
+OK
+
+test_f3_repeat_pages_exit_menu_settings_and_game_start (test_stage9c3_engine.EngineIntegration.test_f3_repeat_pages_exit_menu_settings_and_game_start) ... ok
+test_gameover_name_save_exactly_once_reload_and_new_f1 (test_stage9c3_engine.EngineIntegration.test_gameover_name_save_exactly_once_reload_and_new_f1) ... ok
+test_gameover_nonqual_cancel_and_r_restart_no_write (test_stage9c3_engine.EngineIntegration.test_gameover_nonqual_cancel_and_r_restart_no_write) ... ok
+test_held_opening_and_exit_controls_do_not_reopen (test_stage9c3_engine.EngineIntegration.test_held_opening_and_exit_controls_do_not_reopen) ... ok
+test_level_paths_and_sound_core_unchanged_then_x_and_run (test_stage9c3_engine.EngineIntegration.test_level_paths_and_sound_core_unchanged_then_x_and_run) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 401.767s
+
+OK
+
+Reproducibility: 94 output files byte-identical in two separate build directories.
+
+STAGE9C3.PRG: 45057 bytes; SHA256 e2058e89aa49c1e5e48ab0242980efa150c5b7c7876bba4928634896c92a78a9
+VYPER_STAGE9C3.d81: 819200 bytes; SHA256 a44d3ce77e4538c333adf7fd4cb5942c1384c88e15bbe66c9f7f115e2bff9a4d
+VYHI.DAT: 592 bytes; SHA256 bd13995965462ed3a54a0971d5d51004497b7f458fc0dafd896fe9801e4dca20
+VYHS.DAT: 29149 bytes; SHA256 d7548fea767f9d3ee063babc61ec1b3793e781b097d87139f89fb64d994d0a8d
+
+Original VYLV/VYGR/VYCL/VYTI/VYSH/VYSO and AUDIO_CORE.PRG byte-identical to Stage9b1. VYMN changed only by the menu/controller integration. Stable source/release baselines checked by the builder. D81 has ten files, two chained directory sectors; all payloads, chains and BAM allocation verified.
+
+Limitations: constrained CPU/VIC/DMA/KERNAL and logical DOS-file models, NOT XEMU or real disk-sector writes. No audible sound or real underrun measurement claimed. Level1/4/99/100 engine tests exercise several frames, not complete campaigns. Real writable-D81 persistence across emulator restart and full visual/audio regression require user acceptance.
+
+No Stable marking and no merge.

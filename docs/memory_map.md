@@ -636,3 +636,22 @@ und unveränderte Top-RETURN-Funktion36B0–36F5 (Anfang RETURN nun36D2).
 Kurvenindex, signedXY, Cursor, Anker und Bottom-Latch bleiben an bisherigen
 Adressen. Alle Audio-/Loader-/RRB-/DMA-Puffer unverändert.
 [Details](stage9b1_cyclic_attack_curves.md).
+
+## Stage9c3 (Issue85, eigenständiger Entwicklungsbranch)
+Gemeinsame Laufzeitkarte gegen Stage9b1 abgeglichen:6A00–6AD7 und6F80–6FF8
+sind weiterhin Gruppen-/Grafik-/Angriffsmetadaten, keine freien Codebereiche.
+Neue residente Gates1920–19ED (nach Diagnose1900–191F, vor HUD1A00) und
+6F00–6F45 (vor Angriffsdaten6F80). Gate-Seed/zusätzlicher Loader5448–55C0
+nur während Boot; bestehender Audiobootstrap sichert/restauriert5000–5FFF
+inklusive dieser Bytes für erneutes RUN. Gate-Kopie1920 wird vor Datei-I/O erstellt.
+Neue Mailbox1FE0–1FED: finaler Score, Grund, Initial Level, Auswahl, Abschlusszähler,
+Einmalsperre, BASIC-Exit und persistente Bestmarke; Abstand zu Audio/Bonus bis1FDA.
+VYHS-Bootstaging40000 vor anschließendem VYLV-Load; Daten danach unverändert.
+Attic08080000–080871DC enthält das Highscore-Modul,08090000–0809AFFF die
+Phasensicherung2000–CFFF. Vor Tabellenphase Audio stoppen und BASIC-VIC/Color
+restaurieren; Highscore-Screen7000, Font8000, SeitenstagingA000–A7CF,
+privates ColorfensterFF82000–FF827CF mit Sicherung15000–157CF.
+Keine neuen Puffer im DOS10000–11FFF, im ROM20000–3FFFF oder ab60000.
+Originale Audio-Ringe16400/5C500, Core1E000, Attic-Samples sowie Level-/Grafik-
+und Farbdateien bleiben unverändert. Menüatlas und VIC-/Colorzustand werden
+beim Rückweg neu initialisiert. [Vollständige Karte](stage9c3_highscore_integration.md).
