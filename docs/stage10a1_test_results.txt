@@ -65,6 +65,11 @@ Todes-/DEAD-/Menü-Zustände werden gezielt im Emulator gesetzt. Keine Behauptun
 natürlicher Treffer, physischer Joystickbedienung oder störungsfreier Hörausgabe.
 Belege: stage10a1_evidence/xemu_ready_rules.json und xemu_ready_rules_output.txt.
 
+AKTUELLER GITHUB-DOWNLOAD
+https://raw.githubusercontent.com/Niederrheiner-KKB74/Vyper_for_Mega65/638b2f074602ee83b9fc19e5bdea4f80ca6ca1ae/releases/stage_10a/stage10a1/VYPER_STAGE10A1.d81
+HTTP200,819200Bytes, bytegleich zum geprüften D81.
+Beleg: stage10a1_evidence/ready_github_download.json.
+
 BENUTZERABNAHME NOCH ERFORDERLICH
 Siehe aktuelle Schritte in stage10a_two_player_mode.md: F1/F2 ab001/100,
 2s Get ready und aktiver Player, kein Eintritt währenddessen, laufende Farben/
