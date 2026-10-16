@@ -68,7 +68,7 @@ def build(jar,out):
   w=Path(d);schema=assets(w)
   shutil.copyfile(ROOT/'src/tests/stage10b1.asm',w/'stage10b1.asm')
   run=subprocess.run(['java','-jar',str(jar),'stage10b1.asm','-o','STAGE10B1.PRG','-symbolfile','-showmem'],cwd=w,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
-  (w/'assembly.txt').write_text(run.stdout.replace(str(w),'.'))
+  (w/'assembly.txt').write_text('\n'.join(line.rstrip() for line in run.stdout.replace(str(w),'.').splitlines())+'\n')
   if run.returncode:raise RuntimeError(run.stdout)
   prg=(w/'STAGE10B1.PRG').read_bytes();entries=[('STAGE10B1',prg,0x82)];disk=bytearray(D.build_disk(entries))
   disk[((40-1)*40)*256+4:((40-1)*40)*256+20]=b'VYPER 10B1 DIAG'.ljust(16,b'\xa0')
