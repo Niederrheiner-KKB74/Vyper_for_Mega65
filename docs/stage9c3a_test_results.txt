@@ -1,0 +1,96 @@
+Stage9c3a additional correction / PR86 — 2026-10-16
+
+Navigation hint hidden ONLY in name mode2. Row18 interior columns5..74 is
+cleared to spaces and foreground1 before publication, including the first
+visible naming frame. Normal table mode restores the canonical hint at19..59
+in fixed yellow4. Borders, table bands, title, footer and input behavior unchanged.
+
+Current revision: 10 table/UI/persistence tests rerun and passed. Includes initial
+name frame, continued hidden state through16 cycling frames, repeated table/name/
+save transitions, stable ties, cancellation with no writes, F3-style reopen,
+restored navigation glyphs and exact foreground bytes, and normal paging.
+
+Engine source files, original data/menu/audio, VYHI seed, pages.bin and colours.bin
+are byte-identical to20dffef9c3a9305aafac33de719588a6d188257d. Main PRG changes
+are only five generated overlay-length/checksum bytes at54EB,5551,5575,557C,55B7.
+No gameplay, respawn, sound or disk-backend code changed. The prior7 complete
+engine/respawn tests were not repeated for this UI-only correction; their
+previous execution is retained in the historical protocol below.
+
+test_initial_name_frame_and_repeated_table_name_save_cancel_transitions (test_stage9c3a.NavigationModes.test_initial_name_frame_and_repeated_table_name_save_cancel_transitions) ... ok
+test_fixed_yellow_text_clean_normal_rows_and_cycling_frame (test_stage9c3a.Presentation.test_fixed_yellow_text_clean_normal_rows_and_cycling_frame) ... ok
+test_only_real_file_errors_show_diagnostics_and_success_is_clean (test_stage9c3a.Presentation.test_only_real_file_errors_show_diagnostics_and_success_is_clean) ... ok
+test_boot_validates_without_showing_or_writing (test_stage9c3a.TableIntegration.test_boot_validates_without_showing_or_writing) ... ok
+test_d81_nine_assets_chains_bam_and_original_audio (test_stage9c3a.TableIntegration.test_d81_nine_assets_chains_bam_and_original_audio) ... ok
+test_four_pages_frames_colours_and_separate_resident_gates (test_stage9c3a.TableIntegration.test_four_pages_frames_colours_and_separate_resident_gates) ... ok
+test_game_score_equal_first_equal_last_and_unsigned_boundaries (test_stage9c3a.TableIntegration.test_game_score_equal_first_equal_last_and_unsigned_boundaries) ... ok
+test_input_edit_error_feedback_and_protected_recovery (test_stage9c3a.TableIntegration.test_input_edit_error_feedback_and_protected_recovery) ... ok
+test_nonqualification_and_cancel_never_write (test_stage9c3a.TableIntegration.test_nonqualification_and_cancel_never_write) ... ok
+test_table_any_key_exits_to_menu_and_x_requests_basic_no_simulator (test_stage9c3a.TableIntegration.test_table_any_key_exits_to_menu_and_x_requests_basic_no_simulator) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 8.003s
+
+OK
+
+Reproducibility: all94 generated files byte-identical across two output directories.
+
+STAGE9C3A.PRG: 45057 bytes, SHA256 d97c355f7096566b10079eff7d69592575f06f6212cf9088eb59202dd5e525e5
+VYPER_STAGE9C3A.d81: 819200 bytes, SHA256 fc7fb38a5514130e4028bb0780850490806ce134af2b0a4bf460baf6cc1b0c7c
+VYHS.DAT: 29183 bytes, SHA256 3f9bd1eea1c86dda0cde3efdf89c34fef20b6ed1a5f26b218f38bd138469f30e
+VYHI.DAT: 592 bytes, SHA256 bd13995965462ed3a54a0971d5d51004497b7f458fc0dafd896fe9801e4dca20
+
+Model limits remain unchanged: no actual XEMU/hardware or physical-sector writes. User reacceptance required; no Stable marking or merge.
+
+===== Historical protocol: previous Stage9c3a20dffef (before additional correction) =====
+
+Stage9c3a / PR86 — verification 2026-10-16
+
+Parent: functional Stage9c3 daf45af4a95f34e45c84103c55d6fc25d79a0a1d, preserved unchanged.
+Branch stage9c3, existing PR86; no Stable tag/merge.
+
+9 table/presentation/persistence tests + 7 complete engine/respawn tests = 16 passed.
+Cold startup executed without a prebuilt fixture; BASIC exit and repeated RUN included.
+
+test_fixed_yellow_text_clean_normal_rows_and_cycling_frame (test_stage9c3a.Presentation.test_fixed_yellow_text_clean_normal_rows_and_cycling_frame) ... ok
+test_only_real_file_errors_show_diagnostics_and_success_is_clean (test_stage9c3a.Presentation.test_only_real_file_errors_show_diagnostics_and_success_is_clean) ... ok
+test_boot_validates_without_showing_or_writing (test_stage9c3a.TableIntegration.test_boot_validates_without_showing_or_writing) ... ok
+test_d81_nine_assets_chains_bam_and_original_audio (test_stage9c3a.TableIntegration.test_d81_nine_assets_chains_bam_and_original_audio) ... ok
+test_four_pages_frames_colours_and_separate_resident_gates (test_stage9c3a.TableIntegration.test_four_pages_frames_colours_and_separate_resident_gates) ... ok
+test_game_score_equal_first_equal_last_and_unsigned_boundaries (test_stage9c3a.TableIntegration.test_game_score_equal_first_equal_last_and_unsigned_boundaries) ... ok
+test_input_edit_error_feedback_and_protected_recovery (test_stage9c3a.TableIntegration.test_input_edit_error_feedback_and_protected_recovery) ... ok
+test_nonqualification_and_cancel_never_write (test_stage9c3a.TableIntegration.test_nonqualification_and_cancel_never_write) ... ok
+test_table_any_key_exits_to_menu_and_x_requests_basic_no_simulator (test_stage9c3a.TableIntegration.test_table_any_key_exits_to_menu_and_x_requests_basic_no_simulator) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 6.618s
+
+OK
+
+test_f3_repeat_pages_exit_menu_settings_and_game_start (test_stage9c3a_engine.EngineIntegration.test_f3_repeat_pages_exit_menu_settings_and_game_start) ... ok
+test_gameover_name_save_exactly_once_reload_and_new_f1 (test_stage9c3a_engine.EngineIntegration.test_gameover_name_save_exactly_once_reload_and_new_f1) ... ok
+test_gameover_nonqual_cancel_and_r_restart_no_write (test_stage9c3a_engine.EngineIntegration.test_gameover_nonqual_cancel_and_r_restart_no_write) ... ok
+test_held_opening_and_exit_controls_do_not_reopen (test_stage9c3a_engine.EngineIntegration.test_held_opening_and_exit_controls_do_not_reopen) ... ok
+test_level_paths_and_sound_core_unchanged_then_x_and_run (test_stage9c3a_engine.EngineIntegration.test_level_paths_and_sound_core_unchanged_then_x_and_run) ... ok
+test_25_frame_visual_blink_movement_two_hidden_shots_and_protection (test_stage9c3a_engine.RespawnIntegration.test_25_frame_visual_blink_movement_two_hidden_shots_and_protection) ... ok
+test_gameover_overlay_has_only_original_gameover_caption (test_stage9c3a_engine.RespawnIntegration.test_gameover_overlay_has_only_original_gameover_caption) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 417.199s
+
+OK
+
+Reproducibility: all 94 output files byte-identical across two output directories.
+
+STAGE9C3A.PRG: 45057 bytes, SHA256 08419694ee55ee758d8e978a4c31538854e233f32f1d72a86a84296add89385b
+VYPER_STAGE9C3A.d81: 819200 bytes, SHA256 b10c96f4de5e2bfe3b44e10abb82bf858b3699f322951afc35994005d7609800
+VYHS.DAT: 29141 bytes, SHA256 eea9602e2fe735d5d99627e2aaf16d3e52f758b2494afc699513dc0a571ef935
+VYHI.DAT: 592 bytes, SHA256 bd13995965462ed3a54a0971d5d51004497b7f458fc0dafd896fe9801e4dca20
+
+All original VYLV/VYGR/VYCL/VYTI/VYMN/VYSH/VYSO, VYHI seed and AUDIO_CORE.PRG byte-identical to parent Stage9c3. Original Stage9c3 source/release files checked unchanged. D81 all10 file payloads, chained directory sectors and BAM verified.
+
+Respawn test: actual assembled timer, renderer, move, fire and collision entrypoints exercised; every150 protection updates checked, visibility boundaries25/50/75/100/125/150, actual RRB row occupancy, left/right movement, two shots while invisible at current X+8/Y184, held-fire suppression, pool limit, unchanged lives until protection ends and one life lost on subsequent hit. GAME OVER modifies only its original row9, no obsolete rows11/13.
+
+Presentation: fixed yellow title/navigation/footer despite frame cycling, empty regular status rows including clean missing-file startup and successful save, real CRC/recovery errors still visible, per-row colour bands preserved, text/frame bounds checked in native80-column mode.
+
+Limits: constrained CPU/VIC/DMA/KERNAL/logical DOS models, NOT XEMU or physical D81 writes. No real audio hearing/underrun measurement claimed. XEMU acceptance on a writable image, persistence across emulator restart, full visual/sound regression and BASIC/DIRECTORY/RUN remain for user validation.

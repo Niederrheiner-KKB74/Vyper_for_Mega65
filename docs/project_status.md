@@ -802,3 +802,42 @@ ATTACK-Deltas bis Port-Y≥200, kein senkrechter Ersatzflug. Einmalige Sound-/
 Schussplanung und bestehende RETURN-/Bonus-/Audiofunktionen erhalten. Keine
 Stable-Markierung oder Merge vor Benutzerfreigabe.
 [Technik und Testanleitung](stage9b1_cyclic_attack_curves.md).
+
+## Stage9c3 – integrierte Highscore-Verwaltung (Issue85)
+Entwicklungsbranch `stage9c3` von bestätigter Stage9b1 Stable/main6052f67.
+Die benutzerbestätigten Stage9c1/9c2-Referenzen bleiben unverändert; gezielt
+übernommene Highscore-Komponenten ersetzen F3 und ergänzen den Game-Over-Abschluss.
+80 Einträge, vier Seiten, originales zeilenweises Cycling, drei Namenszeichen,
+32-Bit-Scores und neue Gleichstände vor alten einschließlich Rang80.
+VYHI-v1/CRC16, geprüfte temporäre Datei, Backup/Rename und konservativer
+Fehlerschutz unverändert. Keine Simulator-Taste im Hauptspiel.
+Nach vollständiger Player-Explosion folgt ein150-Frame-Game-Over-Fenster mit
+weiterlaufendem Originalaudio; anschließend einmalige Qualifikationsprüfung.
+Tabelle/Eingabe führen ins Originalmenü zurück, Initial Level/Auswahl bleiben erhalten.
+Residente Gates1920/6F00, separates Attic-Overlay und native I/O-Phasen verhindern
+Konflikte mit Engine, RRB und Audio. D81 mit10 Dateien und zwei Verzeichnissektoren.
+Fünf vollständige Integrationstests mit Kaltstart und erneutem RUN bestanden;
+Tabellen-/Persistenzprotokoll und XEMU-Abnahme siehe
+[Technik](stage9c3_highscore_integration.md) und [Prüfbericht](stage9c3_test_results.txt).
+**Keine Stable-Markierung, kein Merge vor ausdrücklicher Benutzerbestätigung.**
+
+## Stage9c3a – Nachbesserungen im bestehenden PR86
+Benutzerfeedback16.10.2026: Stage9c3 funktional bestätigt, neue Abnahme erforderlich.
+Branch bleibt stage9c3; separate Quellen und vollständiger Testbuild unter
+releases/stage_9c3/stage9c3a/. Normale Highscore-Ansicht ohne IO-/Statuszeilen,
+zentrierter Navigationshinweis, feste gelbe Überschrift/Untertexte, Rahmenzyklus
+und einzelne Tabellen-Farbbänder erhalten. Echte Fehler bleiben sichtbar.
+Nur GAME OVER ohne R/X-Hinweiszeilen; bestehender automatischer Ablauf unverändert.
+Schießen jetzt auch während BLINK, einschließlich unsichtbarer Player-Phase;
+bestehender25-Frame-Blinktimer,150-Frame-Schutz, Bewegung, zwei Projektilslots,
+Feuer-Latch, Grafik, Geschwindigkeit und Kollisionsschutz bleiben erhalten.
+Kein Stable/Merge vor erneuter Benutzerbestätigung.
+[Änderungen und Abnahme](stage9c3_highscore_integration.md),
+[Prüfprotokoll](stage9c3a_test_results.txt).
+
+Stage9c3a-Nachkorrektur PR86: Seitenwechsel-Hinweis ausschließlich bei Namenseingabe
+unsichtbar, inklusive gelöschter Color-Bytes und korrektem ersten Darstellungsframe.
+Tabellenmodus restauriert Hinweis und Farben; zehn UI-/Persistenztests erneut
+bestanden. Engine-/Respawncode unverändert, neue94 Builddateien byteidentisch
+reproduziert. Vorherige Engineprüfung bleibt im Protokoll getrennt dokumentiert.
+Neue XEMU-Abnahme erforderlich; kein Stable/Merge.
