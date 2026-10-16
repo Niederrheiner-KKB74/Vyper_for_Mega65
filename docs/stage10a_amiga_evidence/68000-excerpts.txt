@@ -1,0 +1,199 @@
+
+; round_initialization (ADF relocations verified against BOTH saved runtime copies)
+00C08EF4 dump:0222B4 CODE+0794 3b7c0002fffe             move.w     #$2, -$2(a5)
+00C08EFA dump:0222BA CODE+079A 302dfffe                 move.w     -$2(a5), d0
+00C08EFE dump:0222BE CODE+079E c1fc0016                 muls.w     #$16, d0
+00C08F02 dump:0222C2 CODE+07A2 41ec31b2                 lea.l      $31b2(a4), a0
+00C08F06 dump:0222C6 CODE+07A6 42700800                 clr.w      (a0, d0.l)
+00C08F0A dump:0222CA CODE+07AA 526dfffe                 addq.w     #$1, -$2(a5)
+00C08F0E dump:0222CE CODE+07AE 0c6d0008fffe             cmpi.w     #$8, -$2(a5)
+00C08F14 dump:0222D4 CODE+07B4 6de4                     blt.b      $c08efa
+00C08F16 dump:0222D6 CODE+07B6 4eba4656                 jsr        $c0d56e(pc)
+00C08F1A dump:0222DA CODE+07BA 4eba136a                 jsr        $c0a286(pc)
+00C08F1E dump:0222DE CODE+07BE 3b7c0078ffcc             move.w     #$78, -$34(a5)
+00C08F24 dump:0222E4 CODE+07C4 397c00012c0a             move.w     #$1, $2c0a(a4)
+00C08F2A dump:0222EA CODE+07CA 33fc000100dff0a6         move.w     #$1, $dff0a6.l
+00C08F32 dump:0222F2 CODE+07D2 33fc000100dff0b6         move.w     #$1, $dff0b6.l
+00C08F3A dump:0222FA CODE+07DA 33fc000300dff096         move.w     #$3, $dff096.l
+00C08F42 dump:022302 CODE+07E2 426dfffe                 clr.w      -$2(a5)
+00C08F46 dump:022306 CODE+07E6 526dfffe                 addq.w     #$1, -$2(a5)
+00C08F4A dump:02230A CODE+07EA 0c6d018ffffe             cmpi.w     #$18f, -$2(a5)
+00C08F50 dump:022310 CODE+07F0 6df4                     blt.b      $c08f46
+00C08F52 dump:022312 CODE+07F2 397c00182d50             move.w     #$18, $2d50(a4)
+00C08F58 dump:022318 CODE+07F8 41edffcc                 lea.l      -$34(a5), a0
+00C08F5C dump:02231C CODE+07FC 29482d56                 move.l     a0, $2d56(a4)
+00C08F60 dump:022320 CODE+0800 4eba25f4                 jsr        $c0b556(pc)
+00C08F64 dump:022324 CODE+0804 4eba1384                 jsr        $c0a2ea(pc)
+
+; round_audio_reset (ADF relocations verified against BOTH saved runtime copies)
+00C0A286 dump:023646 CODE+1B26 4e55fffe                 link.w     a5, #$fffe
+00C0A28A dump:02364A CODE+1B2A 426dfffe                 clr.w      -$2(a5)
+00C0A28E dump:02364E CODE+1B2E 302dfffe                 move.w     -$2(a5), d0
+00C0A292 dump:023652 CODE+1B32 c1fc000c                 muls.w     #$c, d0
+00C0A296 dump:023656 CODE+1B36 41ec2d4e                 lea.l      $2d4e(a4), a0
+00C0A29A dump:02365A CODE+1B3A 42700800                 clr.w      (a0, d0.l)
+00C0A29E dump:02365E CODE+1B3E 302dfffe                 move.w     -$2(a5), d0
+00C0A2A2 dump:023662 CODE+1B42 c1fc000c                 muls.w     #$c, d0
+00C0A2A6 dump:023666 CODE+1B46 41ec2d50                 lea.l      $2d50(a4), a0
+00C0A2AA dump:02366A CODE+1B4A 42700800                 clr.w      (a0, d0.l)
+00C0A2AE dump:02366E CODE+1B4E 302dfffe                 move.w     -$2(a5), d0
+00C0A2B2 dump:023672 CODE+1B52 c1fc000c                 muls.w     #$c, d0
+00C0A2B6 dump:023676 CODE+1B56 41ec2d52                 lea.l      $2d52(a4), a0
+00C0A2BA dump:02367A CODE+1B5A 31bc00020800             move.w     #$2, (a0, d0.l)
+00C0A2C0 dump:023680 CODE+1B60 302dfffe                 move.w     -$2(a5), d0
+00C0A2C4 dump:023684 CODE+1B64 c1fc000c                 muls.w     #$c, d0
+00C0A2C8 dump:023688 CODE+1B68 41ec2d54                 lea.l      $2d54(a4), a0
+00C0A2CC dump:02368C CODE+1B6C 31bc00090800             move.w     #$9, (a0, d0.l)
+00C0A2D2 dump:023692 CODE+1B72 526dfffe                 addq.w     #$1, -$2(a5)
+00C0A2D6 dump:023696 CODE+1B76 0c6d0002fffe             cmpi.w     #$2, -$2(a5)
+00C0A2DC dump:02369C CODE+1B7C 6db0                     blt.b      $c0a28e
+00C0A2DE dump:02369E CODE+1B7E 33fc000f00dff096         move.w     #$f, $dff096.l
+00C0A2E6 dump:0236A6 CODE+1B86 4e5d                     unlk       a5
+00C0A2E8 dump:0236A8 CODE+1B88 4e75                     rts
+
+; round_level_pointer (ADF relocations verified against BOTH saved runtime copies)
+00C0A2EA dump:0236AA CODE+1B8A 4e55ffe6                 link.w     a5, #$ffe6
+00C0A2EE dump:0236AE CODE+1B8E 48e70c20                 movem.l    d4-d5/a2, -(a7)
+00C0A2F2 dump:0236B2 CODE+1B92 302c2c10                 move.w     $2c10(a4), d0
+00C0A2F6 dump:0236B6 CODE+1B96 c1fc0072                 muls.w     #$72, d0
+00C0A2FA dump:0236BA CODE+1B9A 2440                     movea.l    d0, a2
+00C0A2FC dump:0236BC CODE+1B9C d5ec2c8e                 adda.l     $2c8e(a4), a2
+00C0A300 dump:0236C0 CODE+1BA0 4eac8050                 jsr        -$7fb0(a4)
+
+; player_life_consumption (ADF relocations verified against BOTH saved runtime copies)
+00C09528 dump:0228E8 CODE+0DC8 536c2c5e                 subq.w     #$1, $2c5e(a4)
+00C0952C dump:0228EC CODE+0DCC 3f2c2c5e                 move.w     $2c5e(a4), -(a7)
+00C09530 dump:0228F0 CODE+0DD0 3f2c2c3e                 move.w     $2c3e(a4), -(a7)
+00C09534 dump:0228F4 CODE+0DD4 4eba1e78                 jsr        $c0b3ae(pc)
+00C09538 dump:0228F8 CODE+0DD8 584f                     addq.w     #$4, a7
+00C0953A dump:0228FA CODE+0DDA 4a6c2c5e                 tst.w      $2c5e(a4)
+00C0953E dump:0228FE CODE+0DDE 6620                     bne.b      $c09560
+00C09540 dump:022900 CODE+0DE0 3f3c0001                 move.w     #$1, -(a7)
+00C09544 dump:022904 CODE+0DE4 3f3c0001                 move.w     #$1, -(a7)
+00C09548 dump:022908 CODE+0DE8 3f2c2c3e                 move.w     $2c3e(a4), -(a7)
+00C0954C dump:02290C CODE+0DEC 4eba3150                 jsr        $c0c69e(pc)
+00C09550 dump:022910 CODE+0DF0 5c4f                     addq.w     #$6, a7
+00C09552 dump:022912 CODE+0DF2 3b7c0002ffe2             move.w     #$2, -$1e(a5)
+00C09558 dump:022918 CODE+0DF8 397c012c2c50             move.w     #$12c, $2c50(a4)
+00C0955E dump:02291E CODE+0DFE 6010                     bra.b      $c09570
+00C09560 dump:022920 CODE+0E00 4267                     clr.w      -(a7)
+00C09562 dump:022922 CODE+0E02 3f3c0001                 move.w     #$1, -(a7)
+00C09566 dump:022926 CODE+0E06 3f2c2c3e                 move.w     $2c3e(a4), -(a7)
+00C0956A dump:02292A CODE+0E0A 4eba3132                 jsr        $c0c69e(pc)
+00C0956E dump:02292E CODE+0E0E 5c4f                     addq.w     #$6, a7
+
+; death_and_gameover (ADF relocations verified against BOTH saved runtime copies)
+00C0978E dump:022B4E CODE+102E 536c2c50                 subq.w     #$1, $2c50(a4)
+00C09792 dump:022B52 CODE+1032 4a6c2c50                 tst.w      $2c50(a4)
+00C09796 dump:022B56 CODE+1036 6600010c                 bne.w      $c098a4
+00C0979A dump:022B5A CODE+103A 3b7c0001ffe2             move.w     #$1, -$1e(a5)
+00C097A0 dump:022B60 CODE+1040 3f3c0001                 move.w     #$1, -(a7)
+00C097A4 dump:022B64 CODE+1044 4267                     clr.w      -(a7)
+00C097A6 dump:022B66 CODE+1046 3f2c2c3e                 move.w     $2c3e(a4), -(a7)
+00C097AA dump:022B6A CODE+104A 4eba2ef2                 jsr        $c0c69e(pc)
+00C097AE dump:022B6E CODE+104E 5c4f                     addq.w     #$6, a7
+00C097B0 dump:022B70 CODE+1050 302c2c3e                 move.w     $2c3e(a4), d0
+00C097B4 dump:022B74 CODE+1054 48c0                     ext.l      d0
+00C097B6 dump:022B76 CODE+1056 e380                     asl.l      #$1, d0
+00C097B8 dump:022B78 CODE+1058 41ec2c9e                 lea.l      $2c9e(a4), a0
+00C097BC dump:022B7C CODE+105C 42700800                 clr.w      (a0, d0.l)
+00C097C0 dump:022B80 CODE+1060 426dfffe                 clr.w      -$2(a5)
+00C097C4 dump:022B84 CODE+1064 302dfffe                 move.w     -$2(a5), d0
+00C097C8 dump:022B88 CODE+1068 c1fc0016                 muls.w     #$16, d0
+00C097CC dump:022B8C CODE+106C 41ec31b2                 lea.l      $31b2(a4), a0
+00C097D0 dump:022B90 CODE+1070 42700800                 clr.w      (a0, d0.l)
+00C097D4 dump:022B94 CODE+1074 526dfffe                 addq.w     #$1, -$2(a5)
+00C097D8 dump:022B98 CODE+1078 0c6d0008fffe             cmpi.w     #$8, -$2(a5)
+00C097DE dump:022B9E CODE+107E 6de4                     blt.b      $c097c4
+00C097E0 dump:022BA0 CODE+1080 4eba3d8c                 jsr        $c0d56e(pc)
+00C097E4 dump:022BA4 CODE+1084 426c2c42                 clr.w      $2c42(a4)
+00C097E8 dump:022BA8 CODE+1088 426dfffe                 clr.w      -$2(a5)
+00C097EC dump:022BAC CODE+108C 3f2dfffe                 move.w     -$2(a5), -(a7)
+00C097F0 dump:022BB0 CODE+1090 4eba5586                 jsr        $c0ed78(pc)
+00C097F4 dump:022BB4 CODE+1094 544f                     addq.w     #$2, a7
+00C097F6 dump:022BB6 CODE+1096 322dfffe                 move.w     -$2(a5), d1
+00C097FA dump:022BBA CODE+109A 48c1                     ext.l      d1
+00C097FC dump:022BBC CODE+109C e381                     asl.l      #$1, d1
+00C097FE dump:022BBE CODE+109E 41ec2d86                 lea.l      $2d86(a4), a0
+00C09802 dump:022BC2 CODE+10A2 31801800                 move.w     d0, (a0, d1.l)
+00C09806 dump:022BC6 CODE+10A6 526dfffe                 addq.w     #$1, -$2(a5)
+00C0980A dump:022BCA CODE+10AA 0c6d0010fffe             cmpi.w     #$10, -$2(a5)
+00C09810 dump:022BD0 CODE+10B0 6dda                     blt.b      $c097ec
+00C09812 dump:022BD2 CODE+10B2 396c2c482d8a             move.w     $2c48(a4), $2d8a(a4)
+00C09818 dump:022BD8 CODE+10B8 397c0ff02d8c             move.w     #$ff0, $2d8c(a4)
+00C0981E dump:022BDE CODE+10BE 4267                     clr.w      -(a7)
+00C09820 dump:022BE0 CODE+10C0 3f3c0002                 move.w     #$2, -(a7)
+00C09824 dump:022BE4 CODE+10C4 486c2d86                 pea.l      $2d86(a4)
+00C09828 dump:022BE8 CODE+10C8 4eba3578                 jsr        $c0cda2(pc)
+00C0982C dump:022BEC CODE+10CC 504f                     addq.w     #$8, a7
+00C0982E dump:022BEE CODE+10CE 397c00012c42             move.w     #$1, $2c42(a4)
+00C09834 dump:022BF4 CODE+10D4 3f2c2c3e                 move.w     $2c3e(a4), -(a7)
+00C09838 dump:022BF8 CODE+10D8 2f2c2cb6                 move.l     $2cb6(a4), -(a7)
+00C0983C dump:022BFC CODE+10DC 486c25a0                 pea.l      $25a0(a4)
+00C09840 dump:022C00 CODE+10E0 4eba602c                 jsr        $c0f86e(pc)
+00C09844 dump:022C04 CODE+10E4 4fef000a                 lea.l      $a(a7), a7
+00C09848 dump:022C08 CODE+10E8 426dfffe                 clr.w      -$2(a5)
+00C0984C dump:022C0C CODE+10EC 302dfffe                 move.w     -$2(a5), d0
+00C09850 dump:022C10 CODE+10F0 48c0                     ext.l      d0
+00C09852 dump:022C12 CODE+10F2 e380                     asl.l      #$1, d0
+00C09854 dump:022C14 CODE+10F4 41ec2d86                 lea.l      $2d86(a4), a0
+00C09858 dump:022C18 CODE+10F8 3f300800                 move.w     (a0, d0.l), -(a7)
+00C0985C dump:022C1C CODE+10FC 3f2dfffe                 move.w     -$2(a5), -(a7)
+00C09860 dump:022C20 CODE+1100 4eba5530                 jsr        $c0ed92(pc)
+00C09864 dump:022C24 CODE+1104 584f                     addq.w     #$4, a7
+00C09866 dump:022C26 CODE+1106 526dfffe                 addq.w     #$1, -$2(a5)
+00C0986A dump:022C2A CODE+110A 0c6d0010fffe             cmpi.w     #$10, -$2(a5)
+00C09870 dump:022C30 CODE+1110 6dda                     blt.b      $c0984c
+00C09872 dump:022C32 CODE+1112 302c2c9e                 move.w     $2c9e(a4), d0
+00C09876 dump:022C36 CODE+1116 d06c2ca0                 add.w      $2ca0(a4), d0
+00C0987A dump:022C3A CODE+111A 6610                     bne.b      $c0988c
+00C0987C dump:022C3C CODE+111C 4267                     clr.w      -(a7)
+00C0987E dump:022C3E CODE+111E 486c25a0                 pea.l      $25a0(a4)
+00C09882 dump:022C42 CODE+1122 4eba5b7e                 jsr        $c0f402(pc)
+00C09886 dump:022C46 CODE+1126 5c4f                     addq.w     #$6, a7
+00C09888 dump:022C48 CODE+1128 6000f5de                 bra.w      $c08e68
+00C0988C dump:022C4C CODE+112C 426c2eea                 clr.w      $2eea(a4)
+00C09890 dump:022C50 CODE+1130 486c2eca                 pea.l      $2eca(a4)
+00C09894 dump:022C54 CODE+1134 4eba47e0                 jsr        $c0e076(pc)
+00C09898 dump:022C58 CODE+1138 584f                     addq.w     #$4, a7
+00C0989A dump:022C5A CODE+113A 397c00012c0c             move.w     #$1, $2c0c(a4)
+00C098A0 dump:022C60 CODE+1140 6000f652                 bra.w      $c08ef4
+
+; helper_called_after_life_change (ADF relocations verified against BOTH saved runtime copies)
+00C0C69E dump:025A5E CODE+3F3E 4e55fffe                 link.w     a5, #$fffe
+00C0C6A2 dump:025A62 CODE+3F42 302d000a                 move.w     $a(a5), d0
+00C0C6A6 dump:025A66 CODE+3F46 48c0                     ext.l      d0
+00C0C6A8 dump:025A68 CODE+3F48 60000086                 bra.w      $c0c730
+00C0C6AC dump:025A6C CODE+3F4C 397c00012c52             move.w     #$1, $2c52(a4)
+00C0C6B2 dump:025A72 CODE+3F52 396d00082cb2             move.w     $8(a5), $2cb2(a4)
+00C0C6B8 dump:025A78 CODE+3F58 302d000c                 move.w     $c(a5), d0
+00C0C6BC dump:025A7C CODE+3F5C 5440                     addq.w     #$2, d0
+00C0C6BE dump:025A7E CODE+3F5E 39402cb4                 move.w     d0, $2cb4(a4)
+00C0C6C2 dump:025A82 CODE+3F62 302c2c54                 move.w     $2c54(a4), d0
+00C0C6C6 dump:025A86 CODE+3F66 c1fc0092                 muls.w     #$92, d0
+00C0C6CA dump:025A8A CODE+3F6A 41ec3f1c                 lea.l      $3f1c(a4), a0
+00C0C6CE dump:025A8E CODE+3F6E 31bc00500800             move.w     #$50, (a0, d0.l)
+00C0C6D4 dump:025A94 CODE+3F74 6064                     bra.b      $c0c73a
+00C0C6D6 dump:025A96 CODE+3F76 426c2c52                 clr.w      $2c52(a4)
+00C0C6DA dump:025A9A CODE+3F7A 4eac8050                 jsr        -$7fb0(a4)
+00C0C6DE dump:025A9E CODE+3F7E 426dfffe                 clr.w      -$2(a5)
+00C0C6E2 dump:025AA2 CODE+3F82 302dfffe                 move.w     -$2(a5), d0
+00C0C6E6 dump:025AA6 CODE+3F86 c1fc0028                 muls.w     #$28, d0
+00C0C6EA dump:025AAA CODE+3F8A 41ec260a                 lea.l      $260a(a4), a0
+00C0C6EE dump:025AAE CODE+3F8E d088                     add.l      a0, d0
+00C0C6F0 dump:025AB0 CODE+3F90 2940265e                 move.l     d0, $265e(a4)
+00C0C6F4 dump:025AB4 CODE+3F94 42a7                     clr.l      -(a7)
+00C0C6F6 dump:025AB6 CODE+3F96 486c265a                 pea.l      $265a(a4)
+00C0C6FA dump:025ABA CODE+3F9A 4eac8074                 jsr        -$7f8c(a4)
+00C0C6FE dump:025ABE CODE+3F9E 504f                     addq.w     #$8, a7
+00C0C700 dump:025AC0 CODE+3FA0 487800aa                 pea.l      $aa.w
+00C0C704 dump:025AC4 CODE+3FA4 487800c8                 pea.l      $c8.w
+00C0C708 dump:025AC8 CODE+3FA8 48780096                 pea.l      $96.w
+00C0C70C dump:025ACC CODE+3FAC 42a7                     clr.l      -(a7)
+00C0C70E dump:025ACE CODE+3FAE 486c265a                 pea.l      $265a(a4)
+00C0C712 dump:025AD2 CODE+3FB2 4eac806e                 jsr        -$7f92(a4)
+00C0C716 dump:025AD6 CODE+3FB6 4fef0014                 lea.l      $14(a7), a7
+00C0C71A dump:025ADA CODE+3FBA 526dfffe                 addq.w     #$1, -$2(a5)
+00C0C71E dump:025ADE CODE+3FBE 0c6d0002fffe             cmpi.w     #$2, -$2(a5)
+00C0C724 dump:025AE4 CODE+3FC4 6dbc                     blt.b      $c0c6e2
+00C0C726 dump:025AE6 CODE+3FC6 4eac8080                 jsr        -$7f80(a4)

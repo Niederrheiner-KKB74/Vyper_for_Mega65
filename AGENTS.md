@@ -52,3 +52,11 @@
     getesteter Programmcommit `23eb0bba7d7be781372b508dbf6667c3f75bdea4`.
     `src/engine/stage7b1*.asm` und `releases/stage_7b1/` unverändert schützen.
     Weiße Projektilgrafiken und getakteter Levelübergang; neue Stages separat.
+
+
+18. **Stage9c3a Stable:** Vom Benutzer als Ausgangsbasis für Issue87 bestätigt;
+    PR86 nach main gemergt, Referenzcommit
+    `36d5a4b546fb514e435d4567b36c68e8cd18b6e2` (Programmcommit1f767223).
+    `src/engine/stage9c3a*.asm`, `src/tests/stage9c3a*.asm`,
+    `tools/build_stage9c3a.py` und `releases/stage_9c3/stage9c3a/` schützen.
+    Stage10a bleibt bis ausdrücklicher XEMU-Bestätigung Entwicklungsstand.

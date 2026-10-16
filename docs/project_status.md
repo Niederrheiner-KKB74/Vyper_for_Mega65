@@ -841,3 +841,21 @@ Tabellenmodus restauriert Hinweis und Farben; zehn UI-/Persistenztests erneut
 bestanden. Engine-/Respawncode unverändert, neue94 Builddateien byteidentisch
 reproduziert. Vorherige Engineprüfung bleibt im Protokoll getrennt dokumentiert.
 Neue XEMU-Abnahme erforderlich; kein Stable/Merge.
+
+
+## Stage10a – Zweispielermodus, Issue87 (zur XEMU-Abnahme)
+
+Die vom Benutzer bestätigte Stage9c3a wurde als PR86 nach `main` übernommen;
+Ausgangsbasis `36d5a4b546fb514e435d4567b36c68e8cd18b6e2`. Die älteren
+Abnahmevermerke oben beschreiben die damaligen Entwicklungsstände.
+Stage10a wird separat im Branch `stage10a` entwickelt. F2 startet zwei
+abwechselnde Spieler mit getrennten Scores, Leben, Levels und Bonuszählern.
+Wechsel nach vollständiger Explosion und Originalsound; beim Ausscheiden
+Highscore-Prüfung für die betreffende Identität, dann Fortsetzung des Überlebenden.
+Maximal30 Leben, unabhängig davon höchstens8 HUD-Symbole pro Spieler.
+Unbelegte Original-Levelwiederaufnahme wird ausdrücklich durch den erlaubten
+Neustart des jeweils gespeicherten Levels ersetzt. F1/F3 und Stable-Dateien
+bleiben erhalten. Vollständiges D81/PRG unter `releases/stage_10a/`.
+[Technik, Speicher und Abnahme](stage10a_two_player_mode.md),
+[Hostprüfungen](stage10a_test_results.txt).
+**Nicht als Stable markiert; XEMU-Bestätigung und Mergefreigabe stehen aus.**

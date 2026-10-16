@@ -669,3 +669,29 @@ Stage9c3a-Navigationskorrektur: keine neue Datenallokation. Zeile18 wird nur
 im vorhandenen SeitenstagingA000 und Color-Puffer6000 modusspezifisch vorbereitet;
 Spalten5..74 werden im Namensmodus gelöscht, Hinweis19..59 im Tabellenmodus Gelb4.
 Zusätzlicher UI-Helper bleibt unterA000; Overlaybudget und residente Gates unverändert.
+
+
+## Stage10a – getrennte Identitäten, unveränderte Stable-Basis
+
+Baseline: bestätigte Stage9c3a/main36d5a4b. Nur neue Stage10a-Quellen/Releases.
+`$1B00–$1B0F` enthält zwei8-Byte-Records (Score4,Level2,Leben2),
+`$1B10–$1B19` Modus/Identität/Abschluss-/Resume-/Gate-/HUD-Zustand,
+`$1B20–$1B23` Session-Highscore. Der bislang unbenutzte reservierte RRB_WORK-
+Bereich endet damit weiterhin vor dem Projektilbackup1B60; keine Überlagerung
+mit HUD1Axx, Kampf1Cxx oder Audio-/Bonus-/HS-Mailbox1FD0..1FED.
+Die vorhandenen Bonusbytes1FD9/1FDA werden jetzt identitätsbezogen verwendet.
+
+Native Gate/Wechsel/Resume9900..9A02 ersetzt eine seit dem Originalmenüfont
+unbenutzte Fontkopie. ControllerA000..A1E5/A580..A5E9 ersetzt unbenutzte eingebettete
+Legacy-Typ1-Frames beziehungsweise verwendet freien Platz hinter Typ2; tatsächliche VYGR-Assets und private Grafiken bleiben
+unverändert. ROMA-aus/IRQ-Gate vor CPU-Codezugriff, keine KERNAL-I/O darin.
+Der über s3b2.animate noch aufgerufene s2ja-Animationspfad und die Orbit-
+Initialisierung bleiben bytegleich; sämtliche Typ2-FramesA200..A57F werden
+erhalten und beim Build mit der Stable-PRG verglichen.
+
+Neue Identitätsdaten liegen außerhalb des Highscore-Overlaybackups2000..CFFF
+und überleben die Tabellenphase. Residenter1920-Gate bleibt unter1A00,
+GameOver-Koordinator6F00 unter6F80. Alle DOS-/ROM-/Audio-/Attic-/Titelbereiche
+bleiben wie Stage9c3a; kein neuer High-RAM-Puffer. Das vollständige Assembler-
+Mapping steht in releases/stage_10a/memory-map.txt.
+[Phasenprotokoll und Amiga-Evidenz](stage10a_two_player_mode.md).
