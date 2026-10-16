@@ -337,3 +337,14 @@ einzigen erwarteten stabilen Registerunterschied und den einen Screenmarker.
   Abhängigkeit isolieren; keine voreilige Fehlerursache behaupten.
 
 Stage10a1 und Stage10b1 bleiben unverändert. Kein Stage10b2-Fix in diesem PR.
+
+## Nachgereichte Nutzerdaten: Hardwarevergleich vollständig
+
+[Auswertung der Benutzerdateien](stage10b1a_user_findings.md): gültige
+Hardware- und XEMU-A/B-Register-/Speicherdumps; Sollwerte NORRDEL1/0,
+PALEMU0 und DBLRR0 auf beiden Systemen bestätigt. Alle neun rückgelesenen
+Speicherbereiche je Variante byteidentisch Hardware↔XEMU. Hardwarefotos
+beider Varianten weiterhin fehlerhaft, A1/A2 optisch uneinheitlich.
+Die drei XEMU-Screenshots sind byteidentisch und zeigen MarkerA.
+Kein NORRDEL-Produktivfix oder Stage10b2-Build aus diesen Befunden abgeleitet;
+weitere Render-/Zeilenbudget-/Vor-/Nach-Export-Diagnose gesondert beauftragen.
