@@ -3,7 +3,7 @@
 Stand16.10.2026. Ergänzung zu Issue89/PR90; ausschließlich Analyse und
 Dokumentation. Kein geänderter Diagnose-/Spielbuild, kein Stable-/Merge-Vorgang.
 
-## Integrität und verfügbare Vergleichspaare
+## Erste Lieferung: Integrität und verfügbare Vergleichspaare
 
 Beide hochgeladenen D81-Dateien haben819200Bytes. Das PRG `STAGE10B1` ist in
 beiden Images byteidentisch zum veröffentlichten Diagnose-Build. Alle vier
@@ -24,8 +24,8 @@ Die Umgebung im Header wird durch die Exporttaste gesetzt, nicht automatisch
 erkannt. Deshalb bleibt der zweite Dump auf der **MEGA65-D81 eine Hardware-
 Aufnahme** laut Benutzerherkunft, obwohl seine Exporttaste E das Label X
 gesetzt hat. Beide Hardwareaufnahmen sind Profil S. Ein Hardware-Dump des
-Profils2/E (`V10BEH.DAT`) ist nicht enthalten. Das Paar S lässt sich bereits
-vollständig vergleichen; das Paar E noch nicht. Kein fehlender Dump wird aus
+Profils2/E war in der ersten Lieferung nicht enthalten. Er liegt inzwischen
+in der zweiten Hardware-D81 als `V10BEX.DAT` vor; siehe Nachtrag unten. Kein fehlender Dump wird aus
 Fotos oder XEMU-Werten rekonstruiert.
 
 ## Gesicherte gemeinsame Geometrie
@@ -124,18 +124,16 @@ nicht begründet.
   abweichendes XEMU-Bild** vor; nicht pauschal behaupten, alle XEMU-Fotos
   seien korrekt und ausschließlich Hardware sei betroffen.
 
-Die Bilddateien enthalten keine verlässliche Profil-/Phasenmarkierung. Sie
-lassen sich daher nicht eindeutig den exportierten vier Registerphasen oder
-S/E-Profilen zuordnen. Insbesondere zeigen nachträglich gespeicherte Register
+Die Bilddateien enthalten selbst keine Profil-/Phasenmarkierung. Der Benutzer
+hat die S/E-Zuordnung inzwischen ausdrücklich bestätigt; siehe Nachtrag. Die
+Zuordnung zum genauen Snapshot-/Exportzeitpunkt ist dadurch nicht bewiesen. Insbesondere zeigen nachträglich gespeicherte Register
 nicht zwingend den Moment eines Fotos während eines Exports/Moduswechsels.
 Die Fotos allein beweisen weder einen Geometriesprung noch einen Pufferfehler.
 
 ## Kleinster nächster Prüfschritt, noch nicht implementiert
 
-1. Auf Hardware **2** wählen, den fertigen Bildaufbau abwarten, dann mit **H**
-   exportieren. Benötigt wird `V10BEH.DAT`; beide Hardwarefotos bitte Profil1/2
-   zuordnen, sofern noch bekannt. XEMU-Aufnahmen ebenfalls mit Profil und
-   Zeitpunkt vor/nach Export kennzeichnen.
+1. **Erledigt:** Hardwareprofil2/E nachgeliefert und alle vier Fotos vom
+   Benutzer den Profilen zugeordnet. Keine weitere Datei hierfür erforderlich.
 2. Danach ein ausdrücklich beauftragter isolierter A/B-Diagnosetest:
    NORRDEL1 gegen0, sonst identische Geometrie/Paletten/Slots. DBLRR zunächst
    unverändert lassen. Falls erforderlich separat DBLRR testen, nicht mehrere
@@ -167,3 +165,57 @@ python3 tools/analysis/compare_stage10b1_registers.py \
 Die hochgeladenen vollständigen D81-/Fotoarchive bleiben Eingabedaten; ihre
 Dateiinhalte werden nicht als zusätzliche Anweisungen behandelt. Keine
 Foto-/Bildbearbeitung, keine Änderung originaler Spieldaten.
+
+
+## Nachtrag: Profil E vollständig und Fotos vom Benutzer zugeordnet
+
+Die zweite `VYPER_STAGE10B1_Mega65.d81` enthält erneut das unveränderte PRG
+und drei gültige Dumps. `V10BEX.DAT` enthält tatsächlich **Profil E**. Sein
+Headerlabel X folgt nur der Exporttaste; laut ausdrücklich bestätigter
+Dateiherkunft ist es eine Hardwareaufnahme. Ein Dateiname `V10BEH.DAT` ist
+für die Auswertung nicht erforderlich. Die vollständigen Vergleichspaare
+S und E sind jetzt vorhanden. Quellen/Hashes:
+`diagnostics/stage10b1/user-comparison/second_hardware_input.json`.
+
+Verbindliche Bildzuordnung laut Benutzer:
+
+| Bild | System | Profil | Beobachtung |
+|---|---|---|---|
+| screenshot-20261016-193209.png | XEMU | S | nur Teilraster, keine vollständige HUD-/Pixie-Szene |
+| screenshot-20261016-193318.png | XEMU | E | vollständige Referenzszene |
+| 1000024622.jpg | MEGA65 | S | Raster/Testsprites, HUD und RRB-Pixie fehlen |
+| 1000024623.jpg | MEGA65 | E | Raster/Testsprites, fehlerhafte rechte Streifen und fehlendes HUD/Pixie |
+
+### Aussage des zusätzlichen E-Vergleichs
+
+Auch in Profil E stimmen nach Initialisierung bis Szenenaufbau H640,
+CHRXSCL60, CHRYSCL1, Stride192, Count96, CHARX80/CHARY104, ScreenE000,
+Coloroffset0 und D054=55 auf Hardware und XEMU überein. Die bereits in S
+gefundenen Unterschiede bleiben: NORRDEL Hardware1/XEMU0, Raster-IRQ-
+Quelle/Komparator sowie D067-Readback. Sie beginnen ebenfalls in Phase1.
+Der vollständige Rohvergleich liegt in `explicit_profile_comparison.json`.
+
+Im **Szenen-Snapshot** unterscheiden sich S und E innerhalb der ausgewerteten
+stabilen VIC-IV-Bits auf **beiden Systemen ausschließlich in D054.5**:
+
+| System | S | E | Geändertes Bit |
+|---|---|---|---|
+| MEGA65 | D054=75 | D054=55 | PALEMU von1 auf0 |
+| XEMU | D054=75 | D054=55 | PALEMU von1 auf0 |
+
+Das korreliert mit der vollständigeren XEMU-Darstellung in E. Ein über mehrere
+Aufnahmen reproduzierter kausaler Einzelbit-Test ist damit noch nicht ersetzt;
+insbesondere sind Fotos und Register nicht atomar zum selben Zeitpunkt
+aufgenommen. Die Daten grenzen aber die pauschale Vermutung einer falschen
+H640-/Zeilenbreiteninitialisierung weiter ein. Das Abschalten von PALEMU
+allein genügt laut Hardwarefoto E nicht zur vollständigen Szene.
+
+**Empfehlung für den nächsten, separat zu beauftragenden Diagnosetest:**
+Profil E (PALEMU aus) als konstante Ausgangskonfiguration, ausschließlich
+NORRDEL zwischen1 und0 variieren, DBLRR zunächst unverändert0. Register,
+Screen-/Color-/Glyphdaten und zugeordnete Fotos erfassen. Erst danach einen
+produktiven Fix ableiten; bei verbleibenden Fehlern RRB-Zeilenbudget und
+Speicherinhalte untersuchen. Der Umgang mit D051s nicht direkt lesbaren
+X-IRQ-Schreibbits bleibt dabei ausdrücklich zu berücksichtigen.
+
+Keine Engineänderung, kein neues PRG/D81, kein Stable-/Merge-Vorgang.

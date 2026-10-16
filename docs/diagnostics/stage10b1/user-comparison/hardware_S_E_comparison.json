@@ -1,0 +1,522 @@
+{
+  "left": {
+    "profile": "S",
+    "environment": "H",
+    "sha256": "9299dc8fe1ac347c32c95dfc5d4c9753e3426d56d8b973c9fb5f1cd447e5d04d"
+  },
+  "right": {
+    "profile": "E",
+    "environment": "X",
+    "sha256": "a2d04debeef661e12f580b14600860766a0addaf6c506eecebd860f37a1f258f"
+  },
+  "same_profile": false,
+  "first_stable_divergence_phase": 1,
+  "differences": [
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D012",
+      "name": "register $D012",
+      "left": "$7E",
+      "right": "$A3",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D019",
+      "name": "register $D019",
+      "left": "$60",
+      "right": "$E3",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D050",
+      "name": "horizontal raster low",
+      "left": "$ED",
+      "right": "$C1",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D052",
+      "name": "physical raster low",
+      "left": "$03",
+      "right": "$4D",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D700",
+      "name": "register $D700",
+      "left": "$C7",
+      "right": "$73",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D701",
+      "name": "register $D701",
+      "left": "$02",
+      "right": "$26",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D705",
+      "name": "register $D705",
+      "left": "$C7",
+      "right": "$73",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D62A",
+      "name": "register $D62A",
+      "left": "$FD",
+      "right": "$FF",
+      "mask": "$FF",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D012",
+      "name": "register $D012",
+      "left": "$C8",
+      "right": "$AA",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D019",
+      "name": "register $D019",
+      "left": "$60",
+      "right": "$E3",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D050",
+      "name": "horizontal raster low",
+      "left": "$07",
+      "right": "$70",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D051",
+      "name": "horizontal raster high / DBLRR NORRDEL",
+      "left": "$81",
+      "right": "$82",
+      "mask": "$C0",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D052",
+      "name": "physical raster low",
+      "left": "$97",
+      "right": "$5B",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D054",
+      "name": "ALPHEN VFAST PALEMU SPRH640 SMTH FCLRHI FCLRLO CHR16",
+      "left": "$75",
+      "right": "$55",
+      "mask": "$FF",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D62A",
+      "name": "register $D62A",
+      "left": "$FD",
+      "right": "$FF",
+      "mask": "$FF",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D012",
+      "name": "register $D012",
+      "left": "$D0",
+      "right": "$B2",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D019",
+      "name": "register $D019",
+      "left": "$60",
+      "right": "$E3",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D050",
+      "name": "horizontal raster low",
+      "left": "$AD",
+      "right": "$21",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D051",
+      "name": "horizontal raster high / DBLRR NORRDEL",
+      "left": "$81",
+      "right": "$80",
+      "mask": "$C0",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D052",
+      "name": "physical raster low",
+      "left": "$A6",
+      "right": "$6B",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D054",
+      "name": "ALPHEN VFAST PALEMU SPRH640 SMTH FCLRHI FCLRLO CHR16",
+      "left": "$75",
+      "right": "$55",
+      "mask": "$FF",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D62A",
+      "name": "register $D62A",
+      "left": "$FD",
+      "right": "$FF",
+      "mask": "$FF",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D011",
+      "name": "register $D011",
+      "left": "$9B",
+      "right": "$1B",
+      "mask": "$7F",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D012",
+      "name": "register $D012",
+      "left": "$08",
+      "right": "$EB",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D019",
+      "name": "register $D019",
+      "left": "$E1",
+      "right": "$E3",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D050",
+      "name": "horizontal raster low",
+      "left": "$85",
+      "right": "$FA",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D051",
+      "name": "horizontal raster high / DBLRR NORRDEL",
+      "left": "$82",
+      "right": "$81",
+      "mask": "$C0",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D052",
+      "name": "physical raster low",
+      "left": "$17",
+      "right": "$DC",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D053",
+      "name": "physical raster high / output controls",
+      "left": "$82",
+      "right": "$81",
+      "mask": "$E0",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D054",
+      "name": "ALPHEN VFAST PALEMU SPRH640 SMTH FCLRHI FCLRLO CHR16",
+      "left": "$75",
+      "right": "$55",
+      "mask": "$FF",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D62A",
+      "name": "register $D62A",
+      "left": "$FD",
+      "right": "$FF",
+      "mask": "$FF",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    }
+  ],
+  "geometry_left": [
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 1.0,
+      "native_pixels_per_source_pixel": 1.0,
+      "line_step_bytes": 80,
+      "characters_per_row": 80,
+      "last_row_index": 24,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 2048,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    }
+  ],
+  "geometry_right": [
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 1.0,
+      "native_pixels_per_source_pixel": 1.0,
+      "line_step_bytes": 80,
+      "characters_per_row": 80,
+      "last_row_index": 24,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 2048,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    }
+  ],
+  "interpretation": "Value comparison only. Equal registers do not prove equal rendering. Use photographs and pinned core semantics. Environment labels are user declarations."
+}

@@ -374,5 +374,7 @@ Die vom Benutzer gelieferten MEGA65-/XEMU-D81 und vier Bilder wurden
 anschließend ausgewertet: [Hardwarebefunde](stage10b1_user_hardware_findings.md).
 Das PRG ist identisch, sämtliche gefundenen Dumps sind gültig. Im ProfilS
 stimmt die Grundgeometrie überein; NORRDEL unterscheidet sich bereits vor der
-Initialisierung. Der Hardwaredump für ProfilE fehlt noch. Keine produktive
+Initialisierung. Der Hardwaredump für ProfilE wurde nachgeliefert (Dateiname V10BEX.DAT,
+Herkunft MEGA65), die Bildzuordnung ist bestätigt. Auch in E bleibt NORRDEL
+unterschiedlich; Details im Nachtrag des Befundberichts. Keine produktive
 Korrektur und kein Kausalitätsnachweis allein aus der Registerabweichung.
