@@ -681,7 +681,7 @@ Bereich endet damit weiterhin vor dem Projektilbackup1B60; keine Überlagerung
 mit HUD1Axx, Kampf1Cxx oder Audio-/Bonus-/HS-Mailbox1FD0..1FED.
 Die vorhandenen Bonusbytes1FD9/1FDA werden jetzt identitätsbezogen verwendet.
 
-Native Gate/Wechsel/Resume9900..9A02 ersetzt eine seit dem Originalmenüfont
+Native Gate/Wechsel/Resume9900..9A04 ersetzt eine seit dem Originalmenüfont
 unbenutzte Fontkopie. ControllerA000..A1E5/A580..A5E9 ersetzt unbenutzte eingebettete
 Legacy-Typ1-Frames beziehungsweise verwendet freien Platz hinter Typ2; tatsächliche VYGR-Assets und private Grafiken bleiben
 unverändert. ROMA-aus/IRQ-Gate vor CPU-Codezugriff, keine KERNAL-I/O darin.

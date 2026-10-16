@@ -120,7 +120,7 @@ Disassemblierung und Prüfmetadaten: `docs/stage10a_amiga_evidence/`.
 | `$1B10–$1B19` | Modus, aktive Identität, Abschlussflags, Resume-/Gate-/HUD-Zustand |
 | `$1B20–$1B23` | Gemeinsamer Session-Highscore |
 | `$1FD9/$1FDA` | Bestehende, jetzt beide verwendete Bonuszähler |
-| `$9900–$9A02` | Native Gate-/Wechsel-/Resume-Routinen, ersetzt unbenutzte dünne HUD-Fontkopie |
+| `$9900–$9A04` | Native Gate-/Wechsel-/Resume-Routinen, ersetzt unbenutzte dünne HUD-Fontkopie |
 | `$A000–$A1E5`, `$A580–$A5E9` | Identitäts-/HUD-Controller, ersetzt unbenutzte eingebettete Legacy-Typ-1-Frames und bisher freien Platz nach Typ 2 |
 | `$1920–<1A00`, `$6F00–<6F80` | Bestehende residente Highscore-Gates, gezielt um Capture/Return ergänzt |
 
@@ -146,6 +146,12 @@ Restaurierung ausgeführt; VYHI verwendet weiterhin SETBNK vor SETNAM und native
 ROM-/IRQ-Abbildung. Nach Tabellenende ist erst das Engineabbild restauriert,
 dann wird über das native Gate die nächste Identität gewählt. Vor dem Sprung
 zum Engine-Start wird ROMC wie bei der vorhandenen Menübrücke freigegeben.
+Bei einem normalen Wechsel werden die fünf ausstehend gebliebenen Stackbytes
+(bereits gelesene Taste, Rücksprung poll→key und key→main_loop) verworfen.
+Der spätere X-Exit erreicht damit unmittelbar den ursprünglichen BASIC-Aufrufer.
+Der Highscore-Pfad hat dagegen weiterhin seinen eigenen bisherigen Drei-Byte-
+Abschluss. Tests vergleichen den Stackpointer nach P1→P2→P1 und prüfen X genau
+im freigebenden Wechselframe.
 Menüoverlay, ursprünglicher Titel-/Loadercode für RUN und Audio-Core bleiben
 über ihre bestehenden Archive erhalten. Audio-Core, PCM-Datei und Original-
 Level-/Grafik-/Farb-/Schussdaten werden bytegleich mit der Referenz geprüft.

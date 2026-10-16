@@ -1334,20 +1334,20 @@
   .label load=$a08a
   .label resuming=$1b14
   .label ready=$9905
-  .label hs_return=$9930
+  .label hs_return=$9932
   .label captured=$a0f8
   .label action=$1b15
   .label vector=$a014
   .label label_end=$a5a8
   .label render=$990a
   .label selected=$a09c
-  .label resume=$994b
+  .label resume=$994d
   .label init=$9900
   .label short_label=$a5ad
   .label new_game=$a022
   .label read=$a593
-  .label wait_guard=$9979
-  .label restart=$9995
+  .label wait_guard=$997b
+  .label restart=$9997
   .label active=$1b11
   .label capture=$9912
   .label index=$a065
@@ -1358,9 +1358,9 @@
   .label command=$1b17
   .label marker=$a5c3
   .label handled=$1b12
-  .label gate=$99a0
+  .label gate=$99a2
   .label session_best=$1b20
-  .label draw_labels=$99b7
+  .label draw_labels=$99b9
 }
 .label csc_done=$28ef
 .label v010_t4_tophi=$276e

@@ -41,13 +41,13 @@ class TwoPlayer(unittest.TestCase):
   self.assertEqual(d[TP['active']],0);self.assertEqual(d[TP['records']+4],29);self.assertEqual(d[TP['records']+12],29)
   self.assertEqual((self.word(m,0x1a0a),self.word(m,TP['records']+14)),(3,3));self.assertEqual(bytes(d[0x1fd9:0x1fdb]),b'\0\0')
  def test_switch_after_full_explosion_and_sound_then_restore_own_level(self):
-  m=self.game(4);d=m.memory.data;d[0x1a04:0x1a08]=(1234).to_bytes(4,'little');d[0x1a00:0x1a04]=(1234).to_bytes(4,'little');d[0x1fd9]=2
+  m=self.game(4);d=m.memory.data;initial_sp=m.cpu.sp;d[0x1a04:0x1a08]=(1234).to_bytes(4,'little');d[0x1a00:0x1a04]=(1234).to_bytes(4,'little');d[0x1fd9]=2
   self.lose(m,2);d[0xd720]=0x80;m.game_frame();self.assertEqual(d[TP['active']],0);self.assertEqual(d[N['c_ps']],2)
-  d[0xd720]=2;m.game_frame();self.assertEqual(d[TP['active']],1);self.assertEqual(d[N['number']],4);self.assertEqual(d[N['c_ps']],3)
+  d[0xd720]=2;m.game_frame();self.assertEqual(d[TP['active']],1);self.assertEqual(m.cpu.sp,initial_sp);self.assertEqual(d[N['number']],4);self.assertEqual(d[N['c_ps']],3)
   self.assertEqual(int.from_bytes(d[0x1a04:0x1a08],'little'),0);self.assertEqual(int.from_bytes(d[0x1a00:0x1a04],'little'),1234)
   self.assertEqual((d[N['c_blink']],d[N['c_flash']],d[N['c_visible']]),(150,25,1))
   m.cpu.a=37;m.call_at(N['transition']);d[0x1a04:0x1a08]=(5678).to_bytes(4,'little');d[0x1fda]=1
-  self.lose(m,2);d[0xd720]=2;m.game_frame();self.assertEqual(d[TP['active']],0);self.assertEqual(d[N['number']],4)
+  self.lose(m,2);d[0xd720]=2;m.game_frame();self.assertEqual(d[TP['active']],0);self.assertEqual(m.cpu.sp,initial_sp);self.assertEqual(d[N['number']],4)
   self.assertEqual(int.from_bytes(d[0x1a04:0x1a08],'little'),1234);self.assertEqual(d[TP['records']+12],37);self.assertEqual(bytes(d[0x1fd9:0x1fdb]),bytes((2,1)))
   self.assertEqual(bytes(d[N['p_active']:N['p_active']+8]),bytes(8));self.assertEqual(d[M.G['error']],0)
  def test_independent_bonus_saturation_and_both_hud_icon_caps(self):

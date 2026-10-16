@@ -84,8 +84,8 @@ Default-segment:
   $8e40-$8faf Stage 4a signed clip and NCM crop
   $9000-$97ff Unnamed
   $9800-$98ff Stage 3b-2 loaded path-pixie glyphs
-  $9900-$99b6 Stage10a native ROMA gate (retired unused thin-font data)
-  $99b7-$9a02 Stage10a native identity labels
+  $9900-$99b8 Stage10a native ROMA gate (retired unused thin-font data)
+  $99b9-$9a04 Stage10a native identity labels
   $9a56-$9afa Stage 6b1 attack start and visibility
   $9b00-$9bd9 Stage 3b-5b direction and BASIC sprite restoration
   $9c00-$9ced Stage7b5b eligible actor collection and uniform rank selection

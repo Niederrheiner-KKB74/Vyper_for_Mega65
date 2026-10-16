@@ -12,6 +12,9 @@ class EngineIntegration(unittest.TestCase):
    for name in ('VYHS.DAT','VYMN.DAT','VYSO.DAT'):assert cls.menu.files[name]==(ART/name).read_bytes(),'stale fixture'
   else:cls.menu=M.Machine().boot()
   assert cls.menu.cpu.pc==MN['menu_loop'],(hex(cls.menu.cpu.pc),cls.menu.error)
+  save_snapshot=os.getenv('STAGE10A_SAVE_BOOT_SNAPSHOT')
+  if save_snapshot:
+   with open(save_snapshot,'wb') as f:pickle.dump(cls.menu,f)
  def fixture(self):return copy.deepcopy(self.menu)
  def open_f3(self,m,entries=None):
   if entries is not None:m.files['VYHI.DAT']=F.encode(entries)

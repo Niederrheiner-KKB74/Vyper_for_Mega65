@@ -29,7 +29,9 @@ poll:
     jsr gate
     lda action
     beq !return+
-    pla // saved key + top-level hslink.key return only
+    pla // saved key, poll caller, and top-level key caller: five bytes
+    pla
+    pla
     pla
     pla
     jsr exit_to_basic
@@ -108,7 +110,7 @@ gate:
     sta $d030
     plp
     rts
-.if (*>$9a56) { .error "Two-player gate overlaps attack start" }
+.if (*>$99b9) { .error "Two-player gate overlaps identity labels" }
 
 *=$a000 "Stage10a identity controller (retired unused legacy type1 copies)"
 dispatch:
@@ -349,7 +351,7 @@ draw:
     sta rendering
     rts
 .if (*>$a200) { .error "Identity controller overlaps retained type2 frames" }
-*=$99b7 "Stage10a native identity labels"
+*=$99b9 "Stage10a native identity labels"
 draw_labels:
     lda #0
     sta life_shift
