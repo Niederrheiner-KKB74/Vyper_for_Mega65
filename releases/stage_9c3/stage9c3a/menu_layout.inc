@@ -1,0 +1,10 @@
+.const M_SEQ_LOAD=$4948
+.const M_RESTORE_VIDEO=$4331
+.const M_FILE_BYTES=$152c0
+.const M_FILE_SUM=$ebf0
+.const M_ATLAS_BYTES=$10b00
+.const M_OVERLAY=$80222c0
+.const M_FONT=$8024ac0
+.const M_SCREEN0=$8020b50
+.const M_SCREEN1=$8021320
+.const M_SCREEN2=$8021af0

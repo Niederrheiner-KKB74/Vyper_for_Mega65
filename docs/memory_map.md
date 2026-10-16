@@ -655,3 +655,12 @@ Keine neuen Puffer im DOS10000–11FFF, im ROM20000–3FFFF oder ab60000.
 Originale Audio-Ringe16400/5C500, Core1E000, Attic-Samples sowie Level-/Grafik-
 und Farbdateien bleiben unverändert. Menüatlas und VIC-/Colorzustand werden
 beim Rückweg neu initialisiert. [Vollständige Karte](stage9c3_highscore_integration.md).
+
+## Stage9c3a (Nachbesserung PR86)
+Gemeinsame Phasenkarte unverändert zu Stage9c3. Die kürzere Game-Over-Ausgabe
+schafft Platz für c_fire_state innerhalb9D70–9EF2; keine neue RAM-Allokation.
+Der gepackte Koordinator85B0–85FB bleibt gleich groß, nur die Zustandsabfrage
+wird durch einen JSR gleicher Länge ersetzt. Audio-/Projektildaten und ihre ABI
+bleiben unverändert. Highscore-Farbindex4 bleibt für gelbe Texte statisch,
+Index2 zyklisch für den Rahmen; keine zusätzlichen Palette-/Color-RAM-Bereiche.
+Neue Artefakte separat unter releases/stage_9c3/stage9c3a/.

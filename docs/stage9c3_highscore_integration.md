@@ -1,5 +1,14 @@
 # Stage9c3 – Highscore-Integration (Issue85, Entwicklung)
 
+**Aktueller Testbuild: Stage9c3a, Nachbesserungen in PR86 (16.10.2026).**
+Der Benutzer bestätigt den vorherigen Stand als funktional; keine Stable-Freigabe
+für die Nachbesserung. Frühere Stage9c3-Artefakte bleiben unverändert.
+Neue vollständige Artefakte: `releases/stage_9c3/stage9c3a/`.
+Build: `python tools/build_stage9c3a.py --kickass /pfad/KickAss.jar`.
+Start: `LOAD "STAGE9C3A",8` und `RUN`.
+Die nachfolgende ursprüngliche Integrationsbeschreibung gilt mit den unten
+aufgeführten Änderungen an Darstellung und Schussfreigabe.
+
 Basis: main/Stage9b1 Stable6052f677a8b84a841549561e874cd2f3290b2129;
 Highscore-Referenz Stage9c2 bbf996531f31920f2baa1111f74722d075fceba0.
 Kein Stable, kein Merge vor XEMU-Bestätigung.
@@ -192,3 +201,90 @@ Die oben aufgeführte XEMU-Abnahme einschließlich tatsächlicher Neustartpersis
 Originalsounds und langer RRB-/Audio-Last bleibt deshalb erforderlich.
 
 [Ausführungsprotokoll und SHA256](stage9c3_test_results.txt).
+
+## Stage9c3a – Nachbesserungen aus PR86
+
+### Bereinigte Highscore-Ansicht
+
+In der normalen Tabellenansicht werden keine Statusmeldung, IO-/DOS-Zahlen,
+Save-Bestätigung oder PAGE/Testzeile mehr gezeichnet. Das gilt auch bei regulär
+fehlender VYHI.DAT bzw. nicht vorhandenem TMP: Diese normalen Erststartzustände
+sind keine Benutzerfehler. Intern bleiben sämtliche Statuswerte, CRC-Prüfungen,
+Recovery- und Schreibschutzregeln unverändert.
+
+Übrig bleiben die Originalüberschrift, zwei Tabellenköpfe, die80 Einträge auf
+vier Seiten, die originale Fußzeile und genau ein zusätzlicher Navigationshinweis:
+`CURSOR / JOYSTICK LEFT-RIGHT: CHANGE PAGE` (Zeile18, horizontal zentriert).
+Überschrift (Zeile3), Navigation (Zeile18) und Originalfußzeile (Zeile21) verwenden
+fest den unveränderlichen gelben Palettenindex4 (RGB4 FF0). Der Rahmen behält
+Index2 und den Original-Farbzyklus. Die Tabellenzeilen wechseln weiterhin einzeln
+zwischen den Indizes3/4/5 für Blau/Gelb/Rot, beide Spalten pro Zeile identisch.
+Der VIC-IV-Modus erzwingt wie bisher80 Zeichen pro Zeile/H640; alle Texte liegen
+innerhalb der Rahmeninnenfläche X5..74 und außerhalb der Tabellenzeilen7..16.
+
+Bei Namenseingabe bleibt die notwendige Eingabe-/Korrekturanweisung sichtbar.
+Tatsächliche Datei-/Recovery-/Schreibfehler zeigen weiterhin ihre Erklärung und
+in der Fehleransicht die vorhandenen IO-/DOS-Codes. Die Navigationszeile bleibt
+auch dann frei. Name und Cursorfeld erhalten Vorrang vor Diagnosezahlen;
+spätestens nach fehlgeschlagener Bestätigung ist der Fehler mit Codes sichtbar.
+Es wurden keine Fehlerbehandlung oder Dateibefehle abgeschaltet.
+
+### Game Over und Respawn
+
+GAME OVER bleibt nach vollständiger Explosion sichtbar, die beiden veralteten
+Zeilen R–RESTART und X–EXIT werden nicht mehr ausgegeben. Das150-Frame-Fenster,
+Originalsound, einmalige Qualifikation, Namenseingabe, Speicherung und Rückweg
+ins Startmenü bleiben gleich. Bestehende R-/X-Tastenfunktionen bleiben erhalten.
+
+Die vorhandene BLINK-Zustandsmaschine war bereits deterministisch implementiert:
+Beim Respawn setzt c_wait Sichtbarkeit1, Blinktakt25 und Schutzzeit150. c_timers
+wechselt nach25/50/75/100/125 Frames sichtbar/unsichtbar; bei150 Frames endet
+der Schutz mit Sichtbarkeit1 und ACTIVE. Dieser Timer und die Unverwundbarkeit
+wurden bewusst unverändert übernommen. Der tatsächliche RRB-Renderer unterdrückt
+den Player-Pixie nur visuell, ohne seine X-/Y-Koordinaten zu verändern.
+
+Die bisherige c_tick-Schussfreigabe ließ ausschließlich ACTIVE zu und setzte
+während BLINK den Feuer-Latch immer wieder. Ein gleich großer JSR ersetzt nun
+nur die ursprüngliche Zustandsabfrage: c_fire_state erlaubt ACTIVE oder BLINK.
+WAIT, Explosion und OVER bleiben gesperrt. Die frei gewordene zweite Game-Over-
+Hinweisroutine bietet Platz für diesen kleinen Helper; der gepackte Koordinator
+und alle Audio-ABI-/Projektildatenadressen bleiben an ihren bisherigen Stellen.
+
+p_player_fire selbst bleibt byteidentisch: maximal zwei Projektile, bestehender
+Feuer-Latch mit Freigabe vor neuem Druck, Geschwindigkeit und3×7-Grafik unverändert.
+Der Ursprung wird aus dem aktuellen Player-X+8 und dem konstanten Player-Y
+gebildet, unabhängig von c_visible. Keine zusätzlichen oder doppelten Schuss-
+und Audioereignisse. Der Player bleibt auch im unsichtbaren Intervall steuerbar;
+Kollisionen können während BLINK weiterhin kein Leben abziehen.
+
+### Build und Prüfung von Stage9c3a
+
+```sh
+python tools/build_stage9c3a.py --kickass /pfad/zu/KickAss.jar
+PYTHONPATH=tests:tools:/pfad/zu/py65 python -m unittest test_stage9c3a test_stage9c3a_engine -v
+```
+
+Die Quellen sind separat als stage9c3a angelegt. Der Builder schützt zusätzlich
+den vollständigen Stage9c3-Stand daf45af4a95f34e45c84103c55d6fc25d79a0a1d;
+Originale Stage9c3-Quellen, Builder und bisheriges Release werden nicht überschrieben.
+Das neue vollständige Release liegt im Unterordner stage9c3a des bisherigen
+Stage9c3-Releases. Alle Original-DAT-/Sound-/Menüdateien bleiben identisch;
+VYHI-v1-Datenformat und sichere Schreibtransaktion ändern sich nicht.
+
+Neue Hostprüfungen kontrollieren feste gelbe Farben trotz laufendem Rahmenzyklus,
+leere normale Statuszeilen, echte Fehleranzeige, vollständige Rahmen/Textgrenzen,
+GAME OVER ohne weitere RRB-Hinweiszeilen sowie jeden der150 Schutzframes. Sie prüfen
+auch tatsächliche RRB-Sichtbarkeit, Bewegung und beide Schüsse während Unsichtbarkeit,
+keine Wiederholung bei gehaltenem Feuer, Poollimit und wieder normale Verwundbarkeit.
+Die vollständigen bisherigen Übergangs-/Persistenztests werden weiter ausgeführt.
+
+XEMU-Neuabnahme bleibt erforderlich: F3/Paging/Navigation und feste Farben,
+Game Over mit und ohne Eintrag, echte D81-Persistenz, blinkender steuer-/schießbarer
+Player, zwei Schüsse, unveränderte Sounds, RRB-/Audio-Last und X→BASIC/RUN.
+Keine Stable-Markierung oder Merge vor ausdrücklicher Bestätigung.
+[Stage9c3a-Prüfprotokoll](stage9c3a_test_results.txt).
+
+Stage9c3a-Prüfergebnis: **16 Hosttests bestanden**, inklusive Kaltstart und erneutem
+RUN; alle94 Ausgabedateien zweier Builds byteidentisch. Blinken verändert nur
+c_visible und RRB-Einträge, nicht Hardware-Spritefreigabe oder Audio-DMA.
+XEMU-Abnahme weiterhin offen.

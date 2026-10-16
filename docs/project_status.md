@@ -820,3 +820,17 @@ Fünf vollständige Integrationstests mit Kaltstart und erneutem RUN bestanden;
 Tabellen-/Persistenzprotokoll und XEMU-Abnahme siehe
 [Technik](stage9c3_highscore_integration.md) und [Prüfbericht](stage9c3_test_results.txt).
 **Keine Stable-Markierung, kein Merge vor ausdrücklicher Benutzerbestätigung.**
+
+## Stage9c3a – Nachbesserungen im bestehenden PR86
+Benutzerfeedback16.10.2026: Stage9c3 funktional bestätigt, neue Abnahme erforderlich.
+Branch bleibt stage9c3; separate Quellen und vollständiger Testbuild unter
+releases/stage_9c3/stage9c3a/. Normale Highscore-Ansicht ohne IO-/Statuszeilen,
+zentrierter Navigationshinweis, feste gelbe Überschrift/Untertexte, Rahmenzyklus
+und einzelne Tabellen-Farbbänder erhalten. Echte Fehler bleiben sichtbar.
+Nur GAME OVER ohne R/X-Hinweiszeilen; bestehender automatischer Ablauf unverändert.
+Schießen jetzt auch während BLINK, einschließlich unsichtbarer Player-Phase;
+bestehender25-Frame-Blinktimer,150-Frame-Schutz, Bewegung, zwei Projektilslots,
+Feuer-Latch, Grafik, Geschwindigkeit und Kollisionsschutz bleiben erhalten.
+Kein Stable/Merge vor erneuter Benutzerbestätigung.
+[Änderungen und Abnahme](stage9c3_highscore_integration.md),
+[Prüfprotokoll](stage9c3a_test_results.txt).
