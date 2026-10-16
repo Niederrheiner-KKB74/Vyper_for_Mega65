@@ -1,0 +1,4 @@
+.const REG_COUNT=162
+.const BLOCK_SIZE=490
+.const DUMP_SIZE=1992
+.const RESTORE_COUNT=54

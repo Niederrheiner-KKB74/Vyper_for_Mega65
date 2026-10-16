@@ -1,0 +1,34 @@
+//------------------------------------------------------
+//------------------------------------------------------
+//         Kick Assembler v5.25 by Mads Nielsen         
+//------------------------------------------------------
+//------------------------------------------------------
+Output dir: .
+parsing
+flex pass 1
+flex pass 2
+Output pass
+  Controller end: 2cba
+  Controller must end below charset=true (true)
+Writing prg file: ./STAGE10B1.PRG
+
+Memory Map
+----------
+Default-segment:
+  $2001-$200c BASIC
+  $2100-$2cb9 Diagnostic controller
+  $4000-$47ff Original menu charset
+  $4800-$4fc7 Persistent diagnostic buffer
+  $6000-$6bff Four palette backups
+  $8000-$803f Transparent NCM guard
+  $8800-$8bff Grid pattern atlas
+  $9040-$90bf Original player NCM (diagnostic pixie)
+  $90c0-$90ff Transparent NCM guard 2
+  $9200-$927f Mono sprite test patterns
+  $9300-$9333 16bit sprite pointers
+  $a000-$b2bf Physical scene screen source
+  $b300-$c5bf Physical scene colour source
+
+
+Made 1 asserts , 0 failed
+Writing Symbol file: stage10b1.sym

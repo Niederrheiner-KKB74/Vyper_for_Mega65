@@ -905,3 +905,19 @@ zentriert im unteren Drittel, mit exakt dem Gegner-Highlight-Cycling. Gameplay i
 bis zum Ende gesperrt, Sterne und Streaming laufen weiter. R/+/- zählen ihren
 bereits laufenden Eingabeframe nicht mit. Frühere HUD-/BASIC-Exit-Fixes bleiben.
 Keine Stable-Markierung und kein Merge vor erneuter Nutzerabnahme.
+
+## Stage10b1 — VIC-IV-/RRB-Diagnose für Core0.97 (Issue89)
+
+Separater Entwicklungsbranch `stage10b1-hardware-diagnostics`, keine
+Änderung an Stage10a1 oder Stable-Releases. Eigenständige Referenzszene mit
+240×200-Playfield, HUD, Raster, transparentem Original-RRB-Pixie,
+Hardware-Sprite und1×4-Projektil. Zwei Initialisierungsprofile, vier
+adressierte Registerschnappschüsse, SEQ-Export und RAM-Fallback sowie
+Vergleichsskript. PAL80×25, identische ROM wie XEMU vom Benutzer bestätigt.
+
+Reproduzierbare Assembly/D81-Prüfung und ergänzende lokale Headless-XEMU-
+Speicher-/Export-/Restoretests; echter MEGA65 Core0.97 aaf4542 und exaktes
+XEMU-Release20260129235930 müssen noch durch den Benutzer verglichen werden.
+Keine Hardwareursache behauptet, kein produktiver Fix, nicht Stable und
+kein Merge freigegeben. Anleitung und Beleggrenzen:
+[Stage10b1](stage10b1_viciv_hardware_comparison.md).
