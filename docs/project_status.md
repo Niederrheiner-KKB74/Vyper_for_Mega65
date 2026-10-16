@@ -921,3 +921,18 @@ XEMU-Release20260129235930 müssen noch durch den Benutzer verglichen werden.
 Keine Hardwareursache behauptet, kein produktiver Fix, nicht Stable und
 kein Merge freigegeben. Anleitung und Beleggrenzen:
 [Stage10b1](stage10b1_viciv_hardware_comparison.md).
+
+## Stage10b1a — NORRDEL bei konstantem Profil E (Issue91)
+
+Separater Branch `stage10b1a-norrdel-ab`, interaktiver Diagnosetest A/B,
+keine Änderung an der produktiven Stage10a1 oder der Stage10b1-Basis.
+A setzt NORRDEL1, B NORRDEL0; PALEMU0/DBLRR0 und sonstige Konfiguration
+bleiben gleich. Vier neue versionierte Registerphasen inklusive erhaltenem
+D012-/D011-Startkontext sowie36292Byte-Speicherbegleitdatei aus tatsächlicher
+DMA-Rücklesung. Export/Analyse ohne lesbare HUD-Anzeige möglich.
+
+Reproduzierbarer KickAssembler-Build, PRG/D81, neun Hosttests und ergänzende
+lokale XEMU-Speicher-/Export-/A→B→A-/Exit-/RUN-Prüfung. Keine reale
+Hardwareabnahme oder Abnahme der exakten Ziel-XEMU-Version behauptet.
+Kein Merge/Stable und kein Stage10b2-Fix; erst Nutzervergleich auswerten.
+Anleitung: [Stage10b1a](stage10b1a_norrdel_ab.md).
