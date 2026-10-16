@@ -1,0 +1,930 @@
+{
+  "left": {
+    "profile": "A",
+    "environment": "H",
+    "sha256": "6cf42b09046fdcc3b9db7501a4b132f885481e85dc851e4dc05508d2c82ada59",
+    "phase_context": [
+      {
+        "phase": 1,
+        "D012": 111,
+        "D011": 27,
+        "classification": "volatile phase-start context"
+      },
+      {
+        "phase": 2,
+        "D012": 7,
+        "D011": 139,
+        "classification": "volatile phase-start context"
+      },
+      {
+        "phase": 3,
+        "D012": 15,
+        "D011": 139,
+        "classification": "volatile phase-start context"
+      },
+      {
+        "phase": 4,
+        "D012": 99,
+        "D011": 27,
+        "classification": "volatile phase-start context"
+      }
+    ]
+  },
+  "right": {
+    "profile": "B",
+    "environment": "H",
+    "sha256": "0b7bbb09b7ef9b944944aa5cb9a5c91ebb5c64e4ef613e571ea693f9d87ac420",
+    "phase_context": [
+      {
+        "phase": 1,
+        "D012": 46,
+        "D011": 155,
+        "classification": "volatile phase-start context"
+      },
+      {
+        "phase": 2,
+        "D012": 53,
+        "D011": 139,
+        "classification": "volatile phase-start context"
+      },
+      {
+        "phase": 3,
+        "D012": 7,
+        "D011": 139,
+        "classification": "volatile phase-start context"
+      },
+      {
+        "phase": 4,
+        "D012": 91,
+        "D011": 27,
+        "classification": "volatile phase-start context"
+      }
+    ]
+  },
+  "same_profile": false,
+  "first_stable_divergence_phase": 1,
+  "differences": [
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D011",
+      "name": "register $D011",
+      "left": "$1B",
+      "right": "$9B",
+      "mask": "$7F",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D012",
+      "name": "register $D012",
+      "left": "$70",
+      "right": "$2F",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D019",
+      "name": "register $D019",
+      "left": "$60",
+      "right": "$E3",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D040",
+      "name": "register $D040",
+      "left": "$00",
+      "right": "$02",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D041",
+      "name": "register $D041",
+      "left": "$01",
+      "right": "$56",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D042",
+      "name": "register $D042",
+      "left": "$00",
+      "right": "$02",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D043",
+      "name": "register $D043",
+      "left": "$01",
+      "right": "$56",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D044",
+      "name": "register $D044",
+      "left": "$00",
+      "right": "$02",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D045",
+      "name": "register $D045",
+      "left": "$01",
+      "right": "$56",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D046",
+      "name": "register $D046",
+      "left": "$00",
+      "right": "$02",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D047",
+      "name": "register $D047",
+      "left": "$01",
+      "right": "$56",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D050",
+      "name": "horizontal raster low",
+      "left": "$C6",
+      "right": "$00",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D051",
+      "name": "horizontal raster high / DBLRR NORRDEL",
+      "left": "$83",
+      "right": "$80",
+      "mask": "$C0",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D052",
+      "name": "physical raster low",
+      "left": "$E5",
+      "right": "$64",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D053",
+      "name": "physical raster high / output controls",
+      "left": "$80",
+      "right": "$82",
+      "mask": "$E0",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D700",
+      "name": "register $D700",
+      "left": "$C7",
+      "right": "$E0",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D701",
+      "name": "register $D701",
+      "left": "$02",
+      "right": "$26",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D705",
+      "name": "register $D705",
+      "left": "$C7",
+      "right": "$E0",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D62A",
+      "name": "register $D62A",
+      "left": "$FD",
+      "right": "$FF",
+      "mask": "$FF",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D012",
+      "name": "register $D012",
+      "left": "$08",
+      "right": "$36",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D019",
+      "name": "register $D019",
+      "left": "$E1",
+      "right": "$E3",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D041",
+      "name": "register $D041",
+      "left": "$01",
+      "right": "$56",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D043",
+      "name": "register $D043",
+      "left": "$01",
+      "right": "$56",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D045",
+      "name": "register $D045",
+      "left": "$01",
+      "right": "$56",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D047",
+      "name": "register $D047",
+      "left": "$01",
+      "right": "$56",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D050",
+      "name": "horizontal raster low",
+      "left": "$27",
+      "right": "$00",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D051",
+      "name": "horizontal raster high / DBLRR NORRDEL",
+      "left": "$81",
+      "right": "$00",
+      "mask": "$C0",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D052",
+      "name": "physical raster low",
+      "left": "$17",
+      "right": "$02",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D053",
+      "name": "physical raster high / output controls",
+      "left": "$82",
+      "right": "$80",
+      "mask": "$E0",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D62A",
+      "name": "register $D62A",
+      "left": "$FD",
+      "right": "$FF",
+      "mask": "$FF",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D012",
+      "name": "register $D012",
+      "left": "$10",
+      "right": "$08",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D019",
+      "name": "register $D019",
+      "left": "$E1",
+      "right": "$E3",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D041",
+      "name": "register $D041",
+      "left": "$01",
+      "right": "$56",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D043",
+      "name": "register $D043",
+      "left": "$01",
+      "right": "$56",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D045",
+      "name": "register $D045",
+      "left": "$01",
+      "right": "$56",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D047",
+      "name": "register $D047",
+      "left": "$01",
+      "right": "$56",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D050",
+      "name": "horizontal raster low",
+      "left": "$6F",
+      "right": "$28",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D051",
+      "name": "horizontal raster high / DBLRR NORRDEL",
+      "left": "$82",
+      "right": "$01",
+      "mask": "$C0",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D052",
+      "name": "physical raster low",
+      "left": "$26",
+      "right": "$17",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D62A",
+      "name": "register $D62A",
+      "left": "$FD",
+      "right": "$FF",
+      "mask": "$FF",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D012",
+      "name": "register $D012",
+      "left": "$64",
+      "right": "$5C",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D050",
+      "name": "horizontal raster low",
+      "left": "$B1",
+      "right": "$CA",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D051",
+      "name": "horizontal raster high / DBLRR NORRDEL",
+      "left": "$80",
+      "right": "$03",
+      "mask": "$C0",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D052",
+      "name": "physical raster low",
+      "left": "$CE",
+      "right": "$BE",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    }
+  ],
+  "geometry_left": [
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 1.0,
+      "native_pixels_per_source_pixel": 1.0,
+      "line_step_bytes": 80,
+      "characters_per_row": 80,
+      "last_row_index": 24,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 2048,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    }
+  ],
+  "geometry_right": [
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 1.0,
+      "native_pixels_per_source_pixel": 1.0,
+      "line_step_bytes": 80,
+      "characters_per_row": 80,
+      "last_row_index": 24,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 2048,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    }
+  ],
+  "interpretation": "Value comparison only. Equal registers do not prove equal rendering. Use photographs and pinned core semantics. Environment labels are user declarations.",
+  "phase_context_differences": [
+    {
+      "phase": 1,
+      "left": {
+        "phase": 1,
+        "D012": 111,
+        "D011": 27,
+        "classification": "volatile phase-start context"
+      },
+      "right": {
+        "phase": 1,
+        "D012": 46,
+        "D011": 155,
+        "classification": "volatile phase-start context"
+      },
+      "classification": "volatile timing context"
+    },
+    {
+      "phase": 2,
+      "left": {
+        "phase": 2,
+        "D012": 7,
+        "D011": 139,
+        "classification": "volatile phase-start context"
+      },
+      "right": {
+        "phase": 2,
+        "D012": 53,
+        "D011": 139,
+        "classification": "volatile phase-start context"
+      },
+      "classification": "volatile timing context"
+    },
+    {
+      "phase": 3,
+      "left": {
+        "phase": 3,
+        "D012": 15,
+        "D011": 139,
+        "classification": "volatile phase-start context"
+      },
+      "right": {
+        "phase": 3,
+        "D012": 7,
+        "D011": 139,
+        "classification": "volatile phase-start context"
+      },
+      "classification": "volatile timing context"
+    },
+    {
+      "phase": 4,
+      "left": {
+        "phase": 4,
+        "D012": 99,
+        "D011": 27,
+        "classification": "volatile phase-start context"
+      },
+      "right": {
+        "phase": 4,
+        "D012": 91,
+        "D011": 27,
+        "classification": "volatile phase-start context"
+      },
+      "classification": "volatile timing context"
+    }
+  ],
+  "configuration_left": {
+    "fixed_E_NORRDEL_DBLRR_checks_pass": true,
+    "failures": []
+  },
+  "configuration_right": {
+    "fixed_E_NORRDEL_DBLRR_checks_pass": true,
+    "failures": []
+  },
+  "unexpected_stable_differences": [
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D62A",
+      "name": "register $D62A",
+      "left": "$FD",
+      "right": "$FF",
+      "mask": "$FF",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D62A",
+      "name": "register $D62A",
+      "left": "$FD",
+      "right": "$FF",
+      "mask": "$FF",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D62A",
+      "name": "register $D62A",
+      "left": "$FD",
+      "right": "$FF",
+      "mask": "$FF",
+      "stable_bits_differ": true,
+      "classification": "compare stable bits"
+    }
+  ],
+  "memory_comparison": {
+    "regions": [
+      {
+        "name": "screen",
+        "address": 57344,
+        "bytes": 4800,
+        "left_sha256": "1ada3e650cd6768dd271f37624aa1ce9cb8f175dc2e7e29b27b5f41e49779996",
+        "right_sha256": "fd10fde99108024a4b3a02ecff6df634968c33c243da83463b0e7bdd67debcd1",
+        "different_bytes": 1,
+        "unexpected_different_bytes": 0,
+        "first64_differences": [
+          {
+            "offset": 44,
+            "address": "$000E02C",
+            "left": 1,
+            "right": 2,
+            "declared_variant_marker": true
+          }
+        ]
+      },
+      {
+        "name": "colour",
+        "address": 267911168,
+        "bytes": 4800,
+        "left_sha256": "ce74bf868880fae3a4ec5e4e6ae0355c95ab227b219a4b2102c5802cf3c6d07b",
+        "right_sha256": "ce74bf868880fae3a4ec5e4e6ae0355c95ab227b219a4b2102c5802cf3c6d07b",
+        "different_bytes": 0,
+        "unexpected_different_bytes": 0,
+        "first64_differences": []
+      },
+      {
+        "name": "font",
+        "address": 16384,
+        "bytes": 2048,
+        "left_sha256": "4c020e39e2f1297b46362e5980b6acbb1ce3526ed1fa2b567ea5e47afaaac6b6",
+        "right_sha256": "4c020e39e2f1297b46362e5980b6acbb1ce3526ed1fa2b567ea5e47afaaac6b6",
+        "different_bytes": 0,
+        "unexpected_different_bytes": 0,
+        "first64_differences": []
+      },
+      {
+        "name": "grid",
+        "address": 98304,
+        "bytes": 24000,
+        "left_sha256": "a3539bdb244f73db6035d7d4ddf54b04ff6a59babd6cef150ce328be85f73136",
+        "right_sha256": "a3539bdb244f73db6035d7d4ddf54b04ff6a59babd6cef150ce328be85f73136",
+        "different_bytes": 0,
+        "unexpected_different_bytes": 0,
+        "first64_differences": []
+      },
+      {
+        "name": "pixie",
+        "address": 36928,
+        "bytes": 128,
+        "left_sha256": "c48bab16d137a25e90a2ba715e58bb3d93e54fdb8e211bfdd45df8f2b820b2e6",
+        "right_sha256": "c48bab16d137a25e90a2ba715e58bb3d93e54fdb8e211bfdd45df8f2b820b2e6",
+        "different_bytes": 0,
+        "unexpected_different_bytes": 0,
+        "first64_differences": []
+      },
+      {
+        "name": "sprites",
+        "address": 37376,
+        "bytes": 128,
+        "left_sha256": "731c25dd03ab27ecb45054b13b88914800d72aec6e1d0d5c33be8d38c3e0850e",
+        "right_sha256": "731c25dd03ab27ecb45054b13b88914800d72aec6e1d0d5c33be8d38c3e0850e",
+        "different_bytes": 0,
+        "unexpected_different_bytes": 0,
+        "first64_differences": []
+      },
+      {
+        "name": "pointers",
+        "address": 37632,
+        "bytes": 4,
+        "left_sha256": "7b462311fa25d1ad73ee3dc1239cc2c9b01cba505fa00754479332626ffb2123",
+        "right_sha256": "7b462311fa25d1ad73ee3dc1239cc2c9b01cba505fa00754479332626ffb2123",
+        "different_bytes": 0,
+        "unexpected_different_bytes": 0,
+        "first64_differences": []
+      },
+      {
+        "name": "guards",
+        "address": 32768,
+        "bytes": 64,
+        "left_sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b",
+        "right_sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b",
+        "different_bytes": 0,
+        "unexpected_different_bytes": 0,
+        "first64_differences": []
+      },
+      {
+        "name": "guard2",
+        "address": 37056,
+        "bytes": 64,
+        "left_sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b",
+        "right_sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b",
+        "different_bytes": 0,
+        "unexpected_different_bytes": 0,
+        "first64_differences": []
+      }
+    ],
+    "unexpected_different_bytes": 0,
+    "note": "Only screen byte44 is an expected A/B annotation; none is ignored for the same variant across platforms."
+  }
+}

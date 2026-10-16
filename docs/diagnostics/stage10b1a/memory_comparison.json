@@ -1,0 +1,104 @@
+{
+  "regions": [
+    {
+      "name": "screen",
+      "address": 57344,
+      "bytes": 4800,
+      "left_sha256": "1ada3e650cd6768dd271f37624aa1ce9cb8f175dc2e7e29b27b5f41e49779996",
+      "right_sha256": "fd10fde99108024a4b3a02ecff6df634968c33c243da83463b0e7bdd67debcd1",
+      "different_bytes": 1,
+      "unexpected_different_bytes": 0,
+      "first64_differences": [
+        {
+          "offset": 44,
+          "address": "$000E02C",
+          "left": 1,
+          "right": 2,
+          "declared_variant_marker": true
+        }
+      ]
+    },
+    {
+      "name": "colour",
+      "address": 267911168,
+      "bytes": 4800,
+      "left_sha256": "ce74bf868880fae3a4ec5e4e6ae0355c95ab227b219a4b2102c5802cf3c6d07b",
+      "right_sha256": "ce74bf868880fae3a4ec5e4e6ae0355c95ab227b219a4b2102c5802cf3c6d07b",
+      "different_bytes": 0,
+      "unexpected_different_bytes": 0,
+      "first64_differences": []
+    },
+    {
+      "name": "font",
+      "address": 16384,
+      "bytes": 2048,
+      "left_sha256": "4c020e39e2f1297b46362e5980b6acbb1ce3526ed1fa2b567ea5e47afaaac6b6",
+      "right_sha256": "4c020e39e2f1297b46362e5980b6acbb1ce3526ed1fa2b567ea5e47afaaac6b6",
+      "different_bytes": 0,
+      "unexpected_different_bytes": 0,
+      "first64_differences": []
+    },
+    {
+      "name": "grid",
+      "address": 98304,
+      "bytes": 24000,
+      "left_sha256": "a3539bdb244f73db6035d7d4ddf54b04ff6a59babd6cef150ce328be85f73136",
+      "right_sha256": "a3539bdb244f73db6035d7d4ddf54b04ff6a59babd6cef150ce328be85f73136",
+      "different_bytes": 0,
+      "unexpected_different_bytes": 0,
+      "first64_differences": []
+    },
+    {
+      "name": "pixie",
+      "address": 36928,
+      "bytes": 128,
+      "left_sha256": "c48bab16d137a25e90a2ba715e58bb3d93e54fdb8e211bfdd45df8f2b820b2e6",
+      "right_sha256": "c48bab16d137a25e90a2ba715e58bb3d93e54fdb8e211bfdd45df8f2b820b2e6",
+      "different_bytes": 0,
+      "unexpected_different_bytes": 0,
+      "first64_differences": []
+    },
+    {
+      "name": "sprites",
+      "address": 37376,
+      "bytes": 128,
+      "left_sha256": "731c25dd03ab27ecb45054b13b88914800d72aec6e1d0d5c33be8d38c3e0850e",
+      "right_sha256": "731c25dd03ab27ecb45054b13b88914800d72aec6e1d0d5c33be8d38c3e0850e",
+      "different_bytes": 0,
+      "unexpected_different_bytes": 0,
+      "first64_differences": []
+    },
+    {
+      "name": "pointers",
+      "address": 37632,
+      "bytes": 4,
+      "left_sha256": "7b462311fa25d1ad73ee3dc1239cc2c9b01cba505fa00754479332626ffb2123",
+      "right_sha256": "7b462311fa25d1ad73ee3dc1239cc2c9b01cba505fa00754479332626ffb2123",
+      "different_bytes": 0,
+      "unexpected_different_bytes": 0,
+      "first64_differences": []
+    },
+    {
+      "name": "guards",
+      "address": 32768,
+      "bytes": 64,
+      "left_sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b",
+      "right_sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b",
+      "different_bytes": 0,
+      "unexpected_different_bytes": 0,
+      "first64_differences": []
+    },
+    {
+      "name": "guard2",
+      "address": 37056,
+      "bytes": 64,
+      "left_sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b",
+      "right_sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b",
+      "different_bytes": 0,
+      "unexpected_different_bytes": 0,
+      "first64_differences": []
+    }
+  ],
+  "unexpected_different_bytes": 0,
+  "note": "Only screen byte44 is an expected A/B annotation; none is ignored for the same variant across platforms."
+}

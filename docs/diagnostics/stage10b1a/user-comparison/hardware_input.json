@@ -1,0 +1,29 @@
+{
+  "filename": "VYPER_STAGE10B1A.d81",
+  "source": "user-confirmed MEGA65 supplemental image",
+  "bytes": 819200,
+  "sha256": "94ad4b6dab463acf0635f47cded9ff5b9e1a08770e59d7babb68ec456e2bba4a",
+  "PRG_matches_release": true,
+  "dumps": [
+    {
+      "name": "V1AAH.REG",
+      "sha256": "6cf42b09046fdcc3b9db7501a4b132f885481e85dc851e4dc05508d2c82ada59",
+      "valid": true
+    },
+    {
+      "name": "V1AAH.MEM",
+      "sha256": "3d126c4c33d313d8bed7d4a93c517d835174e31f0d050129b2fb5a0eb21da9af",
+      "valid": true
+    },
+    {
+      "name": "V1ABH.REG",
+      "sha256": "0b7bbb09b7ef9b944944aa5cb9a5c91ebb5c64e4ef613e571ea693f9d87ac420",
+      "valid": true
+    },
+    {
+      "name": "V1ABH.MEM",
+      "sha256": "082c51f7213c2f8ca7b07aaf977fa40887bc53d481ca6b0d7e1294f610393862",
+      "valid": true
+    }
+  ]
+}
