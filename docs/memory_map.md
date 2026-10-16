@@ -727,3 +727,14 @@ Defaults weiterhin3E80. Zweiter F2-Balken nutzt den bestehenden Präfix von Zeil
 Playfield oder Lebenszellen anzutasten. Oberer Balken12 und Punkte22/23 bleiben.
 F1-Refresh korrigiert initiales P1-Lebensfeld und stale Vorlage Att.115 auf den
 unveränderten dynamischen Wert175. Keine Charset-/Spielparameteränderung.
+
+### Stage10a1 – Originalregeln/Get ready in PR88
+
+1B1C..1B1F:100-Frame-Countdown, vorherige Animationspause, temporäre Zeile,
+Eingabeframe-Sperre; bereits reservierte private2P-Bytes. Neue nativeGates9A2A..9A49,
+mappedAF08..AFD4, sicher vorAttack9A56 bzw.VYSHB000. twop.gate sperrt IRQs und
+restauriert D030. ControllerA000..A1E3; Typ2A200..A57F bleibt erhalten.
+Kein neuer Grafik-/Audio-/DMA-Puffer. Get-ready-Texte nur in dynamischen Tails
+von Screenzeilen17/19 abByte84, entsprechende Color-RAM-AdressenFF80000+row*192+84.
+Beide Zeilen werden danach über den vorhandenen Screen-/Farben-Löscher restauriert.
+HUD-Präfixe, Sternbitmap18000..1DDBF, Paletten und Audio-ABI unverändert.

@@ -9,7 +9,7 @@ import build_stage5d1a as ENGINE
 import convert_stage5d1_title as TITLE
 import convert_stage6b1_menu as MENU
 ROOT=Path(__file__).resolve().parents[1]
-SOURCES=[f'stage10a1{s}.asm' for s in ENGINE.COMPONENTS+['_title','_entry_projection','_cycling','_integration','_banking','_stars','_transition','_selection','_fire','_fire_loader','_motion','_audio_gate','_audio_loader','_highscore','_two_player','_bootstrap_cache']]
+SOURCES=[f'stage10a1{s}.asm' for s in ENGINE.COMPONENTS+['_title','_entry_projection','_cycling','_integration','_banking','_stars','_transition','_selection','_fire','_fire_loader','_motion','_audio_gate','_audio_loader','_highscore','_two_player','_bootstrap_cache','_get_ready']]
 STABLES={'2954dc57418f3898b8f958a9d15d79a57b2dd6bb':'2954dc57418f3898b8f958a9d15d79a57b2dd6bb','bd63682fa37df2853338b499f1210ec9dd2f56dc':'bd63682fa37df2853338b499f1210ec9dd2f56dc','a41e92ab8e4994a0a3288d60d63984d8593c8332':'a41e92ab8e4994a0a3288d60d63984d8593c8332','ec7a512bf913e522e5aaadfd57c9c4e7bb019bef':'ec7a512bf913e522e5aaadfd57c9c4e7bb019bef','stage7b1-stable':'5d9c4f563f9fd3de7f5786b623791b7fc26e79e7','stage7a2-stable':'b4cc1f7f4f2250bb69664ba15613350942e29d9c','stage7a1-stable':'9ebbcabd2a792661b0da354f2716abb7772d74a6','stage6b1-stable':'31ae0bd4bcdd79f3217126f902cf9978907cb48d','stage5d1a-stable':'39890c0095fab55b2ea71f95cccf59a3419848c6','stage6a2-stable':'24559e46c4f237492bc4e03439c86ea6c402a0b0'}
 def protect_stable():
     import io,tarfile
@@ -130,13 +130,14 @@ def build(jar,output):
         report['attack_motion']={'packed_cursor':'cyclic; only cursor resets at length','coordinates':'accumulated signed16','bottom_exit_y':200,'native_bottom_y':216,'shot_and_sound_plan':'once at attack start; never on wrap','one_byte_level_ban_preserved':[25,50,99,100],'base':'9bbe02ed9d284575c14c23954659a781d6889ee9'}
         report['audio']=audio
         report['stage10a1']={'menu':'unchanged; user confirmed configuration issue',
-          'turn_handoff':'top-level main-loop JMP after key-call chain returned; no five-byte stack discard',
+          'turn_handoff':'ordinary death stays active; successful level switches in-place after full transition; final death switches only after highscore return',
           'resume_IRQ':'masked before bootstrap rearm and level reconstruction',
           'bootstrap_cache':{'code':[0x8880,0x88bf],'source':[0x5000,0x5640],'attic':[0x080a0000,0x080a0640]},
           'title_cache':'re-armed on every resumed turn before font overwrites4000..47ff',
-          'hud':{'p2_rows':[13,14,15],'p2_life_rows':[16,20],'separator_row':12,'point_rows':[22,23],'bottom_margin_row':24,
+          'hud':{'p2_rows':[13,14,15],'p2_life_rows':[16,20],'separator_rows':[12,21], 'initial_shadow_invalidation':True,'point_rows':[22,23],'bottom_margin_row':24,
                  'active_inks':[12,13,14],'inactive_ink':11,'controls_hidden_2P_only':True}}
 
+        report['stage10a1']['get_ready']={'frames':100,'Hz':50,'mode':3,'state':[0x1b1c,0x1b20],'native_code':[0x9a2a,0x9a4a],'mapped_code_start':0xaf08,'palette':'same bank1 cc_index as enemy COLOR02','rows':[17,19],'native_X':[204,208],'input_start_frame_not_counted':True,'timers_frozen':True}
         report['auto_levels']={'automatic':True,'bonus_every':3,'max_lives':30,'bonus_state':[0x1fd9,0x1fda],'base':'e932974e554f0cd9c84d1f95e63de6bf2e1853a2'}
         report['motion']={'player_step_test_default':2,'native_player_update_Hz':'unproven','enemy':'original16.16, level DY, parity spread0..19,45degree cap','signed_coordinates':True,'extra_state':[0x1f9a,0x1fcc],'legacy_T':'isolated unchanged8.8 helper'}
         report['attack_selection']={'interval_frames':30,'max_ATTACK':3,'eligible':'live FORMATION plus phase3','sampling':'power-of-two rejection; due timer retained on rejection/no actor'}

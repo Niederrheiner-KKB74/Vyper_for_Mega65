@@ -3,7 +3,7 @@
 
 Start XEMU with ROM V920413, a COPY of the D81, -uartmon /tmp/vyper.sock.
 Complete onboarding and wait for the menu. This writes diagnostic state only in
-that emulator: F2 menu activation, completed-death WAIT, and ROM keyboard queue.
+that emulator: F2 menu activation, ordinary respawn and completed-level states, and ROM keyboard queue.
 No modified XEMU is needed. Collision/audio-completion timing is tested elsewhere.
 """
 import argparse,hashlib,json,re,socket,time
@@ -53,8 +53,8 @@ def run(args):
  main=n['main_loop'];overlay=(art/'MENU_OVERLAY.PRG').read_bytes()[2:18]
  m=Monitor(args.socket);report={'kind':'headless XEMU controlled-state regression','rom':'V920413',
   'D81_sha256':hashlib.sha256((art/'VYPER_STAGE10A1.d81').read_bytes()).hexdigest(),
-  'real_inputs':'ROM GETIN queue for X, RUN, DIRECTORY; menu/start and WAIT diagnostic writes',
-  'limits':'No physical joystick, visual/panning judgment, natural collision or death-sound timing claim', 'cases':[]}
+  'real_inputs':'ROM GETIN queue for X, RUN, DIRECTORY; menu/start, WAIT and all-enemies-DEAD diagnostic writes',
+  'limits':'No physical joystick, visual/panning judgment, natural collision or death-sound timing claim; UART pauses distort hardware/wall timing, ready count is100 main-loop/FSM steps, not a2s wall-clock measurement', 'cases':[]}
  def menu_ready():return m.wait(lambda r:menu['menu_loop']<=r['pc']<=menu['menu_input'] and m.read(0x7000,16)==overlay)
  def game_paused(expected_mode=2):
   def is_game(r):
@@ -77,17 +77,45 @@ def run(args):
    for row in (12,21):
     assert m.read(0xe000+row*192+46,20)[::2]==bytes([0x81])*9+b'\x80',('separator',row)
   report.setdefault('initial_HUD',[]).append({'mode':mode,'life_glyph_counts':counts,'before_first_game_frame':True,'separator_rows':[12,21] if mode==2 else []})
+ def ready_frames():
+  assert m.read(n['gr_timer'],1)==b'\x64'
+  assert m.read(0x1d89,1)==b'\x03'
+  frozen=m.read(0x1e00,0x100)
+  first=m.read(0xffd37fa,1)[0];observed=[]
+  for frame in range(1,101):
+   m.cmd('t0');game_paused()
+   remaining=m.read(n['gr_timer'],1)[0]
+   assert remaining==100-frame,(frame,remaining)
+   assert m.read(0x1e00,0x100)==frozen,('ENTRY changed during ready',frame)
+   observed.append(m.read(0xffd37fa,1)[0])
+  assert m.read(0x1d89,1)==b'\0'
+  report.setdefault('ready_phases',[]).append({'frames':100,'initial_hardware_frame':first,'last_hardware_frame':observed[-1],'ENTRY_frozen':True,'active':m.read(0x1b11,1)[0]})
  menu_ready()
  for switches in (0,1,2):
   m.cmd(f'b {main:x}')
   m.write(menu['selection'],b'\x02');m.write(menu['start_pending'],b'\x01')
-  start=game_paused();check_initial_hud(2);steps=[]
+  start=game_paused();check_initial_hud(2);ready_frames();steps=[]
+  # A normal life loss must respawn the same actor, not trigger a handoff.
+  m.write(0x1a0a,b'\x02\x00');m.write(n['c_ps'],b'\x02')
+  m.write(n['c_es'],b'\x01'+bytes(22));m.write(0x1ec6,b'\x03')
+  m.cmd('t0');game_paused()
+  assert m.read(0x1b11,1)==b'\0' and m.read(n['c_ps'],1)==b'\x03'
   for i in range(switches):
-   m.write(0x1a0a,b'\x02\x00');m.write(n['c_ps'],b'\x02')
-   m.write(0xffd3720,b'\x02');m.cmd('t0');r=game_paused()
-   assert r['sp']==start['sp'],(start,r)
+   m.write(n['c_es'],bytes(23));m.write(n['c_ps'],b'\0')
+   m.cmd('t0');game_paused()
+   assert m.read(0x1d89,1)==b'\x02'
+   frames=0
+   while m.read(0x1d89,1)==b'\x02':
+    m.cmd('t0');r=game_paused();frames+=1
+    assert frames<140
+   assert frames==129,frames
    active=m.read(0x1b11,1)[0];assert active==(i+1)%2,active
-   steps.append({'active':active,**r})
+   assert r['sp']==start['sp'],(start,r)
+   expected_levels=bytes((2,0,2 if i else 1,0))
+   actual_levels=m.read(0x1b04,2)+m.read(0x1b0c,2)
+   assert actual_levels==expected_levels,(actual_levels,expected_levels)
+   ready_frames()
+   steps.append({'active':active,'transition_frames':frames,'saved_levels':list(actual_levels),**r})
   # Confirm both transient code regions, not merely the PC after engine RTS.
   title=m.read(0x08000000,0x800);loader=m.read(0x080a0000,0x640)
   m.cmd('b 0');m.basic_key(b'X');m.cmd('t0')
@@ -97,10 +125,10 @@ def run(args):
   assert all(m.read(a,1)[0]&0x88!=0x80 for a in (0xffd3720,0xffd3740)),'audio still running'
   m.basic_key(b'RUN\r');after=menu_ready()
   report['cases'].append({'switches':switches,'game_start':start,'handoffs':steps,'BASIC':basic,'RUN_menu':after,'code_restored':True})
-  print(f'PASS: {switches} handoffs, X, both code regions, audio stop, actual RUN -> menu',flush=True)
+  print(f'PASS: ordinary death stays P1; {switches} level handoffs +100-frame ready, X, code restore, RUN -> menu',flush=True)
  # Exercise menu -> new game after both highscore overlays too. The overlay
  # quit flag simulates cancellation only; persistence/input are separate tests.
- m.cmd(f'b {main:x}');m.write(menu['selection'],b'\x02');m.write(menu['start_pending'],b'\x01');game_paused()
+ m.cmd(f'b {main:x}');m.write(menu['selection'],b'\x02');m.write(menu['start_pending'],b'\x01');game_paused();ready_frames()
  hs=labels(art/'highscore.sym');over=[]
  for player in (0,1):
   m.cmd(f"b {hs['main_loop']:x}")
@@ -108,7 +136,7 @@ def run(args):
   r=m.wait(lambda r:r['pc'] in (hs['main_loop']+3,hs['input_tick']) and m.read(0x2100,1)==b'\x08')
   over.append({'player':player,**r});m.write(hs['quit'],b'\x01')
   m.cmd(f'b {main:x}' if player==0 else 'b 0');m.cmd('t0')
-  if player==0:game_paused()
+  if player==0:game_paused();ready_frames()
   else:menu_ready()
  m.cmd(f'b {main:x}');m.write(menu['selection'],b'\x01');m.write(menu['start_pending'],b'\x01');game_paused(1);check_initial_hud(1)
  title=m.read(0x08000000,0x800);loader=m.read(0x080a0000,0x640)

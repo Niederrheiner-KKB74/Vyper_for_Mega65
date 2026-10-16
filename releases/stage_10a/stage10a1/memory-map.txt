@@ -41,7 +41,7 @@ Default-segment:
   $5c50-$5c71 Unnamed
   $5c80-$5c8f Unnamed
   $5c90-$5fd7 HUD attributes rows 0-19
-  $6000-$65e7 Stage5a central levels and transitions (retired colour template)
+  $6000-$65fb Stage5a central levels and transitions (retired colour template)
   $662c-$664b Unnamed
   $6650-$66ad Stage7b5b transition setup
   $66b0-$66da Unnamed
@@ -85,8 +85,9 @@ Default-segment:
   $8e40-$8faf Stage 4a signed clip and NCM crop
   $9000-$97ff Unnamed
   $9800-$98ff Stage 3b-2 loaded path-pixie glyphs
-  $9900-$99b2 Stage10a1 native ROMA gate (retired unused thin-font data)
+  $9900-$9991 Stage10a1 native ROMA gate (retired unused thin-font data)
   $99b9-$9a29 Stage10a1 native identity labels
+  $9a2a-$9a49 Stage10a1 native ready and completion gates
   $9a56-$9afa Stage 6b1 attack start and visibility
   $9b00-$9bd9 Stage 3b-5b direction and BASIC sprite restoration
   $9c00-$9ced Stage7b5b eligible actor collection and uniform rank selection
@@ -96,12 +97,13 @@ Default-segment:
   $9d61-$9d6d Unnamed
   $9d70-$9ef2 Stage 3b-5c conditional RRB renderer and game-over overlay
   $9f10-$9fe5 Stage 6b1 original attack motion
-  $a000-$a1e5 Stage10a1 identity controller (retired unused legacy type1 copies)
+  $a000-$a1e3 Stage10a1 identity controller (retired unused legacy type1 copies)
   $a200-$a57f Unnamed
   $a580-$a5f3 Stage10a1 label helpers after retained type2 frames
   $a600-$a6ff Stage7b5b current VYSH record (retired unused legacy frames)
   $a700-$a78e Stage7b5b per-actor events and independent planning state
   $a800-$af07 Stage7b5b original ENTRY/ATTACK shot events
+  $af08-$afd4 Stage10a1 mapped ready FSM and original-font prompt
   $b000-$b45b Stage7b5b resident VYSH DAT in mapped physical chip RAM
   $b480-$b65d Stage7a2 sparse NCM starfield core
   $b668-$b6af Stage7b5b covered-star write filter
@@ -114,6 +116,6 @@ Default-segment:
   $c800-$c8ff Unnamed
   $c900-$c9ff Unnamed
   $ca00-$caff Stage 4a private guarded NCM crop
-  $cb00-$cd5a Stage6b1 phase bridge
+  $cb00-$cd5d Stage6b1 phase bridge
   $cd80-$cfd2 Starfield address tables, separate from engine bridge
   $cfd8-$cfff Starfield state, initialized even before menu/game handoff

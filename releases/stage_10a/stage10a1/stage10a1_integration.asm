@@ -147,10 +147,11 @@ start_ready:
     // HUD initialization resets its default level to1: selected record wins.
     // twop.ready restored the selected identity and its current level.
     jsr hud.hud_draw_static
-    jsr hud.hud_render
     jsr starfield_init
     jsr transitionfx.init
     jsr audio8.init
+    jsr getready.gr_begin
+    jsr hud.hud_render
     jmp cc_publish
 hud_font:
     ldx #<font_load

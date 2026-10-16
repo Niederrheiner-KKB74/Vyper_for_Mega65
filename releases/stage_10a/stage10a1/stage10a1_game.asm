@@ -820,6 +820,7 @@ c_message:
     ldx c_ui_offset
 c_message_screen:
     iny
+    .label c_message_read=*+1
     lda c_message_text,x
     jsr v012a_store
     iny
@@ -879,6 +880,7 @@ c_message_colour:
     sta $1a65
     jsr hud.long_colour_store
     inc $1a60
+    .label c_message_ink=*+1
     lda #2 // bank-1 white, mono attributes
     sta $1a65
     jsr hud.long_colour_store

@@ -145,7 +145,7 @@ finish:
     jsr stars.paint_all
     plp
     lda next_level
-    jmp level.transition
+    jmp getready.gr_completed
 colours: .byte FX_BLUE,FX_YELLOW,FX_RED,FX_DARK_BLUE
 .if (*>$c000) { .error "FSM overlaps existing graphics" }
 }

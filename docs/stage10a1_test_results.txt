@@ -1,3 +1,81 @@
+AKTUELL / PR88: KORRIGIERTE ORIGINALREGELN + GET READY
+Branch stage10a; Entwicklungsstand. Kein Stable-Tag, kein Merge.
+Grundlage: Nutzer-Amiga-Vergleich, PR88-Kommentar6215801455,16.10.2026.
+Die bisherige Anforderung „nach jedem Lebensverlust wechseln“ ist ersetzt.
+
+VERHALTEN / TECHNIK
+Normaler Verlust: gleicher Spieler und laufendes Level, ursprünglicher WAIT/
+Respawn/150-Frame-Unverwundbarkeit. Kein neuer Levelstart/Get ready beim normalen Tod.
+Levelabschluss: erst Bonus/Fortschritt einmalig, komplette Originalübergangs-FSM
+mit Sounds24/22, dann nächste eigene Levelnummer speichern und ggf. anderen
+lebenden Spieler laden. In-place, ohne Audio-Stop oder BASIC-Restore.
+Endgültiger Tod: vollständiges Game Over und Highscore-Verarbeitung, danach
+anderer lebender Spieler oder Menü. Keine doppelte Eintragung.
+Vor jedem F1/F2-Levelstart100 vollständige PAL-Frames Get ready/Player1oder2.
+Sperre für ENTRY/Angriff/Schüsse/Kollisionen/Animation/Respawn-Timer; X erlaubt.
+Sterne, bestehendes COLOR02-Cycling und Audio-Service laufen weiter.
+Text an Zeilen17/19, nativesX204/208, tatsächliche Playfield-MitteX120logisch.
+Farbe direkt aus cc_index19, kein separater Farbverlauf. Bestehender Textpfad
+wird kurz parametrisiert und danach auf GAME OVER/Weiß2 restauriert.
+Am Ende Screen UND Color-Attribute rückstandsfrei über Standard-Zeilenlöscher.
+R/+/-: bereits laufender Eingabeframe wird nicht als erster Warteframe gezählt.
+
+BUILD / DATEN / SPEICHER
+python tools/build_stage10a1.py --kickass /workspace/stage3b-inspection/KickAss.jar
+Zweiter Build --output /tmp/stage10a1-ready-final-repro:97Dateien bytegleich.
+PRG SHA256 58cf48b0c4749e8a1603a59a55ebe18993c5dc9fcc0e372ac37ebbc757eb27cd
+D81 SHA256 fc2090b241f751df502e38acdce8d200f6cbdf62c6240a79c2285a83c61edf22
+D81819200Bytes, PRG+9SEQ-Dateien, BAM/Ketten/Signaturen geprüft.
+Alle9DATs, Menü und Audio-Core zum vorherigen Build unverändert.
+Neue private Bytes1B1C..1B1F, nativeGates9A2A..9A49, mappedAF08..AFD4.
+Kein zusätzlicher DMA-/Grafik-/Audio-Puffer. Typ2-Frames und Audio-ABI geschützt.
+Beleg: stage10a1_evidence/ready_build_validation.json.
+
+AKTUELLE HOSTREGRESSION
+PASS36Tests in694.026s im vollständigen Hauptlauf.
+PASS1zusätzlicher +/-Navigationstest in9.605s. Insgesamt37bestandene Prüfungen.
+PYTHONPATH=tests:tools:<py65> python -m unittest test_stage10a1_ready test_stage10a1_two_player test_stage10a1_engine test_stage10a1 -v
+Der zusätzliche Navigationstest wurde nach Start des Hauptlaufs ergänzt und
+separat ausgeführt; bei obigem Kommando laufen inzwischen alle37Tests zusammen.
+Der Menü-Snapshot stammt aus einem vollständigen frischen Boot des endgültigen
+PRG; vor Nutzung werden PRG/Assetbytes gegen das Release geprüft. Normale
+Combat-Fixtures durchlaufen100echte FSM-Ticks; der spezielle Get-ready-Test
+führt100vollständige Hauptschleifenframes mit gedrücktem Feuer aus und prüft
+unveränderte ENTRY-/Combatdaten sowie rückstandsfreie Screen-/Farbwiederherstellung.
+Geprüft: Original-Wechselregeln,100->1, ein Überlebender, Bonus/Score/Leben,
+Get-ready beiF1/F2-Level1/100 und nach Wechsel, R/+/-Start ohne verlorenenFrame,
+Gleichstand/Name/Persistenz, beide Ausscheidereihenfolgen, HUD-Farben/Balken/
+max8Symbolebei30Leben, modellierte Audio-DMA/Death-PCM, Respawn/BLINK,
+Menüwahl/Feuer-Loslassen, vollständiges erneutes RUN und ursprünglicher GAME-OVER-Text.
+Belege: ready_host_regression.txt und ready_navigation_test.txt im Evidence-Ordner.
+Das begrenzte Hostmodell ist keine XEMU-/Hardwareprüfung.
+
+AKTUELLE ECHTE XEMU-PRÜFUNG / ROM V920413
+PASS gewöhnlicher Tod/WAIT->BLINK bleibt P1;0/1/2Levelabschluss-Wechsel,
+     P1/P2 speichern jeweils nächste eigene Levelnummer, gleicher Hauptschleifen-SP.
+PASS8Get-ready-Phasen mit jeweils100Hauptschleifen-/FSM-Schritten und währenddessen
+     unveränderten ENTRY-Daten. Initiale Lebenssymbole und beide Balken geprüft.
+PASS beide GameOvers/Highscore-Overlays(kontrolliertes quit) ->Menü->F1,
+     X, beide Codebereiche restauriert, Audio aus, tatsächliches ROM-RUN
+     bis Menü und tatsächliches DIRECTORY erfolgreich.
+Einschränkung: UART-Debugpausen verändern Hardware-Framezähler/Wandzeit; diese
+Prüfung ist KEINE Messung von2s auf dem sichtbaren Bildschirm. Kontinuierliche
+50Hz-Wartefunktion bleibt unverändert; interaktive Dauer-/Bild-/Hörabnahme offen.
+Todes-/DEAD-/Menü-Zustände werden gezielt im Emulator gesetzt. Keine Behauptung
+natürlicher Treffer, physischer Joystickbedienung oder störungsfreier Hörausgabe.
+Belege: stage10a1_evidence/xemu_ready_rules.json und xemu_ready_rules_output.txt.
+
+BENUTZERABNAHME NOCH ERFORDERLICH
+Siehe aktuelle Schritte in stage10a_two_player_mode.md: F1/F2 ab001/100,
+2s Get ready und aktiver Player, kein Eintritt währenddessen, laufende Farben/
+Sterne, keine Textrückstände. Normaler Tod ohne Wechsel; je Levelabschluss
+Wechsel auf eigenen Levelstand; finales Game Over/Name/Highscore vor Wechsel;
+ein Überlebender alleine weiter; beide ausgeschieden->Menü. R, +/- ohne Bonus,
+100->1, HUD max8/30, ursprünglicher Sound/Streaming, X und erneutes RUN/DIRECTORY.
+Headless-/Hostprüfungen ersetzen keine visuelle/hörbare/Joystick-Benutzerabnahme.
+
+--- HISTORISCH: HUD-/EXIT-BUILD e96dd00 VOR ORIGINALREGEL-KORREKTUR ---
+
 AKTUELLE HUD-NACHBESSERUNG / PR88 / 16.10.2026
 Branch stage10a, weiterhin kein Stable-Tag und kein Merge.
 Der Benutzer bestätigt die vorherigen Stage10a1-Funktionen; neue Sichtabnahme

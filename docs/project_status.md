@@ -892,3 +892,16 @@ statisches Neuzeichnen bei bereits gültigem Life-Shadow zurückgeführt;
 Alle bisherigen Stable-Dateien unverändert; neue PRG/D81 am bestehenden
 Releasepfad. Neue XEMU-Sichtprüfung dieser beiden Korrekturen steht aus.
 Kein Stable-Tag, kein Merge.
+
+### Stage10a1 – Nutzerkorrektur der Originalregeln / Get ready
+
+PR88 bleibt Entwicklungsstand. Korrigierter Amiga-Nutzervergleich ist verbindlich:
+normaler Lebensverlust wechselt den Spieler NICHT; Wechsel erst nach vollständigem
+Levelübergang oder abgeschlossener Game-Over-/Highscore-Behandlung. Levelabschluss
+speichert zuerst die nächste eigene Levelnummer/Bonus und lädt danach ggf. den
+anderen lebenden Spieler, in-place ohne Stoppen der Übergangs-Audioquelle.
+F1/F2 erhalten vor jedem Level100 vollständige PAL-Frames Get ready/Player1oder2,
+zentriert im unteren Drittel, mit exakt dem Gegner-Highlight-Cycling. Gameplay ist
+bis zum Ende gesperrt, Sterne und Streaming laufen weiter. R/+/- zählen ihren
+bereits laufenden Eingabeframe nicht mit. Frühere HUD-/BASIC-Exit-Fixes bleiben.
+Keine Stable-Markierung und kein Merge vor erneuter Nutzerabnahme.

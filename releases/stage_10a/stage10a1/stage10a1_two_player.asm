@@ -19,18 +19,13 @@ init: lda #0
 ready: lda #1
     jmp gate
 render:
-    jsr offscreen.r_render
+    jsr getready.gr_scene
     lda #2
     jmp gate
 capture: lda #3
     jmp gate
 poll:
-    jsr offscreen.r_key
-    pha
-    lda #4
-    jsr gate
-    pla
-    rts
+    jmp offscreen.r_key
 change_from_main:
     // Only reached by JMP from the top-level loop: no key-call frames exist.
     jsr exit_to_basic
@@ -74,22 +69,7 @@ resume:
     cli
     rts
 wait_guard:
-    lda mode
-    cmp #2
-    bne !normal+
-    lda active
-    eor #1
-    asl
-    asl
-    asl
-    tax
-    lda records+6,x
-    ora records+7,x
-    bne !wait+
-!normal:
-    jmp game.c_wait_original
-!wait:
-    rts
+    jmp game.c_wait_original // Ordinary death stays with this player.
 restart:
     lda mode
     cmp #2
@@ -122,7 +102,7 @@ dispatch:
     lda vector+1,x
     sta invoke+2
 invoke: jmp $ffff
-vector: .word new_game,prepare_ready,draw,captured,decide,choose,selected
+vector: .word new_game,prepare_ready,draw,captured,getready.gr_countdown,choose,selected,completed,getready.gr_prepare
 new_game:
     lda #0
     ldx #$1f
@@ -236,6 +216,7 @@ prepare_ready:
 !done:
     lda #0
     sta resuming
+    sta action
     rts
 captured:
     jsr save
@@ -261,26 +242,22 @@ choose:
     inc action
 !done:
     rts
-decide:
+// Only the completed transition calls this; bonus already belongs to its actor.
+completed:
+    lda transitionfx.next_level
+    sta hud.player1_level
     lda #0
+    sta hud.player1_level+1
     sta action
-    lda offscreen.r_keybyte
-    cmp #KEY_X
-    beq !done+ // BASIC exit always wins over a switch becoming ready this frame.
-    lda rendering
-    bne !done+
+    jsr save
     lda mode
     cmp #2
     bne !done+
-    jsr save
-    lda game.c_ps
-    cmp #2 // EXP completed; c_wait is held only if the other player lives.
-    bne !done+
-    lda $d720
-    and #$80 // Let forced Player-death audio finish; service continues every frame.
-    bne !done+
-    jmp choose
+    jsr choose
+    jsr load // in-place level handoff preserves streaming ID22 and star phase
 !done:
+    lda #0
+    sta action
     rts
 
 // Convert actor scratch into identity HUD fields only while drawing.

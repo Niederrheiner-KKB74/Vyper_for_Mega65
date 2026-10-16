@@ -2686,7 +2686,7 @@
       "name": "STAGE10A1",
       "bytes": 45057,
       "blocks": 178,
-      "sha256": "10cceffaf7fa3098222f45487937bf11596b10f77f07560151b7b0b41a0bdff8"
+      "sha256": "58cf48b0c4749e8a1603a59a55ebe18993c5dc9fcc0e372ac37ebbc757eb27cd"
     },
     {
       "name": "VYLV.DAT",
@@ -3686,7 +3686,7 @@
   },
   "stage10a1": {
     "menu": "unchanged; user confirmed configuration issue",
-    "turn_handoff": "top-level main-loop JMP after key-call chain returned; no five-byte stack discard",
+    "turn_handoff": "ordinary death stays active; successful level switches in-place after full transition; final death switches only after highscore return",
     "resume_IRQ": "masked before bootstrap rearm and level reconstruction",
     "bootstrap_cache": {
       "code": [
@@ -3713,7 +3713,11 @@
         16,
         20
       ],
-      "separator_row": 12,
+      "separator_rows": [
+        12,
+        21
+      ],
+      "initial_shadow_invalidation": true,
       "point_rows": [
         22,
         23
@@ -3726,6 +3730,31 @@
       ],
       "inactive_ink": 11,
       "controls_hidden_2P_only": true
+    },
+    "get_ready": {
+      "frames": 100,
+      "Hz": 50,
+      "mode": 3,
+      "state": [
+        6940,
+        6944
+      ],
+      "native_code": [
+        39466,
+        39498
+      ],
+      "mapped_code_start": 44808,
+      "palette": "same bank1 cc_index as enemy COLOR02",
+      "rows": [
+        17,
+        19
+      ],
+      "native_X": [
+        204,
+        208
+      ],
+      "input_start_frame_not_counted": true,
+      "timers_frozen": true
     }
   },
   "auto_levels": {

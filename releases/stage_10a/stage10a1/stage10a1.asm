@@ -3314,3 +3314,5 @@ player_code_end:
 .import source "stage10a1_two_player.asm"
 
 .import source "stage10a1_bootstrap_cache.asm"
+
+.import source "stage10a1_get_ready.asm"

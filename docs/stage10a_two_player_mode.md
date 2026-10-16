@@ -1,3 +1,94 @@
+# Stage10a1 – korrigierte Originalregeln und Get ready (PR88)
+
+Aktueller Entwicklungsstand im bestehenden Branch `stage10a`. Verbindliche
+Grundlage ist der korrigierte Nutzervergleich mit dem Amiga-Original im
+[PR88-Kommentar vom16.10.2026,14:46Berlin](https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/pull/88#issuecomment-6215801455). Er ersetzt ausdrücklich die
+frühere Vorgabe „nach jedem Lebensverlust wechseln“. Dies ist keine zusätzliche
+behauptete68000-Rekonstruktion. Kein Stable-Tag und kein Merge.
+
+## Spielerwechsel und Levelabschluss
+
+P1 beginnt. Ein normaler Lebensverlust verwendet wieder direkt
+`game.c_wait_original`: gleicher Spieler, gleiches laufendes Level, unveränderter
+Respawn und150Frames Unverwundbarkeit. Der bisherige2P-WAIT-Blocker und die
+Schuss-/Sound-abwartende Wechselentscheidung bei jedem Tod sind entfernt.
+
+Nach dem letzten Gegner einschließlich aller Explosionen vergibt die bestehende
+`level.try_complete` einmalig Fortschritt und ggf. Bonus an den aktiven Spieler.
+Die Originalübergangssequenz inklusive Sounds24/22 bleibt vollständig erhalten.
+Erst `transitionfx.finish` ruft `getready.gr_completed` auf. Der abgeschlossene
+Spieler erhält seine nächste Levelnummer(100→1); `twop.completed` speichert
+Score/Level/Leben und wählt nur bei lebendem Mitspieler dessen Datensatz aus.
+Danach lädt `level.transition` den tatsächlich aktiven eigenen Level und beginnt
+Get ready. Ist der andere ausgeschieden oder ist F1 aktiv, geht derselbe Spieler
+weiter. Testwechsel+/- vergeben keinen Bonus und wechseln keine Identität.
+
+**Der Wechsel nach Levelabschluss erfolgt im laufenden Engine-Kontext:** kein
+`exit_to_basic`, kein Audio-Neuinstallieren, kein Zurücksetzen der Sternpositionen.
+Die laufende Übergangsquelle22 kann damit während Get ready weiterstreamen.
+Die alten Top-Level-Exit-/Resume-Sicherungen bleiben für endgültiges Game Over
+und Highscore-Overlay-Rückkehr erhalten. Erst nach vollständig abgeschlossenem
+Highscore-Dialog wird der lebende andere Spieler gestartet; `handled[2]` verhindert
+Mehrfachdialoge. Sind beide ausgeschieden, erfolgt die Rückkehr ins Menü.
+
+## Get-ready-Zustand
+
+`level.mode=3` blockiert die vorhandenen Move-/Objects-/Key-Filter; zusätzlich
+bedient `level.tick` ausschließlich den neuen Countdown. Animation wird mit
+zwischengespeichertem `anim_paused` eingefroren. ENTRY-, Angriffs-, Kollisions-,
+Respawn- und Projektiltimer bleiben stehen. X bleibt erlaubt. Audio-Frame-Service,
+Sterne und das bestehende COLOR02-Cycling laufen in der unveränderten Hauptschleife.
+
+- Genau100 vollständige PAL-Wartezyklen bei50Hz. Im100.Frame werden die Texte
+  gelöscht; erst im101.Frame werden ENTRY und Gameplay ausgeführt.
+- Ein per R oder+/- mitten im Eingabeframe ausgelöster Start setzt `gr_skip`:
+  der bereits begonnene Frame zählt nicht zu den100 folgenden Frames.
+- Originalmenüfont, zwei zentrierte Zeilen: `Get ready`(RRB-Zeile17,Y136,
+  natives H640-X204) und `Player 1/2`(Zeile19,Y152,X208). Beide liegen im
+  unteren Drittel des240×200-Playfields. H640-Zeichenbreite8 entspricht4logischen
+  Pixeln, daher gemeinsame horizontale MitteX120logisch.
+- Textfarbe ist direkt der bestehende Bank1-Index `cc_index=$13` der
+  Gegner-Highlights; keine eigene Farbfolge oder Palette.
+- Das vorhandene GAME-OVER-Textverfahren wird unter IRQ-Sperre kurz mit eigenen
+  Textzeigern/Farbindex parametrisiert. Vor Verlassen des Gates sind beide
+  Operanden wieder auf GAME OVER/Weiß2 zurückgestellt.
+- Vor Anzeige werden nur dynamische RRB-Zeilenenden gelöscht, niemals HUD oder
+  Stern-Bitmap. Danach bleibt der Text während der100Frames stehen; beim Ende
+  restauriert der bestehende Zeilenlöscher Screen **und** NCM-Color-Attribute der
+  beiden Textzeilen. Feuer muss anschließend losgelassen werden; keine gepufferten
+  Schüsse oder neuen Attack-/Soundereignisse während der Wartephase.
+
+## Speicher, Build und Prüfung
+
+Neue private Bytes1B1C..1B1F: Countdown, gespeicherte Pause, Löschzeile, Eingabeframe-
+Sperre. Sie lagen im bereits reservierten und bei neuem Spiel gelöschten2P-Zustand.
+Native Gates9A2A..9A49 liegen vor Attack-Code9A56. Mapped-Code/Originalfont-Text
+AF08..AFD4 liegt hinter SchussereigniscodeAF07 und vor VYSH-DatenB000; Zugriff nur
+über das bestehende IRQ-/D030-sichere `twop.gate`. Identitätscontroller endetA1E3,
+vor den ausdrücklich erhaltenen Typ2-FramesA200..A57F. Keine neuen DMA-Puffer,
+keine Änderung an ROM-/DOS-RAM, Audio-ABI, Paletten oder Original-DATs.
+
+Build: `python tools/build_stage10a1.py --kickass /pfad/KickAss.jar`.
+Ausgabe weiterhin `releases/stage_10a/stage10a1/`, einschließlich aller Includes,
+PRG, vollständiger D81 und SHA256. Aktuelle Ergebnisse und Einschränkungen stehen
+am Anfang von `stage10a1_test_results.txt`.
+
+XEMU-Abnahme: F1/F2 ab001 und100; Get ready mit korrektem aktiven Player für2s,
+keine ENTRY-/Schussbewegung, laufende Sterne/Farben und rückstandsfreies Entfernen.
+P1 verliert ein Leben→P1 bleibt; P1 schließt Level ab→P2 eigener Level; P2 schließt
+ab→P1 nächster eigener Level; P1 letztes Leben→Name/Speicherung→P2; ein Überlebender
+spielt allein weiter; beide ausgeschieden→Menü. Bonus jedes dritte abgeschlossene
+Level je Spieler,100→1, TEST+/- ohne Bonus/Wechsel, F3, R, beide HUD-Balken,
+Lebenssymbole abStart/max8, originaler Sound sowie X/RUN/DIRECTORY erneut prüfen.
+
+---
+
+# Historischer Befund bis vor der Originalregel-Korrektur
+
+Die nachfolgenden Abschnitte dokumentieren frühere Anforderungen und deren
+Fehleranalyse. Angaben zum Wechsel nach gewöhnlichem Lebensverlust und Neustart
+eines begonnenen Levels sind durch die aktuelle Regel oben ersetzt.
+
 # Stage 10a1 – Nachbesserung in PR #88
 
 Entwicklungsstand im bestehenden Branch `stage10a`; Ausgangspunkt

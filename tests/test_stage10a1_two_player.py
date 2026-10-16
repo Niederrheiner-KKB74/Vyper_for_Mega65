@@ -18,11 +18,11 @@ class TwoPlayer(unittest.TestCase):
   expected=prg[2:];diff=[base+i for i,b in enumerate(expected) if cls.menu.before[base+i]!=b]
   assert not diff,('stale boot fixture',hex(diff[0]),hex(diff[-1]))
  def fixture(self):return copy.deepcopy(self.menu)
- def game(self,level=1):
+ def game(self,level=1,wait_ready=True):
   m=self.fixture();m.menu_frame();m.memory.data[MN['initial_level']]=level;m.memory.key=0x89 # MEGA65 F2 PETSCII
   # Use actual F2 mapping from the menu source, not a synthetic controller call.
   m.memory.key=0x89;m.cpu.pc=MN['menu_loop'];m.run_to([N['main_loop'],0x200]);self.assertEqual(m.cpu.pc,N['main_loop'])
-  self.assertEqual(m.memory.data[TP['mode']],2);return m
+  self.assertEqual(m.memory.data[TP['mode']],2);return m.finish_ready() if wait_ready else m
  def word(self,m,a):return int.from_bytes(m.memory.data[a:a+2],'little')
  def lose(self,m,remaining):
   d=m.memory.data;d[N['c_ps']]=0;d[0x1a0a:0x1a0c]=(remaining+1).to_bytes(2,'little')
@@ -43,8 +43,8 @@ class TwoPlayer(unittest.TestCase):
  def test_first_visible_frame_lives_f1_f2_selected_level_and_static_redraw(self):
   for mode in (1,2):
    for level in (1,29,100):
-    m=self.game(level) if mode==2 else self.fixture()
-    if mode==1:m.game(level)
+    m=self.game(level,wait_ready=False) if mode==2 else self.fixture()
+    if mode==1:m.game(level,wait_ready=False)
     self.assertEqual(m.cpu.pc,N['main_loop'])
     # No synthetic render or life loss before this first-frame assertion.
     self.assert_lives(m,0,3)
@@ -68,16 +68,16 @@ class TwoPlayer(unittest.TestCase):
   m=self.game(29);d=m.memory.data
   self.assertEqual(d[TP['active']],0);self.assertEqual(d[TP['records']+4],29);self.assertEqual(d[TP['records']+12],29)
   self.assertEqual((self.word(m,0x1a0a),self.word(m,TP['records']+14)),(3,3));self.assertEqual(bytes(d[0x1fd9:0x1fdb]),b'\0\0')
- def test_switch_after_full_explosion_and_sound_then_restore_own_level(self):
-  m=self.game(4);d=m.memory.data;initial_sp=m.cpu.sp;d[0x1a04:0x1a08]=(1234).to_bytes(4,'little');d[0x1a00:0x1a04]=(1234).to_bytes(4,'little');d[0x1fd9]=2
-  self.lose(m,2);d[0xd720]=0x80;m.game_frame();self.assertEqual(d[TP['active']],0);self.assertEqual(d[N['c_ps']],2)
-  d[0xd720]=2;m.game_frame();self.assertEqual(d[TP['active']],1);self.assertEqual(m.cpu.sp,initial_sp);self.assertEqual(d[N['number']],4);self.assertEqual(d[N['c_ps']],3)
-  self.assertEqual(int.from_bytes(d[0x1a04:0x1a08],'little'),0);self.assertEqual(int.from_bytes(d[0x1a00:0x1a04],'little'),1234)
+ def test_ordinary_death_keeps_actor_and_original_respawn(self):
+  m=self.game(4);d=m.memory.data;sp=m.cpu.sp
+  d[0x1a04:0x1a08]=(1234).to_bytes(4,'little');d[0x1fd9]=2
+  self.lose(m,2)
+  for i in range(23):d[N['c_es']+i]=0
+  m.game_frame()
+  self.assertEqual(d[TP['active']],0);self.assertEqual(d[N['c_ps']],3)
   self.assertEqual((d[N['c_blink']],d[N['c_flash']],d[N['c_visible']]),(150,25,1))
-  m.cpu.a=37;m.call_at(N['transition']);d[0x1a04:0x1a08]=(5678).to_bytes(4,'little');d[0x1fda]=1
-  self.lose(m,2);d[0xd720]=2;m.game_frame();self.assertEqual(d[TP['active']],0);self.assertEqual(m.cpu.sp,initial_sp);self.assertEqual(d[N['number']],4)
-  self.assertEqual(int.from_bytes(d[0x1a04:0x1a08],'little'),1234);self.assertEqual(d[TP['records']+12],37);self.assertEqual(bytes(d[0x1fd9:0x1fdb]),bytes((2,1)))
-  self.assertEqual(bytes(d[N['p_active']:N['p_active']+8]),bytes(8));self.assertEqual(d[M.G['error']],0)
+  self.assertEqual((self.word(m,0x1a0a),d[N['number']],d[0x1fd9]),(2,4,2))
+  self.assertEqual(int.from_bytes(d[0x1a04:0x1a08],'little'),1234);self.assertEqual(m.cpu.sp,sp)
  def test_independent_bonus_saturation_and_both_hud_icon_caps(self):
   m=self.game();d=m.memory.data
   for active in (0,1):
@@ -95,13 +95,15 @@ class TwoPlayer(unittest.TestCase):
   d[0x1a04:0x1a08]=(10).to_bytes(4,'little');self.lose(m,0);self.eliminated(m);self.assertEqual(m.cpu.pc,HS['main_loop']);self.close_name(m,b'ONE')
   self.assertEqual(m.cpu.pc,N['main_loop']);self.assertEqual(d[TP['active']],1);self.assertEqual(d[TP['handled']],1)
   self.assertEqual(F.decode(m.files['VYHI.DAT']),[(b'ONE',10),(b'OLD',10),(b'END',10)])
+  m.finish_ready()
   self.lose(m,2);d[0xd720]=2;m.game_frame();self.assertEqual(d[TP['active']],1);self.assertEqual(d[N['c_ps']],2) # existing wait, no swap to dead P1
   d[0x1a04:0x1a08]=(10).to_bytes(4,'little');self.lose(m,0);self.eliminated(m);self.close_name(m,b'TWO')
   self.assertEqual(m.cpu.pc,MN['menu_loop']);self.assertEqual(F.decode(m.files['VYHI.DAT']),[(b'TWO',10),(b'ONE',10),(b'OLD',10),(b'END',10)])
  def test_reverse_elimination_nonqual_and_cancel_leave_survivor(self):
   for qualified in (False,True):
    m=self.game();d=m.memory.data
-   self.lose(m,2);d[0xd720]=2;m.game_frame();self.assertEqual(d[TP['active']],1)
+   m.cpu.a=4;m.call_at(N['transition']);m.finish_ready()
+   d[TP['active']]=1;m.call_at(TP['load']);m.call_at(TP['render'])
    m.files['VYHI.DAT']=F.encode([] if qualified else [(b'OLD',100)]*80)
    d[0x1a04:0x1a08]=(1).to_bytes(4,'little');self.lose(m,0);self.eliminated(m)
    if qualified:m.hi_frame();m.hi_frame(27)
@@ -110,13 +112,15 @@ class TwoPlayer(unittest.TestCase):
   m=self.game();d=m.memory.data;m.memory.simulate_audio=True
   self.lose(m,2)
   self.assertEqual(d[TP['active']],0)
-  frames=0
-  while d[TP['active']]==0 and frames<150:
+  for i in range(23):d[N['c_es']+i]=0
+  d[N['c_es']]=1;d[0x1ec6]=3 # one harmless formation actor prevents LEVEL CLEAR
+  m.game_frame();frames=1
+  while d[0xd720]&0x80 and frames<150:
    m.game_frame();frames+=1
   self.assertLess(frames,150);self.assertGreater(frames,50)
-  self.assertEqual(d[TP['active']],1);self.assertEqual(d[M.G['error']],0)
+  self.assertEqual(d[TP['active']],0);self.assertEqual(d[M.G['error']],0)
   self.assertEqual(d[N['c_ps']],3)
-  # New identity stays protected, controllable, and can fire during hidden blink.
+  # Same identity stays protected, controllable, and can fire during hidden blink.
   d[N['c_visible']]=0;d[0xdc00]=0xfb;x=d[0x1662]
   m.call_at(N['c_move']);self.assertEqual(d[0x1662],x-2)
   d[0xdc00]=0xe7;m.call_at(N['c_move']);self.assertEqual(d[0x1662],x)
@@ -135,14 +139,6 @@ class TwoPlayer(unittest.TestCase):
   # The existing level redraw invalidates identity shadows before publication:
   for row,text in ((4,'0001234'),(14,'0000000')):
    self.assertEqual(''.join(chr(d[0xe000+192*row+42+2*(i+3)]) for i in range(7)),text)
- def test_x_has_priority_on_the_exact_frame_a_switch_becomes_ready(self):
-  for identity in (0,1):
-   m=self.game();d=m.memory.data
-   if identity:
-    self.lose(m,2);d[0xd720]=2;m.game_frame()
-   self.lose(m,2);d[0xd720]=2
-   m.game_frame(ord('X'));self.assertEqual(m.cpu.pc,0x200)
-   self.assertEqual(d[TP['active']],identity)
  def test_skips_wrap_and_restart_do_not_touch_other_bonus_or_score(self):
   m=self.game(100);d=m.memory.data;d[0x1fd9]=2;d[0x1fda]=1
   d[0x1a04:0x1a08]=(55).to_bytes(4,'little')
@@ -150,23 +146,12 @@ class TwoPlayer(unittest.TestCase):
   self.assertEqual(bytes(d[0x1fd9:0x1fdb]),bytes((2,1)));self.assertEqual(int.from_bytes(d[0x1a04:0x1a08],'little'),55)
   self.assertEqual(d[TP['records']+12],100)
   # Existing transition-complete next_level helper is used unchanged.
-  m.cpu.a=100;m.call_at(N['transition'])
+  m.cpu.a=100;m.call_at(N['transition']);m.finish_ready()
   d[N['c_ps']]=0
   for i in range(23):d[N['c_es']+i]=0
   m.call_at(N['try_complete'])
   for _ in range(130):m.call_at(N['tick'])
-  self.assertEqual(d[N['number']],1)
- def test_x_after_switch_restores_full_title_bootstrap_for_real_run(self):
-  for switches in (1,2):
-   m=self.game();d=m.memory.data;sp=m.cpu.sp
-   for _ in range(switches):
-    self.lose(m,2);d[0xd720]=2;m.game_frame()
-    self.assertEqual(m.cpu.sp,sp)
-   m.game_frame(88);self.assertEqual(m.cpu.pc,0x200)
-   self.assertEqual(bytes(d[0x4000:0x4800]),bytes(self.menu.memory.attic[:0x800]))
-   self.assertEqual(bytes(d[0x5000:0x5640]),bytes(self.menu.memory.attic[0xa0000:0xa0640]))
-   self.assertEqual(m.memory.map_mask,0x80);self.assertEqual(m.memory.map_offset,0x30000)
-   self.assertEqual(m.cpu.b,0);self.assertEqual(m.cpu.z,0)
+  self.assertEqual(d[N['number']],100);self.assertEqual(d[TP['records']+4],1);self.assertEqual(d[TP['active']],1)
  def test_both_gameovers_menu_new_game_then_x_rearms_title_backup(self):
   for single in (True,False):
    m=self.game();d=m.memory.data;m.files['VYHI.DAT']=F.encode([(b'OLD',100)]*80)

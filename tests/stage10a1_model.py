@@ -177,9 +177,19 @@ class Machine(EngineMachine):
    else:self.cpu.step()
   raise AssertionError(('HS frame timeout',hex(self.cpu.pc)))
  def entries(self):return HI.F.decode(bytes(self.memory.data[HS['hi_table']:HS['hi_table']+592]))
- def game(self,number=1):
+ def finish_ready(self):
+  saved_pc=self.cpu.pc
+  # Fixture setup executes each real FSM tick; full 50Hz-loop timing is tested separately.
+  for _ in range(100):
+   if self.memory.data[N['mode']]!=3:break
+   self.call_at(N['tick'])
+  assert self.memory.data[N['mode']]==0
+  self.cpu.pc=saved_pc
+  return self
+ def game(self,number=1,wait_ready=True):
   self.menu_frame()
-  return super().game(number)
+  super().game(number)
+  return self.finish_ready() if wait_ready else self
  def game_frame(self,key=0,joy=255):
   self.memory.data[0xdc00]=joy;self.cpu.pc=N['main_loop'];sampled=False
   for _ in range(2000000):

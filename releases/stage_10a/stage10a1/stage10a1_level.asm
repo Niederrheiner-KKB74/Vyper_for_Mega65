@@ -536,6 +536,7 @@ transition:
     dex
     bpl !shadow-
     jsr hud.hud_draw_static
+    jsr getready.gr_begin
     jsr hud.hud_render
 !done:
     rts
@@ -557,7 +558,9 @@ restart:
     lda #0
     sta anim_paused
     lda #1
-    jmp transition
+    jsr transition
+    inc getready.gr_skip // R arrived after this frame's wait already completed
+    rts
 
 key_filter:
     lda offscreen.r_keybyte
@@ -607,6 +610,7 @@ key_filter:
     clc
     adc #1
     jsr transition
+    inc getready.gr_skip
     jmp !consume+
 !minus:
     lda nav_latch
@@ -618,6 +622,7 @@ key_filter:
     sec
     sbc #1
     jsr transition
+    inc getready.gr_skip
 !consume:
     sec
     rts
@@ -636,6 +641,10 @@ objects:
 
 tick:
     lda mode
+    cmp #3
+    bne !transition+
+    jmp getready.gr_tick
+!transition:
     cmp #2
     bne !normal+
     jmp transitionfx.tick
