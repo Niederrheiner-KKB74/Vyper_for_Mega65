@@ -1,0 +1,434 @@
+{
+  "left": {
+    "profile": "S",
+    "environment": "X",
+    "sha256": "1bfd9a2f7fb55accb4015abe7034723b615d14bafb5377603fe5f3e397692bdf"
+  },
+  "right": {
+    "profile": "E",
+    "environment": "X",
+    "sha256": "96f09df44f78e79e6bea422eea56b768f551a4aec9d8ddf96a676e03a453181a"
+  },
+  "same_profile": false,
+  "first_stable_divergence_phase": null,
+  "differences": [
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D011",
+      "name": "register $D011",
+      "left": "$1B",
+      "right": "$9B",
+      "mask": "$7F",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D012",
+      "name": "register $D012",
+      "left": "$CE",
+      "right": "$12",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D019",
+      "name": "register $D019",
+      "left": "$60",
+      "right": "$62",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D051",
+      "name": "horizontal raster high / DBLRR NORRDEL",
+      "left": "$04",
+      "right": "$08",
+      "mask": "$C0",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D052",
+      "name": "physical raster low",
+      "left": "$A1",
+      "right": "$2A",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D053",
+      "name": "physical raster high / output controls",
+      "left": "$01",
+      "right": "$02",
+      "mask": "$E0",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D700",
+      "name": "register $D700",
+      "left": "$C7",
+      "right": "$73",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D701",
+      "name": "register $D701",
+      "left": "$02",
+      "right": "$26",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 1,
+      "phase_name": "before video",
+      "address": "$D705",
+      "name": "register $D705",
+      "left": "$C7",
+      "right": "$73",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D011",
+      "name": "register $D011",
+      "left": "$0B",
+      "right": "$8B",
+      "mask": "$7F",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D012",
+      "name": "register $D012",
+      "left": "$FB",
+      "right": "$19",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D019",
+      "name": "register $D019",
+      "left": "$60",
+      "right": "$62",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D051",
+      "name": "horizontal raster high / DBLRR NORRDEL",
+      "left": "$05",
+      "right": "$09",
+      "mask": "$C0",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D052",
+      "name": "physical raster low",
+      "left": "$FB",
+      "right": "$38",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 2,
+      "phase_name": "after video",
+      "address": "$D053",
+      "name": "physical raster high / output controls",
+      "left": "$01",
+      "right": "$02",
+      "mask": "$E0",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D012",
+      "name": "register $D012",
+      "left": "$02",
+      "right": "$21",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D019",
+      "name": "register $D019",
+      "left": "$60",
+      "right": "$62",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D051",
+      "name": "horizontal raster high / DBLRR NORRDEL",
+      "left": "$06",
+      "right": "$0A",
+      "mask": "$C0",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 3,
+      "phase_name": "after simulated mode transition",
+      "address": "$D052",
+      "name": "physical raster low",
+      "left": "$0A",
+      "right": "$47",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D012",
+      "name": "register $D012",
+      "left": "$02",
+      "right": "$21",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D019",
+      "name": "register $D019",
+      "left": "$60",
+      "right": "$62",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D051",
+      "name": "horizontal raster high / DBLRR NORRDEL",
+      "left": "$07",
+      "right": "$0B",
+      "mask": "$C0",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    },
+    {
+      "phase": 4,
+      "phase_name": "reference scene",
+      "address": "$D052",
+      "name": "physical raster low",
+      "left": "$0A",
+      "right": "$47",
+      "mask": "$00",
+      "stable_bits_differ": false,
+      "classification": "volatile/context bits; raw difference retained"
+    }
+  ],
+  "geometry_left": [
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 1.0,
+      "native_pixels_per_source_pixel": 1.0,
+      "line_step_bytes": 80,
+      "characters_per_row": 80,
+      "last_row_index": 24,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 2048,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    }
+  ],
+  "geometry_right": [
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 1.0,
+      "native_pixels_per_source_pixel": 1.0,
+      "line_step_bytes": 80,
+      "characters_per_row": 80,
+      "last_row_index": 24,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 2048,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    }
+  ],
+  "interpretation": "Value comparison only. Equal registers do not prove equal rendering. Use photographs and pinned core semantics. Environment labels are user declarations."
+}
