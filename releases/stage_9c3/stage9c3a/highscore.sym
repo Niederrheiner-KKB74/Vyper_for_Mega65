@@ -5,7 +5,7 @@
 .label cc_delta_hi=$31b8
 .label band_colours=$320f
 .label hi_display_rank=$39db
-.label hi_cache_write=$9260
+.label hi_cache_write=$9263
 .label hi_name_key=$8a3b
 .label hi_msg_ready=$3675
 .label hi_msg_pending=$3a92
@@ -41,7 +41,7 @@
 .label hi_set_filename=$5100
 .label band_left_lo=$3223
 .label hs_open_armed=$58c7
-.label hi_string=$9178
+.label hi_string=$917b
 .label hi_read_store=$51d4
 .label hi_dos=$3606
 .label hi_probe_error=$3a90
@@ -56,13 +56,13 @@
 .label hi_rename_dat=$39b5
 .label hi_render=$8f94
 .label quit=$3201
-.label hi_string_read=$9180
+.label hi_string_read=$9183
 .label cc_expand=$31c3
 .label hi_error=$3605
 .label hi_bak_read=$3985
 .label hi_old=$3619
-.label hi_screen_write=$9169
-.label hi_cache_scores=$9228
+.label hi_screen_write=$916c
+.label hi_cache_scores=$922b
 .label hi_rank=$360a
 .label hs_publish_best=$58c8
 .label title_restore_video=$2536
@@ -109,6 +109,7 @@
 .label hi_rename=$52e0
 .label cc_word=$31be
 .label hi_status_lo=$3640
+.label hi_navigation=$92d8
 .label hi_rename_bak=$39a0
 .label cc_init=$3100
 .label hi_open=$5120
@@ -131,7 +132,7 @@
 .label hi_command=$5226
 .label frame_glyphs=$67d0
 .label hi_alphabet=$3642
-.label hi_screen_set=$9151
+.label hi_screen_set=$9154
 .label band_write_left=$2283
 .label page_left=$21e6
 .label hi_validate=$8da3
@@ -172,7 +173,7 @@
 .label hi_save_verify_bad=$545d
 .label dma_list=$25d1
 .label cc_tick=$311a
-.label hi_format_number=$9192
+.label hi_format_number=$9195
 .label hi_cmp_read=$8f56
 .label page_right=$21f5
 .label hi_cache_read=$9018
@@ -180,7 +181,7 @@
 .label band_buffer=$6000
 .label hi_table=$4800
 .label hi_compare_backup=$8f38
-.label hi_u8_decimal=$92b2
+.label hi_u8_decimal=$92b5
 .label hi_table_to_io=$8e7d
 .label cc_delta_lo=$31b2
 .label hi_record=$8b78
@@ -207,13 +208,13 @@
 .label hi_release=$88e0
 .label dma_dst_mb=$25d4
 .label hi_file_ptr=$39ca
-.label hi_check_temp=$926d
+.label hi_check_temp=$9270
 .label hi_put=$8b9c
 .label hi_insert=$8bdd
 .label band_phase=$3209
 .label hi_cmd_code=$39d2
 .label hi_edit_key=$896a
-.label hi_char=$9158
+.label hi_char=$915b
 .label hi_secondary=$39ce
 .label hi_resume=$8cf9
 .label hi_name_read=$510e

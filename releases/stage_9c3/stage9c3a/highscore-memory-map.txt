@@ -13,4 +13,4 @@ Default-segment:
   $5100-$5462 Native KERNAL SEQ and recoverable disk transaction
   $5500-$58da Nonpersistent decimal score cache
   $6000-$67ff Colour plane and private frame tiles
-  $8800-$92d4 Highscore management, validation and input
+  $8800-$92fe Highscore management, validation and input

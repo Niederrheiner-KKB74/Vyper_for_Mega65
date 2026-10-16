@@ -1106,6 +1106,7 @@ hi_cache_read:
 !long_skip:
     jmp !slot-
 !ui:
+    jsr hi_navigation
     lda #1
     ldx #67
 !clear_cursor:
@@ -1466,3 +1467,31 @@ hi_u8_decimal:
     adc #48
     jmp hi_char
 .if (*>$a000) { .error "Diagnostic formatter enters ROM" }
+
+// page_draw restores the canonical screen template before hi_render.
+// Reset the entire hint interior, including colour bytes, on every UI transition.
+hi_navigation:
+    lda #1
+    ldx #69
+!colour:
+    sta band_buffer+18*80+5,x
+    dex
+    bpl !colour-
+    lda hi_mode
+    cmp #2
+    bne !table+
+    lda #32
+    ldx #69
+!erase:
+    sta $a000+18*80+5,x
+    dex
+    bpl !erase-
+    rts
+!table:
+    lda #4 // fixed yellow; same41-character hint at centred column19
+    ldx #40
+!yellow:
+    sta band_buffer+18*80+19,x
+    dex
+    bpl !yellow-
+    rts

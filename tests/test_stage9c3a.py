@@ -96,4 +96,38 @@ class Presentation(unittest.TestCase):
   m=Table(1,50);m.save('NEW');self.assertEqual(F.decode(m.files['VYHI.DAT']),[(b'NEW',50)])
   for y in (17,19):self.assertEqual(bytes(m.memory.data[0x7000+y*80+5:0x7000+y*80+75]),bytes([32])*70)
 
+class NavigationModes(unittest.TestCase):
+ def assert_hint(self,m,visible):
+  row=bytes(m.memory.data[0x7000+18*80+5:0x7000+18*80+75])
+  colour=bytes(m.memory.colour[0x2000+18*80+5:0x2000+18*80+75])
+  expected=bytearray([32]*70);fg=bytearray([1]*70)
+  if visible:
+   text='CURSOR / JOYSTICK LEFT-RIGHT: CHANGE PAGE'
+   expected[14:55]=bytes(ord(c)-64 if 64<=ord(c)<=95 else ord(c) for c in text)
+   fg[14:55]=bytes([4])*41
+  self.assertEqual(row,bytes(expected));self.assertEqual(colour,bytes(fg))
+  for x in (4,75):
+   self.assertEqual(m.memory.data[0x7000+18*80+x],129)
+   self.assertEqual(m.memory.colour[0x2000+18*80+x],2)
+ def test_initial_name_frame_and_repeated_table_name_save_cancel_transitions(self):
+  m=Table(1,100)
+  # Constructor stops at the first displayed frame, before any input/raster tick.
+  self.assertEqual(m.memory.data[N['hi_mode']],2);self.assert_hint(m,False)
+  for _ in range(16):m.frame();self.assert_hint(m,False)
+  m.save('AAA');self.assert_hint(m,True)
+  self.assertEqual(m.entries(),[(b'AAA',100)])
+  for name,score in (('BBB',100),('CCC',200)):
+   m.memory.data[0x1fe4]=1
+   m.memory.data[N['hi_score']:N['hi_score']+4]=score.to_bytes(4,'little')
+   m.call('hs_game_name');m.call('page_draw');self.assert_hint(m,False)
+   m.save(name);self.assert_hint(m,True)
+  expected=[(b'CCC',200),(b'BBB',100),(b'AAA',100)]
+  self.assertEqual(F.decode(m.files['VYHI.DAT']),expected)
+  before=dict(m.files);m.call('hs_game_name');m.call('page_draw');self.assert_hint(m,False)
+  m.frame();m.frame(ord('Z'));m.frame(27)
+  self.assertEqual(m.files,before);self.assertEqual(m.cpu.pc,0x1923)
+  reopened=Table(files=m.files);self.assert_hint(reopened,True)
+  reopened.frame();reopened.frame(29);reopened.frame()
+  self.assertEqual(reopened.memory.data[N['page']],1);self.assert_hint(reopened,True)
+
 if __name__=='__main__':unittest.main()

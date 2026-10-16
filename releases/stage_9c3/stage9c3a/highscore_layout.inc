@@ -1,2 +1,2 @@
-.const HS_BYTES=$71d5
-.const HS_SUM=$b81a
+.const HS_BYTES=$71ff
+.const HS_SUM=$cd42

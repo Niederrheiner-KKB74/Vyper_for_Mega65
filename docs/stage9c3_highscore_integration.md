@@ -288,3 +288,29 @@ Stage9c3a-Prüfergebnis: **16 Hosttests bestanden**, inklusive Kaltstart und ern
 RUN; alle94 Ausgabedateien zweier Builds byteidentisch. Blinken verändert nur
 c_visible und RRB-Einträge, nicht Hardware-Spritefreigabe oder Audio-DMA.
 XEMU-Abnahme weiterhin offen.
+
+### Zusätzliche Stage9c3a-Korrektur: Navigation nur in Tabellenansicht
+
+Während der dreistelligen Namenseingabe (hi_mode2) wird die komplette
+Navigationszeile18 innerhalb des Rahmens (Spalten5..74) im vorbereiteten
+Seitenpuffer mit Leerzeichen gefüllt. Parallel werden die zugehörigen
+Foreground-Bytes im privaten Color-Puffer auf1 zurückgesetzt. Rahmen4/75,
+Titel, Fußzeile und Namensfeld bleiben unberührt. Der Eingabemodus wird jetzt
+vor der ersten Seitenveröffentlichung gewählt, damit auch der erste sichtbare
+Namenseingabe-Frame keinen falschen Seitenwechsel-Hinweis enthält.
+
+Zurück im Tabellenmodus kopiert page_draw wie bisher das vollständige
+Hintergrundtemplate; hi_navigation restauriert die41 Hinweiszeichen bei19..59
+in Gelb4, außerhalb davon den normalen Foreground1. Wiederholte Einträge erhalten
+dadurch keine Farb-/Textreste. Nach ESC bleibt der bestehende Weg ins Menü erhalten;
+beim erneuten F3-Aufruf ist der Hinweis wieder sichtbar und Paging verfügbar.
+
+Zehn UI-/Persistenztests wurden für diese Nachkorrektur erneut ausgeführt,
+inklusive erstem Name-Frame,16 weiteren Cycling-Frames, mehreren erfolgreichen
+Einträgen, Gleichständen, Abbruch ohne Schreiben und erneutem Tabellenaufruf.
+Die bestehenden Engine-/Respawnquellen sind byteidentisch zur vorherigen Stage9c3a;
+der Main-PRG-Differenzvergleich beschränkt sich auf fünf automatisch erzeugte
+Overlay-Längen-/Prüfsummenbytes. Die vorherigen sieben kompletten Engine-/Respawntests
+wurden für diese reine UI-Korrektur nicht erneut ausgeführt. Das Protokoll trennt
+beide Prüfstände. Alle94 neuen Builddateien sind zweifach byteidentisch erzeugt.
+Keine Änderung an Namen, Sortierung, VYHI, Game Over, Player-Blinken oder Audio.

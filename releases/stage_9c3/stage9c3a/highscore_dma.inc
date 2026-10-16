@@ -24,7 +24,7 @@ hs_load0:
     .word 0
 hs_load2:
     .byte $80,$80,$81,$00,$0a,0,0
-    .word $22d5
+    .word $22ff
     .word $4f00
     .byte $08
     .word $7000

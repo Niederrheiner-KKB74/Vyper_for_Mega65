@@ -1,3 +1,49 @@
+Stage9c3a additional correction / PR86 — 2026-10-16
+
+Navigation hint hidden ONLY in name mode2. Row18 interior columns5..74 is
+cleared to spaces and foreground1 before publication, including the first
+visible naming frame. Normal table mode restores the canonical hint at19..59
+in fixed yellow4. Borders, table bands, title, footer and input behavior unchanged.
+
+Current revision: 10 table/UI/persistence tests rerun and passed. Includes initial
+name frame, continued hidden state through16 cycling frames, repeated table/name/
+save transitions, stable ties, cancellation with no writes, F3-style reopen,
+restored navigation glyphs and exact foreground bytes, and normal paging.
+
+Engine source files, original data/menu/audio, VYHI seed, pages.bin and colours.bin
+are byte-identical to20dffef9c3a9305aafac33de719588a6d188257d. Main PRG changes
+are only five generated overlay-length/checksum bytes at54EB,5551,5575,557C,55B7.
+No gameplay, respawn, sound or disk-backend code changed. The prior7 complete
+engine/respawn tests were not repeated for this UI-only correction; their
+previous execution is retained in the historical protocol below.
+
+test_initial_name_frame_and_repeated_table_name_save_cancel_transitions (test_stage9c3a.NavigationModes.test_initial_name_frame_and_repeated_table_name_save_cancel_transitions) ... ok
+test_fixed_yellow_text_clean_normal_rows_and_cycling_frame (test_stage9c3a.Presentation.test_fixed_yellow_text_clean_normal_rows_and_cycling_frame) ... ok
+test_only_real_file_errors_show_diagnostics_and_success_is_clean (test_stage9c3a.Presentation.test_only_real_file_errors_show_diagnostics_and_success_is_clean) ... ok
+test_boot_validates_without_showing_or_writing (test_stage9c3a.TableIntegration.test_boot_validates_without_showing_or_writing) ... ok
+test_d81_nine_assets_chains_bam_and_original_audio (test_stage9c3a.TableIntegration.test_d81_nine_assets_chains_bam_and_original_audio) ... ok
+test_four_pages_frames_colours_and_separate_resident_gates (test_stage9c3a.TableIntegration.test_four_pages_frames_colours_and_separate_resident_gates) ... ok
+test_game_score_equal_first_equal_last_and_unsigned_boundaries (test_stage9c3a.TableIntegration.test_game_score_equal_first_equal_last_and_unsigned_boundaries) ... ok
+test_input_edit_error_feedback_and_protected_recovery (test_stage9c3a.TableIntegration.test_input_edit_error_feedback_and_protected_recovery) ... ok
+test_nonqualification_and_cancel_never_write (test_stage9c3a.TableIntegration.test_nonqualification_and_cancel_never_write) ... ok
+test_table_any_key_exits_to_menu_and_x_requests_basic_no_simulator (test_stage9c3a.TableIntegration.test_table_any_key_exits_to_menu_and_x_requests_basic_no_simulator) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 8.003s
+
+OK
+
+Reproducibility: all94 generated files byte-identical across two output directories.
+
+STAGE9C3A.PRG: 45057 bytes, SHA256 d97c355f7096566b10079eff7d69592575f06f6212cf9088eb59202dd5e525e5
+VYPER_STAGE9C3A.d81: 819200 bytes, SHA256 fc7fb38a5514130e4028bb0780850490806ce134af2b0a4bf460baf6cc1b0c7c
+VYHS.DAT: 29183 bytes, SHA256 3f9bd1eea1c86dda0cde3efdf89c34fef20b6ed1a5f26b218f38bd138469f30e
+VYHI.DAT: 592 bytes, SHA256 bd13995965462ed3a54a0971d5d51004497b7f458fc0dafd896fe9801e4dca20
+
+Model limits remain unchanged: no actual XEMU/hardware or physical-sector writes. User reacceptance required; no Stable marking or merge.
+
+===== Historical protocol: previous Stage9c3a20dffef (before additional correction) =====
+
 Stage9c3a / PR86 — verification 2026-10-16
 
 Parent: functional Stage9c3 daf45af4a95f34e45c84103c55d6fc25d79a0a1d, preserved unchanged.

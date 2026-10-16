@@ -834,3 +834,10 @@ Feuer-Latch, Grafik, Geschwindigkeit und Kollisionsschutz bleiben erhalten.
 Kein Stable/Merge vor erneuter Benutzerbestätigung.
 [Änderungen und Abnahme](stage9c3_highscore_integration.md),
 [Prüfprotokoll](stage9c3a_test_results.txt).
+
+Stage9c3a-Nachkorrektur PR86: Seitenwechsel-Hinweis ausschließlich bei Namenseingabe
+unsichtbar, inklusive gelöschter Color-Bytes und korrektem ersten Darstellungsframe.
+Tabellenmodus restauriert Hinweis und Farben; zehn UI-/Persistenztests erneut
+bestanden. Engine-/Respawncode unverändert, neue94 Builddateien byteidentisch
+reproduziert. Vorherige Engineprüfung bleibt im Protokoll getrennt dokumentiert.
+Neue XEMU-Abnahme erforderlich; kein Stable/Merge.

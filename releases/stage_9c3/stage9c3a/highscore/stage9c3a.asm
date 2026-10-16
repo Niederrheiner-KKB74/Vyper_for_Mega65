@@ -42,11 +42,11 @@ entry:
     sta frame_pending
     sta page_dirty
     sta colour_dirty
+    jsr hs_game_name // choose input mode before first page publication
     jsr page_draw
     jsr title_show
     jsr cc_init
     jsr cc_publish
-    jsr hs_game_name
 // Cooperative raster-edge state: input stays live even while no frame is due.
 main_loop:
     jsr input_tick

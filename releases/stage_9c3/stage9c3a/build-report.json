@@ -2686,7 +2686,7 @@
       "name": "STAGE9C3A",
       "bytes": 45057,
       "blocks": 178,
-      "sha256": "08419694ee55ee758d8e978a4c31538854e233f32f1d72a86a84296add89385b"
+      "sha256": "d97c355f7096566b10079eff7d69592575f06f6212cf9088eb59202dd5e525e5"
     },
     {
       "name": "VYLV.DAT",
@@ -2732,9 +2732,9 @@
     },
     {
       "name": "VYHS.DAT",
-      "bytes": 29141,
+      "bytes": 29183,
       "blocks": 115,
-      "sha256": "eea9602e2fe735d5d99627e2aaf16d3e52f758b2494afc699513dc0a571ef935"
+      "sha256": "3f9bd1eea1c86dda0cde3efdf89c34fef20b6ed1a5f26b218f38bd138469f30e"
     },
     {
       "name": "VYHI.DAT",
@@ -3751,13 +3751,13 @@
       "hs_load2",
       134762240,
       28672,
-      8917
+      8959
     ],
     [
       "hs_archive",
       262144,
       134742016,
-      29141
+      29183
     ]
   ],
   "VYHI_format": "unchanged v1/CRC16/count80/u32",

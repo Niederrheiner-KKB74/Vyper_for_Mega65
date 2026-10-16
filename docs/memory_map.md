@@ -664,3 +664,8 @@ wird durch einen JSR gleicher Länge ersetzt. Audio-/Projektildaten und ihre ABI
 bleiben unverändert. Highscore-Farbindex4 bleibt für gelbe Texte statisch,
 Index2 zyklisch für den Rahmen; keine zusätzlichen Palette-/Color-RAM-Bereiche.
 Neue Artefakte separat unter releases/stage_9c3/stage9c3a/.
+
+Stage9c3a-Navigationskorrektur: keine neue Datenallokation. Zeile18 wird nur
+im vorhandenen SeitenstagingA000 und Color-Puffer6000 modusspezifisch vorbereitet;
+Spalten5..74 werden im Namensmodus gelöscht, Hinweis19..59 im Tabellenmodus Gelb4.
+Zusätzlicher UI-Helper bleibt unterA000; Overlaybudget und residente Gates unverändert.
