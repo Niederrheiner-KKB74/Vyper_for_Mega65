@@ -1,0 +1,5 @@
+PASS: ordinary death stays P1; 0 level handoffs +100-frame ready, X, code restore, RUN -> menu
+PASS: ordinary death stays P1; 1 level handoffs +100-frame ready, X, code restore, RUN -> menu
+PASS: ordinary death stays P1; 2 level handoffs +100-frame ready, X, code restore, RUN -> menu
+PASS: both Game Overs/highscore overlays -> menu -> new F1 -> X, code restored
+PASS: actual BASIC DIRECTORY lists Stage10a1 disk

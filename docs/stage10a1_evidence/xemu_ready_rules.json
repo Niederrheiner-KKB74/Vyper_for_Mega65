@@ -1,0 +1,233 @@
+{
+  "kind": "headless XEMU controlled-state regression",
+  "rom": "V920413",
+  "D81_sha256": "fc2090b241f751df502e38acdce8d200f6cbdf62c6240a79c2285a83c61edf22",
+  "real_inputs": "ROM GETIN queue for X, RUN, DIRECTORY; menu/start, WAIT and all-enemies-DEAD diagnostic writes",
+  "limits": "No physical joystick, visual/panning judgment, natural collision or death-sound timing claim; UART pauses distort hardware/wall timing: each ready phase verifies100 main-loop/FSM steps, not2s wall time",
+  "cases": [
+    {
+      "switches": 0,
+      "game_start": {
+        "pc": 8784,
+        "sp": 491,
+        "registers": "0F 13 08 00 00"
+      },
+      "handoffs": [],
+      "BASIC": {
+        "pc": 60126,
+        "sp": 488,
+        "registers": "20 00 1C 00 00"
+      },
+      "RUN_menu": {
+        "pc": 28725,
+        "sp": 491,
+        "registers": "37 FF FF 00 00"
+      },
+      "code_restored": true
+    },
+    {
+      "switches": 1,
+      "game_start": {
+        "pc": 8784,
+        "sp": 491,
+        "registers": "0F 13 08 00 00"
+      },
+      "handoffs": [
+        {
+          "active": 1,
+          "transition_frames": 129,
+          "saved_levels": [
+            2,
+            0,
+            1,
+            0
+          ],
+          "pc": 8784,
+          "sp": 491,
+          "registers": "0F 10 08 00 00"
+        }
+      ],
+      "BASIC": {
+        "pc": 57792,
+        "sp": 494,
+        "registers": "FF 06 0B 00 00"
+      },
+      "RUN_menu": {
+        "pc": 28728,
+        "sp": 491,
+        "registers": "37 FF FF 00 00"
+      },
+      "code_restored": true
+    },
+    {
+      "switches": 2,
+      "game_start": {
+        "pc": 8784,
+        "sp": 491,
+        "registers": "0F 13 08 00 00"
+      },
+      "handoffs": [
+        {
+          "active": 1,
+          "transition_frames": 129,
+          "saved_levels": [
+            2,
+            0,
+            1,
+            0
+          ],
+          "pc": 8784,
+          "sp": 491,
+          "registers": "0F 10 08 00 00"
+        },
+        {
+          "active": 0,
+          "transition_frames": 129,
+          "saved_levels": [
+            2,
+            0,
+            2,
+            0
+          ],
+          "pc": 8784,
+          "sp": 491,
+          "registers": "0F 08 08 00 00"
+        }
+      ],
+      "BASIC": {
+        "pc": 60254,
+        "sp": 491,
+        "registers": "20 00 1A 00 00"
+      },
+      "RUN_menu": {
+        "pc": 28725,
+        "sp": 491,
+        "registers": "37 FF FF 00 00"
+      },
+      "code_restored": true
+    }
+  ],
+  "initial_HUD": [
+    {
+      "mode": 2,
+      "life_glyph_counts": [
+        9,
+        9
+      ],
+      "before_first_game_frame": true,
+      "separator_rows": [
+        12,
+        21
+      ]
+    },
+    {
+      "mode": 2,
+      "life_glyph_counts": [
+        9,
+        9
+      ],
+      "before_first_game_frame": true,
+      "separator_rows": [
+        12,
+        21
+      ]
+    },
+    {
+      "mode": 2,
+      "life_glyph_counts": [
+        9,
+        9
+      ],
+      "before_first_game_frame": true,
+      "separator_rows": [
+        12,
+        21
+      ]
+    },
+    {
+      "mode": 1,
+      "life_glyph_counts": [
+        9
+      ],
+      "before_first_game_frame": true,
+      "separator_rows": []
+    }
+  ],
+  "ready_phases": [
+    {
+      "frames": 100,
+      "initial_hardware_frame": 59,
+      "last_hardware_frame": 239,
+      "ENTRY_frozen": true,
+      "active": 0
+    },
+    {
+      "frames": 100,
+      "initial_hardware_frame": 69,
+      "last_hardware_frame": 127,
+      "ENTRY_frozen": true,
+      "active": 0
+    },
+    {
+      "frames": 100,
+      "initial_hardware_frame": 79,
+      "last_hardware_frame": 58,
+      "ENTRY_frozen": true,
+      "active": 1
+    },
+    {
+      "frames": 100,
+      "initial_hardware_frame": 157,
+      "last_hardware_frame": 239,
+      "ENTRY_frozen": true,
+      "active": 0
+    },
+    {
+      "frames": 100,
+      "initial_hardware_frame": 46,
+      "last_hardware_frame": 135,
+      "ENTRY_frozen": true,
+      "active": 1
+    },
+    {
+      "frames": 100,
+      "initial_hardware_frame": 183,
+      "last_hardware_frame": 24,
+      "ENTRY_frozen": true,
+      "active": 0
+    },
+    {
+      "frames": 100,
+      "initial_hardware_frame": 255,
+      "last_hardware_frame": 48,
+      "ENTRY_frozen": true,
+      "active": 0
+    },
+    {
+      "frames": 100,
+      "initial_hardware_frame": 93,
+      "last_hardware_frame": 168,
+      "ENTRY_frozen": true,
+      "active": 1
+    }
+  ],
+  "game_over_menu_restart": {
+    "overlays": [
+      {
+        "player": 0,
+        "pc": 8905,
+        "sp": 488,
+        "registers": "50 02 FF 00 00"
+      },
+      {
+        "player": 1,
+        "pc": 8905,
+        "sp": 488,
+        "registers": "50 02 FF 00 00"
+      }
+    ],
+    "new_F1_then_X_code_restored": true,
+    "overlay_input": "quit flag, not physical name cancellation"
+  },
+  "DIRECTORY": "                                                                                READY.                                                                          DIRECTORY                                                                          0 \"VYPER STAGE10A1 \" 3B 3D                                                    178 \"STAGE10A1\"        PRG                                                      323 \"VYLV.DAT\"         SEQ                                                      132 \"VYGR.DAT\"         SEQ                                                        2 \"VYCL.DAT\"         SEQ                                                      238 \"VYTI.DAT\"         SEQ                                                      342 \"VYMN.DAT\"         SEQ                                                        5 \"VYSH.DAT\"         SEQ                                                      634 \"VYSO.DAT\"         SEQ                                                      115 \"VYHS.DAT\"         SEQ                                                        3 \"VYHI.DAT\"         SEQ                                                     1188 BLOCKS FREE                                                                                                                                                READY.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "
+}

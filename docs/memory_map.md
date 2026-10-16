@@ -669,3 +669,72 @@ Stage9c3a-Navigationskorrektur: keine neue Datenallokation. Zeile18 wird nur
 im vorhandenen SeitenstagingA000 und Color-Puffer6000 modusspezifisch vorbereitet;
 Spalten5..74 werden im Namensmodus gelöscht, Hinweis19..59 im Tabellenmodus Gelb4.
 Zusätzlicher UI-Helper bleibt unterA000; Overlaybudget und residente Gates unverändert.
+
+
+## Stage10a – getrennte Identitäten, unveränderte Stable-Basis
+
+Baseline: bestätigte Stage9c3a/main36d5a4b. Nur neue Stage10a-Quellen/Releases.
+`$1B00–$1B0F` enthält zwei8-Byte-Records (Score4,Level2,Leben2),
+`$1B10–$1B19` Modus/Identität/Abschluss-/Resume-/Gate-/HUD-Zustand,
+`$1B20–$1B23` Session-Highscore. Der bislang unbenutzte reservierte RRB_WORK-
+Bereich endet damit weiterhin vor dem Projektilbackup1B60; keine Überlagerung
+mit HUD1Axx, Kampf1Cxx oder Audio-/Bonus-/HS-Mailbox1FD0..1FED.
+Die vorhandenen Bonusbytes1FD9/1FDA werden jetzt identitätsbezogen verwendet.
+
+Native Gate/Wechsel/Resume9900..9A04 ersetzt eine seit dem Originalmenüfont
+unbenutzte Fontkopie. ControllerA000..A1E5/A580..A5E9 ersetzt unbenutzte eingebettete
+Legacy-Typ1-Frames beziehungsweise verwendet freien Platz hinter Typ2; tatsächliche VYGR-Assets und private Grafiken bleiben
+unverändert. ROMA-aus/IRQ-Gate vor CPU-Codezugriff, keine KERNAL-I/O darin.
+Der über s3b2.animate noch aufgerufene s2ja-Animationspfad und die Orbit-
+Initialisierung bleiben bytegleich; sämtliche Typ2-FramesA200..A57F werden
+erhalten und beim Build mit der Stable-PRG verglichen.
+
+Neue Identitätsdaten liegen außerhalb des Highscore-Overlaybackups2000..CFFF
+und überleben die Tabellenphase. Residenter1920-Gate bleibt unter1A00,
+GameOver-Koordinator6F00 unter6F80. Alle DOS-/ROM-/Audio-/Attic-/Titelbereiche
+bleiben wie Stage9c3a; kein neuer High-RAM-Puffer. Das vollständige Assembler-
+Mapping steht in releases/stage_10a/memory-map.txt.
+[Phasenprotokoll und Amiga-Evidenz](stage10a_two_player_mode.md).
+
+## Stage10a1 – phasenfeste Loaderkopien und F2-HUD
+
+Entwicklungsstand im bestehenden Branch stage10a/PR88. Alle Stable-Dateien
+unverändert. Neue ChipRAM-Belegung8880..88BE (vorher frei nach8878, vor8900)
+für Loadercache-Helfer, internes Flag und zwei F018A-DMA-Listen. Eine einmalige
+Kopie5000..563F liegt im freien Attic080A0000..080A063F, hinter dem
+Highscore-Archiv08090000..0809AFFF. Sie restauriert den von Color RAM verdrängten
+Audio-/Highscore-Bootstrap erst nach Rückkopie der Farben. Die vorhandene
+Titelkopie4000..47FF wird vor jedem Resume erneut aktiviert. Keine Allokation
+im DOS-RAM, ROM-Bereich oder über5FFFF-ChipRAM.
+
+1B1A/1B1B nutzen zwei bislang private Reservebytes für F2-HUD-Stil/Zeile.
+38BE..<3963 ersetzt ausschließlich den unerreichbaren alten Fontkopierkörper
+mit Stil-/Trennlinienhelfern; Originalmenüfont bleibt unverändert.
+9900..99B2 und99B9..9A29 enthalten Gate-/Resume-/F2-Ausgabe, weiterhin vor9A56.
+Der normale Wechsel erfolgt per JMP aus der Hauptschleife, ohne Rücksprungframes
+zu verwerfen; bestehende Audio-ABI und alle Typ2-FramesA200..A57F unverändert.
+F2-Zeilen: P2Label/Score/Level13/14/15, Leben16..20, Trennbalken12,
+Form./Att.22/23, Rand24. F1-Bilddaten bytegleich geprüft; RRB192Bytes,
+PlayfieldX<240 und Y0..199 unverändert.
+Vollkarte: `releases/stage_10a/stage10a1/memory-map.txt`.
+
+### Stage10a1 – HUD-Nachbesserung in PR88
+
+Keine zusätzliche Speicherallokation: statischer Aufbau invalidiert die bereits
+vorhandenen25 Shadowbytes1A20..1A38. HUD-Code3800..3E7D (exklusiv3E7E),
+Defaults weiterhin3E80. Zweiter F2-Balken nutzt den bestehenden Präfix von Zeile21
+(Screen E000+21*192+42,42Bytes; entsprechende Color-RAM-Bytes), ohne RRB-Suffix,
+Playfield oder Lebenszellen anzutasten. Oberer Balken12 und Punkte22/23 bleiben.
+F1-Refresh korrigiert initiales P1-Lebensfeld und stale Vorlage Att.115 auf den
+unveränderten dynamischen Wert175. Keine Charset-/Spielparameteränderung.
+
+### Stage10a1 – Originalregeln/Get ready in PR88
+
+1B1C..1B1F:100-Frame-Countdown, vorherige Animationspause, temporäre Zeile,
+Eingabeframe-Sperre; bereits reservierte private2P-Bytes. Neue nativeGates9A2A..9A49,
+mappedAF08..AFD4, sicher vorAttack9A56 bzw.VYSHB000. twop.gate sperrt IRQs und
+restauriert D030. ControllerA000..A1E3; Typ2A200..A57F bleibt erhalten.
+Kein neuer Grafik-/Audio-/DMA-Puffer. Get-ready-Texte nur in dynamischen Tails
+von Screenzeilen17/19 abByte84, entsprechende Color-RAM-AdressenFF80000+row*192+84.
+Beide Zeilen werden danach über den vorhandenen Screen-/Farben-Löscher restauriert.
+HUD-Präfixe, Sternbitmap18000..1DDBF, Paletten und Audio-ABI unverändert.

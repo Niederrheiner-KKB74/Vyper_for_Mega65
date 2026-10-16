@@ -841,3 +841,67 @@ Tabellenmodus restauriert Hinweis und Farben; zehn UI-/Persistenztests erneut
 bestanden. Engine-/Respawncode unverändert, neue94 Builddateien byteidentisch
 reproduziert. Vorherige Engineprüfung bleibt im Protokoll getrennt dokumentiert.
 Neue XEMU-Abnahme erforderlich; kein Stable/Merge.
+
+
+## Stage10a – Zweispielermodus, Issue87 (zur XEMU-Abnahme)
+
+Die vom Benutzer bestätigte Stage9c3a wurde als PR86 nach `main` übernommen;
+Ausgangsbasis `36d5a4b546fb514e435d4567b36c68e8cd18b6e2`. Die älteren
+Abnahmevermerke oben beschreiben die damaligen Entwicklungsstände.
+Stage10a wird separat im Branch `stage10a` entwickelt. F2 startet zwei
+abwechselnde Spieler mit getrennten Scores, Leben, Levels und Bonuszählern.
+Wechsel nach vollständiger Explosion und Originalsound; beim Ausscheiden
+Highscore-Prüfung für die betreffende Identität, dann Fortsetzung des Überlebenden.
+Maximal30 Leben, unabhängig davon höchstens8 HUD-Symbole pro Spieler.
+Unbelegte Original-Levelwiederaufnahme wird ausdrücklich durch den erlaubten
+Neustart des jeweils gespeicherten Levels ersetzt. F1/F3 und Stable-Dateien
+bleiben erhalten. Vollständiges D81/PRG unter `releases/stage_10a/`.
+[Technik, Speicher und Abnahme](stage10a_two_player_mode.md),
+[Hostprüfungen](stage10a_test_results.txt).
+**Nicht als Stable markiert; XEMU-Bestätigung und Mergefreigabe stehen aus.**
+
+## Stage10a1 – Nachbesserung im bestehenden PR88 (Entwicklungsstand)
+
+Nutzerkorrektur: F2-Menüstart funktioniert; Testkonfiguration war die Ursache,
+Menübedienung bleibt unverändert. Zweispieler-HUD mit separater Trennzeile,
+P2-Leben statt Bedienhinweisen, aktiven Gelb/Rot/Blau- und inaktiven Graufeldern,
+Punktezeilen22/23 und unterem Abstand. F1-HUD einschließlich Font und Color-RAM
+bytegleich mit Stage10a verglichen.
+
+Exit-/RUN-Diagnose belegt wiederverwendeten Titel-/Loadercode4000..47FF und
+5000..563F. Beide Phasen werden jetzt korrekt gesichert/wiederhergestellt;
+Resume aktiviert die Titelkopie erneut. Kein manuelles Stack-Abwerfen mehr beim
+normalen Wechsel; IRQs während Resume gesperrt. Echte kontrollierte headless
+XEMU/ROM-V920413-Prüfung:0/1/2 Spielerwechsel, X, beide Codekopien korrekt,
+Audio aus, echtes RUN bis Menü und DIRECTORY erfolgreich. Exakte gemeldete
+AA6CFD/FF4C-Adresse nicht identisch reproduziert; natürliche Treffer-/Sound-
+und visuelle Benutzerabnahme bleiben erforderlich.
+
+Neue Quellen/Build separat, Artefakte unter `releases/stage_10a/stage10a1/`.
+Main/Stage9c3a und bisheriger Stage10a-Stand unverändert.
+[Technik und Abnahme](stage10a_two_player_mode.md),
+[Prüfprotokoll](stage10a1_test_results.txt).
+**Kein Stable, kein Merge ohne erneute ausdrückliche Nutzerfreigabe.**
+
+### Stage10a1 – zusätzliche HUD-Korrektur in PR88
+
+Nach Nutzer-Funktionsbestätigung: zweiter F2-Trennbalken in Zeile21, zwischen
+P2-Leben16–20 und Form./Att.22/23. Fehlende initiale P1-Leben in F1/F2 auf
+statisches Neuzeichnen bei bereits gültigem Life-Shadow zurückgeführt;
+`hud_draw_static` invalidiert jetzt alle25 Shadowbytes vor dynamischer Ausgabe.
+Alle bisherigen Stable-Dateien unverändert; neue PRG/D81 am bestehenden
+Releasepfad. Neue XEMU-Sichtprüfung dieser beiden Korrekturen steht aus.
+Kein Stable-Tag, kein Merge.
+
+### Stage10a1 – Nutzerkorrektur der Originalregeln / Get ready
+
+PR88 bleibt Entwicklungsstand. Korrigierter Amiga-Nutzervergleich ist verbindlich:
+normaler Lebensverlust wechselt den Spieler NICHT; Wechsel erst nach vollständigem
+Levelübergang oder abgeschlossener Game-Over-/Highscore-Behandlung. Levelabschluss
+speichert zuerst die nächste eigene Levelnummer/Bonus und lädt danach ggf. den
+anderen lebenden Spieler, in-place ohne Stoppen der Übergangs-Audioquelle.
+F1/F2 erhalten vor jedem Level100 vollständige PAL-Frames Get ready/Player1oder2,
+zentriert im unteren Drittel, mit exakt dem Gegner-Highlight-Cycling. Gameplay ist
+bis zum Ende gesperrt, Sterne und Streaming laufen weiter. R/+/- zählen ihren
+bereits laufenden Eingabeframe nicht mit. Frühere HUD-/BASIC-Exit-Fixes bleiben.
+Keine Stable-Markierung und kein Merge vor erneuter Nutzerabnahme.

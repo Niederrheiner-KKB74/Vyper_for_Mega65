@@ -1,0 +1,19 @@
+{
+  "reproducible_files": 96,
+  "PRG_sha256": "859bfff501a91c2828684b49ce0bc33aea6563da0b287115fa2fdfdc5f78b96a",
+  "D81_sha256": "7eec06a464a8ca1ce6e3759dbb2a4c3905d9d074e4e7421ac18cba31cecbbea2",
+  "F1_HUD": {
+    "basis": "assembled Stage10a dd11d2a vs Stage10a1, matching cold-menu snapshots, actual F1 start in constrained model",
+    "bytes": 4148,
+    "scope": "all25x42 screen prefix bytes + corresponding Color RAM + 2048-byte original menu font",
+    "identical": true,
+    "sha256": "a522e9778e31c4b5a32f274249855bec513d8ddede0d41242092f88867dc719a"
+  },
+  "XEMU": {
+    "source_commit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+    "local_diagnostic_patch": "tools/diagnostics/stage10a1_xemu_trace.patch",
+    "ROM_sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0",
+    "headless": true,
+    "visual_or_physical_joystick_acceptance": false
+  }
+}

@@ -1,0 +1,69 @@
+diff --git a/targets/mega65/input_devices.c b/targets/mega65/input_devices.c
+index b30be1c..963279a 100644
+--- a/targets/mega65/input_devices.c
++++ b/targets/mega65/input_devices.c
+@@ -203,6 +203,7 @@ static void add_hwa_fake_key_unprotected ( Uint8 asc, const int single_case )
+ void hwa_kbd_set_fake_key ( const Uint8 asc )
+ {
+ 	queue_pos = 0;
++    if (asc >= 128) { kbd_queue[queue_pos++] = asc | (asc << 8); return; }
+ 	if (asc)
+ 		add_hwa_fake_key_unprotected(asc, 0);
+ }
+diff --git a/targets/mega65/uart_monitor.c b/targets/mega65/uart_monitor.c
+index f15e6d9..04c6019 100644
+--- a/targets/mega65/uart_monitor.c
++++ b/targets/mega65/uart_monitor.c
+@@ -26,6 +26,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA */
+ #include "xemu/cpu65.h"
+ #include "memory_mapper.h"
+ #include "sdcard.h"
++#include "input_devices.h"
+ #include "xemu/emutools_socketapi.h"
+ #include <string.h>
+ 
+@@ -374,7 +375,9 @@ static void execute_command ( char *cmd )
+ 			reset_mega65(RESET_MEGA65_HARD);
+ 			break;
+ 		case '~':
+-			if (!strncmp(cmd, "exit", 4)) {
++			if (!strncmp(cmd, "key", 3)) {
++                unsigned int k; if (sscanf(cmd+3,"%x",&k)==1) hwa_kbd_set_fake_key(k);
++            } else if (!strncmp(cmd, "exit", 4)) {
+ 				XEMUEXIT(0);
+ 			} else if (!strncmp(cmd, "reset", 5)) {
+ 				reset_mega65(RESET_MEGA65_HARD);
+diff --git a/xemu/cpu65.c b/xemu/cpu65.c
+index 54aff29..2e95d0e 100644
+--- a/xemu/cpu65.c
++++ b/xemu/cpu65.c
+@@ -923,6 +923,16 @@ int cpu65_step (
+ 		return 7;
+ #endif
+ 	}
++#ifdef MEGA65
++    { static unsigned pcs[128], ops[128], sps[128], pos=0, seen=0, dumped=0;
++      if (CPU65.pc == 0x9900 && readByte(CPU65.pc) == 0xa9) seen=1;
++      if (seen && !dumped && CPU65.pc == 0) {
++        dumped=1; fprintf(stderr,"DIAGNOSTIC NATIVE PC0 TRACE\n");
++        for (unsigned i=0;i<128;i++) { unsigned j=(pos+i)&127; fprintf(stderr,"%04X op%02X SP%04X\n",pcs[j],ops[j],sps[j]); }
++      }
++      pcs[pos]=CPU65.pc;ops[pos]=readByte(CPU65.pc);sps[pos]=CPU65.s|CPU65.sphi;pos=(pos+1)&127;
++    }
++#endif
+ 	CPU65.old_pc = CPU65.pc;
+ #ifdef DEBUG_CPU
+ 	if (CPU65.pc == 0)
+diff --git a/xemu/emutools.c b/xemu/emutools.c
+index 9456ee9..cb01fe1 100644
+--- a/xemu/emutools.c
++++ b/xemu/emutools.c
+@@ -998,7 +998,7 @@ int xemu_init_sdl ( void )
+ 		DEBUGPRINT("SDL: no SDL subsystem initialization has been done yet, do it!" NL);
+ 		SDL_Quit();	// Please read the long comment at the pre-init func above to understand this SDL_Quit() here and then the SDL_Init() right below ...
+ 		DEBUG("SDL: before SDL init" NL);
+-		if (SDL_Init(XEMU_SDL_INIT_EVERYTHING)) {
++		if (SDL_Init(XEMU_SDL_INIT_EVERYTHING & ~(SDL_INIT_JOYSTICK | SDL_INIT_GAMECONTROLLER | SDL_INIT_HAPTIC))) {
+ 			ERROR_WINDOW("Cannot initialize SDL: %s", SDL_GetError());
+ 			return 1;
+ 		}

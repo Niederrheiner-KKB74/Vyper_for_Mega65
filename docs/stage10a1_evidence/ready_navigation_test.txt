@@ -1,0 +1,6 @@
+test_test_navigation_keeps_actor_bonus_and_100_complete_frames (test_stage10a1_ready.OriginalRules.test_test_navigation_keeps_actor_bonus_and_100_complete_frames) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 9.605s
+
+OK

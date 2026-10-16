@@ -1,0 +1,46 @@
+{
+  "source_sha256": {
+    "Vyper_Memory_Dump.dat": "d74aea88fb4232e36caab80e51abc51f73d470a5b55a54f5cb010f1d910ddf8c",
+    "Vyper_Startscreen.uss": "d836cbf88f0ac35b6ed3776df2add39f699113c1aeb9d02cdfe4651c82793916",
+    "VYPER.ADF": "b28cab911431aaf3e48fd3e9979159de7154f98538eeba191f52ac47ef9665e5"
+  },
+  "ranges": [
+    {
+      "name": "round_initialization",
+      "start": "0xc08ef4",
+      "end_exclusive": "0xc08f68",
+      "verified_copies": 2
+    },
+    {
+      "name": "round_audio_reset",
+      "start": "0xc0a286",
+      "end_exclusive": "0xc0a2ea",
+      "verified_copies": 2
+    },
+    {
+      "name": "round_level_pointer",
+      "start": "0xc0a2ea",
+      "end_exclusive": "0xc0a304",
+      "verified_copies": 2
+    },
+    {
+      "name": "player_life_consumption",
+      "start": "0xc09528",
+      "end_exclusive": "0xc09570",
+      "verified_copies": 2
+    },
+    {
+      "name": "death_and_gameover",
+      "start": "0xc0978e",
+      "end_exclusive": "0xc098a4",
+      "verified_copies": 2
+    },
+    {
+      "name": "helper_called_after_life_change",
+      "start": "0xc0c69e",
+      "end_exclusive": "0xc0c72a",
+      "verified_copies": 2
+    }
+  ],
+  "scope": "Bounded disassembly, not dynamic two-player execution. No proven full enemy snapshot/restore; Stage10a uses authorized per-player level restart."
+}

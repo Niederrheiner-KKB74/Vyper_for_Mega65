@@ -1,0 +1,19 @@
+{
+  "files_compared": 97,
+  "all_identical": true,
+  "PRG_sha256": "58cf48b0c4749e8a1603a59a55ebe18993c5dc9fcc0e372ac37ebbc757eb27cd",
+  "D81_sha256": "fc2090b241f751df502e38acdce8d200f6cbdf62c6240a79c2285a83c61edf22",
+  "D81_bytes": 819200,
+  "DATs_unchanged": [
+    "VYCL.DAT",
+    "VYGR.DAT",
+    "VYHI.DAT",
+    "VYHS.DAT",
+    "VYLV.DAT",
+    "VYMN.DAT",
+    "VYSH.DAT",
+    "VYSO.DAT",
+    "VYTI.DAT"
+  ],
+  "menu_and_audio_core_unchanged": true
+}

@@ -1,0 +1,24 @@
+Actual assembled CPU/VIC/DOS/PCM host model, not XEMU.
+Fresh matching menu snapshot produced by a full cold boot of this PRG.
+Selection: all TwoPlayer tests except test_x_after_switch_restores_full_title_bootstrap_for_real_run.
+That expensive host RUN case is covered instead by actual BASIC RUN in xemu_hud_regression.json.
+
+test_actual_dma_death_sample_completion_and_respawn_controls (test_stage10a1_two_player.TwoPlayer.test_actual_dma_death_sample_completion_and_respawn_controls) ... ok
+test_both_gameovers_menu_new_game_then_x_rearms_title_backup (test_stage10a1_two_player.TwoPlayer.test_both_gameovers_menu_new_game_then_x_rearms_title_backup) ... ok
+test_each_elimination_gets_own_score_ties_new_before_old_then_survivor (test_stage10a1_two_player.TwoPlayer.test_each_elimination_gets_own_score_ties_new_before_old_then_survivor) ... ok
+test_f2_initial_level_independent_state_and_p1_starts (test_stage10a1_two_player.TwoPlayer.test_f2_initial_level_independent_state_and_p1_starts) ... ok
+test_first_visible_frame_lives_f1_f2_selected_level_and_static_redraw (test_stage10a1_two_player.TwoPlayer.test_first_visible_frame_lives_f1_f2_selected_level_and_static_redraw) ... ok
+test_first_visible_lives_after_f3_gameover_and_r_restart (test_stage10a1_two_player.TwoPlayer.test_first_visible_lives_after_f3_gameover_and_r_restart) ... ok
+test_identity_hud_scores_levels_and_active_marker_after_redraw (test_stage10a1_two_player.TwoPlayer.test_identity_hud_scores_levels_and_active_marker_after_redraw) ... ok
+test_independent_bonus_saturation_and_both_hud_icon_caps (test_stage10a1_two_player.TwoPlayer.test_independent_bonus_saturation_and_both_hud_icon_caps) ... ok
+test_reverse_elimination_nonqual_and_cancel_leave_survivor (test_stage10a1_two_player.TwoPlayer.test_reverse_elimination_nonqual_and_cancel_leave_survivor) ... ok
+test_selected_f2_return_and_fire_share_direct_f2_start_and_release_latch (test_stage10a1_two_player.TwoPlayer.test_selected_f2_return_and_fire_share_direct_f2_start_and_release_latch) ... ok
+test_skips_wrap_and_restart_do_not_touch_other_bonus_or_score (test_stage10a1_two_player.TwoPlayer.test_skips_wrap_and_restart_do_not_touch_other_bonus_or_score) ... ok
+test_switch_after_full_explosion_and_sound_then_restore_own_level (test_stage10a1_two_player.TwoPlayer.test_switch_after_full_explosion_and_sound_then_restore_own_level) ... ok
+test_two_player_layout_separator_colours_bottom_margin_and_f1_unchanged (test_stage10a1_two_player.TwoPlayer.test_two_player_layout_separator_colours_bottom_margin_and_f1_unchanged) ... ok
+test_x_has_priority_on_the_exact_frame_a_switch_becomes_ready (test_stage10a1_two_player.TwoPlayer.test_x_has_priority_on_the_exact_frame_a_switch_becomes_ready) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 332.943s
+
+OK

@@ -1,0 +1,2 @@
+.const AUDIO_FILE_BYTES=160960
+.const AUDIO_FILE_CRC=$9d0f
