@@ -1,0 +1,16 @@
+{
+  "D81_sha256": "7eec06a464a8ca1ce6e3759dbb2a4c3905d9d074e4e7421ac18cba31cecbbea2",
+  "diagnostic_stub": {
+    "address": 6976,
+    "bytes": "20d03e20e0354c4e22",
+    "calls": "original audio8.player_death and tick"
+  },
+  "before_CTRL": 194,
+  "after_CTRL": 0,
+  "BASIC": {
+    "pc": 60139,
+    "sp": 488,
+    "registers": "20 01 40 40 00"
+  },
+  "limits": "DMA CTRL and safe exit; no hearing/panning claim"
+}

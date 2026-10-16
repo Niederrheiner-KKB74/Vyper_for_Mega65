@@ -1,0 +1,108 @@
+{
+  "kind": "headless XEMU controlled-state regression",
+  "rom": "V920413",
+  "D81_sha256": "7eec06a464a8ca1ce6e3759dbb2a4c3905d9d074e4e7421ac18cba31cecbbea2",
+  "real_inputs": "ROM GETIN queue for X, RUN, DIRECTORY; menu/start and WAIT diagnostic writes",
+  "limits": "No physical joystick, visual/panning judgment, natural collision or death-sound timing claim",
+  "cases": [
+    {
+      "switches": 0,
+      "game_start": {
+        "pc": 8784,
+        "sp": 491,
+        "registers": "0F 13 20 00 00"
+      },
+      "handoffs": [],
+      "BASIC": {
+        "pc": 60283,
+        "sp": 489,
+        "registers": "20 01 41 00 00"
+      },
+      "RUN_menu": {
+        "pc": 28728,
+        "sp": 491,
+        "registers": "37 FF FF 00 00"
+      },
+      "code_restored": true
+    },
+    {
+      "switches": 1,
+      "game_start": {
+        "pc": 8784,
+        "sp": 491,
+        "registers": "0F 13 20 00 00"
+      },
+      "handoffs": [
+        {
+          "active": 1,
+          "pc": 8784,
+          "sp": 491,
+          "registers": "0F 13 20 00 00"
+        }
+      ],
+      "BASIC": {
+        "pc": 57797,
+        "sp": 494,
+        "registers": "FF 0C 0B 00 00"
+      },
+      "RUN_menu": {
+        "pc": 28728,
+        "sp": 491,
+        "registers": "37 FF FF 00 00"
+      },
+      "code_restored": true
+    },
+    {
+      "switches": 2,
+      "game_start": {
+        "pc": 8784,
+        "sp": 491,
+        "registers": "0F 13 20 00 00"
+      },
+      "handoffs": [
+        {
+          "active": 1,
+          "pc": 8784,
+          "sp": 491,
+          "registers": "0F 13 20 00 00"
+        },
+        {
+          "active": 0,
+          "pc": 8784,
+          "sp": 491,
+          "registers": "0F 13 20 00 00"
+        }
+      ],
+      "BASIC": {
+        "pc": 57797,
+        "sp": 494,
+        "registers": "FF 0C 0B 00 00"
+      },
+      "RUN_menu": {
+        "pc": 28728,
+        "sp": 491,
+        "registers": "37 FF FF 00 00"
+      },
+      "code_restored": true
+    }
+  ],
+  "game_over_menu_restart": {
+    "overlays": [
+      {
+        "player": 0,
+        "pc": 8905,
+        "sp": 488,
+        "registers": "50 02 FF 00 00"
+      },
+      {
+        "player": 1,
+        "pc": 8905,
+        "sp": 488,
+        "registers": "50 02 FF 00 00"
+      }
+    ],
+    "new_F1_then_X_code_restored": true,
+    "overlay_input": "quit flag, not physical name cancellation"
+  },
+  "DIRECTORY": "                                                                                READY.                                                                          DIRECTORY                                                                          0 \"VYPER STAGE10A1 \" 3B 3D                                                    178 \"STAGE10A1\"        PRG                                                      323 \"VYLV.DAT\"         SEQ                                                      132 \"VYGR.DAT\"         SEQ                                                        2 \"VYCL.DAT\"         SEQ                                                      238 \"VYTI.DAT\"         SEQ                                                      342 \"VYMN.DAT\"         SEQ                                                        5 \"VYSH.DAT\"         SEQ                                                      634 \"VYSO.DAT\"         SEQ                                                      115 \"VYHS.DAT\"         SEQ                                                        3 \"VYHI.DAT\"         SEQ                                                     1188 BLOCKS FREE                                                                                                                                                READY.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "
+}

@@ -1,0 +1,5 @@
+PASS: 0 handoffs, X, both code regions, audio stop, actual RUN -> menu
+PASS: 1 handoffs, X, both code regions, audio stop, actual RUN -> menu
+PASS: 2 handoffs, X, both code regions, audio stop, actual RUN -> menu
+PASS: both Game Overs/highscore overlays -> menu -> new F1 -> X, code restored
+PASS: actual BASIC DIRECTORY lists Stage10a1 disk

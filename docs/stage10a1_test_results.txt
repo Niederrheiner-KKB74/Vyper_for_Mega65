@@ -1,0 +1,79 @@
+Stage10a1 / PR88 / Issue87 + Nutzerfeedback16.10.2026
+Entwicklungsbranch stage10a. Kein Stable, kein Merge.
+
+Ausgangsbasis: dd11d2a50fd777162946479098796c55c61fcd53.
+Stage9c3a/main36d5a4b und bisheriger Stage10a-Release unverändert geschützt.
+Menüstart-Fehler vom Nutzer als Testkonfiguration korrigiert; Menücode unverändert.
+
+BUILD
+KickAssembler5.25, Java21, Python3.12/Pillow; py65 1.2.0 für Hostmodelle.
+python tools/build_stage10a1.py --kickass /workspace/stage3b-inspection/KickAss.jar
+Zweiter Build --output /tmp/stage10a1-repro:96 Dateien bytegleich.
+PRG859bfff501a91c2828684b49ce0bc33aea6563da0b287115fa2fdfdc5f78b96a
+D817eec06a464a8ca1ce6e3759dbb2a4c3905d9d074e4e7421ac18cba31cecbbea2
+D81819200 Bytes; PRG +9 SEQ-Assets, Dateiketten/BAM/Größen/Signaturen geprüft.
+SHA256SUMS unter releases/stage_10a/stage10a1/.
+Original-Level/Grafik/Palette/Schuss-/Audio-DATs und Audio-Core unverändert.
+Beleg: stage10a1_evidence/build_validation.json.
+
+FEHLERNACHWEIS
+Unveränderter Stage10a dd11d2a, XEMU40dfef0, Benutzer-ROMV920413:
+P1->P2 per kontrolliertem WAIT-Zustand, X, echtes BASIC RUN. Nach X war4000
+weiterhin Font;5519 enthielt Color-RAM-Bytes. Ausführung4802->5519..5529 führte
+via indirektem JMP nach0000. Verlauf in stage10a1_evidence/stage10a_original_pc0_trace.txt.
+Ursachen: tc_saved vor Resume nicht reaktiviert; Phase5000..563F inklusive
+Highscore-Bootstrap5448..55C3 vor echtem RUN nicht restauriert.
+Die exakte BenutzeradresseAA6CFD/FF4C wurde NICHT identisch reproduziert.
+Zusätzlich: normaler Wechsel aus Hauptschleife ohne Stack-Abwerfen; IRQ-Sperre
+während Resume. Nicht als alleiniger Beweis für die Benutzeradresse behauptet.
+
+LOKALES ECHTES HEADLESS-XEMU
+Emulator40dfef0d1d5f56be2469492715c12bdb32c75b67, PAL, ROMV920413.
+ROM SHA256af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0.
+SDL-Dummy, lokale Diagnosepatches dokumentiert in tools/diagnostics/stage10a1_xemu_trace.patch.
+Die eigentliche Regression verwendet ausschließlich das normale UART-Protokoll:
+python tools/check_stage10a1_xemu.py --socket /tmp/vyper-xemu.sock --output <protokoll.json>
+D81-Kopie, endgültiger Build einschließlich rechter HUD-Randkorrektur:
+PASS P1->X, Codebereiche4000..47FF/5000..563F bytegleich zu Sicherungen, Audio aus,
+     echtes BASIC RUN bis Startmenü.
+PASS P1->P2->X mit denselben Prüfungen und erneutem RUN.
+PASS P1->P2->P1->X mit denselben Prüfungen und erneutem RUN.
+PASS Stackpointer vor/nach jeder Übergabe01EB im echten ROM-Lauf.
+PASS beide GameOvers mit Highscore-Overlays(kontrolliertes quit ohne Namens-/Dateiänderung),
+     Menü, neues F1, X und beide Codebereiche korrekt restauriert.
+PASS X beendet tatsächlich laufende originale Player-Death-PCM; Audio-DMA-CTRL
+     vor Exit aktiv, danach gestoppt/restauriert. Temporärer Diagnose-JSR-Stub
+     nur im unbenutzten privaten Emulator-RAM1B40..1B48; kein PRG-Patch.
+PASS echtes BASIC DIRECTORY zeigt VYPER STAGE10A1, kein DEVICE-NOT-PRESENT.
+Belege: stage10a1_evidence/xemu_regression.json, xemu_check_output.txt,
+xemu_audio_exit.json und xemu_audio_exit_output.txt.
+
+Einschränkung: Menübestätigung und bereits abgeschlossener Tod(WAIT) werden im
+Emulator gesetzt. X/RUN/DIRECTORY gehen durch den originalen ROM-Tastaturpuffer.
+Keine Behauptung eines echten Joystick-, Kollisions-, Sound-Timing-/Hör- oder
+visuellen Tests. Originale Death-Sound-/Explosionspfade zusätzlich im Hostmodell.
+Kein mitgeliefertes oder veröffentlichtes Benutzer-ROM.
+
+F1-REFERENZ
+4148 Bytes aus tatsächlichen F1-Starts im Assembler-Hostmodell verglichen:
+25*42 Screen-Präfixbytes, entsprechendes Color RAM und2048Bytes Originalmenüfont.
+Bytegleich mit Stage10a, SHA256a522e9778e31c4b5a32f274249855bec513d8ddede0d41242092f88867dc719a.
+Nach Stage-Normalisierung identischer Menücode. Flug-/Kollisions-/Audioquellen
+identisch; funktionale Änderungen ausschließlich main/HUD/title/two_player/integration
+und neuer Loadercache. Alle sieben Legacy-Typ2-FramesA200..A57F erhalten.
+
+HOST-REGRESSION
+Laufprotokolle und endgültige Ergebnisse werden nach Abschluss unten ergänzt.
+Das begrenzte CPU/VIC/KERNAL/DOS/Audio-DMA-Modell ersetzt keine Hardwareprüfung.
+
+NOCH ERFORDERLICHE BENUTZERABNAHME
+- Physischer JoystickPort2, Cursor-/RETURN-/Feuerwahl von F1/F2/F3.
+- Normale Treffer mit vollständigem Player-Explosionssound, P1/P2-Wechsel,
+  X während BLINK/Audio und danach RUN/DIRECTORY.
+- Beide Ausscheidereihenfolgen, Name/Highscore/VYHI, Fortsetzung des anderen,
+  schließlich Menü; X auch nach Highscore/aus dem Menü.
+- P1/P2-Farben, horizontaler Balken,4x2 Leben(max8sichtbar,30intern), keine Bedienhinweise
+  im F2-HUD, aufeinanderfolgende Form./Att.-Zeilen und rechter/unterer Rand.
+- Unverändertes F1, natürliche Kollisionen/Schüsse/ATTACK, Sterne, Sound/Panning,
+  100Level, Bonusleben und automatischer Levelübergang.
+Keine Stable-Markierung und kein Merge vor ausdrücklicher Bestätigung.

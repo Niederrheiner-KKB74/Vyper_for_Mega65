@@ -1,4 +1,160 @@
-# Stage 10a – abwechselnder Zweispielermodus (Issue 87)
+# Stage 10a1 – Nachbesserung in PR #88
+
+Entwicklungsstand im bestehenden Branch `stage10a`; Ausgangspunkt
+`dd11d2a50fd777162946479098796c55c61fcd53`. Stage 9c3a/`main` und die bisherigen
+Stage-10a-Dateien bleiben unverändert. Kein Stable-Tag und kein Merge.
+
+## Menü: Nutzerkorrektur übernommen
+
+Der Nutzer hat den F2-Menüstart als funktionierend bestätigt: Die gegenteilige
+Beobachtung war ein Konfigurationsfehler. Der Menüquellcode bleibt nach
+Dateinamen-/Stage-Normalisierung bytegleich. Cursor/Joystick-Auswahl und
+RETURN/Feuer, direkte F2-Taste und Feuer-Loslasssperre werden zusätzlich getestet.
+F1, F3, INITIAL LEVEL und Menü-Color-Cycling sind unverändert.
+
+## Exit-Diagnose: ausführbarer Code wurde als Grafik-/Color-RAM wiederverwendet
+
+Der Nutzer grenzt den Fehler auf den Zustand nach einem Lebensverlust/Wechsel
+ein; direkt nach Levelstart funktioniert X. Die Meldung lautet
+`Unhandled memory read ... $AA6CFD (PC=$FF4C)`.
+
+Zwei konkrete Lebenszyklusfehler wurden am unveränderten dd11d2a nachgewiesen:
+
+1. `exit_to_basic` wird auch intern beim Spielerwechsel verwendet.
+   `titlecache.tc_restore` restauriert dabei `$4000–$47FF` und setzt `tc_saved=0`.
+   `twop.resume` startete anschließend die HUD-Initialisierung erneut, die den
+   gleichen Bereich mit dem Originalmenü-Font überschreibt. Das Cache-Flag wurde
+   nicht wieder gesetzt. Beim nächsten Exit blieb Font statt Titel-/Loadercode
+   im RAM. Stage 10a1 ruft vor jedem Resume und jedem neuen Spiel aus dem Menü
+   `titlecache.tc_save` erneut auf.
+2. `entry.e_save_colour` verwendet `$5000–$563F` als BASIC-Color-RAM-Sicherung.
+   Dort liegen vorher Audio-Lader und Highscore-Bootstrap (`$5448…$55C3`).
+   Der Highscore-Bootstrap wurde für einen echten erneuten BASIC-RUN nicht
+   restauriert. Im lokalen XEMU sprang `s3b.entry` bei `$4802` nach `$5519`, wo
+   Farbbytes als Befehle ausgeführt wurden; `$5529: JMP (...)` führte nach `$0000`.
+   Der CPU-Verlauf liegt in `stage10a1_evidence/stage10a_original_pc0_trace.txt`.
+   Der neue `bootstrapcache` sichert diese 1600 Bytes einmal je PRG-Load im
+   Attic und restauriert sie **nach** dem Color-RAM-Restore bei jedem Exit.
+   Wiederholtes RUN verwendet weiter diese gültige Sicherung. Ein erneutes LOAD
+   initialisiert das private Cache-Flag mit dem neuen PRG wieder auf null.
+
+Das ist ein Code-/Daten-Überlagerungsfehler, kein Anlass zum Übermalen des
+BASIC-Bildschirms. Die gesicherte Titelkopie enthält auch die beim Boot erfassten
+VIC-/Palettenwerte; sie wird nach der Restaurierung erneut vor Fontüberschreibung
+bewahrt. Die zusätzliche Loaderkopie wird niemals aus bereits überschriebenen
+Farbbytes neu erzeugt.
+
+**Grenze des Befunds:** Die exakte Nutzeradresse `$AA6CFD/$FF4C` wurde lokal nicht
+identisch reproduziert. Nachgewiesen und korrigiert sind die beiden ungültigen
+Codezustände und der reale Wiederstartabbruch. Bei nativem ROM-Mapping ist
+`$FF4C` das Operandbyte `$FA` des JMP bei `$FF4A`, kein regulärer Routinenanfang.
+Das passt zu verlorener Kontrolle über den Befehlsstrom, beweist allein aber
+keinen bestimmten Stack-/MAP-Fehler. Eine behauptete exakte Ursachenverkettung
+zu dieser einzelnen Nutzeradresse wäre ohne dessen Ablauftrace nicht belegt.
+
+Der vorhandene Stage-9c3a-Exit mit VIC/HOTREG, Screen-/Color-/Charset-Restore,
+Sprites, Audio-/Mixer-Restore bleibt erhalten. Keine neuen Schreibzugriffe auf
+KERNAL-Zero-Page oder IRQ-Vektoren. Originale Samples, DMA-Puffer und Klanglogik
+wurden nicht verändert.
+
+Zusätzlich wird der normale Wechsel jetzt **nach Rückkehr der vollständigen
+Tastenaufrufkette in der Hauptschleife** gestartet. Das fragile Verwerfen von fünf
+Stackbytes in `twop.poll` entfällt. X hat dort weiterhin Vorrang. Der Resume-Pfad
+maskiert IRQs bis zum vollständig initialisierten nächsten Spielstart. Diese
+Härtungen werden nicht als nachgewiesene alleinige Ursache der Nutzeradresse
+behauptet. Der bisherige separate Game-Over-/Highscore-Abschluss bleibt erhalten.
+
+## Zweispieler-HUD nach dem bereitgestellten Screenshot
+
+Das Vorher-Bild liegt unverändert unter
+`stage10a1_evidence/user_stage10a_before.png`.
+
+| Inhalt | RRB-Textzeilen im 2P-Modus |
+| --- | --- |
+| HI-SCORE | 0/1, unverändert |
+| PLAYER 1 / Score / Level | 3/4/5, unverändert |
+| P1-Leben | 7–11, unveränderte 4×2-Anordnung |
+| Horizontaler Trennbalken | 12 |
+| PLAYER 2 / Score / Level | 13/14/15 |
+| P2-Leben | 16–20, dieselbe 4×2-Anordnung, Y=130/147 |
+| Freiraum | 21 |
+| Form. / Att. | 22/23, direkt untereinander |
+| Unterer Abstand | 24 |
+
+P/S/X- und NO-P2-Texte entfallen im 2P-HUD vollständig. Labels/Score/Level der
+aktiven, noch lebenden Identität verwenden Gelb/Rot/Blau; die andere Identität
+ist grau. Auch null Leben aktualisiert die Farben. Die Farbe wird beim
+Identitäts-/Lebensstatuswechsel oder nach statischem Neuaufbau aktualisiert,
+nicht durch zusätzliche Palette-Umschaltungen pro Raster.
+
+Die internen WORD-Zähler bleiben auf 30 begrenzt; sichtbar sind weiterhin
+`min(lives,8)` Schiffe einschließlich des aktuellen Schiffs. Kein Abziehen eines
+zusätzlichen Lebens für die Anzeige. Hi-Score, Font, Playfield `[0,240)`,
+Y-Clipping `[0,200)`, RRB-Zeilenbreite 192 und dynamische Gegnerplätze bleiben
+unverändert. F1 verwendet weiterhin sein bestehendes HUD.
+
+## Speicheränderungen gegenüber Stage 10a
+
+| Bereich | Stage 10a1 |
+| --- | --- |
+| `$1B1A/$1B1B` | Privater HUD-Stilcache und Zeilenzähler; innerhalb bestehender Zustandsreserve |
+| `$38BE–<$3963` | Bisher unerreichbare Legacy-Fontkopierroutine durch HUD-Stilhelfer ersetzt; Font kommt weiter aus dem Originalmenü |
+| `$8880–$88BE` | Nativer Loadercache-Helfer, Flag und zwei DMA-Listen; vorher frei zwischen Ende `$8878` und Spritetabelle `$8900` |
+| `$9900–$99B2` | Vorhandene native Gates/Resume, ohne manuelles Stack-Abwerfen |
+| `$99B9–$9A27` | F2-Labels, Stilaktualisierung und Punktzeilenlayout |
+| `$080A0000–$080A063F` | Neue 1600-Byte-Sicherung der ausführbaren Phase `$5000–$563F` |
+
+Der neue Attic-Bereich liegt hinter dem Highscore-Archiv
+`$08090000–$0809AFFF` und außerhalb aller PCM-, Titel-, Menü- und Streamingpuffer.
+Kein neues ChipRAM jenseits `$5FFFF`, kein DOS-RAM und kein ROM-RAM als freier
+Speicher beansprucht. Bestehende Typ-2-Animationsdaten `$A200–$A57F` bleiben
+bytegleich. Die vier Audio-Engine-ABI-Adressen bleiben unverändert; vier
+ursprüngliche NOPs und der ohnehin wirkungslose O-Vergleich geben die nötigen
+acht Bytes für den Hauptschleifen-Wechsel frei. Die 50-Hz-Taktung bleibt erhalten.
+
+## Reproduktion und Abnahme
+
+```sh
+python tools/build_stage10a1.py --kickass /pfad/KickAss.jar
+PYTHONPATH=tests:tools:/pfad/py65 python -m unittest test_stage10a1 test_stage10a1_engine test_stage10a1_two_player -v
+# Optional: bereits laufendes XEMU mit ROM V920413, Kopie der D81 und UART-Socket
+python tools/check_stage10a1_xemu.py --socket /tmp/vyper.sock --output /tmp/stage10a1-xemu.json
+```
+
+Release: `releases/stage_10a/stage10a1/STAGE10A1.PRG` und
+`releases/stage_10a/stage10a1/VYPER_STAGE10A1.d81`, neun SEQ-Dateien einschließlich
+VYHI, sämtliche ASM-/Include-/Daten-Dateien, Symbole, Speicherkarte und SHA256.
+
+Es gibt echte lokale **headless XEMU/ROM-V920413-Tests** mit unverändertem
+UART-Monitorprotokoll: null, ein und zwei kontrollierte Spielerwechsel, X über
+den ROM-GETIN-Puffer, bytegenauer Restore beider Codebereiche, Audio aus,
+anschließend echtes BASIC-RUN bis zum Menü und DIRECTORY. Zusätzlich beide
+Game-Over-Overlays mit kontrolliertem quit → Menü → neues F1 → X sowie X bei
+tatsächlich laufender Original-Player-Death-PCM (DMA-CTRL geprüft, kein Hörtest).
+Die Zustände
+Menüauswahl und bereits abgeschlossene Player-Explosion (WAIT) werden dabei
+gezielt im Emulator gesetzt. Das ist **kein** Test natürlicher Kollisionen,
+physischer Joystickeingabe, subjektiver Bildqualität oder Stereoausgabe.
+Maschinenprotokoll: `stage10a1_evidence/xemu_regression.json`.
+
+Hosttests prüfen die assemblierten vollständigen Pfade einschließlich natürlicher
+Explosions-Timer und modellierter DMA-Soundbeendigung, getrennte Spieler-/Bonus-
+zustände, 30-Leben-Grenze/8-Symbole, Respawn/Unverwundbarkeit, Highscores bei
+beiden Ausscheidereihenfolgen, neue Gleichstände vor alten, VYHI-Speicherung,
+F1/F2/F3, Menüauswahl, Levelwechsel und Original-Assets. Hostmodell und physischer
+MEGA65 sind ausdrücklich zu unterscheiden. Vollständiges Protokoll und noch
+offene Benutzerabnahme: `stage10a1_test_results.txt`.
+
+Unter dem Benutzer-XEMU bitte besonders erneut prüfen: tatsächlicher Treffer
+mit vollständigem Explosionssound → P2 → X, danach RUN; P1→P2→P1→X; X während
+BLINK und Audio; Highscore-Eingabe bei erstem/zweitem Ausscheiden; F3 und X aus
+dem Menü; HUD-Farben und Lebenssymbole bei Bonus/Verlust sowie unverändertes F1.
+Erst diese ausdrückliche Bestätigung erlaubt Stable/ Merge.
+
+---
+
+# Historische Dokumentation Stage 10a (vor Stage 10a1)
+
 
 Ausgangsbasis ist der bestätigte Stage-9c3a-Stand aus `main`,
 `36d5a4b546fb514e435d4567b36c68e8cd18b6e2` (getesteter Programmstand

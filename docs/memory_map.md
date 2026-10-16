@@ -695,3 +695,25 @@ GameOver-Koordinator6F00 unter6F80. Alle DOS-/ROM-/Audio-/Attic-/Titelbereiche
 bleiben wie Stage9c3a; kein neuer High-RAM-Puffer. Das vollständige Assembler-
 Mapping steht in releases/stage_10a/memory-map.txt.
 [Phasenprotokoll und Amiga-Evidenz](stage10a_two_player_mode.md).
+
+## Stage10a1 – phasenfeste Loaderkopien und F2-HUD
+
+Entwicklungsstand im bestehenden Branch stage10a/PR88. Alle Stable-Dateien
+unverändert. Neue ChipRAM-Belegung8880..88BE (vorher frei nach8878, vor8900)
+für Loadercache-Helfer, internes Flag und zwei F018A-DMA-Listen. Eine einmalige
+Kopie5000..563F liegt im freien Attic080A0000..080A063F, hinter dem
+Highscore-Archiv08090000..0809AFFF. Sie restauriert den von Color RAM verdrängten
+Audio-/Highscore-Bootstrap erst nach Rückkopie der Farben. Die vorhandene
+Titelkopie4000..47FF wird vor jedem Resume erneut aktiviert. Keine Allokation
+im DOS-RAM, ROM-Bereich oder über5FFFF-ChipRAM.
+
+1B1A/1B1B nutzen zwei bislang private Reservebytes für F2-HUD-Stil/Zeile.
+38BE..<3963 ersetzt ausschließlich den unerreichbaren alten Fontkopierkörper
+mit Stil-/Trennlinienhelfern; Originalmenüfont bleibt unverändert.
+9900..99B2 und99B9..9A27 enthalten Gate-/Resume-/F2-Ausgabe, weiterhin vor9A56.
+Der normale Wechsel erfolgt per JMP aus der Hauptschleife, ohne Rücksprungframes
+zu verwerfen; bestehende Audio-ABI und alle Typ2-FramesA200..A57F unverändert.
+F2-Zeilen: P2Label/Score/Level13/14/15, Leben16..20, Trennbalken12,
+Form./Att.22/23, Rand24. F1-Bilddaten bytegleich geprüft; RRB192Bytes,
+PlayfieldX<240 und Y0..199 unverändert.
+Vollkarte: `releases/stage_10a/stage10a1/memory-map.txt`.
