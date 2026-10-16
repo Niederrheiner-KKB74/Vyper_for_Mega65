@@ -52,6 +52,11 @@ reproduzierbar. Hier14ausgeführt; der aufwendige Host-X/RUN-Test ist ausgelasse
 weil0/1/2Wechsel und tatsächliches ROM-RUN im echten XEMU bereits bestanden sind.
 Beleg: stage10a1_evidence/host_hud_regression.txt.
 
+AKTUELLER DOWNLOAD
+https://raw.githubusercontent.com/Niederrheiner-KKB74/Vyper_for_Mega65/e96dd0014fc6c673f574dd8a162a67a9cf776bb2/releases/stage_10a/stage10a1/VYPER_STAGE10A1.d81
+HTTP200,819200Bytes, bytegleich zum geprüften D81.
+Beleg: stage10a1_evidence/hud_github_download.json.
+
 BENUTZERABNAHME
 F1/F2 in001 und anderem INITIAL LEVEL: Symbole sofort vor dem ersten Treffer.
 F2: beide Balken, kein Überdecken der Lebensfelder/Punktezeilen/Playfield.
