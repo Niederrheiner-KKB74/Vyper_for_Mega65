@@ -1,5 +1,5 @@
 """Actual assembled Stage10a1 paths; constrained CPU/VIC/PCM/DOS model, not XEMU."""
-import copy,pickle,os,unittest
+import copy,pickle,os,unittest,hashlib
 import stage10a1_model as M
 from stage10a1_model import N,MN,HS,H,TP,ART
 import highscore_format as F
@@ -179,9 +179,20 @@ class TwoPlayer(unittest.TestCase):
   self.assertEqual(bytes(d[0xe000+23*192+46:0xe000+23*192+58:2]),b'  \x01tt.')
   d[TP['active']]=1;m.call_at(TP['render'])
   self.assertEqual(d[0x1b1a],1)
+  for row,ink in ((3,11),(4,11),(5,11),(13,12),(14,13),(15,14)):
+   self.assertEqual(m.memory[0xff80000+row*192+47],ink)
+  d[0x1a0a:0x1a0c]=b'\0\0';m.call_at(TP['render'])
+  for row in (3,4,5,13,14,15):self.assertEqual(m.memory[0xff80000+row*192+47],11)
   # Life loss/elimination changes the visible number, without losing >8 lives.
   for player in (0,1):
    d[TP['active']]=player;d[0x1a0a:0x1a0c]=(30).to_bytes(2,'little');m.call_at(TP['render'])
    self.assertEqual(self.word(m,0x1a0a),30)
+
+  # Independent baseline F1 image: all HUD prefixes/attributes and original font.
+  single=self.fixture();single.game(1);sd=single.memory.data
+  prefix=b''.join(bytes(sd[0xe000+y*192+42:0xe000+y*192+84]) for y in range(25))
+  colour=b''.join(bytes(single.memory[0xff80000+y*192+42+x] for x in range(42)) for y in range(25))
+  image=prefix+colour+bytes(sd[0x4000:0x4800])
+  self.assertEqual(hashlib.sha256(image).hexdigest(),'a522e9778e31c4b5a32f274249855bec513d8ddede0d41242092f88867dc719a')
 
 if __name__=='__main__':unittest.main()

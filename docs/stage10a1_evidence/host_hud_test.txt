@@ -1,0 +1,6 @@
+test_two_player_layout_separator_colours_bottom_margin_and_f1_unchanged (test_stage10a1_two_player.TwoPlayer.test_two_player_layout_separator_colours_bottom_margin_and_f1_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 9.647s
+
+OK

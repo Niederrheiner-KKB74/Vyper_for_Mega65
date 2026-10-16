@@ -63,7 +63,16 @@ identisch; funktionale Änderungen ausschließlich main/HUD/title/two_player/int
 und neuer Loadercache. Alle sieben Legacy-Typ2-FramesA200..A57F erhalten.
 
 HOST-REGRESSION
-Laufprotokolle und endgültige Ergebnisse werden nach Abschluss unten ergänzt.
+PASS:30 Tests in700.332s (vollständiger frischer Boot, kein fremder/staler Snapshot).
+PYTHONPATH=tests:tools:<py65> python -m unittest test_stage10a1 test_stage10a1_engine test_stage10a1_two_player -v
+Protokoll: stage10a1_evidence/host_tests.txt.
+PASS: erweiterten HUD-Test mit aktivem P2, null Leben/inaktivem Grau und F1-
+Baseline-SHA zusätzlich erneut ausgeführt:1 Test in9.647s, unverändertes PRG/D81.
+Protokoll: stage10a1_evidence/host_hud_test.txt.
+Geprüft: F1/F2/F3, Cursor/Joystick-Auswahl und Feuer-Loslassen, beide Spieler-
+Ausscheidereihenfolgen, Highscore/Name/Ties/Persistenz, Bonus30/30, Levelwechsel,
+Respawn/BLINK/Steuerung/Schüsse, beide acht-Symbole-Felder, Rahmen/Farben,
+normaler Wechselstack, X-Vorrang, Codecache nach Wechsel und nach neuem Menüspiel.
 Das begrenzte CPU/VIC/KERNAL/DOS/Audio-DMA-Modell ersetzt keine Hardwareprüfung.
 
 NOCH ERFORDERLICHE BENUTZERABNAHME
@@ -77,3 +86,8 @@ NOCH ERFORDERLICHE BENUTZERABNAHME
 - Unverändertes F1, natürliche Kollisionen/Schüsse/ATTACK, Sterne, Sound/Panning,
   100Level, Bonusleben und automatischer Levelübergang.
 Keine Stable-Markierung und kein Merge vor ausdrücklicher Bestätigung.
+
+DOWNLOAD
+Direkter GitHub-Raw-Download des Programmcommits914aaff8377cedd255e13cd6037b4510745bb68b:
+HTTP200,819200Bytes, SHA256 identisch zum lokalen D81 oben.
+Kein Chat-Dateiservice nötig. Beleg: stage10a1_evidence/github_download.json.
