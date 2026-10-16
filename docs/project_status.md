@@ -936,3 +936,20 @@ lokale XEMU-Speicher-/Export-/A→B→A-/Exit-/RUN-Prüfung. Keine reale
 Hardwareabnahme oder Abnahme der exakten Ziel-XEMU-Version behauptet.
 Kein Merge/Stable und kein Stage10b2-Fix; erst Nutzervergleich auswerten.
 Anleitung: [Stage10b1a](stage10b1a_norrdel_ab.md).
+
+## Stage10b1b — isolierte RRB-Minimalszenen (Issue93)
+
+Branch `stage10b1b-rrb-minimal`, technische Basis PR90/PR92. Vier Szenen
+A–D isolieren normale Zeichen, NCM-Pixie, GOTOX und die volle Referenzszene
+bei konstantem Profil E. Hardware-Sprites markieren Szene und Exportphase.
+PRE wird unmittelbar vor dem Export aufgenommen; POST danach eingefroren und
+zum Fotografieren angehalten. Erst S speichert POST, ohne erneut aufzunehmen.
+CRC16-geschützte Dateien enthalten 162 Register und 13 Speicherregionen,
+einschließlich aller vier Palettenbanken und der zusätzlichen Screenzeile.
+
+Elf Hosttests einschließlich unabhängiger Build-Reproduktion bestanden.
+Ergänzende lokale XEMU-Prüfung aller vier Szenen bestätigt Exporte,
+Speicherrücklesung, Restore und erneutes RUN. Keine Abnahme der exakten
+Ziel-XEMU-Version oder realer Hardware behauptet. Produktive Stage10a1 und
+vorherige Diagnosen unverändert; kein Stable, kein Merge, kein Stage10b2-Fix.
+Anleitung: [Stage10b1b](stage10b1b_rrb_minimal_diagnostics.md).

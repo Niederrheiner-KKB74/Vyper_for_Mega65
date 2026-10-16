@@ -765,3 +765,20 @@ Szenen-A/B-Unterschied: Markerbyte bei physisch `$E02C` (Screenoffset44).
 D051-Schreibwerte `$9F/$1F`, DBLRR0 und PALEMU0; sichere Startvoraussetzung
 und Einschränkung des nicht lesbaren X-IRQ-Komparators sind dokumentiert:
 [Stage10b1a](stage10b1a_norrdel_ab.md).
+
+## Stage10b1b — isolierte RRB-Minimalszenen (Issue93)
+
+Eigene Quellen `src/tests/stage10b1b.asm` und `stage10b1b_helpers.asm`.
+Code ab $2100 unter $4000; Font $4000–$47FF, Schreibschatten $4800–$480F,
+Cache $5000–$50FF, Header $5100–$53FF, Palettenrücklesung $5400–$5FFF,
+Palettensicherung $6000–$6BFF, Zeilenpuffer $6C00/$6D00, Text ab $7000,
+Szenen-/Phasenmarker $7800/$7900. Vorlagen und Referenzspeicher wie zuvor;
+Spritegrafiken jetzt $9200–$92FF (zusätzlich zwei unabhängige Marker).
+
+Color-RAM-Sicherung $40000–$47FFF. PRE: $50000–$59DD7 (40408Bytes).
+POST segmentiert: erste32768Bytes $48000–$4FFFF, weitere7640Bytes
+$5A000–$5BDD7. Kein Überlapp, kein Zugriff auf das ungemappte $60000.
+ROM-Bereich $20000–$3FFFF unverändert. Zusätzlich werden die 192Bytes
+nach dem sichtbaren Screen ($F2C0) und Color-RAM ($FF812C0) erfasst.
+13Regionen einschließlich 3072Bytes echter Palettenrücklesung; Format und
+Grenzen: [Stage10b1b](stage10b1b_rrb_minimal_diagnostics.md).
