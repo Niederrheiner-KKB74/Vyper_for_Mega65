@@ -60,3 +60,18 @@
     `src/engine/stage9c3a*.asm`, `src/tests/stage9c3a*.asm`,
     `tools/build_stage9c3a.py` und `releases/stage_9c3/stage9c3a/` schützen.
     Stage10a bleibt bis ausdrücklicher XEMU-Bestätigung Entwicklungsstand.
+
+19. **Hardware vor XEMU:** XEMU ist für folgende Punkte nicht maßgeblich; die
+    Regeln gelten für alle neuen Stages (Grundlage: Stage10a1-HW2, vom Benutzer
+    am 17.10.2026 auf MEGA65 mit Core 0.97 `aaf4542`, ROM 920413, PAL bestätigt):
+    a) CHRXSCL `$D05A` skaliert auf echter Hardware den kompletten RRB-Zeilenpuffer
+       einschließlich GOTOX-Positionen (XEMU nur die Glyphen). Spielbildschirm
+       daher H320 mit `$D05A=120`; GOTOX-Werte in logischen 320er-Koordinaten
+       (Playfield 0–239, HUD ab 240). Kein H640 mit `$D05A=60`.
+    b) Audio-DMA: `$D72A`/`$D72B` vor `$D72C` schreiben; erst das Schreiben von
+       `$D72C` übernimmt die aktuelle Adresse. `$D711` nur über Bit 7 prüfen.
+    c) RRB-Doppelpufferung beibehalten (`$D051` Bit 7 = 0, im Renderer gesetzt).
+       Ohne sie liest die Hardware den Zeilenpuffer, während er noch gemalt wird;
+       links stehende Pixies bekommen schwarze Linien.
+    Grafik- und Soundänderungen gelten erst nach einem Test auf echter Hardware
+    als bestätigt; ein XEMU-Test allein reicht dafür nicht.

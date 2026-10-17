@@ -1,6 +1,6 @@
 # Stage10a1-HW (Hardwaretest)
 
-Revision 2. Basis: Stage10a1 (`releases/stage_10a/stage10a1`), byte-genau gepatcht mit `tools/patch_stage10a1_hw.py`.
+Revision 2, vom Benutzer am 17.10.2026 auf echter Hardware (Core 0.97 `aaf4542`, ROM 920413, PAL) und in XEMU bestätigt. Basis: Stage10a1 (`releases/stage_10a/stage10a1`), byte-genau gepatcht mit `tools/patch_stage10a1_hw.py`.
 Start: `LOAD "STAGE10A1",8` und `RUN`, Diskettenname `VYPER 10A1 HW2`.
 
 1. Audio-DMA: `$D72A/$D72B` vor `$D72C` schreiben. Auf der Hardware übernimmt erst `$D72C` die Adresse.
