@@ -905,3 +905,63 @@ zentriert im unteren Drittel, mit exakt dem Gegner-Highlight-Cycling. Gameplay i
 bis zum Ende gesperrt, Sterne und Streaming laufen weiter. R/+/- zählen ihren
 bereits laufenden Eingabeframe nicht mit. Frühere HUD-/BASIC-Exit-Fixes bleiben.
 Keine Stable-Markierung und kein Merge vor erneuter Nutzerabnahme.
+
+## Stage10b1 — VIC-IV-/RRB-Diagnose für Core0.97 (Issue89)
+
+Separater Entwicklungsbranch `stage10b1-hardware-diagnostics`, keine
+Änderung an Stage10a1 oder Stable-Releases. Eigenständige Referenzszene mit
+240×200-Playfield, HUD, Raster, transparentem Original-RRB-Pixie,
+Hardware-Sprite und1×4-Projektil. Zwei Initialisierungsprofile, vier
+adressierte Registerschnappschüsse, SEQ-Export und RAM-Fallback sowie
+Vergleichsskript. PAL80×25, identische ROM wie XEMU vom Benutzer bestätigt.
+
+Reproduzierbare Assembly/D81-Prüfung und ergänzende lokale Headless-XEMU-
+Speicher-/Export-/Restoretests; echter MEGA65 Core0.97 aaf4542 und exaktes
+XEMU-Release20260129235930 müssen noch durch den Benutzer verglichen werden.
+Keine Hardwareursache behauptet, kein produktiver Fix, nicht Stable und
+kein Merge freigegeben. Anleitung und Beleggrenzen:
+[Stage10b1](stage10b1_viciv_hardware_comparison.md).
+
+## Stage10b1a — NORRDEL bei konstantem Profil E (Issue91)
+
+Separater Branch `stage10b1a-norrdel-ab`, interaktiver Diagnosetest A/B,
+keine Änderung an der produktiven Stage10a1 oder der Stage10b1-Basis.
+A setzt NORRDEL1, B NORRDEL0; PALEMU0/DBLRR0 und sonstige Konfiguration
+bleiben gleich. Vier neue versionierte Registerphasen inklusive erhaltenem
+D012-/D011-Startkontext sowie36292Byte-Speicherbegleitdatei aus tatsächlicher
+DMA-Rücklesung. Export/Analyse ohne lesbare HUD-Anzeige möglich.
+
+Reproduzierbarer KickAssembler-Build, PRG/D81, neun Hosttests und ergänzende
+lokale XEMU-Speicher-/Export-/A→B→A-/Exit-/RUN-Prüfung. Keine reale
+Hardwareabnahme oder Abnahme der exakten Ziel-XEMU-Version behauptet.
+Kein Merge/Stable und kein Stage10b2-Fix; erst Nutzervergleich auswerten.
+Anleitung: [Stage10b1a](stage10b1a_norrdel_ab.md).
+
+## Stage10b1b — isolierte RRB-Minimalszenen (Issue93)
+
+Branch `stage10b1b-rrb-minimal`, technische Basis PR90/PR92. Vier Szenen
+A–D isolieren normale Zeichen, NCM-Pixie, GOTOX und die volle Referenzszene
+bei konstantem Profil E. Hardware-Sprites markieren Szene und Exportphase.
+PRE wird unmittelbar vor dem Export aufgenommen; POST danach eingefroren und
+zum Fotografieren angehalten. Erst S speichert POST, ohne erneut aufzunehmen.
+CRC16-geschützte Dateien enthalten 162 Register und 13 Speicherregionen,
+einschließlich aller vier Palettenbanken und der zusätzlichen Screenzeile.
+
+Elf Hosttests einschließlich unabhängiger Build-Reproduktion bestanden.
+Ergänzende lokale XEMU-Prüfung aller vier Szenen bestätigt Exporte,
+Speicherrücklesung, Restore und erneutes RUN. Keine Abnahme der exakten
+Ziel-XEMU-Version oder realer Hardware behauptet. Produktive Stage10a1 und
+vorherige Diagnosen unverändert; kein Stable, kein Merge, kein Stage10b2-Fix.
+Anleitung: [Stage10b1b](stage10b1b_rrb_minimal_diagnostics.md).
+
+### Stage10b1b: Hardware-/Benutzer-XEMU-Auswertung 17.10.2026
+
+Vier hochgeladene D81 mit24gültigen Schnappschüssen und16Bildern ausgewertet.
+Alle zwölf PRE/PST-Paare: keine unerklärte Speicheränderung. Hardware C/D zeigt
+kein lesbares HUD, XEMU dagegen schon; Hardware D-PST zeigt zusätzlich gelbe
+Bänder trotz gleicher erfasster Bilddaten. Diagnosefehler nachgewiesen: Mono-
+Breite16native Pixel statt8; A/B-HUD und B-Pixie sind deshalb offscreen und
+kein aussagekräftiger Plattformunterschied. Dokumentation berichtigt, Build
+unverändert. D07A-Startwerte und nicht initialisierte Randzeile sind offene
+Kontrollvariablen; keine bestätigte Hardwareursache, kein Stage10b2-Fix.
+[Bericht und Originalbelege](stage10b1b_hardware_results_20261017.md).

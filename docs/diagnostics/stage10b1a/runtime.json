@@ -1,0 +1,121 @@
+{
+  "type": "supplemental headless controlled XEMU run",
+  "hardware": "NOT_RUN",
+  "requested_xemu_release": "20260129235930 NOT available locally; user comparison required",
+  "local_xemu_commit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+  "patch": "tools/diagnostics/stage10a1_xemu_trace.patch (fake keyboard, headless SDL, trace)",
+  "ROM": "V920413 PAL80x25",
+  "D81_sha256": "d1c98aa8a361569b7b0c83c1987cec5cab3ff7132e2ea387e87229f5cd353938",
+  "limits": "No real-hardware, exact-release, visual, physical-input or raster-timing acceptance claim",
+  "cases": [
+    {
+      "memory_regions_verified_from_live_RAM": 9,
+      "memory_SEQ_exact_RAM_match": true
+    },
+    {
+      "profile": "A",
+      "four_snapshots": true,
+      "screen_colour_grid_DMA_verified": true,
+      "sprite_coordinates_verified": true,
+      "SEQ_exact_RAM_match": true,
+      "DOS_status": "00",
+      "geometry": {
+        "H640": true,
+        "source_pixels_per_native_pixel": 0.5,
+        "native_pixels_per_source_pixel": 2.0,
+        "line_step_bytes": 192,
+        "characters_per_row": 96,
+        "last_row_index": 25,
+        "physical_rasters_per_source_y": 2,
+        "CHARX": 80,
+        "CHARY": 104,
+        "screen_physical": 57344,
+        "colour_offset": 0,
+        "scene_HUD_GOTOX_native": 480,
+        "scene_playfield_logical": [
+          0,
+          239
+        ],
+        "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+        "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+      }
+    },
+    {
+      "memory_regions_verified_from_live_RAM": 9,
+      "memory_SEQ_exact_RAM_match": true
+    },
+    {
+      "profile": "B",
+      "four_snapshots": true,
+      "screen_colour_grid_DMA_verified": true,
+      "sprite_coordinates_verified": true,
+      "SEQ_exact_RAM_match": true,
+      "DOS_status": "00",
+      "geometry": {
+        "H640": true,
+        "source_pixels_per_native_pixel": 0.5,
+        "native_pixels_per_source_pixel": 2.0,
+        "line_step_bytes": 192,
+        "characters_per_row": 96,
+        "last_row_index": 25,
+        "physical_rasters_per_source_y": 2,
+        "CHARX": 80,
+        "CHARY": 104,
+        "screen_physical": 57344,
+        "colour_offset": 0,
+        "scene_HUD_GOTOX_native": 480,
+        "scene_playfield_logical": [
+          0,
+          239
+        ],
+        "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+        "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+      }
+    },
+    {
+      "memory_regions_verified_from_live_RAM": 9,
+      "memory_SEQ_exact_RAM_match": true
+    },
+    {
+      "profile": "A",
+      "four_snapshots": true,
+      "screen_colour_grid_DMA_verified": true,
+      "sprite_coordinates_verified": true,
+      "SEQ_exact_RAM_match": true,
+      "DOS_status": "00",
+      "geometry": {
+        "H640": true,
+        "source_pixels_per_native_pixel": 0.5,
+        "native_pixels_per_source_pixel": 2.0,
+        "line_step_bytes": 192,
+        "characters_per_row": 96,
+        "last_row_index": 25,
+        "physical_rasters_per_source_y": 2,
+        "CHARX": 80,
+        "CHARY": 104,
+        "screen_physical": 57344,
+        "colour_offset": 0,
+        "scene_HUD_GOTOX_native": 480,
+        "scene_playfield_logical": [
+          0,
+          239
+        ],
+        "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+        "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+      }
+    },
+    {
+      "exit_before_RTS": "full32768 colour RAM and4x768 palette bytes restored"
+    },
+    {
+      "repeated_RUN": "returned to diagnostic main with valid new dump"
+    },
+    {
+      "repeated_export_status": "00",
+      "DOS": "00"
+    },
+    {
+      "export_failure": "controlled missing device31; red error, main live, X restoration reached"
+    }
+  ]
+}

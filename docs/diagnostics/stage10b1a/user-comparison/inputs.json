@@ -1,0 +1,89 @@
+{
+  "disks": [
+    {
+      "upload_order": "image1",
+      "filename": "VYPER_STAGE10B1A.d81",
+      "sha256": "d1c98aa8a361569b7b0c83c1987cec5cab3ff7132e2ea387e87229f5cd353938",
+      "bytes": 819200,
+      "PRG_matches_release": true,
+      "dump_files": []
+    },
+    {
+      "upload_order": "image2",
+      "filename": "VYPER_STAGE10B1A.d81",
+      "sha256": "5e8e468006ba437164f8eaec37d683fdc6f9d5557656402e9b739f07d2dfe40b",
+      "bytes": 819200,
+      "PRG_matches_release": true,
+      "dump_files": [
+        {
+          "name": "V1AAX.REG",
+          "variant": "A",
+          "label": "X",
+          "sha256": "7c12281426aa9a9136e382bdcca18de6b0d3bfee244e33093a328d4a93113300",
+          "valid": true
+        },
+        {
+          "name": "V1AAX.MEM",
+          "variant": "A",
+          "label": "X",
+          "sha256": "a971a0dd91fe4b8581fa6f08ccc1daca59c92f506507551d6b9798c85683ff1b",
+          "valid": true
+        },
+        {
+          "name": "V1ABX.REG",
+          "variant": "B",
+          "label": "X",
+          "sha256": "0a183020f5c694c53222c61cd29d66a6ead1372d8fb82124d9eceac88acf045e",
+          "valid": true
+        },
+        {
+          "name": "V1ABX.MEM",
+          "variant": "B",
+          "label": "X",
+          "sha256": "12952d23663897d1afd975fccd709e6be7d4dadaee6f18253bcc43ab3792d07b",
+          "valid": true
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "platform": "mega65",
+      "name": "MEGA65_B.jpg",
+      "bytes": 5635493,
+      "sha256": "358b6b0775fdbc34dc73ddc8bcd5090c5e3c2fb27d9ee6ac8eee02800d36e870"
+    },
+    {
+      "platform": "mega65",
+      "name": "MEGA65_A1.jpg",
+      "bytes": 4497667,
+      "sha256": "732ccfb5d2f57c84675071b935589fb00e153fc84b0fd4e0744056ae8250c1b7"
+    },
+    {
+      "platform": "mega65",
+      "name": "MEGA65_A2.jpg",
+      "bytes": 5924550,
+      "sha256": "174756e9c00166df29078f40f662883fdba006aa8235fa12be512f78e7359e24"
+    },
+    {
+      "platform": "xemu",
+      "name": "XEMU_A2.png",
+      "bytes": 3518,
+      "sha256": "7bafa034d16263b993db5f37a613cc7e68b7b260e3bc37e555223ab300361051"
+    },
+    {
+      "platform": "xemu",
+      "name": "XEMU_A1.png",
+      "bytes": 3518,
+      "sha256": "7bafa034d16263b993db5f37a613cc7e68b7b260e3bc37e555223ab300361051"
+    },
+    {
+      "platform": "xemu",
+      "name": "XEMU_B1.png",
+      "bytes": 3518,
+      "sha256": "7bafa034d16263b993db5f37a613cc7e68b7b260e3bc37e555223ab300361051"
+    }
+  ],
+  "hardware_dump_status": "NOT_SUPPLIED: image1 equals pristine release image",
+  "xemu_images": "All3 files byte-identical, visible marker A"
+}
