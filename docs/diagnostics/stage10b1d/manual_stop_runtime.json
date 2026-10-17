@@ -1,0 +1,12 @@
+{
+  "kind": "focused supplemental local XEMU manual-stop/replay follow-up",
+  "D81_sha256": "f7120d6373e7ef2c62948dd6ec4003dd770cd06c4b7f82fa4ed621da5bb0b2e6",
+  "stop_while_active_current": 93808,
+  "stop_error": 0,
+  "B_replay_seed": 98336,
+  "B_replay_start": 91264,
+  "B_replay_end": 97984,
+  "X_return": true,
+  "hardware": "NOT_RUN",
+  "hearing": "NOT_RUN"
+}

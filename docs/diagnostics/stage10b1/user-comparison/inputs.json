@@ -1,0 +1,52 @@
+[
+  {
+    "source": "mega65",
+    "uploaded_filename": "VYPER_STAGE10B1_Mega65.d81",
+    "sha256": "7494e1bd7e563431bed798b274ba2361f75e1ddfcda2eb7c9477f016589af956",
+    "bytes": 819200,
+    "PRG_matches_release": true,
+    "dumps": [
+      {
+        "filename": "V10BSH.DAT",
+        "profile": "S",
+        "environment_label": "H",
+        "bytes": 1992,
+        "sha256": "d056bad15c0d9c3eaacea7f70ec3dcd055531801865e1560abc6120720d1dcd1",
+        "validation": "passed"
+      },
+      {
+        "filename": "V10BSX.DAT",
+        "profile": "S",
+        "environment_label": "X",
+        "bytes": 1992,
+        "sha256": "038345df9ccbd238cb3204841c0c934ef82dfdb7a2f83340d60886ddb44ac8ad",
+        "validation": "passed"
+      }
+    ]
+  },
+  {
+    "source": "xemu",
+    "uploaded_filename": "VYPER_STAGE10B1_XEMU.d81",
+    "sha256": "2a1fd2d256db6cf31f179481dea1ead3c6d611d942b8b361b80ece52e130d893",
+    "bytes": 819200,
+    "PRG_matches_release": true,
+    "dumps": [
+      {
+        "filename": "V10BSX.DAT",
+        "profile": "S",
+        "environment_label": "X",
+        "bytes": 1992,
+        "sha256": "5b66653ec146881c55e35dde2cec53680561104d411a83ea358e3923e649a97d",
+        "validation": "passed"
+      },
+      {
+        "filename": "V10BEX.DAT",
+        "profile": "E",
+        "environment_label": "X",
+        "bytes": 1992,
+        "sha256": "4fe5914a10cb8b6d0afa800d31681b0bcdad2893fb104a95bddd1cbf495df75e",
+        "validation": "passed"
+      }
+    ]
+  }
+]

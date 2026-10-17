@@ -1,0 +1,42 @@
+//------------------------------------------------------
+//------------------------------------------------------
+//         Kick Assembler v5.25 by Mads Nielsen
+//------------------------------------------------------
+//------------------------------------------------------
+Output dir: .
+parsing
+flex pass 1
+flex pass 2
+Output pass
+  Controller end: 3384
+  Controller must end below charset=true (true)
+Writing prg file: ./STAGE10B1B.PRG
+
+Memory Map
+----------
+Default-segment:
+  $2001-$200c BASIC
+  $2100-$3383 Isolated scene and export controller
+  $4000-$47ff Original menu charset
+  $4800-$480f Explicit write shadows
+  $5000-$50ff DMA streaming cache
+  $5100-$53ff Snapshot header and directory
+  $5400-$5fff Actual four-bank palette readback
+  $6000-$6bff Four original palette backups
+  $6c00-$6cbf CPU screen row
+  $6d00-$6dbf CPU attribute row
+  $7000-$77cf Ordinary text source
+  $7800-$78ff Independent scene markers
+  $7900-$79ff Independent phase markers
+  $8000-$803f Transparent NCM guard
+  $8800-$8bff Raster atlas
+  $9040-$90bf Original player NCM
+  $90c0-$90ff Second guard
+  $9200-$92ff Reference and marker sprites
+  $9300-$9337 16-bit sprite pointers
+  $a000-$b2bf Full reference screen source
+  $b300-$c5bf Full reference colour source
+
+
+Made 1 asserts , 0 failed
+Writing Symbol file: stage10b1b.sym
