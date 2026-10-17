@@ -953,3 +953,15 @@ Speicherrücklesung, Restore und erneutes RUN. Keine Abnahme der exakten
 Ziel-XEMU-Version oder realer Hardware behauptet. Produktive Stage10a1 und
 vorherige Diagnosen unverändert; kein Stable, kein Merge, kein Stage10b2-Fix.
 Anleitung: [Stage10b1b](stage10b1b_rrb_minimal_diagnostics.md).
+
+### Stage10b1b: Hardware-/Benutzer-XEMU-Auswertung 17.10.2026
+
+Vier hochgeladene D81 mit24gültigen Schnappschüssen und16Bildern ausgewertet.
+Alle zwölf PRE/PST-Paare: keine unerklärte Speicheränderung. Hardware C/D zeigt
+kein lesbares HUD, XEMU dagegen schon; Hardware D-PST zeigt zusätzlich gelbe
+Bänder trotz gleicher erfasster Bilddaten. Diagnosefehler nachgewiesen: Mono-
+Breite16native Pixel statt8; A/B-HUD und B-Pixie sind deshalb offscreen und
+kein aussagekräftiger Plattformunterschied. Dokumentation berichtigt, Build
+unverändert. D07A-Startwerte und nicht initialisierte Randzeile sind offene
+Kontrollvariablen; keine bestätigte Hardwareursache, kein Stage10b2-Fix.
+[Bericht und Originalbelege](stage10b1b_hardware_results_20261017.md).

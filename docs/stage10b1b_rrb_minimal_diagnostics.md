@@ -1,5 +1,13 @@
 # Stage10b1b — RRB-Minimalszenen und Vor-/Nach-Export-Diagnose
 
+> **Auswertung vom 17.10.2026:** Die Hardware- und Benutzer-XEMU-Daten sind
+> [hier ausgewertet](stage10b1b_hardware_results_20261017.md). Eine falsche
+> Mono-Breitenannahme im Testaufbau wurde nachgewiesen: normale Zeichen sind
+> bei Scale60 **16native Pixel breit**, nicht8. A/B-HUD und B-Pixie liegen
+> deshalb offscreen. Der ausgelieferte Build bleibt als Messreferenz unverändert;
+> die folgenden Szenenbeschreibungen und Summen sind entsprechend berichtigt.
+
+
 Issue93, Branch `stage10b1b-rrb-minimal`. Eigenständiges Diagnoseprogramm,
 kein Gameplay-/Stage10b2-Fix, kein Merge oder Stable-Tag.
 Basis: geprüfter Diagnose-/Benutzerbefundstand aus PR92,
@@ -64,21 +72,24 @@ Playergrafik und Originalpalette. Monofont ist der bestätigte Menüfont.
 
 **A — normale Textdarstellung/HUD.** 96 Zwei-Byte-Zeichen pro Zeile,
 alle gewöhnlich mono. Keine GOTOX-Steuerwörter, kein NCM, kein RRB-Pixie.
-Im Text stehen Begrenzungen/Koordinaten und ein HUD ab logischemX240.
+Im Text stehen Begrenzungen/Koordinaten. Das HUD sollte beiX240 beginnen,
+liegt tatsächlich nach60Monozellen bei960nativen Pixeln außerhalb des Screens.
 Die globale CHR16-Einstellung bleibt für den kontrollierten Vergleich an;
 „ohne RRB-Einträge“ bedeutet hier ohne RRB-Steuer-/NCM-Objekte, nicht einen
 zweiten Legacy-Modus. Hardware-Sprites2/3 sind nur die Kennzeichnung.
 
-**B — A mit genau einem transparenten Original-NCM-Pixie.** X224/Y80,
+**B — A mit genau einem Original-NCM-Pixie im Screenpuffer.** Geplant X224/Y80,
+tatsächlich aufgrund der Mono-Breite X448/Y80 und damit offscreen:
 16×16logische Pixel, zwei16×8Glyphen241/242 auf Zeichenzeilen10/11.
-Je betroffener Zeile ersetzt ein NCM-Eintrag vier4Pixel breite Monozellen.
+Je betroffener Zeile ersetzt ein NCM-Eintrag vier ursprünglich als4logische
+Pixel breit angenommene Monozellen; tatsächlich sind diese8Pixel breit.
 Die drei überzähligen Monoslots wandern als Leerzeichen ans Zeilenende;
-das HUD bleibt beiX240. Kein GOTOX und kein zusätzlicher VIC-Moduswechsel.
+das HUD liegt bei928nativen Pixeln ebenfalls offscreen. Kein GOTOX und kein zusätzlicher VIC-Moduswechsel.
 NCM-Attribut08 und Subpalette10. Sonst dieselbe sichtbare Textszene A.
 
 **C — A mit GOTOX, ohne Pixie/NCM.** Jede Zeile beginnt mit GOTOX0;
-vor dem HUD steht GOTOX480native Pixel (=240logisch). Die80 sichtbaren
-Monozeichen bleiben gleich. Zwei bisherige Tail-Leerzeichen werden durch
+vor dem HUD steht GOTOX480native Pixel (=240logisch). Die80 vorgesehenen
+Monozeichen bleiben gleich; bei dieser Skalierung sind sie nicht alle sichtbar. Zwei bisherige Tail-Leerzeichen werden durch
 die Kommandos ersetzt, Count bleibt96. Kein Pixie, keine NCM-Zeichen.
 
 **D — vollständige Referenz.** Dieselben240×200Playfield-/HUD-Grenzen,
@@ -95,14 +106,17 @@ zurückgelesenen Screenwörter/Attribute, nicht nur Buildannahmen.
 
 | Szene / Zeilen | Mono | NCM | GOTOX | Einträge | nominelle native Pixelarbeit | Glyph-Row-Payload |
 |---|---:|---:|---:|---:|---:|---:|
-| A / alle |96|0|0|96|768|96Bytes|
-| B / außer10/11 |96|0|0|96|768|96Bytes|
-| B /10/11 |95|1|0|96|792|103Bytes|
-| C / alle |94|0|2|96|752|94Bytes|
-| D / alle |20|44|32|96|1568|372Bytes|
+| A / alle |96|0|0|96|1536|96Bytes|
+| B / außer10/11 |96|0|0|96|1536|96Bytes|
+| B /10/11 |95|1|0|96|1552|103Bytes|
+| C / alle |94|0|2|96|1504|94Bytes|
+| D / alle |20|44|32|96|1728|372Bytes|
 
-Pro Zeile immer192Screen- und192Color-Bytes. Die Pixelarbeit ist
-Mono×8 + NCM×32 bei dieser Skalierung; sie zählt auch unsichtbare/erneut
+Die Tabelle ist nach dem Hardwarevergleich korrigiert. Das unveränderte
+Release-JSON und die bisherigen Parserfelder `nominal_native_pixel_work`
+enthalten noch die alte, falsche Mono×8-Annahme; sie sind keine gemessenen
+nativen Pixelkosten. Pro Zeile immer192Screen- und192Color-Bytes. Die Pixelarbeit ist
+Mono×16 + NCM×32 bei dieser Skalierung; sie zählt auch unsichtbare/erneut
 adressierte Guardarbeiten, **nicht** die letztlich sichtbare Breite oder eine
 bewiesene FPGA-Zykluszahl. Glyph-Row-Payload ist Mono×1 + NCM×8, **keine**
 Messung physischer Speicherbuszugriffe: Caches, Burstzugriffe, Glyphwiederholung,
