@@ -6,7 +6,8 @@ releases/stage_10a/stage10a1 are patched byte-exactly (every original byte is ch
 The matching source changes are in src/engine/stage10a1_{audio_core,hud,templates,get_ready,game}.asm.
 1. Audio DMA: write $D72A/$D72B before $D72C (hardware latches the current address on $D72C).
 2. Audio init: test only $D711 bit 7.
-3. Game screen: H320 + CHRXSCL 120 instead of H640 + CHRXSCL 60; GOTOX X in logical 320 units
+3. RRB double buffering ($D051 bit 7 clear) so pixies on the left are completely painted.
+4. Game screen: H320 + CHRXSCL 120 instead of H640 + CHRXSCL 60; GOTOX X in logical 320 units
    (hardware scales the whole RRB line buffer incl. GOTOX by CHRXSCL, XEMU only the glyphs).
 """
 import os, sys
@@ -58,14 +59,17 @@ P(0x3b99, 'a978a202', 'a93ca201', 'lives prefix: GOTOX 632 -> 316')
 P(0x3eaf, 'ea0c2e5001020202', 'f506172800010101', 'life icon X 490/524/558/592 -> 245/262/279/296')
 for i in range(25):
     P(0x7a00 + 42*i, 'e001', 'f000', f'HUD template row {i}: GOTOX 480 -> 240')
+# RRB timing: enable raster-rewrite double buffering ($D051.7 NORRDEL=0). Without it the line
+# buffer is read while still being painted; late-painted pixies on the left show black lines.
+P(0xbde1, 'eaeaeaeaeaeaeaeaeaea', 'a9008d51d0eaeaeaeaea', 'v014_write_slot: $D051=0 (RRB double buffering)')
 P(0x9dfb, 'a9a84c', 'a9544c', 'GAME OVER: GOTOX 168 -> 84')
 P(0xaf5f, 'a9cc20', 'a96620', 'GET READY: GOTOX 204 -> 102')
 P(0xaf86, 'a9d020', 'a96820', 'PLAYER n: GOTOX 208 -> 104')
 
 files = {n: (R/n).read_bytes() for n in order}; files['VYSO.DAT'] = bytes(vyso)
-disk = make(bytes(prg), files, b'VYPER 10A1 HW')
+disk = make(bytes(prg), files, b'VYPER 10A1 HW2')
 os.makedirs(OUT, exist_ok=True)
-out = {'STAGE10A1.PRG': bytes(prg), 'AUDIO_CORE.PRG': bytes(core), 'VYSO.DAT': bytes(vyso), 'VYPER_STAGE10A1_HW.d81': disk}
+out = {'STAGE10A1.PRG': bytes(prg), 'AUDIO_CORE.PRG': bytes(core), 'VYSO.DAT': bytes(vyso), 'VYPER_STAGE10A1_HW2.d81': disk}
 for n, b in out.items(): open(OUT+n, 'wb').write(b)
 open(OUT+'SHA256SUMS.txt', 'w').write(''.join(f'{hashlib.sha256(b).hexdigest()}  {n}\n' for n, b in sorted(out.items())))
 print(f'{len(log)} patches; VYSO CRC ${old_crc:04x} -> ${new_crc:04x}')

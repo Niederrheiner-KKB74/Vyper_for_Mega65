@@ -2619,7 +2619,11 @@ v014_write_slot:
     jsr v012a_set_row_pointer
     ldy v014_offset
     jsr hud.hud_write_x
-    .fill 10,$ea
+    // MEGA65 hardware: NORRDEL=0 enables RRB double buffering, so the full raster
+    // line is available for painting (otherwise late pixies on the left get black lines).
+    lda #0
+    sta $d051
+    .fill 5,$ea
     iny
     lda v014_glyph_lo
     jsr v012a_store
