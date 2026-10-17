@@ -1,0 +1,73 @@
+{
+  "magic": "VYMM1B1A",
+  "version": 1,
+  "buffer": 327680,
+  "size": 36292,
+  "header_size": 256,
+  "regions": [
+    {
+      "name": "screen",
+      "address": 57344,
+      "offset": 256,
+      "length": 4800
+    },
+    {
+      "name": "colour",
+      "address": 267911168,
+      "offset": 5056,
+      "length": 4800
+    },
+    {
+      "name": "font",
+      "address": 16384,
+      "offset": 9856,
+      "length": 2048
+    },
+    {
+      "name": "grid",
+      "address": 98304,
+      "offset": 11904,
+      "length": 24000
+    },
+    {
+      "name": "pixie",
+      "address": 36928,
+      "offset": 35904,
+      "length": 128
+    },
+    {
+      "name": "sprites",
+      "address": 37376,
+      "offset": 36032,
+      "length": 128
+    },
+    {
+      "name": "pointers",
+      "address": 37632,
+      "offset": 36160,
+      "length": 4
+    },
+    {
+      "name": "guards",
+      "address": 32768,
+      "offset": 36164,
+      "length": 64
+    },
+    {
+      "name": "guard2",
+      "address": 37056,
+      "offset": 36228,
+      "length": 64
+    }
+  ],
+  "checksum": "sum16 excluding28/29",
+  "variant_marker": {
+    "physical_address": 57388,
+    "region": "screen",
+    "offset": 44,
+    "values": {
+      "A": 1,
+      "B": 2
+    }
+  }
+}

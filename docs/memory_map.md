@@ -738,3 +738,62 @@ Kein neuer Grafik-/Audio-/DMA-Puffer. Get-ready-Texte nur in dynamischen Tails
 von Screenzeilen17/19 abByte84, entsprechende Color-RAM-AdressenFF80000+row*192+84.
 Beide Zeilen werden danach über den vorhandenen Screen-/Farben-Löscher restauriert.
 HUD-Präfixe, Sternbitmap18000..1DDBF, Paletten und Audio-ABI unverändert.
+
+## Stage10b1 — isolierte Hardwarediagnose (Issue89, nicht produktiv)
+
+Nur `src/tests/stage10b1.asm`; keine Änderung der Stage10a1-Speicherkarte.
+Code `$2100–unter$4000`, Font `$4000–$47FF`, Diagnosepuffer
+`$4800–$4FC7` (1992Bytes, bleibt nach X erhalten), Palettensicherung
+`$6000–$6BFF`, NCM-Rasteratlas `$8800–$8BFF`, Original-Player-Pixie
+`$9040–$90BF`, Spritegrafiken `$9200–$927F`, Pointer `$9300`.
+Screen-/Color-Vorlagen `$A000–$B2BF` und `$B300–$C5BF`.
+Physischer RRB-Screen `$E000–$F2BF` wird ausschließlich per DMA geschrieben;
+375Rasterglyphen `$18000–$1DDBF`. Alle32KiB Color-RAM
+`$FF80000–$FF87FFF` werden nach `$40000–$47FFF` gesichert und vor BASIC
+restauriert. `$20000–$3FFFF` bleibt ROM, kein Puffer.
+Details und Exportformat: [Stage10b1](stage10b1_viciv_hardware_comparison.md).
+
+## Stage10b1a — isolierter NORRDEL-A/B-Test (Issue91)
+
+Eigene Quelle `src/tests/stage10b1a.asm`; Stage10a1 und Stage10b1 unverändert.
+Registerdump `$4800–$4FC7` (1992Bytes), Streamingcache `$5000–$50FF`,
+Speicherheader `$5100–$51FF`. Eingefrorene physische Screen-/Color-/Font-/
+Glyph-/Pixie-/Sprite-/Pointer-/Guard-Rücklesung nach `$50000–$58DC3`
+(36292Bytes), getrennt von der Color-RAM-Sicherung `$40000–$47FFF`.
+Übrige Referenzszene und Adressen bleiben wie Stage10b1. Einziger erklärter
+Szenen-A/B-Unterschied: Markerbyte bei physisch `$E02C` (Screenoffset44).
+D051-Schreibwerte `$9F/$1F`, DBLRR0 und PALEMU0; sichere Startvoraussetzung
+und Einschränkung des nicht lesbaren X-IRQ-Komparators sind dokumentiert:
+[Stage10b1a](stage10b1a_norrdel_ab.md).
+
+## Stage10b1b — isolierte RRB-Minimalszenen (Issue93)
+
+Eigene Quellen `src/tests/stage10b1b.asm` und `stage10b1b_helpers.asm`.
+Code ab $2100 unter $4000; Font $4000–$47FF, Schreibschatten $4800–$480F,
+Cache $5000–$50FF, Header $5100–$53FF, Palettenrücklesung $5400–$5FFF,
+Palettensicherung $6000–$6BFF, Zeilenpuffer $6C00/$6D00, Text ab $7000,
+Szenen-/Phasenmarker $7800/$7900. Vorlagen und Referenzspeicher wie zuvor;
+Spritegrafiken jetzt $9200–$92FF (zusätzlich zwei unabhängige Marker).
+
+Color-RAM-Sicherung $40000–$47FFF. PRE: $50000–$59DD7 (40408Bytes).
+POST segmentiert: erste32768Bytes $48000–$4FFFF, weitere7640Bytes
+$5A000–$5BDD7. Kein Überlapp, kein Zugriff auf das ungemappte $60000.
+ROM-Bereich $20000–$3FFFF unverändert. Zusätzlich werden die 192Bytes
+nach dem sichtbaren Screen ($F2C0) und Color-RAM ($FF812C0) erfasst.
+13Regionen einschließlich 3072Bytes echter Palettenrücklesung; Format und
+Grenzen: [Stage10b1b](stage10b1b_rrb_minimal_diagnostics.md).
+
+## Stage10b1c — isolierter H640-/H320-GOTOX-Test (Issue95)
+
+Neue Quelle `src/tests/stage10b1c.asm`; produktive Stage10a1 und frühere
+Diagnosen unverändert. Code $2100–$38A4, Originalfont $4000–$47FF,
+optionaler Registerpuffer $4800–$4A05 (518Bytes), Palettensicherung
+$6000–$6BFF, Variantenmarker $7800–$787F, Guard $8000–$803F,
+Probe $8100–$813F, Rasteratlas $8800–$8BFF, Originalpixie $9040–$90BF,
+Sprites $9200–$92FF, Pointer/Palette $9300–$9337.
+Vorlagen $A000–$A95F / $B300–$BC5F. Aktiver Screen $E000–$E95F,
+Color $FF80000–$FF8095F, jeweils96Bytes zusätzliche genullte Randzeile.
+375Rasterglyphen $18000–$1DDBF; volle Color-Sicherung $40000–$47FFF.
+Kein Attic, kein Puffer im ROM-Bereich $20000–$3FFFF, kein KERNAL-I/O
+während der Anzeige. Beide Varianten48Slots/96Byte-Stride/25Zeilen.
+[Geometrie, Grenzen und Testanleitung](stage10b1c_h320_gotox_test.md).
