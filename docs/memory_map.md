@@ -782,3 +782,15 @@ ROM-Bereich $20000–$3FFFF unverändert. Zusätzlich werden die 192Bytes
 nach dem sichtbaren Screen ($F2C0) und Color-RAM ($FF812C0) erfasst.
 13Regionen einschließlich 3072Bytes echter Palettenrücklesung; Format und
 Grenzen: [Stage10b1b](stage10b1b_rrb_minimal_diagnostics.md).
+
+## Stage10b1d — isolierter Audio-CURRENT-Latch-Test (Issue96)
+
+Neue Quelle `src/tests/stage10b1d.asm`; keine produktiven Audio-/Grafikdateien
+verändert. Controller ab $2100 unter $4000, Log $5000–$581F (32Byte-Header,
+64×32Byte-Ringrecords), CRC-Rückkopie $6000–$7A3F, Originalsample17 im PRG
+$A000–$BA3F. Audio-Puffer physisch $16480–$17EBF (6720Bytes), exklusives
+Ende $17EC0; Sentinel $18020 in genullter Seite $18000–$180FF.
+Kein Attic und kein Zugriff auf ROM-RAM $20000–$3FFFF. Mailbox $1FD3 ist
+Softwarestatus und wird nach Sicherung für den Test benutzt, beim Exit
+restauriert. Kein KERNAL-Dateiexport während Audio; optionaler RAM-Log bleibt
+nach X erhalten. [Registersemantik und Anleitung](stage10b1d_audio_dma_latch.md).

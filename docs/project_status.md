@@ -965,3 +965,21 @@ kein aussagekräftiger Plattformunterschied. Dokumentation berichtigt, Build
 unverändert. D07A-Startwerte und nicht initialisierte Randzeile sind offene
 Kontrollvariablen; keine bestätigte Hardwareursache, kein Stage10b2-Fix.
 [Bericht und Originalbelege](stage10b1b_hardware_results_20261017.md).
+
+## Stage10b1d — Audio-DMA-Adress-Latch A/B (Issue96)
+
+Separater Branch `stage10b1d-audio-latch` aus PR94, kein Eingriff in Stage10a1
+oder Grafik-Diagnosebranches. Original-Signed8-Sound17 mit Paula-PER356,
+moderatem Volume40 und einheitlichem gestoppten Sentinel-Reset vor jedem
+A/B-/Replay-Versuch. A schreibt CURRENT-Bank/Low/High, B Low/High/Bank.
+Gestoppte Readbacks, Softwarestatus $1FD3, One-Shot, Stop und Ringprotokoll.
+D711-Strict-/Masked-Beobachtung getrennt, keine produktive Maskierungskorrektur.
+
+Core0.97-Code belegt Committrigger auf CURRENT-Bankbyte und eigenen Timing-
+Committrigger; tatsächliche Hardwareursache/Hörabnahme weiterhin offen.
+Neun Hosttests einschließlich realer6502-MMIO-Folgen in zwei expliziten
+Registermodellen, Reset/Replay, DMA/CRC, Restore, Ringformat und byteidentischem
+Rebuild bestanden. Ergänzendes lokales XEMU bestätigt A/B/A/Replay, Sample-
+Rückkopie, One-Shot-Ende, Restore, RUN und DIRECTORY. Dummy-SDL ist kein
+Hörtest. Kein Stable, kein Merge und kein Stage10b2-Audiofix.
+[Technische Dokumentation](stage10b1d_audio_dma_latch.md).
