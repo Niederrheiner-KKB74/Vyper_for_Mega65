@@ -965,3 +965,20 @@ kein aussagekräftiger Plattformunterschied. Dokumentation berichtigt, Build
 unverändert. D07A-Startwerte und nicht initialisierte Randzeile sind offene
 Kontrollvariablen; keine bestätigte Hardwareursache, kein Stage10b2-Fix.
 [Bericht und Originalbelege](stage10b1b_hardware_results_20261017.md).
+
+## Stage10b1c — H320-/GOTOX-Hardwarevergleich (Issue95)
+
+Separater Branch `stage10b1c-h320-gotox` aus PR94. Eigenständiges PRG/D81:
+A=H640/CHRXSCL60 mit GOTOX2X, B=H320/CHRXSCL120 mit unverändertem logischemX.
+Identische Glyphgrößen und48Slot-Szene, zehnZeichen-HUD, drei Original-NCM-
+Pixies, Positionsproben0–320 und getrennte Hardware-Sprite-/Projektilanker.
+D051/D07A/Paletten/Randzeile deterministisch. Keine aktiven KERNAL-Exporte;
+R baut ohneI/O neu auf, D liest nur den optionalen Registerpuffer, X nach BASIC.
+
+Acht Hosttests einschließlich Opcode-GOTOX-Patches, Bounds, Spritekonstanz,
+IRQ-Schutz und unabhängigem byteidentischem Rebuild bestanden. Ergänzende
+lokale XEMU-RAM-/Restore-/RUN-/DIRECTORY-Prüfungen bestanden und sind separat dokumentiert. Die
+GOTOX-Quellcodehypothese ist kein bereits bestätigter Hardwarefix: Exakte
+Ziel-XEMU-/Core0.97-Bilder und Positionsabnahme durch den Benutzer stehen aus.
+Stage10a1 und alle früheren Releases unverändert; kein Stable und kein Merge.
+[Technischer Bericht](stage10b1c_h320_gotox_test.md).

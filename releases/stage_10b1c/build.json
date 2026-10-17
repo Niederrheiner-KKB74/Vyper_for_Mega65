@@ -1,0 +1,9 @@
+{
+  "stage": "10b1c",
+  "base": "fd6214c1c6be1adcedea095b0ebd474288a83403",
+  "stable": false,
+  "PRG_bytes": 40033,
+  "D81_bytes": 819200,
+  "hardware": "NOT_RUN",
+  "exact_target_xemu": "NOT_RUN"
+}

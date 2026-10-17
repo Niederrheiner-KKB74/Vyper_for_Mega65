@@ -782,3 +782,18 @@ ROM-Bereich $20000–$3FFFF unverändert. Zusätzlich werden die 192Bytes
 nach dem sichtbaren Screen ($F2C0) und Color-RAM ($FF812C0) erfasst.
 13Regionen einschließlich 3072Bytes echter Palettenrücklesung; Format und
 Grenzen: [Stage10b1b](stage10b1b_rrb_minimal_diagnostics.md).
+
+## Stage10b1c — isolierter H640-/H320-GOTOX-Test (Issue95)
+
+Neue Quelle `src/tests/stage10b1c.asm`; produktive Stage10a1 und frühere
+Diagnosen unverändert. Code $2100–$38A4, Originalfont $4000–$47FF,
+optionaler Registerpuffer $4800–$4A05 (518Bytes), Palettensicherung
+$6000–$6BFF, Variantenmarker $7800–$787F, Guard $8000–$803F,
+Probe $8100–$813F, Rasteratlas $8800–$8BFF, Originalpixie $9040–$90BF,
+Sprites $9200–$92FF, Pointer/Palette $9300–$9337.
+Vorlagen $A000–$A95F / $B300–$BC5F. Aktiver Screen $E000–$E95F,
+Color $FF80000–$FF8095F, jeweils96Bytes zusätzliche genullte Randzeile.
+375Rasterglyphen $18000–$1DDBF; volle Color-Sicherung $40000–$47FFF.
+Kein Attic, kein Puffer im ROM-Bereich $20000–$3FFFF, kein KERNAL-I/O
+während der Anzeige. Beide Varianten48Slots/96Byte-Stride/25Zeilen.
+[Geometrie, Grenzen und Testanleitung](stage10b1c_h320_gotox_test.md).
