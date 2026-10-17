@@ -78,8 +78,8 @@ audio_init:
  bpl !master-
  lda #$80
  sta $d711
- cmp $d711
- bne audio_init_error
+ bit $d711 // only AUDEN; bits 6 and 0-2 are hardware status bits
+ bpl audio_init_error
  lda $d031
  and $d054
  and #$40
@@ -179,13 +179,14 @@ start_source:
  ldx hw,y
  lda #0
  sta $d721,x
- lda buffer_bank,y
- sta $d723,x
- sta $d72c,x
+ // Hardware: $D72A/$D72B only latch; writing $D72C commits all three bytes.
  lda initial_lo,y
  sta $d72a,x
  lda initial_hi,y
  sta $d72b,x
+ lda buffer_bank,y
+ sta $d723,x
+ sta $d72c,x
  lda buffer_hi,y
  sta $d722,x
  clc
