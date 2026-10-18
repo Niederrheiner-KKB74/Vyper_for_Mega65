@@ -1,5 +1,15 @@
 # Projektstand – 2026-10-10
 
+## Aktueller Integrationsvorschlag – 18.10.2026
+
+Stage10a1-HW2 ist laut Hardware-Release-README am17.10.2026 auf Core0.97
+aaf4542/ROM920413/PAL und in XEMU vom Benutzer bestätigt. Die drei Hardware-
+Commits und AGENTS-Regel19 werden separat zur Integration in main vorbereitet.
+Der reguläre KickAssembler5.25-Quellbuild reproduziert PRG, Audiokern, VYSO und
+die vollständige HW2-D81 bytegenau. Keine neue Hardwareprüfung in diesem Lauf.
+main bleibt bis Benutzerfreigabe unverändert; ältere Abschnitte unten sind Historie.
+[Änderungen, Build und Freigabegrenze](stage10a1_hw2_integration.md).
+
 ## Bestätigt durch XEMU-Test des Benutzers
 
 **Stage 2ja:** stabile Spielengine mit 24 animierten RRB-Pixies, Joysticksteuerung und funktionierendem RRB-Clearing. Als unveränderte Referenz erhalten.

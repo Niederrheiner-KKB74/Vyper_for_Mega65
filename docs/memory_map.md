@@ -1,5 +1,14 @@
 # Speicherbelegung – bestätigter Stage-3a-2-Test
 
+## Stage10a1-HW2 – Integrationsvorschlag vom18.10.2026
+
+Keine neuen RAM-Bereiche gegenüber Stage10a1. Längengleiche Korrekturen:
+H320/CHRXSCL120, logische GOTOX-Koordinaten (HUD240), CURRENT-Adressfolge
+D72A/B vor D72C, AUDEN-Prüfung nur D711.7 und RRB-Doppelpufferung D051.7=0
+im Renderer. Vollständiger Quellbuild reproduziert die bestätigten HW2-Bytes.
+Frisch erzeugte Symbol-/Speicherkarte im separaten Buildziel; historische
+Release-Karten bleiben erhalten. Details: [HW2-Integration](stage10a1_hw2_integration.md).
+
 | Adresse | Verwendung | Status |
 | --- | --- | --- |
 | `$2001` | BASIC-65-Startzeile des Testprogramms | Stage 3a-2 |
