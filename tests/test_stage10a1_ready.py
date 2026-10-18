@@ -45,6 +45,7 @@ class OriginalRules(unittest.TestCase):
     m=self.game(level,wait_ready=False) if mode==2 else self.fixture().game(level,wait_ready=False)
     d=m.memory.data
     for row,x,text in ((17,204,bytes((7,101,116,32,114,101,97,100,121))),(19,208,bytes((16,108,97,121,101,114,32,49)))):
+     if M.HW2:x//=2 # H320 uses logical X directly; text and colours are unchanged.
      base=0xe000+row*192+84
      self.assertEqual(int.from_bytes(d[base:base+2],'little'),x)
      self.assertEqual(bytes(d[base+2:base+2+len(text)*2:2]),text)

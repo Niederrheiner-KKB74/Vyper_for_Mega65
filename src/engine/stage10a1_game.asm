@@ -796,7 +796,7 @@ c_game_over:
     sta c_ui_length
     lda #0
     sta c_ui_offset
-    lda #168
+    lda #84 // logical X (former native H640 value 168 / 2)
     jmp c_message // GAME OVER only; no obsolete restart/exit captions.
 c_fire_state:
     lda c_ps

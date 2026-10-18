@@ -61,7 +61,7 @@ gr_prepare:
     sta game.c_ui_length
     lda #0
     sta game.c_ui_offset
-    lda #204 // (480-9*8)/2, native H640 X, not logical H320 X
+    lda #102 // logical X (former native H640 value 204 / 2)
     jsr game.c_message
     lda twop.active
     clc
@@ -77,7 +77,7 @@ gr_prepare:
     sta game.c_ui_length
     lda #0
     sta game.c_ui_offset
-    lda #208 // (480-8*8)/2
+    lda #104 // logical X (former native 208 / 2)
     jsr game.c_message
     // Restore ordinary GAME OVER source/ink before leaving the IRQ-masked gate.
     lda #<game.c_message_text

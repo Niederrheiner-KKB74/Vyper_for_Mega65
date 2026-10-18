@@ -1,5 +1,6 @@
 // HUD extension: 128-byte rows, opaque background, full font, eight dynamic slots.
-// Logical playfield [0,240); H640 GOTOX doubles logical X. Glyphs keep 2x width.
+// Logical playfield [0,240); H320 + CHRXSCL 120: GOTOX uses logical X directly.
+// (MEGA65 hardware applies CHRXSCL to GOTOX positions as well, XEMU does not.)
 *=$3800 "Stage 3b-4a HUD code"
 .namespace hud {
 .const state=$1a00
@@ -34,7 +35,7 @@
 .const background_pointer=state+$74
 .const store_value=state+$65
 .const startup_bg=state+$66
-.const hud_start=480
+.const hud_start=240
 .const max_lives=BONUS_MAX_LIVES
 
 startup:
@@ -58,9 +59,9 @@ hud_init:
     sta saved_scale
     lda saved_d031
     and #$5f
-    ora #$c0 // H640 + FAST; HUD setup must retain full CPU clock.
+    ora #$40 // H320 + FAST; HUD setup must retain full CPU clock.
     sta VIC_D031
-    lda #60
+    lda #120
     sta $d05a
     lda #0
     sta VIC_CHARPTR_LO
@@ -118,7 +119,7 @@ hud_render:
 hud_write_x:
     // Carry supplies GOTOX bit 8 without changing sub-row/Y bits.
     lda v014_x
-    asl
+    clc // logical X is the GOTOX value; bit 8 stays clear
     jsr v012a_store
     iny
     lda v014_ybits
@@ -473,8 +474,8 @@ life_clear:
     lda #$80
     ldx #$80
     jsr life_character_mono
-    lda #<632
-    ldx #>632
+    lda #<316
+    ldx #>316
     jsr life_goto_opaque
     lda #$80
     ldx #$80

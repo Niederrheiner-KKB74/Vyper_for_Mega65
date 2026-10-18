@@ -1,7 +1,8 @@
 """Stage10a1 engine/controller fixture derived from the Stage9b1 model, not XEMU."""
-import os,re,sys,json,tempfile,unittest
+import os,re,sys,json,tempfile,unittest,shutil
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];ART=ROOT/'releases/stage_10a/stage10a1'
+ROOT=Path(__file__).resolve().parents[1];ART=Path(os.getenv('STAGE10A1_ARTIFACTS',str(ROOT/'releases/stage_10a/stage10a1'))).resolve()
+HW2='hardware_reference' in json.loads((ART/'build-report.json').read_text())
 def namespace(text,name):
  start=text.index('.namespace '+name+' {');a=text.index('{',start);depth=1;b=a+1
  while depth:
@@ -16,7 +17,9 @@ for ns in ('audio8','audioboot','hslink','twop'):
  a,b,_=namespace(clean,ns);clean=clean[:a]+clean[b:]
 ALIAS=tempfile.TemporaryDirectory(prefix='stage10a1-engine-model-');alias=Path(ALIAS.name)
 for f in ART.iterdir():
- name=f.name.replace('STAGE10A1','STAGE7B5B');(alias/name).symlink_to(f)
+ name=f.name.replace('STAGE10A1','STAGE7B5B')
+ if f.is_dir():shutil.copytree(f,alias/name)
+ else:shutil.copyfile(f,alias/name)
 (alias/'STAGE7B5B.sym').unlink();(alias/'STAGE7B5B.sym').write_text(clean)
 os.environ['STAGE7B5B_ARTIFACTS']=str(alias)
 import test_stage7b5b as M
