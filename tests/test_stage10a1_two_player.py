@@ -211,6 +211,12 @@ class TwoPlayer(unittest.TestCase):
   # the unchanged live reward175. Verify that refresh, normalize that one digit
   # back to the old image, and compare every other non-life byte and the font.
   image=bytearray(image)
+  if M.HW2:
+   # Verify the new HUD GOTOX before normalizing to the historic image hash.
+   for row in range(25):
+    offset=row*42
+    self.assertEqual(int.from_bytes(image[offset:offset+2],'little'),240)
+    image[offset:offset+2]=(480).to_bytes(2,'little')
   self.assertEqual(self.word(single,0x1a17),175)
   self.assertEqual(image[24*42+18],ord('7'))
   image[24*42+18]=ord('1')

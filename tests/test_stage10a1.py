@@ -1,11 +1,11 @@
 """Stage10a1 actual assembled phase/score code; constrained models, not XEMU."""
-import copy,hashlib,json,re,unittest
+import copy,hashlib,json,re,unittest,os
 from pathlib import Path
 from py65.devices.mpu6502 import MPU
 import test_stage9c2 as OLD
 import highscore_format as F
 import d81_highscore as DISK
-ROOT=Path(__file__).resolve().parents[1];ART=ROOT/'releases/stage_10a/stage10a1'
+ROOT=Path(__file__).resolve().parents[1];ART=Path(os.getenv('STAGE10A1_ARTIFACTS',str(ROOT/'releases/stage_10a/stage10a1'))).resolve()
 N={n:int(v,16) for n,v in re.findall(r'\.label (\w+)=\$([0-9a-f]+)',(ART/'highscore.sym').read_text())}
 class Table(OLD.Machine):
  def __init__(self,reason=0,score=0,entries=None,files=None,fault=None):
@@ -71,7 +71,10 @@ class TableIntegration(unittest.TestCase):
    payload=(ART/('STAGE10A1.PRG' if f['name']=='STAGE10A1' else f['name'])).read_bytes();entries.append((f['name'],payload,0x82 if f['name']=='STAGE10A1' else 0x81))
   self.assertEqual(len(entries),10);DISK.verify_disk((ART/'VYPER_STAGE10A1.d81').read_bytes(),entries)
   for name in ('VYLV.DAT','VYGR.DAT','VYCL.DAT','VYSH.DAT','VYSO.DAT','VYTI.DAT','AUDIO_CORE.PRG'):
-   self.assertEqual((ART/name).read_bytes(),(ROOT/'releases/stage_9b1'/name).read_bytes(),name)
+   reference=ROOT/'releases/stage_9b1'
+   if 'hardware_reference' in report and name in ('VYSO.DAT','AUDIO_CORE.PRG'):
+    reference=ROOT/'releases/stage_10a/stage10a1_hw'
+   self.assertEqual((ART/name).read_bytes(),(reference/name).read_bytes(),name)
 
 class Presentation(unittest.TestCase):
  def test_fixed_yellow_text_clean_normal_rows_and_cycling_frame(self):

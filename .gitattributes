@@ -1,0 +1,6 @@
+# Archived screen bytes can contain control characters without NUL bytes.
+releases/stage_10b1*/*.bin binary
+# Keep the review focused on active tools; original evidence remains expandable.
+docs/diagnostics/** linguist-generated=true
+releases/stage_10b1*/** linguist-generated=true
+docs/diagnostic_consolidation/sources.json linguist-generated=true

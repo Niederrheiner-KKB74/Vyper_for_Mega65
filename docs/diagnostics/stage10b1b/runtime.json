@@ -1,0 +1,68 @@
+{
+  "kind": "supplemental local XEMU controlled-state test",
+  "local_xemu_commit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+  "patch": "tools/diagnostics/stage10a1_xemu_trace.patch",
+  "ROM": "V920413 PAL80x25",
+  "hardware": "NOT_RUN",
+  "exact_target_xemu_release": "NOT_RUN",
+  "visual_acceptance": "NOT_RUN",
+  "timing": "UART pauses invalidate raster/wall timing claims",
+  "D81_sha256": "9992a3623a21d5550feacabb5de01b07a1f01101a5de89af5b1c4a2fc192e820",
+  "scenes": [
+    {
+      "scene": "A",
+      "configuration_and_isolation": true,
+      "PRE_and_POST_CRC_valid": true,
+      "actual_RAM_regions_verified": 13,
+      "all4_palette_banks_verified": true,
+      "PRE_disk_exact_match": true,
+      "POST_not_written_before_S": true,
+      "POST_disk_exact_match_after_S": true,
+      "frozen_POST_unchanged_by_S": true,
+      "unexpected_non_annotation_memory_bytes": 0,
+      "unexpected_stable_register_differences": []
+    },
+    {
+      "scene": "B",
+      "configuration_and_isolation": true,
+      "PRE_and_POST_CRC_valid": true,
+      "actual_RAM_regions_verified": 13,
+      "all4_palette_banks_verified": true,
+      "PRE_disk_exact_match": true,
+      "POST_not_written_before_S": true,
+      "POST_disk_exact_match_after_S": true,
+      "frozen_POST_unchanged_by_S": true,
+      "unexpected_non_annotation_memory_bytes": 0,
+      "unexpected_stable_register_differences": []
+    },
+    {
+      "scene": "C",
+      "configuration_and_isolation": true,
+      "PRE_and_POST_CRC_valid": true,
+      "actual_RAM_regions_verified": 13,
+      "all4_palette_banks_verified": true,
+      "PRE_disk_exact_match": true,
+      "POST_not_written_before_S": true,
+      "POST_disk_exact_match_after_S": true,
+      "frozen_POST_unchanged_by_S": true,
+      "unexpected_non_annotation_memory_bytes": 0,
+      "unexpected_stable_register_differences": []
+    },
+    {
+      "scene": "D",
+      "configuration_and_isolation": true,
+      "PRE_and_POST_CRC_valid": true,
+      "actual_RAM_regions_verified": 13,
+      "all4_palette_banks_verified": true,
+      "PRE_disk_exact_match": true,
+      "POST_not_written_before_S": true,
+      "POST_disk_exact_match_after_S": true,
+      "frozen_POST_unchanged_by_S": true,
+      "unexpected_non_annotation_memory_bytes": 0,
+      "unexpected_stable_register_differences": []
+    }
+  ],
+  "restore": "Colour32768Bytes, palette3072Bytes, D051 controls and IRQ mask verified before BASIC resumes",
+  "repeated_RUN": true,
+  "export_failure": "Missing device31 reported in frozen POST with ERR marker; S serialization and X remain functional"
+}

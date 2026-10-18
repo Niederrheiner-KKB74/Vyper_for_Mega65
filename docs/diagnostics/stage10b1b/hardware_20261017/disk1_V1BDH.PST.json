@@ -1,0 +1,3746 @@
+{
+  "scene": "D",
+  "platform_label": "H",
+  "phase": "POST",
+  "sequence": 4,
+  "D051_write_shadow": 31,
+  "D051_restore_shadow": 159,
+  "measured_export_error": 0,
+  "entry_IRQ_mask": 225,
+  "phase_context": {
+    "$D012": 2,
+    "$D011": 27,
+    "$D052": 5,
+    "$D053": 128,
+    "$D050": 0,
+    "$D051": 0,
+    "classification": "volatile sequential phase-start readbacks, not atomic"
+  },
+  "sha256": "b8c4273370fa196ec9dacac59197ec1162e2d91cacf5cf6548251362174e9abc",
+  "regions": [
+    {
+      "name": "screen",
+      "address": 57344,
+      "offset": 768,
+      "length": 4800,
+      "sha256": "4905ddd3b7de3476266d45644f9e57aae8eea9afdb8992d653ad8900c545bd12"
+    },
+    {
+      "name": "colour",
+      "address": 267911168,
+      "offset": 5568,
+      "length": 4800,
+      "sha256": "ce74bf868880fae3a4ec5e4e6ae0355c95ab227b219a4b2102c5802cf3c6d07b"
+    },
+    {
+      "name": "font",
+      "address": 16384,
+      "offset": 10368,
+      "length": 2048,
+      "sha256": "4c020e39e2f1297b46362e5980b6acbb1ce3526ed1fa2b567ea5e47afaaac6b6"
+    },
+    {
+      "name": "grid",
+      "address": 98304,
+      "offset": 12416,
+      "length": 24000,
+      "sha256": "a3539bdb244f73db6035d7d4ddf54b04ff6a59babd6cef150ce328be85f73136"
+    },
+    {
+      "name": "pixie",
+      "address": 36928,
+      "offset": 36416,
+      "length": 128,
+      "sha256": "c48bab16d137a25e90a2ba715e58bb3d93e54fdb8e211bfdd45df8f2b820b2e6"
+    },
+    {
+      "name": "sprites",
+      "address": 37376,
+      "offset": 36544,
+      "length": 256,
+      "sha256": "b4bffee781e1a8310e40d4b601f7661753a25c9c32ecad277cc0de6a0f05afc5"
+    },
+    {
+      "name": "pointers",
+      "address": 37632,
+      "offset": 36800,
+      "length": 8,
+      "sha256": "ec4d6c9ea3b277c37b1a7bf6391f4546a9485949477f0f60cfc36f0f8f79f229"
+    },
+    {
+      "name": "guards",
+      "address": 32768,
+      "offset": 36808,
+      "length": 64,
+      "sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b"
+    },
+    {
+      "name": "guard2",
+      "address": 37056,
+      "offset": 36872,
+      "length": 64,
+      "sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b"
+    },
+    {
+      "name": "palettes",
+      "address": 21504,
+      "offset": 36936,
+      "length": 3072,
+      "sha256": "91c193c554458abd2acbf84fc6b0805b9b4dcb7110435451ec9d34170b17df6d"
+    },
+    {
+      "name": "write_shadows",
+      "address": 18432,
+      "offset": 40008,
+      "length": 16,
+      "sha256": "7e36477177f20681add8ae26eb8d4f4d80c2ce28fd30b8f82f6b30a95db2439e"
+    },
+    {
+      "name": "screen_next_row",
+      "address": 62144,
+      "offset": 40024,
+      "length": 192,
+      "sha256": "5d89f056865052bcb89c910d2d62872e029fb273c3db03f8968a52a41593c1b5"
+    },
+    {
+      "name": "colour_next_row",
+      "address": 267915968,
+      "offset": 40216,
+      "length": 192,
+      "sha256": "99258834ebd6a7900a68440c15c90388f685f0c112103f2dd651b7dfbc9611ba"
+    }
+  ],
+  "geometry": {
+    "H640": true,
+    "source_pixels_per_native_pixel": 0.5,
+    "native_pixels_per_source_pixel": 2.0,
+    "line_step_bytes": 192,
+    "characters_per_row": 96,
+    "last_row_index": 25,
+    "physical_rasters_per_source_y": 2,
+    "CHARX": 80,
+    "CHARY": 104,
+    "screen_physical": 57344,
+    "colour_offset": 0,
+    "scene_playfield_logical": [
+      0,
+      239
+    ],
+    "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+    "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values",
+    "reference_HUD_native_X": 480,
+    "uses_GOTOX": true
+  },
+  "configuration": {
+    "profile_E_constant_checks_pass": true,
+    "failures": [],
+    "scene_marker_valid": true,
+    "phase_marker_valid": true
+  },
+  "layout": [
+    {
+      "row": 0,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1536,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1537,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1538,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1539,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1540,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1541,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1542,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1543,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 1,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1551,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1552,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1553,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1554,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1555,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1556,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1557,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1558,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 2,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1566,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1567,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1568,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1569,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1570,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1571,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1572,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1573,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 3,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1581,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1582,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1583,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1584,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1585,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1586,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1587,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1588,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 4,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1596,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1597,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1598,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1599,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1600,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1601,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1602,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1603,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 5,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1611,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1612,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1613,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1614,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1615,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1616,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1617,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1618,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 6,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1626,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1627,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1628,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1629,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1630,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1631,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1632,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1633,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 7,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1641,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1642,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1643,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1644,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1645,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1646,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1647,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1648,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 8,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1656,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1657,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1658,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1659,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1660,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1661,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1662,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1663,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 9,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1671,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1672,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1673,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1674,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1675,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1676,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1677,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1678,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 10,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 448,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1686,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1687,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1688,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1689,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1690,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1691,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1692,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1693,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [
+        {
+          "slot": 43,
+          "glyph": 577,
+          "colour_attribute": [
+            8,
+            16
+          ]
+        }
+      ],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 11,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 448,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1701,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1702,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1703,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1704,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1705,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1706,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1707,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1708,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [
+        {
+          "slot": 43,
+          "glyph": 578,
+          "colour_attribute": [
+            8,
+            16
+          ]
+        }
+      ],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 12,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1716,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1717,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1718,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1719,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1720,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1721,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1722,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1723,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 13,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1731,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1732,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1733,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1734,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1735,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1736,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1737,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1738,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 14,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1746,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1747,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1748,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1749,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1750,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1751,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1752,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1753,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 15,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1761,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1762,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1763,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1764,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1765,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1766,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1767,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1768,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 16,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1776,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1777,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1778,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1779,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1780,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1781,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1782,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1783,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 17,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1791,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1792,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1793,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1794,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1795,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1796,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1797,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1798,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 18,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1806,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1807,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1808,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1809,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1810,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1811,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1812,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1813,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 19,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1821,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1822,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1823,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1824,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1825,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1826,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1827,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1828,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 20,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1836,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1837,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1838,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1839,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1840,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1841,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1842,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1843,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 21,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1851,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1852,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1853,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1854,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1855,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1856,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1857,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1858,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 22,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1866,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1867,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1868,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1869,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1870,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1871,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1872,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1873,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 23,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1881,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1882,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1883,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1884,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1885,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1886,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1887,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1888,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    },
+    {
+      "row": 24,
+      "entries": 96,
+      "mono": 20,
+      "NCM": 44,
+      "GOTOX": 32,
+      "first8_commands": [
+        {
+          "slot": 0,
+          "word": 0,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 16,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 18,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 20,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 21,
+          "word": 480,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 42,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 44,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        },
+        {
+          "slot": 46,
+          "word": 640,
+          "colour_attribute": [
+            16,
+            0
+          ]
+        }
+      ],
+      "first8_NCM_slots": [
+        {
+          "slot": 1,
+          "glyph": 1896,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 2,
+          "glyph": 1897,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 3,
+          "glyph": 1898,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 4,
+          "glyph": 1899,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 5,
+          "glyph": 1900,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 6,
+          "glyph": 1901,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 7,
+          "glyph": 1902,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        },
+        {
+          "slot": 8,
+          "glyph": 1903,
+          "colour_attribute": [
+            8,
+            48
+          ]
+        }
+      ],
+      "original_pixie_slots": [],
+      "nominal_native_pixel_work": 1568,
+      "glyph_row_payload_bytes": 372
+    }
+  ],
+  "write_shadow_values": {
+    "D051_write": "$1F",
+    "D051_restore": "$9F",
+    "entry_IRQ": "$E1",
+    "own_IRQ": "$01",
+    "D054_write": "$55",
+    "D031_write": "$C0",
+    "D015_write": "$0F",
+    "phase": "$02",
+    "measured_error": "$00",
+    "scene": "$44",
+    "sequence_low": "$04",
+    "sequence_high": "$00",
+    "entry_D07A_read": "$88",
+    "D07A_write": "$88",
+    "reserved14": "$00",
+    "reserved15": "$00"
+  },
+  "palettes": [
+    {
+      "bank": 0,
+      "sha256": "4c09835ff7b059e323d5ad65a4a16d8d8f2c3e7a9eef995952c75661a11ea5d8"
+    },
+    {
+      "bank": 1,
+      "sha256": "bad6e518f034f0e2060dd70b827045fa8baa955de4f8e33fb17e87295926b9cd"
+    },
+    {
+      "bank": 2,
+      "sha256": "510a11efdee65f07a74fd4ee54fc71f0f87d35e2ae0abb1913c5881e6cf9fcde"
+    },
+    {
+      "bank": 3,
+      "sha256": "dcb859fa6e0aae56007667a406642793aeac6780f18779112ea439020715427d"
+    }
+  ]
+}

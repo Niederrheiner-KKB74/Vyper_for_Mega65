@@ -1,0 +1,1571 @@
+{
+  "main_base": "df52834b94a69f3c4909b6748974b20f6e77f598",
+  "notice": "Original source blobs; active tools/ASM may be repaired separately. Evidence and historical releases remain byte-identical.",
+  "files": [
+    {
+      "path": "docs/diagnostics/stage10b1/V10BEX.DAT",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "8744c3e43ad72c26786b6b9e12ddb8e0418d6842"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/V10BSX.DAT",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "89fa6fbd346f643ddb9be8e41ec9893772f914a7"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/delivery.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "cf4cf45f8687bb007afcfce8591b2c7fb6241bb8"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/profile_comparison.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "337c5967cc5e3bf59ce80f9fa101911885ed0752"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/runtime.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "46a7c7261974b91b9196d7555c7b5b239439b72d"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/explicit_profile_comparison.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "1a21bdf13e347992cabf9802a83536fd5ee805bc"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/hardware_S_E_comparison.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "eb1829302829e7a7b2c76004d7347c205439d19a"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/hardware_repeated_S_comparison.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "6aaa38ae16ece3ee3e51ca47ec8bf2598ec38d57"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/inputs.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "82df7105314c1feeba52d7882e7638161d9e892b"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/mega65_V10BSH.DAT",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "545b250e25db024c89d3db5cf867fa6bf67b2961"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/mega65_V10BSX.DAT",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "7d09789e37dcb9e84633a5fb0126a66b383e44d7"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/mega65_second_V10BEX.DAT",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "7042ca0ac576e3029e9725f51f15d73e096adc99"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/mega65_second_V10BSH.DAT",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "96853ebff97ab3674a22e7ff8c091e40b8fba1cb"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/mega65_second_V10BSX.DAT",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2bc757a061f5ae7513c402881e49ae87de1eae1c"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/second_hardware_input.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "03cce2344ac9bc1d6fe0f4d5c90fe473757c312c"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/stage_profile_comparison.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "32422e768cb7e2eec847b8b79fa1d9f90e462d74"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/xemu_S_E_comparison.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "cc52dd1467c2f49e8a8b93fda3234b65bc4df2b6"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/xemu_V10BEX.DAT",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "f4ab1e6339a72b20748fc29c1a70c6d0fdae4ae8"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1/user-comparison/xemu_V10BSX.DAT",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "48d2a610b4148b2839953092c2ce4c26d5e4d0ef"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/V1AAX.MEM",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "09d3b4f70c503485bab72506b38e32abb19e5724"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/V1AAX.REG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "76517714910c494d6d737a88e782265f467cca82"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/V1ABX.MEM",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "704948a41b743a3069aa0e94468aa25d1fbc5451"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/V1ABX.REG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c76d8b76d23fe2e6a0b1f5f86d433436f6e46dbb"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/delivery.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "3c0ebb4017cb0550fc1e81debb44b794955e20d6"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/memory_comparison.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c98bd5d31a4aea1739323fb8eda102657b238330"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/profile_comparison.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "1253c5c4c822083a90af6fd6924c4a5c4614a50e"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/runtime.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "92211eb8ee3d81c946159f76958a832e5d78f24e"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/V1AAH.MEM",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2e337c953061e77955e2c66adb01d3979bbae552"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/V1AAH.REG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2e3136c3e28238d955d47e4e026cd27c9888015f"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/V1AAX.MEM",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "09d3b4f70c503485bab72506b38e32abb19e5724"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/V1AAX.REG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "a08c617bed15a90fd6212caef24e79d86b081025"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/V1ABH.MEM",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "ca6fa19120439d697c192828bed660734b00fb16"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/V1ABH.REG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2df47b9f57c6ee1002ce75d7ee922c0ac121e9eb"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/V1ABX.MEM",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "704948a41b743a3069aa0e94468aa25d1fbc5451"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/V1ABX.REG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "204c9607cc745489a1882e257344cf78d85e6b3a"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/hardware_AB.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "f19d7a8f538771b350d00cb825b61e63a4c42e78"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/hardware_input.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "60619e0ab866ab5772a208eae3f8568b551bed33"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/hardware_xemu_A.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "559a08f4c77e8d66142dadd3038805c9c80bab02"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/hardware_xemu_B.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "ca8df9261a839aedea9e4ffc028f35babc54f38b"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/inputs.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "ff490ef896ded83611df0262c2e4cb2c62736d4a"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/xemu_AB.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5b80914bf76c50ae16a8705c3c72da6b60bb70b8"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1a/user-comparison/xemu_vs_local_memory.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2ce51658ad2356f59a53d12c7141e95421307e43"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/A_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2102b5d6b036ca5eccdc4513f9730506231ab623"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/B_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "7913465bcb58794df695a3c716b3c30b918ace2a"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/C_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "1950f9910202b96d4ac62853c4f0e397d076432a"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/D_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "855bde6c9d0bf734a10b502737532152988a3893"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/V1BAX.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "a0cbf1395de8f6f9d70da392e802596d4ab4fa4e"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/V1BAX.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c9508ed9c060d5b75b4e62b8423501c2bf02dbe5"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/V1BBX.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c162c5a323d520fb6da338b8bca96f619c86f742"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/V1BBX.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "1aadd5e817c5d5331ec704574e0e68176e19d6c5"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/V1BCX.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "56f4c9559a1ac838ffc5e36d4481639acea8011a"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/V1BCX.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "ec29074264b5c1efcbd3d59ef2a420145985b0a4"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/V1BDX.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "e48ded8d703851f6e411675cf2d6740a78d14b97"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/V1BDX.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2ab8c7f9f2b2e405b25331ec47ec3dd539aa2935"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/delivery.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c2344c921e62afb4205f0e97141821da06e2e4af"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/A_first_vs_returned.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "ffcc49ff908a9d890bd3754db1fac61a2ebaf3dc"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/XEMU_A_first_vs_returned.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "dabb89b10a40a8aca6e5460c2d5a93267177ecb7"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_A_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5f5b893460807001e1efac546f0d235a4473999d"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_A_USER_XEMU_HARDWARE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "d7be95af47dac4bf6b3fffba1bf1f51e0a5b898a"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_A_USER_XEMU_HARDWARE_PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "7c18a31d76c4198d24ee756c93b94d3d20f39cea"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_A_XEMU_HARDWARE_PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "70b4963a53b9d63f377fbe9c70e53a398d2693d6"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_B_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "0190c4e36fa82557f8f2ef83dc2ebe72f315fef6"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_B_USER_XEMU_HARDWARE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c81e80a338ac25793fa801e2558a2de89effb95e"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_B_USER_XEMU_HARDWARE_PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c31e3ca5f6919a940d2811fe417ed40a7ab07649"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_B_XEMU_HARDWARE_PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "1e53dffc6643ecf82f540b6e3a0e58e538ee7a01"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_C_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "7393ed669b4132ad9f3dceafba1be90e1e80b3b7"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_C_USER_XEMU_HARDWARE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "ee8f736cfdb4b94a7ac1432cabb2df7d7e61e6bb"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_C_USER_XEMU_HARDWARE_PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "af65bb06e235d708031293f1fa9f8415b752bd9f"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_C_XEMU_HARDWARE_PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "a6ed4d38dbea243e1523118c259c0b2fed9b7ec5"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_D_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "46b4d4a15b6c0a39397c5a850922c41d56b2a787"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_D_USER_XEMU_HARDWARE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "74a6e9c7487d55e34d0fdb5af8628ab350dce659"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_D_USER_XEMU_HARDWARE_PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "69e1c1dba05a959a9845e2ff4f9c1fa0b972f057"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_D_XEMU_HARDWARE_PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2bede542362ac1dce52c7af8ab5ba71e818e90c7"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BAH.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c3db55cf544c6ecd3f7b08202104c44dca13dfbe"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BAH.PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "02c9ec4c2c5673ec879ad2b38a490f65d9232534"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BAH.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c311afb14cd58693f34aeef57e32589ad3f7bb65"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BAH.PST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "00f79167d3497faf65e56385f8eb2271ba34d25a"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BBH.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2604963d88df6602920f1527eb1989ca1aa19e15"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BBH.PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5985ea0ea4b9783200c5d208254a903943985ae6"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BBH.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "dd256de1b9c6b48272b426411e51f871d5daae36"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BBH.PST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5cbb114e28236b9755bc0b9de6d8a74c34928c26"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BCH.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "d9429ee809020a1452f697048153133dd3d3f7f8"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BCH.PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5cd4b9ab3d0e05f3b7d155b0fb9be0b27b829a56"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BCH.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "eeb002a1c100e8dd570de6311453b2652118a878"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BCH.PST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "b75e4471e4f13ccfdb67e1527572c01221ab5ab1"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BDH.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "aa90b32e41b738ab359b3c78fb0fad7bca85bd46"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BDH.PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "e55ff2ad6b43bae70207b136f31ac49e4767bb40"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BDH.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "84bc65f579d2a9ebba7e7c21147d95bf91572c04"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk1_V1BDH.PST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5c5956e302dd3b40d894045c3c56d5accb07d082"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_A_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5274112190cec1973f4fca4166dbeb03623c0a98"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_A_USER_XEMU_HARDWARE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "0a9e15de2401251b8bfd7d8414bcf80fd2b7a70d"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_A_USER_XEMU_HARDWARE_PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "f017612d8cb780b92837e75ce4e068d6a97cf7e0"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_A_XEMU_HARDWARE_PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "72cc73865120306337b78dfb7f0893c642599d7b"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_B_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "833c94fd5f043d03e30f0ccccf9db9b1ec60d161"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_B_USER_XEMU_HARDWARE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "70a144fece56df4d68e620efd00a3f10cbdc3ed4"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_B_USER_XEMU_HARDWARE_PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2fdafeb4616d4a430e4421467163ea0349b73cfc"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_B_XEMU_HARDWARE_PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "1a38e05713ec16b9444605215ca6033facd38e3d"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_V1BAH.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "7386a90407b66188edc168dc1c623558787c8675"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_V1BAH.PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "0846d01cf0a07f6da0533c3fbaad479b6b3204f6"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_V1BAH.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "ecb0d17b5dfbf93ce5a7710faf1434efd87a6f9a"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_V1BAH.PST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "fc82d40f4658a8f2bcf3b85b74b07a3c56f2f137"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_V1BBH.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "e86bd6dca414c345b8bd381356668ca6f5445af0"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_V1BBH.PRE.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "51511702c3feda6eb5ebe10ac1e9bafe42c720c1"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_V1BBH.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "17d718fde5cc56a9a2735e36d6135b2032753966"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/disk2_V1BBH.PST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "d976f5828d403e7067bea146c4f1d972dec0fbb9"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/inputs/MEGA65_A_to_D.zip",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "440cb98de9cbcd48c43fe22c0673e090b53ced0c"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/inputs/VYPER_STAGE10B1B_Mega65_1.d81",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "93ff30bc04a40e586cccdaadcdd2d6267190156d"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/inputs/VYPER_STAGE10B1B_Mega65_2.d81",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "d7d6f3273c7b0895d474380de8e7967ea4aa02fa"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/inputs/VYPER_STAGE10B1B_XEMU_1.d81",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "773877be51b4e9a6a5a9c4b76d1a7f2b5eb394c1"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/inputs/VYPER_STAGE10B1B_XEMU_2.d81",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c2d245ddce180fab812aceb035f389fb523be414"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/inputs/XEMU_A to D.zip",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "f04aa5acc172b9ba63df5c9bec566c39b2513a8c"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/photos_contact.jpg",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c184a8da8abd14ce04d7bff63f64da7959e51d83"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/results.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "6ee4954317068df08bad2012eb1cc8b682b5dd5c"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_contact.png",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "ccb2bc0f798acefdf1442f97cc79c7fea35b9d45"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk1_A_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5c6c5d579b5bc662f0da7c8c3453ec29c7420608"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk1_B_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2b5b4ea31236fb3b3380a3d72df3f5ca933b691e"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk1_C_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "ab4c28ee89425ffeb052e8d79f525cb7c5686f4a"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk1_D_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c8c81e758ecbcc455449128c3baeb4f8718ad5f3"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk1_V1BAX.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "78a77fb89d5a939745aea8488e6b17bd0501ba3e"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk1_V1BAX.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "a6b3f41583597483e468829db4a74b7a8ed4b780"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk1_V1BBX.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "e3eb18cb400336c23786e367fa49bf6c1a7ee3bd"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk1_V1BBX.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2cc17848c12d8d008654e663338e765e17d1c9c3"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk1_V1BCX.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "7491e63576bda0838bb064b789aa7ecd2f0db1c3"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk1_V1BCX.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "ed7a6ab356a137b405c6d5c41dfd900dc58e44ed"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk1_V1BDX.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "38510c732b42d6812242e394f4c6f803799367bb"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk1_V1BDX.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "8ad0b9ec49bb3d9aa7d6593162eb58f9aa03f520"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk2_A_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "78b9f5f9bce1e0f3c10f185b3dfa6f6915886dbe"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk2_B_PRE_POST.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "4bee19b3a20ca9f2f2edc011abcca7834258cef4"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk2_V1BAX.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2e5ff7a8c8e97e3e5df7d3d0c5596f43daa76e82"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk2_V1BAX.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "8cc2acee4164182342c782ed0ad659d73f376de5"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk2_V1BBX.PRE",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "039ec0457abcbbc02ae05c045cb87296b4d6fd43"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/hardware_20261017/xemu_disk2_V1BBX.PST",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "e594fd51becb03b55694bf9c262d249f2975d09c"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1b/runtime.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "3214854b0ecf462056d2387386e596f81b041bbb"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/A_initial.REG",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "82d35ba31835e59b40045d31cc78f1e83de09289"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/A_initial.json",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "2b0e61bfb569e11b0e60c620130b9a50c1d96e04"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/A_returned.REG",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "077259694cb477b7a4fc1d82e3dae66296d36798"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/A_returned.json",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "b437df11faf36308ace2fe01e5be3a120f143cf6"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/B.REG",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "0b708eaf4fe144271cc642170e1d165297bb94a6"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/B.json",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "067d7f09ca016fa27d9e9aab0760357e57b0262c"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/B_rebuilt.REG",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "55d25fcbd889d1ae11cf85116a4f3ad86ae278de"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/B_rebuilt.json",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "0189c6dfcb0424bc0bf41017f93d2e38ce2b38d3"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/B_repeated.REG",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "8c85b5b55622bd4f419b9906b2f332f66c98fac3"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/B_repeated.json",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "f8df85d12ada87f5c62898e140c816e3485451fc"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/B_sample_only.REG",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "90dbc173772b02960cb037ff4a7e58d627f6456a"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/B_sample_only.json",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "042ba2bf37de90f6115a1566a066fdedbc2aeb75"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/after_RUN.REG",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "055cb4742c873b9f70fbe8bfcf61c2784b1a1f3f"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/after_RUN.json",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "9b22de415cf9085eb1d0f0d3535ffae0ebcb4d35"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/delivery.json",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "88bbf0852ad32cefc38b0070d00203e3898c153a"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1c/runtime.json",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "eb609a3068730e979d9a5cf07dbff455d02f4c53"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/A1_done.LOG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "4bf7c399c5f19f076e5fd62a050a8c8a1c25fa3d"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/A1_done.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "35c0e470077a62c68630aa880f8235b21617b89f"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/A1_started.LOG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "6aa60df7867395a1b57c0a66571c0526f733935e"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/A1_started.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "f958ed1cb7ddc336f8fa0cecfc24be9a88dd0c47"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/A2_done.LOG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "12647553cb847d1d6dcb4b9c09761019e2c455bd"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/A2_done.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "d5f1ba9bc5fb63201ee9d1beb39a93734c806f57"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/A2_started.LOG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2e30a98756537fdc5e09fe58b4b9d9db9bb36dc3"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/A2_started.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "9e047e2c7180005c2e9b8678f2ff1127976825ca"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/A_replay_done.LOG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "73c75f9a40649855aa1c226f65eefc40ea54ddec"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/A_replay_done.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "188857a9754360292fd1fadef9cc34c1ece5b14a"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/A_replay_started.LOG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "550e288764faa1218fca2665e54e1a6cb77a097d"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/A_replay_started.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "310c84a641e6e9d13eaa379e7f2940def8ba38e6"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/B_done.LOG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "97a20a5a4f30a66ca48f6edcd79ee7ce00b852ba"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/B_done.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2a030b3e20e9730a94a78f1e0c0bd87b39354989"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/B_replay_after_stop.LOG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "b08f17e7ea9c2d9f25babaa48d639d851902a727"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/B_replay_after_stop.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "2fac7b0d760fefe351c7ec9db44f825140ba6b84"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/B_started.LOG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "9d5300481f8a2a70a19fa514c094200966030f31"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/B_started.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "426ea9e13dfb7ebcc377d18eeba5b7085beff1b6"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/D711_observation.LOG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c12b5422cd63b8f4571e151b40128d7e6e5a3dad"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/D711_observation.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "43622ecd1db8aa25d90ab478d8c3cb8605d986ca"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/delivery.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "88dbce37662b0c1057f4534d4ad95726ee4c7bec"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/manual_stop.LOG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "93631d543cf231891c6b82f3ee71b4101797a866"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/manual_stop.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c7fab11c8dae481cf649e68c3e68aaf0788b971e"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/manual_stop_runtime.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "8ebbf57c6414e76e591b0fd9c40f35aff5d5011e"
+    },
+    {
+      "path": "docs/diagnostics/stage10b1d/runtime.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "1c00b72453d12a1fe0bd830982687675ee7919d7"
+    },
+    {
+      "path": "docs/stage10b1_user_hardware_findings.md",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "1221ababb00afe4248a78d83071f6eb3d594ca8f"
+    },
+    {
+      "path": "docs/stage10b1_viciv_hardware_comparison.md",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "749125c048a579714a4049bf89cf4c20d9ad3caa"
+    },
+    {
+      "path": "docs/stage10b1a_norrdel_ab.md",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "b6cb602ddde2a3ca75ae7b6aa3ab078a674ac092"
+    },
+    {
+      "path": "docs/stage10b1a_user_findings.md",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5fa8e06b970e9098c94ae54e185425619ae346c2"
+    },
+    {
+      "path": "docs/stage10b1b_hardware_results_20261017.md",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "1cc6c920a6f2b7479da157b20d42584fcbb05c94"
+    },
+    {
+      "path": "docs/stage10b1b_rrb_minimal_diagnostics.md",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "f959fdcbb31814696813d009269ea7e26bde3872"
+    },
+    {
+      "path": "docs/stage10b1c_h320_gotox_test.md",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "39b195101a2ee89d64f17c40c871058248a1776d"
+    },
+    {
+      "path": "docs/stage10b1d_audio_dma_latch.md",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "20ec189c543a0677d59af74128986f9e0fb032e2"
+    },
+    {
+      "path": "releases/stage_10b1/SHA256SUMS.txt",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5a588badfce5781f50b7899308fe5dbe3d909cb1"
+    },
+    {
+      "path": "releases/stage_10b1/STAGE10B1.PRG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "7e762f18d9db39af68075ef38863d3059e35702d"
+    },
+    {
+      "path": "releases/stage_10b1/VYPER_STAGE10B1.d81",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "e2c28f93804f8257f875afea5a3ce5c253cfb62d"
+    },
+    {
+      "path": "releases/stage_10b1/assembly.txt",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "c553e0e45610296b8e08d5ef0232bdf9a8fabc4b"
+    },
+    {
+      "path": "releases/stage_10b1/build.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "36e86761732e4f479e8c1bf336227b781f0db4c8"
+    },
+    {
+      "path": "releases/stage_10b1/constants.inc",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "dd8caaf33626259624719ac7c5221d1c8c09738c"
+    },
+    {
+      "path": "releases/stage_10b1/font.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5aa55ae26417d005b5ec8a7fa875b933dea3e20b"
+    },
+    {
+      "path": "releases/stage_10b1/grid_atlas.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "84125cf4a7d46fb1b3d653dc8de167e906e6e7c9"
+    },
+    {
+      "path": "releases/stage_10b1/player_ncm.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "0db473eaea5f4ef4942ca144a8d5bdf531308535"
+    },
+    {
+      "path": "releases/stage_10b1/player_palette_b.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "d2ab92646949f13c1d18b4533c69448a5d5088ee"
+    },
+    {
+      "path": "releases/stage_10b1/player_palette_g.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "030f2e338bc83f367c5c21f3139f194bde2dd85a"
+    },
+    {
+      "path": "releases/stage_10b1/player_palette_r.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "8387d952d1885f808a573633ea05cc1cb62b058f"
+    },
+    {
+      "path": "releases/stage_10b1/registers.inc",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "63f5d3db7f6329b52c5c762424c84c50e48017ce"
+    },
+    {
+      "path": "releases/stage_10b1/registers.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "bdd9e673f43240d539f808d91c5552bf4a76626e"
+    },
+    {
+      "path": "releases/stage_10b1/scene_colour.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "cefa44e88546dd848a564dbdfd3aaf713318dac4"
+    },
+    {
+      "path": "releases/stage_10b1/scene_screen.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "afcd016895acdb96ec673a057c326df605c55972"
+    },
+    {
+      "path": "releases/stage_10b1/sprites.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "6df5bd6b31c64bc6579d1ea0eba694b06c9c64f2"
+    },
+    {
+      "path": "releases/stage_10b1/stage10b1.asm",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "3d844622b76712dba93bbaf3473a2d8d3752e942"
+    },
+    {
+      "path": "releases/stage_10b1/stage10b1.sym",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "805c5d2c9926796040612a1b9cc7829a8bb79a0a"
+    },
+    {
+      "path": "releases/stage_10b1a/SHA256SUMS.txt",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "de39eda30d701d1308e1e86145fdc5cd8f37aace"
+    },
+    {
+      "path": "releases/stage_10b1a/STAGE10B1A.PRG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "201ba59d1a4b48901c629e87d26534cf12c73e2d"
+    },
+    {
+      "path": "releases/stage_10b1a/VYPER_STAGE10B1A.d81",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "dac4751e4544e83e1e13c953a6d38cc76ab7bc3f"
+    },
+    {
+      "path": "releases/stage_10b1a/assembly.txt",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "eb704433171aca7621af590282baa8433f778aca"
+    },
+    {
+      "path": "releases/stage_10b1a/build.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "8be7e658179ecae17e0f85e22065528b382b93d7"
+    },
+    {
+      "path": "releases/stage_10b1a/constants.inc",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "dd8caaf33626259624719ac7c5221d1c8c09738c"
+    },
+    {
+      "path": "releases/stage_10b1a/font.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5aa55ae26417d005b5ec8a7fa875b933dea3e20b"
+    },
+    {
+      "path": "releases/stage_10b1a/grid_atlas.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "84125cf4a7d46fb1b3d653dc8de167e906e6e7c9"
+    },
+    {
+      "path": "releases/stage_10b1a/memory.inc",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "164ba9edd739affa39eb356aa6fa1b2f33de14c0"
+    },
+    {
+      "path": "releases/stage_10b1a/memory.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "559c5b3c57aa523dd091c2b7e685e26173d5bbed"
+    },
+    {
+      "path": "releases/stage_10b1a/memory_constants.inc",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "e8e8ad12d65994ec70fd67cc59da3c72f551f892"
+    },
+    {
+      "path": "releases/stage_10b1a/memory_header.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "a640ca77642e81c00abc7efc62afa82cebfbb056"
+    },
+    {
+      "path": "releases/stage_10b1a/player_ncm.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "0db473eaea5f4ef4942ca144a8d5bdf531308535"
+    },
+    {
+      "path": "releases/stage_10b1a/player_palette_b.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "d2ab92646949f13c1d18b4533c69448a5d5088ee"
+    },
+    {
+      "path": "releases/stage_10b1a/player_palette_g.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "030f2e338bc83f367c5c21f3139f194bde2dd85a"
+    },
+    {
+      "path": "releases/stage_10b1a/player_palette_r.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "8387d952d1885f808a573633ea05cc1cb62b058f"
+    },
+    {
+      "path": "releases/stage_10b1a/registers.inc",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "63f5d3db7f6329b52c5c762424c84c50e48017ce"
+    },
+    {
+      "path": "releases/stage_10b1a/registers.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "02bfcc1df2cc000104e9529c28c895bc839ae711"
+    },
+    {
+      "path": "releases/stage_10b1a/scene_colour.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "cefa44e88546dd848a564dbdfd3aaf713318dac4"
+    },
+    {
+      "path": "releases/stage_10b1a/scene_screen.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "d850d8a9de5129b810e593a61ef97d2b2f10eba3"
+    },
+    {
+      "path": "releases/stage_10b1a/sprites.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "6df5bd6b31c64bc6579d1ea0eba694b06c9c64f2"
+    },
+    {
+      "path": "releases/stage_10b1a/stage10b1a.asm",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "82c8d52a2bced40969466279b996f492a54c60c7"
+    },
+    {
+      "path": "releases/stage_10b1a/stage10b1a.sym",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "fd7ee79000baedc4d6bd58075ef9a35558158f51"
+    },
+    {
+      "path": "releases/stage_10b1b/SHA256SUMS.txt",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "31f5d98dc05329a1e5582ce661efdc4ec9b9b8da"
+    },
+    {
+      "path": "releases/stage_10b1b/STAGE10B1B.PRG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "a6aa516ac87496d4edd638450ebd333fcfa5944c"
+    },
+    {
+      "path": "releases/stage_10b1b/VYPER_STAGE10B1B.d81",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "733a7616ce9f6a82da4e9902331bcd0abd0c3855"
+    },
+    {
+      "path": "releases/stage_10b1b/assembly.txt",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "b3a31df9b18f888add8cbc91e4689348ce46cfc1"
+    },
+    {
+      "path": "releases/stage_10b1b/build.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "0f3ca86c24aa60b16d5d4d8775a4aee356f98596"
+    },
+    {
+      "path": "releases/stage_10b1b/constants.inc",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "f6cc90471a202bdf5aebad73c464bcfd5b85f04f"
+    },
+    {
+      "path": "releases/stage_10b1b/font.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5aa55ae26417d005b5ec8a7fa875b933dea3e20b"
+    },
+    {
+      "path": "releases/stage_10b1b/grid_atlas.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "84125cf4a7d46fb1b3d653dc8de167e906e6e7c9"
+    },
+    {
+      "path": "releases/stage_10b1b/names.inc",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "4ce2e89696ac3fb76bd1ea5b0e1fec1b5fcb3955"
+    },
+    {
+      "path": "releases/stage_10b1b/phase_markers.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "e2a2fae3ab5c6d0695bc73c72f0f5c5fea22ac3b"
+    },
+    {
+      "path": "releases/stage_10b1b/player_ncm.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "0db473eaea5f4ef4942ca144a8d5bdf531308535"
+    },
+    {
+      "path": "releases/stage_10b1b/player_palette_b.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "d2ab92646949f13c1d18b4533c69448a5d5088ee"
+    },
+    {
+      "path": "releases/stage_10b1b/player_palette_g.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "030f2e338bc83f367c5c21f3139f194bde2dd85a"
+    },
+    {
+      "path": "releases/stage_10b1b/player_palette_r.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "8387d952d1885f808a573633ea05cc1cb62b058f"
+    },
+    {
+      "path": "releases/stage_10b1b/registers.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "ad0db8a468dada2c502cb1b3a250e95d9ea41695"
+    },
+    {
+      "path": "releases/stage_10b1b/scene_A_colour.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "63390c662be9d9a04631c62e69594d959aaf3018"
+    },
+    {
+      "path": "releases/stage_10b1b/scene_A_screen.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "e10fecaf117d0ee697e62a4902c6147c52a9c0d7"
+    },
+    {
+      "path": "releases/stage_10b1b/scene_B_colour.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "fd50ffb82f2324b16a85f065af1420cf5a3997e9"
+    },
+    {
+      "path": "releases/stage_10b1b/scene_B_screen.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "ec36ca53546155f4e9a9d6a9ccb07c01dc3f49e1"
+    },
+    {
+      "path": "releases/stage_10b1b/scene_C_colour.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "0b56d7cac5be2e7b9bf1cc0117dc982151a90c30"
+    },
+    {
+      "path": "releases/stage_10b1b/scene_C_screen.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "eee378efb77f87489233f4f54a9e70238b87feeb"
+    },
+    {
+      "path": "releases/stage_10b1b/scene_D_colour.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "cefa44e88546dd848a564dbdfd3aaf713318dac4"
+    },
+    {
+      "path": "releases/stage_10b1b/scene_D_screen.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "bceab419acd07ce82fb29a8949dc769d79f000d7"
+    },
+    {
+      "path": "releases/stage_10b1b/scene_budget.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "e60dbc80566b8e75f23b9695510c02e5736aeb18"
+    },
+    {
+      "path": "releases/stage_10b1b/scene_colour.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "cefa44e88546dd848a564dbdfd3aaf713318dac4"
+    },
+    {
+      "path": "releases/stage_10b1b/scene_markers.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "5d48f1f7014b591ba71235e24c03723c70055f49"
+    },
+    {
+      "path": "releases/stage_10b1b/scene_screen.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "bceab419acd07ce82fb29a8949dc769d79f000d7"
+    },
+    {
+      "path": "releases/stage_10b1b/scene_text.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "0ae77d3e6ac148667753c82232bc6291b7011dde"
+    },
+    {
+      "path": "releases/stage_10b1b/snapshot_header.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "9deb67d8956124f6d8bcd08d753aef17f5dc1097"
+    },
+    {
+      "path": "releases/stage_10b1b/sprites.bin",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "753c272b683141edbabedee4cefc14d4881409ea"
+    },
+    {
+      "path": "releases/stage_10b1b/stage10b1b.asm",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "6527a369c968dce08786a3ae7662c1b187932794"
+    },
+    {
+      "path": "releases/stage_10b1b/stage10b1b.sym",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "7f265c79eca1b0cb3ab27ab3eedc5ca1e5238f70"
+    },
+    {
+      "path": "releases/stage_10b1b/stage10b1b_helpers.asm",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "a3955e09ca605e91e36ee4f58e1f9d5fb9ed779f"
+    },
+    {
+      "path": "releases/stage_10b1b/tables.inc",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "004dadda4b1ce3d6b6e69761ae257584dc3ce32b"
+    },
+    {
+      "path": "releases/stage_10b1c/SHA256SUMS.txt",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "df12a6a60bb813ba33a640aded961dd6c07af510"
+    },
+    {
+      "path": "releases/stage_10b1c/STAGE10B1C.PRG",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "05b4492d170be01216813426054d2e1e95d5396d"
+    },
+    {
+      "path": "releases/stage_10b1c/VYPER_STAGE10B1C.d81",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "c0774c4ea22fa88db1c53b58cb1c05defe35dc36"
+    },
+    {
+      "path": "releases/stage_10b1c/assembly.txt",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "245a8df9874afeea2da16448c7a012c87ed1b980"
+    },
+    {
+      "path": "releases/stage_10b1c/build.json",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "dee845a7dac4ea13f754217d520e19c88843b27c"
+    },
+    {
+      "path": "releases/stage_10b1c/constants.inc",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "a1fc9d5f1f8729542f9f7e5cbfa588d7a7a3b4a1"
+    },
+    {
+      "path": "releases/stage_10b1c/font.bin",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "5aa55ae26417d005b5ec8a7fa875b933dea3e20b"
+    },
+    {
+      "path": "releases/stage_10b1c/grid_atlas.bin",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "84125cf4a7d46fb1b3d653dc8de167e906e6e7c9"
+    },
+    {
+      "path": "releases/stage_10b1c/player_ncm.bin",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "0db473eaea5f4ef4942ca144a8d5bdf531308535"
+    },
+    {
+      "path": "releases/stage_10b1c/player_palette_b.bin",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "d2ab92646949f13c1d18b4533c69448a5d5088ee"
+    },
+    {
+      "path": "releases/stage_10b1c/player_palette_g.bin",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "030f2e338bc83f367c5c21f3139f194bde2dd85a"
+    },
+    {
+      "path": "releases/stage_10b1c/player_palette_r.bin",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "8387d952d1885f808a573633ea05cc1cb62b058f"
+    },
+    {
+      "path": "releases/stage_10b1c/probe.bin",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "44af8196d441209308a30fb232dc15de08d128c8"
+    },
+    {
+      "path": "releases/stage_10b1c/scene.json",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "8293d212ef0bcfcedce522ef9d027967818b76b9"
+    },
+    {
+      "path": "releases/stage_10b1c/scene_A_screen.bin",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "d7c5f13e1e2885e0a87526f2e4166cc4643adeb6"
+    },
+    {
+      "path": "releases/stage_10b1c/scene_B_screen.bin",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "5b0b1193a06fa89cc15fce1b2ebaa0a2cf791478"
+    },
+    {
+      "path": "releases/stage_10b1c/scene_colour.bin",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "26bbc2a3cd32ada7f8f06b0f7b9d67ecffeea4ab"
+    },
+    {
+      "path": "releases/stage_10b1c/scene_screen.bin",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "d7c5f13e1e2885e0a87526f2e4166cc4643adeb6"
+    },
+    {
+      "path": "releases/stage_10b1c/sprites.bin",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "bfd6407a2549e540b136d25a8196bd049e18ff2e"
+    },
+    {
+      "path": "releases/stage_10b1c/stage10b1c.asm",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "fc9e1ae8f07e686e3b7fb20bdc0a4a89eeb83365"
+    },
+    {
+      "path": "releases/stage_10b1c/stage10b1c.sym",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "7679d0e001c450f4116fbadf839d0ecc733741f2"
+    },
+    {
+      "path": "releases/stage_10b1c/tables.inc",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "3eb5217e5d804b80697d97d5885361424683e982"
+    },
+    {
+      "path": "releases/stage_10b1c/variant_markers.bin",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "9f23e6c9d2e4054583f365c404c794530770a5c7"
+    },
+    {
+      "path": "releases/stage_10b1d/SHA256SUMS.txt",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "620cb6634686e4165557575e4ed7a8e902beaa50"
+    },
+    {
+      "path": "releases/stage_10b1d/STAGE10B1D.PRG",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "352ad32dec383f21737536475e723776e64630bc"
+    },
+    {
+      "path": "releases/stage_10b1d/VYPER_STAGE10B1D.d81",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "7865c6a1ff61d7cb0064dc1c02ea4384a8ad7410"
+    },
+    {
+      "path": "releases/stage_10b1d/assembly.txt",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "10378a33783e87419347a4093ac9f53959aee287"
+    },
+    {
+      "path": "releases/stage_10b1d/sample17.inc",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "905bf277ae61b6ff52a4a1f77d6897ddc52dcea8"
+    },
+    {
+      "path": "releases/stage_10b1d/sample17.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "1b9e8393e6719cf3552f651b512c186b43a31eb4"
+    },
+    {
+      "path": "releases/stage_10b1d/sound17.s8",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "ecb9ad4746c51be5b8b6437aa3b79060ee246860"
+    },
+    {
+      "path": "releases/stage_10b1d/stage10b1d.asm",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "408064cb11c2d6fbd6ef5349a7c9355443b61779"
+    },
+    {
+      "path": "releases/stage_10b1d/stage10b1d.sym",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "1028cad68588e2ad8612af1f2774b8b106b94c32"
+    },
+    {
+      "path": "releases/stage_10b1d/test.json",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "9e2c6945b35095ab7eb1024f3d0ce0b56532e1af"
+    },
+    {
+      "path": "src/tests/stage10b1.asm",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "3d844622b76712dba93bbaf3473a2d8d3752e942"
+    },
+    {
+      "path": "src/tests/stage10b1a.asm",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "82c8d52a2bced40969466279b996f492a54c60c7"
+    },
+    {
+      "path": "src/tests/stage10b1b.asm",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "6527a369c968dce08786a3ae7662c1b187932794"
+    },
+    {
+      "path": "src/tests/stage10b1b_helpers.asm",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "a3955e09ca605e91e36ee4f58e1f9d5fb9ed779f"
+    },
+    {
+      "path": "src/tests/stage10b1c.asm",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "fc9e1ae8f07e686e3b7fb20bdc0a4a89eeb83365"
+    },
+    {
+      "path": "src/tests/stage10b1d.asm",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "408064cb11c2d6fbd6ef5349a7c9355443b61779"
+    },
+    {
+      "path": "tools/analysis/analyze_stage10b1b_hardware.py",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "990d32a5f50cf7eb0832228ad22a993696a98de9"
+    },
+    {
+      "path": "tools/analysis/compare_stage10b1_registers.py",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "7c8d6311b5bc51aaaa79f0cc161480624292e55f"
+    },
+    {
+      "path": "tools/analysis/compare_stage10b1a.py",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "403ef7d94b5086d69fed0bfa05c64c4ee305e4cf"
+    },
+    {
+      "path": "tools/analysis/compare_stage10b1b.py",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "3ce6808b7b3b0059679e76b53ad23890529358c0"
+    },
+    {
+      "path": "tools/analysis/inspect_stage10b1c.py",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "970c862f4782730392386b8ce13f6d6b963be5c6"
+    },
+    {
+      "path": "tools/analysis/inspect_stage10b1d.py",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "6c0c21a90e49e46a335c885ad1b0e9edeb641a13"
+    },
+    {
+      "path": "tools/build_stage10b1.py",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "1e2ff9e142fe5c7593549440acaf10481d421c26"
+    },
+    {
+      "path": "tools/build_stage10b1a.py",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "78f8077f9e847ca246d018cacb2598ef12b09fa2"
+    },
+    {
+      "path": "tools/build_stage10b1b.py",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "df96b8fb90c34ba89cf1e800f7aff9779a4e0b97"
+    },
+    {
+      "path": "tools/build_stage10b1c.py",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "1931042fe403f07406d09fef5448cbbee8a06634"
+    },
+    {
+      "path": "tools/build_stage10b1d.py",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "3ec0fbd422f06984a5fb858e2152d36fad9644b9"
+    },
+    {
+      "path": "tools/test_stage10b1.py",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "a283d0c8c19bed8517257cc1cccbd57022bcdfa9"
+    },
+    {
+      "path": "tools/test_stage10b1a.py",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "0915bb551e84e73c599343338a3a02f093d758a6"
+    },
+    {
+      "path": "tools/test_stage10b1b.py",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "b5e436d0ff2cf667798b1b135bf5f7b5c14046e5"
+    },
+    {
+      "path": "tools/test_stage10b1c.py",
+      "source_commit": "7e7f2f93682a20d9861580d87a54616dc03ae5e7",
+      "blob_sha": "aa446ea1e338fb9f54f5c90d1adb8ac124f1f068"
+    },
+    {
+      "path": "tools/test_stage10b1d.py",
+      "source_commit": "3615877fe63ae64b2b831cf019f999151eb667fe",
+      "blob_sha": "011fac9f19c2c338bb2c1b2a0bd5c802c2002c20"
+    }
+  ]
+}
