@@ -104,6 +104,25 @@ Die Hosttests modellieren CPU-/Register-/DOS-Verhalten begrenzt. Es wurde kein
 neuer XEMU-, Hardware-, Foto- oder Hörtest durchgeführt. Die reparierten
 Diagnosebuilds erhalten deshalb keine neue Hardware-Stable-Kennzeichnung.
 
+## Ergebnis der Prüfung
+
+- Alle fünf Diagnoseprogramme regulär assembliert und jeweils unabhängig
+  bytegleich reproduziert; PRG und D81 vollständig geprüft.
+- 52 Hosttests bestanden, einschließlich der gezielten neuen Regressionstests.
+- Frischer Single-Branch-Checkout ohne die alten Diagnose-Basiscommits
+  6fd56b3, 17d329f und fd6214c: derselbe Build-/Test-/Analyseablauf bestanden.
+- 291 archivierte Dokumentations-/Mess-/Release-Dateien unverändert.
+- Historische Hardwareanalyse erneut ausgeführt: 24 Schnappschüsse,
+  zwölf PRE/POST-Paare und16Originalbilder validiert.
+
+[Maschinenlesbarer Nachweis und Artefakthashes](validation.json),
+[vollständiges Hosttest-Protokoll](host_tests.txt).
+Die frisch gebauten 10b1/10b1a/10b1b-PRGs enthalten den reparierten Cleanup und
+unterscheiden sich von den historischen Messprogrammen. Die frisch gebauten
+10b1c/10b1d-PRGs und D81 sind mit ihren historischen Referenzen bytegleich.
+Die alten Messdaten werden weiterhin anhand ihrer ursprünglichen Programme
+interpretiert, nicht anhand eines rückwirkend ausgetauschten PRG.
+
 ## Vor der nächsten Spielstage
 
 HW2 bleibt die technische Spielbasis. Koordinatengrenzen, CURRENT-Schreibfolge,
