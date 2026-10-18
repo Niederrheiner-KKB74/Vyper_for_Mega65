@@ -1,4 +1,4 @@
-# Stage10a2 – gepackte Dateien und schnelleres Laden (Testbuild)
+# Stage10a2 – gepackte Dateien
 
 Basis: Stage10a1-HW2 (Branch `stage10a1-hw`, vom Benutzer am 17.10.2026 auf
 MEGA65-Hardware mit Core 0.97 `aaf4542`, ROM 920413, PAL bestätigt).
@@ -86,6 +86,16 @@ ZX0 v2 aus https://github.com/einar-saukas/ZX0 (`gcc -O2 -o zx0 src/compress.c s
 
 ## Hardwaretest
 
-Start: `LOAD "STAGE10A2",8`, `RUN`. Zu prüfen: Ladezeit bis zum Startbildschirm,
-Titel, Menü, Sound, Levelstart, Highscore und ein zweites `RUN` nach `X`.
-Noch nicht vom Benutzer bestätigt.
+Start: `LOAD "STAGE10A2",8`, `RUN`.
+
+Vom Benutzer am 18.10.2026 auf echter Hardware gemessen: **21 s** von `RUN` bis
+zum Startbildschirm (Stage10a1-HW2: 22 s). Die Platzersparnis auf der Diskette
+(1.969 → 863 Blöcke) wurde als lohnend bewertet und die Übernahme nach `main`
+freigegeben.
+
+Folgerung: Die Ladezeit wird **nicht** von der Zahl der per `CHRIN` gelesenen
+Bytes bestimmt (62 % weniger Bytes, nur 1 s schneller). Die obige Schätzung war
+damit falsch. Wo die Zeit tatsächlich vergeht (Öffnen der Dateien, Titelaufbau,
+DMA-Rücklesevergleiche, zweiter Prüfdurchlauf des Audio-Archivs, Entpacker),
+ist nicht gemessen; vor weiteren Optimierungen zuerst die einzelnen Phasen per
+`$D7FA`-Framezähler auf Hardware messen.
