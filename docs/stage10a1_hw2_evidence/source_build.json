@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-18",
+  "python": "3.12.14",
+  "assembler": "KickAssembler 5.25",
+  "assembler_sha256": "9592a39336e73a1db8b4a7749256d62d29b113b1c7f0f6c86ea43870ebd9ae1f",
+  "base_main": "08e0272319ead24f2f189b9391aec56712d54569",
+  "hardware_reference": "0b1c083f46dc41e7c6b8fb743b3f39b5a9af09cf",
+  "method": "regular source assembly, no binary patches; D81 repacked in HW2 order",
+  "artifacts": {
+    "STAGE10A1.PRG": {
+      "bytes": 45057,
+      "sha256": "39801954a71d74914772d712ae1eeba6dabc8306ed90767f3dbaf2eaef81df63",
+      "equals_reference": true
+    },
+    "AUDIO_CORE.PRG": {
+      "bytes": 6146,
+      "sha256": "4b298b26fd80c6285ac37727a8114fbf25919291dfd54a8add200ba0ee4a282e",
+      "equals_reference": true
+    },
+    "VYSO.DAT": {
+      "bytes": 160960,
+      "sha256": "775e901da9c4f6a30a50f4596b43bc35c691f02f6a71f63587c3558d9c37a90f",
+      "equals_reference": true
+    },
+    "VYPER_STAGE10A1_HW2.d81": {
+      "bytes": 819200,
+      "sha256": "53deee9b018bf3e1af4ba59f96ca76c9348658444a95b324aecb734741db5e25",
+      "equals_reference": true
+    }
+  },
+  "disk_chains_and_BAM_verified": true,
+  "stable_baseline_verification": "passed by build_stage10a1.protect_stable",
+  "new_hardware_or_xemu_run": false
+}

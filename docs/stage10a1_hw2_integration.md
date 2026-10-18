@@ -84,3 +84,11 @@ Integrationsvorschlag; main bleibt bis ausdrücklicher Benutzerfreigabe unverän
 Vor Merge Ziel-/Head-SHA erneut prüfen. Diagnose-PRs90/92/94/97/98 werden nicht
 automatisch übernommen. AGENTS-Regel18 beschreibt den damaligen Stage10a-Stand;
 Regel19 und dieser Bericht dokumentieren die spätere HW2-Bestätigung.
+
+## Ergebnis der Integrationsprüfung
+
+37 bestehende Hosttests gegen den frisch assemblierten HW2-Stand bestanden
+(1969.877 Sekunden auf diesem Windows-Host). Vollständiges Protokoll:
+[host_tests.txt](stage10a1_hw2_evidence/host_tests.txt).
+[Maschinenlesbarer Buildnachweis](stage10a1_hw2_evidence/source_build.json).
+Keine neue Hardware-/XEMU-Abnahme. main bis zur Freigabe unverändert.
