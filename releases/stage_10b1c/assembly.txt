@@ -1,0 +1,34 @@
+//------------------------------------------------------
+//------------------------------------------------------
+//         Kick Assembler v5.25 by Mads Nielsen
+//------------------------------------------------------
+//------------------------------------------------------
+Output dir: .
+parsing
+flex pass 1
+flex pass 2
+Output pass
+  Code below charset=true (true)
+Writing prg file: ./STAGE10B1C.PRG
+
+Memory Map
+----------
+Default-segment:
+  $2001-$200c BASIC
+  $2100-$38a4 H320 GOTOX diagnostic
+  $4000-$47ff Original menu font
+  $4800-$4a05 Read-only diagnostic register sample
+  $6000-$6bff Original palette backup
+  $7800-$787f Independent A B variant markers
+  $8000-$803f Transparent NCM guard
+  $8100-$813f One logical pixel probe line
+  $8800-$8bff Raster atlas
+  $9040-$90bf Original player NCM
+  $9200-$92ff Reference sprites and independent variant/NOIO markers
+  $9300-$9337 Sprite pointers
+  $a000-$a95f Screen template with patched GOTOX words
+  $b300-$bc5f Common attributes
+
+
+Made 1 asserts , 0 failed
+Writing Symbol file: stage10b1c.sym

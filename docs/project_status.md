@@ -1,5 +1,15 @@
 # Projektstand – 2026-10-10
 
+## Diagnosekonsolidierung – Entwurf vom18.10.2026
+
+Stage10a1-HW2 einschließlich AGENTS-Regel19 ist über PR99 nach main gemergt
+(`df52834b94a69f3c4909b6748974b20f6e77f598`). Ein separater Vorschlag sichert
+die Diagnosebelege aus PR90/92/94/97/98 und repariert ausgewählte Prüfwerkzeuge.
+Die Spielengine und historischen Releases bleiben unverändert. Die alten PRs
+bleiben offen; Merge/Schließung erst nach Benutzerfreigabe.
+[Umfang, Reparaturen und Prüfablauf](diagnostic_consolidation/README.md).
+Die folgenden Abschnitte dokumentieren frühere Entwicklungsstände.
+
 ## Aktueller Integrationsvorschlag – 18.10.2026
 
 Stage10a1-HW2 ist laut Hardware-Release-README am17.10.2026 auf Core0.97

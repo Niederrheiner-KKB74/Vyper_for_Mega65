@@ -1,0 +1,2 @@
+.const MEM_SIZE=36292
+.const REGION_COUNT=9

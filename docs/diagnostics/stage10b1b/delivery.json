@@ -1,0 +1,10 @@
+{
+  "artifact_commit": "5506f829433a151aef60592f477fddeeb21e7762",
+  "pull_request": "https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/pull/94",
+  "download": "https://raw.githubusercontent.com/Niederrheiner-KKB74/Vyper_for_Mega65/5506f829433a151aef60592f477fddeeb21e7762/releases/stage_10b1b/VYPER_STAGE10B1B.d81",
+  "download_verified": true,
+  "bytes": 819200,
+  "sha256": "9992a3623a21d5550feacabb5de01b07a1f01101a5de89af5b1c4a2fc192e820",
+  "stable": false,
+  "merged": false
+}

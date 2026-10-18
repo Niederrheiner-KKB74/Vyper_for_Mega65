@@ -1,0 +1,23 @@
+{
+  "artifact_commit": "639f92259c62482f3afa8fbeab67bee9c4c5522a",
+  "PR": "https://github.com/Niederrheiner-KKB74/Vyper_for_Mega65/pull/90",
+  "stable": false,
+  "merged": false,
+  "D81_download_verified": {
+    "http": "200 (curl --fail succeeded)",
+    "bytes": 819200,
+    "sha256": "855e91c2816936e9e2f3d659c92fe036b300c3404f940c802f1d479eb54a252d"
+  },
+  "artifacts": {
+    "STAGE10B1.PRG": {
+      "bytes": 42433,
+      "sha256": "acbceb40b6cfc6068d67d237b092b6f5280cd966cdea932e68dd4b1f482f3641",
+      "url": "https://raw.githubusercontent.com/Niederrheiner-KKB74/Vyper_for_Mega65/639f92259c62482f3afa8fbeab67bee9c4c5522a/releases/stage_10b1/STAGE10B1.PRG"
+    },
+    "VYPER_STAGE10B1.d81": {
+      "bytes": 819200,
+      "sha256": "855e91c2816936e9e2f3d659c92fe036b300c3404f940c802f1d479eb54a252d",
+      "url": "https://raw.githubusercontent.com/Niederrheiner-KKB74/Vyper_for_Mega65/639f92259c62482f3afa8fbeab67bee9c4c5522a/releases/stage_10b1/VYPER_STAGE10B1.d81"
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "left": {
+    "profile": "S",
+    "environment": "H",
+    "sha256": "d056bad15c0d9c3eaacea7f70ec3dcd055531801865e1560abc6120720d1dcd1"
+  },
+  "right": {
+    "profile": "S",
+    "environment": "X",
+    "sha256": "038345df9ccbd238cb3204841c0c934ef82dfdb7a2f83340d60886ddb44ac8ad"
+  },
+  "same_profile": true,
+  "first_stable_divergence_phase": null,
+  "differences": [],
+  "geometry_left": [
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 1.0,
+      "native_pixels_per_source_pixel": 1.0,
+      "line_step_bytes": 80,
+      "characters_per_row": 80,
+      "last_row_index": 24,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 2048,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    }
+  ],
+  "geometry_right": [
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 1.0,
+      "native_pixels_per_source_pixel": 1.0,
+      "line_step_bytes": 80,
+      "characters_per_row": 80,
+      "last_row_index": 24,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 2048,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    },
+    {
+      "H640": true,
+      "source_pixels_per_native_pixel": 0.5,
+      "native_pixels_per_source_pixel": 2.0,
+      "line_step_bytes": 192,
+      "characters_per_row": 96,
+      "last_row_index": 25,
+      "physical_rasters_per_source_y": 2,
+      "CHARX": 80,
+      "CHARY": 104,
+      "screen_physical": 57344,
+      "colour_offset": 0,
+      "scene_HUD_GOTOX_native": 480,
+      "scene_playfield_logical": [
+        0,
+        239
+      ],
+      "sprite_rule": "native X=CHARX+2*X-3, native Y=CHARY+2*Y",
+      "note": "scene boundaries are source layout, not evidence of physical rendering; HOTREG can overwrite values"
+    }
+  ],
+  "interpretation": "Value comparison only. Equal registers do not prove equal rendering. Use photographs and pinned core semantics. Environment labels are user declarations."
+}

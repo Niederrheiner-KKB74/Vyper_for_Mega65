@@ -1,0 +1,2914 @@
+{
+  "provenance": "User: disk1 scenes A-D; disk2 A to B to A; photographs from original hardware. H labels are manual.",
+  "inputs": [
+    {
+      "file": "VYPER_STAGE10B1B_Mega65_1.d81",
+      "bytes": 819200,
+      "sha256": "fdfc221d7dd11a1d85546503a951574f97304976ad2395cd8b9889ab188924be",
+      "directory": [
+        "STAGE10B1B",
+        "V1BAH.PRE",
+        "V1BAH.PST",
+        "V1BBH.PRE",
+        "V1BBH.PST",
+        "V1BCH.PRE",
+        "V1BCH.PST",
+        "V1BDH.PRE",
+        "V1BDH.PST"
+      ],
+      "program_matches_release": true
+    },
+    {
+      "file": "VYPER_STAGE10B1B_Mega65_2.d81",
+      "bytes": 819200,
+      "sha256": "47d81cb108b35105e46ec19aa739cc681705d68c6f5b244c1c4eb9b0b1a91363",
+      "directory": [
+        "STAGE10B1B",
+        "V1BAH.PRE",
+        "V1BAH.PST",
+        "V1BBH.PRE",
+        "V1BBH.PST"
+      ],
+      "program_matches_release": true
+    },
+    {
+      "file": "VYPER_STAGE10B1B_XEMU_1.d81",
+      "bytes": 819200,
+      "sha256": "a6dbc563113d3a388062d3dd827ecc79c35d3552764a1f3955a06ad55a1ea7bb",
+      "directory": [
+        "STAGE10B1B",
+        "V1BAX.PRE",
+        "V1BAX.PST",
+        "V1BBX.PRE",
+        "V1BBX.PST",
+        "V1BCX.PRE",
+        "V1BCX.PST",
+        "V1BDX.PRE",
+        "V1BDX.PST"
+      ],
+      "program_matches_release": true
+    },
+    {
+      "file": "VYPER_STAGE10B1B_XEMU_2.d81",
+      "bytes": 819200,
+      "sha256": "4ec4bab0b24febc238b491c9cd606e0b7c2106d073868b2d1426d099a1e87630",
+      "directory": [
+        "STAGE10B1B",
+        "V1BAX.PRE",
+        "V1BAX.PST",
+        "V1BBX.PRE",
+        "V1BBX.PST"
+      ],
+      "program_matches_release": true
+    },
+    {
+      "file": "XEMU_A to D.zip",
+      "bytes": 21057,
+      "sha256": "b36137cca9be417772c22e7933189389f28b30e40b01fed2b34fd7f52888922f",
+      "screenshots": [
+        {
+          "file": "XEMU_A_PRE.png",
+          "bytes": 1873,
+          "sha256": "5587db2208822e946539760428a183455b0934b902356c23eea691bf2c3abcd8"
+        },
+        {
+          "file": "XEMU_A_PST.png",
+          "bytes": 1866,
+          "sha256": "5d6c89e6e163d470eba326f98409fd2f4324e00f59e3f43872e2e52beb13026e"
+        },
+        {
+          "file": "XEMU_B_PRE.png",
+          "bytes": 1877,
+          "sha256": "a6ab496c4bd82be8edd66019801f4147710b0c3e5990ff48a55e85317347aeeb"
+        },
+        {
+          "file": "XEMU_B_PST.png",
+          "bytes": 1867,
+          "sha256": "a0de0f7580316b0a40ff9017e91f231ebd944f1803770f25a9ad19178c0e3ce7"
+        },
+        {
+          "file": "XEMU_C_PRE.png",
+          "bytes": 2917,
+          "sha256": "5646ad2c931e0755bf842664327531fda7aa004062dc3447f56679a9c0d0c327"
+        },
+        {
+          "file": "XEMU_C_PST.png",
+          "bytes": 2913,
+          "sha256": "57920b89c8add565e21b05d4b1bf243056a5b5318cb315a9c843ac5d7be76f0b"
+        },
+        {
+          "file": "XEMU_D_PRE.png",
+          "bytes": 3525,
+          "sha256": "d7aaa15589251d3d0328a201f019177e7e22c0d50afc32a2729022c168c080b2"
+        },
+        {
+          "file": "XEMU_D_PST.png",
+          "bytes": 3519,
+          "sha256": "e4d13f88d89bd0f76d2c6e6863ec04c53c70754accf3719546e986de1c6addc5"
+        }
+      ]
+    },
+    {
+      "file": "MEGA65_A_to_D.zip",
+      "bytes": 17987263,
+      "sha256": "9ee41ad2222abab16143cc9fca1e20375e1cc7e9c627b3107c6b56f6b3e802b5",
+      "photographs": [
+        {
+          "file": "MEGA65_A_PRE.jpg",
+          "bytes": 5035792,
+          "sha256": "ddc5c26f48cb761565841cce9b99a6f30041188a52efc8ba95ff4a40e1379c4a"
+        },
+        {
+          "file": "MEGA65_A_PST.jpg",
+          "bytes": 4975914,
+          "sha256": "7511dcea9d43eeba842e69c4fb5d77bd7740d4fbb37a4031d31623ffd7f4faf5"
+        },
+        {
+          "file": "MEGA65_B_PRE.jpg",
+          "bytes": 1340229,
+          "sha256": "64bfa728aad1a21738642f128caedc166695f7cb72d6c4110247d8637901436d"
+        },
+        {
+          "file": "MEGA65_B_PST.jpg",
+          "bytes": 1241486,
+          "sha256": "ae4412102ecd573fc6f0ccbeec0e1ceaf1fe248add56582c6a198d847cbca23d"
+        },
+        {
+          "file": "MEGA65_C_PRE.jpg",
+          "bytes": 1298163,
+          "sha256": "1c1c29855592a946fffbfc776c68a112fae841ceeb2792223f013234c77f3baa"
+        },
+        {
+          "file": "MEGA65_C_PST.jpg",
+          "bytes": 1239013,
+          "sha256": "be6f2ca450ca86df9b61ad431a0e73b4b452aa82ec17ae92339c6da8cb0381f8"
+        },
+        {
+          "file": "MEGA65_D_PRE.jpg",
+          "bytes": 1313794,
+          "sha256": "e33fab67e8ad6517b1cf9cc17b923d4bfd5b6e392222b6e26c66b552b8dd5755"
+        },
+        {
+          "file": "MEGA65_D_PST.jpg",
+          "bytes": 1860629,
+          "sha256": "d6fa5cd8ccba98f3f4706a6ec9dab7690be543e0193fa0040a224065f405a822"
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "disk": 1,
+      "scene": "A",
+      "sequence": 1,
+      "error": 0,
+      "non_annotation_different_bytes": 0,
+      "stable_bucket_differences": [
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$7F",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ]
+    },
+    {
+      "disk": 1,
+      "scene": "B",
+      "sequence": 2,
+      "error": 0,
+      "non_annotation_different_bytes": 0,
+      "stable_bucket_differences": [
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$7F",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ]
+    },
+    {
+      "disk": 1,
+      "scene": "C",
+      "sequence": 3,
+      "error": 0,
+      "non_annotation_different_bytes": 0,
+      "stable_bucket_differences": [
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$7F",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ]
+    },
+    {
+      "disk": 1,
+      "scene": "D",
+      "sequence": 4,
+      "error": 0,
+      "non_annotation_different_bytes": 0,
+      "stable_bucket_differences": [
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$7F",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ]
+    },
+    {
+      "disk": 2,
+      "scene": "A",
+      "sequence": 3,
+      "error": 0,
+      "non_annotation_different_bytes": 0,
+      "stable_bucket_differences": [
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$7F",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ]
+    },
+    {
+      "disk": 2,
+      "scene": "B",
+      "sequence": 2,
+      "error": 0,
+      "non_annotation_different_bytes": 0,
+      "stable_bucket_differences": [
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$7F",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ]
+    }
+  ],
+  "cross_platform": [
+    {
+      "disk": 1,
+      "scene": "A",
+      "geometry_equal": true,
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 1,
+      "scene": "B",
+      "geometry_equal": true,
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 1,
+      "scene": "C",
+      "geometry_equal": true,
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 1,
+      "scene": "D",
+      "geometry_equal": true,
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 2,
+      "scene": "A",
+      "geometry_equal": true,
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 4
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 2,
+      "scene": "B",
+      "geometry_equal": true,
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Disk2 preserves only final A sequence3 and B sequence2. Initial A sequence1 was overwritten.",
+    "Legacy *_XEMU_HARDWARE_PRE reports use supplemental local XEMU; *_USER_XEMU_HARDWARE_* use newly uploaded user data.",
+    "Images are observations, not pixel-exact measurements or a recording of renderer internal state."
+  ],
+  "A_comparison": {
+    "same_session": false,
+    "left_sequence": 1,
+    "right_sequence": 3,
+    "stable_bucket_differences": [],
+    "memory_differences": [
+      {
+        "name": "write_shadows",
+        "bytes": 1
+      }
+    ]
+  },
+  "user_xemu_pairs": [
+    {
+      "disk": 1,
+      "scene": "A",
+      "sequence": 1,
+      "non_annotation_different_bytes": 0,
+      "stable_bucket_differences": []
+    },
+    {
+      "disk": 1,
+      "scene": "B",
+      "sequence": 2,
+      "non_annotation_different_bytes": 0,
+      "stable_bucket_differences": []
+    },
+    {
+      "disk": 1,
+      "scene": "C",
+      "sequence": 3,
+      "non_annotation_different_bytes": 0,
+      "stable_bucket_differences": []
+    },
+    {
+      "disk": 1,
+      "scene": "D",
+      "sequence": 4,
+      "non_annotation_different_bytes": 0,
+      "stable_bucket_differences": []
+    },
+    {
+      "disk": 2,
+      "scene": "A",
+      "sequence": 3,
+      "non_annotation_different_bytes": 0,
+      "stable_bucket_differences": []
+    },
+    {
+      "disk": 2,
+      "scene": "B",
+      "sequence": 2,
+      "non_annotation_different_bytes": 0,
+      "stable_bucket_differences": []
+    }
+  ],
+  "user_cross_platform": [
+    {
+      "disk": 1,
+      "scene": "A",
+      "phase": "PRE",
+      "geometry_equal": true,
+      "stable_bucket_differences": [
+        {
+          "address": "$D053",
+          "name": "physical raster high / output controls",
+          "left": "$00",
+          "right": "$81",
+          "mask": "$E0",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D067",
+          "name": "register $D067",
+          "left": "$00",
+          "right": "$1F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D079",
+          "name": "raster compare low",
+          "left": "$00",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D07A",
+          "name": "raster compare high / CHARY16 / mode",
+          "left": "$00",
+          "right": "$88",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D71C",
+          "name": "register $D71C",
+          "left": "$FF",
+          "right": "$00",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D720",
+          "name": "register $D720",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D740",
+          "name": "register $D740",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D629",
+          "name": "register $D629",
+          "left": "$03",
+          "right": "$06",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62A",
+          "name": "register $D62A",
+          "left": "$AC",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62B",
+          "name": "register $D62B",
+          "left": "$08",
+          "right": "$3F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62C",
+          "name": "register $D62C",
+          "left": "$4E",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$6F",
+          "right": "$7F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62E",
+          "name": "register $D62E",
+          "left": "$77",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62F",
+          "name": "register $D62F",
+          "left": "$21",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D630",
+          "name": "register $D630",
+          "left": "$AC",
+          "right": "$96",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D631",
+          "name": "register $D631",
+          "left": "$08",
+          "right": "$07",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D632",
+          "name": "register $D632",
+          "left": "$58",
+          "right": "$2D",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D633",
+          "name": "register $D633",
+          "left": "$65",
+          "right": "$54",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D634",
+          "name": "register $D634",
+          "left": "$6D",
+          "right": "$F4",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D635",
+          "name": "register $D635",
+          "left": "$75",
+          "right": "$AA",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ],
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 1,
+      "scene": "A",
+      "phase": "POST",
+      "geometry_equal": true,
+      "stable_bucket_differences": [
+        {
+          "address": "$D053",
+          "name": "physical raster high / output controls",
+          "left": "$01",
+          "right": "$81",
+          "mask": "$E0",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D067",
+          "name": "register $D067",
+          "left": "$00",
+          "right": "$1F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D079",
+          "name": "raster compare low",
+          "left": "$00",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D07A",
+          "name": "raster compare high / CHARY16 / mode",
+          "left": "$00",
+          "right": "$88",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D71C",
+          "name": "register $D71C",
+          "left": "$FF",
+          "right": "$00",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D720",
+          "name": "register $D720",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D740",
+          "name": "register $D740",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D629",
+          "name": "register $D629",
+          "left": "$03",
+          "right": "$06",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62A",
+          "name": "register $D62A",
+          "left": "$AC",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62B",
+          "name": "register $D62B",
+          "left": "$08",
+          "right": "$3F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62C",
+          "name": "register $D62C",
+          "left": "$4E",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$6F",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62E",
+          "name": "register $D62E",
+          "left": "$77",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62F",
+          "name": "register $D62F",
+          "left": "$21",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D630",
+          "name": "register $D630",
+          "left": "$AC",
+          "right": "$96",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D631",
+          "name": "register $D631",
+          "left": "$08",
+          "right": "$07",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D632",
+          "name": "register $D632",
+          "left": "$58",
+          "right": "$2D",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D633",
+          "name": "register $D633",
+          "left": "$65",
+          "right": "$54",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D634",
+          "name": "register $D634",
+          "left": "$6D",
+          "right": "$F4",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D635",
+          "name": "register $D635",
+          "left": "$75",
+          "right": "$AA",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ],
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 1,
+      "scene": "B",
+      "phase": "PRE",
+      "geometry_equal": true,
+      "stable_bucket_differences": [
+        {
+          "address": "$D053",
+          "name": "physical raster high / output controls",
+          "left": "$00",
+          "right": "$80",
+          "mask": "$E0",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D067",
+          "name": "register $D067",
+          "left": "$00",
+          "right": "$1F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D079",
+          "name": "raster compare low",
+          "left": "$00",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D07A",
+          "name": "raster compare high / CHARY16 / mode",
+          "left": "$00",
+          "right": "$88",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D71C",
+          "name": "register $D71C",
+          "left": "$FF",
+          "right": "$00",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D720",
+          "name": "register $D720",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D740",
+          "name": "register $D740",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D629",
+          "name": "register $D629",
+          "left": "$03",
+          "right": "$06",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62A",
+          "name": "register $D62A",
+          "left": "$AC",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62B",
+          "name": "register $D62B",
+          "left": "$08",
+          "right": "$3F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62C",
+          "name": "register $D62C",
+          "left": "$4E",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$6F",
+          "right": "$7F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62E",
+          "name": "register $D62E",
+          "left": "$77",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62F",
+          "name": "register $D62F",
+          "left": "$21",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D630",
+          "name": "register $D630",
+          "left": "$AC",
+          "right": "$96",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D631",
+          "name": "register $D631",
+          "left": "$08",
+          "right": "$07",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D632",
+          "name": "register $D632",
+          "left": "$58",
+          "right": "$2D",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D633",
+          "name": "register $D633",
+          "left": "$65",
+          "right": "$54",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D634",
+          "name": "register $D634",
+          "left": "$6D",
+          "right": "$F4",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D635",
+          "name": "register $D635",
+          "left": "$75",
+          "right": "$AA",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ],
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 1,
+      "scene": "B",
+      "phase": "POST",
+      "geometry_equal": true,
+      "stable_bucket_differences": [
+        {
+          "address": "$D053",
+          "name": "physical raster high / output controls",
+          "left": "$01",
+          "right": "$81",
+          "mask": "$E0",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D067",
+          "name": "register $D067",
+          "left": "$00",
+          "right": "$1F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D079",
+          "name": "raster compare low",
+          "left": "$00",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D07A",
+          "name": "raster compare high / CHARY16 / mode",
+          "left": "$00",
+          "right": "$88",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D71C",
+          "name": "register $D71C",
+          "left": "$FF",
+          "right": "$00",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D720",
+          "name": "register $D720",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D740",
+          "name": "register $D740",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D629",
+          "name": "register $D629",
+          "left": "$03",
+          "right": "$06",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62A",
+          "name": "register $D62A",
+          "left": "$AC",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62B",
+          "name": "register $D62B",
+          "left": "$08",
+          "right": "$3F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62C",
+          "name": "register $D62C",
+          "left": "$4E",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$6F",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62E",
+          "name": "register $D62E",
+          "left": "$77",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62F",
+          "name": "register $D62F",
+          "left": "$21",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D630",
+          "name": "register $D630",
+          "left": "$AC",
+          "right": "$96",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D631",
+          "name": "register $D631",
+          "left": "$08",
+          "right": "$07",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D632",
+          "name": "register $D632",
+          "left": "$58",
+          "right": "$2D",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D633",
+          "name": "register $D633",
+          "left": "$65",
+          "right": "$54",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D634",
+          "name": "register $D634",
+          "left": "$6D",
+          "right": "$F4",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D635",
+          "name": "register $D635",
+          "left": "$75",
+          "right": "$AA",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ],
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 1,
+      "scene": "C",
+      "phase": "PRE",
+      "geometry_equal": true,
+      "stable_bucket_differences": [
+        {
+          "address": "$D053",
+          "name": "physical raster high / output controls",
+          "left": "$00",
+          "right": "$80",
+          "mask": "$E0",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D067",
+          "name": "register $D067",
+          "left": "$00",
+          "right": "$1F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D079",
+          "name": "raster compare low",
+          "left": "$00",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D07A",
+          "name": "raster compare high / CHARY16 / mode",
+          "left": "$00",
+          "right": "$88",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D71C",
+          "name": "register $D71C",
+          "left": "$FF",
+          "right": "$00",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D720",
+          "name": "register $D720",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D740",
+          "name": "register $D740",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D629",
+          "name": "register $D629",
+          "left": "$03",
+          "right": "$06",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62A",
+          "name": "register $D62A",
+          "left": "$AC",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62B",
+          "name": "register $D62B",
+          "left": "$08",
+          "right": "$3F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62C",
+          "name": "register $D62C",
+          "left": "$4E",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$6F",
+          "right": "$7F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62E",
+          "name": "register $D62E",
+          "left": "$77",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62F",
+          "name": "register $D62F",
+          "left": "$21",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D630",
+          "name": "register $D630",
+          "left": "$AC",
+          "right": "$96",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D631",
+          "name": "register $D631",
+          "left": "$08",
+          "right": "$07",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D632",
+          "name": "register $D632",
+          "left": "$58",
+          "right": "$2D",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D633",
+          "name": "register $D633",
+          "left": "$65",
+          "right": "$54",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D634",
+          "name": "register $D634",
+          "left": "$6D",
+          "right": "$F4",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D635",
+          "name": "register $D635",
+          "left": "$75",
+          "right": "$AA",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ],
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 1,
+      "scene": "C",
+      "phase": "POST",
+      "geometry_equal": true,
+      "stable_bucket_differences": [
+        {
+          "address": "$D053",
+          "name": "physical raster high / output controls",
+          "left": "$01",
+          "right": "$81",
+          "mask": "$E0",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D067",
+          "name": "register $D067",
+          "left": "$00",
+          "right": "$1F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D079",
+          "name": "raster compare low",
+          "left": "$00",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D07A",
+          "name": "raster compare high / CHARY16 / mode",
+          "left": "$00",
+          "right": "$88",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D71C",
+          "name": "register $D71C",
+          "left": "$FF",
+          "right": "$00",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D720",
+          "name": "register $D720",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D740",
+          "name": "register $D740",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D629",
+          "name": "register $D629",
+          "left": "$03",
+          "right": "$06",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62A",
+          "name": "register $D62A",
+          "left": "$AC",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62B",
+          "name": "register $D62B",
+          "left": "$08",
+          "right": "$3F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62C",
+          "name": "register $D62C",
+          "left": "$4E",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$6F",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62E",
+          "name": "register $D62E",
+          "left": "$77",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62F",
+          "name": "register $D62F",
+          "left": "$21",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D630",
+          "name": "register $D630",
+          "left": "$AC",
+          "right": "$96",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D631",
+          "name": "register $D631",
+          "left": "$08",
+          "right": "$07",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D632",
+          "name": "register $D632",
+          "left": "$58",
+          "right": "$2D",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D633",
+          "name": "register $D633",
+          "left": "$65",
+          "right": "$54",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D634",
+          "name": "register $D634",
+          "left": "$6D",
+          "right": "$F4",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D635",
+          "name": "register $D635",
+          "left": "$75",
+          "right": "$AA",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ],
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 1,
+      "scene": "D",
+      "phase": "PRE",
+      "geometry_equal": true,
+      "stable_bucket_differences": [
+        {
+          "address": "$D053",
+          "name": "physical raster high / output controls",
+          "left": "$00",
+          "right": "$80",
+          "mask": "$E0",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D067",
+          "name": "register $D067",
+          "left": "$00",
+          "right": "$1F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D079",
+          "name": "raster compare low",
+          "left": "$00",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D07A",
+          "name": "raster compare high / CHARY16 / mode",
+          "left": "$00",
+          "right": "$88",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D71C",
+          "name": "register $D71C",
+          "left": "$FF",
+          "right": "$00",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D720",
+          "name": "register $D720",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D740",
+          "name": "register $D740",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D629",
+          "name": "register $D629",
+          "left": "$03",
+          "right": "$06",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62A",
+          "name": "register $D62A",
+          "left": "$AC",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62B",
+          "name": "register $D62B",
+          "left": "$08",
+          "right": "$3F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62C",
+          "name": "register $D62C",
+          "left": "$4E",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$6F",
+          "right": "$7F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62E",
+          "name": "register $D62E",
+          "left": "$77",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62F",
+          "name": "register $D62F",
+          "left": "$21",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D630",
+          "name": "register $D630",
+          "left": "$AC",
+          "right": "$96",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D631",
+          "name": "register $D631",
+          "left": "$08",
+          "right": "$07",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D632",
+          "name": "register $D632",
+          "left": "$58",
+          "right": "$2D",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D633",
+          "name": "register $D633",
+          "left": "$65",
+          "right": "$54",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D634",
+          "name": "register $D634",
+          "left": "$6D",
+          "right": "$F4",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D635",
+          "name": "register $D635",
+          "left": "$75",
+          "right": "$AA",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ],
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 1,
+      "scene": "D",
+      "phase": "POST",
+      "geometry_equal": true,
+      "stable_bucket_differences": [
+        {
+          "address": "$D053",
+          "name": "physical raster high / output controls",
+          "left": "$00",
+          "right": "$80",
+          "mask": "$E0",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D067",
+          "name": "register $D067",
+          "left": "$00",
+          "right": "$1F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D079",
+          "name": "raster compare low",
+          "left": "$00",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D07A",
+          "name": "raster compare high / CHARY16 / mode",
+          "left": "$00",
+          "right": "$88",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D71C",
+          "name": "register $D71C",
+          "left": "$FF",
+          "right": "$00",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D720",
+          "name": "register $D720",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D740",
+          "name": "register $D740",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D629",
+          "name": "register $D629",
+          "left": "$03",
+          "right": "$06",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62A",
+          "name": "register $D62A",
+          "left": "$AC",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62B",
+          "name": "register $D62B",
+          "left": "$08",
+          "right": "$3F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62C",
+          "name": "register $D62C",
+          "left": "$4E",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$6F",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62E",
+          "name": "register $D62E",
+          "left": "$77",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62F",
+          "name": "register $D62F",
+          "left": "$21",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D630",
+          "name": "register $D630",
+          "left": "$AC",
+          "right": "$96",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D631",
+          "name": "register $D631",
+          "left": "$08",
+          "right": "$07",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D632",
+          "name": "register $D632",
+          "left": "$58",
+          "right": "$2D",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D633",
+          "name": "register $D633",
+          "left": "$65",
+          "right": "$54",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D634",
+          "name": "register $D634",
+          "left": "$6D",
+          "right": "$F4",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D635",
+          "name": "register $D635",
+          "left": "$75",
+          "right": "$AA",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ],
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 2,
+      "scene": "A",
+      "phase": "PRE",
+      "geometry_equal": true,
+      "stable_bucket_differences": [
+        {
+          "address": "$D053",
+          "name": "physical raster high / output controls",
+          "left": "$00",
+          "right": "$80",
+          "mask": "$E0",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D067",
+          "name": "register $D067",
+          "left": "$00",
+          "right": "$1F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D079",
+          "name": "raster compare low",
+          "left": "$00",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D07A",
+          "name": "raster compare high / CHARY16 / mode",
+          "left": "$00",
+          "right": "$88",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D71C",
+          "name": "register $D71C",
+          "left": "$FF",
+          "right": "$00",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D720",
+          "name": "register $D720",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D740",
+          "name": "register $D740",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D629",
+          "name": "register $D629",
+          "left": "$03",
+          "right": "$06",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62A",
+          "name": "register $D62A",
+          "left": "$AC",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62B",
+          "name": "register $D62B",
+          "left": "$08",
+          "right": "$3F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62C",
+          "name": "register $D62C",
+          "left": "$4E",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$6F",
+          "right": "$7F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62E",
+          "name": "register $D62E",
+          "left": "$77",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62F",
+          "name": "register $D62F",
+          "left": "$21",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D630",
+          "name": "register $D630",
+          "left": "$AC",
+          "right": "$96",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D631",
+          "name": "register $D631",
+          "left": "$08",
+          "right": "$07",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D632",
+          "name": "register $D632",
+          "left": "$58",
+          "right": "$2D",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D633",
+          "name": "register $D633",
+          "left": "$65",
+          "right": "$54",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D634",
+          "name": "register $D634",
+          "left": "$6D",
+          "right": "$F4",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D635",
+          "name": "register $D635",
+          "left": "$75",
+          "right": "$AA",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ],
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 2,
+      "scene": "A",
+      "phase": "POST",
+      "geometry_equal": true,
+      "stable_bucket_differences": [
+        {
+          "address": "$D053",
+          "name": "physical raster high / output controls",
+          "left": "$01",
+          "right": "$81",
+          "mask": "$E0",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D067",
+          "name": "register $D067",
+          "left": "$00",
+          "right": "$1F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D079",
+          "name": "raster compare low",
+          "left": "$00",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D07A",
+          "name": "raster compare high / CHARY16 / mode",
+          "left": "$00",
+          "right": "$88",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D71C",
+          "name": "register $D71C",
+          "left": "$FF",
+          "right": "$00",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D720",
+          "name": "register $D720",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D740",
+          "name": "register $D740",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D629",
+          "name": "register $D629",
+          "left": "$03",
+          "right": "$06",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62A",
+          "name": "register $D62A",
+          "left": "$AC",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62B",
+          "name": "register $D62B",
+          "left": "$08",
+          "right": "$3F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62C",
+          "name": "register $D62C",
+          "left": "$4E",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$6F",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62E",
+          "name": "register $D62E",
+          "left": "$77",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62F",
+          "name": "register $D62F",
+          "left": "$21",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D630",
+          "name": "register $D630",
+          "left": "$AC",
+          "right": "$96",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D631",
+          "name": "register $D631",
+          "left": "$08",
+          "right": "$07",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D632",
+          "name": "register $D632",
+          "left": "$58",
+          "right": "$2D",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D633",
+          "name": "register $D633",
+          "left": "$65",
+          "right": "$54",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D634",
+          "name": "register $D634",
+          "left": "$6D",
+          "right": "$F4",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D635",
+          "name": "register $D635",
+          "left": "$75",
+          "right": "$AA",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ],
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 2,
+      "scene": "B",
+      "phase": "PRE",
+      "geometry_equal": true,
+      "stable_bucket_differences": [
+        {
+          "address": "$D053",
+          "name": "physical raster high / output controls",
+          "left": "$00",
+          "right": "$80",
+          "mask": "$E0",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D067",
+          "name": "register $D067",
+          "left": "$00",
+          "right": "$1F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D079",
+          "name": "raster compare low",
+          "left": "$00",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D07A",
+          "name": "raster compare high / CHARY16 / mode",
+          "left": "$00",
+          "right": "$88",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D71C",
+          "name": "register $D71C",
+          "left": "$FF",
+          "right": "$00",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D720",
+          "name": "register $D720",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D740",
+          "name": "register $D740",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D629",
+          "name": "register $D629",
+          "left": "$03",
+          "right": "$06",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62A",
+          "name": "register $D62A",
+          "left": "$AC",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62B",
+          "name": "register $D62B",
+          "left": "$08",
+          "right": "$3F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62C",
+          "name": "register $D62C",
+          "left": "$4E",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$6F",
+          "right": "$7F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62E",
+          "name": "register $D62E",
+          "left": "$77",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62F",
+          "name": "register $D62F",
+          "left": "$21",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D630",
+          "name": "register $D630",
+          "left": "$AC",
+          "right": "$96",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D631",
+          "name": "register $D631",
+          "left": "$08",
+          "right": "$07",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D632",
+          "name": "register $D632",
+          "left": "$58",
+          "right": "$2D",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D633",
+          "name": "register $D633",
+          "left": "$65",
+          "right": "$54",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D634",
+          "name": "register $D634",
+          "left": "$6D",
+          "right": "$F4",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D635",
+          "name": "register $D635",
+          "left": "$75",
+          "right": "$AA",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ],
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    },
+    {
+      "disk": 2,
+      "scene": "B",
+      "phase": "POST",
+      "geometry_equal": true,
+      "stable_bucket_differences": [
+        {
+          "address": "$D053",
+          "name": "physical raster high / output controls",
+          "left": "$01",
+          "right": "$81",
+          "mask": "$E0",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D067",
+          "name": "register $D067",
+          "left": "$00",
+          "right": "$1F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D079",
+          "name": "raster compare low",
+          "left": "$00",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D07A",
+          "name": "raster compare high / CHARY16 / mode",
+          "left": "$00",
+          "right": "$88",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D71C",
+          "name": "register $D71C",
+          "left": "$FF",
+          "right": "$00",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D720",
+          "name": "register $D720",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D740",
+          "name": "register $D740",
+          "left": "$00",
+          "right": "$08",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D629",
+          "name": "register $D629",
+          "left": "$03",
+          "right": "$06",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62A",
+          "name": "register $D62A",
+          "left": "$AC",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62B",
+          "name": "register $D62B",
+          "left": "$08",
+          "right": "$3F",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62C",
+          "name": "register $D62C",
+          "left": "$4E",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62D",
+          "name": "register $D62D",
+          "left": "$6F",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62E",
+          "name": "register $D62E",
+          "left": "$77",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D62F",
+          "name": "register $D62F",
+          "left": "$21",
+          "right": "$FF",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D630",
+          "name": "register $D630",
+          "left": "$AC",
+          "right": "$96",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D631",
+          "name": "register $D631",
+          "left": "$08",
+          "right": "$07",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D632",
+          "name": "register $D632",
+          "left": "$58",
+          "right": "$2D",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D633",
+          "name": "register $D633",
+          "left": "$65",
+          "right": "$54",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D634",
+          "name": "register $D634",
+          "left": "$6D",
+          "right": "$F4",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        },
+        {
+          "address": "$D635",
+          "name": "register $D635",
+          "left": "$75",
+          "right": "$AA",
+          "mask": "$FF",
+          "stable_bits_differ": true,
+          "expected_scene_sprite_enable": false
+        }
+      ],
+      "memory_differences": [
+        {
+          "name": "palettes",
+          "bytes": 1264
+        },
+        {
+          "name": "write_shadows",
+          "bytes": 3
+        },
+        {
+          "name": "colour_next_row",
+          "bytes": 191
+        }
+      ]
+    }
+  ],
+  "user_xemu_A_comparison": {
+    "same_session": false,
+    "left_sequence": 1,
+    "right_sequence": 3,
+    "stable_bucket_differences": [],
+    "memory_differences": [
+      {
+        "name": "write_shadows",
+        "bytes": 1
+      }
+    ]
+  },
+  "explicit_palette_entries_equal": true,
+  "explicit_palette_indices": {
+    "1": [
+      0,
+      1,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      48,
+      49,
+      50,
+      51
+    ],
+    "2": [
+      1
+    ]
+  }
+}
