@@ -1,0 +1,10 @@
+VYTI.DAT   s3b  packed   12701 ->   60365 bytes, 96.3 instructions/byte: OK
+VYSO.DAT   s3b  packed  109804 ->  160960 bytes, 114.7 instructions/byte: OK
+VYSO.DAT   rom  packed  109804 ->  160960 bytes, 114.7 instructions/byte: OK
+VYHS.DAT   s3b  packed    4478 ->   29183 bytes, 86.9 instructions/byte: OK
+VYMN.DAT   s3b  packed   14464 ->   86720 bytes, 91.8 instructions/byte: OK
+VYLV.DAT   s3b  packed   23436 ->   81793 bytes, 102.1 instructions/byte: OK
+VYGR.DAT   s3b  packed    6809 ->   33464 bytes, 93.9 instructions/byte: OK
+VYSH.DAT   s3b  packed     228 ->    1116 bytes, 94.0 instructions/byte: OK
+VYCL.DAT   s3b  packed     337 ->     476 bytes, 119.9 instructions/byte: OK
+all decoded streams identical, READST=$40 exactly after the last byte

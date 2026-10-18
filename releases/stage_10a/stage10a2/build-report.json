@@ -1,0 +1,3896 @@
+{
+  "stage": "10a1",
+  "fire_events": {
+    "format": "VYSH v1",
+    "physical_resident_address": 45056,
+    "physical_chip_RAM_end": 393215,
+    "bytes": 1116,
+    "sha256": "1ccbcca72031e286f6c7197dcf8e1c5d4c4e8cf212c6b4b28534a164520aedf5",
+    "header": "565953480164040b5c047c1d10000000",
+    "DY_applied": false,
+    "runtime_integrity": "pinned full sum16, exact header/fixed layout, CRC-16/CCITT-FALSE for each of100 records",
+    "runtime_bitmap": "Not stored in DAT. Reconstructed from loaded VYLV: bit t = original expanded Debut Y[t] <=148, before B2 projection; negative Y is eligible",
+    "levels": [
+      {
+        "level": 1,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          158,
+          165
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 53
+      },
+      {
+        "level": 2,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          0,
+          0
+        ],
+        "curve_lengths": [
+          166,
+          166
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 54
+      },
+      {
+        "level": 3,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          0
+        ],
+        "curve_lengths": [
+          232
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 41
+      },
+      {
+        "level": 4,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          274,
+          275,
+          285,
+          280
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 153
+      },
+      {
+        "level": 5,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          0
+        ],
+        "curve_lengths": [
+          243
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 43
+      },
+      {
+        "level": 6,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60
+        ],
+        "curve_lengths": [
+          186
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 36
+      },
+      {
+        "level": 7,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          233,
+          242
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 73
+      },
+      {
+        "level": 8,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          30
+        ],
+        "curve_lengths": [
+          142,
+          142
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 48
+      },
+      {
+        "level": 9,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          290,
+          290,
+          290,
+          290
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 160
+      },
+      {
+        "level": 10,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          313,
+          313,
+          313,
+          313
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 172
+      },
+      {
+        "level": 11,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          164,
+          167,
+          198,
+          197
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 104
+      },
+      {
+        "level": 12,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          1
+        ],
+        "curve_lengths": [
+          167
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 33
+      },
+      {
+        "level": 13,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          166,
+          166,
+          162,
+          162
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 96
+      },
+      {
+        "level": 14,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          191,
+          191,
+          191,
+          191
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 108
+      },
+      {
+        "level": 15,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          110,
+          112,
+          112,
+          110
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 68
+      },
+      {
+        "level": 16,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60
+        ],
+        "curve_lengths": [
+          195
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 37
+      },
+      {
+        "level": 17,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60
+        ],
+        "curve_lengths": [
+          177
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 35
+      },
+      {
+        "level": 18,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          0
+        ],
+        "curve_lengths": [
+          166
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 33
+      },
+      {
+        "level": 19,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          164,
+          328,
+          211,
+          375
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 148
+      },
+      {
+        "level": 20,
+        "DY_stored_only": 1,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          168,
+          144,
+          144,
+          168
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 90
+      },
+      {
+        "level": 21,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          20,
+          20
+        ],
+        "curve_lengths": [
+          224,
+          224
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 68
+      },
+      {
+        "level": 22,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          10,
+          10
+        ],
+        "curve_lengths": [
+          205,
+          216
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 65
+      },
+      {
+        "level": 23,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          0,
+          0
+        ],
+        "curve_lengths": [
+          248,
+          249
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 75
+      },
+      {
+        "level": 24,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          0,
+          0,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          82,
+          86,
+          142,
+          146
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 71
+      },
+      {
+        "level": 25,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          0
+        ],
+        "curve_lengths": [
+          1
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 13
+      },
+      {
+        "level": 26,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          20,
+          20,
+          30
+        ],
+        "curve_lengths": [
+          160,
+          160,
+          160
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 72
+      },
+      {
+        "level": 27,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          60
+        ],
+        "curve_lengths": [
+          251
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 44
+      },
+      {
+        "level": 28,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          30
+        ],
+        "curve_lengths": [
+          203
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 38
+      },
+      {
+        "level": 29,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          254,
+          249
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 76
+      },
+      {
+        "level": 30,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 4,
+        "lower_bounds": [
+          30,
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          126,
+          123,
+          126,
+          128
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 76
+      },
+      {
+        "level": 31,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          60
+        ],
+        "curve_lengths": [
+          253
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 44
+      },
+      {
+        "level": 32,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 2,
+        "lower_bounds": [
+          0
+        ],
+        "curve_lengths": [
+          215
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 39
+      },
+      {
+        "level": 33,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          30
+        ],
+        "curve_lengths": [
+          141
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 30
+      },
+      {
+        "level": 34,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          205,
+          212
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 65
+      },
+      {
+        "level": 35,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          164,
+          168,
+          211,
+          215
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 108
+      },
+      {
+        "level": 36,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0
+        ],
+        "curve_lengths": [
+          198,
+          198
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 62
+      },
+      {
+        "level": 37,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          125,
+          127,
+          147
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 63
+      },
+      {
+        "level": 38,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          30
+        ],
+        "curve_lengths": [
+          253
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 44
+      },
+      {
+        "level": 39,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          0
+        ],
+        "curve_lengths": [
+          414
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 64
+      },
+      {
+        "level": 40,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          211,
+          241
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 70
+      },
+      {
+        "level": 41,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0
+        ],
+        "curve_lengths": [
+          195,
+          195
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 62
+      },
+      {
+        "level": 42,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          0,
+          0
+        ],
+        "curve_lengths": [
+          91,
+          115
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 39
+      },
+      {
+        "level": 43,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          60
+        ],
+        "curve_lengths": [
+          394
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 62
+      },
+      {
+        "level": 44,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0
+        ],
+        "curve_lengths": [
+          275,
+          275
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 82
+      },
+      {
+        "level": 45,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 2,
+        "lower_bounds": [
+          30,
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          265,
+          266,
+          266,
+          266
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 148
+      },
+      {
+        "level": 46,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 3,
+        "lower_bounds": [
+          30,
+          30
+        ],
+        "curve_lengths": [
+          177,
+          188
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 59
+      },
+      {
+        "level": 47,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          123,
+          128,
+          157,
+          180
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 87
+      },
+      {
+        "level": 48,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          131,
+          113
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 44
+      },
+      {
+        "level": 49,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0
+        ],
+        "curve_lengths": [
+          292,
+          292
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 86
+      },
+      {
+        "level": 50,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "curve_lengths": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 16
+      },
+      {
+        "level": 51,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 4,
+        "lower_bounds": [
+          30,
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          126,
+          113,
+          106,
+          98
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 70
+      },
+      {
+        "level": 52,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "curve_lengths": [
+          209,
+          209,
+          208,
+          208
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 118
+      },
+      {
+        "level": 53,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          166,
+          186,
+          202,
+          222
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 111
+      },
+      {
+        "level": 54,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 2,
+        "lower_bounds": [
+          30,
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          170,
+          170,
+          189,
+          189
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 104
+      },
+      {
+        "level": 55,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          110,
+          112,
+          112,
+          110
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 68
+      },
+      {
+        "level": 56,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "curve_lengths": [
+          184,
+          144,
+          156,
+          156
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 93
+      },
+      {
+        "level": 57,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          167,
+          167
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 54
+      },
+      {
+        "level": 58,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          136,
+          136,
+          136,
+          136
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 80
+      },
+      {
+        "level": 59,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0
+        ],
+        "curve_lengths": [
+          292,
+          292
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 86
+      },
+      {
+        "level": 60,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          274,
+          338,
+          411,
+          469
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 201
+      },
+      {
+        "level": 61,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60
+        ],
+        "curve_lengths": [
+          253
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 44
+      },
+      {
+        "level": 62,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          0,
+          0
+        ],
+        "curve_lengths": [
+          91,
+          91
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 36
+      },
+      {
+        "level": 63,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          131,
+          136
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 46
+      },
+      {
+        "level": 64,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          169,
+          169
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 56
+      },
+      {
+        "level": 65,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          164,
+          276,
+          267,
+          379
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 150
+      },
+      {
+        "level": 66,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0
+        ],
+        "curve_lengths": [
+          148,
+          162
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 52
+      },
+      {
+        "level": 67,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          60
+        ],
+        "curve_lengths": [
+          262
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 45
+      },
+      {
+        "level": 68,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          60
+        ],
+        "curve_lengths": [
+          187,
+          187
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 60
+      },
+      {
+        "level": 69,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "curve_lengths": [
+          278,
+          278,
+          278,
+          278
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 152
+      },
+      {
+        "level": 70,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          168,
+          144,
+          144,
+          168
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 90
+      },
+      {
+        "level": 71,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          301,
+          297
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 88
+      },
+      {
+        "level": 72,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          254,
+          249
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 76
+      },
+      {
+        "level": 73,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0
+        ],
+        "curve_lengths": [
+          167,
+          167
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 54
+      },
+      {
+        "level": 74,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          20
+        ],
+        "curve_lengths": [
+          232
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 41
+      },
+      {
+        "level": 75,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          0
+        ],
+        "curve_lengths": [
+          1
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 13
+      },
+      {
+        "level": 76,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          20,
+          20
+        ],
+        "curve_lengths": [
+          425,
+          425
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 120
+      },
+      {
+        "level": 77,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          233,
+          242
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 73
+      },
+      {
+        "level": 78,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          287,
+          287
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 84
+      },
+      {
+        "level": 79,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "curve_lengths": [
+          59,
+          59,
+          58,
+          58
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 44
+      },
+      {
+        "level": 80,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          244,
+          244,
+          244,
+          244
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 136
+      },
+      {
+        "level": 81,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          126,
+          121,
+          99,
+          97
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 70
+      },
+      {
+        "level": 82,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          136,
+          136,
+          136,
+          136
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 80
+      },
+      {
+        "level": 83,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          1,
+          1
+        ],
+        "curve_lengths": [
+          167,
+          177
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 56
+      },
+      {
+        "level": 84,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          0,
+          0,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          82,
+          86,
+          82,
+          86
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 56
+      },
+      {
+        "level": 85,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          110,
+          132,
+          152,
+          170
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 84
+      },
+      {
+        "level": 86,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30
+        ],
+        "curve_lengths": [
+          141
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 30
+      },
+      {
+        "level": 87,
+        "DY_stored_only": 2,
+        "mode": 1,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          30
+        ],
+        "curve_lengths": [
+          210,
+          210
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 66
+      },
+      {
+        "level": 88,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          60
+        ],
+        "curve_lengths": [
+          112,
+          137
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 44
+      },
+      {
+        "level": 89,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          169,
+          175
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 56
+      },
+      {
+        "level": 90,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          101,
+          107
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 39
+      },
+      {
+        "level": 91,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60
+        ],
+        "curve_lengths": [
+          394
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 62
+      },
+      {
+        "level": 92,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60,
+          60
+        ],
+        "curve_lengths": [
+          301,
+          297
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 88
+      },
+      {
+        "level": 93,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30
+        ],
+        "curve_lengths": [
+          122
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 28
+      },
+      {
+        "level": 94,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          20,
+          20
+        ],
+        "curve_lengths": [
+          241,
+          241
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 74
+      },
+      {
+        "level": 95,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          60
+        ],
+        "curve_lengths": [
+          262
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 45
+      },
+      {
+        "level": 96,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          30
+        ],
+        "curve_lengths": [
+          171,
+          171
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 56
+      },
+      {
+        "level": 97,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "curve_lengths": [
+          121,
+          121,
+          161,
+          161
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 86
+      },
+      {
+        "level": 98,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 2,
+        "lower_bounds": [
+          0,
+          0
+        ],
+        "curve_lengths": [
+          140,
+          140
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 48
+      },
+      {
+        "level": 99,
+        "DY_stored_only": 2,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "curve_lengths": [
+          136,
+          136,
+          136,
+          136
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 80
+      },
+      {
+        "level": 100,
+        "DY_stored_only": 3,
+        "mode": 2,
+        "every_nth": 1,
+        "lower_bounds": [
+          30,
+          30,
+          30,
+          30
+        ],
+        "curve_lengths": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "record_bytes": 11,
+        "bitmap_work_bytes": 64
+      }
+    ]
+  },
+  "issue": 87,
+  "stable": false,
+  "starfield": {
+    "seed": 29761,
+    "count": 48,
+    "colours_RGB": [
+      [
+        0,
+        0,
+        255
+      ],
+      [
+        255,
+        0,
+        0
+      ],
+      [
+        255,
+        255,
+        0
+      ]
+    ],
+    "dividers_frames": [
+      8,
+      4,
+      2
+    ],
+    "pixels_per_second": [
+      6.25,
+      12.5,
+      25.0
+    ],
+    "x": [
+      11,
+      48,
+      85,
+      122,
+      159,
+      196,
+      233,
+      30,
+      67,
+      104,
+      141,
+      178,
+      215,
+      12,
+      49,
+      86,
+      123,
+      160,
+      197,
+      234,
+      31,
+      68,
+      105,
+      142,
+      179,
+      216,
+      13,
+      50,
+      87,
+      124,
+      161,
+      198,
+      235,
+      32,
+      69,
+      106,
+      143,
+      180,
+      217,
+      14,
+      51,
+      88,
+      125,
+      162,
+      199,
+      236,
+      33,
+      70
+    ],
+    "initial_y": [
+      46,
+      11,
+      13,
+      170,
+      19,
+      138,
+      61,
+      65,
+      170,
+      63,
+      12,
+      17,
+      132,
+      20,
+      37,
+      100,
+      136,
+      35,
+      129,
+      135,
+      10,
+      18,
+      128,
+      140,
+      130,
+      83,
+      120,
+      119,
+      86,
+      182,
+      180,
+      177,
+      174,
+      105,
+      126,
+      124,
+      77,
+      26,
+      49,
+      163,
+      191,
+      96,
+      27,
+      54,
+      91,
+      68,
+      184,
+      42
+    ],
+    "buffer": [
+      98304,
+      122303
+    ],
+    "layout": "15x25 NCM tiles, 16x8 logical pixels; one low/high nibble per star",
+    "origin": "Inherited unchanged from XEMU-confirmed Stage7a1 (ed22f0d); not reconstructed Amiga constants",
+    "overlap_policy": "Unique fixed X coordinates; adjacent nibbles preserved by read-modify-write",
+    "palette_bank": 1,
+    "palette_indices": [
+      48,
+      49,
+      50,
+      51
+    ],
+    "sprites_consumed": 0,
+    "additional_RRB_pixie_slots": 0,
+    "background_cells": 375
+  },
+  "protected_bases": {
+    "2954dc57418f3898b8f958a9d15d79a57b2dd6bb": "2954dc57418f3898b8f958a9d15d79a57b2dd6bb",
+    "bd63682fa37df2853338b499f1210ec9dd2f56dc": "bd63682fa37df2853338b499f1210ec9dd2f56dc",
+    "a41e92ab8e4994a0a3288d60d63984d8593c8332": "a41e92ab8e4994a0a3288d60d63984d8593c8332",
+    "ec7a512bf913e522e5aaadfd57c9c4e7bb019bef": "ec7a512bf913e522e5aaadfd57c9c4e7bb019bef",
+    "stage7b1-stable": "5d9c4f563f9fd3de7f5786b623791b7fc26e79e7",
+    "stage7a2-stable": "b4cc1f7f4f2250bb69664ba15613350942e29d9c",
+    "stage7a1-stable": "9ebbcabd2a792661b0da354f2716abb7772d74a6",
+    "stage6b1-stable": "31ae0bd4bcdd79f3217126f902cf9978907cb48d",
+    "stage5d1a-stable": "39890c0095fab55b2ea71f95cccf59a3419848c6",
+    "stage6a2-stable": "24559e46c4f237492bc4e03439c86ea6c402a0b0"
+  },
+  "starfield_source_commit": "ed22f0d4e4ca0bd8f5ff6ebaa5892135ce9bdd9a",
+  "runtime_star_debug": false,
+  "speed_API": "mode0 normal8/4/2; mode1 eightfold1/2/4 pixels per frame",
+  "transition": {
+    "accelerated_frames": 50,
+    "ring_frames": 3,
+    "rings": 13,
+    "fill_frames": 39,
+    "black_frames": 39,
+    "initialization_frames": 1,
+    "bitmap": [
+      98304,
+      122303
+    ],
+    "approximation": "concentric8px bands, spatial outer-to-inner blue/yellow/red/darkblue; screenshot-derived geometry/RGB and3frames/ring approximation"
+  },
+  "projectiles": {
+    "colour": "white/red/grey bank2/indices10,13,16",
+    "visual_logical_pixels": [
+      3,
+      7
+    ],
+    "hitboxes_preserved": {
+      "player": [
+        1,
+        4
+      ],
+      "enemy": [
+        3,
+        4
+      ]
+    },
+    "original_conversion": {
+      "size": [
+        3,
+        7
+      ],
+      "player": "vertical reflection; red tip above",
+      "original_to_VIC_MCM": {
+        "0": 0,
+        "1": 1,
+        "2": 3,
+        "3": 2
+      },
+      "hardware_sprite_RGB_indices": [
+        10,
+        13,
+        16
+      ],
+      "binary_sha256": "3c88a1a8469a223b4ba0fe3152f64d13c44a6c4c1c758cb699a928225ac82f50"
+    },
+    "enemy": "Original3x7 white/red/grey; player reflected vertically",
+    "enemy_limit": 6,
+    "player_limit": 2,
+    "cooldown_frames": null,
+    "normal_shot_decision": "original ENTRY countdown / ATTACK thresholds",
+    "state_range": [
+      7936,
+      8055
+    ],
+    "eligible_list": [
+      8064,
+      8089
+    ],
+    "per_enemy_limit": null,
+    "ownership": "original shooter ID retained diagnostically; global slots2..7 only",
+    "snapshot": [
+      7008,
+      7050
+    ],
+    "base_graphics_byte_identical": true
+  },
+  "menu": {
+    "issue": 47,
+    "source_uss_sha256": "d836cbf88f0ac35b6ed3776df2add39f699113c1aeb9d02cdfe4651c82793916",
+    "VYGR_sha256": "974e8eff97efd0c0f67db2780cb668311b9d8731395d43641d4602c0a7c96b50",
+    "size": [
+      320,
+      200
+    ],
+    "Copper2": "0x184ae",
+    "planes": [
+      "0x27770",
+      "0x29bb0",
+      "0x2bff0",
+      "0x2e430"
+    ],
+    "CHIP_palette_offset": "$E4",
+    "palette_RGB4": [
+      "$000",
+      "$FFF",
+      "$0EC",
+      "$DD0",
+      "$899",
+      "$344",
+      "$566",
+      "$ABB",
+      "$F00",
+      "$FFF",
+      "$FFF",
+      "$FFF",
+      "$FFF",
+      "$FFF",
+      "$FFF",
+      "$FFF"
+    ],
+    "actors": [
+      {
+        "slot": 0,
+        "type": 1,
+        "x": 40,
+        "y": 20,
+        "frame_count": 4,
+        "initial_frame": 3,
+        "identical_snapshot_frame_candidates": [
+          1,
+          3
+        ],
+        "original_current_frame": 0,
+        "period_frames": 4,
+        "initial_delay": 4,
+        "original_object": "0x2404a",
+        "screen_address": 37034,
+        "table_offset": 0
+      },
+      {
+        "slot": 1,
+        "type": 2,
+        "x": 72,
+        "y": 20,
+        "frame_count": 7,
+        "initial_frame": 0,
+        "identical_snapshot_frame_candidates": [
+          0
+        ],
+        "original_current_frame": 1,
+        "period_frames": 4,
+        "initial_delay": 4,
+        "original_object": "0x240dc",
+        "screen_address": 37042,
+        "table_offset": 48
+      },
+      {
+        "slot": 2,
+        "type": 3,
+        "x": 104,
+        "y": 20,
+        "frame_count": 10,
+        "initial_frame": 9,
+        "identical_snapshot_frame_candidates": [
+          1,
+          9
+        ],
+        "original_current_frame": 9,
+        "period_frames": 4,
+        "initial_delay": 1,
+        "original_object": "0x2416e",
+        "screen_address": 37050,
+        "table_offset": 132
+      },
+      {
+        "slot": 3,
+        "type": 4,
+        "x": 136,
+        "y": 20,
+        "frame_count": 6,
+        "initial_frame": 4,
+        "identical_snapshot_frame_candidates": [
+          2,
+          4
+        ],
+        "original_current_frame": 4,
+        "period_frames": 5,
+        "initial_delay": 2,
+        "original_object": "0x24200",
+        "screen_address": 37058,
+        "table_offset": 252
+      },
+      {
+        "slot": 4,
+        "type": 5,
+        "x": 168,
+        "y": 20,
+        "frame_count": 8,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1
+        ],
+        "original_current_frame": 2,
+        "period_frames": 4,
+        "initial_delay": 4,
+        "original_object": "0x24292",
+        "screen_address": 37066,
+        "table_offset": 324
+      },
+      {
+        "slot": 5,
+        "type": 23,
+        "x": 200,
+        "y": 20,
+        "frame_count": 4,
+        "initial_frame": 0,
+        "identical_snapshot_frame_candidates": [
+          0
+        ],
+        "original_current_frame": 0,
+        "period_frames": 3,
+        "initial_delay": 1,
+        "original_object": "0x24324",
+        "screen_address": 37074,
+        "table_offset": 420
+      },
+      {
+        "slot": 6,
+        "type": 9,
+        "x": 232,
+        "y": 20,
+        "frame_count": 8,
+        "initial_frame": 5,
+        "identical_snapshot_frame_candidates": [
+          5
+        ],
+        "original_current_frame": 5,
+        "period_frames": 5,
+        "initial_delay": 1,
+        "original_object": "0x243b6",
+        "screen_address": 37082,
+        "table_offset": 468
+      },
+      {
+        "slot": 7,
+        "type": 10,
+        "x": 264,
+        "y": 20,
+        "frame_count": 4,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 3,
+        "period_frames": 2,
+        "initial_delay": 2,
+        "original_object": "0x24448",
+        "screen_address": 37090,
+        "table_offset": 564
+      },
+      {
+        "slot": 8,
+        "type": 11,
+        "x": 24,
+        "y": 44,
+        "frame_count": 6,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1
+        ],
+        "original_current_frame": 1,
+        "period_frames": 5,
+        "initial_delay": 1,
+        "original_object": "0x244da",
+        "screen_address": 37270,
+        "table_offset": 612
+      },
+      {
+        "slot": 9,
+        "type": 13,
+        "x": 56,
+        "y": 44,
+        "frame_count": 4,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 2,
+        "period_frames": 3,
+        "initial_delay": 2,
+        "original_object": "0x2456c",
+        "screen_address": 37278,
+        "table_offset": 684
+      },
+      {
+        "slot": 10,
+        "type": 14,
+        "x": 88,
+        "y": 44,
+        "frame_count": 8,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1
+        ],
+        "original_current_frame": 2,
+        "period_frames": 4,
+        "initial_delay": 4,
+        "original_object": "0x245fe",
+        "screen_address": 37286,
+        "table_offset": 732
+      },
+      {
+        "slot": 11,
+        "type": 15,
+        "x": 120,
+        "y": 44,
+        "frame_count": 6,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1
+        ],
+        "original_current_frame": 1,
+        "period_frames": 6,
+        "initial_delay": 4,
+        "original_object": "0x24690",
+        "screen_address": 37294,
+        "table_offset": 828
+      },
+      {
+        "slot": 12,
+        "type": 16,
+        "x": 152,
+        "y": 44,
+        "frame_count": 6,
+        "initial_frame": 4,
+        "identical_snapshot_frame_candidates": [
+          4
+        ],
+        "original_current_frame": 4,
+        "period_frames": 5,
+        "initial_delay": 4,
+        "original_object": "0x24722",
+        "screen_address": 37302,
+        "table_offset": 900
+      },
+      {
+        "slot": 13,
+        "type": 17,
+        "x": 184,
+        "y": 44,
+        "frame_count": 12,
+        "initial_frame": 7,
+        "identical_snapshot_frame_candidates": [
+          5,
+          7
+        ],
+        "original_current_frame": 8,
+        "period_frames": 5,
+        "initial_delay": 5,
+        "original_object": "0x247b4",
+        "screen_address": 37310,
+        "table_offset": 972
+      },
+      {
+        "slot": 14,
+        "type": 18,
+        "x": 216,
+        "y": 44,
+        "frame_count": 12,
+        "initial_frame": 4,
+        "identical_snapshot_frame_candidates": [
+          4,
+          8
+        ],
+        "original_current_frame": 4,
+        "period_frames": 5,
+        "initial_delay": 2,
+        "original_object": "0x24846",
+        "screen_address": 37318,
+        "table_offset": 1116
+      },
+      {
+        "slot": 15,
+        "type": 19,
+        "x": 248,
+        "y": 44,
+        "frame_count": 4,
+        "initial_frame": 0,
+        "identical_snapshot_frame_candidates": [
+          0
+        ],
+        "original_current_frame": 1,
+        "period_frames": 1,
+        "initial_delay": 1,
+        "original_object": "0x248d8",
+        "screen_address": 37326,
+        "table_offset": 1260
+      },
+      {
+        "slot": 16,
+        "type": 20,
+        "x": 280,
+        "y": 44,
+        "frame_count": 8,
+        "initial_frame": 6,
+        "identical_snapshot_frame_candidates": [
+          6
+        ],
+        "original_current_frame": 7,
+        "period_frames": 4,
+        "initial_delay": 4,
+        "original_object": "0x2496a",
+        "screen_address": 37334,
+        "table_offset": 1308
+      },
+      {
+        "slot": 17,
+        "type": 21,
+        "x": 40,
+        "y": 68,
+        "frame_count": 9,
+        "initial_frame": 3,
+        "identical_snapshot_frame_candidates": [
+          3,
+          5
+        ],
+        "original_current_frame": 3,
+        "period_frames": 2,
+        "initial_delay": 1,
+        "original_object": "0x249fc",
+        "screen_address": 37514,
+        "table_offset": 1404
+      },
+      {
+        "slot": 18,
+        "type": 22,
+        "x": 72,
+        "y": 68,
+        "frame_count": 4,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 2,
+        "period_frames": 3,
+        "initial_delay": 1,
+        "original_object": "0x24a8e",
+        "screen_address": 37522,
+        "table_offset": 1512
+      },
+      {
+        "slot": 19,
+        "type": 24,
+        "x": 104,
+        "y": 68,
+        "frame_count": 12,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1,
+          10
+        ],
+        "original_current_frame": 1,
+        "period_frames": 2,
+        "initial_delay": 1,
+        "original_object": "0x24b20",
+        "screen_address": 37530,
+        "table_offset": 1560
+      },
+      {
+        "slot": 20,
+        "type": 25,
+        "x": 136,
+        "y": 68,
+        "frame_count": 6,
+        "initial_frame": 4,
+        "identical_snapshot_frame_candidates": [
+          4
+        ],
+        "original_current_frame": 4,
+        "period_frames": 3,
+        "initial_delay": 2,
+        "original_object": "0x24bb2",
+        "screen_address": 37538,
+        "table_offset": 1704
+      },
+      {
+        "slot": 21,
+        "type": 26,
+        "x": 168,
+        "y": 68,
+        "frame_count": 8,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 2,
+        "period_frames": 6,
+        "initial_delay": 1,
+        "original_object": "0x24c44",
+        "screen_address": 37546,
+        "table_offset": 1776
+      },
+      {
+        "slot": 22,
+        "type": 27,
+        "x": 200,
+        "y": 68,
+        "frame_count": 4,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 3,
+        "period_frames": 3,
+        "initial_delay": 3,
+        "original_object": "0x24cd6",
+        "screen_address": 37554,
+        "table_offset": 1872
+      },
+      {
+        "slot": 23,
+        "type": 28,
+        "x": 232,
+        "y": 68,
+        "frame_count": 8,
+        "initial_frame": 0,
+        "identical_snapshot_frame_candidates": [
+          0
+        ],
+        "original_current_frame": 1,
+        "period_frames": 3,
+        "initial_delay": 3,
+        "original_object": "0x24d68",
+        "screen_address": 37562,
+        "table_offset": 1920
+      },
+      {
+        "slot": 24,
+        "type": 29,
+        "x": 264,
+        "y": 68,
+        "frame_count": 6,
+        "initial_frame": 3,
+        "identical_snapshot_frame_candidates": [
+          3
+        ],
+        "original_current_frame": 3,
+        "period_frames": 5,
+        "initial_delay": 2,
+        "original_object": "0x24dfa",
+        "screen_address": 37570,
+        "table_offset": 2016
+      },
+      {
+        "slot": 25,
+        "type": 30,
+        "x": 56,
+        "y": 92,
+        "frame_count": 8,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 2,
+        "period_frames": 3,
+        "initial_delay": 2,
+        "original_object": "0x24e8c",
+        "screen_address": 37758,
+        "table_offset": 2088
+      },
+      {
+        "slot": 26,
+        "type": 31,
+        "x": 88,
+        "y": 92,
+        "frame_count": 8,
+        "initial_frame": 0,
+        "identical_snapshot_frame_candidates": [
+          0
+        ],
+        "original_current_frame": 0,
+        "period_frames": 4,
+        "initial_delay": 2,
+        "original_object": "0x24f1e",
+        "screen_address": 37766,
+        "table_offset": 2184
+      },
+      {
+        "slot": 27,
+        "type": 32,
+        "x": 120,
+        "y": 92,
+        "frame_count": 8,
+        "initial_frame": 5,
+        "identical_snapshot_frame_candidates": [
+          5,
+          7
+        ],
+        "original_current_frame": 5,
+        "period_frames": 3,
+        "initial_delay": 2,
+        "original_object": "0x24fb0",
+        "screen_address": 37774,
+        "table_offset": 2280
+      },
+      {
+        "slot": 28,
+        "type": 33,
+        "x": 152,
+        "y": 92,
+        "frame_count": 12,
+        "initial_frame": 8,
+        "identical_snapshot_frame_candidates": [
+          8
+        ],
+        "original_current_frame": 8,
+        "period_frames": 4,
+        "initial_delay": 2,
+        "original_object": "0x25042",
+        "screen_address": 37782,
+        "table_offset": 2376
+      },
+      {
+        "slot": 29,
+        "type": 34,
+        "x": 184,
+        "y": 92,
+        "frame_count": 4,
+        "initial_frame": 2,
+        "identical_snapshot_frame_candidates": [
+          2
+        ],
+        "original_current_frame": 2,
+        "period_frames": 6,
+        "initial_delay": 2,
+        "original_object": "0x250d4",
+        "screen_address": 37790,
+        "table_offset": 2520
+      },
+      {
+        "slot": 30,
+        "type": 35,
+        "x": 216,
+        "y": 92,
+        "frame_count": 3,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1
+        ],
+        "original_current_frame": 2,
+        "period_frames": 2,
+        "initial_delay": 2,
+        "original_object": "0x25166",
+        "screen_address": 37798,
+        "table_offset": 2568
+      },
+      {
+        "slot": 31,
+        "type": 36,
+        "x": 248,
+        "y": 92,
+        "frame_count": 4,
+        "initial_frame": 1,
+        "identical_snapshot_frame_candidates": [
+          1
+        ],
+        "original_current_frame": 1,
+        "period_frames": 5,
+        "initial_delay": 2,
+        "original_object": "0x251f8",
+        "screen_address": 37806,
+        "table_offset": 2604
+      }
+    ],
+    "texts": [
+      {
+        "SlowRAM_offset": "0xc30e",
+        "format": "- VYPER -",
+        "display": "- VYPER -"
+      },
+      {
+        "SlowRAM_offset": "0xc318",
+        "format": "- bonus ship every %d waves -",
+        "display": "- BONUS SHIP EVERY 3 WAVES -"
+      },
+      {
+        "SlowRAM_offset": "0xc336",
+        "format": "- select option with joystick or keyboard -",
+        "display": "- SELECT OPTION WITH JOYSTICK OR KEYBOARD -"
+      },
+      {
+        "SlowRAM_offset": "0xc362",
+        "format": "initial level %03d",
+        "display": "INITIAL LEVEL 001"
+      },
+      {
+        "SlowRAM_offset": "0xc375",
+        "format": "f1 start 1 player game",
+        "display": "F1 START 1 PLAYER GAME"
+      },
+      {
+        "SlowRAM_offset": "0xc38c",
+        "format": "f2 start 2 player game",
+        "display": "F2 START 2 PLAYER GAME"
+      },
+      {
+        "SlowRAM_offset": "0xc3a3",
+        "format": "f3 View high Scores",
+        "display": "F3 VIEW HIGH SCORES"
+      }
+    ],
+    "palette_policy": "original menu COLOR0..15, not level palettes; unused loader-compatible entries16..32 zero",
+    "unique_FCM_tiles": 1068,
+    "tile_bytes": 68352,
+    "VYMN_bytes": 63093,
+    "VYMN_sha256": "64c8db7746470cba35925d86f5641c03ed09a224d0181de2ceb242037cc83e5a",
+    "max_actors_per_scanline": 9,
+    "animation_frame_divider": 1,
+    "animation_period_note": "Original per-actor countdown and period, BRAM routine $D890-$D8C8; visible frame phase selected against raster where front/back states differ; no WinUAE runtime trace",
+    "initial_64000_indices_exact": true,
+    "renderer": "isolated CHR16/FCLRHI FCM 40x25; six pointers per actor; no RRB or gameplay imports",
+    "xemu": "NOT_RUN",
+    "font_descriptor_base": "$227FC",
+    "font_bitplanes_base": "$185D2",
+    "font_glyph_count": 40,
+    "font_period": "retained Stage5d1a punctuation; no period in menu alphabet",
+    "atlas_low": [
+      "$12800",
+      "$1F7FF"
+    ],
+    "atlas_high_start": "$5C500",
+    "CPU_overlay": [
+      "$7000",
+      "$9FFF"
+    ],
+    "engine_base": "stage5d1a-stable",
+    "menu_base": "stage6a2-stable"
+  },
+  "title": {
+    "source_png_sha256": "faa19d74583ec1a35f5ed81f1727f026e03a2de1fce9eb86dd73315ded484eea",
+    "source_palette_sha256": "a108f6346556a15d6a6e2cb712fde23995eda05557f5d85c69cea5857c4e492e",
+    "size": [
+      352,
+      240
+    ],
+    "mode": "RGB",
+    "source_unique_RGB_colours": 31,
+    "original_palette_entries": 33,
+    "duplicate_RGB_indices": [
+      [
+        0,
+        6,
+        32
+      ]
+    ],
+    "exact_RGB_roundtrip_pixels": 84480,
+    "PNG_indices_preserved_when_matching_named_original_index": false,
+    "remapped_PNG_indices_pixels": 0,
+    "RGB_input_index_policy": "lowest exactly matching original index; duplicate RGB does not prove original index identity",
+    "tile_grid": [
+      44,
+      30
+    ],
+    "tile_bytes": 57600,
+    "format": "VYTI v2:26-byte header,99 palette bytes,2640 physical FCM map bytes,57600 unique FCM bytes",
+    "VYTI_bytes": 60365,
+    "VYTI_sha256": "47d0dc4e250259ee68f6468413e4920fcb9e2fc0d766a981548052fefc7d00fe",
+    "xemu": "NOT_RUN",
+    "unique_tiles": 900,
+    "cache_ranges": [
+      {
+        "start": "0x12800",
+        "end_inclusive": "0x13fff",
+        "tiles": 96
+      },
+      {
+        "start": "0x15b00",
+        "end_inclusive": "0x1f7ff",
+        "tiles": 628
+      },
+      {
+        "start": "0x5c500",
+        "end_inclusive": "0x5f0ff",
+        "tiles": 176
+      }
+    ],
+    "copies": [
+      {
+        "source": 264909,
+        "target": 75776,
+        "bytes": 6144
+      },
+      {
+        "source": 271053,
+        "target": 88832,
+        "bytes": 40192
+      },
+      {
+        "source": 311245,
+        "target": 378112,
+        "bytes": 11264
+      }
+    ],
+    "FCM_byte_roundtrip": 84480,
+    "screen": "$F300-$FD4F (physical RAM, not CPU ROM)",
+    "original_Stage5d0_format_preserved_in_original_assets": true
+  },
+  "menu_DAT": {
+    "bytes": 86720,
+    "sum16": 60212,
+    "header": "56594d4e02002000000b0100500b0100c0220100c052010042e6000000000000",
+    "offsets": {
+      "M_SEQ_LOAD": 18760,
+      "M_RESTORE_VIDEO": 17201,
+      "M_FILE_BYTES": 86720,
+      "M_FILE_SUM": 60212,
+      "M_ATLAS_BYTES": 68352,
+      "M_OVERLAY": 134357696,
+      "M_FONT": 134367936,
+      "M_SCREEN0": 134351696,
+      "M_SCREEN1": 134353696,
+      "M_SCREEN2": 134355696
+    }
+  },
+  "files": [
+    {
+      "name": "STAGE10A2",
+      "bytes": 45057,
+      "blocks": 178,
+      "sha256": "81a21ae65287b19769dff17b69d2d925927b216cf3e5b042188a097fadc53084"
+    },
+    {
+      "name": "VYLV.DAT",
+      "bytes": 23436,
+      "blocks": 93,
+      "sha256": "70272b194504875c33688557da9c95e7ab8765d34e3c73aa3ffba61e1d127282"
+    },
+    {
+      "name": "VYGR.DAT",
+      "bytes": 6809,
+      "blocks": 27,
+      "sha256": "587c02e9c379809d94c8bafd3442a5720df1fc3cae6a3a061cf8a178e0fce4a4"
+    },
+    {
+      "name": "VYCL.DAT",
+      "bytes": 337,
+      "blocks": 2,
+      "sha256": "1957a2f232272134b92d6d49e38f331794c3d63f331d4b39fa2e638b111c16a2"
+    },
+    {
+      "name": "VYTI.DAT",
+      "bytes": 12701,
+      "blocks": 51,
+      "sha256": "b3bc959f667c7c4b42514eda4988a660a860d1c0ddbf0737422824904196cad1"
+    },
+    {
+      "name": "VYMN.DAT",
+      "bytes": 14464,
+      "blocks": 57,
+      "sha256": "9102ee9f54da8b63c26a51bec2272b3bae68e174292247c0e3e3c930e8927d49"
+    },
+    {
+      "name": "VYSH.DAT",
+      "bytes": 228,
+      "blocks": 1,
+      "sha256": "062f5a0720cac462cdf388cb722b9050ede1e1a7715fd302409a03c7387680f0"
+    },
+    {
+      "name": "VYSO.DAT",
+      "bytes": 109804,
+      "blocks": 433,
+      "sha256": "4d34c69070b527e2d9da18ff005796756e26c7b505f1c1139d97d56a388ff38f"
+    },
+    {
+      "name": "VYHS.DAT",
+      "bytes": 4478,
+      "blocks": 18,
+      "sha256": "1bce4a74ea279163a43c02a8a4e35d851ac034f98cb759aa4356c3b47adb5ff9"
+    },
+    {
+      "name": "VYHI.DAT",
+      "bytes": 592,
+      "blocks": 3,
+      "sha256": "bd13995965462ed3a54a0971d5d51004497b7f458fc0dafd896fe9801e4dca20"
+    }
+  ],
+  "xemu": "NOT_RUN_BY_BUILDER; separate controlled XEMU protocol in docs/stage10a2_evidence; visual user acceptance pending",
+  "DMA": [
+    [
+      "header_copy",
+      262144,
+      26880,
+      32
+    ],
+    [
+      "asset_header",
+      134283264,
+      26880,
+      32
+    ],
+    [
+      "asset_save0",
+      262144,
+      134283264,
+      65280
+    ],
+    [
+      "asset_save1",
+      327424,
+      134348544,
+      21440
+    ],
+    [
+      "engine_save",
+      28672,
+      134221824,
+      12288
+    ],
+    [
+      "engine_restore",
+      134221824,
+      28672,
+      12288
+    ],
+    [
+      "colour_save",
+      389376,
+      134234112,
+      2640
+    ],
+    [
+      "colour_restore",
+      134234112,
+      389376,
+      2640
+    ],
+    [
+      "overlay_load",
+      134357696,
+      28672,
+      12288
+    ],
+    [
+      "atlas_low",
+      134283344,
+      75776,
+      53248
+    ],
+    [
+      "atlas_high",
+      134336592,
+      378112,
+      15104
+    ],
+    [
+      "font_load",
+      134367936,
+      16384,
+      2048
+    ]
+  ],
+  "attack_motion": {
+    "packed_cursor": "cyclic; only cursor resets at length",
+    "coordinates": "accumulated signed16",
+    "bottom_exit_y": 200,
+    "native_bottom_y": 216,
+    "shot_and_sound_plan": "once at attack start; never on wrap",
+    "one_byte_level_ban_preserved": [
+      25,
+      50,
+      99,
+      100
+    ],
+    "base": "9bbe02ed9d284575c14c23954659a781d6889ee9"
+  },
+  "audio": {
+    "source_sha256": {
+      "Vyper_Memory_Dump.dat": "d74aea88fb4232e36caab80e51abc51f73d470a5b55a54f5cb010f1d910ddf8c",
+      "Vyper_Startscreen.uss": "d836cbf88f0ac35b6ed3776df2add39f699113c1aeb9d02cdfe4651c82793916",
+      "VYPER.ADF": "b28cab911431aaf3e48fd3e9979159de7154f98538eeba191f52ac47ef9665e5"
+    },
+    "archive_bytes": 154304,
+    "archive_sha256": "74be8aff8cb474a52c3338e01cad270ec3b23ef74e1a90d5343ec804a7ea35e5",
+    "archive_crc": 43598,
+    "samples": [
+      {
+        "id": 1,
+        "original_offset": 0,
+        "offset": 0,
+        "length": 10472,
+        "per": 376,
+        "divisor": 6,
+        "busy": 6,
+        "rate": 3908,
+        "sha256": "c3de6886d6f90ecdad00a5c725876f62086f02926e4baaccf581a79f8ba4f8b0",
+        "crc": 19916
+      },
+      {
+        "id": 2,
+        "original_offset": 10472,
+        "offset": 10472,
+        "length": 1764,
+        "per": 376,
+        "divisor": 8,
+        "busy": 3,
+        "rate": 3908,
+        "sha256": "594829c85b442480acd8882f62d7292dc662b8cde722edc77d562f41cfedd709",
+        "crc": 10377
+      },
+      {
+        "id": 3,
+        "original_offset": 12236,
+        "offset": 12236,
+        "length": 5768,
+        "per": 416,
+        "divisor": 4,
+        "busy": 6,
+        "rate": 3532,
+        "sha256": "1cab9ac1dc5619c167e43e31ca605b3f04eb1712c206d086f344af6d66b113d2",
+        "crc": 10201
+      },
+      {
+        "id": 5,
+        "original_offset": 21106,
+        "offset": 18004,
+        "length": 1448,
+        "per": 376,
+        "divisor": 8,
+        "busy": 3,
+        "rate": 3908,
+        "sha256": "84d6e997a2bf988350e80bd9239f179c86d5abd59260e6f9a7d548e2435b4330",
+        "crc": 15844
+      },
+      {
+        "id": 6,
+        "original_offset": 22554,
+        "offset": 19452,
+        "length": 8280,
+        "per": 376,
+        "divisor": 6,
+        "busy": 6,
+        "rate": 3908,
+        "sha256": "ecb5bb027b42f27ba387bdcf8671511e85dcd72929631ab2a0ce430b8821cb39",
+        "crc": 15901
+      },
+      {
+        "id": 7,
+        "original_offset": 30834,
+        "offset": 27732,
+        "length": 2334,
+        "per": 376,
+        "divisor": 4,
+        "busy": 6,
+        "rate": 3908,
+        "sha256": "be3585639a3de3f4669179a794f3e6a52af2395f00131bb28fcc969446693b6d",
+        "crc": 26026
+      },
+      {
+        "id": 8,
+        "original_offset": 33168,
+        "offset": 30066,
+        "length": 10128,
+        "per": 312,
+        "divisor": 4,
+        "busy": 6,
+        "rate": 4709,
+        "sha256": "2c6ddfaeddc3cc16db11249e86d0295f7da8ddfb5153478050a35e448cd43769",
+        "crc": 32134
+      },
+      {
+        "id": 9,
+        "original_offset": 43296,
+        "offset": 40194,
+        "length": 9328,
+        "per": 376,
+        "divisor": 4,
+        "busy": 6,
+        "rate": 3908,
+        "sha256": "752251a15f5cdb9448cd52fd561ca688290abf98f20877dc5f7563d4cfbb51c7",
+        "crc": 55079
+      },
+      {
+        "id": 10,
+        "original_offset": 52624,
+        "offset": 49522,
+        "length": 8914,
+        "per": 324,
+        "divisor": 4,
+        "busy": 3,
+        "rate": 4535,
+        "sha256": "ab608fc75391d88d03124ccadb31e8dcfab1b343ca556e3ad68f2597494365a4",
+        "crc": 28355
+      },
+      {
+        "id": 11,
+        "original_offset": 61538,
+        "offset": 58436,
+        "length": 2280,
+        "per": 376,
+        "divisor": 4,
+        "busy": 6,
+        "rate": 3908,
+        "sha256": "6c618aacbd3b1b2fa6ba441afdfb2e2cc5f18e4e205c57c7bcb829d0b1d79fcd",
+        "crc": 29420
+      },
+      {
+        "id": 12,
+        "original_offset": 63818,
+        "offset": 60716,
+        "length": 3938,
+        "per": 376,
+        "divisor": 4,
+        "busy": 3,
+        "rate": 3908,
+        "sha256": "736b2eaa640beb49ce1f1d15205f07081adf2a8b8d79d8b46cf7314c6b347234",
+        "crc": 2993
+      },
+      {
+        "id": 15,
+        "original_offset": 73676,
+        "offset": 64654,
+        "length": 1180,
+        "per": 376,
+        "divisor": 4,
+        "busy": 3,
+        "rate": 3908,
+        "sha256": "15d91b9562186fcc81f9274f255990c5f0f8d0e6229f6b85d5cdcffb97b60b39",
+        "crc": 25004
+      },
+      {
+        "id": 16,
+        "original_offset": 74856,
+        "offset": 65834,
+        "length": 1250,
+        "per": 376,
+        "divisor": 4,
+        "busy": 3,
+        "rate": 3908,
+        "sha256": "a51b362da25bf86cf6fe0af94d984d649a6c86d72a391b39bc0d6e49223385ac",
+        "crc": 28258
+      },
+      {
+        "id": 17,
+        "original_offset": 76106,
+        "offset": 67084,
+        "length": 6720,
+        "per": 356,
+        "divisor": 4,
+        "busy": 6,
+        "rate": 4127,
+        "sha256": "392d6aa00a7097e5539722a4cbb0cb4b0f909815ed751c3b96b0a92020f573e9",
+        "crc": 32623
+      },
+      {
+        "id": 18,
+        "original_offset": 82826,
+        "offset": 73804,
+        "length": 9978,
+        "per": 376,
+        "divisor": 4,
+        "busy": 6,
+        "rate": 3908,
+        "sha256": "9cffcab537b0ebce4c603dcb56be12cdced61de9afa1c1aa494719a4b20d62df",
+        "crc": 20930
+      },
+      {
+        "id": 19,
+        "original_offset": 92804,
+        "offset": 83782,
+        "length": 21546,
+        "per": 388,
+        "divisor": 4,
+        "busy": 120,
+        "rate": 3787,
+        "sha256": "46f9f116e06234aa9d86e9ce980c1c9c011d91be8fd78f740c366ce500d5fa50",
+        "crc": 61319
+      },
+      {
+        "id": 20,
+        "original_offset": 114350,
+        "offset": 105328,
+        "length": 10262,
+        "per": 364,
+        "divisor": 4,
+        "busy": 6,
+        "rate": 4037,
+        "sha256": "d6f48b4a823ae13b3b8bf786de8a543ca8422f2dafc23515983fb3b18a8272e0",
+        "crc": 35620
+      },
+      {
+        "id": 21,
+        "original_offset": 124612,
+        "offset": 115590,
+        "length": 7880,
+        "per": 376,
+        "divisor": 4,
+        "busy": 6,
+        "rate": 3908,
+        "sha256": "01e63ff8140e5fdf00d747c56f94bd6efbff2434be7252bc85bfadea30eb55ea",
+        "crc": 16670
+      },
+      {
+        "id": 22,
+        "original_offset": 132492,
+        "offset": 123470,
+        "length": 20074,
+        "per": 396,
+        "divisor": 6,
+        "busy": 120,
+        "rate": 3710,
+        "sha256": "db3dd43502fabdf423c55cb6eea6beebba81c7cfd90bd3b71270871da0750b5f",
+        "crc": 19745
+      },
+      {
+        "id": 24,
+        "original_offset": 154076,
+        "offset": 143544,
+        "length": 10760,
+        "per": 432,
+        "divisor": 6,
+        "busy": 120,
+        "rate": 3401,
+        "sha256": "c971cffb961fce5a41aa75b85012a98f0c66d415ef853ea29b87c1619976767b",
+        "crc": 8581
+      }
+    ],
+    "PCM_offset": 6656,
+    "file_bytes": 160960,
+    "file_crc": 9518,
+    "file_sha256": "775e901da9c4f6a30a50f4596b43bc35c691f02f6a71f63587c3558d9c37a90f",
+    "types": [
+      {
+        "vylv_index": "0",
+        "vygr_type_1based": "1",
+        "DATA_offset": "11178",
+        "Shot_offset": "50370",
+        "USS_record": "109802",
+        "dump_record": "187130",
+        "dump_frame_descriptor": "230042",
+        "frames": "4",
+        "destruction_sound": "1",
+        "shot_sound": "10",
+        "entry_sound": "6",
+        "attack_sound": "6",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "1",
+        "vygr_type_1based": "2",
+        "DATA_offset": "11196",
+        "Shot_offset": "50388",
+        "USS_record": "109820",
+        "dump_record": "187148",
+        "dump_frame_descriptor": "230170",
+        "frames": "7",
+        "destruction_sound": "3",
+        "shot_sound": "15",
+        "entry_sound": "6",
+        "attack_sound": "7",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "2",
+        "vygr_type_1based": "3",
+        "DATA_offset": "11214",
+        "Shot_offset": "50406",
+        "USS_record": "109838",
+        "dump_record": "187166",
+        "dump_frame_descriptor": "230394",
+        "frames": "10",
+        "destruction_sound": "8",
+        "shot_sound": "16",
+        "entry_sound": "11",
+        "attack_sound": "6",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "3",
+        "vygr_type_1based": "4",
+        "DATA_offset": "11232",
+        "Shot_offset": "50424",
+        "USS_record": "109856",
+        "dump_record": "187184",
+        "dump_frame_descriptor": "230714",
+        "frames": "6",
+        "destruction_sound": "20",
+        "shot_sound": "2",
+        "entry_sound": "7",
+        "attack_sound": "6",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "4",
+        "vygr_type_1based": "5",
+        "DATA_offset": "11250",
+        "Shot_offset": "50442",
+        "USS_record": "109874",
+        "dump_record": "187202",
+        "dump_frame_descriptor": "230906",
+        "frames": "8",
+        "destruction_sound": "8",
+        "shot_sound": "12",
+        "entry_sound": "11",
+        "attack_sound": "6",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "5",
+        "vygr_type_1based": "6",
+        "DATA_offset": "11268",
+        "Shot_offset": "50460",
+        "USS_record": "109892",
+        "dump_record": "187220",
+        "dump_frame_descriptor": "231162",
+        "frames": "6",
+        "destruction_sound": "9",
+        "shot_sound": "12",
+        "entry_sound": "6",
+        "attack_sound": "11",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "6",
+        "vygr_type_1based": "7",
+        "DATA_offset": "11286",
+        "Shot_offset": "50478",
+        "USS_record": "109910",
+        "dump_record": "187238",
+        "dump_frame_descriptor": "231354",
+        "frames": "7",
+        "destruction_sound": "3",
+        "shot_sound": "2",
+        "entry_sound": "7",
+        "attack_sound": "11",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "7",
+        "vygr_type_1based": "8",
+        "DATA_offset": "11304",
+        "Shot_offset": "50496",
+        "USS_record": "109928",
+        "dump_record": "187256",
+        "dump_frame_descriptor": "231578",
+        "frames": "4",
+        "destruction_sound": "3",
+        "shot_sound": "10",
+        "entry_sound": "6",
+        "attack_sound": "21",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "8",
+        "vygr_type_1based": "9",
+        "DATA_offset": "11322",
+        "Shot_offset": "50514",
+        "USS_record": "109946",
+        "dump_record": "187274",
+        "dump_frame_descriptor": "231706",
+        "frames": "8",
+        "destruction_sound": "1",
+        "shot_sound": "15",
+        "entry_sound": "6",
+        "attack_sound": "11",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "9",
+        "vygr_type_1based": "10",
+        "DATA_offset": "11340",
+        "Shot_offset": "50532",
+        "USS_record": "109964",
+        "dump_record": "187292",
+        "dump_frame_descriptor": "231962",
+        "frames": "4",
+        "destruction_sound": "18",
+        "shot_sound": "15",
+        "entry_sound": "6",
+        "attack_sound": "21",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "10",
+        "vygr_type_1based": "11",
+        "DATA_offset": "11358",
+        "Shot_offset": "50550",
+        "USS_record": "109982",
+        "dump_record": "187310",
+        "dump_frame_descriptor": "232090",
+        "frames": "6",
+        "destruction_sound": "3",
+        "shot_sound": "5",
+        "entry_sound": "7",
+        "attack_sound": "6",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "11",
+        "vygr_type_1based": "12",
+        "DATA_offset": "11376",
+        "Shot_offset": "50568",
+        "USS_record": "110000",
+        "dump_record": "187328",
+        "dump_frame_descriptor": "232282",
+        "frames": "1",
+        "destruction_sound": "3",
+        "shot_sound": "5",
+        "entry_sound": "7",
+        "attack_sound": "11",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "12",
+        "vygr_type_1based": "13",
+        "DATA_offset": "11394",
+        "Shot_offset": "50586",
+        "USS_record": "110018",
+        "dump_record": "187346",
+        "dump_frame_descriptor": "232314",
+        "frames": "4",
+        "destruction_sound": "8",
+        "shot_sound": "10",
+        "entry_sound": "7",
+        "attack_sound": "6",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "13",
+        "vygr_type_1based": "14",
+        "DATA_offset": "11412",
+        "Shot_offset": "50604",
+        "USS_record": "110036",
+        "dump_record": "187364",
+        "dump_frame_descriptor": "232442",
+        "frames": "8",
+        "destruction_sound": "20",
+        "shot_sound": "12",
+        "entry_sound": "6",
+        "attack_sound": "21",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "14",
+        "vygr_type_1based": "15",
+        "DATA_offset": "11430",
+        "Shot_offset": "50622",
+        "USS_record": "110054",
+        "dump_record": "187382",
+        "dump_frame_descriptor": "232698",
+        "frames": "6",
+        "destruction_sound": "3",
+        "shot_sound": "2",
+        "entry_sound": "6",
+        "attack_sound": "7",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "15",
+        "vygr_type_1based": "16",
+        "DATA_offset": "11448",
+        "Shot_offset": "50640",
+        "USS_record": "110072",
+        "dump_record": "187400",
+        "dump_frame_descriptor": "232890",
+        "frames": "6",
+        "destruction_sound": "1",
+        "shot_sound": "16",
+        "entry_sound": "11",
+        "attack_sound": "6",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "16",
+        "vygr_type_1based": "17",
+        "DATA_offset": "11466",
+        "Shot_offset": "50658",
+        "USS_record": "110090",
+        "dump_record": "187418",
+        "dump_frame_descriptor": "233082",
+        "frames": "12",
+        "destruction_sound": "1",
+        "shot_sound": "15",
+        "entry_sound": "11",
+        "attack_sound": "6",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "17",
+        "vygr_type_1based": "18",
+        "DATA_offset": "11484",
+        "Shot_offset": "50676",
+        "USS_record": "110108",
+        "dump_record": "187436",
+        "dump_frame_descriptor": "233466",
+        "frames": "12",
+        "destruction_sound": "9",
+        "shot_sound": "5",
+        "entry_sound": "11",
+        "attack_sound": "21",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "18",
+        "vygr_type_1based": "19",
+        "DATA_offset": "11502",
+        "Shot_offset": "50694",
+        "USS_record": "110126",
+        "dump_record": "187454",
+        "dump_frame_descriptor": "233850",
+        "frames": "4",
+        "destruction_sound": "1",
+        "shot_sound": "2",
+        "entry_sound": "6",
+        "attack_sound": "21",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "19",
+        "vygr_type_1based": "20",
+        "DATA_offset": "11520",
+        "Shot_offset": "50712",
+        "USS_record": "110144",
+        "dump_record": "187472",
+        "dump_frame_descriptor": "233978",
+        "frames": "8",
+        "destruction_sound": "8",
+        "shot_sound": "10",
+        "entry_sound": "11",
+        "attack_sound": "21",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "20",
+        "vygr_type_1based": "21",
+        "DATA_offset": "11538",
+        "Shot_offset": "50730",
+        "USS_record": "110162",
+        "dump_record": "187490",
+        "dump_frame_descriptor": "234234",
+        "frames": "9",
+        "destruction_sound": "9",
+        "shot_sound": "2",
+        "entry_sound": "21",
+        "attack_sound": "7",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "21",
+        "vygr_type_1based": "22",
+        "DATA_offset": "11556",
+        "Shot_offset": "50748",
+        "USS_record": "110180",
+        "dump_record": "187508",
+        "dump_frame_descriptor": "234522",
+        "frames": "4",
+        "destruction_sound": "3",
+        "shot_sound": "2",
+        "entry_sound": "11",
+        "attack_sound": "6",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "22",
+        "vygr_type_1based": "23",
+        "DATA_offset": "11574",
+        "Shot_offset": "50766",
+        "USS_record": "110198",
+        "dump_record": "187526",
+        "dump_frame_descriptor": "234650",
+        "frames": "4",
+        "destruction_sound": "8",
+        "shot_sound": "10",
+        "entry_sound": "21",
+        "attack_sound": "7",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "23",
+        "vygr_type_1based": "24",
+        "DATA_offset": "11592",
+        "Shot_offset": "50784",
+        "USS_record": "110216",
+        "dump_record": "187544",
+        "dump_frame_descriptor": "234778",
+        "frames": "12",
+        "destruction_sound": "20",
+        "shot_sound": "16",
+        "entry_sound": "7",
+        "attack_sound": "21",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "24",
+        "vygr_type_1based": "25",
+        "DATA_offset": "11610",
+        "Shot_offset": "50802",
+        "USS_record": "110234",
+        "dump_record": "187562",
+        "dump_frame_descriptor": "235162",
+        "frames": "6",
+        "destruction_sound": "3",
+        "shot_sound": "5",
+        "entry_sound": "11",
+        "attack_sound": "21",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "25",
+        "vygr_type_1based": "26",
+        "DATA_offset": "11628",
+        "Shot_offset": "50820",
+        "USS_record": "110252",
+        "dump_record": "187580",
+        "dump_frame_descriptor": "235354",
+        "frames": "8",
+        "destruction_sound": "18",
+        "shot_sound": "15",
+        "entry_sound": "21",
+        "attack_sound": "6",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "26",
+        "vygr_type_1based": "27",
+        "DATA_offset": "11646",
+        "Shot_offset": "50838",
+        "USS_record": "110270",
+        "dump_record": "187598",
+        "dump_frame_descriptor": "235610",
+        "frames": "4",
+        "destruction_sound": "9",
+        "shot_sound": "5",
+        "entry_sound": "7",
+        "attack_sound": "11",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "27",
+        "vygr_type_1based": "28",
+        "DATA_offset": "11664",
+        "Shot_offset": "50856",
+        "USS_record": "110288",
+        "dump_record": "187616",
+        "dump_frame_descriptor": "235738",
+        "frames": "8",
+        "destruction_sound": "1",
+        "shot_sound": "2",
+        "entry_sound": "6",
+        "attack_sound": "7",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "28",
+        "vygr_type_1based": "29",
+        "DATA_offset": "11682",
+        "Shot_offset": "50874",
+        "USS_record": "110306",
+        "dump_record": "187634",
+        "dump_frame_descriptor": "235994",
+        "frames": "6",
+        "destruction_sound": "3",
+        "shot_sound": "5",
+        "entry_sound": "7",
+        "attack_sound": "11",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "29",
+        "vygr_type_1based": "30",
+        "DATA_offset": "11700",
+        "Shot_offset": "50892",
+        "USS_record": "110324",
+        "dump_record": "187652",
+        "dump_frame_descriptor": "236186",
+        "frames": "8",
+        "destruction_sound": "8",
+        "shot_sound": "10",
+        "entry_sound": "11",
+        "attack_sound": "21",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "30",
+        "vygr_type_1based": "31",
+        "DATA_offset": "11718",
+        "Shot_offset": "50910",
+        "USS_record": "110342",
+        "dump_record": "187670",
+        "dump_frame_descriptor": "236442",
+        "frames": "8",
+        "destruction_sound": "3",
+        "shot_sound": "15",
+        "entry_sound": "21",
+        "attack_sound": "6",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "31",
+        "vygr_type_1based": "32",
+        "DATA_offset": "11736",
+        "Shot_offset": "50928",
+        "USS_record": "110360",
+        "dump_record": "187688",
+        "dump_frame_descriptor": "236698",
+        "frames": "8",
+        "destruction_sound": "18",
+        "shot_sound": "15",
+        "entry_sound": "6",
+        "attack_sound": "7",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "32",
+        "vygr_type_1based": "33",
+        "DATA_offset": "11754",
+        "Shot_offset": "50946",
+        "USS_record": "110378",
+        "dump_record": "187706",
+        "dump_frame_descriptor": "236954",
+        "frames": "12",
+        "destruction_sound": "20",
+        "shot_sound": "16",
+        "entry_sound": "7",
+        "attack_sound": "11",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "33",
+        "vygr_type_1based": "34",
+        "DATA_offset": "11772",
+        "Shot_offset": "50964",
+        "USS_record": "110396",
+        "dump_record": "187724",
+        "dump_frame_descriptor": "237338",
+        "frames": "4",
+        "destruction_sound": "1",
+        "shot_sound": "5",
+        "entry_sound": "11",
+        "attack_sound": "21",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "34",
+        "vygr_type_1based": "35",
+        "DATA_offset": "11790",
+        "Shot_offset": "50982",
+        "USS_record": "110414",
+        "dump_record": "187742",
+        "dump_frame_descriptor": "237466",
+        "frames": "3",
+        "destruction_sound": "8",
+        "shot_sound": "12",
+        "entry_sound": "21",
+        "attack_sound": "6",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "35",
+        "vygr_type_1based": "36",
+        "DATA_offset": "11808",
+        "Shot_offset": "51000",
+        "USS_record": "110432",
+        "dump_record": "187760",
+        "dump_frame_descriptor": "237562",
+        "frames": "4",
+        "destruction_sound": "18",
+        "shot_sound": "16",
+        "entry_sound": "21",
+        "attack_sound": "7",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "36",
+        "vygr_type_1based": "37",
+        "DATA_offset": "11826",
+        "Shot_offset": "51018",
+        "USS_record": "110450",
+        "dump_record": "187778",
+        "dump_frame_descriptor": "237690",
+        "frames": "10",
+        "destruction_sound": "20",
+        "shot_sound": "2",
+        "entry_sound": "6",
+        "attack_sound": "21",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      },
+      {
+        "vylv_index": "37",
+        "vygr_type_1based": "38",
+        "DATA_offset": "11844",
+        "Shot_offset": "51036",
+        "USS_record": "110468",
+        "dump_record": "187796",
+        "dump_frame_descriptor": "238010",
+        "frames": "10",
+        "destruction_sound": "8",
+        "shot_sound": "5",
+        "entry_sound": "11",
+        "attack_sound": "7",
+        "evidence": "confirmed_code_and_both_runtime_tables"
+      }
+    ],
+    "core_physical": 122880,
+    "core_attic": 134414848,
+    "buffers": [
+      91136,
+      378112
+    ],
+    "diagnostics_physical": {
+      "error": 124490,
+      "underruns": 124517,
+      "max_gap": 124518,
+      "max_lines": 124519,
+      "refills": 124514,
+      "completed": 124516
+    },
+    "gate_mailbox": {
+      "command": 8144,
+      "ready": 8145,
+      "error": 8147
+    },
+    "source_references": {
+      "game": "f7350d6",
+      "audio": "ee66f6d44fe4b6488dd3db25c7b91deaa77878d5",
+      "analysis": "d135b754beec10d608ac4bf6b91a2357247b62f3"
+    }
+  },
+  "stage10a2": {
+    "menu": "unchanged; user confirmed configuration issue",
+    "turn_handoff": "ordinary death stays active; successful level switches in-place after full transition; final death switches only after highscore return",
+    "resume_IRQ": "masked before bootstrap rearm and level reconstruction",
+    "bootstrap_cache": {
+      "code": [
+        34944,
+        35007
+      ],
+      "source": [
+        20480,
+        22080
+      ],
+      "attic": [
+        134873088,
+        134874688
+      ]
+    },
+    "title_cache": "re-armed on every resumed turn before font overwrites4000..47ff",
+    "hud": {
+      "p2_rows": [
+        13,
+        14,
+        15
+      ],
+      "p2_life_rows": [
+        16,
+        20
+      ],
+      "separator_rows": [
+        12,
+        21
+      ],
+      "initial_shadow_invalidation": true,
+      "point_rows": [
+        22,
+        23
+      ],
+      "bottom_margin_row": 24,
+      "active_inks": [
+        12,
+        13,
+        14
+      ],
+      "inactive_ink": 11,
+      "controls_hidden_2P_only": true
+    },
+    "get_ready": {
+      "frames": 100,
+      "Hz": 50,
+      "mode": 3,
+      "state": [
+        6940,
+        6944
+      ],
+      "native_code": [
+        39466,
+        39498
+      ],
+      "mapped_code_start": 44808,
+      "palette": "same bank1 cc_index as enemy COLOR02",
+      "rows": [
+        17,
+        19
+      ],
+      "native_X": [
+        204,
+        208
+      ],
+      "input_start_frame_not_counted": true,
+      "timers_frozen": true
+    }
+  },
+  "auto_levels": {
+    "automatic": true,
+    "bonus_every": 3,
+    "max_lives": 30,
+    "bonus_state": [
+      8153,
+      8154
+    ],
+    "base": "e932974e554f0cd9c84d1f95e63de6bf2e1853a2"
+  },
+  "motion": {
+    "player_step_test_default": 2,
+    "native_player_update_Hz": "unproven",
+    "enemy": "original16.16, level DY, parity spread0..19,45degree cap",
+    "signed_coordinates": true,
+    "extra_state": [
+      8090,
+      8140
+    ],
+    "legacy_T": "isolated unchanged8.8 helper"
+  },
+  "attack_selection": {
+    "interval_frames": 30,
+    "max_ATTACK": 3,
+    "eligible": "live FORMATION plus phase3",
+    "sampling": "power-of-two rejection; due timer retained on rejection/no actor"
+  },
+  "revision": "10a2",
+  "parent_build": "dd11d2a50fd777162946479098796c55c61fcd53",
+  "respawn": {
+    "protection_frames": 150,
+    "blink_frames": 25,
+    "fire_during_blink": true
+  },
+  "highscore_UI": {
+    "static_yellow": [
+      "title",
+      "navigation",
+      "footer"
+    ],
+    "normal_debug_rows": false
+  },
+  "base": "stage10a1-hw (Stage10a1-HW2, hardware confirmed 2026-10-17)",
+  "highscore_base": "bbf996531f31920f2baa1111f74722d075fceba0",
+  "highscore_dma": [
+    [
+      "hs_save",
+      8192,
+      134807552,
+      45056
+    ],
+    [
+      "hs_restore",
+      134807552,
+      8192,
+      45056
+    ],
+    [
+      "hs_load0",
+      134742016,
+      8448,
+      19968
+    ],
+    [
+      "hs_load2",
+      134762240,
+      28672,
+      8959
+    ],
+    [
+      "hs_archive",
+      262144,
+      134742016,
+      29183
+    ]
+  ],
+  "VYHI_format": "unchanged v1/CRC16/count80/u32",
+  "game_over_delay_frames": 150,
+  "two_player": {
+    "record_bytes": 8,
+    "identities": 2,
+    "lives_max": 30,
+    "hud_icons_max": 8,
+    "hud_semantics": "all lives including current ship",
+    "unfinished_level": "documented per-player restart",
+    "state": [
+      6912,
+      6947
+    ],
+    "baseline": "36d5a4b546fb514e435d4567b36c68e8cd18b6e2"
+  },
+  "packing": {
+    "format": "Z0 total24 plain24 + ZX0 v2, VYSO PCM delta coded",
+    "ring": "Attic $080B0000-$080B7FFF",
+    "decoder": "src/engine/stage10a2_unpack.asm at $45CC-$47FF",
+    "files": {
+      "VYLV.DAT": {
+        "raw": 81793,
+        "disk": 23436
+      },
+      "VYGR.DAT": {
+        "raw": 33464,
+        "disk": 6809
+      },
+      "VYCL.DAT": {
+        "raw": 476,
+        "disk": 337
+      },
+      "VYTI.DAT": {
+        "raw": 60365,
+        "disk": 12701
+      },
+      "VYMN.DAT": {
+        "raw": 86720,
+        "disk": 14464
+      },
+      "VYSH.DAT": {
+        "raw": 1116,
+        "disk": 228
+      },
+      "VYSO.DAT": {
+        "raw": 160960,
+        "disk": 109804
+      },
+      "VYHS.DAT": {
+        "raw": 29183,
+        "disk": 4478
+      },
+      "VYHI.DAT": {
+        "raw": 592,
+        "disk": 592
+      }
+    },
+    "raw_total": 454669,
+    "disk_total": 172849
+  }
+}

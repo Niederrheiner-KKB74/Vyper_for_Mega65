@@ -93,3 +93,13 @@ Branch `stage5d-1`, Ausgangsbasis `stage5c-stable`, Titelrenderer aus
 (bei privatem Repository bei GitHub anmelden und **Download raw file** verwenden).
 [Technik, Build und XEMU-Test](docs/stage5d1_title_loader_integration.md).
 Vom Benutzer nach der HOTREG-Korrektur in XEMU bestätigt; Referenz `stage5d1-stable`.
+
+## Stage 10a2 – gepackte Dateien
+
+Basis Stage10a1-HW2. Alle per SEQ geladenen DAT-Dateien liegen ZX0-gepackt auf der
+Diskette (454 KB → 172 KB vor dem Startbildschirm); ein Streaming-Entpacker ersetzt
+in den Ladeschleifen nur `CHRIN`/`READST`. Daten im Speicher, Gameplay, Grafik und Sound
+unverändert. Start: `LOAD "STAGE10A2",8`, `RUN`.
+[Format, Speicherlage, Prüfungen und Build](docs/stage10a2_packed_loading.md).
+Auf Hardware gemessen: 21 s bis zum Startbildschirm (vorher 22 s); vom Benutzer
+wegen der Platzersparnis für `main` freigegeben.
