@@ -1,0 +1,59 @@
+test_correct_checksum_does_not_hide_wrong_phase_or_register (test_stage10b1.DiagnosticTests.test_correct_checksum_does_not_hide_wrong_phase_or_register) ... ok
+test_disk_chain_cycle_is_rejected (test_stage10b1.DiagnosticTests.test_disk_chain_cycle_is_rejected) ... ok
+test_geometry_difference_is_flagged_in_first_phase (test_stage10b1.DiagnosticTests.test_geometry_difference_is_flagged_in_first_phase) ... ok
+test_live_dump_and_stable_geometry (test_stage10b1.DiagnosticTests.test_live_dump_and_stable_geometry) ... ok
+test_live_raster_difference_is_retained_but_not_fault (test_stage10b1.DiagnosticTests.test_live_raster_difference_is_retained_but_not_fault) ... ok
+test_monitor_input_roundtrip (test_stage10b1.DiagnosticTests.test_monitor_input_roundtrip) ... ok
+test_release_disk_and_hashes (test_stage10b1.DiagnosticTests.test_release_disk_and_hashes) ... ok
+test_truncated_and_corrupt_export_rejected (test_stage10b1.DiagnosticTests.test_truncated_and_corrupt_export_rejected) ... ok
+test_archive_guard_rejects_modified_evidence (test_stage10b1_consolidation.Consolidation.test_archive_guard_rejects_modified_evidence) ... ok
+test_archived_evidence_and_releases_match_original_blobs (test_stage10b1_consolidation.Consolidation.test_archived_evidence_and_releases_match_original_blobs) ... ok
+test_baseline_guard_needs_no_topic_branch_and_detects_edits_and_deletion (test_stage10b1_consolidation.Consolidation.test_baseline_guard_needs_no_topic_branch_and_detects_edits_and_deletion) ... ok
+test_failed_open_does_not_close_foreign_lfn2 (test_stage10b1_consolidation.Consolidation.test_failed_open_does_not_close_foreign_lfn2) ... ok
+test_output_cannot_overwrite_archives_or_repository_sources (test_stage10b1_consolidation.Consolidation.test_output_cannot_overwrite_archives_or_repository_sources) ... ok
+test_owned_close_success_error_and_status_channel_failure (test_stage10b1_consolidation.Consolidation.test_owned_close_success_error_and_status_channel_failure) ... ok
+test_phase_start_timing_survives_without_register_differences (test_stage10b1_consolidation.Consolidation.test_phase_start_timing_survives_without_register_differences) ... ok
+test_active_x_irq_rejected_before_writes (test_stage10b1a.Tests.test_active_x_irq_rejected_before_writes) ... ok
+test_actual_machine_code_explicit_write_values (test_stage10b1a.Tests.test_actual_machine_code_explicit_write_values) ... ok
+test_actual_video_configuration_fixed_E_except_norrdel (test_stage10b1a.Tests.test_actual_video_configuration_fixed_E_except_norrdel) ... ok
+test_memory_payload_corruption_and_wrong_directory_rejected (test_stage10b1a.Tests.test_memory_payload_corruption_and_wrong_directory_rejected) ... ok
+test_only_declared_AB_annotation_is_exempt (test_stage10b1a.Tests.test_only_declared_AB_annotation_is_exempt) ... ok
+test_phase_start_context_retained_and_reported (test_stage10b1a.Tests.test_phase_start_context_retained_and_reported) ... ok
+test_reg_corruption_and_version_rejected (test_stage10b1a.Tests.test_reg_corruption_and_version_rejected) ... ok
+test_release_disk_chain_and_hashes (test_stage10b1a.Tests.test_release_disk_chain_and_hashes) ... ok
+test_restore_uses_shadow_not_live_x_readback (test_stage10b1a.Tests.test_restore_uses_shadow_not_live_x_readback) ... ok
+test_active_x_irq_guard_and_shadow_restore (test_stage10b1b.Tests.test_active_x_irq_guard_and_shadow_restore) ... ok
+test_capture_storage_never_uses_rom_or_unmapped_bank6 (test_stage10b1b.Tests.test_capture_storage_never_uses_rom_or_unmapped_bank6) ... ok
+test_crc16_machine_code_known_vector (test_stage10b1b.Tests.test_crc16_machine_code_known_vector) ... ok
+test_crc_corruption_truncation_and_directory_rejected (test_stage10b1b.Tests.test_crc_corruption_truncation_and_directory_rejected) ... ok
+test_disk_and_independent_rebuild (test_stage10b1b.Tests.test_disk_and_independent_rebuild) ... ok
+test_full_ram_and_monitor_fallback (test_stage10b1b.Tests.test_full_ram_and_monitor_fallback) ... ok
+test_machine_code_profile_constant_for_all_four_scenes (test_stage10b1b.Tests.test_machine_code_profile_constant_for_all_four_scenes) ... ok
+test_palette_difference_is_never_hidden (test_stage10b1b.Tests.test_palette_difference_is_never_hidden) ... ok
+test_phase_context_retained_and_pair_identity_required (test_stage10b1b.Tests.test_phase_context_retained_and_pair_identity_required) ... ok
+test_scene_isolation_and_all_row_budgets (test_stage10b1b.Tests.test_scene_isolation_and_all_row_budgets) ... ok
+test_segmented_dma_descriptors_and_exact_boundary (test_stage10b1b.Tests.test_segmented_dma_descriptors_and_exact_boundary) ... ok
+test_actual_patching_both_modes_and_repeat (test_stage10b1c.Tests.test_actual_patching_both_modes_and_repeat) ... ok
+test_bounded_rows_commands_and_original_assets (test_stage10b1c.Tests.test_bounded_rows_commands_and_original_assets) ... ok
+test_constant_registers_except_two_mode_parameters (test_stage10b1c.Tests.test_constant_registers_except_two_mode_parameters) ... ok
+test_coordinate_models_and_boundaries (test_stage10b1c.Tests.test_coordinate_models_and_boundaries) ... ok
+test_disk_and_independent_release_reproduction (test_stage10b1c.Tests.test_disk_and_independent_release_reproduction) ... ok
+test_register_sample_and_readbacks (test_stage10b1c.Tests.test_register_sample_and_readbacks) ... ok
+test_safe_XIRQ_refusal_and_shadow_restore (test_stage10b1c.Tests.test_safe_XIRQ_refusal_and_shadow_restore) ... ok
+test_sprite_xy_independent_of_H640 (test_stage10b1c.Tests.test_sprite_xy_independent_of_H640) ... ok
+test_A_B_A_replay_does_not_reuse_good_pointer (test_stage10b1d.Tests.test_A_B_A_replay_does_not_reuse_good_pointer) ... ok
+test_D711_debug_bit_is_separate_not_pointer_error (test_stage10b1d.Tests.test_D711_debug_bit_is_separate_not_pointer_error) ... ok
+test_disabled_readback_before_enable_and_other_parameters_constant (test_stage10b1d.Tests.test_disabled_readback_before_enable_and_other_parameters_constant) ... ok
+test_exact_actual_write_orders (test_stage10b1d.Tests.test_exact_actual_write_orders) ... ok
+test_log_overwrite_and_invalid_input (test_stage10b1d.Tests.test_log_overwrite_and_invalid_input) ... ok
+test_natural_stop_and_watchdog_keep_test_responsive (test_stage10b1d.Tests.test_natural_stop_and_watchdog_keep_test_responsive) ... ok
+test_original_sample_crc_dma_and_bounds (test_stage10b1d.Tests.test_original_sample_crc_dma_and_bounds) ... ok
+test_reproducible_release_and_D81 (test_stage10b1d.Tests.test_reproducible_release_and_D81) ... ok
+test_restore_latches_saved_pointer_and_all_mixer_bytes (test_stage10b1d.Tests.test_restore_latches_saved_pointer_and_all_mixer_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 52 tests in 5.631s
+
+OK
+Built 40033 PRG bytes; 819200 D81 bytes; 559 GOTOX patches
+Built 39489 PRG bytes; 819200 D81 bytes; 392d6aa00a7097e5539722a4cbb0cb4b0f909815ed751c3b96b0a92020f573e9

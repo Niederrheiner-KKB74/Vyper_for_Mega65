@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-18",
+  "main_base": "df52834b94a69f3c4909b6748974b20f6e77f598",
+  "validated_code_commit": "636480ea17561fe88a4101e85964111771d379e8",
+  "validated_code_tree": "68ccafe4fbebfbb243013582154e3b68d1e33402",
+  "fresh_checkout": {
+    "single_branch": true,
+    "local_transport_no_shared_objects": true,
+    "old_topic_commits_absent": {
+      "6fd56b3000d56c8c0a6d274d3076de72b62be523": true,
+      "17d329f2ce7f002bd20df3441ec30d564dd64cb3": true,
+      "fd6214c1c6be1adcedea095b0ebd474288a83403": true
+    }
+  },
+  "archived_files_unchanged": 291,
+  "host_tests": {
+    "count": 52,
+    "result": "OK"
+  },
+  "historical_analysis": {
+    "snapshots": 24,
+    "pre_post_pairs": 12,
+    "original_images": 16
+  },
+  "builds": {
+    "stage10b1": {
+      "independent_rebuild_identical": true,
+      "files": {
+        "STAGE10B1.PRG": {
+          "sha256": "e25e80d00ff4ba04cc516f77282f08595308546a315379636c9f34d02446bef6",
+          "equals_historical_release": false
+        },
+        "VYPER_STAGE10B1.d81": {
+          "sha256": "a8c89d604db586c63a65912c939d96902ec5956fb66f00c54d2272fe500adc6c",
+          "equals_historical_release": false
+        }
+      }
+    },
+    "stage10b1a": {
+      "independent_rebuild_identical": true,
+      "files": {
+        "STAGE10B1A.PRG": {
+          "sha256": "af128fb455eb9578a6ae26c378c761161e11ff61abeee59531f6406857f7993e",
+          "equals_historical_release": false
+        },
+        "VYPER_STAGE10B1A.d81": {
+          "sha256": "6d04c850bef2e1a8a9f80d5ac1b5fae6b3901281573e2d72c191d59091087bce",
+          "equals_historical_release": false
+        }
+      }
+    },
+    "stage10b1b": {
+      "independent_rebuild_identical": true,
+      "files": {
+        "STAGE10B1B.PRG": {
+          "sha256": "0f4b0ed5d32de7152686c0d0d128b2c9bed6de3900d10bd0b715b825a87fd9e6",
+          "equals_historical_release": false
+        },
+        "VYPER_STAGE10B1B.d81": {
+          "sha256": "382a121955b56a6e70d6a100b43ee28b7598f8cc36d4fc94f9f7ba9305f3a246",
+          "equals_historical_release": false
+        }
+      }
+    },
+    "stage10b1c": {
+      "independent_rebuild_identical": true,
+      "files": {
+        "STAGE10B1C.PRG": {
+          "sha256": "80dbc5a94e9a30c1869ab4b90dd437e1412b0ac02a0df1c1632e8ba817796108",
+          "equals_historical_release": true
+        },
+        "VYPER_STAGE10B1C.d81": {
+          "sha256": "8e1d261c9226cd17b99341ec992f789e909287611a5c436915e0f0d5c4fd33fe",
+          "equals_historical_release": true
+        }
+      }
+    },
+    "stage10b1d": {
+      "independent_rebuild_identical": true,
+      "files": {
+        "STAGE10B1D.PRG": {
+          "sha256": "b232aaca4f7a636be3b4f7f105438f7afaf2b1a6a6d865c3021e9e497e2a5233",
+          "equals_historical_release": true
+        },
+        "VYPER_STAGE10B1D.d81": {
+          "sha256": "f7120d6373e7ef2c62948dd6ec4003dd770cd06c4b7f82fa4ed621da5bb0b2e6",
+          "equals_historical_release": true
+        }
+      }
+    }
+  },
+  "new_hardware_or_xemu_run": false
+}

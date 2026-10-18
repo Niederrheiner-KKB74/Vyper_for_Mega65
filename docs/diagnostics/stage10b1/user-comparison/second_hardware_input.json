@@ -1,0 +1,31 @@
+{
+  "source": "mega65",
+  "upload": "second hardware D81, user-confirmed provenance",
+  "filename": "VYPER_STAGE10B1_Mega65.d81",
+  "bytes": 819200,
+  "sha256": "223bd473599854923c0d96420fd428f9016b65e8fcd4fd095f79a09b6e5a7d88",
+  "PRG_matches_release": true,
+  "dumps": [
+    {
+      "filename": "V10BSH.DAT",
+      "profile": "S",
+      "environment_label": "H",
+      "sha256": "9299dc8fe1ac347c32c95dfc5d4c9753e3426d56d8b973c9fb5f1cd447e5d04d",
+      "validation": "passed"
+    },
+    {
+      "filename": "V10BSX.DAT",
+      "profile": "S",
+      "environment_label": "X",
+      "sha256": "5a7f3931f7395d8c71ee032bc214eed1f3511a1d6a70d8c0430e08bc638b7393",
+      "validation": "passed"
+    },
+    {
+      "filename": "V10BEX.DAT",
+      "profile": "E",
+      "environment_label": "X",
+      "sha256": "a2d04debeef661e12f580b14600860766a0addaf6c506eecebd860f37a1f258f",
+      "validation": "passed"
+    }
+  ]
+}

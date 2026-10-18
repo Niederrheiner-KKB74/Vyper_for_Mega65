@@ -1,0 +1,1880 @@
+{
+  "magic": "VYDG1B1A",
+  "version": 1,
+  "base": "6fd56b3000d56c8c0a6d274d3076de72b62be523",
+  "registers": [
+    {
+      "address": 53248,
+      "name": "register $D000",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53249,
+      "name": "register $D001",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53250,
+      "name": "register $D002",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53251,
+      "name": "register $D003",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53252,
+      "name": "register $D004",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53253,
+      "name": "register $D005",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53254,
+      "name": "register $D006",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53255,
+      "name": "register $D007",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53256,
+      "name": "register $D008",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53257,
+      "name": "register $D009",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53258,
+      "name": "register $D00A",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53259,
+      "name": "register $D00B",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53260,
+      "name": "register $D00C",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53261,
+      "name": "register $D00D",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53262,
+      "name": "register $D00E",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53263,
+      "name": "register $D00F",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53264,
+      "name": "register $D010",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53265,
+      "name": "register $D011",
+      "compare_mask": 127,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53266,
+      "name": "register $D012",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53267,
+      "name": "register $D013",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53268,
+      "name": "register $D014",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53269,
+      "name": "register $D015",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53270,
+      "name": "register $D016",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53271,
+      "name": "register $D017",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53272,
+      "name": "register $D018",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53273,
+      "name": "register $D019",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53274,
+      "name": "register $D01A",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53275,
+      "name": "register $D01B",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53276,
+      "name": "register $D01C",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53277,
+      "name": "register $D01D",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53280,
+      "name": "register $D020",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53281,
+      "name": "register $D021",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53282,
+      "name": "register $D022",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53283,
+      "name": "register $D023",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53284,
+      "name": "register $D024",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53285,
+      "name": "register $D025",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53286,
+      "name": "register $D026",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53287,
+      "name": "register $D027",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53288,
+      "name": "register $D028",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53289,
+      "name": "register $D029",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53290,
+      "name": "register $D02A",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53291,
+      "name": "register $D02B",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53292,
+      "name": "register $D02C",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53293,
+      "name": "register $D02D",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53294,
+      "name": "register $D02E",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53296,
+      "name": "ROM/RAM/CRAM2K",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53297,
+      "name": "H640 FAST ATTR BPM V400 H1280 MONO INT",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53298,
+      "name": "register $D032",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53299,
+      "name": "register $D033",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53300,
+      "name": "register $D034",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53301,
+      "name": "register $D035",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53302,
+      "name": "register $D036",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53303,
+      "name": "register $D037",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53304,
+      "name": "register $D038",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53305,
+      "name": "register $D039",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53306,
+      "name": "register $D03A",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53307,
+      "name": "register $D03B",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53308,
+      "name": "register $D03C",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53309,
+      "name": "register $D03D",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53310,
+      "name": "register $D03E",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53311,
+      "name": "register $D03F",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53312,
+      "name": "register $D040",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53313,
+      "name": "register $D041",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53314,
+      "name": "register $D042",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53315,
+      "name": "register $D043",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53316,
+      "name": "register $D044",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53317,
+      "name": "register $D045",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53318,
+      "name": "register $D046",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53319,
+      "name": "register $D047",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53320,
+      "name": "border top low",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53321,
+      "name": "border top high / bitplanes",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53322,
+      "name": "border bottom low",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53323,
+      "name": "border bottom high / bitplanes",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53324,
+      "name": "CHARX low",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53325,
+      "name": "CHARX high / sprite tiles",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53326,
+      "name": "CHARY low",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53327,
+      "name": "CHARY high / sprite tiles",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53328,
+      "name": "horizontal raster low",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53329,
+      "name": "horizontal raster high / DBLRR NORRDEL",
+      "compare_mask": 192,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53330,
+      "name": "physical raster low",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53331,
+      "name": "physical raster high / output controls",
+      "compare_mask": 224,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53332,
+      "name": "ALPHEN VFAST PALEMU SPRH640 SMTH FCLRHI FCLRLO CHR16",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53333,
+      "name": "sprite variable height enable",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53334,
+      "name": "sprite variable height",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53335,
+      "name": "sprite 64 width enable",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53336,
+      "name": "LINESTEP low",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53337,
+      "name": "LINESTEP high",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53338,
+      "name": "CHRXSCL source pixels /120",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53339,
+      "name": "CHRYSCL physical rasters minus1",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53340,
+      "name": "side border low",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53341,
+      "name": "HOTREG raster delay side border high",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53342,
+      "name": "CHRCOUNT low",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53343,
+      "name": "sprite X bit9",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53344,
+      "name": "register $D060",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53345,
+      "name": "register $D061",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53346,
+      "name": "register $D062",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53347,
+      "name": "screen high / count high / FCM / hyperram",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53348,
+      "name": "colour offset low",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53349,
+      "name": "colour offset high",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53350,
+      "name": "register $D066",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53351,
+      "name": "register $D067",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53352,
+      "name": "CHARPTR low",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53353,
+      "name": "CHARPTR middle",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53354,
+      "name": "CHARPTR high",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53355,
+      "name": "FCM sprites enable",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53356,
+      "name": "sprite pointer low",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53357,
+      "name": "sprite pointer middle",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53358,
+      "name": "sprite pointer high /16bit enable",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53359,
+      "name": "PAL/NTSC RASLINE0 output timing",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53360,
+      "name": "palette banks",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53361,
+      "name": "register $D071",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53362,
+      "name": "register $D072",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53363,
+      "name": "register $D073",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53364,
+      "name": "register $D074",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53365,
+      "name": "register $D075",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53366,
+      "name": "sprite V400 enable",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53367,
+      "name": "sprite Y bit8",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53368,
+      "name": "sprite Y bit9",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53369,
+      "name": "raster compare low",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53370,
+      "name": "raster compare high / CHARY16 / mode",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53371,
+      "name": "display last row index",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53372,
+      "name": "bitplane bank / sync / debug controls",
+      "compare_mask": 63,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53373,
+      "name": "register $D07D",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53374,
+      "name": "register $D07E",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53375,
+      "name": "register $D07F",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 53391,
+      "name": "HWERRATA opt-in level (read only in this test)",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55040,
+      "name": "register $D700",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55041,
+      "name": "register $D701",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55042,
+      "name": "register $D702",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55043,
+      "name": "register $D703",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55044,
+      "name": "register $D704",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55045,
+      "name": "register $D705",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55046,
+      "name": "register $D706",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55047,
+      "name": "register $D707",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55048,
+      "name": "register $D708",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55049,
+      "name": "register $D709",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55050,
+      "name": "register $D70A",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55051,
+      "name": "register $D70B",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55052,
+      "name": "register $D70C",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55053,
+      "name": "register $D70D",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55054,
+      "name": "register $D70E",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55055,
+      "name": "register $D70F",
+      "compare_mask": 0,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55068,
+      "name": "register $D71C",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55072,
+      "name": "register $D720",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 55104,
+      "name": "register $D740",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 56576,
+      "name": "register $DD00",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 56578,
+      "name": "register $DD02",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 56334,
+      "name": "register $DC0E",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 56335,
+      "name": "register $DC0F",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 54825,
+      "name": "register $D629",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 54826,
+      "name": "register $D62A",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 54827,
+      "name": "register $D62B",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 54828,
+      "name": "register $D62C",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 54829,
+      "name": "register $D62D",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 54830,
+      "name": "register $D62E",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 54831,
+      "name": "register $D62F",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 54832,
+      "name": "register $D630",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 54833,
+      "name": "register $D631",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 54834,
+      "name": "register $D632",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 54835,
+      "name": "register $D633",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 54836,
+      "name": "register $D634",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "address": 54837,
+      "name": "register $D635",
+      "compare_mask": 255,
+      "phase_order": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "block_size": 490,
+  "dump_size": 1992,
+  "buffer": 18432,
+  "checksum": "sum16 excluding bytes28/29",
+  "target_core": "aaf4542d02679271b5fb84ad933cc39bbe091c3f",
+  "target_xemu_release": "20260129235930",
+  "initial_conditions": "same ROM, PAL80x25; user confirmed",
+  "automatic_identity": "raw D629..D635 only; target versions are NOT detected versions",
+  "variant_marker": {
+    "physical_address": 57388,
+    "region": "screen",
+    "offset": 44,
+    "values": {
+      "A": 1,
+      "B": 2
+    }
+  },
+  "baseline_profile": "E: PALEMU0 DBLRR0",
+  "memory": {
+    "magic": "VYMM1B1A",
+    "version": 1,
+    "buffer": 327680,
+    "size": 36292,
+    "header_size": 256,
+    "regions": [
+      {
+        "name": "screen",
+        "address": 57344,
+        "offset": 256,
+        "length": 4800
+      },
+      {
+        "name": "colour",
+        "address": 267911168,
+        "offset": 5056,
+        "length": 4800
+      },
+      {
+        "name": "font",
+        "address": 16384,
+        "offset": 9856,
+        "length": 2048
+      },
+      {
+        "name": "grid",
+        "address": 98304,
+        "offset": 11904,
+        "length": 24000
+      },
+      {
+        "name": "pixie",
+        "address": 36928,
+        "offset": 35904,
+        "length": 128
+      },
+      {
+        "name": "sprites",
+        "address": 37376,
+        "offset": 36032,
+        "length": 128
+      },
+      {
+        "name": "pointers",
+        "address": 37632,
+        "offset": 36160,
+        "length": 4
+      },
+      {
+        "name": "guards",
+        "address": 32768,
+        "offset": 36164,
+        "length": 64
+      },
+      {
+        "name": "guard2",
+        "address": 37056,
+        "offset": 36228,
+        "length": 64
+      }
+    ],
+    "checksum": "sum16 excluding28/29",
+    "variant_marker": {
+      "physical_address": 57388,
+      "region": "screen",
+      "offset": 44,
+      "values": {
+        "A": 1,
+        "B": 2
+      }
+    }
+  }
+}

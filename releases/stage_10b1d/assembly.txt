@@ -1,0 +1,26 @@
+//------------------------------------------------------
+//------------------------------------------------------
+//         Kick Assembler v5.25 by Mads Nielsen
+//------------------------------------------------------
+//------------------------------------------------------
+Output dir: .
+parsing
+flex pass 1
+flex pass 2
+Output pass
+  Sample stays within one 64KiB bank=true (true)
+  Code must stay below4000=true (true)
+Writing prg file: ./STAGE10B1D.PRG
+
+Memory Map
+----------
+Default-segment:
+  $2001-$200c BASIC
+  $2100-$2cb6 Audio latch controller
+  $5000-$581f Versioned64-record RAM log, persists after X
+  $6000-$7a3f DMA readback for sample CRC
+  $a000-$ba3f Unmodified original Amiga sound17
+
+
+Made 2 asserts , 0 failed
+Writing Symbol file: stage10b1d.sym

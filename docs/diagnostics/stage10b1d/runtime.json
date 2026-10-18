@@ -1,0 +1,63 @@
+{
+  "kind": "supplemental local headless XEMU controller/data test",
+  "local_xemu_commit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+  "patch": "tools/diagnostics/stage10a1_xemu_trace.patch (~key)",
+  "ROM": "V920413 PAL80x25",
+  "D81_sha256": "f7120d6373e7ef2c62948dd6ec4003dd770cd06c4b7f82fa4ed621da5bb0b2e6",
+  "original_sample_SHA256": "392d6aa00a7097e5539722a4cbb0cb4b0f909815ed751c3b96b0a92020f573e9",
+  "sample_DMA_readback_and_CRC": true,
+  "cases": [
+    {
+      "case": "A1",
+      "attempt": 1,
+      "variant": "A",
+      "seed_current": 98336,
+      "latched_current": 91264,
+      "software_error": 0,
+      "completion_current": 97984,
+      "natural_one_shot_completion": true,
+      "sound_heard": "NOT_TESTED dummy SDL"
+    },
+    {
+      "case": "B",
+      "attempt": 2,
+      "variant": "B",
+      "seed_current": 98336,
+      "latched_current": 91264,
+      "software_error": 0,
+      "completion_current": 97984,
+      "natural_one_shot_completion": true,
+      "sound_heard": "NOT_TESTED dummy SDL"
+    },
+    {
+      "case": "A2",
+      "attempt": 3,
+      "variant": "A",
+      "seed_current": 98336,
+      "latched_current": 91264,
+      "software_error": 0,
+      "completion_current": 97984,
+      "natural_one_shot_completion": true,
+      "sound_heard": "NOT_TESTED dummy SDL"
+    },
+    {
+      "case": "A_replay",
+      "attempt": 4,
+      "variant": "A",
+      "seed_current": 98336,
+      "latched_current": 91264,
+      "software_error": 0,
+      "completion_current": 97984,
+      "natural_one_shot_completion": true,
+      "sound_heard": "NOT_TESTED dummy SDL"
+    }
+  ],
+  "D711_read_only_observation": true,
+  "mixer_channel_pointer_global_VIC_mailbox_restore": true,
+  "repeated_RUN": true,
+  "BASIC_DIRECTORY": true,
+  "hardware": "NOT_RUN",
+  "exact_target_xemu_release": "NOT_RUN",
+  "hearing": "NOT_RUN",
+  "timing": "UART pauses and SDL scheduling invalidate hardware duration/latency claims"
+}

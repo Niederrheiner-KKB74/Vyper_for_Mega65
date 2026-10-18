@@ -1,0 +1,3 @@
+.const SAMPLE_BYTES=6720
+.const SAMPLE_RATE=$00101f
+.const SAMPLE_CRC=$7f6f

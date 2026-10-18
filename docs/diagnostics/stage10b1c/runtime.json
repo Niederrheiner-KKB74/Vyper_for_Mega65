@@ -1,0 +1,124 @@
+{
+  "kind": "supplemental local headless XEMU RAM/control regression",
+  "local_xemu_commit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+  "local_patch": "tools/diagnostics/stage10a1_xemu_trace.patch (~key monitor input)",
+  "ROM": "V920413 PAL80x25",
+  "D81_sha256": "8e1d261c9226cd17b99341ec992f789e909287611a5c436915e0f0d5c4fd33fe",
+  "cases": [
+    {
+      "case": "A_initial",
+      "mode": "A",
+      "rebuild_sequence": 1,
+      "register_config_valid": true,
+      "screen_colour_extra_row_font_original_pixie_grid_exact": true,
+      "all_palette_banks_unchanged": true,
+      "sprite_coordinates": [
+        {
+          "X": 301,
+          "Y": 424
+        },
+        {
+          "X": 525,
+          "Y": 456
+        }
+      ]
+    },
+    {
+      "case": "B",
+      "mode": "B",
+      "rebuild_sequence": 2,
+      "register_config_valid": true,
+      "screen_colour_extra_row_font_original_pixie_grid_exact": true,
+      "all_palette_banks_unchanged": true,
+      "sprite_coordinates": [
+        {
+          "X": 301,
+          "Y": 424
+        },
+        {
+          "X": 525,
+          "Y": 456
+        }
+      ]
+    },
+    {
+      "case": "A_returned",
+      "mode": "A",
+      "rebuild_sequence": 3,
+      "register_config_valid": true,
+      "screen_colour_extra_row_font_original_pixie_grid_exact": true,
+      "all_palette_banks_unchanged": true,
+      "sprite_coordinates": [
+        {
+          "X": 301,
+          "Y": 424
+        },
+        {
+          "X": 525,
+          "Y": 456
+        }
+      ]
+    },
+    {
+      "case": "B_repeated",
+      "mode": "B",
+      "rebuild_sequence": 4,
+      "register_config_valid": true,
+      "screen_colour_extra_row_font_original_pixie_grid_exact": true,
+      "all_palette_banks_unchanged": true,
+      "sprite_coordinates": [
+        {
+          "X": 301,
+          "Y": 424
+        },
+        {
+          "X": 525,
+          "Y": 456
+        }
+      ]
+    },
+    {
+      "case": "B_rebuilt",
+      "mode": "B",
+      "rebuild_sequence": 5,
+      "register_config_valid": true,
+      "screen_colour_extra_row_font_original_pixie_grid_exact": true,
+      "all_palette_banks_unchanged": true,
+      "sprite_coordinates": [
+        {
+          "X": 301,
+          "Y": 424
+        },
+        {
+          "X": 525,
+          "Y": 456
+        }
+      ]
+    },
+    {
+      "case": "B_sample_only",
+      "mode": "B",
+      "rebuild_sequence": 5,
+      "register_config_valid": true,
+      "screen_colour_extra_row_font_original_pixie_grid_exact": true,
+      "all_palette_banks_unchanged": true,
+      "sprite_coordinates": [
+        {
+          "X": 301,
+          "Y": 424
+        },
+        {
+          "X": 525,
+          "Y": 456
+        }
+      ]
+    }
+  ],
+  "restore": "full Colour32768, palette3072, mode/geometry/D051 controls/IRQmask verified before BASIC resumes",
+  "repeated_RUN": true,
+  "BASIC_DIRECTORY": "                     i                                                                            i       THE MEGA65 PERSONAL COMPUTER SYSTEM                                  i                                                                            i        (C) 2021 MEGA, 1991 COMMODORE, 1977 MICROSOFT                        i                                                                             i                BASIC 65 V920413 17-OCT-2026 11:02:01                                                                                                  READY.                                                                           RUN\"*\"                                                                                                                                                         LOADING 0:*                                                                                                                                                     READY.                                                                          RUN                                                                                                                                                             READY.                                                                          DIRECTORY                                                                          0 \"VYPER 10B1C TEST\" 3B 3D                                                    158 \"STAGE10B1C\"       PRG                                                     3002 BLOCKS FREE                                                                                                                                                READY.                                                                                                                                                                                                                                                                                                                          ",
+  "hardware": "NOT_RUN",
+  "exact_target_xemu_release": "NOT_RUN",
+  "visual_acceptance": "NOT_RUN",
+  "timing": "UART pauses invalidate wall/raster timing claims; no fabricated cycle measurements"
+}
