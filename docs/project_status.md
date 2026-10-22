@@ -937,3 +937,15 @@ durch NOP-Auffüllung identisch zu Stage10a2.
 [Technik und Abnahme](stage10a3_formation_and_explosion_colours.md).
 PRG/D81 unter `releases/stage_10a/stage10a3/`; PRG unterscheidet sich nur in den
 beiden geänderten Routinen. **Kein Stable, kein Merge vor Hardwareabnahme.**
+
+## Stage10a4 – Respawn wie im Original, entprellter Feuerknopf (Entwicklungsstand)
+
+Basis Stage10a3 (vom Benutzer 22.10.2026 im Spielverhalten bestätigt), Branch
+`stage10a4`. Amiga-Beleg (`$C094AE`, `$C095D8`, `$C0D0A2`, `$C0D17E`): 276 Updates
+Schutz ab Treffer, Umschalten alle 20 Updates, kein Feuer, keine neuen Angriffe.
+Portiert: kein Warten auf die Formation, sofortiges Blinken an der Trefferposition,
+21+255 Frames, Blinken alle 20 Frames, Feuer und neue Angriffe gesperrt; Zweispieler-
+Zugstart unverändert (150 Frames, Feuer erlaubt). Feuer erst nach zwei losgelassenen
+Frames erneut. Kein Symbol verschoben, Daten byteidentisch; 8 Hosttests bestanden.
+[Technik, Belege und Abnahme](stage10a4_respawn_and_fire_debounce.md).
+**Kein Stable, kein Merge vor Hardwareabnahme.**
