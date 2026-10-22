@@ -935,4 +935,5 @@ Einflugs (Limits 3/100/30 unverändert). Gegnerexplosionen in privaten Pixiepuff
 nutzen die Levelpalette (`$10`), die Player-Explosion bleibt grau. Alle Adressen
 durch NOP-Auffüllung identisch zu Stage10a2.
 [Technik und Abnahme](stage10a3_formation_and_explosion_colours.md).
-**Noch nicht assembliert; kein Stable, kein Merge vor Hardwareabnahme.**
+PRG/D81 unter `releases/stage_10a/stage10a3/`; PRG unterscheidet sich nur in den
+beiden geänderten Routinen. **Kein Stable, kein Merge vor Hardwareabnahme.**

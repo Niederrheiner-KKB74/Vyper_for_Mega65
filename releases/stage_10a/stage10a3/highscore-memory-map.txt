@@ -1,0 +1,16 @@
+Memory Map
+----------
+Default-segment:
+  $2001-$200c BASIC SYS8448
+  $2100-$25e1 Standalone highscore controller
+  $3100-$31c3 Original COLOR02 cycle and private state
+  $3200-$3357 Private registers, palette and animation state
+  $3600-$3ad7 Highscore private state and UI constants
+  $4000-$47cf Four deterministic highscore pages
+  $4800-$4a4f VYHI live packet and transaction buffers
+  $4b00-$4d4f Unnamed
+  $4e00-$504f Unnamed
+  $5100-$5462 Native KERNAL SEQ and recoverable disk transaction
+  $5500-$58da Nonpersistent decimal score cache
+  $6000-$67ff Colour plane and private frame tiles
+  $8800-$92fe Highscore management, validation and input

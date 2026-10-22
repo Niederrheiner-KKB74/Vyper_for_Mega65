@@ -54,10 +54,33 @@ keinen Aufrufer; direkte Explosionsglyphs werden nur für den Player gezeichnet.
 Stage10a2 (30 bzw. 16 entfernte Bytes ersetzt). Alle nachfolgenden Adressen
 bleiben gleich.
 
+## Build und Prüfung
+
+Assembliert mit dem vom Benutzer bereitgestellten `KickAss65CE02-5.25.jar`
+(SHA256 `5d8544280dae…f847`). Seine Prüfsumme weicht vom gepinnten
+KickAssembler 5.25 ab; deshalb wurde zuerst Stage10a2 mit diesem Jar neu gebaut:
+`STAGE10A2.PRG`, `HIGHSCORE.PRG`, `MENU_OVERLAY.PRG`, `AUDIO_CORE.PRG`, alle
+gepackten DAT-Dateien und `VYPER_STAGE10A2.d81` sind byteidentisch zum
+eingecheckten Release. Das Jar ist für dieses Projekt also gleichwertig.
+
+```
+python3 tools/build_stage10a3.py --kickass <KickAss.jar 5.25> --zx0 <zx0>
+```
+
+Mit dem 65CE02-Jar muss der SHA-Pin (`build_stage3b1.KICKASS_SHA256`) beim
+Aufruf auf dessen Prüfsumme gesetzt werden; Quellen und Skript bleiben gleich.
+
+Ergebnis gegenüber Stage10a2:
+
+- `STAGE10A3.PRG` gleich lang (45.057 Byte), Unterschiede nur in
+  `$4F5F–$4F77` (Formationsbarriere) und `$6C92–$6CB3` (`glyph_colour`).
+- Einziges verschobenes Symbol: das routineninterne Label `enemy`.
+- Alle neun DAT-Dateien, Menü-Overlay und Audio-Core byteidentisch.
+- `STAGE10A3.PRG` SHA256 `1b1101736b0c…0cfb`,
+  `VYPER_STAGE10A3.d81` SHA256 `e6b74fb1c98f…2682`.
+
 ## Offen / Abnahme
 
-- Assembly und D81 stehen noch aus (KickAssembler 5.25 in dieser Umgebung
-  nicht verfügbar). Build: `python3 tools/build_stage10a3.py --kickass <KickAss.jar> --zx0 <zx0>`.
 - Abnahme auf echter Hardware (Regel19): Pendelbeginn bei erster Ankunft,
   Angriffe während langer Einflüge, Gegnerexplosion in Levelfarben in
   mehreren Levels, Player-Explosion weiterhin grau.
