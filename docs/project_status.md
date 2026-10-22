@@ -925,3 +925,14 @@ zentriert im unteren Drittel, mit exakt dem Gegner-Highlight-Cycling. Gameplay i
 bis zum Ende gesperrt, Sterne und Streaming laufen weiter. R/+/- zählen ihren
 bereits laufenden Eingabeframe nicht mit. Frühere HUD-/BASIC-Exit-Fixes bleiben.
 Keine Stable-Markierung und kein Merge vor erneuter Nutzerabnahme.
+
+## Stage10a3 – Formationsstart, Angriffe im Einflug, Explosionsfarben (Entwicklungsstand)
+
+Basis Stage10a2 (main 475355c), separater Branch `stage10a3`. Nach Benutzervergleich
+mit dem Original: Pendeln und Angriffs-Countdown starten, sobald der erste lebende
+Gegner seinen Formationsplatz erreicht hat; Angriffe laufen damit schon während des
+Einflugs (Limits 3/100/30 unverändert). Gegnerexplosionen in privaten Pixiepuffern
+nutzen die Levelpalette (`$10`), die Player-Explosion bleibt grau. Alle Adressen
+durch NOP-Auffüllung identisch zu Stage10a2.
+[Technik und Abnahme](stage10a3_formation_and_explosion_colours.md).
+**Noch nicht assembliert; kein Stable, kein Merge vor Hardwareabnahme.**
