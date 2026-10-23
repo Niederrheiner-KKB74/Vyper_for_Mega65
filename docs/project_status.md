@@ -960,4 +960,5 @@ F2-Zugwechsel unverändert. Kein Engine-Symbol verschoben; 10 Hosttests bestande
 [Technik und Abnahme](stage10a5_input_debounce_and_first_transition.md).
 Vom Benutzer am 23.10.2026 getestet: „Das Spiel entspricht praktisch zu 100% dem
 Original.“ Damit sind auch Stage10a3 und Stage10a4 inhaltlich bestätigt.
-**Stable-Markierung und Merge nach `main` erst nach ausdrücklicher Freigabe.**
+**Stable:** vom Benutzer am 23.10.2026 freigegeben; Referenz `stage10a5-stable`
+(Programmcommit `2355760`), per PR nach `main` gemergt.

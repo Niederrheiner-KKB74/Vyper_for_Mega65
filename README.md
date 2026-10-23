@@ -103,3 +103,14 @@ unverändert. Start: `LOAD "STAGE10A2",8`, `RUN`.
 [Format, Speicherlage, Prüfungen und Build](docs/stage10a2_packed_loading.md).
 Auf Hardware gemessen: 21 s bis zum Startbildschirm (vorher 22 s); vom Benutzer
 wegen der Platzersparnis für `main` freigegeben.
+
+## Stage 10a5 (Stable)
+
+Aktueller bestätigter Gesamtstand: Formationsstart und Angriffe während des Einflugs,
+Gegnerexplosionen in Levelfarben (10a3), Respawn wie im Original mit entprelltem
+Feuer (10a4), entprellte Menü-/Highscore-Bedienung und Levelübergang vor dem ersten
+Level (10a5). Vom Benutzer auf echter Hardware als praktisch originalgetreu bestätigt.
+[D81](releases/stage_10a/stage10a5/VYPER_STAGE10A5.d81),
+[Technik](docs/stage10a5_input_debounce_and_first_transition.md).
+Start: `LOAD "STAGE10A5",8`, `RUN`. Referenz: `stage10a5-stable`.
+
