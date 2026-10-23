@@ -1,10 +1,20 @@
 # Projektstand – 2026-10-10
 
-## Stage10a6 – Angriffssperre aufgehoben (PR-Vorschlag, 23.10.2026)
+## Stage10a6 Stable – Hardware-Bestätigung vom 23.10.2026
+
+Der Benutzer bestätigt: „Der Build ist auch auf echter Hardware geprüft und
+lauffähig.“ Anschließend ausdrücklich als Stable freigegeben. Referenz
+`stage10a6-stable` auf dem geprüften Stand
+`9b9d77169aa35db1ab72476ddfc96120a16a8cdc`; PR103 wurde als
+`cb98e2e796d6bc5c9da54fef5a14fd0389da8acf` in main integriert.
 
 Separate Ableitung von Stage10a5 Stable: Angriffe in Level25/50/99/100
-freigeschaltet. Originaldaten und zyklischer Decoder unverändert; noch keine
-Hardware-Abnahme. Details: [Stage10a6](stage10a6_special_level_attacks.md).
+freigeschaltet. Originaldaten und zyklischer Decoder unverändert.
+Regulärer Quellbuild, 14 Stage10a6-Hosttests und 10 Stage10a5-Tests bestanden.
+Hardware-Bestätigung stammt vom Benutzer; Core-/ROM-Version und einzelne
+Testszenarien wurden für diese Abnahme nicht gesondert angegeben.
+Quellen und Release sind durch AGENTS-Regel21 geschützt.
+Details: [Stage10a6](stage10a6_special_level_attacks.md).
 
 ## Diagnosekonsolidierung – Entwurf vom18.10.2026
 

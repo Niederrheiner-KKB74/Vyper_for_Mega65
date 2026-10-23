@@ -86,3 +86,15 @@
     unverändert schützen. Build mit `KickAss65CE02-5.25.jar` (Gleichwertigkeit in
     `docs/stage10a3_formation_and_explosion_colours.md` belegt). Neue Entwicklung
     in separaten Stages.
+
+21. **Stage10a6 Stable:** Vom Benutzer am 23.10.2026 auf echter MEGA65-Hardware
+    als geprüft und lauffähig bestätigt und anschließend als Stable freigegeben.
+    Referenz `stage10a6-stable`, getesteter Stand
+    `9b9d77169aa35db1ab72476ddfc96120a16a8cdc`, über PR103 in main integriert
+    (Merge `cb98e2e796d6bc5c9da54fef5a14fd0389da8acf`). Angriffe in
+    Level25/50/99/100 freigeschaltet; Stage10a5 bleibt geschützt.
+    `src/engine/stage10a6*.asm`, `src/tests/stage10a6*.asm`,
+    `tools/build_stage10a6.py` und `releases/stage_10a/stage10a6/`
+    unverändert schützen. Neue Entwicklung separat vom Stable-Tag ableiten.
+    Regulärer Build: gepinnter KickAssembler5.25 und ZX0-v2-Kompressor;
+    Reproduktion und Belege in `docs/stage10a6_special_level_attacks.md`.

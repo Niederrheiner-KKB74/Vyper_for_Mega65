@@ -37,10 +37,18 @@ python -m unittest discover -s tests -p "test_stage10a6*.py" -v
 Tests benötigen py65==1.2.0. Auslieferung unter `releases/stage_10a/stage10a6/`:
 PRG, D81, ASM, Symbole, Buildbericht und SHA256SUMS.txt.
 
-## Hardware-Abnahme offen
+## Hardware-Abnahme und Stable
 
-Hosttests sind kein XEMU-/Hardwaretest. Alle vier Level prüfen: Start aus
-Formation, senkrechter Flug, Schüsse/Sound, Rückkehr von oben, höchstens drei
-Angreifer, keine neuen Starts im Todes-/Respawnfenster sowie Levelwechsel
-25 auf 26, 50 auf 51, 99 auf 100 und bisheriges Verhalten nach Level100.
-Noch nicht Stable; Merge erst nach Benutzerfreigabe.
+Am 23.10.2026 hat der Benutzer den Build auf echter Hardware als geprüft und
+lauffähig bestätigt und anschließend die Stable-Sicherung beauftragt.
+Tag `stage10a6-stable` zeigt auf `9b9d77169aa35db1ab72476ddfc96120a16a8cdc`.
+PR103 ist über Merge `cb98e2e796d6bc5c9da54fef5a14fd0389da8acf` integriert.
+Core-/ROM-Version und eine Einzelprotokollierung der Testszenarien wurden
+für diese Bestätigung nicht angegeben. Die Hostbelege dokumentieren weiterhin
+den damaligen Stand vor der Hardware-Abnahme; Release-Dateien bleiben unverändert.
+
+Die ursprünglichen Hardware-Prüfpunkte waren: Start aus Formation, senkrechter
+Flug, Schüsse/Sound, Rückkehr von oben, höchstens drei Angreifer, keine neuen
+Starts im Todes-/Respawnfenster sowie die Levelwechsel 25 auf 26, 50 auf 51,
+99 auf 100 und das bisherige Verhalten nach Level100. Aus der allgemeinen
+Bestätigung wird kein separates Ergebnis pro Prüfpunkt abgeleitet.
