@@ -756,3 +756,12 @@ HUD-Präfixe, Sternbitmap18000..1DDBF, Paletten und Audio-ABI unverändert.
 | `$7F72–$7FF2` | Blink-Tick, Feuerzustand, Angriffssperre, entprellte Feuerabfrage; reserviertes Ende des Kollisionsbox-Segments (Grenze `$8000`) |
 
 Alle übrigen Adressen und Symbole identisch zu Stage10a3.
+
+## Stage10a5 – Erster Levelübergang
+
+| Bereich | Verwendung |
+|---|---|
+| `$75B0–$75E3` | `first_ready`/`first_start`/`first_finish`, Flag `first_pending`; unterhalb `LEVELCOPY=$7600`, Segmentgrenze geprüft |
+
+Menü- (`$7000–$9FFF`) und Highscore-Overlay (`$2100–`) intern neu angeordnet,
+Einsprünge unverändert. Alle Engine-Symbole identisch zu Stage10a4.

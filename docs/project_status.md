@@ -949,3 +949,13 @@ Zugstart unverändert (150 Frames, Feuer erlaubt). Feuer erst nach zwei losgelas
 Frames erneut. Kein Symbol verschoben, Daten byteidentisch; 8 Hosttests bestanden.
 [Technik, Belege und Abnahme](stage10a4_respawn_and_fire_debounce.md).
 **Kein Stable, kein Merge vor Hardwareabnahme.**
+
+## Stage10a5 – Entprellung Menü/Highscore, Übergang vor dem ersten Level (Entwicklungsstand)
+
+Basis Stage10a4 (vom Benutzer 23.10.2026 bestätigt), Branch `stage10a5`.
+Highscore-Tabelle fragt den Joystick nur noch einmal pro Frame ab und verlangt zwei
+losgelassene Frames vor dem Verlassen; Menüfreigabe und Menüfeuer ebenfalls zwei
+Frames. Neues Spiel startet mit Levelübergang inklusive Sound, dann Get ready;
+F2-Zugwechsel unverändert. Kein Engine-Symbol verschoben; 10 Hosttests bestanden.
+[Technik und Abnahme](stage10a5_input_debounce_and_first_transition.md).
+**Kein Stable, kein Merge vor Hardwareabnahme.**
