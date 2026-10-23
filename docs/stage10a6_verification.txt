@@ -1,0 +1,25 @@
+14 Stage10a6 host tests passed; 10 Stage10a5 baseline tests passed.
+PRG: 45057 bytes, exactly 24 changed bytes at 0x619d..0x61b4.
+All engine symbols identical. Nine DAT files, menu, audio core and highscore overlay byte-identical to Stage10a5.
+Full source assembly, packed round trips, disk chains and release SHA256 manifest verified.
+Host CPU model stubs DMA and audio/shot event services; no XEMU or hardware run.
+test_all_100_headers_enable_attacks (test_stage10a6.SpecialAttacks.test_all_100_headers_enable_attacks) ... ok
+test_all_88_actors_exact_points_bottom_and_return (test_stage10a6.SpecialAttacks.test_all_88_actors_exact_points_bottom_and_return) ... ok
+test_respawn_and_transition_still_block_new_starts (test_stage10a6.SpecialAttacks.test_respawn_and_transition_still_block_new_starts) ... ok
+test_scheduler_starts_without_bypassing_ban_then_caps_at_three (test_stage10a6.SpecialAttacks.test_scheduler_starts_without_bypassing_ban_then_caps_at_three) ... ok
+test_finish_jumps_to_first_finish (test_stage10a6_presentation.FirstLevelTests.test_finish_jumps_to_first_finish) ... ok
+test_new_game_plays_transition_for_the_selected_level (test_stage10a6_presentation.FirstLevelTests.test_new_game_plays_transition_for_the_selected_level) ... ok
+test_two_player_resume_keeps_direct_get_ready (test_stage10a6_presentation.FirstLevelTests.test_two_player_resume_keeps_direct_get_ready) ... ok
+test_arriving_with_fire_held_and_bounce (test_stage10a6_presentation.HighscoreTests.test_arriving_with_fire_held_and_bounce) ... ok
+test_loop_no_longer_reads_fire (test_stage10a6_presentation.HighscoreTests.test_loop_no_longer_reads_fire) ... ok
+test_two_released_frames_then_press_exits (test_stage10a6_presentation.HighscoreTests.test_two_released_frames_then_press_exits) ... ok
+test_bounce_after_arming_is_ignored (test_stage10a6_presentation.MenuTests.test_bounce_after_arming_is_ignored) ... ok
+test_held_fire_from_highscore_never_confirms (test_stage10a6_presentation.MenuTests.test_held_fire_from_highscore_never_confirms) ... ok
+test_single_released_frame_does_not_arm (test_stage10a6_presentation.MenuTests.test_single_released_frame_does_not_arm) ... ok
+test_two_released_frames_arm_and_two_more_rearm_fire (test_stage10a6_presentation.MenuTests.test_two_released_frames_arm_and_two_more_rearm_fire) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.880s
+
+OK
+Exact assembled trajectories (level, actors, min/max points): [(25, 22, 179, 200), (50, 22, 179, 200), (99, 22, 23, 34), (100, 22, 20, 29)]

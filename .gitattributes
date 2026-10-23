@@ -4,3 +4,8 @@ releases/stage_10b1*/*.bin binary
 docs/diagnostics/** linguist-generated=true
 releases/stage_10b1*/** linguist-generated=true
 docs/diagnostic_consolidation/sources.json linguist-generated=true
+
+# Preserve Stage10a6 release bytes and its SHA256 manifest on every platform.
+releases/stage_10a/stage10a6/** -text
+releases/stage_10a/stage10a6/**/*.bin binary
+releases/stage_10a/stage10a6/*.bin binary

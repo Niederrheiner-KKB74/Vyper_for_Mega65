@@ -1,5 +1,11 @@
 # Projektstand – 2026-10-10
 
+## Stage10a6 – Angriffssperre aufgehoben (PR-Vorschlag, 23.10.2026)
+
+Separate Ableitung von Stage10a5 Stable: Angriffe in Level25/50/99/100
+freigeschaltet. Originaldaten und zyklischer Decoder unverändert; noch keine
+Hardware-Abnahme. Details: [Stage10a6](stage10a6_special_level_attacks.md).
+
 ## Diagnosekonsolidierung – Entwurf vom18.10.2026
 
 Stage10a1-HW2 einschließlich AGENTS-Regel19 ist über PR99 nach main gemergt
