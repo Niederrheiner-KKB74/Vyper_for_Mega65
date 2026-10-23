@@ -958,4 +958,6 @@ losgelassene Frames vor dem Verlassen; Menüfreigabe und Menüfeuer ebenfalls zw
 Frames. Neues Spiel startet mit Levelübergang inklusive Sound, dann Get ready;
 F2-Zugwechsel unverändert. Kein Engine-Symbol verschoben; 10 Hosttests bestanden.
 [Technik und Abnahme](stage10a5_input_debounce_and_first_transition.md).
-**Kein Stable, kein Merge vor Hardwareabnahme.**
+Vom Benutzer am 23.10.2026 getestet: „Das Spiel entspricht praktisch zu 100% dem
+Original.“ Damit sind auch Stage10a3 und Stage10a4 inhaltlich bestätigt.
+**Stable-Markierung und Merge nach `main` erst nach ausdrücklicher Freigabe.**
