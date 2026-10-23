@@ -1,5 +1,11 @@
 # Speicherbelegung – bestätigter Stage-3a-2-Test
 
+## Stage10a6 – unveränderte Belegung (23.10.2026)
+
+Keine neuen RAM-Bereiche. 24 Bytes der Level-Sonderfallprüfung durch NOPs
+ersetzt; nachfolgende Adressen bleiben gegenüber Stage10a5 gleich.
+`level.attack_allowed` ($1D88) wird für alle gültigen Level auf 1 gesetzt.
+
 ## Stage10a1-HW2 – Integrationsvorschlag vom18.10.2026
 
 Keine neuen RAM-Bereiche gegenüber Stage10a1. Längengleiche Korrekturen:

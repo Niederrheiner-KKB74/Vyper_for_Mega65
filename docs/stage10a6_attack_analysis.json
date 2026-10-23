@@ -1,0 +1,43 @@
+[
+  {
+    "level": 25,
+    "actors": 22,
+    "curves": [
+      "01",
+      "01"
+    ],
+    "points_min": 179,
+    "points_max": 200
+  },
+  {
+    "level": 50,
+    "actors": 22,
+    "curves": [
+      "01",
+      "01"
+    ],
+    "points_min": 179,
+    "points_max": 200
+  },
+  {
+    "level": 99,
+    "actors": 22,
+    "curves": [
+      "07",
+      "06",
+      "06",
+      "07"
+    ],
+    "points_min": 23,
+    "points_max": 34
+  },
+  {
+    "level": 100,
+    "actors": 22,
+    "curves": [
+      "07"
+    ],
+    "points_min": 20,
+    "points_max": 29
+  }
+]
