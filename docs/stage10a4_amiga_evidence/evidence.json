@@ -1,0 +1,34 @@
+{
+  "source_sha256": {
+    "Vyper_Memory_Dump.dat": "d74aea88fb4232e36caab80e51abc51f73d470a5b55a54f5cb010f1d910ddf8c",
+    "Vyper_Startscreen.uss": "d836cbf88f0ac35b6ed3776df2add39f699113c1aeb9d02cdfe4651c82793916",
+    "VYPER.ADF": "b28cab911431aaf3e48fd3e9979159de7154f98538eeba191f52ac47ef9665e5"
+  },
+  "ranges": [
+    {
+      "name": "player_hit_starts_window",
+      "start": "0xc09462",
+      "end_exclusive": "0xc094c0",
+      "verified_copies": 2
+    },
+    {
+      "name": "respawn_explosion_blink_end",
+      "start": "0xc09590",
+      "end_exclusive": "0xc096a8",
+      "verified_copies": 2
+    },
+    {
+      "name": "fire_gate_and_release_latch",
+      "start": "0xc0d08c",
+      "end_exclusive": "0xc0d130",
+      "verified_copies": 2
+    },
+    {
+      "name": "attack_selection_gate",
+      "start": "0xc0d174",
+      "end_exclusive": "0xc0d194",
+      "verified_copies": 2
+    }
+  ],
+  "scope": "Bounded disassembly of the respawn window ($2C4E=$114), blink toggle (timer%20, checked every 4 updates), fire gate/latch ($2C38) and attack gate. Updates per video frame not independently measured."
+}

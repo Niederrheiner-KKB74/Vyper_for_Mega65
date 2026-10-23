@@ -747,3 +747,21 @@ Kein neuer Grafik-/Audio-/DMA-Puffer. Get-ready-Texte nur in dynamischen Tails
 von Screenzeilen17/19 abByte84, entsprechende Color-RAM-AdressenFF80000+row*192+84.
 Beide Zeilen werden danach über den vorhandenen Screen-/Farben-Löscher restauriert.
 HUD-Präfixe, Sternbitmap18000..1DDBF, Paletten und Audio-ABI unverändert.
+
+## Stage10a4 – Respawn-/Feuerhelfer
+
+| Bereich | Verwendung |
+|---|---|
+| `$1C9D` | `c_respawn`: 1 während Todes-Respawn-BLINK; im von `c_reset` genullten Block `$1C00–$1CFF` |
+| `$7F72–$7FF2` | Blink-Tick, Feuerzustand, Angriffssperre, entprellte Feuerabfrage; reserviertes Ende des Kollisionsbox-Segments (Grenze `$8000`) |
+
+Alle übrigen Adressen und Symbole identisch zu Stage10a3.
+
+## Stage10a5 – Erster Levelübergang
+
+| Bereich | Verwendung |
+|---|---|
+| `$75B0–$75E3` | `first_ready`/`first_start`/`first_finish`, Flag `first_pending`; unterhalb `LEVELCOPY=$7600`, Segmentgrenze geprüft |
+
+Menü- (`$7000–$9FFF`) und Highscore-Overlay (`$2100–`) intern neu angeordnet,
+Einsprünge unverändert. Alle Engine-Symbole identisch zu Stage10a4.

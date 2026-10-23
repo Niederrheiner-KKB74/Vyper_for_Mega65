@@ -75,3 +75,14 @@
        links stehende Pixies bekommen schwarze Linien.
     Grafik- und Soundänderungen gelten erst nach einem Test auf echter Hardware
     als bestätigt; ein XEMU-Test allein reicht dafür nicht.
+
+20. **Stage10a5 Stable:** Vom Benutzer am 23.10.2026 auf echter Hardware
+    getestet („entspricht praktisch zu 100% dem Original“) und zum Merge
+    freigegeben. Referenz `stage10a5-stable`, Branch `stage10a5`, getesteter
+    Programmcommit `2355760` (enthält Stage10a3 Formationsstart/Explosionsfarben
+    und Stage10a4 Respawn/Feuerentprellung). `src/engine/stage10a3*`–`stage10a5*`,
+    `src/tests/stage10a3*`–`stage10a5*`, `tools/build_stage10a3.py`–
+    `build_stage10a5.py` und `releases/stage_10a/stage10a3/`–`stage10a5/`
+    unverändert schützen. Build mit `KickAss65CE02-5.25.jar` (Gleichwertigkeit in
+    `docs/stage10a3_formation_and_explosion_colours.md` belegt). Neue Entwicklung
+    in separaten Stages.

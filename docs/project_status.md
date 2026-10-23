@@ -925,3 +925,40 @@ zentriert im unteren Drittel, mit exakt dem Gegner-Highlight-Cycling. Gameplay i
 bis zum Ende gesperrt, Sterne und Streaming laufen weiter. R/+/- zählen ihren
 bereits laufenden Eingabeframe nicht mit. Frühere HUD-/BASIC-Exit-Fixes bleiben.
 Keine Stable-Markierung und kein Merge vor erneuter Nutzerabnahme.
+
+## Stage10a3 – Formationsstart, Angriffe im Einflug, Explosionsfarben (Entwicklungsstand)
+
+Basis Stage10a2 (main 475355c), separater Branch `stage10a3`. Nach Benutzervergleich
+mit dem Original: Pendeln und Angriffs-Countdown starten, sobald der erste lebende
+Gegner seinen Formationsplatz erreicht hat; Angriffe laufen damit schon während des
+Einflugs (Limits 3/100/30 unverändert). Gegnerexplosionen in privaten Pixiepuffern
+nutzen die Levelpalette (`$10`), die Player-Explosion bleibt grau. Alle Adressen
+durch NOP-Auffüllung identisch zu Stage10a2.
+[Technik und Abnahme](stage10a3_formation_and_explosion_colours.md).
+PRG/D81 unter `releases/stage_10a/stage10a3/`; PRG unterscheidet sich nur in den
+beiden geänderten Routinen. **Kein Stable, kein Merge vor Hardwareabnahme.**
+
+## Stage10a4 – Respawn wie im Original, entprellter Feuerknopf (Entwicklungsstand)
+
+Basis Stage10a3 (vom Benutzer 22.10.2026 im Spielverhalten bestätigt), Branch
+`stage10a4`. Amiga-Beleg (`$C094AE`, `$C095D8`, `$C0D0A2`, `$C0D17E`): 276 Updates
+Schutz ab Treffer, Umschalten alle 20 Updates, kein Feuer, keine neuen Angriffe.
+Portiert: kein Warten auf die Formation, sofortiges Blinken an der Trefferposition,
+21+255 Frames, Blinken alle 20 Frames, Feuer und neue Angriffe gesperrt; Zweispieler-
+Zugstart unverändert (150 Frames, Feuer erlaubt). Feuer erst nach zwei losgelassenen
+Frames erneut. Kein Symbol verschoben, Daten byteidentisch; 8 Hosttests bestanden.
+[Technik, Belege und Abnahme](stage10a4_respawn_and_fire_debounce.md).
+**Kein Stable, kein Merge vor Hardwareabnahme.**
+
+## Stage10a5 – Entprellung Menü/Highscore, Übergang vor dem ersten Level (Entwicklungsstand)
+
+Basis Stage10a4 (vom Benutzer 23.10.2026 bestätigt), Branch `stage10a5`.
+Highscore-Tabelle fragt den Joystick nur noch einmal pro Frame ab und verlangt zwei
+losgelassene Frames vor dem Verlassen; Menüfreigabe und Menüfeuer ebenfalls zwei
+Frames. Neues Spiel startet mit Levelübergang inklusive Sound, dann Get ready;
+F2-Zugwechsel unverändert. Kein Engine-Symbol verschoben; 10 Hosttests bestanden.
+[Technik und Abnahme](stage10a5_input_debounce_and_first_transition.md).
+Vom Benutzer am 23.10.2026 getestet: „Das Spiel entspricht praktisch zu 100% dem
+Original.“ Damit sind auch Stage10a3 und Stage10a4 inhaltlich bestätigt.
+**Stable:** vom Benutzer am 23.10.2026 freigegeben; Referenz `stage10a5-stable`
+(Programmcommit `2355760`), per PR nach `main` gemergt.
